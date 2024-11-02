@@ -1,3 +1,17 @@
+const menuToggle = document.querySelector('#menuToggle input');
+const searchWrapper = document.querySelector('.search-wrapper');
+
+menuToggle.addEventListener('change', () => {
+    if (menuToggle.checked) {
+        searchWrapper.classList.add('hidden'); // Применяем класс для скрытия
+    } else {
+        searchWrapper.classList.remove('hidden'); // Убираем класс для показа
+    }
+});
+
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
   const navbar = document.querySelector('.navbar');
   const navbarPlaceholder = document.querySelector('.navbar-placeholder');
@@ -14,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
   });
 });
+
 
 
 
