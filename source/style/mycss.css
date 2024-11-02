@@ -169,7 +169,7 @@ h4{
     
 }
 #card-tex  {
-   
+   color: white;
     text-decoration: none;
     display: block; /* Делаем ссылку блочным элементом для полной ширины */
     width: 100%; /* Устанавливаем ширину ссылки на 100% */
@@ -177,7 +177,17 @@ h4{
 }
 
 #card-tex:hover {
-    color: white !important;
+    color: #b22222 !important; /* Темно-красный цвет текста */
+    text-shadow:
+    
+    1px 1px 0 #000000,
+   -1px 1px 0 #000000,
+    1px -1px 0 #000000,
+   -1px -1px 0 #000000,
+    0px 1px 0 #000000,
+    1px 0px 0 #000000,
+   -1px 0px 0 #000000,
+    0px -1px 0 #000000;
 }
 
 #nav-menu li a {
@@ -416,7 +426,7 @@ footer {
     }
 }
 
-@media screen and (max-width: 1125px) {
+@media screen and (max-width: 1185px) {
     h4{
         margin-left: 2vh;
     }
@@ -602,7 +612,16 @@ footer {
 }
 
 #menu li a:hover {
-    color: #2C3E50;
+    color: #b22222;
+    text-shadow:
+    1px 1px 0 #000000,
+   -1px 1px 0 #000000,
+    1px -1px 0 #000000,
+   -1px -1px 0 #000000,
+    0px 1px 0 #000000,
+    1px 0px 0 #000000,
+   -1px 0px 0 #000000,
+    0px -1px 0 #000000;
 }
 
 
@@ -610,6 +629,8 @@ footer {
    
 }
 
+
+  
 
 @media screen and (max-width: 1000px) {
   
@@ -719,6 +740,12 @@ footer {
 }
 
 @media (min-width: 601px) and (max-width: 933px) { /* Для экранов от 601 до 900px */
+    .search-wrapper {
+        right: 6.5%; /* Стандартное значение */
+    }
+}
+
+@media (min-width: 933px) and (max-width: 991px) { /* Для экранов от 601 до 900px */
     .search-wrapper {
         right: 6.5%; /* Стандартное значение */
     }
