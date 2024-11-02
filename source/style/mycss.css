@@ -273,7 +273,7 @@ footer {
     position: absolute;
     left: 3vh !important; /* отступ слева  */
     z-index: 3;
-    top: 25vh !important;
+    top: 145px !important;
     width: 50px !important;
     height: 50px !important;
     border: 0 !important;
@@ -312,7 +312,7 @@ footer {
     position: absolute;
     right: 3vh !important;
     z-index: 3;
-    top: 25vh !important;
+    top: 145px !important;
     width: 50px !important;
     height: 50px !important;
     border: 0 !important;
@@ -347,11 +347,11 @@ footer {
 
 
 .slider-2 .slick-prev {
-    top: 10vh !important; /* Поднимаем стрелку вверх */
+    top: 62px !important; /* Поднимаем стрелку вверх */
 }
 
 .slider-2 .slick-next {
-    top: 10vh !important; /* Поднимаем стрелку вверх */
+    top: 62px !important; /* Поднимаем стрелку вверх */
 }
 
 
@@ -652,28 +652,18 @@ footer {
     }
 }
 
-
-@media screen and (max-width: 480px) {
-    .search-wrapper {
-        
-        right: 50px; /* Фиксируем положение справа */
-        
-    }
-
+ @media screen and (max-width: 355px) {
+   
     .search-wrapper:hover .search-container {
-        width: 140px !important; /* Расширение контейнера влево */
-    }
-    .card-img-top {
-     
-     width: 9rem;
+        width: 90px !important; /* Расширение контейнера влево */
     }
 
     .slider .slick-prev {
-        top: 15vh !important; /* Поднимаем стрелку вверх */
+        top: 16vh !important; /* Поднимаем стрелку вверх */
     }
     
     .slider .slick-next {
-        top: 15vh !important; /* Поднимаем стрелку вверх */
+        top: 16vh !important; /* Поднимаем стрелку вверх */
     }
     
     
@@ -690,6 +680,24 @@ footer {
     }
   }
 
+@media screen and (max-width: 480px) {
+    .search-wrapper {
+        
+        right: 50px; /* Фиксируем положение справа */
+        
+    }
+
+    .search-wrapper:hover .search-container {
+        width: 140px !important; /* Расширение контейнера влево */
+    }
+    .card-img-top {
+     
+     width: 9rem;
+    }
+
+    
+  }
+
 
   
 
@@ -703,14 +711,17 @@ footer {
      
      width: 9rem;
     }
+
+    
   }
 
  
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 375.5px) {
    
     .search-wrapper:hover .search-container {
         width: 100px !important; /* Расширение контейнера влево */
     }
+    
   }
 
   @media screen and (max-width: 355px) {
@@ -718,7 +729,8 @@ footer {
     .search-wrapper:hover .search-container {
         width: 90px !important; /* Расширение контейнера влево */
     }
-  }
+
+}
 
   
   @media (min-width: 1160px) {
@@ -739,14 +751,46 @@ footer {
     }
 }
 
-@media (min-width: 601px) and (max-width: 933px) { /* Для экранов от 601 до 900px */
+
+
+  
+
+
+@media (min-width: 660px) and (max-width: 670px) { /* Для экранов от 601 до 900px */
     .search-wrapper {
-        right: 6.5%; /* Стандартное значение */
+        right: 10%; /* Стандартное значение */
     }
 }
 
-@media (min-width: 933px) and (max-width: 991px) { /* Для экранов от 601 до 900px */
+@media (min-width: 740px) and (max-width: 750px) { /* Для экранов от 601 до 900px */
+    .search-wrapper {
+        right: 8.5%; /* Стандартное значение */
+    }
+}
+@media (min-width: 610px) and (max-width: 900px) { /* Для экранов от 601 до 900px */
+    .search-wrapper {
+        right: 8.5%; /* Стандартное значение */
+    }
+}
+
+
+
+
+
+  
+
+@media (min-width: 910px) and (max-width: 951px) { /* Для экранов от 601 до 900px */
     .search-wrapper {
         right: 6.5%; /* Стандартное значение */
     }
-}
+
+    
+  }
+
+
+
+
+  
+
+
+  
