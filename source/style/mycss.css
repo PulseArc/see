@@ -12,7 +12,7 @@
     display: block;
     position: fixed; /* Фиксированное положение */
     top: 23px; /* Фиксируем положение сверху */
-    right: 8vh; /* Фиксируем положение справа */
+    right: 8vh ; /* Фиксируем положение справа */
     display: inline-block;
     z-index: 50;
 }
@@ -627,7 +627,7 @@ footer {
     
     
     .search-wrapper:hover .search-container {
-        width: 105px; /* Расширение контейнера влево */
+        width: 95px; /* Расширение контейнера влево */
     }
 }
 
@@ -703,5 +703,23 @@ footer {
   @media (min-width: 1160px) {
     .navbar-expand-lg .navbar-nav {
         flex-direction: row !important; /* Ваши стили */
+    }
+}
+
+@media (max-width: 600px) { /* Для экранов меньше 600px */
+    .search-wrapper {
+        right: 10%; /* Уменьшите значение */
+    }
+}
+
+@media (max-width: 400px) { /* Для экранов меньше 600px */
+    .search-wrapper {
+        right: 12%; /* Уменьшите значение */
+    }
+}
+
+@media (min-width: 601px) and (max-width: 933px) { /* Для экранов от 601 до 900px */
+    .search-wrapper {
+        right: 6.5%; /* Стандартное значение */
     }
 }
