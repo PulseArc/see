@@ -1,0 +1,779 @@
+@import url('https://fonts.googleapis.com/css?family=Michroma&display=swap');
+.mx-4-5 {
+    margin-left: 2.490rem; /* 4.5 * 0.25rem = 1.125rem */
+    margin-right: 2.490rem; /* 4.5 * 0.25rem = 1.125rem */
+
+}
+/* Общие стили для контейнера поиска */
+/* Внешний контейнер для размещения */
+.search-wrapper {
+    display: block;
+    position: fixed !important; /* Фиксированное положение */
+    margin-top: -30px; /* Отступ от верхнего края */
+    right: 10vh; /* Отступ от правого края */
+    display: inline-block;
+    z-index: 1050;
+}
+
+/* Контейнер поиска с изначально малой шириной */
+.search-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 35px; /* Изначальная ширина только для иконки */
+    height: 35px;
+    transition: width 0.3s ease; /* Плавное увеличение при наведении */
+    overflow: hidden;
+    background: #ECF0F1;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Иконка поиска, остающаяся на месте */
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 7px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #333;
+}
+
+/* Стили поля ввода */
+.search-input {
+    position: absolute;
+    top: 0;
+    left: 35px; /* Поле выдвигается влево от иконки */
+    width: calc(100% - 35px);
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    font-size: 16px;
+    background: transparent;
+    color: #333;
+    opacity: 0; /* По умолчанию скрыто */
+    transition: opacity 0.3s ease;
+}
+
+/* Расширение контейнера влево при наведении */
+.search-wrapper:hover .search-container {
+    width: 180px; /* Расширение контейнера влево */
+}
+
+.search-wrapper:hover .search-input {
+    opacity: 1; /* Появление поля ввода */
+}
+
+
+
+
+body {
+    overflow-x: hidden;
+    font-family: Open Sans;
+    background: black;
+    color: white;
+    
+}
+
+header{
+    position: relative;
+    font-family: Helvetica, sans-serif;
+    
+}
+    
+
+p{
+    color: white;
+}
+h4{
+    margin-left: 8vh;
+}
+
+.navbar.scrolled {
+    background-color: #050500b7 !important; /* Более насыщенный полупрозрачный фон при прокрутке */
+    transition: all .6s ease-in-out;
+    backdrop-filter: blur(18px); /* Размытие фона */
+    position: fixed; /* Фиксированное положение */
+    top: 0;
+    width: 100%; /* Занимает всю ширину */
+    z-index: 1000; /* Над другими элементами */
+}
+
+
+
+
+.navbar {
+    position: relative; /* Позиционирование для навигационной панели */
+    z-index: 4; /* Устанавливаем индекс, чтобы навигация была выше всего */
+    background-color: #050500b7 !important; /* Более насыщенный полупрозрачный фон при прокрутке */
+    height: 70px;
+    padding-left: 8vh;
+    display: flex;
+    justify-content: space-between; /* или flex-start, в зависимости от вашего дизайна */
+    align-items: center;
+        
+        
+    
+}
+
+.navbar-placeholder {
+    height: 60px; /* Устанавливаем ту же высоту, что и у .navbar */
+    display: none; /* Скрыт по умолчанию */
+}
+
+
+
+.nav-link{
+    color: #ECF0F1 !important;
+    position: relative; /* Устанавливаем относительное позиционирование для текста */
+    padding-bottom: 1px;
+    text-decoration: none;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 12%;
+    bottom: 0;
+    height: 1px; /* Высота линии */
+    width: 78%;
+    background: #f60404; /* Цвет линии */
+    transform: scaleX(0); /* Начальное состояние: линия скрыта */
+    transform-origin: left; /* Устанавливаем точку отсчета слева */
+    transition: transform 0.5s ease; /* Плавный переход */
+    z-index: 0; /* За текстом */
+}
+
+.nav-item:hover .nav-link::after {
+    transform: scaleX(1); /* При наведении: линия появляется */
+}
+
+
+
+
+.navbar-nav .nav-item {
+    display: flex; /* Включаем Flexbox */
+    align-items: center; /* Выравниваем по центру по вертикали */
+    
+}
+
+
+
+.navbar-img {
+    margin-right: 5px; /* Отступ справа от изображения */
+    padding-bottom: 2px;
+}
+
+
+
+.sidebar {
+    color: #D3D3D3;
+    background: linear-gradient(270deg, #512b5f 0%, #292929 100%);
+}
+
+.card {
+    color: white;
+    background: black;
+   
+    
+
+}
+
+.card a{
+    text-decoration: none;
+    color: #D3D3D3;
+}
+.card-img-top {
+    border-radius: 10px; /* Закругляет углы изображения */
+    height: 270px;
+}
+
+.slide-text{
+    color: #D3D3D3;
+    margin:auto auto;
+}
+
+.btn-outline-primary{
+    background: linear-gradient(270deg, #512b5f 0%, #292929 100%);
+}
+
+footer {
+   
+    background: linear-gradient(270deg, #512b5f 0%, #292929 100%);
+}
+
+.footer-text{
+    color: #D3D3D3;
+    margin:auto auto;
+}
+
+.media-links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.call-anim{
+    animation: call 2s ease 0s infinite normal forwards;
+}
+.slider{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    overflow: hidden !important; /* или overflow-x: auto; */
+}
+
+
+ /* слайдер стрелки  */
+.slick-prev{
+    position: absolute;
+    left: 3vh !important; /* отступ слева  */
+    z-index: 3;
+    top: 25vh !important;
+    width: 50px !important;
+    height: 50px !important;
+    border: 0 !important;
+    outline: none !important;
+    
+    border-radius: 50% !important;
+    opacity: 0.9 !important;
+    transition: all 0.15s;
+    cursor: pointer;
+    
+}
+
+.slick-prev:before{
+    font-size: 0 !important; /* отл старые стрелки */
+}
+
+.slick-prev:hover{
+    opacity: 1 !important;  /* прозрачность после наведения */
+    
+}
+.slick-prev:after{
+    content: '';
+    width: 20px;  /* ширина стрелки */
+    height: 20px; /* высота стрелки */
+    
+    position: absolute;
+    top: 15px; 
+    left: 15px;
+    transform: rotate(45deg); /* поворот   */
+    border-left: 3px solid white; /* потчеркнуть с лева  */
+    border-bottom: 3px solid white; /*  подчернуть снизу */
+}
+
+
+.slick-next{
+    position: absolute;
+    right: 3vh !important;
+    z-index: 3;
+    top: 25vh !important;
+    width: 50px !important;
+    height: 50px !important;
+    border: 0 !important;
+    outline: none !important;
+    
+    border-radius: 50% !important;
+    opacity: 0.9 !important;
+    transition: all 0.15s;
+    cursor: pointer;
+}
+.slick-next:before{
+    font-size: 0 !important;
+}
+
+.slick-next:hover{
+    opacity: 1 !important;
+}
+
+.slick-next:after{
+    content: '';
+    width: 20px;
+    height: 20px;
+    
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    transform: rotate(45deg);
+    border-right: 3px solid white;
+    border-top: 3px solid white;
+}
+/* конец слайдер стрелки  */
+
+
+.slider-2 .slick-prev {
+    top: 10vh !important; /* Поднимаем стрелку вверх */
+}
+
+.slider-2 .slick-next {
+    top: 10vh !important; /* Поднимаем стрелку вверх */
+}
+
+
+.mobilescreen {
+    display: none;
+}
+
+@keyframes call {
+	0%,
+	100% {
+		transform: translateX(0%);
+		transform-origin: 50% 50%;
+	}
+
+	15% {
+		transform: translateX(-30px) rotate(-6deg);
+	}
+
+	30% {
+		transform: translateX(15px) rotate(6deg);
+	}
+
+	45% {
+		transform: translateX(-15px) rotate(-3.6deg);
+	}
+
+	60% {
+		transform: translateX(9px) rotate(2.4deg);
+	}
+
+	75% {
+		transform: translateX(-6px) rotate(-1.2deg);
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+@media screen and (max-width: 1156px) {
+    .search-wrapper:hover .search-container {
+        width: 150px; /* Расширение контейнера влево */
+    }
+}
+
+@media screen and (max-width: 1140px) {
+    .search-wrapper:hover .search-container {
+        width: 140px; /* Расширение контейнера влево */
+    }
+}
+
+@media screen and (max-width: 1130px) {
+    .search-wrapper:hover .search-container {
+        width: 130px; /* Расширение контейнера влево */
+    }
+}
+
+@media screen and (max-width: 1125px) {
+    h4{
+        margin-left: 2vh;
+    }
+    .navbar-brand{
+        margin-left: -6vh;
+    }
+    .search-wrapper {
+        position: fixed !important; /* Фиксированное положение */
+            top: 8vh;
+            right: 3vh;
+    }
+    .search-wrapper:hover .search-container {
+        width: 130px; /* Расширение контейнера влево */
+    }
+}
+
+@media screen and (max-width: 1125px) {
+    .search-wrapper:hover .search-container {
+        width: 120px; /* Расширение контейнера влево */
+    }
+}
+
+@media screen and (max-width: 1109px) {
+    .search-wrapper:hover .search-container {
+        width: 106px; /* Расширение контейнера влево */
+    }
+}
+
+@media screen and (max-width: 991.5px) {
+    
+        
+    
+   
+
+
+/* Контейнер поиска с изначально малой шириной */
+.search-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 35px; /* Изначальная ширина только для иконки */
+    height: 35px;
+    transition: width 0.3s ease; /* Плавное увеличение при наведении */
+    overflow: hidden;
+    background: #ECF0F1;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Иконка поиска, остающаяся на месте */
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 7px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #333;
+}
+
+/* Стили поля ввода */
+.search-input {
+    position: absolute;
+    top: 0;
+    left: 35px; /* Поле выдвигается влево от иконки */
+    width: calc(100% - 35px);
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    font-size: 16px;
+    background: transparent;
+    color: #333;
+    opacity: 0; /* По умолчанию скрыто */
+    transition: opacity 0.3s ease;
+}
+
+/* Расширение контейнера влево при наведении */
+.search-wrapper:hover .search-container {
+    width: 180px; /* Расширение контейнера влево */
+}
+
+.search-wrapper:hover .search-input {
+    opacity: 1; /* Появление поля ввода */
+}
+/* Конец */
+
+
+    /* Бургер */
+    .mobilescreen{
+        display: block;
+    }
+.newburgerintown {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 40vh;
+    width:50%;
+    min-width: 400px;
+    height: 60px;
+    margin: 0 auto;
+  }
+  
+  .newburgerintown h1 {
+      font-weight: 300;
+      color: #ECF0F1;
+  }
+  
+  .newburgerintown p {
+      font-weight: 100;
+      color: #ECF0F1;
+      letter-spacing: .1em;
+  }
+  
+  /**Mobile (Hamburger-)Menu from here on**/
+  
+  /** This is kind of a styled trigger here **/
+  #menuToggle {
+    display: block;
+    position: fixed;
+    top: 30px;
+    right: 25px; /* Кнопка открывается с правой стороны */
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+#menuToggle input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: 0;
+    right: 0; /* Смещаем чекбокс в правую сторону */
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+}
+
+#menuToggle span
+{
+    display: block;
+    width: 26px;
+    height: 2px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #ECF0F1;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 3px 0px;
+    transition: transform 0.2s cubic-bezier(0.77,0.2,0.05,1.0);
+    background: 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    opacity: 0.55s ease;
+}
+#menuToggle span:first-child
+{
+    transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+    transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span
+{
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: white;
+}
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+    opacity: 0;
+    transform: rotate(0deg)     
+      scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+    opacity: 1;
+    transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    right: 0; /* Располагаем меню справа */
+    width: 100%; /* Устанавливаем ширину для видимости */
+    height: 102vh;
+    background-color: #1a1919;
+    padding-top: 125px;
+    list-style-type: none;
+    transform: translateX(100%); /* Начальное положение за экраном */
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    text-align: center;
+    display: flex; /* Используем flexbox для выравнивания */
+    flex-direction: column; /* Устанавливаем вертикальное расположение */
+    align-items: center; /* Центрируем элементы по горизонтали */
+}
+
+#menuToggle input:checked ~ #menu {
+    transform: translateX(0); /* Показываем меню при активации */
+}
+
+#menu li {
+    padding: 15px 0; /* Увеличиваем отступы для лучшего восприятия */
+    color: #000000;
+    font-size: 1.5em;
+    width: 100%; /* Устанавливаем ширину элемента списка */
+    text-align: center; /* Центрируем текст внутри li */
+}
+
+#menu li a {
+    color: white;
+    text-decoration: none;
+    display: block; /* Делаем ссылку блочным элементом для полной ширины */
+    width: 100%; /* Устанавливаем ширину ссылки на 100% */
+}
+
+#menu li a:hover {
+    color: #2C3E50;
+}
+
+
+/* конец */
+   
+}
+
+@media screen and (max-width: 1000px) {
+    
+
+    .card-img-top {
+     
+        width: 9rem;
+       }
+       
+    
+   
+}
+
+@media screen and (max-width: 1025px) {
+    
+    .search-wrapper {
+       
+        margin-top: -87px;
+        right: 1vh;
+    }
+    .search-wrapper:hover .search-container {
+        width: 105px; /* Расширение контейнера влево */
+    }
+}
+
+@media screen and (max-width: 913px) {
+    
+    .search-wrapper {
+       
+        margin-top: -87px;
+        right: 5.5vh;
+    }
+}
+@media screen and (max-width: 855px) {
+    
+    .search-wrapper {
+       
+        margin-top: -80px;
+        right: 6vh;
+    }
+}
+
+@media screen and (max-width: 821px) {
+    
+    .search-wrapper {
+       
+        margin-top: -73px;
+        right: 6vh;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    
+    .search-wrapper {
+       
+        margin-top: -60px;
+        right: 7vh;
+    }
+}
+
+@media screen and (max-width: 545px) {
+    
+    .search-wrapper {
+       
+        margin-top: -36px;
+        right: 10vh;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    
+.search-wrapper {
+   
+    margin-top: -53px;
+    right: 7.5vh;
+}
+    .search-wrapper:hover .search-container {
+        width: 140px; /* Расширение контейнера влево */
+    }
+    .card-img-top {
+     
+     width: 9rem;
+    }
+
+    .slider .slick-prev {
+        top: 15vh !important; /* Поднимаем стрелку вверх */
+    }
+    
+    .slider .slick-next {
+        top: 15vh !important; /* Поднимаем стрелку вверх */
+    }
+    
+    
+
+    
+    
+
+    .slider-2 .slick-prev {
+        top: 7vh !important; /* Поднимаем стрелку вверх */
+    }
+    
+    .slider-2 .slick-next {
+        top: 7vh !important; /* Поднимаем стрелку вверх */
+    }
+  }
+
+  @media screen and (max-width: 431px) {
+    
+    .search-wrapper {
+       
+        margin-top: -53px;
+        right: 7.5vh;
+    }
+}
+  @media screen and (max-width: 420px) {
+    
+    .search-wrapper {
+       
+        margin-top: -51px;
+        right: 8vh;
+    }
+}
+
+  @media screen and (max-width: 400px) {
+    .search-wrapper {
+    margin-top: -45px; /* Отступ от верхнего края */
+    right: 8vh;
+    }
+    .search-wrapper:hover .search-container {
+        width: 127px; /* Расширение контейнера влево */
+    }
+    .card-img-top {
+     
+     width: 9rem;
+    }
+  }
+
+  @media screen and (max-width: 380px) {
+    .search-wrapper {
+    margin-top: -33px; /* Отступ от верхнего края */
+    right: 11vh;
+    }
+  }
+  @media screen and (max-width: 365px) {
+    .search-wrapper {
+    margin-top: -37px; /* Отступ от верхнего края */
+    right: 9vh;
+    }
+    .search-wrapper:hover .search-container {
+        width: 100px; /* Расширение контейнера влево */
+    }
+  }
+
+  @media screen and (max-width: 345px) {
+    .search-wrapper {
+    margin-top: -48px; /* Отступ от верхнего края */
+    right: 8vh;
+    }
+    .search-wrapper:hover .search-container {
+        width: 80px; /* Расширение контейнера влево */
+    }
+  }
+  @media (min-width: 1160px) {
+    .navbar-expand-lg .navbar-nav {
+        flex-direction: row !important; /* Ваши стили */
+    }
+}
