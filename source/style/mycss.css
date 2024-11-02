@@ -4,15 +4,27 @@
     margin-right: 2.490rem; /* 4.5 * 0.25rem = 1.125rem */
 
 }
+
 /* Общие стили для контейнера поиска */
 /* Внешний контейнер для размещения */
+/* Основной стиль для .search-wrapper */
 .search-wrapper {
     display: block;
-    position: fixed !important; /* Фиксированное положение */
-    margin-top: -5vh; /* Отступ от верхнего края */
-    right: 10vh; /* Отступ от правого края */
+    position: fixed; /* Фиксированное положение */
+    top: 23px; /* Фиксируем положение сверху */
+    right: 8vh; /* Фиксируем положение справа */
     display: inline-block;
-    z-index: 1050;
+    z-index: 50;
+}
+.search-wrapper {
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    opacity: 1;
+    visibility: visible;
+}
+
+.search-wrapper.hidden {
+    opacity: 0;
+    visibility: hidden;
 }
 
 /* Контейнер поиска с изначально малой шириной */
@@ -136,8 +148,8 @@ h4{
     left: 12%;
     bottom: 0;
     height: 1px; /* Высота линии */
-    width: 78%;
-    background: #f60404; /* Цвет линии */
+    width: 74.5%;
+    background:  #A00000; /* Цвет линии */
     transform: scaleX(0); /* Начальное состояние: линия скрыта */
     transform-origin: left; /* Устанавливаем точку отсчета слева */
     transition: transform 0.5s ease; /* Плавный переход */
@@ -146,8 +158,8 @@ h4{
 
 .nav-item:hover .nav-link::after {
     transform: scaleX(1); /* При наведении: линия появляется */
+    
 }
-
 
 
 
@@ -156,7 +168,29 @@ h4{
     align-items: center; /* Выравниваем по центру по вертикали */
     
 }
+#card-tex  {
+   
+    text-decoration: none;
+    display: block; /* Делаем ссылку блочным элементом для полной ширины */
+    width: 100%; /* Устанавливаем ширину ссылки на 100% */
+    transition: color 0.5s;
+}
 
+#card-tex:hover {
+    color: white !important;
+}
+
+#nav-menu li a {
+   
+    text-decoration: none;
+    display: block; /* Делаем ссылку блочным элементом для полной ширины */
+    width: 100%; /* Устанавливаем ширину ссылки на 100% */
+    transition: color 0.5s;
+}
+
+#nav-menu li a:hover {
+    color: white !important;
+}
 
 
 .navbar-img {
@@ -389,85 +423,48 @@ footer {
     .navbar-brand{
         margin-left: -6vh;
     }
-    .search-wrapper {
-        position: fixed !important; /* Фиксированное положение */
-            top: 8vh;
-            right: 3vh;
+    .search-wrapper{
+        margin-right: -5vh;
     }
+    .search-wrapper:hover .search-container {
+        width: 150px; /* Расширение контейнера влево */
+    }
+}
+
+
+
+@media screen and (max-width: 1109px) {
     .search-wrapper:hover .search-container {
         width: 130px; /* Расширение контейнера влево */
     }
 }
-
-@media screen and (max-width: 1125px) {
+@media screen and (max-width: 1060px) {
     .search-wrapper:hover .search-container {
-        width: 120px; /* Расширение контейнера влево */
+        width: 110px; /* Расширение контейнера влево */
+        
     }
 }
 
-@media screen and (max-width: 1109px) {
-    .search-wrapper:hover .search-container {
-        width: 106px; /* Расширение контейнера влево */
-    }
-}
+
+
+
 
 @media screen and (max-width: 991.5px) {
     
         
+    .search-wrapper{
+        margin-right: 3vh;
+    }
+        .search-wrapper:hover .search-container {
+            width: 200px !important; /* Расширение контейнера влево */
+        }
     
    
 
 
-/* Контейнер поиска с изначально малой шириной */
-.search-container {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 35px; /* Изначальная ширина только для иконки */
-    height: 35px;
-    transition: width 0.3s ease; /* Плавное увеличение при наведении */
-    overflow: hidden;
-    background: #ECF0F1;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
 
-/* Иконка поиска, остающаяся на месте */
-.search-icon {
-    position: absolute;
-    top: 50%;
-    left: 7px;
-    transform: translateY(-50%);
-    font-size: 18px;
-    color: #333;
-}
 
-/* Стили поля ввода */
-.search-input {
-    position: absolute;
-    top: 0;
-    left: 35px; /* Поле выдвигается влево от иконки */
-    width: calc(100% - 35px);
-    height: 100%;
-    border: none;
-    outline: none;
-    padding: 0 10px;
-    font-size: 16px;
-    background: transparent;
-    color: #333;
-    opacity: 0; /* По умолчанию скрыто */
-    transition: opacity 0.3s ease;
-}
 
-/* Расширение контейнера влево при наведении */
-.search-wrapper:hover .search-container {
-    width: 180px; /* Расширение контейнера влево */
-}
-
-.search-wrapper:hover .search-input {
-    opacity: 1; /* Появление поля ввода */
-}
-/* Конец */
 
 
     /* Бургер */
@@ -580,11 +577,14 @@ footer {
     display: flex; /* Используем flexbox для выравнивания */
     flex-direction: column; /* Устанавливаем вертикальное расположение */
     align-items: center; /* Центрируем элементы по горизонтали */
+    
 }
+
 
 #menuToggle input:checked ~ #menu {
     transform: translateX(0); /* Показываем меню при активации */
 }
+
 
 #menu li {
     padding: 15px 0; /* Увеличиваем отступы для лучшего восприятия */
@@ -609,11 +609,7 @@ footer {
 /* конец */
    
 }
-@media screen and (max-width: 1150px) {
-    .search-wrapper{
-        right:11vh;
-    }
-}
+
 
 @media screen and (max-width: 1000px) {
   
@@ -637,10 +633,14 @@ footer {
 
 
 @media screen and (max-width: 480px) {
-    
+    .search-wrapper {
+        
+        right: 50px; /* Фиксируем положение справа */
+        
+    }
 
     .search-wrapper:hover .search-container {
-        width: 140px; /* Расширение контейнера влево */
+        width: 140px !important; /* Расширение контейнера влево */
     }
     .card-img-top {
      
@@ -676,7 +676,7 @@ footer {
   @media screen and (max-width: 400px) {
    
     .search-wrapper:hover .search-container {
-        width: 127px; /* Расширение контейнера влево */
+        width: 127px !important; /* Расширение контейнера влево */
     }
     .card-img-top {
      
@@ -685,10 +685,17 @@ footer {
   }
 
  
-  @media screen and (max-width: 365px) {
+  @media screen and (max-width: 375px) {
    
     .search-wrapper:hover .search-container {
-        width: 100px; /* Расширение контейнера влево */
+        width: 100px !important; /* Расширение контейнера влево */
+    }
+  }
+
+  @media screen and (max-width: 355px) {
+   
+    .search-wrapper:hover .search-container {
+        width: 90px !important; /* Расширение контейнера влево */
     }
   }
 
