@@ -714,7 +714,7 @@ footer {
     }
 }
 
-@media screen and (max-width: 911px) {
+@media screen and (max-width: 912px) {
     
     
     .all-film{
@@ -723,6 +723,15 @@ footer {
     }
     .all-flim-img{
         width: 70%;
+        height: 100%;
+    }
+}
+@media screen and (max-width: 890px) {
+    
+    
+    
+    .all-flim-img{
+        width: 69%;
         height: 100%;
     }
 }
@@ -919,7 +928,7 @@ footer {
 @media screen and (max-width: 420px) {
     
     .all-flim-img{
-        width: 48% !important;
+        width: 47% !important;
         height: 100%;
     }
 }
@@ -965,6 +974,20 @@ footer {
         height: 100%;
     }
 }
+@media screen and (max-width: 356px) {
+    
+    .all-flim-img{
+        width: 54% !important;
+        height: 100%;
+    }
+}
+@media screen and (max-width: 350px) {
+    
+    .all-flim-img{
+        width: 52% !important;
+        height: 100%;
+    }
+}
 
  @media screen and (max-width: 355px) {
    
@@ -973,11 +996,11 @@ footer {
     }
 
     .slider .slick-prev {
-        top: 16vh !important; /* Поднимаем стрелку вверх */
+        top: 14vh !important; /* Поднимаем стрелку вверх */
     }
     
     .slider .slick-next {
-        top: 16vh !important; /* Поднимаем стрелку вверх */
+        top: 14vh !important; /* Поднимаем стрелку вверх */
     }
     
     
@@ -1007,10 +1030,23 @@ footer {
     .card-img-top {
      
      width: 9rem;
+     height: 100%;
 
     }
+    .slider .slick-prev {
+        top: 14vh !important; /* Поднимаем стрелку вверх */
+    }
     
-   
+    .slider .slick-next {
+        top: 14vh !important; /* Поднимаем стрелку вверх */
+    }
+    .slider-2 .slick-prev {
+        top: 7vh !important; /* Поднимаем стрелку вверх */
+    }
+    
+    .slider-2 .slick-next {
+        top: 7vh !important; /* Поднимаем стрелку вверх */
+    }
    
   }
 
@@ -1025,6 +1061,7 @@ footer {
     .card-img-top {
      
      width: 9rem;
+     height: 100%;
     }
    
     
@@ -1142,7 +1179,7 @@ footer {
   }
   
   /* Для экранов 1200px и больше, показываем 6 карт */
-  @media (min-width: 767.5px) {
+  @media (min-width: 769.5px) {
     .col-4 {
       flex: 0 0 16.66%;
       max-width: 16.66%;
