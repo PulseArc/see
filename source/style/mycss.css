@@ -93,13 +93,15 @@ header{
     font-family: Helvetica, sans-serif;
     
 }
+
     
 
-p{
-    color: white;
+a{
+    color: #ECF0F1;
 }
 h4{
     margin-left: 8vh;
+    
 }
 
 .navbar.scrolled {
@@ -168,8 +170,34 @@ h4{
     align-items: center; /* Выравниваем по центру по вертикали */
     
 }
+
+.card {
+    
+    width: 12rem;
+    overflow: visible !important; /* Позволяет изображению выходить за пределы карточки */
+}
+
+.card-img-top {
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    border: 3px solid transparent;
+    position: relative;
+    z-index: 10; /* Устанавливает высокий приоритет по наложению */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Плавный переход для анимации */
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.06); /* Увеличение изображения на 5% при наведении */
+    padding: 2px;
+    border-color: #b22222; /* Подсвечивание бордера красным */
+}
+.card-img-top{
+    margin-top: 3px;
+
+}
+
+
 #card-tex  {
-   color: white;
+   color:#dad6d6;
     text-decoration: none;
     display: block; /* Делаем ссылку блочным элементом для полной ширины */
     width: 100%; /* Устанавливаем ширину ссылки на 100% */
@@ -177,7 +205,7 @@ h4{
 }
 
 #card-tex:hover {
-    color: #b22222 !important; /* Темно-красный цвет текста */
+    color: #ffffff !important; /* Темно-красный цвет текста */
     text-shadow:
     
     1px 1px 0 #000000,
@@ -216,11 +244,7 @@ h4{
 }
 
 .card {
-    color: white;
     background: black;
-   
-    
-
 }
 
 .card a{
@@ -228,14 +252,20 @@ h4{
     color: #D3D3D3;
 }
 .card-img-top {
-    border-radius: 10px; /* Закругляет углы изображения */
-    height: 270px;
+    border-radius: 18px; /* Закругляет углы изображения */
+    height: 290px;
 }
 
 .slide-text{
     color: #D3D3D3;
     margin:auto auto;
 }
+
+.col-5th {
+    flex: 0 0 20%; /* 20% ширины на каждую карточку */
+    max-width: 20%;
+}
+
 
 .btn-outline-primary{
     background: linear-gradient(270deg, #512b5f 0%, #292929 100%);
@@ -264,8 +294,14 @@ footer {
     position: relative;
     margin: 0;
     padding: 0;
-    overflow: hidden !important; /* или overflow-x: auto; */
+    overflow: hidden;
+    
+    
 }
+.all-film{
+    margin-left: 5px;
+}
+
 
 
  /* слайдер стрелки  */
@@ -469,7 +505,13 @@ footer {
             width: 200px !important; /* Расширение контейнера влево */
         }
     
-   
+        .all-film{
+            margin-left: 2.5px;
+        }
+        .all-flim-img{
+            width: 12rem;
+            height: auto;
+        }
 
 
 
@@ -480,6 +522,7 @@ footer {
     /* Бургер */
     .mobilescreen{
         display: block;
+        
     }
 .newburgerintown {
     position: absolute;
@@ -514,6 +557,7 @@ footer {
     z-index: 1;
     -webkit-user-select: none;
     user-select: none;
+    
 }
 
 #menuToggle input {
@@ -526,6 +570,7 @@ footer {
     cursor: pointer;
     opacity: 0;
     z-index: 2;
+    overflow-y: hidden !important;
 }
 
 #menuToggle span
@@ -577,9 +622,11 @@ footer {
     top: 0;
     right: 0; /* Располагаем меню справа */
     width: 100%; /* Устанавливаем ширину для видимости */
-    height: 102vh;
+    height: 105vh ; /* Высота элемента на весь экран */
+    overflow: auto;
     background-color: #1a1919;
-    padding-top: 125px;
+    padding-top: 175px;
+    padding-right: 20px;
     list-style-type: none;
     transform: translateX(100%); /* Начальное положение за экраном */
     transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
@@ -588,7 +635,10 @@ footer {
     flex-direction: column; /* Устанавливаем вертикальное расположение */
     align-items: center; /* Центрируем элементы по горизонтали */
     
+    
+    
 }
+
 
 
 #menuToggle input:checked ~ #menu {
@@ -605,14 +655,14 @@ footer {
 }
 
 #menu li a {
-    color: white;
+    color: #ECF0F1;
     text-decoration: none;
     display: block; /* Делаем ссылку блочным элементом для полной ширины */
     width: 100%; /* Устанавливаем ширину ссылки на 100% */
 }
 
 #menu li a:hover {
-    color: #b22222;
+    color: white;
     text-shadow:
     1px 1px 0 #000000,
    -1px 1px 0 #000000,
@@ -649,6 +699,270 @@ footer {
     
     .search-wrapper:hover .search-container {
         width: 95px; /* Расширение контейнера влево */
+    }
+}
+@media screen and (max-width: 929px) {
+    
+    
+    .all-film{
+        margin-left: 5px !important;
+       
+    }
+    .all-flim-img{
+        width: 72%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 911px) {
+    
+    
+    .all-film{
+        margin-left: 5px !important;
+       
+    }
+    .all-flim-img{
+        width: 70%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 879px) {
+    
+    
+    
+    .all-flim-img{
+        width: 68%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 855px) {
+    
+   
+    .all-flim-img{
+        width: 65%;
+        height: 100%;
+    }
+}
+@media screen and (max-width: 825px) {
+    
+   
+    .all-flim-img{
+        width: 63%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 802px) {
+    
+    
+    
+    .all-flim-img{
+        width: 61%;
+        height: 100%;
+    }
+}
+@media screen and (max-width: 768px) {
+    
+    
+   
+    .all-flim-img{
+        width: 72%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 746px) {
+    
+    
+    
+    .all-flim-img{
+        width: 69%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 723px) {
+    
+    
+    
+    .all-flim-img{
+        width: 67%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+   
+    .all-flim-img{
+        width: 64%;
+        height: 100%;
+    }
+}
+@media screen and (max-width: 673px) {
+    
+    .all-flim-img{
+        width: 62%;
+        height: 100%;
+    }
+}
+@media screen and (max-width: 653px) {
+    
+    .all-flim-img{
+        width: 60%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    
+    .all-flim-img{
+        width: 58%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 623px) {
+    
+    .all-flim-img{
+        width: 56%;
+        height: 100%;
+    }
+}
+@media screen and (max-width: 603px) {
+    
+    .all-flim-img{
+        width: 54%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    
+    .all-flim-img{
+        width: 67%;
+        height: 100%;
+    }
+}
+@media screen and (max-width: 570px) {
+    
+    .all-flim-img{
+        width: 64%;
+        height: 100%;
+    }
+}
+@media screen and (max-width: 550px) {
+    
+    .all-flim-img{
+        width: 61%;
+        height: 100%;
+    }
+}
+@media screen and (max-width: 518px) {
+    
+    .all-flim-img{
+        width: 58%;
+        height: 100%;
+    }
+}
+@media screen and (max-width: 500px) {
+    
+    .all-flim-img{
+        width: 56.5%;
+        height: 100%;
+    }
+}
+@media screen and (max-width: 480px) {
+    
+    .all-flim-img{
+        width: 54% !important;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    
+    .all-flim-img{
+        width: 53% !important;
+        height: 100%;
+    }
+}
+@media screen and (max-width: 460px) {
+    
+    .all-flim-img{
+        width: 52% !important;
+        height: 100%;
+    }
+}
+@media screen and (max-width: 450px) {
+    
+    .all-flim-img{
+        width: 51% !important;
+        height: 100%;
+    }
+}
+@media screen and (max-width: 440px) {
+    
+    .all-flim-img{
+        width: 50% !important;
+        height: 100%;
+    }
+}
+@media screen and (max-width: 430px) {
+    
+    .all-flim-img{
+        width: 49% !important;
+        height: 100%;
+    }
+}
+@media screen and (max-width: 420px) {
+    
+    .all-flim-img{
+        width: 48% !important;
+        height: 100%;
+    }
+}
+@media screen and (max-width: 410px) {
+    
+    .all-flim-img{
+        width: 47% !important;
+        height: 100%;
+    }
+}
+@media screen and (max-width: 400px) {
+    
+    .all-flim-img{
+        width: 61% !important;
+        height: 100%;
+    }
+}
+@media screen and (max-width: 390px) {
+    
+    .all-flim-img{
+        width: 59% !important;
+        height: 100%;
+    }
+}
+@media screen and (max-width: 380px) {
+    
+    .all-flim-img{
+        width: 58% !important;
+        height: 100%;
+    }
+}
+@media screen and (max-width: 370px) {
+    
+    .all-flim-img{
+        width: 57% !important;
+        height: 100%;
+    }
+}
+@media screen and (max-width: 360px) {
+    
+    .all-flim-img{
+        width: 56% !important;
+        height: 100%;
     }
 }
 
@@ -693,13 +1007,14 @@ footer {
     .card-img-top {
      
      width: 9rem;
-    }
 
+    }
     
+   
+   
   }
 
-
-  
+ 
 
 
   @media screen and (max-width: 400px) {
@@ -711,7 +1026,7 @@ footer {
      
      width: 9rem;
     }
-
+   
     
   }
 
@@ -762,6 +1077,8 @@ footer {
     }
 }
 
+
+
 @media (min-width: 740px) and (max-width: 750px) { /* Для экранов от 601 до 900px */
     .search-wrapper {
         right: 8.5%; /* Стандартное значение */
@@ -790,7 +1107,44 @@ footer {
 
 
 
-  
+  /* Медиа для all film */
 
 
+  @media (max-width: 400px) {
+    .col-4 {
+      flex: 0 0 33.33%;
+      max-width: 33.33%;
+    }
+  }
   
+  /* Для экранов от 401px до 992px показываем 5 карт */
+  @media (min-width: 580px) and (max-width: 991px) {
+    .col-4 {
+      flex: 0 0 20%;
+      max-width: 20%;
+    }
+  }
+
+  @media (min-width: 401px) and (max-width: 580px) {
+    .col-4 {
+      flex: 0 0 25%;
+      max-width: 25%;
+    }
+  }
+  
+  
+  /* Для экранов от 992px до 1199px показываем 5 карт */
+  @media (min-width: 580px) and (max-width: 761px) {
+    .col-4 {
+      flex: 0 0 20%;
+      max-width: 20%;
+    }
+  }
+  
+  /* Для экранов 1200px и больше, показываем 6 карт */
+  @media (min-width: 767.5px) {
+    .col-4 {
+      flex: 0 0 16.66%;
+      max-width: 16.66%;
+    }
+  }
