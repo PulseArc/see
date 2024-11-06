@@ -1,3 +1,5 @@
+
+
 const menuToggle = document.querySelector('#menuToggle input');
 const searchWrapper = document.querySelector('.search-wrapper');
 
@@ -44,10 +46,69 @@ $('.single-item').slick({
 	slidesToShow: 6.1,
 	slidesToScroll: 2,
 	responsive: [
+    {
+      breakpoint: 2481,
+      settings: {
+        slidesToShow: 8.2,
+      }
+    },
+    {
+      breakpoint: 2228,
+      settings: {
+        slidesToShow: 7.9,
+      }
+    },
+    {
+      breakpoint: 1710,
+      settings: {
+        slidesToShow: 7.7,
+      }
+    },
+
+    {
+      breakpoint: 1665,
+      settings: {
+        slidesToShow: 7.5,
+      }
+    },
+    {
+      breakpoint: 1590,
+      settings: {
+        slidesToShow: 7.4,
+      }
+    },
+    {
+      breakpoint: 1540,
+      settings: {
+        slidesToShow: 7.2,
+      }
+    },
+
+    {
+      breakpoint: 1500,
+      settings: {
+        slidesToShow: 7.4,
+      }
+    },
+
+    {
+      breakpoint: 1400,
+      settings: {
+        slidesToShow: 7,
+      }
+    },
+    {
+      breakpoint: 1300,
+      settings: {
+        slidesToShow: 6.1,
+      }
+    },
+   
+
 	    {
 	      breakpoint: 1200,
 	      settings: {
-	        slidesToShow: 5.5,
+	        slidesToShow: 5.6,
 	      }
 	    },
 
@@ -61,50 +122,56 @@ $('.single-item').slick({
       {
 	      breakpoint: 1000,
 	      settings: {
-	        slidesToShow: 6,
+	        slidesToShow: 4.8,
 	      }
 	    },
 
       {
 	      breakpoint: 900,
 	      settings: {
-	        slidesToShow: 5.3,
+	        slidesToShow: 4.3,
 	      }
 	    },
       {
 	      breakpoint: 800,
 	      settings: {
-	        slidesToShow: 4.8,
+	        slidesToShow: 4,
 	      }
 	    },
       {
-	      breakpoint: 700,
-	      settings: {
-	        slidesToShow: 4.5,
-	      }
-	    },
-      {
-	      breakpoint: 650,
-	      settings: {
-	        slidesToShow: 4.2,
-	      }
-	    },
-      {
-	      breakpoint: 600,
+	      breakpoint: 750,
 	      settings: {
 	        slidesToShow: 3.8,
 	      }
 	    },
       {
-	      breakpoint: 550,
+	      breakpoint: 700,
 	      settings: {
 	        slidesToShow: 3.6,
 	      }
 	    },
       {
+	      breakpoint: 650,
+	      settings: {
+	        slidesToShow: 3.4,
+	      }
+	    },
+      {
+	      breakpoint: 600,
+	      settings: {
+	        slidesToShow: 3,
+	      }
+	    },
+      {
+	      breakpoint: 550,
+	      settings: {
+	        slidesToShow: 2.7,
+	      }
+	    },
+      {
 	      breakpoint: 500,
 	      settings: {
-	        slidesToShow: 3.3,
+	        slidesToShow: 2.6,
 	      }
 	    },
 
@@ -150,19 +217,84 @@ $('.single-item2').slick({
    slidesToShow: 5.3,
    slidesToScroll: 1,
    responsive: [
-       {
-         breakpoint: 1200,
-         settings: {
-           slidesToShow: 5.5,
-         }
-       },
+    {
+      breakpoint: 2481,
+      settings: {
+        slidesToShow: 8.2,
+      }
+    },
+    {
+      breakpoint: 2228,
+      settings: {
+        slidesToShow: 7.7,
+      }
+      
+    },
+    {
+      breakpoint: 2011,
+      settings: {
+        slidesToShow: 6.4,
+      }
+      
+    },
+    {
+      breakpoint: 1710,
+      settings: {
+        slidesToShow: 6.2,
+      }
+    },
 
-       {
-        breakpoint: 1190,
-        settings: {
-          slidesToShow: 4.5,
-        }
-      },
+    {
+      breakpoint: 1665,
+      settings: {
+        slidesToShow: 6,
+      }
+    },
+    {
+      breakpoint: 1590,
+      settings: {
+        slidesToShow: 5.9,
+      }
+    },
+    {
+      breakpoint: 1540,
+      settings: {
+        slidesToShow: 5.8,
+      }
+    },
+
+    {
+      breakpoint: 1500,
+      settings: {
+        slidesToShow: 5.7,
+      }
+    },
+
+    {
+      breakpoint: 1400,
+      settings: {
+        slidesToShow: 5.5,
+      }
+    },
+    {
+      breakpoint: 1300,
+      settings: {
+        slidesToShow: 5.6,
+      }
+    },
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 5.4,
+      }
+    },
+
+    {
+     breakpoint: 1190,
+     settings: {
+       slidesToShow: 5.1,
+     }
+   },
  
        {
          breakpoint: 1130,
@@ -246,16 +378,81 @@ $('.single-item2').slick({
    slidesToScroll: 1,
    responsive: [
     {
-      breakpoint: 1200,
+      breakpoint: 2481,
+      settings: {
+        slidesToShow: 8.2,
+      }
+    },
+    {
+      breakpoint: 2228,
+      settings: {
+        slidesToShow: 7.7,
+      }
+      
+    },
+    {
+      breakpoint: 2011,
+      settings: {
+        slidesToShow: 6.4,
+      }
+      
+    },
+    {
+      breakpoint: 1710,
+      settings: {
+        slidesToShow: 6.2,
+      }
+    },
+
+    {
+      breakpoint: 1665,
+      settings: {
+        slidesToShow: 6,
+      }
+    },
+    {
+      breakpoint: 1590,
+      settings: {
+        slidesToShow: 5.9,
+      }
+    },
+    {
+      breakpoint: 1540,
+      settings: {
+        slidesToShow: 5.8,
+      }
+    },
+
+    {
+      breakpoint: 1500,
+      settings: {
+        slidesToShow: 5.7,
+      }
+    },
+
+    {
+      breakpoint: 1400,
       settings: {
         slidesToShow: 5.5,
+      }
+    },
+    {
+      breakpoint: 1300,
+      settings: {
+        slidesToShow: 5.6,
+      }
+    },
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 5.4,
       }
     },
 
     {
      breakpoint: 1190,
      settings: {
-       slidesToShow: 4.5,
+       slidesToShow: 5.1,
      }
    },
 
