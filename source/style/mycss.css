@@ -217,6 +217,25 @@ h4{
    -1px 0px 0 #000000,
     0px -1px 0 #000000;
 }
+.card.full-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Выравнивает содержимое по левому краю */
+  }
+  
+  .card-body {
+    padding: 6px; /* Убирает внутренние отступы */
+    text-align: left;
+    width: 100%; /* Занимает всю ширину карточки */
+  }
+  
+  #card-tex {
+    display: block;
+    width: 80%;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
 
 #nav-menu li a {
    
@@ -701,7 +720,501 @@ footer {
         width: 95px; /* Расширение контейнера влево */
     }
 }
-@media screen and (max-width: 929px) {
+@media (max-width: 2480px) {
+    .all-film{
+        margin-left: 100px !important;
+       
+    }
+    .all-flim-img{
+        
+        width: 140%;
+        height: 100%;
+    }
+    .card-img-top {
+     
+        width: 140%;
+        height: 100%;
+       }
+    .sirials-watch-img{
+        width: 168% !important;
+        height: 10em !important; 
+    }
+}
+
+@media (max-width: 2228px) {
+    .all-film{
+        margin-left: 80px !important;
+       
+    }
+    .all-flim-img{
+        
+        width: 130%;
+        height: 100%;
+    }
+    .card-img-top {
+     
+        width: 130%;
+        height: 100%;
+       }
+       .sirials-watch-img{
+        width: 158% !important;
+        height: 10em !important; 
+    }
+}
+
+@media (max-width: 2011px) {
+    .all-film{
+        margin-left: 70px !important;
+       
+    }
+    .all-flim-img{
+        
+        width: 120%;
+        height: 100%;
+    }
+    .card-img-top {
+     
+        width: 120%;
+        height: 100%;
+       }
+       .sirials-watch-img{
+        width: 148% !important;
+        height: 10em !important; 
+    }
+}
+
+@media (max-width: 1848px) {
+    .all-film{
+        margin-left: 60px !important;
+       
+    }
+    .all-flim-img{
+        
+        width: 110%;
+        height: 100%;
+    }
+    .card-img-top {
+     
+        width: 110%;
+        height: 100%;
+       }
+       .sirials-watch-img{
+        width: 138% !important;
+        height: 10em !important; 
+    }
+}
+
+@media (max-width: 1705px) {
+    .all-film{
+        margin-left: 50px !important;
+       
+    }
+    .all-flim-img{
+        
+        width: 110%;
+        height: 100%;
+    }
+    .sirials-watch-img{
+        width: 138% !important;
+        height: 10em !important; 
+    }
+}
+
+@media (max-width: 1665px) {
+    .all-film{
+        margin-left: 40px !important;
+       
+    }
+    .all-flim-img{
+        
+        width: 110%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 1630px) {
+    .all-film{
+        margin-left: 35px !important;
+       
+    }
+    .all-flim-img{
+        
+        width: 105%;
+        height: 100%;
+    }
+}
+.sirials-watch-img{
+    width: 133% !important;
+    height: 9em !important; 
+}
+
+@media (max-width: 1580px) {
+    .all-film{
+        margin-left: 30px !important;
+       
+    }
+    .all-flim-img{
+        
+        width: 103%;
+        height: 100%;
+    }
+    .sirials-watch-img{
+        width: 131% !important;
+        height: 9em !important; 
+    }
+}
+
+@media (max-width: 1550px) {
+    .all-film{
+        margin-left: 30px !important;
+       
+    }
+    .all-flim-img{
+        
+        width: 101%;
+        height: 100%;
+    }
+    .sirials-watch-img{
+        width: 129% !important;
+        height: 9em !important; 
+    }
+}
+
+@media (max-width: 1500px) {
+    .all-film{
+        margin-left: 50px !important;
+       
+    }
+    .all-flim-img{
+        
+        width: 100%;
+        height: 100%;
+    }
+    .card-img-top {
+     
+        width: 101%;
+        height: 100%;
+       }
+       .sirials-watch-img{
+        width: 129% !important;
+        height: 100% !important; 
+    }
+}
+
+@media (max-width: 1470px) {
+    .all-film{
+        margin-left: 50px !important;
+       
+    }
+    .all-flim-img{
+        
+        width: 98%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 1455px) {
+    .all-film{
+        margin-left: 50px !important;
+       
+    }
+    .all-flim-img{
+        
+        width: 96%;
+        height: 100%;
+    }
+    .card-img-top {
+     
+        width: 99%;
+        height: 100%;
+       }
+}
+
+@media (max-width: 1425px) {
+    .all-film{
+        margin-left: 50px !important;
+       
+    }
+    .all-flim-img{
+        
+        width: 94%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 1400px) {
+    .all-film{
+        margin-left: 40px !important;
+       
+    }
+    .all-flim-img{
+        
+        width: 92%;
+        height: 100%;
+    }
+    .card-img-top {
+     
+        width: 99%;
+        height: 100%;
+       }
+}
+.sirials-watch-img{
+    width: 120% !important;
+    height: 100% !important; 
+}
+
+@media (max-width: 1370px) {
+    .all-film{
+        margin-left: 40px !important;
+       
+    }
+    .all-flim-img{
+        
+        width: 90%;
+        height: 100%;
+    }
+    .card-img-top {
+     
+        width: 98%;
+        height: 100%;
+       }
+       .sirials-watch-img{
+        width: 118% !important;
+        height: 100% !important; 
+    }
+}
+
+@media (max-width: 1340px) {
+    .all-film{
+        margin-left: 40px !important;
+       
+    }
+    .all-flim-img{
+        
+        width: 88%;
+        height: 100%;
+    }
+    .card-img-top {
+     
+        width: 97%;
+        height: 100%;
+       }
+       .sirials-watch-img{
+        width: 116% !important;
+        height: 100% !important; 
+    }
+}
+
+@media screen and (max-width: 1320px) {
+    .all-film{
+        margin-left: 10px !important;
+       
+    }
+    
+  
+    .all-flim-img{
+        width: 97%;
+        height: 100%;
+    }
+    .card-img-top {
+     
+        width: 96%;
+        height: 100%;
+       }
+       .sirials-watch-img{
+        width: 114% !important;
+        height: 100% !important; 
+    }
+    
+}
+
+@media screen and (max-width: 1290px) {
+    .all-film{
+        margin-left: 10px !important;
+       
+    }
+    
+  
+    .all-flim-img{
+        width: 92%;
+        height: 100%;
+    }
+    .card-img-top {
+     
+        width: 100%;
+        height: 100%;
+       }
+}
+@media screen and (max-width: 1260px) {
+    .all-film{
+        margin-left: 10px !important;
+       
+    }
+    
+  
+    .all-flim-img{
+        width: 91%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 1230px) {
+    .all-film{
+        margin-left: 10px !important;
+       
+    }
+    
+  
+    .all-flim-img{
+        width: 90%;
+        height: 100%;
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    .all-film{
+        margin-left: 10px !important;
+       
+    }
+    
+  
+    .all-flim-img{
+        width: 89%;
+        height: 100%;
+    }
+}
+
+
+@media screen and (max-width: 1170px) {
+    .all-film{
+        margin-left: 10px !important;
+       
+    }
+    
+  
+    .all-flim-img{
+        width: 87%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 1140px) {
+    .all-film{
+        margin-left: 10px !important;
+       
+    }
+    
+  
+    .all-flim-img{
+        width: 85%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 1110px) {
+    .all-film{
+        margin-left: 10px !important;
+       
+    }
+    
+  
+    .all-flim-img{
+        width: 83%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 1070px) {
+    
+    
+   
+    .all-flim-img{
+        width: 80%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    
+    
+     
+    
+    .all-flim-img{
+        width: 78%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 1030px) {
+    
+    
+   
+    .all-flim-img{
+        width: 77%;
+        height: 100%;
+    }
+}
+@media screen and (max-width: 1025px) {
+    
+    
+   
+    .all-flim-img{
+        width: 76.5%;
+        height: 100%;
+    }
+}
+@media screen and (max-width: 1010px) {
+    
+    
+   
+    .all-flim-img{
+        width: 76%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    
+    
+    .all-film{
+        margin-left: 8px !important;
+       
+    }
+    .all-flim-img{
+        width: 75%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 970px) {
+    
+    
+    .all-film{
+        margin-left: 5px !important;
+       
+    }
+    .all-flim-img{
+        width: 74%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    
+    
+    .all-film{
+        margin-left: 5px !important;
+       
+    }
+    .all-flim-img{
+        width: 73%;
+        height: 100%;
+    }
+}
+
+
+@media screen and (max-width: 930px) {
     
     
     .all-film{
@@ -769,6 +1282,15 @@ footer {
     
     .all-flim-img{
         width: 61%;
+        height: 100%;
+    }
+}
+@media screen and (max-width: 780px) {
+    
+    
+    
+    .all-flim-img{
+        width: 59%;
         height: 100%;
     }
 }
@@ -1183,5 +1705,12 @@ footer {
     .col-4 {
       flex: 0 0 16.66%;
       max-width: 16.66%;
+    }
+  }
+
+  @media (min-width: 1321px) and (max-width: 2480px) {
+    .col-4 {
+      flex: 0 0 13.32%;
+      max-width: 13.32%;
     }
   }
