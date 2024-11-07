@@ -30,8 +30,23 @@ document.addEventListener("DOMContentLoaded", function () {
       }
   });
 });
+// кнопка ещё
+document.getElementById("show-more-btn").addEventListener("click", function() {
+  // Находим все скрытые карточки
+  const hiddenCards = document.querySelectorAll(".card-container.hidden");
+  hiddenCards.forEach((card, index) => {
+      // Показываем определенное количество карточек
+      if (index < 6) {
+          card.classList.remove("hidden");
+      }
+  });
 
-
+  // Если больше нет скрытых карточек, скрываем кнопку
+  if (document.querySelectorAll(".card-container.hidden").length === 0) {
+      document.getElementById("show-more-btn").style.display = "none";
+  }
+});
+// конец
 
 
 
