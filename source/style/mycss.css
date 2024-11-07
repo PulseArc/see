@@ -204,6 +204,7 @@ h4{
     display: block; /* Делаем ссылку блочным элементом для полной ширины */
     width: 100%; /* Устанавливаем ширину ссылки на 100% */
     transition: color 0.5s;
+    
 }
 
 #card-tex:hover {
@@ -287,17 +288,31 @@ h4{
     max-width: 20%;
 }
 
+.soon {
+   margin-left: 5px;
+    overflow: hidden;
+    border-radius: 20px ; /* Настройте радиус по своему усмотрению */
+    display: block; /* Изменяем поведение на блочное */
+    
+    
+}
 
-.btn-outline-light:hover {
-    transform: scale(1.06); /* Увеличение изображения на 5% при наведении */
-   
-    border-color:  #b22222; /* Подсвечивание бордера красным */
-border-width: 1.5px;
+.soon:hover{
+    transform: scale(1.01);
+    padding: 2px;
+    border-color: #b22222;
+    overflow: hidden; /* Ограничивает видимость содержимого */
+    border-radius: 20px; /* Повторно добавьте радиус для эффекта на hover */
+    
+}
+.soon-text{
+    
+    margin-left: 30px;
 }
 
 footer {
-   
-    background: linear-gradient(270deg, #512b5f 0%, #292929 100%);
+    border-top: 2px solid #414141;;
+    background: black;
 }
 
 .footer-text{
@@ -1282,7 +1297,13 @@ footer {
 }
 
 @media screen and (max-width: 802px) {
-    
+    #card-tex {
+        display: block;
+        width: 50%;
+        white-space: normal;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
     
     
     .all-flim-img{
