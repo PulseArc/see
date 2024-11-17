@@ -47,7 +47,73 @@ document.getElementById("show-more-btn").addEventListener("click", function() {
   }
 });
 // конец
+// кнопка ещё
+document.getElementById("show-more-btn1").addEventListener("click", function() {
+  // Находим все скрытые карточки
+  const hiddenCards = document.querySelectorAll(".card-container1.hidden");
+  hiddenCards.forEach((card, index) => {
+      // Показываем определенное количество карточек
+      if (index < 6) {
+          card.classList.remove("hidden");
+      }
+  });
 
+  // Если больше нет скрытых карточек, скрываем кнопку
+  if (document.querySelectorAll(".card-container.hidden").length === 0) {
+      document.getElementById("show-more-btn").style.display = "none";
+  }
+});
+// конец
+// кнопка ещё
+document.getElementById("show-more-btn2").addEventListener("click", function() {
+  // Находим все скрытые карточки
+  const hiddenCards = document.querySelectorAll(".card-container2.hidden");
+  hiddenCards.forEach((card, index) => {
+      // Показываем определенное количество карточек
+      if (index < 6) {
+          card.classList.remove("hidden");
+      }
+  });
+
+  // Если больше нет скрытых карточек, скрываем кнопку
+  if (document.querySelectorAll(".card-container.hidden").length === 0) {
+      document.getElementById("show-more-btn").style.display = "none";
+  }
+});
+// конец
+
+// ссылки и блоб на фильмы
+
+      document.addEventListener("DOMContentLoaded", function() {
+      const videos = document.querySelectorAll('.hls-video');
+      
+      videos.forEach(video => {
+        video.addEventListener('click', function initializeVideo() {
+          const src = video.getAttribute('data-src');
+          
+          if (src) {
+            fetch(src)
+              .then(response => response.blob())
+              .then(blob => {
+                const blobUrl = URL.createObjectURL(blob); // Создаем Blob URL
+
+                if (Hls.isSupported()) {
+                  const hls = new Hls();
+                  hls.loadSource(blobUrl); // Загружаем Blob-URL как источник HLS
+                  hls.attachMedia(video);
+                } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                  video.src = blobUrl;
+                }
+
+                video.removeEventListener('click', initializeVideo);
+              })
+              .catch(error => console.error('Ошибка при загрузке видео:', error));
+          }
+        });
+      });
+    });
+    
+// конец
 
 
 
