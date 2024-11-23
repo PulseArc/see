@@ -1,5 +1,36 @@
 
 
+
+
+
+// Находим элементы
+const searchInput = document.getElementById('search');
+const resultsContainer = document.getElementById('results-container');
+
+// Событие ввода текста в поле поиска
+searchInput.addEventListener('input', () => {
+  const query = searchInput.value.trim(); // Получаем текст из поля поиска
+  
+  if (query.length > 0) {
+    // Показываем контейнер с результатами, если есть текст
+    resultsContainer.style.display = 'block';
+    
+    // Можно добавить сюда логику обновления содержимого результатов
+    const updateContainer = document.getElementById('update');
+    updateContainer.innerHTML = `<p>Результаты для: "${query}"</p>`;
+  } else {
+    // Скрываем контейнер, если поле ввода пустое
+    resultsContainer.style.display = 'none';
+  }
+});
+
+
+
+
+
+
+
+
 const menuToggle = document.querySelector('#menuToggle input');
 const searchWrapper = document.querySelector('.search-wrapper');
 
@@ -122,11 +153,13 @@ document.getElementById("show-more-btn2").addEventListener("click", function() {
 
 
 $('.single-item').slick({
- infinite: true,
-	dots: true,
-	slidesToShow: 6.1,
-	slidesToScroll: 2,
-	responsive: [
+  infinite: true, // Бесконечная прокрутка
+  dots: true, // Точки навигации
+  slidesToShow: 6.1, // Показываем 5.3 слайда
+  slidesToScroll: 2, // Прокручиваем минимум 1 слайд
+  swipeToSlide: true, // Плавный переход при свайпе или скролле
+  touchThreshold: 10, // Настройка для длинного свайпа
+  responsive: [
     {
       breakpoint: 2481,
       settings: {
@@ -293,11 +326,13 @@ $('.single-item').slick({
 
 
 $('.single-item2').slick({
-  infinite: true,
-   dots: true,
-   slidesToShow: 5.3,
-   slidesToScroll: 1,
-   responsive: [
+  infinite: true, // Бесконечная прокрутка
+  dots: true, // Точки навигации
+  slidesToShow: 5.3, // Показываем 5.3 слайда
+  slidesToScroll: 1, // Прокручиваем минимум 1 слайд
+  swipeToSlide: true, // Плавный переход при свайпе или скролле
+  touchThreshold: 10, // Настройка для длинного свайпа
+  responsive: [
     {
       breakpoint: 2481,
       settings: {
@@ -453,11 +488,13 @@ $('.single-item2').slick({
  });
 
  $('.single-item3').slick({
-  infinite: true,
-   dots: true,
-   slidesToShow: 5.3,
-   slidesToScroll: 1,
-   responsive: [
+  infinite: true, // Бесконечная прокрутка
+  dots: true, // Точки навигации
+  slidesToShow: 5.3, // Показываем 5.3 слайда
+  slidesToScroll: 1, // Прокручиваем минимум 1 слайд
+  swipeToSlide: true, // Плавный переход при свайпе или скролле
+  touchThreshold: 10, // Настройка для длинного свайпа
+  responsive: [
     {
       breakpoint: 2481,
       settings: {
@@ -613,11 +650,13 @@ $('.single-item2').slick({
  });
 
  $('.single-item4').slick({
-  infinite: true,
-   dots: true,
-   slidesToShow: 6.1,
-   slidesToScroll: 1,
-   responsive: [
+  infinite: true, // Бесконечная прокрутка
+  dots: true, // Точки навигации
+  slidesToShow: 6.1, // Показываем 5.3 слайда
+  slidesToScroll: 1, // Прокручиваем минимум 1 слайд
+  swipeToSlide: true, // Плавный переход при свайпе или скролле
+  touchThreshold: 10, // Настройка для длинного свайпа
+  responsive: [
     {
       breakpoint: 2481,
       settings: {
