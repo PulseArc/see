@@ -6,6 +6,8 @@
 // Находим элементы
 const searchInput = document.getElementById('search');
 const resultsContainer = document.getElementById('results-container');
+const menuToggle = document.querySelector('#menuToggle input');
+const searchWrapper = document.querySelector('.search-wrapper');
 
 // Событие ввода текста в поле поиска
 searchInput.addEventListener('input', () => {
@@ -15,32 +17,30 @@ searchInput.addEventListener('input', () => {
     // Показываем контейнер с результатами, если есть текст
     resultsContainer.style.display = 'block';
     
-    // Можно добавить сюда логику обновления содержимого результатов
+    // Логика обновления содержимого результатов
     const updateContainer = document.getElementById('update');
     updateContainer.innerHTML = `<p>Результаты для: "${query}"</p>`;
+    
+    // Прокрутка страницы вверх
+    window.scrollTo({
+      top: 0, // Начало страницы
+      behavior: 'smooth' // Плавная прокрутка
+    });
   } else {
     // Скрываем контейнер, если поле ввода пустое
     resultsContainer.style.display = 'none';
   }
 });
 
-
-
-
-
-
-
-
-const menuToggle = document.querySelector('#menuToggle input');
-const searchWrapper = document.querySelector('.search-wrapper');
-
+// Событие переключения меню
 menuToggle.addEventListener('change', () => {
-    if (menuToggle.checked) {
-        searchWrapper.classList.add('hidden'); // Применяем класс для скрытия
-    } else {
-        searchWrapper.classList.remove('hidden'); // Убираем класс для показа
-    }
+  if (menuToggle.checked) {
+    searchWrapper.classList.add('hidden'); // Применяем класс для скрытия
+  } else {
+    searchWrapper.classList.remove('hidden'); // Убираем класс для показа
+  }
 });
+
 
 
 
@@ -62,53 +62,93 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 // кнопка ещё
-document.getElementById("show-more-btn").addEventListener("click", function() {
-  // Находим все скрытые карточки
+document.getElementById("show-more-btn").addEventListener("click", function () {
+  const button = this;
   const hiddenCards = document.querySelectorAll(".card-container.hidden");
-  hiddenCards.forEach((card, index) => {
-      // Показываем определенное количество карточек
-      if (index < 6) {
-          card.classList.remove("hidden");
-      }
-  });
+  const allCards = document.querySelectorAll(".card-container");
 
-  // Если больше нет скрытых карточек, скрываем кнопку
-  if (document.querySelectorAll(".card-container.hidden").length === 0) {
-      document.getElementById("show-more-btn").style.display = "none";
+  if (button.textContent === "Ещё") {
+      // Показать до 6 карточек
+      hiddenCards.forEach((card, index) => {
+          if (index < 6) {
+              card.classList.remove("hidden");
+          }
+      });
+
+      // Проверяем, есть ли ещё скрытые карточки
+      if (document.querySelectorAll(".card-container.hidden").length === 0) {
+          button.textContent = "Скрыть"; // Меняем текст на "Скрыть"
+      }
+  } else {
+      // Скрыть все карточки, кроме первых 6
+      allCards.forEach((card, index) => {
+          if (index >= 0) {
+              card.classList.add("hidden");
+          }
+      });
+
+      button.textContent = "Ещё"; // Меняем текст на "Ещё"
   }
 });
+
 // конец
 // кнопка ещё
-document.getElementById("show-more-btn1").addEventListener("click", function() {
-  // Находим все скрытые карточки
+document.getElementById("show-more-btn1").addEventListener("click", function () {
+  const button = this;
   const hiddenCards = document.querySelectorAll(".card-container1.hidden");
-  hiddenCards.forEach((card, index) => {
-      // Показываем определенное количество карточек
-      if (index < 6) {
-          card.classList.remove("hidden");
-      }
-  });
+  const allCards = document.querySelectorAll(".card-container1");
 
-  // Если больше нет скрытых карточек, скрываем кнопку
-  if (document.querySelectorAll(".card-container.hidden").length === 0) {
-      document.getElementById("show-more-btn").style.display = "none";
+  if (button.textContent === "Ещё") {
+      // Показать до 6 карточек
+      hiddenCards.forEach((card, index) => {
+          if (index < 6) {
+              card.classList.remove("hidden");
+          }
+      });
+
+      // Проверяем, есть ли ещё скрытые карточки
+      if (document.querySelectorAll(".card-container1.hidden").length === 0) {
+          button.textContent = "Скрыть"; // Меняем текст на "Скрыть"
+      }
+  } else {
+      // Скрыть все карточки, кроме первых 6
+      allCards.forEach((card, index) => {
+          if (index >= 0) {
+              card.classList.add("hidden");
+          }
+      });
+
+      button.textContent = "Ещё"; // Меняем текст на "Ещё"
   }
 });
 // конец
 // кнопка ещё
-document.getElementById("show-more-btn2").addEventListener("click", function() {
-  // Находим все скрытые карточки
+document.getElementById("show-more-btn2").addEventListener("click", function () {
+  const button = this;
   const hiddenCards = document.querySelectorAll(".card-container2.hidden");
-  hiddenCards.forEach((card, index) => {
-      // Показываем определенное количество карточек
-      if (index < 6) {
-          card.classList.remove("hidden");
-      }
-  });
+  const allCards = document.querySelectorAll(".card-container2");
 
-  // Если больше нет скрытых карточек, скрываем кнопку
-  if (document.querySelectorAll(".card-container.hidden").length === 0) {
-      document.getElementById("show-more-btn").style.display = "none";
+  if (button.textContent === "Ещё") {
+      // Показать до 6 карточек
+      hiddenCards.forEach((card, index) => {
+          if (index < 6) {
+              card.classList.remove("hidden");
+          }
+      });
+
+      // Проверяем, есть ли ещё скрытые карточки
+      if (document.querySelectorAll(".card-container2.hidden").length === 0) {
+          button.textContent = "Скрыть"; // Меняем текст на "Скрыть"
+      }
+  } else {
+      // Скрыть все карточки, кроме первых 6
+      allCards.forEach((card, index) => {
+          if (index >= 0) {
+              card.classList.add("hidden");
+          }
+      });
+
+      button.textContent = "Ещё"; // Меняем текст на "Ещё"
   }
 });
 // конец
