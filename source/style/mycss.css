@@ -267,7 +267,7 @@ h4{
     transition: transform 0.3s ease, filter 0.3s ease; /* Плавный переход для анимации */
 }
 
-.card:hover .card-img-top {
+.card:hover .card-img-top  {
     transform: scale(1.06); /* Увеличение изображения на 5% при наведении */
     padding: 2px;
     border-color: #b22222; /* Подсвечивание бордера красным */
@@ -276,7 +276,30 @@ h4{
     margin-top: 3px;
 
 }
+.span-rating{
+    margin-left: 5px;
+}
+.card-rating {
+    color: #ffffff;
+    
+    background: rgba(0, 0, 0, 0.5);
+    font-size: 1em;
+    font-weight: 700;
+    font-weight: 700;
+    padding: 0.2em  0.4em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    border-radius: 1em;
+    text-decoration: none;
+    display: block;
+    width: 23%; /* Ширина текста совпадает с контейнером */
+    transition: color 0.5s;
+    position: absolute; /* Фиксируем текст на месте */
+    top: 8px; /* Расположение от нижнего края */
+    left: 5px; /* Расположение от левого края */
+    z-index: 10; /* Чтобы текст был выше изображения */
 
+}
 
 .card-tex  {
    color:#dad6d6;
@@ -313,6 +336,7 @@ h4{
   }
   
   .card-tex {
+    
     display: block;
     width: 80%;
     white-space: normal;
