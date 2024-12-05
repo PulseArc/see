@@ -253,6 +253,28 @@ h4{
     
 }
 
+.show-all {
+    margin-right: 8vh; /* Сдвигает элемент вправо */
+   
+}
+.show-all-link{
+    text-decoration: none; /* Убирает подчеркивание */
+    color: inherit;
+    font-size: 1.2rem;
+}
+.show-all-link:visited, .show-all-link:hover, .show-all-link:active {
+    color: inherit;         /* Оставляет тот же цвет для посещенной, активной и при наведении */
+}
+.btn-show-all{
+   
+    border-radius: 10px; /* Плавные округлые углы */
+    padding: 8px; /* Отступы внутри элемента */
+    padding-bottom: 2px;
+    padding-top: 2px;
+
+    
+    transition: all 0.3s ease; /
+}
 .card {
     
     width: 12rem;
@@ -757,6 +779,10 @@ footer {
     h4{
         margin-left: 2vh;
     }
+    .show-all {
+        margin-right: 3vh; /* Сдвигает элемент вправо */
+       
+    }
     
     .navbar-brand{
         margin-left: -6vh;
@@ -791,7 +817,7 @@ footer {
     
         
     .search-wrapper{
-        margin-right: 3vh;
+        margin-right: 0vh;
     }
         .search-wrapper:hover .search-container {
             width: 200px !important; /* Расширение контейнера влево */
@@ -970,8 +996,13 @@ footer {
 /* конец */
    
 }
-
-
+@media screen and (max-width: 989px) {
+    
+        
+    .search-wrapper{
+        margin-right: 3vh;
+    }
+}
   
 
 @media screen and (max-width: 1000px) {
@@ -1916,7 +1947,7 @@ footer {
 
 @media (max-width: 400px) { /* Для экранов меньше 600px */
     .search-wrapper {
-        right: 12%; /* Уменьшите значение */
+        right: 13%; /* Уменьшите значение */
     }
 }
 
