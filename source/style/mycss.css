@@ -322,7 +322,9 @@ h4{
     z-index: 10; /* Чтобы текст был выше изображения */
 
 }
-
+.year{
+    font-size: 0.9em;
+}
 .card-tex  {
    color:#dad6d6;
     text-decoration: none;
@@ -1970,7 +1972,7 @@ footer {
   }
   
   /* Для экранов от 401px до 992px показываем 5 карт */
-  @media (min-width: 580px) and (max-width: 991px) {
+  @media (min-width: 580px) and (max-width: 992px) {
     .col-4 {
       flex: 0 0 20%;
       max-width: 20%;
