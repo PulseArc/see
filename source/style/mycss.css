@@ -276,7 +276,7 @@ h4{
     transition: all 0.3s ease; /
 }
 .card {
-    
+    z-index: 1;
     width: 12rem;
     overflow: visible !important; /* Позволяет изображению выходить за пределы карточки */
 }
@@ -817,7 +817,7 @@ footer {
     
         
     .search-wrapper{
-        margin-right: 0vh;
+        margin-right: 3vh;
     }
         .search-wrapper:hover .search-container {
             width: 200px !important; /* Расширение контейнера влево */
@@ -955,6 +955,7 @@ footer {
     
     
     
+    
 }
 
 
@@ -996,13 +997,7 @@ footer {
 /* конец */
    
 }
-@media screen and (max-width: 989px) {
-    
-        
-    .search-wrapper{
-        margin-right: 3vh;
-    }
-}
+
   
 
 @media screen and (max-width: 1000px) {
