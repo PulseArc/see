@@ -70,7 +70,7 @@ document.getElementById("show-more-btn").addEventListener("click", function () {
   if (button.textContent === "Ещё") {
       // Показать до 6 карточек
       hiddenCards.forEach((card, index) => {
-          if (index < 6) {
+          if (index < 24) {
               card.classList.remove("hidden");
           }
       });
@@ -92,66 +92,7 @@ document.getElementById("show-more-btn").addEventListener("click", function () {
 });
 
 // конец
-// кнопка ещё
-document.getElementById("show-more-btn1").addEventListener("click", function () {
-  const button = this;
-  const hiddenCards = document.querySelectorAll(".card-container1.hidden");
-  const allCards = document.querySelectorAll(".card-container1");
 
-  if (button.textContent === "Ещё") {
-      // Показать до 6 карточек
-      hiddenCards.forEach((card, index) => {
-          if (index < 6) {
-              card.classList.remove("hidden");
-          }
-      });
-
-      // Проверяем, есть ли ещё скрытые карточки
-      if (document.querySelectorAll(".card-container1.hidden").length === 0) {
-          button.textContent = "Скрыть"; // Меняем текст на "Скрыть"
-      }
-  } else {
-      // Скрыть все карточки, кроме первых 6
-      allCards.forEach((card, index) => {
-          if (index >= 0) {
-              card.classList.add("hidden");
-          }
-      });
-
-      button.textContent = "Ещё"; // Меняем текст на "Ещё"
-  }
-});
-// конец
-// кнопка ещё
-document.getElementById("show-more-btn2").addEventListener("click", function () {
-  const button = this;
-  const hiddenCards = document.querySelectorAll(".card-container2.hidden");
-  const allCards = document.querySelectorAll(".card-container2");
-
-  if (button.textContent === "Ещё") {
-      // Показать до 6 карточек
-      hiddenCards.forEach((card, index) => {
-          if (index < 6) {
-              card.classList.remove("hidden");
-          }
-      });
-
-      // Проверяем, есть ли ещё скрытые карточки
-      if (document.querySelectorAll(".card-container2.hidden").length === 0) {
-          button.textContent = "Скрыть"; // Меняем текст на "Скрыть"
-      }
-  } else {
-      // Скрыть все карточки, кроме первых 6
-      allCards.forEach((card, index) => {
-          if (index >= 0) {
-              card.classList.add("hidden");
-          }
-      });
-
-      button.textContent = "Ещё"; // Меняем текст на "Ещё"
-  }
-});
-// конец
 
 // ссылки и блоб на фильмы
 
@@ -189,27 +130,17 @@ document.getElementById("show-more-btn2").addEventListener("click", function () 
 
 
 
-$(document).ready(function () {
-  let startX = 0;
-  let swipeDistance = 0;
+
 
 
 $('.single-item').slick({
   infinite: true, // Бесконечная прокрутка
   dots: true, // Точки навигации
-  autoplay: true, // Автоматическая прокрутка
-  autoplaySpeed: 2000,
-  pauseOnFocus: true,
-  pauseOnHover: true,
-  pauseOnDotsHover: true,
-  swipe: true,
-  touchThreshold: 10,
-  slidesToShow: 6.1,
-  slidesToScroll: 1,
-  waitForAnimate: false,
-  speed: 500,
-  touchMove: true,
-  responsive:  [
+  slidesToShow: 6.1, // Показываем 5.3 слайда
+  slidesToScroll: 2, // Прокручиваем минимум 1 слайд
+  swipeToSlide: true, // Плавный переход при свайпе или скролле
+  touchThreshold: 10, // Настройка для длинного свайпа
+  responsive: [
     {
       breakpoint: 2481,
       settings: {
@@ -371,48 +302,18 @@ $('.single-item').slick({
     ]
 });
 
-$('.single-item').on('touchstart', function (e) {
-  startX = e.originalEvent.touches[0].clientX;
-});
 
-// Завершаем свайп и обрабатываем длину
-$('.single-item').on('touchend', function (e) {
-  const endX = e.originalEvent.changedTouches[0].clientX;
-  swipeDistance = Math.abs(endX - startX);
 
-  const slider = $(this).slick('getSlick');
-
-  if (swipeDistance > 220) {
-    // Длинный свайп: сдвигаем на 5 слайдов
-    const direction = endX < startX ? 1 : -1; // Определяем направление свайпа
-    const nextSlide = slider.currentSlide + direction * 5; // Переход на 5 слайдов
-    slider.slickGoTo(nextSlide);
-  }
-});
-});
-// Конец
-
-$(document).ready(function () {
-  let startX = 0;
-  let swipeDistance = 0;
 
 
 $('.single-item2').slick({
   infinite: true, // Бесконечная прокрутка
   dots: true, // Точки навигации
-  autoplay: true, // Автоматическая прокрутка
-  autoplaySpeed: 1800,
-  pauseOnFocus: true,
-  pauseOnHover: true,
-  pauseOnDotsHover: true,
-  swipe: true,
-  touchThreshold: 10,
-  slidesToShow: 5.3,
-  slidesToScroll: 1,
-  waitForAnimate: false,
-  speed: 500,
-  touchMove: true,
-  responsive:  [
+  slidesToShow: 5.3, // Показываем 5.3 слайда
+  slidesToScroll: 1, // Прокручиваем минимум 1 слайд
+  swipeToSlide: true, // Плавный переход при свайпе или скролле
+  touchThreshold: 10, // Настройка для длинного свайпа
+  responsive: [
     {
       breakpoint: 2481,
       settings: {
@@ -567,38 +468,14 @@ $('.single-item2').slick({
      ]
  });
 
+ let startX = 0;
+let swipeDistance = 0;
 
-  // Начало свайпа
-  $('.single-item2').on('touchstart', function (e) {
-    startX = e.originalEvent.touches[0].clientX;
-  });
-
-  // Завершаем свайп и обрабатываем длину
-  $('.single-item2').on('touchend', function (e) {
-    const endX = e.originalEvent.changedTouches[0].clientX;
-    swipeDistance = Math.abs(endX - startX);
-
-    const slider = $(this).slick('getSlick');
-
-    if (swipeDistance > 220) {
-      // Длинный свайп: сдвигаем на 5 слайдов
-      const direction = endX < startX ? 1 : -1; // Определяем направление свайпа
-      const nextSlide = slider.currentSlide + direction * 5; // Переход на 5 слайдов
-      slider.slickGoTo(nextSlide);
-    }
-  });
-});
-//  Конец
- 
- $(document).ready(function () {
-  let startX = 0;
-  let swipeDistance = 0;
-
- $('.single-item3').slick({
+$('.single-item3').slick({
   infinite: true, // Бесконечная прокрутка
   dots: true, // Точки навигации
   autoplay: true, // Автоматическая прокрутка
-  autoplaySpeed: 2200,
+  autoplaySpeed: 1800,
   pauseOnFocus: true,
   pauseOnHover: true,
   pauseOnDotsHover: true,
@@ -761,7 +638,8 @@ $('.single-item2').slick({
         slidesToShow: 1.5,
       }
     }
-  ]
+  ],
+  
  });
  $('.single-item3').on('touchstart', function (e) {
   startX = e.originalEvent.touches[0].clientX;
@@ -774,36 +652,22 @@ $('.single-item3').on('touchend', function (e) {
 
   const slider = $(this).slick('getSlick');
 
-  if (swipeDistance > 220) {
+  if (swipeDistance > 220) { 
     // Длинный свайп: сдвигаем на 5 слайдов
     const direction = endX < startX ? 1 : -1; // Определяем направление свайпа
     const nextSlide = slider.currentSlide + direction * 5; // Переход на 5 слайдов
     slider.slickGoTo(nextSlide);
   }
 });
-});
 
-// Конец
-
-$(document).ready(function () {
-  let startX = 0;
-  let swipeDistance = 0;
  $('.single-item4').slick({
-    infinite: true, // Бесконечная прокрутка
-    dots: true, // Точки навигации
-    autoplay: true, // Автоматическая прокрутка
-    autoplaySpeed: 2000,
-    pauseOnFocus: true,
-    pauseOnHover: true,
-    pauseOnDotsHover: true,
-    swipe: true,
-    touchThreshold: 10,
-    slidesToShow: 6.1,
-    slidesToScroll: 1,
-    waitForAnimate: false,
-    speed: 500,
-    touchMove: true,
-    responsive: [
+  infinite: true, // Бесконечная прокрутка
+  dots: true, // Точки навигации
+  slidesToShow: 6.1, // Показываем 5.3 слайда
+  slidesToScroll: 1, // Прокручиваем минимум 1 слайд
+  swipeToSlide: true, // Плавный переход при свайпе или скролле
+  touchThreshold: 10, // Настройка для длинного свайпа
+  responsive: [
     {
       breakpoint: 2481,
       settings: {
@@ -857,24 +721,3 @@ $(document).ready(function () {
   }
 ]
 });
-$('.single-item4').on('touchstart', function (e) {
-  startX = e.originalEvent.touches[0].clientX;
-});
-
-// Завершаем свайп и обрабатываем длину
-$('.single-item4').on('touchend', function (e) {
-  const endX = e.originalEvent.changedTouches[0].clientX;
-  swipeDistance = Math.abs(endX - startX);
-
-  const slider = $(this).slick('getSlick');
-
-  if (swipeDistance > 220) {
-    // Длинный свайп: сдвигаем на 5 слайдов
-    const direction = endX < startX ? 1 : -1; // Определяем направление свайпа
-    const nextSlide = slider.currentSlide + direction * 5; // Переход на 5 слайдов
-    slider.slickGoTo(nextSlide);
-  }
-});
-});
-
-// Конец
