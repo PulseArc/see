@@ -2,1082 +2,1289 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="source/style/mycss.css">
-    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
-    <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="source/style/mycss.css">
+  <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+  <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="source/files/favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="source/files/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="source/files/favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="source/files/favicon_io/site.webmanifest">
+  <link rel="apple-touch-icon" sizes="180x180" href="source/files/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="source/files/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="source/files/favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="source/files/favicon_io/site.webmanifest">
 
-    <title>Cinematic</title>
+  <title>Cinematic</title>
 </head>
 
 <body>
-    <header>
-        
-        
-        <div class="navbar-placeholder"></div>
-        <nav class="navbar  navbar-expand-lg bg-dark ">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="home.html"><img src="source/images/logo/cinematic.png" style="width: 150px; height: 50px;"
-                        alt="..."></a>
-                   
-            <div class="mobilescreen " >
-                <div title="Menu" id="menuToggle">
-                  
-                  <input type="checkbox">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                     <ul id="menu">
-                      <li>
-                        <img class="navbar-img  " src="source/images/logo/home.png" style="width: 25px; height: 25px; " alt="">
-                        <a href="#">Домой
-                        </a>
-                       </li>
-                       <li>
-                        <img class="navbar-img  " src="source/images/logo/плитка.png" style="width: 25px; height: 25px; " alt="">
-                        <a href="#">Каталог
-                       </a>
-                       </li>
-                       <li>
-                        <img class="navbar-img  " src="source/images/logo/movies.png" style="width: 25px; height: 25px; " alt="">
-                        <a href="#">Фильмы
-                       </a>
-                       </li>
-                          <li>
-                            <img class="navbar-img  " src="source/images/logo/сериалы.png" style="width: 25px; height: 25px; " alt="">
-                           <a href="#">Сериалы
-                           </a>
-                           
-                      </ul>
-                      
-                  </div>
-                  
-                </div>
-                
-                <div class="collapse navbar-collapse custom-navbar"  id="navbarNav">
-                    <ul class="navbar-nav mx-0" id="nav-menu">
-                        <li class="nav-item mx-4-5">
-                            <img class="navbar-img mt-2 " src="source/images/logo/home.png" style="width: 18px; height: 18px; " alt="">
-                            <a class="nav-link " aria-current="page" href="home.html">Домой</a>
-                        </li>
+  <header>
 
-                        <li class="nav-item mx-4-5">
-                            <img class="navbar-img mt-2 " src="source/images/logo/плитка.png" style="width: 18px; height: 18px; " alt="">
-                            <a class="nav-link"  href="pricing.html">Каталог</a>
-                        </li>
 
-                        <li class="nav-item mx-4-5">
-                            <img class="navbar-img mt-2 " src="source/images/logo/movies.png" style="width: 18px; height: 18px; " alt="">
-                            <a class="nav-link" href="pricing.html">Фильмы</a>
-                        </li>
+    <div class="navbar-placeholder"></div>
+    <nav class="navbar  navbar-expand-lg bg-dark ">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="home.html"><img src="source/images/logo/cinematic.png"
+            style="width: 150px; height: 50px;" alt="..."></a>
 
-                        <li class="nav-item mx-4-5">
-                            <img class="navbar-img mt-2 " src="source/images/logo/сериалы.png" style="width: 18px; height: 18px; " alt="">
-                            <a class="nav-link" href="pricing.html">Сериалы</a>
-                        </li>
-                        
-                        
-                        
-                        
-                    </div>
+        <div class="mobilescreen ">
+          <div title="Menu" id="menuToggle">
 
-                    </ul>
-                    
-                    
-                </div>
-            </div>
-            
-            <div class="search-wrapper">
-                <div class="search-container">
-                    <div class="search-icon">
-                        <img class="navbar-img  " src="source/images/logo/панель поиска.png" style="width: 20px; height: 20px; " alt="">
-                    </div>
-                    <input type="text" id="search" class="search-input" placeholder="Поиск...">
-                </div>
-        </nav>
-    </header>
+            <input type="checkbox">
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+              <li>
+                <img class="navbar-img  " src="source/images/logo/home.png" style="width: 25px; height: 25px; " alt="">
+                <a href="#">Домой
+                </a>
+              </li>
+              <li>
+                <img class="navbar-img  " src="source/images/logo/плитка.png" style="width: 25px; height: 25px; "
+                  alt="">
+                <a href="#">Каталог
+                </a>
+              </li>
+              <li>
+                <img class="navbar-img  " src="source/images/logo/movies.png" style="width: 25px; height: 25px; "
+                  alt="">
+                <a href="Все Фильмы.html">Фильмы
+                </a>
+              </li>
+              <li>
+                <img class="navbar-img  " src="source/images/logo/сериалы.png" style="width: 25px; height: 25px; "
+                  alt="">
+                <a href="Все Сериалы.html">Сериалы
+                </a>
 
-    <section>
-      <div class="container-fluid results-container " id="results-container">
+            </ul>
 
-        <div class="row">
-  
-          <h4 class="results-h4">Результаты поиска</h4>
-  
-          <div id="update" class="card-results">
           </div>
-  
+
         </div>
-  
+
+        <div class="collapse navbar-collapse custom-navbar" id="navbarNav">
+          <ul class="navbar-nav mx-0" id="nav-menu">
+            <li class="nav-item mx-4-5">
+              <img class="navbar-img mt-2 " src="source/images/logo/home.png" style="width: 18px; height: 18px; "
+                alt="">
+              <a class="nav-link " aria-current="page" href="home.html">Домой</a>
+            </li>
+
+            <li class="nav-item mx-4-5">
+              <img class="navbar-img mt-2 " src="source/images/logo/плитка.png" style="width: 18px; height: 18px; "
+                alt="">
+              <a class="nav-link" href="pricing.html">Каталог</a>
+            </li>
+
+            <li class="nav-item mx-4-5">
+              <img class="navbar-img mt-2 " src="source/images/logo/movies.png" style="width: 18px; height: 18px; "
+                alt="">
+              <a class="nav-link" href="Все Фильмы.html">Фильмы</a>
+            </li>
+
+            <li class="nav-item mx-4-5">
+              <img class="navbar-img mt-2 " src="source/images/logo/сериалы.png" style="width: 18px; height: 18px; "
+                alt="">
+              <a class="nav-link" href="Все Сериалы.html">Сериалы</a>
+            </li>
+
+
+
+
+        </div>
+
+        </ul>
+
+
+      </div>
       </div>
 
-      <div class="container-fluid content mt-4 ">
-        <div class="row">
-          <div class="container all-film Cartoon">
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="col-lg-3 ms-1 mb-4">
-                <h4>Все Фильмы</h4>
-              </div>
-              
+      <div class="search-wrapper">
+        <div class="search-container">
+          <div class="search-icon">
+            <img class="navbar-img  " src="source/images/logo/панель поиска.png" style="width: 20px; height: 20px; "
+              alt="">
+          </div>
+          <input type="text" id="search" class="search-input" placeholder="Поиск...">
+        </div>
+
+    </nav>
+  </header>
+
+  <section>
+    <div class="container-fluid results-container " id="results-container">
+
+      <div class="row">
+
+        <h4 class="results-h4">Результаты поиска</h4>
+
+        <div id="update" class="card-results">
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="container-fluid content mt-4 ">
+      <div class="row">
+        
+
+        <!-- основной экран -->
+        
+      </div>
+
+      <!-- что бы добавить карты товаров нужен container-fluid контейрен row -->
+      
+
+
+
+        <!-- популярные фильмы -->
+
+
+
+        <div class="container-fluid mt-2 g-0">
+          <div class="row">
+            <div class="col-lg-4 ">
+              <h4>Топ 10 фильмов</h4>
             </div>
 
-            <div class="row g-0">
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
-                <div class="card full-card" style="width: 12.35em;">
+            <!-- основной экран -->
+            <div class="slider slider-2 mt-2">
+              <div class="col-lg-12 col-md-12">
+                <div class="row ">
 
-                  <img src="https://image.tmdb.org/t/p/w500//6KvGEOCUBsgTUPkl1oWhH0Y3ePy.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.0</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Эмилия Перес <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//bSb3ynYHWJbXSSMRhblzrsgt1lO.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">5.8</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Спуск в бездну <br><span class="year">2023</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//ez9LtVmvfbWjX9Spx4DrNEFVErx.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.6</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Город тайн: Исчезнувшая <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//3TM9MzC1f6F3BwpPJhdv3hXWQRX.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.7</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Хитмен. Последнее дело <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//z497zVpHuGDQT4lBcHZcYdf6eDT.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">5.0</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Непробиваемые <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//8VQr2REac6qlshcQGBsmq5s4SiU.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.9</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Однажды в Ла-Рое <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//ltG6ypHUyPv3y4e4ZOxRumYwikV.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.6</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Охотники за привидениями: Леденящий ужас <br><span
-                        class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 ">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//3hbXNclcHaj5KiF6kK41GBMjyFr.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.8</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Дюна: «Час настал» <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
+                  <div class="slider  single-item3">
+                    <div class="col-lg-2 col-md-3 ">
+                      <div class="card " style="width: 12rem ">
+                        <img src="source/images/Побег из Шоушенка.jpg" class="card-img-top sirials-watch-img"
+                          style="width: 226px; height: 127px;" alt="...">
+                        <div class="card-rating" bis_skin_checked="1"><span class="span-rating">8.7</span></div>
+                        <div class="card-body">
 
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 ">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//dX5CQBzWX6ePHj8WvHWideMYw5D.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-body">
-                    <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.0</span></div>
-                    <a href="#" class="card-tex">Другой человек <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 ">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//oAF42DFZA430eEzRmEcrpB0D3rp.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.5</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Вуди Вудпекер отправляется в лагерь <br><span
-                        class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 ">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//o1SGF0txwzZxBJbOsvIgbBtRk3A.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">4.9</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Возвращение грозной семейки <br><span
-                        class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 ">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//AusoO8766oTq3o1PQeJpuPbt9hZ.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">5.8</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">След киллера <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//79G6T8JSmUrIsypQVzsa5VjfOXU.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.8</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Боб Марли: Одна любовь <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//sqHQhhjsfZ0UAu67RiIaUkabZZD.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">5.7</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Джокер: Безумие на двоих <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//4pRonl4LTHFw567HyX0iYolyaWS.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">5.4</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Дыши! <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//krCt93RSbZMmiPIw2k1r9zzfzTb.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.4</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Жуть <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//v6HmHzoOJVwFmdKDKpdfnnsRk39.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">5.6</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Чёрный чай <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//1rXbP2AdiJzbqL6CKxdZMeFuE4O.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.8</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Ученик. Восхождение Трампа <br><span
-                        class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//uBAgrWuglga1Vo7oUlFL0KFORcN.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.1</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Профессионал <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//ud6dvc0s6YapooFkUNQPuZ4eg5u.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.5</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Чудовищное лето <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//foK52B7aQk14ANwAPbjfPJNEy1f.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.0</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Подземная бездна <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//epglGr4yDHGaZVf8faMm7ilcHDu.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">5.5</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Мегалополис <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//z9GAjN21PQPDp0eRB4Ct6vIZaPF.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.1</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Выгон <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//saPG6ZSORtOdCbl7S4dinNkpmA6.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.2</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Элиаса" <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//bv7XaMz155UTyQSOy2CHllMrAf9.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.7</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Граф Монте-Кристо <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//yq39ChrCDlqrurYuaC8WM0vC1cx.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.0</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Уровни <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//8pAaShqpLUYTeik67jjN2IPaz3O.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.1</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Второй акт <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//47mnEdahUv5I28CKuBx5drLRcuK.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.6</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Трансформеры: Начало <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//qELcpKCX0HMszrWyq25GS2DTK3o.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">5.3</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Деревенские против пришельцев <br><span
-                        class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//7GVqDiiTUBzyJ2wYpPIO2tWpsYx.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">5.7</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Стрим <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w200//oGoQ5W5Zxo55hbqCu1PsqEmQJIX.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.7</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Меган: К вашим услугам <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//yhGps0BKzV9AiD2u03Iwc52BW4p.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.5</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Псы войны <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//pmjeSQ4NocblwnqFDxk7zXggSQ7.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">5.0</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Призрачный гонщик 2 <br><span class="year">2012</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//z7E0ZtNnRheOZThX2QtSu3RmtXP.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.4</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Наполеон <br><span class="year">2023</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//m0rqyzs7IbNaXuJvLTubCG40F92.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.3</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Время <br><span class="year">2021</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//xrVZF8DJNTPiILFygj8sg4tmauV.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.3</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Сплит <br><span class="year">2017</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//33Wj3LSyoAqtqkeh7YXcVMvTQzc.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.7</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Гарри Поттер и Тайная комната <br><span
-                        class="year">2002</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//3PeStsMSHG3sNPpJ9NT1ZGMsi3P.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.7</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Время жить <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//wEHpeWhH3zGYJbqz3OtUJ4tMMM6.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.2</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Оно <br><span class="year">2017</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//hSAbrO3FYcvzyBiUHXLflIbSIGZ.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">4.9</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Образцовый самец 2 <br><span class="year">2016</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//xceYC3jmhyZVzBpZVaiJWIoVWa2.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.9</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Улыбка 2 <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//98Ll6igWXdjHiKuZtCacTzRGyNX.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.6</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Грань будущего <br><span class="year">2014</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//ipj9b6KZMr6yFidQBf7xxuWnKQi.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.6</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Мой сосед - монстр <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//8xukbVG9JJfnpcdIEYPijVVOfhH.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.2</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Вышка <br><span class="year">2022</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//h5JcoPVADhTh5jSn4QKjvM4tKlK.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.7</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Пол: Секретный материальчик <br><span
-                        class="year">2011</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//yeS4fjFnTm6jBRiU6zSzFZ8t9W5.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.4</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Один дома <br><span class="year">1990</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//yn1aTogxzXyHIXs0ZvUAmalujLo.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">5.5</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Проводник смерти <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//1rrHvalz3i96FfmHTcIMcwZ6qGC.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">5.4</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Паранормальное явление: Метка Дьявола <br><span
-                        class="year">2014</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//5jbCnDREJeciL3KR7ZWdSotEgzG.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.9</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Ужасающий 3 <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//z0myyIDZRsGiksfS8hlN3p3NNwc.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.4</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Полтора шпиона <br><span class="year">2016</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//3VmHv2WVdDFpD8xtoV2wfjtS5rl.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.4</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Ловушка <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//gEYz6t7RqsseZrJgjD0wR77p3T7.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.8</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Робот по имени Чаппи <br><span class="year">2015</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//x3yhBGbTqlAjxM450BANUNCHpOO.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.3</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Субстанция <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//tTBQSoiv9w9M5mf9qVGfkFDaSF5.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.8</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Простушка <br><span class="year">2015</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//qVukhgesgdhVIlRZpsTO6wLVcWI.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.4</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Затерянное место <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//xjNJi44FDx0xSmUPxpmKIXa8zoY.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.9</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Мачо и ботан <br><span class="year">2012</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//54U26SA33pxxJ2lf5mRxWeqRTLu.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.6</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Одинокие волки <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//zH9RhVlpMBzGp9VM7jVmlnZpRuR.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.3</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Хэнкок <br><span class="year">2008</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//7bIXHZLZoBvo5EbeIdAnL2wCCla.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.8</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Подай знак <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//iCTi4zBFmqKQb0Q8D8FZ3i5hFyx.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.2</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Я – Четвертый <br><span class="year">2011</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//oza59UpAODrr1xSvtoNudWShuut.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.0</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Миллион способов потерять голову <br><span
-                        class="year">2014</span> </a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//tk7g8DWPfak1MNtwX5RY7rcbpO1.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.1</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Озеро Каддо<br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//vReLRjDV9XPhiOSEW7QWow4DXwf.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">8.4</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Интерстеллар<br><span class="year">2014</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//jaxQj8lnTMuPkVB2Rp7pkr0M1Ki.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">5.8</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">За гранью З/Л/А <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//kKImcJWO19FWRwcVf1jJMJ7Q72S.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.3</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Добро пожаловать в Zомбилэнд <br><span
-                        class="year">2009</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//zaNwfrCuLlfD4MTLGr2HO6DKt9M.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.6</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Прометей <br><span class="year">2012</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//cC27Z2eQJXjII2Bw7D4BDCsTCr1.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.0</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Битлджус Битлджус <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//iM1C3NYISOzLbWEo8HcUDBASprh.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">8.0</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Игра в имитацию <br><span class="year">2014</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//msAYTWaQXWGoeChpp5EUGzpMpVb.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">5.4</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Ворон <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//8gik6OwbWuhUAKctvGRHUgYZJOm.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.8</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Хроника <br><span class="year">2012</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//lHmF2lv5q5EzNNiZ6DXVKrRDgX.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.3</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Грань времени <br><span class="year">2019</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//z7tMZefbCSffsPl3SErtC6ubcdh.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.8</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Не говори никому <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//xQazS5kqxp9Wpsll3KYs5z4Prqh.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.2</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Перси Джексон и похититель молний <br><span
-                        class="year">2010</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//n5yjFZLh6sx04B6YKynae1myD2X.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.4</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Мой пингвин <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//Z2CbhtMtbVaBEvhqBKMNB0p0ko.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.9</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Гарри Поттер и философский камень <br><span
-                        class="year">2001</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//A2CU4WbCZlkYbz9gEFIpchlIGpq.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.5</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Чужой: Ромул <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//jdKfkrUTl2JknNAeTOnz8We15bX.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.8</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">128 ударов сердца в минуту <br><span
-                        class="year">2015</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//8uOIWsrHvBTeZP4LSf25NomvLb6.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">8.0</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Дэдпул и Росомаха <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//xWk8ukJ6dhRvlrboG3qgNWNtLJ1.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.9</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Бойфренд из будущего <br><span class="year">2013</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//7Prt3Le9H0EeRYVltAXFJqwDIig.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.1</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">После <br><span class="year">2019</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//8rnSpfoXiizlIGFEIRed7h8inrP.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.7</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Ребел-Ридж <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//4GTpZgK5ijNGzJSB6tXjz8Xz7t2.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.7</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Ты водишь! <br><span class="year">2018</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//8y4tBbEUVdD3uGjqos21EAOAxc5.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.0</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Место под соснами <br><span class="year">2012</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
-                <div class="card full-card" style="width: 12.35em;">
-                  <img src="https://image.tmdb.org/t/p/w500//ihzZSZZ2eFmbxscbnqy3e5YOvtp.jpg"
-                    class="card-img-top all-flim-img" alt="...">
-                  <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.0</span></div>
-                  <div class="card-body">
-                    <a href="#" class="card-tex">Чаща <br><span class="year">2024</span></a>
-                  </div>
-                </div>
-              </div>
+                          <a href="#" class="card-tex">Побег из Шоушенка <br><span class="year">1994</span></a>
+                        </div>
+                      </div>
+                    </div>
 
+                    <div class="col-lg-2 col-md-3 ">
+                      <div class="card " style="width: 12rem ">
+                        <img src="source/images/Тёмный рыцарь.jpg" class="card-img-top sirials-watch-img"
+                          style="width: 226px; height: 127px;" alt="...">
+                        <div class="card-rating" bis_skin_checked="1"><span class="span-rating">8.5</span></div>
+                        <div class="card-body">
+
+                          <a href="#" class="card-tex">Тёмный рыцарь <br><span class="year">2008</span></a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-3 ">
+                      <div class="card " style="width: 12rem">
+                        <img src="source/images/Крёстный отец.jpg" class="card-img-top sirials-watch-img"
+                          style="width: 226px; height: 127px;" alt="...">
+                        <div class="card-rating" bis_skin_checked="1"><span class="span-rating">8.7</span></div>
+                        <div class="card-body">
+
+                          <a href="#" class="card-tex">Крёстный отец <br><span class="year">1972</span></a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-3 ">
+                      <div class="card " style="width: 12rem">
+                        <img src="source/images/Властелин колец Возвращение короля.jpg" class="card-img-top sirials-watch-img"
+                          style="width: 226px; height: 127px;" alt="...">
+                        <div class="card-rating" bis_skin_checked="1"><span class="span-rating">8.5</span></div>
+                        <div class="card-body">
+
+                          <a href="#" class="card-tex">Властелин колец: Возвращение Короля <br><span class="year">2003</span></a>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+                    <div class="col-lg-2 col-md-3 ">
+                      <div class="card " style="width: 12rem">
+                        <img src="source/images/Спасти рядового Райана.jpg" class="card-img-top sirials-watch-img"
+                          style="width: 226px; height: 127px;" alt="...">
+                        <div class="card-rating" bis_skin_checked="1"><span class="span-rating">8.2</span></div>
+                        <div class="card-body">
+
+                          <a href="#" class="card-tex">Спасти рядового Райана <br><span class="year">1998</span></a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-3 ">
+                      <div class="card " style="width: 12rem">
+                        <img src="source/images/Список Шиндлера.jpg" class="card-img-top sirials-watch-img"
+                          style="width: 226px; height: 127px !important; " alt="...">
+                        <div class="card-rating" bis_skin_checked="1"><span class="span-rating">8.6</span></div>
+                        <div class="card-body">
+
+                          <a href="#" class="card-tex">Список Шиндлера<br><span class="year">1993</span></a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-3 ">
+                      <div class="card " style="width: 12rem">
+                        <img src="source/images/Бойцовский клуб.jpg" class="card-img-top sirials-watch-img"
+                          style="width: 226px; height: 127px;" alt="...">
+                        <div class="card-rating" bis_skin_checked="1"><span class="span-rating">8.4</span></div>
+                        <div class="card-body">
+
+                          <a href="#" class="card-tex">Бойцовский клуб <br><span class="year">1999</span></a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-3 ">
+                      <div class="card " style="width: 12rem">
+                        <img src="source/images/Назад в будущее.jpg" class="card-img-top sirials-watch-img"
+                          style="width: 226px; height: 127px;" alt="...">
+                        <div class="card-rating" bis_skin_checked="1"><span class="span-rating">8.3</span></div>
+                        <div class="card-body">
+
+                          <a href="#" class="card-tex">Назад в будущее <br><span class="year">1985</span></a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-3 ">
+                      <div class="card " style="width: 12rem">
+                        <img src="source/images/Гладиатор.jpg" class="card-img-top sirials-watch-img"
+                          style="width: 226px; height: 127px;" alt="...">
+                        <div class="card-rating" bis_skin_checked="1"><span class="span-rating">8.2</span></div>
+                        <div class="card-body">
+
+                          <a href="#" class="card-tex">Гладиатор<br><span class="year">2000</span></a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-3 ">
+                      <div class="card " style="width: 12rem">
+                        <img src="source/images/Аватар.jpg" class="card-img-top sirials-watch-img"
+                          style="width: 226px; height: 127px;" alt="...">
+                        <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.6</span></div>
+                        <div class="card-body">
+
+                          <a href="#" class="card-tex">Аватар<br><span class="year">2009</span></a>
+                        </div>
+                      </div>
+                    </div>
+
+
+                  </div>
+
+
+
+
+
+                  <div class="container all-film Cartoon">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="col-lg-3 ms-1">
+                        <h4>Фильмы</h4>
+                      </div>
+                    
+                    </div>
+
+                    <div class="row g-0">
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
+                        <div class="card full-card" style="width: 12.35em;">
+
+                          <img src="https://image.tmdb.org/t/p/w500//6KvGEOCUBsgTUPkl1oWhH0Y3ePy.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.0</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Эмилия Перес <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//bSb3ynYHWJbXSSMRhblzrsgt1lO.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">5.8</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Спуск в бездну <br><span class="year">2023</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//ez9LtVmvfbWjX9Spx4DrNEFVErx.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.6</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Город тайн: Исчезнувшая <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//3TM9MzC1f6F3BwpPJhdv3hXWQRX.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.7</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Хитмен. Последнее дело <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//z497zVpHuGDQT4lBcHZcYdf6eDT.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">5.0</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Непробиваемые <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//8VQr2REac6qlshcQGBsmq5s4SiU.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.9</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Однажды в Ла-Рое <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//ltG6ypHUyPv3y4e4ZOxRumYwikV.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.6</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Охотники за привидениями: Леденящий ужас <br><span
+                                class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 ">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//3hbXNclcHaj5KiF6kK41GBMjyFr.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.8</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Дюна: «Час настал» <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 ">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//dX5CQBzWX6ePHj8WvHWideMYw5D.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-body">
+                            <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.0</span></div>
+                            <a href="#" class="card-tex">Другой человек <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 ">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//oAF42DFZA430eEzRmEcrpB0D3rp.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.5</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Вуди Вудпекер отправляется в лагерь <br><span
+                                class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 ">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//o1SGF0txwzZxBJbOsvIgbBtRk3A.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">4.9</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Возвращение грозной семейки <br><span
+                                class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 ">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//AusoO8766oTq3o1PQeJpuPbt9hZ.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">5.8</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">След киллера <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 ">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//79G6T8JSmUrIsypQVzsa5VjfOXU.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.8</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Боб Марли: Одна любовь <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 ">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//sqHQhhjsfZ0UAu67RiIaUkabZZD.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">5.7</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Джокер: Безумие на двоих <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 ">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//4pRonl4LTHFw567HyX0iYolyaWS.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">5.4</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Дыши! <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 ">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//krCt93RSbZMmiPIw2k1r9zzfzTb.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.4</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Жуть <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 ">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//v6HmHzoOJVwFmdKDKpdfnnsRk39.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">5.6</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Чёрный чай <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 ">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//1rXbP2AdiJzbqL6CKxdZMeFuE4O.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.8</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Ученик. Восхождение Трампа <br><span
+                                class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 ">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//uBAgrWuglga1Vo7oUlFL0KFORcN.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.1</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Профессионал <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 ">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//ud6dvc0s6YapooFkUNQPuZ4eg5u.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.5</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Чудовищное лето <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 ">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//foK52B7aQk14ANwAPbjfPJNEy1f.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.0</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Подземная бездна <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 ">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//epglGr4yDHGaZVf8faMm7ilcHDu.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">5.5</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Мегалополис <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 ">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//z9GAjN21PQPDp0eRB4Ct6vIZaPF.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.1</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Выгон <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 ">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//saPG6ZSORtOdCbl7S4dinNkpmA6.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.2</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Элиаса" <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//bv7XaMz155UTyQSOy2CHllMrAf9.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.7</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Граф Монте-Кристо <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//yq39ChrCDlqrurYuaC8WM0vC1cx.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.0</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Уровни <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//8pAaShqpLUYTeik67jjN2IPaz3O.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.1</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Второй акт <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//47mnEdahUv5I28CKuBx5drLRcuK.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.6</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Трансформеры: Начало <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//qELcpKCX0HMszrWyq25GS2DTK3o.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">5.3</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Деревенские против пришельцев <br><span
+                                class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//7GVqDiiTUBzyJ2wYpPIO2tWpsYx.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">5.7</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Стрим <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w200//oGoQ5W5Zxo55hbqCu1PsqEmQJIX.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.7</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Меган: К вашим услугам <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//yhGps0BKzV9AiD2u03Iwc52BW4p.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.5</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Псы войны <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//pmjeSQ4NocblwnqFDxk7zXggSQ7.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">5.0</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Призрачный гонщик 2 <br><span class="year">2012</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//z7E0ZtNnRheOZThX2QtSu3RmtXP.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.4</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Наполеон <br><span class="year">2023</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//m0rqyzs7IbNaXuJvLTubCG40F92.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.3</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Время <br><span class="year">2021</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//xrVZF8DJNTPiILFygj8sg4tmauV.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.3</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Сплит <br><span class="year">2017</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//33Wj3LSyoAqtqkeh7YXcVMvTQzc.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.7</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Гарри Поттер и Тайная комната <br><span
+                                class="year">2002</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//3PeStsMSHG3sNPpJ9NT1ZGMsi3P.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.7</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Время жить <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//wEHpeWhH3zGYJbqz3OtUJ4tMMM6.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.2</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Оно <br><span class="year">2017</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//hSAbrO3FYcvzyBiUHXLflIbSIGZ.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">4.9</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Образцовый самец 2 <br><span class="year">2016</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//xceYC3jmhyZVzBpZVaiJWIoVWa2.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.9</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Улыбка 2 <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//98Ll6igWXdjHiKuZtCacTzRGyNX.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.6</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Грань будущего <br><span class="year">2014</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//ipj9b6KZMr6yFidQBf7xxuWnKQi.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.6</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Мой сосед - монстр <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//8xukbVG9JJfnpcdIEYPijVVOfhH.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.2</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Вышка <br><span class="year">2022</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//h5JcoPVADhTh5jSn4QKjvM4tKlK.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.7</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Пол: Секретный материальчик <br><span
+                                class="year">2011</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//yeS4fjFnTm6jBRiU6zSzFZ8t9W5.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.4</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Один дома <br><span class="year">1990</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//yn1aTogxzXyHIXs0ZvUAmalujLo.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">5.5</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Проводник смерти <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//1rrHvalz3i96FfmHTcIMcwZ6qGC.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">5.4</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Паранормальное явление: Метка Дьявола <br><span
+                                class="year">2014</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//5jbCnDREJeciL3KR7ZWdSotEgzG.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.9</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Ужасающий 3 <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//z0myyIDZRsGiksfS8hlN3p3NNwc.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.4</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Полтора шпиона <br><span class="year">2016</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//3VmHv2WVdDFpD8xtoV2wfjtS5rl.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.4</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Ловушка <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//gEYz6t7RqsseZrJgjD0wR77p3T7.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.8</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Робот по имени Чаппи <br><span class="year">2015</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//x3yhBGbTqlAjxM450BANUNCHpOO.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.3</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Субстанция <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//tTBQSoiv9w9M5mf9qVGfkFDaSF5.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.8</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Простушка <br><span class="year">2015</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//qVukhgesgdhVIlRZpsTO6wLVcWI.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.4</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Затерянное место <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//xjNJi44FDx0xSmUPxpmKIXa8zoY.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.9</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Мачо и ботан <br><span class="year">2012</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//54U26SA33pxxJ2lf5mRxWeqRTLu.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.6</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Одинокие волки <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//zH9RhVlpMBzGp9VM7jVmlnZpRuR.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.3</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Хэнкок <br><span class="year">2008</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//7bIXHZLZoBvo5EbeIdAnL2wCCla.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.8</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Подай знак <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//iCTi4zBFmqKQb0Q8D8FZ3i5hFyx.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.2</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Я – Четвертый <br><span class="year">2011</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//oza59UpAODrr1xSvtoNudWShuut.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.0</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Миллион способов потерять голову <br><span
+                                class="year">2014</span> </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//tk7g8DWPfak1MNtwX5RY7rcbpO1.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.1</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Озеро Каддо<br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//vReLRjDV9XPhiOSEW7QWow4DXwf.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">8.4</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Интерстеллар<br><span class="year">2014</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//jaxQj8lnTMuPkVB2Rp7pkr0M1Ki.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">5.8</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">За гранью З/Л/А <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//kKImcJWO19FWRwcVf1jJMJ7Q72S.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.3</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Добро пожаловать в Zомбилэнд <br><span
+                                class="year">2009</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//zaNwfrCuLlfD4MTLGr2HO6DKt9M.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.6</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Прометей <br><span class="year">2012</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//cC27Z2eQJXjII2Bw7D4BDCsTCr1.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.0</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Битлджус Битлджус <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//iM1C3NYISOzLbWEo8HcUDBASprh.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">8.0</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Игра в имитацию <br><span class="year">2014</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//msAYTWaQXWGoeChpp5EUGzpMpVb.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">5.4</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Ворон <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//8gik6OwbWuhUAKctvGRHUgYZJOm.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.8</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Хроника <br><span class="year">2012</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//lHmF2lv5q5EzNNiZ6DXVKrRDgX.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.3</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Грань времени <br><span class="year">2019</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//z7tMZefbCSffsPl3SErtC6ubcdh.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.8</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Не говори никому <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//xQazS5kqxp9Wpsll3KYs5z4Prqh.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.2</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Перси Джексон и похититель молний <br><span
+                                class="year">2010</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//n5yjFZLh6sx04B6YKynae1myD2X.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.4</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Мой пингвин <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//Z2CbhtMtbVaBEvhqBKMNB0p0ko.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.9</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Гарри Поттер и философский камень <br><span
+                                class="year">2001</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//A2CU4WbCZlkYbz9gEFIpchlIGpq.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.5</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Чужой: Ромул <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//jdKfkrUTl2JknNAeTOnz8We15bX.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.8</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">128 ударов сердца в минуту <br><span
+                                class="year">2015</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//8uOIWsrHvBTeZP4LSf25NomvLb6.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">8.0</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Дэдпул и Росомаха <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//xWk8ukJ6dhRvlrboG3qgNWNtLJ1.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.9</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Бойфренд из будущего <br><span class="year">2013</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//7Prt3Le9H0EeRYVltAXFJqwDIig.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.1</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">После <br><span class="year">2019</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//8rnSpfoXiizlIGFEIRed7h8inrP.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.7</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Ребел-Ридж <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//4GTpZgK5ijNGzJSB6tXjz8Xz7t2.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.7</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Ты водишь! <br><span class="year">2018</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//8y4tBbEUVdD3uGjqos21EAOAxc5.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">7.0</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Место под соснами <br><span class="year">2012</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 card-container hidden">
+                        <div class="card full-card" style="width: 12.35em;">
+                          <img src="https://image.tmdb.org/t/p/w500//ihzZSZZ2eFmbxscbnqy3e5YOvtp.jpg"
+                            class="card-img-top all-flim-img" alt="...">
+                          <div class="card-rating" bis_skin_checked="1"><span class="span-rating">6.0</span></div>
+                          <div class="card-body">
+                            <a href="#" class="card-tex">Чаща <br><span class="year">2024</span></a>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <!-- конец -->
+                  <div class="col-lg-12 col-md-12 text-center mt-4">
+                    <button id="show-more-btn" class=" btn btn-outline-light btn-lg my-4 ">Ещё</button>
+                  </div>
+
+                  
+                  
+
+
+
+                  
+                  <!-- конец -->
+                  
+              </div>
             </div>
           </div>
-    </div>
-  </div>
-    </section>
-    
-    
-    <footer class="mt-4">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-8 col-md-12 ">
-                    <p class="Available-Platforms">Доступные платформы</p>   
-                    <div class="platform-logos ">
-                        <a href="#">
-                            <img src="source/images/logo/Roku_logo.png" style="width: 60px;" alt="Roku">
-                        </a>
-                        <a href="#">
-                            <img src="source/images/logo/Android_logo.png" style="width: 90px;" alt="Android">
-                        </a>
-                        <a href="#">
-                            <img src="source/images/logo/apple-IOS-icon.png" style="width: 60px;" alt="Apple IOS">
-                        </a>
-                        <a href="#">
-                            <img src="source/images/logo/vizio.png" style="width: 80px;" alt="Vizio">
-                        </a>
-                        <a href="#">
-                            <img src="source/images/logo/AndroidTV_logo.png" style="width: 110px;" alt="AndroidTV">
-                        </a>
-                        <a href="#">
-                            <img src="source/images/logo/tv-os.png" style="width: 75px;" alt="TV OS">
-                        </a>
-                        <a href="#">
-                            <img src="source/images/logo/Google-tv.png" style="width: 110px;" alt="Google TV">
-                        </a>
-                        <div class="platform-logos2 ">
-                        <a href="#">
-                            <img src="source/images/logo/Fire_TV_logo.png" style="width: 55px;" alt="Fire TV">
-                        </a>
-                        <a href="#">
-                            <img src="source/images/logo/samsung_logo_1.png" style="width: 90px;" alt="Samsung">
-                        </a>
-                    </div>
-                    </div>
-                </div>
-                
-                
-                
-                <div class="col-lg-4 col-md-12 media-links mt-4">
-                    
-                    <!-- Первая картинка сверху -->
-                    <a href="home.html">
-                        <img class="logo-image logo-image-footer" src="source/images/logo/Лого низ.png" alt="Лого">
-                    </a>
-                
-                    <!-- Блок с 3 картинками под первой -->
-                    <div class="social-icons">
-                        <a href="https://instagram.com/cnn_cinematic"target="_blank">
-                            <img src="source/images/logo/Instagram.png" style="width: 18px;" alt="Instagram">
-                        </a>
-                        <a href="https://www.youtube.com/@CN-Cinematic"target="_blank">
-                            <img src="source/images/logo/youtube.png" alt="YouTube">
-                        </a>
-                        <a href="https://x.com/cnn_Cinematic"target="_blank">
-                            <img src="source/images/logo/twitter-white.png" style="width: 18px;"  alt="Twitter">
-                        </a>
-                        <a href="https://tiktok.com/@cnn_cinematic"target="_blank">
-                            <img src="source/images/logo/tiktok.png" style="width: 19px;" alt="TikTok">
-                        </a>
-                    </div>
-                
-                    <!-- Текст под всеми картинками -->
-                    <div class="footer-text text-center">
-                        <a href="#" class="card-tex">© 2024 <span class="cinematic-text">Cinematic</span>. All Rights Reserved</a>
-                    </div>
-                
-                </div>
-            </div>
+
+
+
+
+
+
+
+
+
+
         </div>
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- конец -->
+       
+      
 
 
-    <script src="slick/slick.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-    
-    <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
-    <script src="source/script/cod.js"></script>
-    <script src="source/script/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-        crossorigin="anonymous"></script>
+
+
+
+
+    </div>
+    </div>
+    </div>
+
+    </div>
+
+
+  </section>
+
+
+  <footer class="mt-4">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-8 col-md-12 ">
+          <p class="Available-Platforms">Доступные платформы</p>
+          <div class="platform-logos ">
+            <a href="#">
+              <img src="source/images/logo/Roku_logo.png" style="width: 60px;" alt="Roku">
+            </a>
+            <a href="#">
+              <img src="source/images/logo/Android_logo.png" style="width: 90px;" alt="Android">
+            </a>
+            <a href="#">
+              <img src="source/images/logo/apple-IOS-icon.png" style="width: 60px;" alt="Apple IOS">
+            </a>
+            <a href="#">
+              <img src="source/images/logo/vizio.png" style="width: 80px;" alt="Vizio">
+            </a>
+            <a href="#">
+              <img src="source/images/logo/AndroidTV_logo.png" style="width: 110px;" alt="AndroidTV">
+            </a>
+            <a href="#">
+              <img src="source/images/logo/tv-os.png" style="width: 75px;" alt="TV OS">
+            </a>
+            <a href="#">
+              <img src="source/images/logo/Google-tv.png" style="width: 110px;" alt="Google TV">
+            </a>
+            <div class="platform-logos2 ">
+              <a href="#">
+                <img src="source/images/logo/Fire_TV_logo.png" style="width: 55px;" alt="Fire TV">
+              </a>
+              <a href="#">
+                <img src="source/images/logo/samsung_logo_1.png" style="width: 90px;" alt="Samsung">
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="col-lg-4 col-md-12 media-links mt-4">
+
+          <!-- Первая картинка сверху -->
+          <a href="home.html">
+            <img class="logo-image logo-image-footer" src="source/images/logo/Лого низ.png" alt="Лого">
+          </a>
+
+          <!-- Блок с 3 картинками под первой -->
+          <div class="social-icons">
+            <a href="https://instagram.com/cnn_cinematic" target="_blank">
+              <img src="source/images/logo/Instagram.png" style="width: 18px;" alt="Instagram">
+            </a>
+            <a href="https://www.youtube.com/@CN-Cinematic" target="_blank">
+              <img src="source/images/logo/youtube.png" alt="YouTube">
+            </a>
+            <a href="https://x.com/cnn_Cinematic" target="_blank">
+              <img src="source/images/logo/twitter-white.png" style="width: 18px;" alt="Twitter">
+            </a>
+            <a href="https://tiktok.com/@cnn_cinematic" target="_blank">
+              <img src="source/images/logo/tiktok.png" style="width: 19px;" alt="TikTok">
+            </a>
+          </div>
+
+          <!-- Текст под всеми картинками -->
+          <div class="footer-text text-center">
+            <a href="#" class="card-tex">© 2024 <span class="cinematic-text">Cinematic</span>. All Rights Reserved</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+  <script src="slick/slick.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+  <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+  <script src="source/script/pages.js"></script>
+  <script src="source/script/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
