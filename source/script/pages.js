@@ -4,18 +4,19 @@
 
 
 // Находим элементы
-const searchInput = document.getElementById('search');
-const resultsContainer = document.getElementById('results-container');
+const searchInput = document.getElementById('search'); // Поле ввода
+const resultsContainer = document.getElementById('results-container'); // Контейнер результатов
 const menuToggle = document.querySelector('#menuToggle input');
-const searchWrapper = document.querySelector('.search-wrapper');
+const searchWrapper = document.querySelector('.search-wrapper'); // Внешний контейнер
+const clearIcon = document.querySelector('.clear-icon'); // Крестик для очистки
 
-// Событие ввода текста в поле поиска
 searchInput.addEventListener('input', () => {
   const query = searchInput.value.trim(); // Получаем текст из поля поиска
   
   if (query.length > 0) {
     // Показываем контейнер с результатами, если есть текст
     resultsContainer.style.display = 'block';
+    clearIcon.style.display = 'inline'; // Показываем крестик
     
     // Логика обновления содержимого результатов
     const updateContainer = document.getElementById('update');
@@ -29,7 +30,15 @@ searchInput.addEventListener('input', () => {
   } else {
     // Скрываем контейнер, если поле ввода пустое
     resultsContainer.style.display = 'none';
+    clearIcon.style.display = 'none'; // Прячем крестик
   }
+});
+
+// Событие клика по крестик
+clearIcon.addEventListener('click', () => {
+  searchInput.value = ''; // Очищаем поле ввода
+  resultsContainer.style.display = 'none'; // Скрываем контейнер с результатами
+  clearIcon.style.display = 'none'; // Скрываем крестик
 });
 
 // Событие переключения меню

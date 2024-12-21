@@ -4,18 +4,19 @@
 
 
 // Находим элементы
-const searchInput = document.getElementById('search');
-const resultsContainer = document.getElementById('results-container');
+const searchInput = document.getElementById('search'); // Поле ввода
+const resultsContainer = document.getElementById('results-container'); // Контейнер результатов
 const menuToggle = document.querySelector('#menuToggle input');
-const searchWrapper = document.querySelector('.search-wrapper');
+const searchWrapper = document.querySelector('.search-wrapper'); // Внешний контейнер
+const clearIcon = document.querySelector('.clear-icon'); // Крестик для очистки
 
-// Событие ввода текста в поле поиска
 searchInput.addEventListener('input', () => {
   const query = searchInput.value.trim(); // Получаем текст из поля поиска
   
   if (query.length > 0) {
     // Показываем контейнер с результатами, если есть текст
     resultsContainer.style.display = 'block';
+    clearIcon.style.display = 'inline'; // Показываем крестик
     
     // Логика обновления содержимого результатов
     const updateContainer = document.getElementById('update');
@@ -29,8 +30,18 @@ searchInput.addEventListener('input', () => {
   } else {
     // Скрываем контейнер, если поле ввода пустое
     resultsContainer.style.display = 'none';
+    clearIcon.style.display = 'none'; // Прячем крестик
   }
 });
+
+// Событие клика по крестик
+clearIcon.addEventListener('click', () => {
+  searchInput.value = ''; // Очищаем поле ввода
+  resultsContainer.style.display = 'none'; // Скрываем контейнер с результатами
+  clearIcon.style.display = 'none'; // Скрываем крестик
+});
+
+
 
 // Событие переключения меню
 menuToggle.addEventListener('change', () => {
@@ -70,7 +81,7 @@ document.getElementById("show-more-btn").addEventListener("click", function () {
   if (button.textContent === "Ещё") {
       // Показать до 6 карточек
       hiddenCards.forEach((card, index) => {
-          if (index < 6) {
+          if (index < 24) {
               card.classList.remove("hidden");
           }
       });
@@ -101,7 +112,7 @@ document.getElementById("show-more-btn1").addEventListener("click", function () 
   if (button.textContent === "Ещё") {
       // Показать до 6 карточек
       hiddenCards.forEach((card, index) => {
-          if (index < 6) {
+          if (index < 24) {
               card.classList.remove("hidden");
           }
       });
@@ -131,7 +142,7 @@ document.getElementById("show-more-btn2").addEventListener("click", function () 
   if (button.textContent === "Ещё") {
       // Показать до 6 карточек
       hiddenCards.forEach((card, index) => {
-          if (index < 6) {
+          if (index < 24) {
               card.classList.remove("hidden");
           }
       });
@@ -211,21 +222,16 @@ $('.single-item').slick({
   touchMove: true,
   responsive:  [
     {
-      breakpoint: 2481,
+      breakpoint: 4000,
       settings: {
-        slidesToShow: 8.2,
+        slidesToShow: 7,
       }
     },
-    {
-      breakpoint: 2228,
-      settings: {
-        slidesToShow: 7.9,
-      }
-    },
+    
     {
       breakpoint: 1710,
       settings: {
-        slidesToShow: 7.7,
+        slidesToShow: 7,
       }
     },
 
@@ -413,16 +419,23 @@ $('.single-item2').slick({
   speed: 500,
   touchMove: true,
   responsive:  [
+
+    {
+      breakpoint: 4000,
+      settings: {
+        slidesToShow: 5.5,
+      }
+    },
     {
       breakpoint: 2481,
       settings: {
-        slidesToShow: 8.2,
+        slidesToShow: 5.3,
       }
     },
     {
       breakpoint: 2228,
       settings: {
-        slidesToShow: 7.7,
+        slidesToShow: 5.3,
       }
       
     },
@@ -611,15 +624,21 @@ $('.single-item2').slick({
   touchMove: true,
   responsive: [
     {
+      breakpoint: 4000,
+      settings: {
+        slidesToShow: 5.5,
+      }
+    },
+    {
       breakpoint: 2481,
       settings: {
-        slidesToShow: 8.2,
+        slidesToShow: 5.3,
       }
     },
     {
       breakpoint: 2228,
       settings: {
-        slidesToShow: 7.7,
+        slidesToShow: 5.3,
       }
       
     },
@@ -688,79 +707,80 @@ $('.single-item2').slick({
        slidesToShow: 5.1,
      }
    },
-
-    {
-      breakpoint: 1130,
-      settings: {
-        slidesToShow: 4.3,
-      }
-    },
-
-    {
-      breakpoint: 1000,
-      settings: {
-        slidesToShow: 4.1,
-      }
-    },
-
-    {
-      breakpoint: 900,
-      settings: {
-        slidesToShow: 3.6,
-      }
-    },
-    {
-      breakpoint: 800,
-      settings: {
-        slidesToShow: 3.3,
-      }
-    },
-    {
-      breakpoint: 700,
-      settings: {
-        slidesToShow: 2.7,
-      }
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 2.5,
-      }
-    },
-    {
-     breakpoint: 550,
-     settings: {
-       slidesToShow: 2.3,
-     }
-   },
-    {
-      breakpoint: 500,
-      settings: {
-        slidesToShow: 2,
-      }
-    },
-
-    {
-      breakpoint: 450,
-      settings: {
-        slidesToShow: 1.8,
-      }
-    },
-
-    {
-      breakpoint: 400,
-      settings: {
-        slidesToShow: 1.6,
-      }
-    },
-
-    
-    {
-      breakpoint: 350,
-      settings: {
-        slidesToShow: 1.5,
-      }
-    }
+ 
+       {
+         breakpoint: 1130,
+         settings: {
+           slidesToShow: 4.3,
+         }
+       },
+ 
+       {
+         breakpoint: 1000,
+         settings: {
+           slidesToShow: 4.1,
+         }
+       },
+ 
+       {
+         breakpoint: 900,
+         settings: {
+           slidesToShow: 3.6,
+         }
+       },
+       {
+         breakpoint: 800,
+         settings: {
+           slidesToShow: 3.3,
+         }
+       },
+       {
+         breakpoint: 700,
+         settings: {
+           slidesToShow: 2.7,
+         }
+       },
+       {
+         breakpoint: 600,
+         settings: {
+           slidesToShow: 2.5,
+         }
+       },
+       {
+        breakpoint: 550,
+        settings: {
+          slidesToShow: 2.3,
+        }
+      },
+       {
+         breakpoint: 500,
+         settings: {
+           slidesToShow: 2,
+         }
+       },
+ 
+       {
+         breakpoint: 450,
+         settings: {
+           slidesToShow: 1.8,
+         }
+       },
+ 
+       {
+         breakpoint: 400,
+         settings: {
+           slidesToShow: 1.6,
+         }
+       },
+ 
+       
+       {
+         breakpoint: 350,
+         settings: {
+           slidesToShow: 1.5,
+         }
+       }
+     
   ]
  });
  $('.single-item3').on('touchstart', function (e) {
@@ -807,13 +827,13 @@ $(document).ready(function () {
     {
       breakpoint: 2481,
       settings: {
-        slidesToShow: 4,
+        slidesToShow: 2,
       }
     },
     {
       breakpoint: 1800,
       settings: {
-        slidesToShow: 3,
+        slidesToShow: 2,
       }
     },
    

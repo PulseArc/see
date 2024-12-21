@@ -76,16 +76,10 @@ const data = [
         "year": "2024",
         "rating":"4.9"
     },
-    {
-        "name": "Непробиваемые",
-        "image": "https://image.tmdb.org/t/p/w500//AusoO8766oTq3o1PQeJpuPbt9hZ.jpg",
-        "link": "#",
-        "year": "2024",
-        "rating":"5.0"
-    },
+    
     {
         "name": "След киллера",
-        "image": "https://image.tmdb.org/t/p/w500//z497zVpHuGDQT4lBcHZcYdf6eDT.jpg",
+        "image": "https://image.tmdb.org/t/p/w500//AusoO8766oTq3o1PQeJpuPbt9hZ.jpg",
         "link": "#",
         "year": "2024",
         "rating":"5.8"
@@ -175,7 +169,7 @@ const data = [
         "rating":"7.0"
     },
     {
-        "name": "Элиаса",
+        "name": "Элиас",
         "image": "https://image.tmdb.org/t/p/w500//saPG6ZSORtOdCbl7S4dinNkpmA6.jpg",
         "link": "#",
         "year": "2024",
@@ -230,13 +224,7 @@ const data = [
         "year": "2024",
         "rating":"6.7"
     },
-    {
-        "name": "Граф Монте-Кристо",
-        "image": "https://image.tmdb.org/t/p/w500//bv7XaMz155UTyQSOy2CHllMrAf9.jpg",
-        "link": "#",
-        "year": "2024",
-        "rating":"7.7"
-    },
+    
     {
         "name": "Псы войны",
         "image": "https://image.tmdb.org/t/p/w500//yhGps0BKzV9AiD2u03Iwc52BW4p.jpg",
@@ -299,13 +287,6 @@ const data = [
         "link": "#",
         "year": "2016",
         "rating":"4.9"
-    },
-    {
-        "name": "Граф Монте-Кристо",
-        "image": "https://image.tmdb.org/t/p/w500//bv7XaMz155UTyQSOy2CHllMrAf9.jpg",
-        "link": "#",
-        "year": "2024",
-        "rating":"7.7"
     },
     {
         "name": "Улыбка 2",
@@ -1202,6 +1183,636 @@ const data = [
         "link": "#",
         "year": "2022",
         "rating":"7.5"
+    },
+    {
+        "name": "Кот в сапогах",
+        "image": "https://image.tmdb.org/t/p/w500//4iuuvaCYNswlhG5f73JqX976a9d.jpg",
+        "link": "#",
+        "year": "2011",
+        "rating":"6.6"
+    },
+    {
+        "name": "Мадагаскар",
+        "image": "https://image.tmdb.org/t/p/w500//vwPFZT7tS8b9zDSN0PdvOzeGlfW.jpg",
+        "link": "#",
+        "year": "2005",
+        "rating":"6.9"
+    },
+    {
+        "name": "Союз зверей",
+        "image": "https://image.tmdb.org/t/p/w500//cg9KYCRLvRaKRjkuZF41Oef3Rbq.jpg",
+        "link": "#",
+        "year": "2010",
+        "rating":"5.6"
+    },
+    {
+        "name": "Рапунцель",
+        "image": "https://image.tmdb.org/t/p/w500//ak5SCuJbdf8G4NbQ1KIUHjplrF1.jpg",
+        "link": "#",
+        "year": "2012",
+        "rating":"7.1"
+    },
+    {
+        "name": "Том и Джерри: Робин Гуд и мышь-весельчак",
+        "image": "https://image.tmdb.org/t/p/w500//2lDUlkOne47joTE4yNmIG71qZ0m.jpg",
+        "link": "#",
+        "year": "2012",
+        "rating":"6.5"
+    },
+    {
+        "name": "Рио",
+        "image": "https://image.tmdb.org/t/p/w500//oQZEFIeucAsuNFxkt7cUww8bh6s.jpg",
+        "link": "#",
+        "year": "2011",
+        "rating":"6.7"
+    },
+    {
+        "name": "Тайна красной планеты",
+        "image": "https://image.tmdb.org/t/p/w500//mD4BnU0MTon8bhuJPCrc82IXLtp.jpg",
+        "link": "#",
+        "year": "2011",
+        "rating":"5.9"
+    },
+    {
+        "name": "Рататуй",
+        "image": "https://image.tmdb.org/t/p/w500//6u4JvZBiw1Uv6BgTlWNsFSSHlMn.jpg",
+        "link": "#",
+        "year": "2007",
+        "rating":"7.8"
+    },
+    {
+        "name": "Храбрая сердцем",
+        "image": "https://image.tmdb.org/t/p/w500//5A52Y3scfxXTwBKVdgEVmoa8i0q.jpg",
+        "link": "#",
+        "year": "2012",
+        "rating":"7.0"
+    },
+    {
+        "name": "В гости к Робинсонам",
+        "image": "https://image.tmdb.org/t/p/w500//gx7TFtVxPZPHeuYuXdPgPGnboRU.jpg",
+        "link": "#",
+        "year": "2007",
+        "rating":"6.9"
+    },
+    {
+        "name": "Джок",
+        "image": "https://image.tmdb.org/t/p/w500//6zTwStlGAcfCLwHB2fHij8PwF4V.jpg",
+        "link": "#",
+        "year": "2011",
+        "rating":"4.4"
+    },
+    {
+        "name": "Тачки",
+        "image": "https://image.tmdb.org/t/p/w500//wnnv9vLO4jBhXF1Vw2Ss8uhjJPC.jpg",
+        "link": "#",
+        "year": "2006",
+        "rating":"7.0"
+    },
+    {
+        "name": "Франкенвини",
+        "image": "https://image.tmdb.org/t/p/w500//pzqDbpshw50ulrSM5Sdc2AY70tq.jpg",
+        "link": "#",
+        "year": "2012",
+        "rating":"7.0"
+    },
+    {
+        "name": "Тэд Джонс",
+        "image": "https://image.tmdb.org/t/p/w500//wxWt1mk4EeJ60b6XQ7SuTedZHvD.jpg",
+        "link": "#",
+        "year": "2012",
+        "rating":"6.2"
+    },
+    {
+        "name": "ВАЛЛ·И",
+        "image": "https://image.tmdb.org/t/p/w500//i4qDsHTfrTD2EkPa7tT53cJYZkL.jpg",
+        "link": "#",
+        "year": "2008",
+        "rating":"8.1"
+    },
+    {
+        "name": "Фантазия",
+        "image": "https://image.tmdb.org/t/p/w500//gCevkcGOmqowkB6jJaYUVZdHCVN.jpg",
+        "link": "#",
+        "year": "1940",
+        "rating":"7.4"
+    },
+    {
+        "name": "Аладдин",
+        "image": "https://image.tmdb.org/t/p/w500//92GjkHUHMn9HIZqihuradZNZNLb.jpg",
+        "link": "#",
+        "year": "1992",
+        "rating":"7.7"
+    },
+    {
+        "name": "Семейка Крудс",
+        "image": "https://image.tmdb.org/t/p/w500//bYF0aegBQBHfc1Lva7mChj4cPLM.jpg",
+        "link": "#",
+        "year": "2013",
+        "rating":"6.9"
+    },
+    {
+        "name": "Красавица и чудовище",
+        "image": "https://image.tmdb.org/t/p/w500//A9AtXMWX0V4IZ2ygBi9Cr85tQD1.jpg",
+        "link": "#",
+        "year": "1991",
+        "rating":"7.7"
+    },
+    {
+        "name": "Самолеты",
+        "image": "https://image.tmdb.org/t/p/w500//1OjNMu0THjx5iXXH43a6nAF7wqm.jpg",
+        "link": "#",
+        "year": "2013",
+        "rating":"5.9"
+    },
+    {
+        "name": "Эпик",
+        "image": "https://image.tmdb.org/t/p/w500//vO3UVVzfpRN5PgxyyzCnFBfbRS2.jpg",
+        "link": "#",
+        "year": "2013",
+        "rating":"6.5"
+    },
+    {
+        "name": "Секретная служба Санта-Клауса",
+        "image": "https://image.tmdb.org/t/p/w500//bHMGBqaYrdXgzVRfxn9ukN2PpN8.jpg",
+        "link": "#",
+        "year": "2011",
+        "rating":"6.8"
+    },
+    {
+        "name": "В поисках Немо",
+        "image": "https://image.tmdb.org/t/p/w500//wwUYKw29xtFLk5PIZV9iDAs6zlW.jpg",
+        "link": "#",
+        "year": "2003",
+        "rating":"7.8"
+    },
+    {
+        "name": "Индюки: Назад в будущее",
+        "image": "https://image.tmdb.org/t/p/w500//h1iOcJ6qEgFBQ76jACsALLboHQb.jpg",
+        "link": "#",
+        "year": "2013",
+        "rating":"5.9"
+    },
+    {
+        "name": "Ральф",
+        "image": "https://image.tmdb.org/t/p/w500//uqWBFXy0lhoz32qy9PsfAjgKMge.jpg",
+        "link": "#",
+        "year": "2012",
+        "rating":"7.3"
+    },
+    {
+        "name": "Турбо",
+        "image": "https://image.tmdb.org/t/p/w500//inTKQni4YW8syrfgnXHwzmNeSo4.jpg",
+        "link": "#",
+        "year": "2013",
+        "rating":"6.2"
+    },
+    {
+        "name": "Кошмар перед Рождеством",
+        "image": "https://image.tmdb.org/t/p/w500//xvqFn90FxKTJflG4n0spZY7vySu.jpg",
+        "link": "#",
+        "year": "1993",
+        "rating":"7.8"
+    },
+    {
+        "name": "Утиные истории: Заветная лампа",
+        "image": "https://image.tmdb.org/t/p/w500//2yY39ALrHQb8ZTRwUW9yiL3x7ft.jpg",
+        "link": "#",
+        "year": "1990",
+        "rating":"6.7"
+    },
+    {
+        "name": "История игрушек 3",
+        "image": "https://image.tmdb.org/t/p/w500//2IWIk34c9fMv7xJQ5ur4Z3O1Hh9.jpg",
+        "link": "#",
+        "year": "2010",
+        "rating":"7.8"
+    },
+    {
+        "name": "Корпорация Монстров",
+        "image": "https://image.tmdb.org/t/p/w500//zXIusESsQ7ZXP9MFwbvcTTZ3XWF.jpg",
+        "link": "#",
+        "year": "2001",
+        "rating":"7.8"
+    },
+    {
+        "name": "Миссия: Красный",
+        "image": "https://image.tmdb.org/t/p/w500//6T36kuDbXCGRistIewSwKyTmijt.jpg",
+        "link": "#",
+        "year": "2024",
+        "rating":"7.0"
+    },
+    {
+        "name": "Братья Гримм",
+        "image": "https://image.tmdb.org/t/p/w500//aADABzbuqnVWjXIu2jO5M1IkEIR.jpg",
+        "link": "#",
+        "year": "2005",
+        "rating":"5.8"
+    },
+    {
+        "name": "Люди Икс: Дни минувшего будущего",
+        "image": "https://image.tmdb.org/t/p/w500//9IdeGyzRZH66RgNq9zSZDwPPllg.jpg",
+        "link": "#",
+        "year": "2014",
+        "rating":"7.5"
+    },
+    {
+        "name": "И гаснет свет",
+        "image": "https://image.tmdb.org/t/p/w500//f5njPYl9eQdwf0xUwJuQ7no6ET.jpg",
+        "link": "#",
+        "year": "2016",
+        "rating":"6.4"
+    },
+    {
+        "name": "Дом у дороги",
+        "image": "https://image.tmdb.org/t/p/w500//z8AWDW9BaZ1oQohej87TdACGszm.jpg",
+        "link": "#",
+        "year": "2024",
+        "rating":"7.0"
+    },
+    {
+        "name": "Kingsman: Секретная служба",
+        "image": "https://image.tmdb.org/t/p/w500//1br1GunwmrGaD9H3eyRPjLx1HY4.jpg",
+        "link": "#",
+        "year": "2015",
+        "rating":"7.6"
+    },
+    {
+        "name": "Побег из Шоушенка",
+        "image": "https://image.tmdb.org/t/p/w500//yvmKPlTIi0xdcFQIFcQKQJcI63W.jpg",
+        "link": "#",
+        "year": "1994",
+        "rating":"8.7"
+    },
+    {
+        "name": "Счастливого дня смерти",
+        "image": "https://image.tmdb.org/t/p/w500//gxOqCjZ3YGxZpkKchQbHX3DeQ3V.jpg",
+        "link": "#",
+        "year": "2017",
+        "rating":"6.6"
+    },
+    {
+        "name": "Геошторм",
+        "image": "https://image.tmdb.org/t/p/w500//8kMSc2UVFCXScIvhkSuSiROySbS.jpg",
+        "link": "#",
+        "year": "2017",
+        "rating":"6.1"
+    },
+    {
+        "name": "Вивариум",
+        "image": "https://image.tmdb.org/t/p/w500//6z5otnH68jltjyC6748irDsC7B3.jpg",
+        "link": "#",
+        "year": "2019",
+        "rating":"6.1"
+    },
+    {
+        "name": "Тёмный рыцарь",
+        "image": "https://image.tmdb.org/t/p/w500//dxWaYQtgpLbycqUpHzkqqYkT5I3.jpg",
+        "link": "#",
+        "year": "2008",
+        "rating":"8.5"
+    },
+    {
+        "name": "Комната желаний",
+        "image": "https://image.tmdb.org/t/p/w500//de2V6MaJzGRclg1pQaSG2v3i0yW.jpg",
+        "link": "#",
+        "year": "2019",
+        "rating":"6.4"
+    },
+    {
+        "name": "Реальные упыри",
+        "image": "https://image.tmdb.org/t/p/w500//tmUHOe07a84zgwMeWCpwnAqUwU4.jpg",
+        "link": "#",
+        "year": "2014",
+        "rating":"7.6"
+    },
+    {
+        "name": "Крёстный отец",
+        "image": "https://image.tmdb.org/t/p/w500//gZUc6DbAirZGWJL1685jsOd90Sf.jpg",
+        "link": "#",
+        "year": "1972",
+        "rating":"8.7"
+    },
+    {
+        "name": "Джобс: Империя соблазна",
+        "image": "https://image.tmdb.org/t/p/w500//vPuWVOBvMsnpdIT8Qb2suLhIFSi.jpg",
+        "link": "#",
+        "year": "2013",
+        "rating":"6.1"
+    },
+    {
+        "name": "Властелин колец: Возвращение короля",
+        "image": "https://image.tmdb.org/t/p/w500//x6NqCWwU1SrQnvfdmVPAuATyUgD.jpg",
+        "link": "#",
+        "year": "2003",
+        "rating":"8.5"
+    },
+    {
+        "name": "Скотт Пилигрим против всех",
+        "image": "https://image.tmdb.org/t/p/w500//bLJEFAh6tILVS1PS5mCRlA9HVsR.jpg",
+        "link": "#",
+        "year": "2010",
+        "rating":"7.5"
+    },
+    {
+        "name": "Спасти рядового Райана",
+        "image": "https://image.tmdb.org/t/p/w500//vhIwsqsMmdv6uwup4V6HJSMcQxI.jpg",
+        "link": "#",
+        "year": "1998",
+        "rating":"8.2"
+    },
+    {
+        "name": "Пассажиры",
+        "image": "https://image.tmdb.org/t/p/w500//RY7YPqLRkgK5KiIq3kFQhCUJnB.jpg",
+        "link": "#",
+        "year": "2016",
+        "rating":"7.0"
+    },
+    {
+        "name": "Марсианин",
+        "image": "https://image.tmdb.org/t/p/w500//6U19srkH4wI6taluviXbVaIpsau.jpg",
+        "link": "#",
+        "year": "2015",
+        "rating":"7.7"
+    },
+    {
+        "name": "Список Шиндлера",
+        "image": "https://image.tmdb.org/t/p/w500//4K8fGGcJP2EoGDucILnaJcOJhZl.jpg",
+        "link": "#",
+        "year": "1993",
+        "rating":"8.6"
+    },
+    {
+        "name": "5-ая волна",
+        "image": "https://image.tmdb.org/t/p/w500//5ngef6vRYcn55NixtJAfK2JTDxY.jpg",
+        "link": "#",
+        "year": "2016",
+        "rating":"5.9"
+    },
+    {
+        "name": "Бойцовский клуб",
+        "image": "https://image.tmdb.org/t/p/w500//66RvLrRJTm4J8l3uHXWF09AICol.jpg",
+        "link": "#",
+        "year": "1999",
+        "rating":"8.4"
+    },
+    {
+        "name": "Дорогой Санта",
+        "image": "https://image.tmdb.org/t/p/w500//v4LzYnQ1VGb0Q191Eb0NDSxdEKy.jpg",
+        "link": "#",
+        "year": "2024",
+        "rating":"6.6"
+    },
+    {
+        "name": "Назад в будущее",
+        "image": "https://image.tmdb.org/t/p/w500//9a07nfvCoAAyUMfY0yQqsOjlb2C.jpg",
+        "link": "#",
+        "year": "1985",
+        "rating":"8.3"
+    },
+    {
+        "name": "Щелкунчики",
+        "image": "https://image.tmdb.org/t/p/w500//iAoS1l0nRLKl4d97mbKF4pUFZhn.jpg",
+        "link": "#",
+        "year": "2024",
+        "rating":"5.6"
+    },
+    {
+        "name": "Гладиатор",
+        "image": "https://image.tmdb.org/t/p/w500//1wjNqlfsuHNTXTpCt2ZOV2iPxaf.jpg",
+        "link": "#",
+        "year": "2000",
+        "rating":"8.2"
+    },
+    {
+        "name": "Почему он",
+        "image": "https://image.tmdb.org/t/p/w500//q0wK2bXSLulAre276C6M4ZS8Kfo.jpg",
+        "link": "#",
+        "year": "2016",
+        "rating":"6.4"
+    },
+    {
+        "name": "Аватар",
+        "image": "https://image.tmdb.org/t/p/w200//lUKcrcO3wEPhNnzGq06JIX7GIEb.jpg",
+        "link": "#",
+        "year": "2009",
+        "rating":"7.6"
+    },
+    {
+        "name": "Посвященный",
+        "image": "https://image.tmdb.org/t/p/w500//aXXEcHZsZ2lXUxPLaadnXeZVz5c.jpg",
+        "link": "#",
+        "year": "2014",
+        "rating":"6.6"
+    },
+    {
+        "name": "Джентльмены",
+        "image": "https://image.tmdb.org/t/p/w500//zRdUl8TxpXD3LTFqH9wiya14ZYS.jpg",
+        "link": "#",
+        "year": "2024",
+        "rating":"7.9"
+    },
+    {
+        "name": "Бриджертоны",
+        "image": "https://image.tmdb.org/t/p/w500//jMDY8c3HpkM5LmYr1Xiz7a0r0qk.jpg",
+        "link": "#",
+        "year": "2020",
+        "rating":"8.1"
+    },
+    {
+        "name": "Лучше звоните Солу",
+        "image": "https://image.tmdb.org/t/p/w500//rTjlrjxCnxiNNVo0PjqUSySoieH.jpg",
+        "link": "#",
+        "year": "2015",
+        "rating":"8.7"
+    },
+    {
+        "name": "Сто лет одиночества",
+        "image": "https://image.tmdb.org/t/p/w500//vYtbH9Q5DaCDqzkB483dmYjfkA3.jpg",
+        "link": "#",
+        "year": "2024",
+        "rating":"8.4"
+    },
+    {
+        "name": "Люцифер",
+        "image": "https://image.tmdb.org/t/p/w500//A7IP83pBzpLCbU7hlchJXsfcF8j.jpg",
+        "link": "#",
+        "year": "2016",
+        "rating":"8.5"
+    },
+    {
+        "name": "Декстер: Новая кровь",
+        "image": "https://image.tmdb.org/t/p/w500//6Dlx8ck7zRKIxnFNJ1G1tXZ6p9D.jpg",
+        "link": "#",
+        "year": "2021",
+        "rating":"8.0"
+    },
+    {
+        "name": "Дневники вампира",
+        "image": "https://image.tmdb.org/t/p/w500//y8hcR1R8QmGs8uLHQhIFHgCFWDd.jpg",
+        "link": "#",
+        "year": "2009",
+        "rating":"8.3"
+    },
+    {
+        "name": "Шерлок",
+        "image": "https://image.tmdb.org/t/p/w500//kuaBGwju6CParqos7afHNvNEIdD.jpg",
+        "link": "#",
+        "year": "2010",
+        "rating":"8.5"
+    },
+    {
+        "name": "Тьма",
+        "image": "https://image.tmdb.org/t/p/w500//ikhUNN25WVfMN2uvoJLLKYXp8jE.jpg",
+        "link": "#",
+        "year": "2017",
+        "rating":"8.4"
+    },
+    {
+        "name": "Игра в кальмара",
+        "image": "https://image.tmdb.org/t/p/w500//3vMCgpRa5cdutE56AXqeEkGHtxI.jpg",
+        "link": "#",
+        "year": "2021",
+        "rating":"7.8"
+    },
+    {
+        "name": "Тед Лассо",
+        "image": "https://image.tmdb.org/t/p/w500//htV1GTyatTXJB589hjiqUQPegjd.jpg",
+        "link": "#",
+        "year": "2020",
+        "rating":"8.4"
+    },
+    {
+        "name": "Друзья",
+        "image": "https://image.tmdb.org/t/p/w500//zBOs8S3UOHyWLzOl9gF8lknBxlL.jpg",
+        "link": "#",
+        "year": "1994",
+        "rating":"8.4"
+    },
+    {
+        "name": "Хороший доктор",
+        "image": "https://image.tmdb.org/t/p/w500//c3WPgJl5OjAMJotI7qPeL1zgcCX.jpg",
+        "link": "#",
+        "year": "2017",
+        "rating":"8.5"
+    },
+    {
+        "name": "Волчонок",
+        "image": "https://image.tmdb.org/t/p/w500//bq0TmDgpYWrTuJVo8JpeMU3LLb8.jpg",
+        "link": "#",
+        "year": "2011",
+        "rating":"8.5"
+    },
+    {
+        "name": "Ходячие мертвецы",
+        "image": "https://image.tmdb.org/t/p/w500//3metsxLVhlJU0mNj5gVfKIih0EF.jpg",
+        "link": "#",
+        "year": "2010",
+        "rating":"8.1"
+    },
+    {
+        "name": "Мистер Робот",
+        "image": "https://image.tmdb.org/t/p/w500//v0O3GfmruiKwBCFUKc1cEM1PVLF.jpg",
+        "link": "#",
+        "year": "2015",
+        "rating":"8.2"
+    },
+    {
+        "name": "Мандалорец",
+        "image": "https://image.tmdb.org/t/p/w500//3JcJfU9wm6sA2R6LQtnsBJsHMmY.jpg",
+        "link": "#",
+        "year": "2019",
+        "rating":"8.4"
+    },
+    {
+        "name": "Земля без людей",
+        "image": "https://image.tmdb.org/t/p/w500//fRPUaAmxFtfhYPalD7Ru8Cu2MTr.jpg",
+        "link": "#",
+        "year": "2024",
+        "rating":"7.7"
+    },
+    {
+        "name": "Американская история ужасов",
+        "image": "https://image.tmdb.org/t/p/w500//gj2dFFgEHdhxqSBpD2oPyo4YmPD.jpg",
+        "link": "#",
+        "year": "2011",
+        "rating":"8.1"
+    },
+    {
+        "name": "День Шакала",
+        "image": "https://image.tmdb.org/t/p/w500//uFdIebgylj64d9ze6y1C5jsHUZZ.jpg",
+        "link": "#",
+        "year": "2024",
+        "rating":"8.3"
+    },
+    {
+        "name": "Кросс",
+        "image": "https://image.tmdb.org/t/p/w500//vjC4LAf7K6aXCWcp3CdinYsG0aG.jpg",
+        "link": "#",
+        "year": "2024",
+        "rating":"7.3"
+    },
+    {
+        "name": "Ганнибал",
+        "image": "https://image.tmdb.org/t/p/w500//cy5xnqFR88IG5RrHXxHlpqhLjEG.jpg",
+        "link": "#",
+        "year": "2013",
+        "rating":"8.2"
+    },
+    {
+        "name": "Сексуальное просвещение",
+        "image": "https://image.tmdb.org/t/p/w500//ig9FyX4AMOhJXKQkDmau0xX0DWy.jpg",
+        "link": "#",
+        "year": "2019",
+        "rating":"8.3"
+    },
+    {
+        "name": "Ловкий Плут",
+        "image": "https://image.tmdb.org/t/p/w500//3xhycTWtx8TsQDllkQ4g7s2mGBR.jpg",
+        "link": "#",
+        "year": "2023",
+        "rating":"8.0"
+    },
+    {
+        "name": "Дорогуша",
+        "image": "https://image.tmdb.org/t/p/w500//33DCNqCAtqL408AOYrzJ09NhiN7.jpg",
+        "link": "#",
+        "year": "2024",
+        "rating":"7.5"
+    },
+    {
+        "name": "Игра престолов",
+        "image": "https://image.tmdb.org/t/p/w500//tbBQW8jpDH7RpAymMGnBluIsdmH.jpg",
+        "link": "#",
+        "year": "2011",
+        "rating":"8.5"
+    },
+    {
+        "name": "Древние",
+        "image": "https://image.tmdb.org/t/p/w500//dsVB3Mqv5sHGGsu1SGuF3fahw0Z.jpg",
+        "link": "#",
+        "year": "2013",
+        "rating":"8.6"
+    },
+    {
+        "name": "Отбросы",
+        "image": "https://image.tmdb.org/t/p/w500//jpSJDe6TTnLL5Es9uZ8Viz6MMYV.jpg",
+        "link": "#",
+        "year": "2009",
+        "rating":"7.6"
+    },
+    {
+        "name": "Флэш",
+        "image": "https://image.tmdb.org/t/p/w500//q14oRmj0ITMBzqHUdiGwXUIvg7t.jpg",
+        "link": "#",
+        "year": "2014",
+        "rating":"7.8"
+    },
+    {
+        "name": "Магазин светильников",
+        "image": "https://image.tmdb.org/t/p/w500//edzQHpnGiwYYf1wRRv91iJETtWX.jpg",
+        "link": "#",
+        "year": "2024",
+        "rating":"8.6"
     },
     
 ];
