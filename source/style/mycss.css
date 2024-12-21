@@ -184,7 +184,28 @@ select {
     /* Появление поля ввода */
 }
 
+.clear-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none; /* Отключаем кликабельность, пока крестик не виден */
+    transition: opacity 0.3s ease;
+}
 
+.search-wrapper:hover .search-container .clear-icon {
+    opacity: 0; /* По умолчанию скрыт */
+    pointer-events: none;
+}
+
+.search-wrapper:hover .search-container .search-input:not(:placeholder-shown) + .clear-icon {
+    opacity: 1; /* Появляется только при наличии текста */
+    pointer-events: auto;
+}
 
 
 body {
@@ -983,7 +1004,13 @@ footer {
     }
 }
 
+@media screen and (max-width: 985.5px) {
 
+
+    .search-wrapper {
+        margin-right: 3vh !important;
+    }
+}
 
 
 
@@ -991,7 +1018,7 @@ footer {
 
 
     .search-wrapper {
-        margin-right: 3vh;
+        margin-right: 1vh !important;
     }
 
     .search-wrapper:hover .search-container {
@@ -2296,12 +2323,29 @@ h4 {
         /* Уменьшите значение */
     }
 }
+@media (max-width: 500px) {
+
+    /* Для экранов меньше 600px */
+    .search-wrapper {
+        right: 12%;
+        /* Уменьшите значение */
+    }
+}
+
+@media (max-width: 450px) {
+
+    /* Для экранов меньше 600px */
+    .search-wrapper {
+        right: 15%;
+        /* Уменьшите значение */
+    }
+}
 
 @media (max-width: 400px) {
 
     /* Для экранов меньше 600px */
     .search-wrapper {
-        right: 13%;
+        right: 15%;
         /* Уменьшите значение */
     }
 }
