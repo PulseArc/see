@@ -981,7 +981,7 @@ footer {
         margin-right: -5vh;
     }
 
-    .search-wrapper:hover .search-container {
+    :hover .search-container {
         width: 150px;
         /* Расширение контейнера влево */
     }
@@ -1012,12 +1012,22 @@ footer {
 
 
     .search-wrapper {
-        margin-right: 3vh ;
+        display: block;
+        
     }
 
     .search-wrapper:hover .search-container {
         width: 200px !important;
         /* Расширение контейнера влево */
+    }
+    .search-container{
+        position: absolute;
+        
+        
+        
+        
+        
+        margin-right: 10vh ;
     }
 
     .all-film {
@@ -2222,12 +2232,7 @@ h4 {
 }
 
 @media screen and (max-width: 480px) {
-    .search-wrapper {
-
-        right: 50px;
-        /* Фиксируем положение справа */
-
-    }
+    
 
     .search-wrapper:hover .search-container {
         width: 140px !important;
@@ -2311,37 +2316,21 @@ h4 {
 
 @media (max-width: 600px) {
 
-    /* Для экранов меньше 600px */
-    .search-wrapper {
-        right: 10%;
-        /* Уменьшите значение */
-    }
+    
 }
 @media (max-width: 500px) {
 
-    /* Для экранов меньше 600px */
-    .search-wrapper {
-        right: 12%;
-        /* Уменьшите значение */
-    }
+    
 }
 
 @media (max-width: 450px) {
 
-    /* Для экранов меньше 600px */
-    .search-wrapper {
-        right: 15%;
-        /* Уменьшите значение */
-    }
+    
 }
 
 @media (max-width: 400px) {
 
-    /* Для экранов меньше 600px */
-    .search-wrapper {
-        right: 15%;
-        /* Уменьшите значение */
-    }
+   
 }
 
 
@@ -2351,31 +2340,19 @@ h4 {
 
 @media (min-width: 660px) and (max-width: 670px) {
 
-    /* Для экранов от 601 до 900px */
-    .search-wrapper {
-        right: 10%;
-        /* Стандартное значение */
-    }
+   
 }
 
 
 
 @media (min-width: 740px) and (max-width: 750px) {
 
-    /* Для экранов от 601 до 900px */
-    .search-wrapper {
-        right: 8.5%;
-        /* Стандартное значение */
-    }
+    
 }
 
 @media (min-width: 610px) and (max-width: 900px) {
 
-    /* Для экранов от 601 до 900px */
-    .search-wrapper {
-        right: 8.5%;
-        /* Стандартное значение */
-    }
+    
 }
 
 
@@ -2386,12 +2363,7 @@ h4 {
 
 @media (min-width: 910px) and (max-width: 951px) {
 
-    /* Для экранов от 601 до 900px */
-    .search-wrapper {
-        right: 6.5%;
-        /* Стандартное значение */
-    }
-
+   
 
 }
 
