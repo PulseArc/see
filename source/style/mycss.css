@@ -1008,7 +1008,7 @@ footer {
 
 
 
-@media screen(max-width: 991.5px) {
+@media screen and (max-width: 991.5px) {
 
 
     .search-wrapper {
