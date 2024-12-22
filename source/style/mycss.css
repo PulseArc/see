@@ -1005,18 +1005,15 @@ footer {
 }
 
 
-@media screen and (min-width: 985px) and (max-width: 991.5px) {
-    .search-wrapper {
-        margin-right: -30px ;
-    }
-}
+
+
 
 @media screen and (max-width: 991.5px) {
 
+
     .search-wrapper {
-        margin-right: 3vh !important;
+        margin-right: 3vh ;
     }
-    
 
     .search-wrapper:hover .search-container {
         width: 200px !important;
