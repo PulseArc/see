@@ -9,7 +9,7 @@ const data = [
     {
         "name": "Спуск в бездну",
         "image": "https://image.tmdb.org/t/p/w500//bSb3ynYHWJbXSSMRhblzrsgt1lO.jpg",
-        "link": "#",
+        "link": "card/descent%20into%20the%20abyss/descent%20into%20the%20abyss.html",
         "year": "2023",
         "rating":"5.8"
     },
@@ -1828,19 +1828,21 @@ $('#search').keyup(function () {
 
     // Генерация результатов поиска
     var output = '';
-    $.each(data, function (key, val) {
-        if (val.name.search(myExp) != -1) {
-            output += `
-                <div class="card" style="width: 12.35rem;">
-                    <img src="${val.image}" class="card-img-top " style="width: 205px; height: 300px;" alt="${val.name}">
+$.each(data, function (key, val) {
+    if (val.name.search(myExp) != -1) {
+        output += `
+            <div class="card" style="width: 12.35rem;">
+                <a href="${val.link}">
+                    <img src="${val.image}" class="card-img-top" style="width: 205px; height: 300px;" alt="${val.name}">
                     <div class="card-rating" bis_skin_checked="1"><span class="span-rating">${val.rating}</span></div>
                     <div class="card-body">
-                        <a href="${val.link}" class="card-tex">${val.name}<br><span class="year">${val.year}</span></a>
+                        <span class="card-tex">${val.name}<br><span class="year">${val.year}</span></span></a>
                     </div>
-                </div>
-            `;
-        }
-    });
+                
+            </div>
+        `;
+    }
+});
 
-    $('#update').html(output);
+$('#update').html(output);
 });
