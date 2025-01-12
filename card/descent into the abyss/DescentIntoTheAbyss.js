@@ -112,8 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
- // Создание Blob с видео-данными (пример с видеоданными в виде массива байтов)
- document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
   // Массив байтов (пример)
   const videoData = new Uint8Array([/* заполните массив реальными данными */]);
 
@@ -121,14 +120,29 @@ document.addEventListener("DOMContentLoaded", function () {
   const videoBlob = new Blob([videoData], { type: 'video/mp4' });
   const videoURL = URL.createObjectURL(videoBlob);
 
-  // Обновляем источник видео
+  // Получаем элементы
   const videoSource = document.getElementById('full-video-source');
   const videoElement = document.getElementById('full-video');
+  const playButton = document.getElementById('play-video-btn');
+
+  // Обновляем источник видео
   videoSource.src = videoURL;
 
-  // Перезагружаем видео
-  videoElement.load();
+  // Инициализируем Video.js плеер для контейнера с id 'full-video'
+  const player = videojs('full-video');
+
+  // Обработчик клика по кнопке для воспроизведения видео
+  playButton.addEventListener('click', () => {
+    // Пытаемся воспроизвести видео после клика
+    player.play().catch((error) => {
+      console.error('Ошибка при воспроизведении видео:', error);
+    });
+  });
 });
+
+
+
+
 
 
 
