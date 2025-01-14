@@ -2,9 +2,9 @@ const data = [
     {
         "name": "Эмилия Перес",
         "image": "https://image.tmdb.org/t/p/w500//6KvGEOCUBsgTUPkl1oWhH0Y3ePy.jpg",
-        "link": "#",
+        "link": "card/Emilia%20Perez/Emilia%20Perez.html",
         "year": "2024",
-        "rating":"7.0"
+        "rating":"7.8"
     },
     {
         "name": "Спуск в бездну",
