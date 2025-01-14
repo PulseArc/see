@@ -75,34 +75,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // ссылки и блоб на фильмы
 
-      document.addEventListener("DOMContentLoaded", function() {
-      const videos = document.querySelectorAll('.hls-video');
-      
-      videos.forEach(video => {
-        video.addEventListener('click', function initializeVideo() {
-          const src = video.getAttribute('data-src');
-          
-          if (src) {
-            fetch(src)
-              .then(response => response.blob())
-              .then(blob => {
-                const blobUrl = URL.createObjectURL(blob); // Создаем Blob URL
+document.addEventListener('DOMContentLoaded', () => {
+  // Массив байтов (пример)
+  const videoData = new Uint8Array([/* заполните массив реальными данными */]);
 
-                if (Hls.isSupported()) {
-                  const hls = new Hls();
-                  hls.loadSource(blobUrl); // Загружаем Blob-URL как источник HLS
-                  hls.attachMedia(video);
-                } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-                  video.src = blobUrl;
-                }
+  // Создаем Blob и URL
+  const videoBlob = new Blob([videoData], { type: 'video/mp4' });
+  const videoURL = URL.createObjectURL(videoBlob);
 
-                video.removeEventListener('click', initializeVideo);
-              })
-              .catch(error => console.error('Ошибка при загрузке видео:', error));
-          }
-        });
-      });
+  // Получаем элементы
+  const videoSource = document.getElementById('full-video-source');
+  const videoElement = document.getElementById('full-video');
+  const playButton = document.getElementById('play-video-btn');
+
+  // Обновляем источник видео
+  videoSource.src = videoURL;
+
+  // Инициализируем Video.js плеер для контейнера с id 'full-video'
+  const player = videojs('full-video');
+
+  // Обработчик клика по кнопке для воспроизведения видео
+  playButton.addEventListener('click', () => {
+    // Пытаемся воспроизвести видео после клика
+    player.play().catch((error) => {
+      console.error('Ошибка при воспроизведении видео:', error);
     });
+  });
+});
     
 // конец
 
