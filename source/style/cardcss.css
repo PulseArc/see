@@ -19,6 +19,7 @@
     color: rgb(230, 230, 250);
     font-size: 1.1em;
 }
+
 .full-more{
     font-size: 1.2em;
     color: white;
@@ -237,12 +238,14 @@ overflow: hidden;
     
 }
 
-.background-mobile{
-    display: none;
+
+
+.Mobile{
+  display: none;
 }
-
-
-
+.mobile-details{
+  display: none;
+}
 
 
 @media (max-width: 1184px) {
@@ -504,8 +507,14 @@ overflow: hidden;
 
   
 @media screen and (max-width: 600px) {
-    .background-mobile{
-        display: block;
+  .Mobile{
+    display: block;
+    
+  }
+    .mobile-img-card{
+        
+        overflow: hidden ;
+        border-radius: 10px;
     }
     .background-pc{
         display: none;
@@ -519,20 +528,52 @@ overflow: hidden;
     .full-conteiner-video{
         display: none;
     }
-    .background-mobile-img{
-        background-size: cover; /* Масштабирует изображение, чтобы полностью покрыть элемент */
-        background-position: center; /* Центрирует изображение */
-        position: relative; /* Фиксирует фон относительно окна браузера */
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1; /* Помещает фон позади других элементов */
-        opacity: 0.9; /* Устанавливает прозрачность фона */
-        transition: opacity 0.5s ease-in-out; /* Добавляет плавный переход для изменения прозрачности */
-        
-        
+    .full-player{
+      display: none;
     }
+    .mobile-player{
+      display: block;
+      margin-top: -15em;
+    }
+   
+    .mobile-card-description{
+      margin-left: 0em;
+      font-size: 11px;
+    }
+  .mobile-img {
+      background-size: cover; /* Масштабирует изображение, чтобы полностью покрыть элемент */
+      background-position: center; /* Центрирует изображение */
+      position: relative; /* Позиционирует относительно контейнера */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; /* Высота первой картинки */
+      z-index: 1; /* Устанавливает этот элемент поверх фона */
+      opacity: 0.9; /* Устанавливает прозрачность фона */
+      transition: opacity 0.5s ease-in-out; /* Добавляет плавный переход для изменения прозрачности */
+      transform: scale(1.4);
+      
+  
+  }
+  .mobile-details{
+    margin-top: 2em;
+  }
+  .mobile-about-the-film{
+    margin-top: 1em;
+    color: white;
+    font-size: 12px !important;
+    font-family: Helvetica, sans-serif;
+    width: 92%;
+    margin-left: 0.5em;
+    margin-bottom: 1em;
+  }
+  .mobile-more{
+    margin-left: 0em;
+    color: rgb(230, 230, 250);
+    font-family: Helvetica, sans-serif;
+    font-size: 14px !important;
+  }
+  
 }
 @media screen and (max-width: 550px) {
   .full-conteiner-video:nth-child(1) .video-js {
