@@ -511,6 +511,9 @@ overflow: hidden;
     display: block;
     
   }
+  .mobile-details{
+    display: block;
+  }
     .mobile-img-card{
         
         overflow: hidden ;
@@ -537,8 +540,12 @@ overflow: hidden;
     }
    
     .mobile-card-description{
-      margin-left: 0em;
-      font-size: 11px;
+      margin-left: 0.5em;
+      font-size: 12.5px;
+      width: 100%;
+    }
+    .mobile-roles{
+      width: 90%;
     }
   .mobile-img {
       background-size: cover; /* Масштабирует изображение, чтобы полностью покрыть элемент */
@@ -561,17 +568,17 @@ overflow: hidden;
   .mobile-about-the-film{
     margin-top: 1em;
     color: white;
-    font-size: 12px !important;
+    font-size: 13px !important;
     font-family: Helvetica, sans-serif;
     width: 92%;
-    margin-left: 0.5em;
+    margin-left: 1em;
     margin-bottom: 1em;
   }
   .mobile-more{
-    margin-left: 0em;
+    margin-left: 0.5em;
     color: rgb(230, 230, 250);
     font-family: Helvetica, sans-serif;
-    font-size: 14px !important;
+    font-size: 15px !important;
   }
   
 }
@@ -615,7 +622,7 @@ overflow: hidden;
 }
 #play-video-btn{
   position: absolute;
-  margin-left: 0%;
+  margin-left: 50%;
   background-color: transparent;
   border: none;
   color: transparent;
