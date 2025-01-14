@@ -511,6 +511,13 @@ overflow: hidden;
     display: block;
     
   }
+  .mobile-player{
+    display: none;
+  }
+  .full-player{
+    display: block;
+    margin-top: -25em;
+  }
   .mobile-details{
     display: block;
   }
@@ -531,17 +538,15 @@ overflow: hidden;
     .full-conteiner-video{
         display: none;
     }
-    .full-player{
-      display: none;
-    }
+    
     .mobile-player{
-      display: block;
-      margin-top: -15em;
+      margin-top: -23em;
+       
     }
    
     .mobile-card-description{
       margin-left: 0.5em;
-      font-size: 12.5px;
+      font-size: 12px;
       width: 100%;
     }
     .mobile-roles{
@@ -563,7 +568,7 @@ overflow: hidden;
   
   }
   .mobile-details{
-    margin-top: 2em;
+    margin-top: -5.5em;
   }
   .mobile-about-the-film{
     margin-top: 1em;
@@ -584,26 +589,19 @@ overflow: hidden;
 }
 @media screen and (max-width: 550px) {
   .full-conteiner-video:nth-child(1) .video-js {
-    width: 300px !important; /* Фиксированная ширина */
-    height: 169px !important; /* Фиксированная высота (16:9 соотношение сторон) */
+    width: 400px !important; /* Фиксированная ширина */
+    height: 200px !important; /* Фиксированная высота (16:9 соотношение сторон) */
     
   }
   .full-conteiner-video:nth-child(1) .vjs-big-play-button {
-    
-    top: 35% !important;
-    left: 43% !important;
-  
-
+    position: absolute; /* Абсолютное позиционирование */
+    top: 50% !important; /* Центрирование по вертикали */
+    left: 50% !important; /* Центрирование по горизонтали */
+    transform: translate(-50%, -50%); /* Сдвиг для точного центрирования */
     font-size: 3em !important;
     line-height: 1.27em !important;
     height: 1.27em !important;
     width: 1.27em !important;
-   
-    
-    
-    
-    
-
   }
 }
 
@@ -627,6 +625,7 @@ overflow: hidden;
   border: none;
   color: transparent;
 }
+
 .video-js {
   
   width: 700px !important;
@@ -734,6 +733,7 @@ overflow: hidden;
   }
    .vjs-icon-placeholder:before {
     content: "\f101" ;
+
   }
   
   .vjs-volume-panel {
@@ -776,6 +776,7 @@ overflow: hidden;
     content: "" !important;
     color: red;
     filter: brightness(80%);
+    
   }
   .vjs-fullscreen-control{
     top: -7px;
@@ -797,15 +798,26 @@ overflow: hidden;
     opacity: 1 !important;
     outline: none !important;
     box-shadow: none !important;
+    
   }
  
 .vjs-control:focus{
   text-shadow: none !important;
-  
+  border: none !important;
+}
+.video-js .vjs-control {
+  position: relative;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 4em;
+  flex: none;
 }
 
-
-
+.vjs-play-control:focus {
+  outline: none;
+}
 
 }
 .vjs-volume-level,.vjs-play-progress,.vjs-slider-bar {
