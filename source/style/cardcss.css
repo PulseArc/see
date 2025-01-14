@@ -351,9 +351,9 @@ overflow: hidden;
   
       width: 500px !important;
       height: 281px !important;
-      border: 2px solid white !important;
-      border-radius: 5px !important;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+      border: 2px solid white ;
+      border-radius: 5px ;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) ;
      
     
     }
@@ -560,7 +560,6 @@ overflow: hidden;
 }
 
 .full-conteiner-video{
-  
  position: sticky;
  margin-top: 20em !important;
   z-index: 10; /* Карточка будет поверх фона */
@@ -573,13 +572,20 @@ overflow: hidden;
   border: none;
   
 }
+#play-video-btn{
+  position: absolute;
+  margin-left: 0%;
+  background-color: transparent;
+  border: none;
+  color: transparent;
+}
 .video-js {
   
-  max-width: 700px !important;
-  max-height: 400px !important;
-  border: 2px solid white !important;
-  border-radius: 5px !important;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+  width: 700px !important;
+  height: 400px !important;
+  border: 2px solid white ;
+  border-radius: 5px ;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) ;
  
 
 }
@@ -588,6 +594,7 @@ overflow: hidden;
 .video-js:-webkit-full-screen {
   border: none !important; /* Убираем бордер */
   box-shadow: none !important; /* Убираем тень, если нужно */
+  border-radius:none !important;
 }
 .vjs-custom-theme {
   .vjs-control-bar{
