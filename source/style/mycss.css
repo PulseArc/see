@@ -1010,7 +1010,7 @@ footer {
 
 @media screen and (max-width: 991.5px) {
     .search-wrapper{
-        margin-right: -2em ;
+        margin-right: 0em ;
       }
 
     
