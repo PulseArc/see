@@ -55,7 +55,7 @@
     /* Фиксированное положение */
     top: 23px;
     /* Фиксируем положение сверху */
-    right: 8vh;
+    right: 4.5em;
     /* Фиксируем положение справа */
     display: inline-block;
     z-index: 50;
@@ -270,7 +270,7 @@ h4 {
     justify-content: space-between;
     /* или flex-start, в зависимости от вашего дизайна */
     align-items: center;
-
+    z-index: 1000;
 
 
 }
@@ -979,9 +979,7 @@ footer {
         margin-left: -6vh;
     }
 
-    .search-wrapper {
-        margin-right: -5vh;
-    }
+    
 
     .search-wrapper:hover .search-container {
         width: 150px;
@@ -1011,11 +1009,11 @@ footer {
 
 
 @media screen and (max-width: 991.5px) {
+    .search-wrapper{
+        margin-right: 2.5em;
+      }
 
-
-    .search-wrapper {
-        margin-right: 3vh ;
-    }
+    
 
     .search-wrapper:hover .search-container {
         width: 200px !important;
@@ -1138,9 +1136,9 @@ footer {
         top: 0;
         right: 0;
         /* Располагаем меню справа */
-        width: 100%;
+        width: 50%;
         /* Устанавливаем ширину для видимости */
-        height: 105vh;
+        height: 100vh;
         /* Высота элемента на весь экран */
         overflow: auto;
         background-color: #1a1919;
@@ -2224,12 +2222,7 @@ h4 {
 }
 
 @media screen and (max-width: 480px) {
-    .search-wrapper {
-
-        right: 50px;
-        /* Фиксируем положение справа */
-
-    }
+   
 
     .search-wrapper:hover .search-container {
         width: 140px !important;
@@ -2313,37 +2306,21 @@ h4 {
 
 @media (max-width: 600px) {
 
-    /* Для экранов меньше 600px */
-    .search-wrapper {
-        right: 10%;
-        /* Уменьшите значение */
-    }
+   
 }
 @media (max-width: 500px) {
 
-    /* Для экранов меньше 600px */
-    .search-wrapper {
-        right: 12%;
-        /* Уменьшите значение */
-    }
+    
 }
 
 @media (max-width: 450px) {
 
-    /* Для экранов меньше 600px */
-    .search-wrapper {
-        right: 10%;
-        /* Уменьшите значение */
-    }
+    
 }
 
 @media (max-width: 400px) {
 
-    /* Для экранов меньше 600px */
-    .search-wrapper {
-        right: 15%;
-        /* Уменьшите значение */
-    }
+   
 }
 
 
@@ -2353,31 +2330,19 @@ h4 {
 
 @media (min-width: 660px) and (max-width: 670px) {
 
-    /* Для экранов от 601 до 900px */
-    .search-wrapper {
-        right: 10%;
-        /* Стандартное значение */
-    }
+   
 }
 
 
 
 @media (min-width: 740px) and (max-width: 750px) {
 
-    /* Для экранов от 601 до 900px */
-    .search-wrapper {
-        right: 8.5%;
-        /* Стандартное значение */
-    }
+    
 }
 
 @media (min-width: 610px) and (max-width: 900px) {
 
-    /* Для экранов от 601 до 900px */
-    .search-wrapper {
-        right: 8.5%;
-        /* Стандартное значение */
-    }
+    
 }
 
 
@@ -2388,11 +2353,7 @@ h4 {
 
 @media (min-width: 910px) and (max-width: 951px) {
 
-    /* Для экранов от 601 до 900px */
-    .search-wrapper {
-        right: 5.5%;
-        /* Стандартное значение */
-    }
+   
 
 
 }
