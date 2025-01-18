@@ -22,7 +22,7 @@
 
 .full-more{
     font-size: 1.2em;
-    color: white;
+    color: rgb(230, 230, 250);
     
 }
 .full-head{
@@ -36,8 +36,9 @@
 }
 .full-smile-rate-warp{
     font-family: Helvetica, sans-serif;
-    background: rgba(114, 113, 113, 0.15);
-    border-radius: 0.8em;
+    background: #373737;
+    border-radius: 0.8em ;
+    border: 1.5px solid #424242;
     display: flex;
     align-items: center;
     justify-content: center; /* Выровнять текст по центру */
@@ -568,19 +569,19 @@ overflow: hidden;
   
   }
   .mobile-details{
-    margin-top: -5.5em;
+    margin-top: -6em;
   }
   .mobile-about-the-film{
-    margin-top: 1em;
+    margin-top: 0.5em;
     color: white;
     font-size: 13px !important;
     font-family: Helvetica, sans-serif;
     width: 92%;
-    margin-left: 1em;
+    margin-left: -0.4em;
     margin-bottom: 1em;
   }
   .mobile-more{
-    margin-left: 0.5em;
+    margin-left: -0.4em;
     color: rgb(230, 230, 250);
     font-family: Helvetica, sans-serif;
     font-size: 15px !important;
