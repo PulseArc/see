@@ -132,7 +132,7 @@ select {
 .search-container {
     position: absolute;
     top: 0;
-    right: -2em;
+    right: 0;
     width: 35px;
     /* Изначальная ширина только для иконки */
     height: 35px;
@@ -1010,7 +1010,7 @@ footer {
 
 @media screen and (max-width: 991.5px) {
     .search-wrapper{
-        padding-right: 2.5em !important;
+        margin-right: 2em ;
       }
 
     
