@@ -132,7 +132,7 @@ select {
 .search-container {
     position: absolute;
     top: 0;
-    right: 2.3em;
+    right: -2em;
     width: 35px;
     /* Изначальная ширина только для иконки */
     height: 35px;
