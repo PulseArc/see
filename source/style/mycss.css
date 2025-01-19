@@ -55,7 +55,7 @@
     /* Фиксированное положение */
     top: 23px;
     /* Фиксируем положение сверху */
-    right: 4.5em;
+    right: 4em;
     /* Фиксируем положение справа */
     display: inline-block;
     z-index: 50;
@@ -317,7 +317,25 @@ h4 {
     /* При наведении: линия появляется */
 
 }
-
+.cartoones-text::after{
+    content: '';
+    position: absolute;
+    left: 7%;
+    bottom: 0;
+    height: 1px;
+    /* Высота линии */
+    width: 86%;
+    background: #A00000;
+    /* Цвет линии */
+    transform: scaleX(0);
+    /* Начальное состояние: линия скрыта */
+    transform-origin: left;
+    /* Устанавливаем точку отсчета слева */
+    transition: transform 0.5s ease;
+    /* Плавный переход */
+    z-index: 0;
+    /* За текстом */
+}
 
 
 .navbar-nav .nav-item {
@@ -997,7 +1015,7 @@ footer {
         /* Расширение контейнера влево */
     }
     .search-wrapper{
-        margin-right: 0em ;
+        margin-right: 0.5em ;
       }
 
       .search-wrapper:hover .search-container {
@@ -1105,13 +1123,13 @@ footer {
         top: 0;
         right: 0;
         /* Располагаем меню справа */
-        width: 50%;
+        width: 30%;
         /* Устанавливаем ширину для видимости */
         height: 100vh;
         /* Высота элемента на весь экран */
         overflow: auto;
         background-color: #1a1919;
-        padding-top: 175px;
+        padding-top: 6rem;
         padding-right: 20px;
         list-style-type: none;
         transform: translateX(100%);
@@ -1142,7 +1160,7 @@ footer {
         padding: 15px 0;
         /* Увеличиваем отступы для лучшего восприятия */
         color: #000000;
-        font-size: 1.5em;
+        font-size: 17px;
         width: 100%;
         /* Устанавливаем ширину элемента списка */
         text-align: center;
@@ -1195,7 +1213,7 @@ footer {
 
 @media screen and (max-width: 991.5px) {
     .search-wrapper{
-        margin-right: 0em ;
+        margin-right: 0.5em ;
       }
 
     
@@ -1321,13 +1339,13 @@ footer {
         top: 0;
         right: 0;
         /* Располагаем меню справа */
-        width: 50%;
+        width: 35%;
         /* Устанавливаем ширину для видимости */
         height: 100vh;
         /* Высота элемента на весь экран */
         overflow: auto;
         background-color: #1a1919;
-        padding-top: 175px;
+        padding-top: 4rem;
         padding-right: 20px;
         list-style-type: none;
         transform: translateX(100%);
@@ -1355,14 +1373,16 @@ footer {
 
 
     #menu li {
+        font-family: Helvetica, sans-serif;
         padding: 15px 0;
         /* Увеличиваем отступы для лучшего восприятия */
         color: #000000;
-        font-size: 1.5em;
+        font-size: 17px;
         width: 100%;
         /* Устанавливаем ширину элемента списка */
         text-align: center;
         /* Центрируем текст внутри li */
+        
     }
 
     #menu li a {
@@ -2407,7 +2427,10 @@ h4 {
 }
 
 @media screen and (max-width: 480px) {
-   
+   #menu{
+    width: 50%;
+    padding-top: 6rem;
+   }
 
     .search-wrapper:hover .search-container {
         width: 140px !important;
