@@ -536,14 +536,12 @@ h4 {
 
 
 .navbar-img {
-    margin-right: 5px;
+    margin-right: 0px;
     /* Отступ справа от изображения */
     padding-bottom: 2px;
 }
 
-.navbar-img-serials{
-    margin-top: 15px !important;
-}
+
 
 .sidebar {
     color: #D3D3D3;
@@ -995,6 +993,7 @@ footer {
 
     .navbar-brand {
         margin-left: -6vh;
+        opacity: 0.9;
     }
 
     
@@ -1013,6 +1012,39 @@ footer {
     #nav-menu {
         display: none;
         /* Расширение контейнера влево */
+    }
+    .navbar.scrolled {background-color: transparent !important;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.9) 20%, rgba(0, 0, 0, 0)) ;
+        /* Более насыщенный полупрозрачный фон при прокрутке */
+        transition: all .6s ease-in-out;
+        backdrop-filter: none;
+        /* Размытие фона */
+        position: fixed;
+        /* Фиксированное положение */
+        top: 0;
+        width: 100%;
+        /* Занимает всю ширину */
+        z-index: 1000;
+        /* Над другими элементами */
+    }
+    
+    
+    
+    
+    .navbar {
+        position: relative;
+        z-index: 4;
+        background-color: transparent !important;
+        height: 70px;
+        padding-left: 8vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        border: none; /* Убираем границу */
+        box-shadow: none; /* Убираем возможную тень */
+    
+    
     }
     .search-wrapper{
         margin-right: 0.5em ;
@@ -1127,7 +1159,7 @@ footer {
         /* Устанавливаем ширину для видимости */
         height: 100vh;
         /* Высота элемента на весь экран */
-        overflow: auto;
+        overflow-y: auto;
         background-color: #1a1919;
         padding-top: 6rem;
         padding-right: 20px;
@@ -2430,6 +2462,7 @@ h4 {
    #menu{
     width: 50%;
     padding-top: 6rem;
+    text-align: center;
    }
 
     .search-wrapper:hover .search-container {
