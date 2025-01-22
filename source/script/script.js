@@ -1816,9 +1816,8 @@ const data = [
     },
     
 ];
-
 $('#search').keyup(function () {
-    var searchField = $('#search').val();
+    var searchField = $('#search').val().trim(); // Удаляем лишние пробелы
     var myExp = new RegExp(searchField, "i");
 
     // Очистка результатов, если поле пустое
@@ -1829,21 +1828,38 @@ $('#search').keyup(function () {
 
     // Генерация результатов поиска
     var output = '';
-$.each(data, function (key, val) {
-    if (val.name.search(myExp) != -1) {
-        output += `
-            <div class="card" style="width: 12.35rem;">
-                <a href="${val.link}">
-                    <img src="${val.image}" class="card-img-top" style="width: 205px; height: 300px;" alt="${val.name}">
-                    <div class="card-rating" bis_skin_checked="1"><span class="span-rating">${val.rating}</span></div>
-                    <div class="card-body">
-                        <span class="card-tex">${val.name}<br><span class="year">${val.year}</span></span></a>
-                    </div>
-                
-            </div>
-        `;
-    }
-});
+    var matchCount = 0; // Счетчик совпадений
 
-$('#update').html(output);
+    $.each(data, function (key, val) {
+        // Проверяем соответствие значения в объекте поисковому запросу
+        if (val.name.search(myExp) !== -1) {
+            matchCount++;
+
+            // Останавливаем, если найдено 10 совпадений
+            if (matchCount > 10) {
+                return false; // Выход из $.each
+            }
+
+            // Корректируем ссылку, если она относительная
+            var fixedLink = val.link.startsWith("/")
+                ? val.link
+                : `/${val.link}`; // Добавляем слэш перед относительными ссылками
+
+            // Генерируем HTML для карточки
+            output += `
+                <div class="card" style="width: 12.35rem;">
+                    <a href="${fixedLink}">
+                        <img src="${val.image}" class="card-img-top" style="width: 205px; height: 300px;" alt="${val.name}">
+                        <div class="card-rating"><span class="span-rating">${val.rating}</span></div>
+                        <div class="card-body">
+                            <span class="card-tex">${val.name}<br><span class="year">${val.year}</span></span>
+                        </div>
+                    </a>
+                </div>
+            `;
+        }
+    });
+
+    // Обновляем содержимое контейнера с результатами
+    $('#update').html(output);
 });
