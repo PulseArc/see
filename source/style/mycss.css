@@ -990,10 +990,11 @@ footer {
         /* Сдвигает элемент вправо */
 
     }
-
+    
     .navbar-brand {
         margin-left: -6vh;
-        opacity: 0.9;
+        opacity: 0.8;
+        
     }
 
     
@@ -1166,7 +1167,7 @@ footer {
         list-style-type: none;
         transform: translateX(100%);
         /* Начальное положение за экраном */
-        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        transition: transform 0.3s cubic-bezier(0.77, 0.2, 0.05, 1.0);
         text-align: center;
         display: flex;
         /* Используем flexbox для выравнивания */
@@ -1382,7 +1383,7 @@ footer {
         list-style-type: none;
         transform: translateX(100%);
         /* Начальное положение за экраном */
-        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        transition: transform 0.3s cubic-bezier(0.77, 0.2, 0.05, 1.0);
         text-align: center;
         display: flex;
         /* Используем flexbox для выравнивания */
@@ -1986,7 +1987,11 @@ h4 {
         height: 100%;
     }
 }
-
+@media (min-width: 1100.05px) {
+    .navbar-brand  {
+        filter: grayscale(80%);
+    }
+}
 @media screen and (max-width: 1110px) {
     .all-film {
         margin-left: 10px !important;
