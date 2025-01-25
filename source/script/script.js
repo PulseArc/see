@@ -2,14 +2,14 @@ const data = [
     {
         "name": "Эмилия Перес",
         "image": "https://image.tmdb.org/t/p/w500//6KvGEOCUBsgTUPkl1oWhH0Y3ePy.jpg",
-        "link": "/card/Emilia%20Perez/Emilia%20Perez.html",
+        "link": "/tes/card/Emilia%20Perez/Emilia%20Perez.html",
         "year": "2024",
         "rating":"7.8"
     },
     {
         "name": "Спуск в бездну",
         "image": "https://image.tmdb.org/t/p/w500//bSb3ynYHWJbXSSMRhblzrsgt1lO.jpg",
-        "link": "/card/descent%20into%20the%20abyss/descent%20into%20the%20abyss.html",
+        "link": "/tes/card/descent%20into%20the%20abyss/descent%20into%20the%20abyss.html",
         "year": "2023",
         "rating":"5.8"
     },
@@ -1828,8 +1828,16 @@ $('#search').keyup(function () {
 
     // Генерация результатов поиска
     var output = '';
+    var resultCount = 0; // Счётчик для ограничения количества результатов
+
     $.each(data, function (key, val) {
         if (val.name.search(myExp) != -1) {
+            // Если нашли результат, увеличиваем счётчик
+            resultCount++;
+
+            // Если найдено больше 10 результатов, прекращаем вывод
+            if (resultCount > 10) return false; 
+
             output += `
                 <div class="card" style="width: 12.35rem;">
                     <a href="${val.link}">
@@ -1844,5 +1852,6 @@ $('#search').keyup(function () {
         }
     });
 
+    // Отображаем результаты поиска
     $('#update').html(output);
 });
