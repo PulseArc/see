@@ -1826,30 +1826,21 @@ $('#search').keyup(function () {
         return;
     }
 
-    // Генерация результатов поиска (с ограничением)
+    // Генерация результатов поиска
     var output = '';
-    var count = 0; // Счётчик для ограничения карточек
-
     $.each(data, function (key, val) {
         if (val.name.search(myExp) != -1) {
             output += `
                 <div class="card" style="width: 12.35rem;">
-                    <a href="${window.location.origin}${val.link}">
+                    <a href="${val.link}">
                         <img src="${val.image}" class="card-img-top" style="width: 205px; height: 300px;" alt="${val.name}">
-                        <div class="card-rating"><span class="span-rating">${val.rating}</span></div>
+                        <div class="card-rating" bis_skin_checked="1"><span class="span-rating">${val.rating}</span></div>
                         <div class="card-body">
-                            <span class="card-tex">${val.name}<br><span class="year">${val.year}</span></span>
-                        </div>
-                    </a>
+                            <span class="card-tex">${val.name}<br><span class="year">${val.year}</span></span></a>
+                    </div>
+                
                 </div>
             `;
-
-            count++; // Увеличиваем счётчик
-
-            // Прерываем цикл, если достигли лимита
-            if (count >= 10) {
-                return false; // Выход из `$.each`
-            }
         }
     });
 
