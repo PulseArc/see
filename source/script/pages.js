@@ -77,26 +77,28 @@ document.getElementById("show-more-btn").addEventListener("click", function () {
   const allCards = document.querySelectorAll(".card-container");
 
   if (button.textContent === "Ещё") {
-      // Показать до 6 карточек
-      hiddenCards.forEach((card, index) => {
-          if (index < 24) {
-              card.classList.remove("hidden");
-          }
-      });
-
-      // Проверяем, есть ли ещё скрытые карточки
-      if (document.querySelectorAll(".card-container.hidden").length === 0) {
-          button.textContent = "Скрыть"; // Меняем текст на "Скрыть"
+    // Показать до 24 карточек
+    hiddenCards.forEach((card, index) => {
+      if (index < 24) {
+        card.classList.remove("hidden");
       }
-  } else {
-      // Скрыть все карточки, кроме первых 6
-      allCards.forEach((card, index) => {
-          if (index >= 0) {
-              card.classList.add("hidden");
-          }
-      });
+    });
 
-      button.textContent = "Ещё"; // Меняем текст на "Ещё"
+    // Проверяем, есть ли ещё скрытые карточки
+    if (document.querySelectorAll(".card-container.hidden").length === 0) {
+      button.textContent = "Скрыть"; // Меняем текст на "Скрыть"
+      button.classList.add("red"); // Добавляем красный фон
+    }
+  } else {
+    // Скрыть все карточки, кроме первых 6
+    allCards.forEach((card, index) => {
+      if (index >= 0) {
+        card.classList.add("hidden");
+      }
+    });
+
+    button.textContent = "Ещё"; // Меняем текст на "Ещё"
+    button.classList.remove("red"); // Убираем красный фон
   }
 });
 
