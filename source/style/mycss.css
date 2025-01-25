@@ -275,7 +275,7 @@ h4 {
 
 }
 .navbar-brand {
-    filter: grayscale(100%) brightness(90%) contrast(75%);
+    
     opacity: 1;
 }
 .navbar-placeholder {
@@ -367,6 +367,20 @@ h4 {
 .show-all-link:active {
     color: inherit;
     /* Оставляет тот же цвет для посещенной, активной и при наведении */
+}
+.btn{
+    border-width: 1.5px;
+}
+@media (hover: hover){
+    .btn:hover{
+        background-color: white;
+    }
+}
+
+@media (hover:none){
+    .btn:active{
+        background-color: white;
+    }
 }
 
 .btn-show-all {
@@ -1035,9 +1049,10 @@ footer {
     
     .navbar-brand img{
         
-        opacity: 0.9;
-        filter:none
+        
+        
     }
+    
     
     .navbar {
         position: relative;
@@ -1564,7 +1579,7 @@ footer {
     .show-more-btn,
     .show-more-btn1 .show-more-btn2 {
         width: 100%;
-
+        
     }
 
     .yet {
