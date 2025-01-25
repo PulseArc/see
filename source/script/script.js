@@ -2,14 +2,14 @@ const data = [
     {
         "name": "Эмилия Перес",
         "image": "https://image.tmdb.org/t/p/w500//6KvGEOCUBsgTUPkl1oWhH0Y3ePy.jpg",
-        "link": "card/Emilia%20Perez/Emilia%20Perez.html",
+        "link": "/card/Emilia%20Perez/Emilia%20Perez.html",
         "year": "2024",
         "rating":"7.8"
     },
     {
         "name": "Спуск в бездну",
         "image": "https://image.tmdb.org/t/p/w500//bSb3ynYHWJbXSSMRhblzrsgt1lO.jpg",
-        "link": "card/descent%20into%20the%20abyss/descent%20into%20the%20abyss.html",
+        "link": "/card/descent%20into%20the%20abyss/descent%20into%20the%20abyss.html",
         "year": "2023",
         "rating":"5.8"
     },
@@ -1826,23 +1826,32 @@ $('#search').keyup(function () {
         return;
     }
 
-    // Генерация результатов поиска
+    // Генерация результатов поиска (с ограничением)
     var output = '';
-$.each(data, function (key, val) {
-    if (val.name.search(myExp) != -1) {
-        output += `
-            <div class="card" style="width: 12.35rem;">
-                <a href="${val.link}">
-                    <img src="${val.image}" class="card-img-top" style="width: 205px; height: 300px;" alt="${val.name}">
-                    <div class="card-rating" bis_skin_checked="1"><span class="span-rating">${val.rating}</span></div>
-                    <div class="card-body">
-                        <span class="card-tex">${val.name}<br><span class="year">${val.year}</span></span></a>
-                    </div>
-                
-            </div>
-        `;
-    }
-});
+    var count = 0; // Счётчик для ограничения карточек
 
-$('#update').html(output);
+    $.each(data, function (key, val) {
+        if (val.name.search(myExp) != -1) {
+            output += `
+                <div class="card" style="width: 12.35rem;">
+                    <a href="${window.location.origin}${val.link}">
+                        <img src="${val.image}" class="card-img-top" style="width: 205px; height: 300px;" alt="${val.name}">
+                        <div class="card-rating"><span class="span-rating">${val.rating}</span></div>
+                        <div class="card-body">
+                            <span class="card-tex">${val.name}<br><span class="year">${val.year}</span></span>
+                        </div>
+                    </a>
+                </div>
+            `;
+
+            count++; // Увеличиваем счётчик
+
+            // Прерываем цикл, если достигли лимита
+            if (count >= 10) {
+                return false; // Выход из `$.each`
+            }
+        }
+    });
+
+    $('#update').html(output);
 });
