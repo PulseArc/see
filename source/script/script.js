@@ -1836,18 +1836,21 @@ $('#search').keyup(function () {
             resultCount++;
 
             // Если найдено больше 10 результатов, прекращаем вывод
-            if (resultCount > 10) return false; 
+            if (resultCount > 12) return false; 
 
             output += `
-                <div class="card" style="width: 12.35rem;">
+            
+            <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 ">
+                <div class="card full-card cards-from-search " >
                     <a href="${val.link}">
-                        <img src="${val.image}" class="card-img-top" style="width: 205px; height: 300px;" alt="${val.name}">
+                        <img src="${val.image}" class="card-img-top all-flim-img "  alt="${val.name}">
                         <div class="card-rating" bis_skin_checked="1"><span class="span-rating">${val.rating}</span></div>
                         <div class="card-body">
                             <span class="card-tex">${val.name}<br><span class="year">${val.year}</span></span></a>
                     </div>
                 
                 </div>
+            </div>
             `;
         }
     });
