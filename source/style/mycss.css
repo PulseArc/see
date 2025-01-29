@@ -431,7 +431,13 @@ h4 {
     border-color: black; /* бордер остается черным при нажатии */
     transition: background-color 0.2s, color 0.2s, border-color 0.2s;
   }
-  
+  @media (max-width: 1188px) {
+    
+
+    .card-tex{
+        width: 90% !important;
+    }
+  }
   /* Для мобильных устройств */
   @media (max-width: 1100px) {
     .toggle-btn:active {
@@ -441,7 +447,7 @@ h4 {
     }
 
     .card-tex{
-        width: 65% !important;
+        width: 70% !important;
     }
   }
   
@@ -598,7 +604,7 @@ h4 {
 .card-tex {
 
     display: block;
-    width: 80%;
+    width: 100%;
     white-space: normal;
     word-wrap: break-word;
     overflow-wrap: break-word;
@@ -1612,7 +1618,7 @@ footer {
 
     .card-rating,
     .card-rating-trand {
-        font-size: 150% !important;
+        font-size: 130% !important;
         width: auto !important;
         height: auto !important;
         /* Увеличение размера текста рейтинга */
@@ -1627,7 +1633,7 @@ footer {
     }
 
     .card-tex {
-        font-size: 170% !important;
+        font-size: 130% !important;
 
     }
 
@@ -1713,7 +1719,7 @@ footer {
 
     .sirials-watch-img {
         width: 138% !important;
-        height: 10em !important;
+        height: 100% !important;
     }
 }
 
@@ -1744,7 +1750,7 @@ footer {
 
     .card-rating,
     .card-rating-trand {
-        font-size: 150% !important;
+        font-size: 130% !important;
         width: auto !important;
         height: auto !important;
         /* Увеличение размера текста рейтинга */
@@ -1770,7 +1776,7 @@ h4 {
 }
 
 .card-tex {
-    font-size: 150% !important;
+    font-size: 130% !important;
 
 }
 
@@ -1836,7 +1842,7 @@ h4 {
 
     .card-rating,
     .card-rating-trand {
-        font-size: 135% !important;
+        font-size: 120% !important;
         width: auto !important;
         height: auto !important;
         /* Увеличение размера текста рейтинга */
@@ -1851,7 +1857,7 @@ h4 {
     }
 
     .card-body .card-tex {
-        font-size: 150% !important;
+        font-size: 120% !important;
         ;
         /* Увеличение размера текста */
     }
@@ -1861,7 +1867,7 @@ h4 {
     }
 
     .card-tex {
-        font-size: 145% !important;
+        font-size: 130% !important;
 
     }
 
@@ -1913,7 +1919,7 @@ h4 {
 
     .card-rating,
     .card-rating-trand {
-        font-size: 130% !important;
+        font-size: 100% !important;
         width: auto !important;
         height: auto !important;
         /* Увеличение размера текста рейтинга */
@@ -1945,7 +1951,7 @@ h4 {
 
 
     .all-flim-img {
-        width: 97% !important;
+        width: 100% !important;
         height: 100%;
     }
 
@@ -2021,11 +2027,28 @@ h4 {
 
 
     .all-flim-img {
-        width: 91%;
+        width: 96% !important;
         height: 100%;
     }
 }
+@media screen and (max-width: 1250px) {
 
+
+
+    .all-flim-img {
+        width: 95% !important;
+        height: 100%;
+    }
+}
+@media screen and (max-width: 1240px) {
+
+
+
+    .all-flim-img {
+        width: 94% !important;
+        height: 100%;
+    }
+}
 @media screen and (max-width: 1230px) {
     .all-film {
         margin-left: 10px !important;
@@ -2034,7 +2057,7 @@ h4 {
 
 
     .all-flim-img {
-        width: 90%;
+        width: 93% !important;
         height: 100%;
     }
 }
@@ -2048,12 +2071,28 @@ h4 {
 
 
     .all-flim-img {
-        width: 89% !important;
+        width: 92% !important;
         height: 100%;
     }
 }
+@media screen and (max-width: 1190px) {
 
 
+
+    .all-flim-img {
+        width: 91% !important;
+        height: 100%;
+    }
+}
+@media screen and (max-width: 1150px) {
+
+
+
+    .all-flim-img {
+        width: 90% !important;
+        height: 100%;
+    }
+}
 @media screen and (max-width: 1170px) {
     .all-film {
         margin-left: 10px !important;
@@ -2706,6 +2745,7 @@ h4 {
         width: 48% !important;
         height: 100%;
     }
+    
 }
 
 @media screen and (max-width: 355px) {
@@ -2827,18 +2867,56 @@ h4 {
         /* Ваши стили */
     }
 }
+@media (max-width: 1188px) {
+    
 
-@media (max-width: 600px) {
-
+    .card-tex{
+        width: 90% !important;
+    }
+  }
+  /* Для мобильных устройств */
+  @media (max-width: 1100px) {
+   
+    .card-tex{
+        width: 70% !important;
+    }
+  }
+@media (max-width: 950px) {
+    .card-tex{
+        width: 65% !important;
+    }
    
 }
-@media (max-width: 500px) {
+@media (max-width: 900px) {
+    .card-tex{
+        width: 63% !important;
+    }
+   
+}
+@media (max-width: 850px) {
+    .card-tex{
+        width: 60% !important;
+    }
+   
+}
+@media (max-width: 800px) {
+    .card-tex{
+        width: 58% !important;
+    }
+   
+}
+@media (max-width: 672px) {
     .card-tex{
         width: 55% !important;
     }
     
 }
-
+@media (max-width: 490px) {
+    .card-tex{
+        width: 50% !important;
+    }
+    
+}
 @media (max-width: 450px) {
     .card-tex{
         width: 60% !important;
@@ -2846,9 +2924,11 @@ h4 {
     
 }
 
-@media (max-width: 400px) {
+@media (max-width: 350px) {
+        .card-tex{
+            width: 55% !important;
+        }
 
-   
 }
 
 
