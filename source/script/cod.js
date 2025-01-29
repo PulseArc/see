@@ -563,7 +563,7 @@ $('.single-item').on('touchend', function (e) {
 
   const slider = $(this).slick('getSlick');
 
-  if (swipeDistance > 170) {
+  if (swipeDistance > 200) {
     // Длинный свайп: сдвигаем на 5 слайдов
     const direction = endX < startX ? 1 : -1; // Определяем направление свайпа
     const nextSlide = slider.currentSlide + direction * 5; // Переход на 5 слайдов
@@ -956,7 +956,7 @@ $('.single-item2').slick({
 
     const slider = $(this).slick('getSlick');
 
-    if (swipeDistance > 170) {
+    if (swipeDistance > 200) {
       // Длинный свайп: сдвигаем на 5 слайдов
       const direction = endX < startX ? 1 : -1; // Определяем направление свайпа
       const nextSlide = slider.currentSlide + direction * 5; // Переход на 5 слайдов
@@ -1348,7 +1348,7 @@ $('.single-item2').slick({
 
     const slider = $(this).slick('getSlick');
 
-    if (swipeDistance > 170) {
+    if (swipeDistance > 200) {
       // Длинный свайп: сдвигаем на 5 слайдов
       const direction = endX < startX ? 1 : -1; // Определяем направление свайпа
       const nextSlide = slider.currentSlide + direction * 5; // Переход на 5 слайдов
@@ -1442,7 +1442,7 @@ $('.single-item4').on('touchend', function (e) {
 
   const slider = $(this).slick('getSlick');
 
-  if (swipeDistance > 170) {
+  if (swipeDistance > 200) {
     // Длинный свайп: сдвигаем на 5 слайдов
     const direction = endX < startX ? 1 : -1; // Определяем направление свайпа
     const nextSlide = slider.currentSlide + direction * 5; // Переход на 5 слайдов
