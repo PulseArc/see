@@ -275,34 +275,121 @@ $('.single-item').slick({
       }
     },
     {
+      breakpoint: 1375,
+      settings: {
+        slidesToShow: 6.7,
+      }
+    },
+    {
+      breakpoint: 1350,
+      settings: {
+        slidesToShow: 6.6,
+      }
+    },
+    {
+      breakpoint: 1325,
+      settings: {
+        slidesToShow: 6.5,
+      }
+    },
+    {
       breakpoint: 1300,
+      settings: {
+        slidesToShow: 6.2,
+      }
+    },
+   
+    {
+      breakpoint: 1275,
       settings: {
         slidesToShow: 6.1,
       }
     },
-   
-
+    {
+      breakpoint: 1250,
+      settings: {
+        slidesToShow: 6,
+      }
+    },
+    {
+      breakpoint: 1225,
+      settings: {
+        slidesToShow: 5.9,
+      }
+    },
 	    {
 	      breakpoint: 1200,
+	      settings: {
+	        slidesToShow: 5.8,
+	      }
+	    },
+      {
+	      breakpoint: 1175,
+	      settings: {
+	        slidesToShow: 5.7,
+	      }
+	    },
+      {
+	      breakpoint: 1150,
 	      settings: {
 	        slidesToShow: 5.6,
 	      }
 	    },
-
+      {
+	      breakpoint: 1125,
+	      settings: {
+	        slidesToShow: 5.5,
+	      }
+	    },
       {
 	      breakpoint: 1100,
+	      settings: {
+	        slidesToShow: 5.2,
+	      }
+	    },
+
+      {
+	      breakpoint: 1075,
+	      settings: {
+	        slidesToShow: 5.1,
+	      }
+	    },
+      {
+	      breakpoint: 1050,
 	      settings: {
 	        slidesToShow: 5,
 	      }
 	    },
-
+      {
+	      breakpoint: 1025,
+	      settings: {
+	        slidesToShow: 4.9,
+	      }
+	    },
       {
 	      breakpoint: 1000,
 	      settings: {
-	        slidesToShow: 4.8,
+	        slidesToShow: 4.7,
 	      }
 	    },
-
+      {
+	      breakpoint: 975,
+	      settings: {
+	        slidesToShow: 4.6,
+	      }
+	    },
+      {
+	      breakpoint: 950,
+	      settings: {
+	        slidesToShow: 4.5,
+	      }
+	    },
+      {
+	      breakpoint: 925,
+	      settings: {
+	        slidesToShow: 4.4,
+	      }
+	    },
       {
 	      breakpoint: 900,
 	      settings: {
@@ -310,33 +397,81 @@ $('.single-item').slick({
 	      }
 	    },
       {
-	      breakpoint: 800,
+	      breakpoint: 875,
+	      settings: {
+	        slidesToShow: 4.2,
+	      }
+	    },
+      {
+	      breakpoint: 850,
+	      settings: {
+	        slidesToShow: 4.1,
+	      }
+	    },
+      {
+	      breakpoint: 825,
 	      settings: {
 	        slidesToShow: 4,
 	      }
 	    },
       {
-	      breakpoint: 750,
+	      breakpoint: 800,
+	      settings: {
+	        slidesToShow: 3.9,
+	      }
+	    },
+      {
+	      breakpoint: 775,
 	      settings: {
 	        slidesToShow: 3.8,
 	      }
 	    },
       {
-	      breakpoint: 700,
+	      breakpoint: 750,
+	      settings: {
+	        slidesToShow: 3.7,
+	      }
+	    },
+      {
+	      breakpoint: 725,
 	      settings: {
 	        slidesToShow: 3.6,
 	      }
 	    },
       {
-	      breakpoint: 650,
+	      breakpoint: 700,
 	      settings: {
 	        slidesToShow: 3.4,
 	      }
 	    },
       {
+	      breakpoint: 675,
+	      settings: {
+	        slidesToShow: 3.3,
+	      }
+	    },
+      {
+	      breakpoint: 650,
+	      settings: {
+	        slidesToShow: 3.2,
+	      }
+	    },
+      {
+	      breakpoint: 625,
+	      settings: {
+	        slidesToShow: 3.1,
+	      }
+	    },
+      {
 	      breakpoint: 600,
 	      settings: {
-	        slidesToShow: 3,
+	        slidesToShow: 2.9,
+	      }
+	    },
+      {
+	      breakpoint: 575,
+	      settings: {
+	        slidesToShow: 2.8,
 	      }
 	    },
       {
@@ -346,16 +481,27 @@ $('.single-item').slick({
 	      }
 	    },
       {
-	      breakpoint: 500,
+	      breakpoint: 525,
 	      settings: {
 	        slidesToShow: 2.6,
 	      }
 	    },
-
       {
-	      breakpoint: 480,
+	      breakpoint: 500,
 	      settings: {
-	        slidesToShow: 3.2,
+	        slidesToShow: 2.5,
+	      }
+	    },
+      {
+	      breakpoint: 480.05,
+	      settings: {
+	        slidesToShow: 3.05,
+	      }
+	    },
+      {
+	      breakpoint: 475,
+	      settings: {
+	        slidesToShow: 3,
 	      }
 	    },
      
@@ -366,7 +512,18 @@ $('.single-item').slick({
 	        slidesToShow: 2.9,
 	      }
 	    },
-
+      {
+	      breakpoint: 425,
+	      settings: {
+	        slidesToShow: 2.8,
+	      }
+	    },
+      {
+	      breakpoint: 415,
+	      settings: {
+	        slidesToShow: 2.72,
+	      }
+	    },
       {
 	      breakpoint: 400,
 	      settings: {
@@ -374,13 +531,24 @@ $('.single-item').slick({
 	      }
 	    },
 
-      
+      {
+	      breakpoint: 375,
+	      settings: {
+	        slidesToShow: 2.5,
+	      }
+	    },
 	    {
 	      breakpoint: 350,
 	      settings: {
-	        slidesToShow: 2.2,
+	        slidesToShow: 2.4,
 	      }
-	    }
+	    },
+      {
+	      breakpoint: 340,
+	      settings: {
+	        slidesToShow: 2.21,
+	      }
+	    },
     ]
 });
 
@@ -395,7 +563,7 @@ $('.single-item').on('touchend', function (e) {
 
   const slider = $(this).slick('getSlick');
 
-  if (swipeDistance > 220) {
+  if (swipeDistance > 170) {
     // Длинный свайп: сдвигаем на 5 слайдов
     const direction = endX < startX ? 1 : -1; // Определяем направление свайпа
     const nextSlide = slider.currentSlide + direction * 5; // Переход на 5 слайдов
@@ -489,101 +657,289 @@ $('.single-item2').slick({
     {
       breakpoint: 1400,
       settings: {
-        slidesToShow: 5.5,
+        slidesToShow: 5.9,
       }
     },
     {
-      breakpoint: 1300,
+      breakpoint: 1375,
+      settings: {
+        slidesToShow: 5.8,
+      }
+    },
+    {
+      breakpoint: 1350,
+      settings: {
+        slidesToShow: 5.7,
+      }
+    },
+    {
+      breakpoint: 1325,
       settings: {
         slidesToShow: 5.6,
       }
     },
     {
-      breakpoint: 1200,
+      breakpoint: 1300,
+      settings: {
+        slidesToShow: 5.5,
+      }
+    },
+    {
+      breakpoint: 1275,
       settings: {
         slidesToShow: 5.4,
       }
     },
+    {
+      breakpoint: 1250,
+      settings: {
+        slidesToShow: 5.3,
+      }
+    },
+    {
+      breakpoint: 1225,
+      settings: {
+        slidesToShow: 5.2,
+      }
+    },
 
     {
-     breakpoint: 1190,
+     breakpoint: 1200,
      settings: {
        slidesToShow: 5.1,
      }
    },
- 
+   
+  {
+    breakpoint: 1175,
+    settings: {
+      slidesToShow: 5,
+    }
+  },
+  {
+    breakpoint: 1150,
+    settings: {
+      slidesToShow: 4.9,
+    }
+  },
        {
-         breakpoint: 1130,
+         breakpoint: 1125,
+         settings: {
+           slidesToShow: 4.8,
+         }
+       },
+       {
+        breakpoint: 1100,
+        settings: {
+          slidesToShow: 4.7,
+        }
+      },
+      {
+        breakpoint: 1075,
+        settings: {
+          slidesToShow: 4.6,
+        }
+      },
+      {
+        breakpoint: 1050,
+        settings: {
+          slidesToShow: 4.5,
+        }
+      },
+      {
+        breakpoint: 1025,
+        settings: {
+          slidesToShow: 4.4,
+        }
+      },
+
+       {
+         breakpoint: 1000,
          settings: {
            slidesToShow: 4.3,
          }
        },
- 
        {
-         breakpoint: 1000,
-         settings: {
-           slidesToShow: 4.1,
-         }
-       },
- 
+        breakpoint: 975,
+        settings: {
+          slidesToShow: 4.2,
+        }
+      },
+      {
+        breakpoint: 950,
+        settings: {
+          slidesToShow: 4.1,
+        }
+      },
+      {
+        breakpoint: 925,
+        settings: {
+          slidesToShow: 4,
+        }
+      },
        {
          breakpoint: 900,
          settings: {
-           slidesToShow: 3.6,
+           slidesToShow: 3.9,
          }
        },
+       {
+        breakpoint: 875,
+        settings: {
+          slidesToShow: 3.8,
+        }
+      },
+      {
+        breakpoint: 850,
+        settings: {
+          slidesToShow: 3.7,
+        }
+      },
+      {
+        breakpoint: 825,
+        settings: {
+          slidesToShow: 3.6,
+        }
+      },
        {
          breakpoint: 800,
          settings: {
-           slidesToShow: 3.3,
+           slidesToShow: 3.5,
          }
        },
+       {
+        breakpoint: 775,
+        settings: {
+          slidesToShow: 3.4,
+        }
+      },
+       {
+        breakpoint: 750,
+        settings: {
+          slidesToShow: 3.3,
+        }
+      },
+       {
+        breakpoint: 725,
+        settings: {
+          slidesToShow: 3.2,
+        }
+      },
        {
          breakpoint: 700,
          settings: {
-           slidesToShow: 2.7,
+           slidesToShow: 3.1,
          }
        },
+       {
+        breakpoint: 675,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+       {
+        breakpoint: 650,
+        settings: {
+          slidesToShow: 2.9,
+        }
+      },
+       {
+        breakpoint: 625,
+        settings: {
+          slidesToShow: 2.7,
+        }
+      },
        {
          breakpoint: 600,
          settings: {
-           slidesToShow: 2.5,
+           slidesToShow: 2.6,
          }
        },
        {
+        breakpoint: 575,
+        settings: {
+          slidesToShow: 2.51,
+        }
+      },
+       {
         breakpoint: 550,
         settings: {
-          slidesToShow: 2.3,
+          slidesToShow: 2.4,
+        }
+      },
+      {
+        breakpoint: 525,
+        settings: {
+          slidesToShow: 2.31,
         }
       },
        {
          breakpoint: 500,
          settings: {
+           slidesToShow: 2.22,
+         }
+       },
+       {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2.1,
+        }
+      },
+      {
+        breakpoint: 465,
+        settings: {
+          slidesToShow: 2.05,
+        }
+      },
+       {
+         breakpoint: 450,
+         settings: {
            slidesToShow: 2,
          }
        },
- 
        {
-         breakpoint: 450,
+        breakpoint: 435,
+        settings: {
+          slidesToShow: 1.95,
+        }
+      },
+      {
+        breakpoint: 420,
+        settings: {
+          slidesToShow: 1.92,
+        }
+      },
+       {
+         breakpoint: 400,
          settings: {
            slidesToShow: 1.8,
          }
        },
- 
        {
-         breakpoint: 400,
-         settings: {
-           slidesToShow: 1.6,
-         }
-       },
- 
+        breakpoint: 380,
+        settings: {
+          slidesToShow: 1.75,
+        }
+      },
+      {
+        breakpoint: 365,
+        settings: {
+          slidesToShow: 1.65,
+        }
+      },
        
        {
          breakpoint: 350,
          settings: {
-           slidesToShow: 1.5,
+           slidesToShow: 1.6,
          }
-       }
+       },
+       {
+        breakpoint: 340,
+        settings: {
+          slidesToShow: 1.55,
+        }
+      }
      ]
  });
 
@@ -600,7 +956,7 @@ $('.single-item2').slick({
 
     const slider = $(this).slick('getSlick');
 
-    if (swipeDistance > 220) {
+    if (swipeDistance > 170) {
       // Длинный свайп: сдвигаем на 5 слайдов
       const direction = endX < startX ? 1 : -1; // Определяем направление свайпа
       const nextSlide = slider.currentSlide + direction * 5; // Переход на 5 слайдов
@@ -618,7 +974,7 @@ $('.single-item2').slick({
   infinite: true, // Бесконечная прокрутка
   dots: true, // Точки навигации
   autoplay: true, // Автоматическая прокрутка
-  autoplaySpeed: 2200,
+  autoplaySpeed: 1800,
   pauseOnFocus: true,
   pauseOnHover: true,
   pauseOnDotsHover: true,
@@ -629,7 +985,8 @@ $('.single-item2').slick({
   waitForAnimate: false,
   speed: 500,
   touchMove: true,
-  responsive: [
+  responsive:  [
+
     {
       breakpoint: 4000,
       settings: {
@@ -692,122 +1049,312 @@ $('.single-item2').slick({
     {
       breakpoint: 1400,
       settings: {
-        slidesToShow: 5.5,
+        slidesToShow: 5.9,
       }
     },
     {
-      breakpoint: 1300,
+      breakpoint: 1375,
+      settings: {
+        slidesToShow: 5.8,
+      }
+    },
+    {
+      breakpoint: 1350,
+      settings: {
+        slidesToShow: 5.7,
+      }
+    },
+    {
+      breakpoint: 1325,
       settings: {
         slidesToShow: 5.6,
       }
     },
     {
-      breakpoint: 1200,
+      breakpoint: 1300,
+      settings: {
+        slidesToShow: 5.5,
+      }
+    },
+    {
+      breakpoint: 1275,
       settings: {
         slidesToShow: 5.4,
       }
     },
+    {
+      breakpoint: 1250,
+      settings: {
+        slidesToShow: 5.3,
+      }
+    },
+    {
+      breakpoint: 1225,
+      settings: {
+        slidesToShow: 5.2,
+      }
+    },
 
     {
-     breakpoint: 1190,
+     breakpoint: 1200,
      settings: {
        slidesToShow: 5.1,
      }
    },
- 
+   
+  {
+    breakpoint: 1175,
+    settings: {
+      slidesToShow: 5,
+    }
+  },
+  {
+    breakpoint: 1150,
+    settings: {
+      slidesToShow: 4.9,
+    }
+  },
        {
-         breakpoint: 1130,
+         breakpoint: 1125,
+         settings: {
+           slidesToShow: 4.8,
+         }
+       },
+       {
+        breakpoint: 1100,
+        settings: {
+          slidesToShow: 4.7,
+        }
+      },
+      {
+        breakpoint: 1075,
+        settings: {
+          slidesToShow: 4.6,
+        }
+      },
+      {
+        breakpoint: 1050,
+        settings: {
+          slidesToShow: 4.5,
+        }
+      },
+      {
+        breakpoint: 1025,
+        settings: {
+          slidesToShow: 4.4,
+        }
+      },
+
+       {
+         breakpoint: 1000,
          settings: {
            slidesToShow: 4.3,
          }
        },
- 
        {
-         breakpoint: 1000,
-         settings: {
-           slidesToShow: 4.1,
-         }
-       },
- 
+        breakpoint: 975,
+        settings: {
+          slidesToShow: 4.2,
+        }
+      },
+      {
+        breakpoint: 950,
+        settings: {
+          slidesToShow: 4.1,
+        }
+      },
+      {
+        breakpoint: 925,
+        settings: {
+          slidesToShow: 4,
+        }
+      },
        {
          breakpoint: 900,
          settings: {
-           slidesToShow: 3.6,
+           slidesToShow: 3.9,
          }
        },
+       {
+        breakpoint: 875,
+        settings: {
+          slidesToShow: 3.8,
+        }
+      },
+      {
+        breakpoint: 850,
+        settings: {
+          slidesToShow: 3.7,
+        }
+      },
+      {
+        breakpoint: 825,
+        settings: {
+          slidesToShow: 3.6,
+        }
+      },
        {
          breakpoint: 800,
          settings: {
-           slidesToShow: 3.3,
+           slidesToShow: 3.5,
          }
        },
+       {
+        breakpoint: 775,
+        settings: {
+          slidesToShow: 3.4,
+        }
+      },
+       {
+        breakpoint: 750,
+        settings: {
+          slidesToShow: 3.3,
+        }
+      },
+       {
+        breakpoint: 725,
+        settings: {
+          slidesToShow: 3.2,
+        }
+      },
        {
          breakpoint: 700,
          settings: {
-           slidesToShow: 2.7,
+           slidesToShow: 3.1,
          }
        },
+       {
+        breakpoint: 675,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+       {
+        breakpoint: 650,
+        settings: {
+          slidesToShow: 2.9,
+        }
+      },
+       {
+        breakpoint: 625,
+        settings: {
+          slidesToShow: 2.7,
+        }
+      },
        {
          breakpoint: 600,
          settings: {
-           slidesToShow: 2.5,
+           slidesToShow: 2.6,
          }
        },
        {
+        breakpoint: 575,
+        settings: {
+          slidesToShow: 2.51,
+        }
+      },
+       {
         breakpoint: 550,
         settings: {
-          slidesToShow: 2.3,
+          slidesToShow: 2.4,
+        }
+      },
+      {
+        breakpoint: 525,
+        settings: {
+          slidesToShow: 2.31,
         }
       },
        {
          breakpoint: 500,
          settings: {
+           slidesToShow: 2.22,
+         }
+       },
+       {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2.1,
+        }
+      },
+      {
+        breakpoint: 465,
+        settings: {
+          slidesToShow: 2.05,
+        }
+      },
+       {
+         breakpoint: 450,
+         settings: {
            slidesToShow: 2,
          }
        },
- 
        {
-         breakpoint: 450,
+        breakpoint: 435,
+        settings: {
+          slidesToShow: 1.95,
+        }
+      },
+      {
+        breakpoint: 420,
+        settings: {
+          slidesToShow: 1.92,
+        }
+      },
+       {
+         breakpoint: 400,
          settings: {
            slidesToShow: 1.8,
          }
        },
- 
        {
-         breakpoint: 400,
-         settings: {
-           slidesToShow: 1.6,
-         }
-       },
- 
+        breakpoint: 380,
+        settings: {
+          slidesToShow: 1.75,
+        }
+      },
+      {
+        breakpoint: 365,
+        settings: {
+          slidesToShow: 1.65,
+        }
+      },
        
        {
          breakpoint: 350,
          settings: {
-           slidesToShow: 1.5,
+           slidesToShow: 1.6,
          }
-       }
-     
-  ]
+       },
+       {
+        breakpoint: 340,
+        settings: {
+          slidesToShow: 1.55,
+        }
+      }
+     ]
  });
- $('.single-item3').on('touchstart', function (e) {
-  startX = e.originalEvent.touches[0].clientX;
-});
 
-// Завершаем свайп и обрабатываем длину
-$('.single-item3').on('touchend', function (e) {
-  const endX = e.originalEvent.changedTouches[0].clientX;
-  swipeDistance = Math.abs(endX - startX);
 
-  const slider = $(this).slick('getSlick');
+  // Начало свайпа
+  $('.single-item3').on('touchstart', function (e) {
+    startX = e.originalEvent.touches[0].clientX;
+  });
 
-  if (swipeDistance > 220) {
-    // Длинный свайп: сдвигаем на 5 слайдов
-    const direction = endX < startX ? 1 : -1; // Определяем направление свайпа
-    const nextSlide = slider.currentSlide + direction * 5; // Переход на 5 слайдов
-    slider.slickGoTo(nextSlide);
-  }
-});
+  // Завершаем свайп и обрабатываем длину
+  $('.single-item3').on('touchend', function (e) {
+    const endX = e.originalEvent.changedTouches[0].clientX;
+    swipeDistance = Math.abs(endX - startX);
+
+    const slider = $(this).slick('getSlick');
+
+    if (swipeDistance > 170) {
+      // Длинный свайп: сдвигаем на 5 слайдов
+      const direction = endX < startX ? 1 : -1; // Определяем направление свайпа
+      const nextSlide = slider.currentSlide + direction * 5; // Переход на 5 слайдов
+      slider.slickGoTo(nextSlide);
+    }
+  });
 });
 
 // Конец
@@ -895,7 +1442,7 @@ $('.single-item4').on('touchend', function (e) {
 
   const slider = $(this).slick('getSlick');
 
-  if (swipeDistance > 220) {
+  if (swipeDistance > 170) {
     // Длинный свайп: сдвигаем на 5 слайдов
     const direction = endX < startX ? 1 : -1; // Определяем направление свайпа
     const nextSlide = slider.currentSlide + direction * 5; // Переход на 5 слайдов
