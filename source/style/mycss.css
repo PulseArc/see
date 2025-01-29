@@ -609,6 +609,18 @@ h4 {
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
+.slider.single-item2 .card-tex {
+    width: 100% !important; /* Или нужное значение */
+    
+}
+.slider.single-item3 .card-tex {
+    width: 100% !important; /* Или нужное значение */
+    
+}
+.slider.single-item .card-tex {
+    width: 100% !important; /* Или нужное значение */
+    
+}
 
 #nav-menu li a {
 
@@ -882,7 +894,22 @@ footer {
 .all-film {
     margin-left: 5px;
 }
-
+@media (min-width: 1521px) and (max-width: 4000px) {
+    
+    .navbar-img {
+      width: 27px !important;
+      height: 25px !important;
+    }
+    .search-icon .navbar-img {
+        width: 20px !important; /* Фиксированный размер */
+        height: 19px !important;
+      }
+      .search-input{
+        font-size: 103% !important;
+      }
+      
+      
+  }
 
 
 /* слайдер стрелки  */
@@ -984,7 +1011,79 @@ footer {
     /* Поднимаем стрелку вверх */
 }
 
+@media (min-width: 2019px) and (max-width: 4000px) {
+    
+    
+      .slider .slick-prev {
+        top: 40% !important;
+        /* Поднимаем стрелку вверх */
+    }
 
+    .slider .slick-next {
+        top: 40% !important;
+        /* Поднимаем стрелку вверх */
+    }
+
+    .slider-2 .slick-prev {
+        top: 40% !important;
+        /* Поднимаем стрелку вверх */
+    }
+
+    .slider-2 .slick-next {
+        top: 40% !important;
+        /* Поднимаем стрелку вверх */
+    }
+      
+  }
+  @media (min-width: 1521px) and (max-width: 2019px) {
+    
+    
+    .slider .slick-prev {
+      top: 40% !important;
+      /* Поднимаем стрелку вверх */
+  }
+
+  .slider .slick-next {
+      top: 40% !important;
+      /* Поднимаем стрелку вверх */
+  }
+
+  .slider-2 .slick-prev {
+      top: 30% !important;
+      /* Поднимаем стрелку вверх */
+  }
+
+  .slider-2 .slick-next {
+      top: 30% !important;
+      /* Поднимаем стрелку вверх */
+  }
+    
+}
+
+@media (min-width: 1321px) and (max-width: 1521px) {
+    
+    
+    .slider .slick-prev {
+      top: 40% !important;
+      /* Поднимаем стрелку вверх */
+  }
+
+  .slider .slick-next {
+      top: 40% !important;
+      /* Поднимаем стрелку вверх */
+  }
+
+  .slider-2 .slick-prev {
+      top: 35% !important;
+      /* Поднимаем стрелку вверх */
+  }
+
+  .slider-2 .slick-next {
+      top: 35% !important;
+      /* Поднимаем стрелку вверх */
+  }
+    
+}
 .mobilescreen {
     display: none;
 }
@@ -1627,11 +1726,16 @@ footer {
     .span-rating {
         margin-right: 0.3em;
     }
-
-    h4 {
-        font-size: 200% !important;
+    .navbar{
+        font-size: 130% !important;
     }
-
+    
+    h4 {
+        font-size: 130% !important;
+    }
+    .navbar{
+        font-size: 130% !important;
+    }
     .card-tex {
         font-size: 130% !important;
 
@@ -1759,20 +1863,24 @@ footer {
     .span-rating {
         margin-right: 0.3em;
     }
-
+    .navbar{
+        font-size: 130% !important;
+    }
     h4 {
-        font-size: 180% !important;
+        font-size: 130% !important;
     }
 
     .card-body .card-tex {
-        font-size: 150% !important;
+        font-size: 130% !important;
         ;
         /* Увеличение размера текста */
     }
 }
-
+.navbar{
+    font-size: 130% !important;
+}
 h4 {
-    font-size: 180% !important;
+    font-size: 130% !important;
 }
 
 .card-tex {
@@ -1851,9 +1959,11 @@ h4 {
     .span-rating {
         margin-right: 0.3em;
     }
-
+    .navbar{
+        font-size: 120% !important;
+    }
     h4 {
-        font-size: 180% !important;
+        font-size: 140% !important;
     }
 
     .card-body .card-tex {
@@ -1861,9 +1971,11 @@ h4 {
         ;
         /* Увеличение размера текста */
     }
-
+    .navbar{
+        font-size: 130% !important;
+    }
     h4 {
-        font-size: 175% !important;
+        font-size: 130% !important;
     }
 
     .card-tex {
@@ -1973,8 +2085,11 @@ h4 {
     .year {
         font-size: 90% !important;
     }
+    .navbar{
+        font-size: 100% !important;
+    }
     h4 {
-        font-size: 140% !important;
+        font-size: 130% !important;
     }
     .btn-show-all {
         width: 100%;
@@ -2733,7 +2848,12 @@ h4 {
 }
 
 @media screen and (max-width: 350px) {
-
+    .btn-show-all{
+        font-size: 90% !important;
+    }
+    h4 {
+        font-size: 115% !important;
+    }
     .all-flim-img {
         width: 52% !important;
         height: 100%;
@@ -2876,7 +2996,7 @@ h4 {
   }
   /* Для мобильных устройств */
   @media (max-width: 1100px) {
-   
+
     .card-tex{
         width: 70% !important;
     }
@@ -2908,6 +3028,18 @@ h4 {
 @media (max-width: 672px) {
     .card-tex{
         width: 55% !important;
+    }
+    .slider.single-item2 .card-tex {
+        width: 80% !important; /* Или нужное значение */
+        
+    }
+    .slider.single-item3 .card-tex {
+        width: 80% !important; /* Или нужное значение */
+        
+    }
+    .slider.single-item .card-tex {
+        width: 80% !important; /* Или нужное значение */
+        
     }
     
 }
