@@ -1355,11 +1355,7 @@ footer {
     }
     
     
-    .navbar-brand img{
-        
-        
-        
-    }
+  
     
     
     .navbar {
@@ -3092,6 +3088,25 @@ h4 {
 
         width: 9rem;
         height: 100%;
+    }
+    .slider .slick-prev {
+        top: 15vh !important;
+        /* Поднимаем стрелку вверх */
+    }
+
+    .slider .slick-next {
+        top: 15vh !important;
+        /* Поднимаем стрелку вверх */
+    }
+
+    .slider-2 .slick-prev {
+        top: 9vh !important;
+        /* Поднимаем стрелку вверх */
+    }
+
+    .slider-2 .slick-next {
+        top: 9vh !important;
+        /* Поднимаем стрелку вверх */
     }
 
 
