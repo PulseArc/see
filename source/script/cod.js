@@ -9,6 +9,7 @@ const resultsContainer = document.getElementById('results-container'); // Кон
 const menuToggle = document.querySelector('#menuToggle input');
 const searchWrapper = document.querySelector('.search-wrapper'); // Внешний контейнер
 const clearIcon = document.querySelector('.clear-icon'); // Крестик для очистки
+const searchButton = document.querySelector('.searchButton'); // Кнопка поиска
 
 searchInput.addEventListener('input', () => {
   const query = searchInput.value.trim(); // Получаем текст из поля поиска
@@ -34,14 +35,28 @@ searchInput.addEventListener('input', () => {
   }
 });
 
-// Событие клика по крестик
+// Событие клика по крестику
 clearIcon.addEventListener('click', () => {
   searchInput.value = ''; // Очищаем поле ввода
   resultsContainer.style.display = 'none'; // Скрываем контейнер с результатами
   clearIcon.style.display = 'none'; // Скрываем крестик
+  searchInput.blur(); // Убираем фокус, скрывая клавиатуру
 });
 
+// Скрытие клавиатуры при нажатии Enter
+searchInput.addEventListener('keypress', (event) => {
+  if (event.key === 'Enter') {
+    event.preventDefault(); // Предотвращаем стандартное поведение формы
+    searchInput.blur(); // Убираем фокус с поля, скрывая клавиатуру
+  }
+});
 
+// Скрытие клавиатуры при нажатии на кнопку поиска
+if (searchButton) {
+  searchButton.addEventListener('click', () => {
+    searchInput.blur(); // Убираем фокус
+  });
+}
 
 // Событие переключения меню
 menuToggle.addEventListener('change', () => {
@@ -51,6 +66,7 @@ menuToggle.addEventListener('change', () => {
     searchWrapper.classList.remove('hidden'); // Убираем класс для показа
   }
 });
+
 
 
 
