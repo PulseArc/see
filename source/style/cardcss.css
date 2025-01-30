@@ -557,8 +557,8 @@ overflow: hidden;
       position: relative;
       width: 100%;
       height: 100%;
-      overflow: hidden; /* Обрезает всё, что выходит за границы */
-      background-color: black; /* Фон совпадает с фоном страницы */
+      overflow: hidden;
+      background-color: black;
   }
   
   .mobile-img {
@@ -572,14 +572,28 @@ overflow: hidden;
       transform: scale(1.4);
   }
   
+  /* Затемнение сверху */
   .mobile-img-card::before {
       content: "";
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: 15%; /* Настроить высоту затемнения */
+      height: 15%;
       background: linear-gradient(black 0%, rgba(0, 0, 0, 0) 100%);
+      z-index: 2;
+      pointer-events: none;
+  }
+  
+  /* Затемнение снизу */
+  .mobile-img-card::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 10%;
+      background: linear-gradient(rgba(0, 0, 0, 0) 0%, black 100%);
       z-index: 2;
       pointer-events: none;
   }
