@@ -355,7 +355,7 @@ overflow: hidden;
   
       width: 500px !important;
       height: 281px !important;
-      border: 2px solid white ;
+      border: 2px solid #333333 ;
       border-radius: 5px ;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) ;
      
@@ -660,7 +660,7 @@ overflow: hidden;
   
   width: 700px !important;
   height: 400px !important;
-  border: 2px solid white ;
+  border: 2px solid #333333 ;
   border-radius: 5px ;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) ;
  
