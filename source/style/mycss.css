@@ -490,9 +490,16 @@ h4 {
     /* Увеличение изображения на 5% при наведении */
     padding: 2px;
     border-color: #b22222;
+    margin-bottom: 2px;
     /* Подсвечивание бордера красным */
 }
 
+.single-item3 .card:hover .card-img-top {
+    margin-bottom: -2px;
+}
+.single-item2 .card:hover .card-img-top {
+    margin-bottom: -2px;
+}
 .card-img-top {
     margin-top: 3px;
 
@@ -895,22 +902,63 @@ footer {
     margin-left: 5px;
 }
 @media (min-width: 1521px) and (max-width: 4000px) {
-    
+    .navbar{
+        height: 90px;
+    }
+    .search-wrapper{
+        top:30px;
+    }
+    .search-container{
+        width: 45px;
+        height: 45px; /* Сделано равным ширине */
+        border-radius: 25px;
+        
+        
+    }
+    .search-wrapper:hover .search-container {
+        width: 270px !important;
+        /* Расширение контейнера влево */
+    }
     .navbar-img {
+       
       width: 27px !important;
       height: 25px !important;
+    }
+    .clear-icon{
+        font-size: 125% !important;
+        padding-right: 5px !important;
+    }
+    
+      .search-input{
+        font-size: 103% !important;
+      }
+     
+        .card-results {
+    
+            margin-left: 1vh  !important;
+    
+        }
+        .card-body {
+            padding-top: 15px !important;
+            text-align: left;
+            width: 100%;
+        }
+       
+  }
+  @media (min-width: 1439px) and (max-width: 1521px) {
+   
+    .navbar-img {
+       
+      width: 24px !important;
+      height: 22px !important;
     }
     .search-icon .navbar-img {
         width: 20px !important; /* Фиксированный размер */
         height: 19px !important;
       }
-      .search-input{
-        font-size: 103% !important;
-      }
-      
-      
-  }
-
+        }
+       
+  
 
 /* слайдер стрелки  */
 .slick-prev {
@@ -1033,6 +1081,33 @@ footer {
         top: 40% !important;
         /* Поднимаем стрелку вверх */
     }
+    .slick-prev:after {
+        content: '';
+        width: 40px;
+        /* ширина стрелки */
+        height: 40px;
+        /* высота стрелки */
+    
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        transform: rotate(45deg);
+        /* поворот   */
+        border-left: 3px solid white;
+        /* потчеркнуть с лева  */
+        border-bottom: 3px solid white;
+        /*  подчернуть снизу */
+    }
+    .slick-next:after {
+        left: -1vh !important;
+        width: 40px;
+        /* ширина стрелки */
+        height: 40px;
+        /* высота стрелки */
+    
+        
+        /*  подчернуть снизу */
+    }
       
   }
   @media (min-width: 1521px) and (max-width: 2019px) {
@@ -1057,6 +1132,33 @@ footer {
       top: 30% !important;
       /* Поднимаем стрелку вверх */
   }
+  .slick-prev:after {
+    content: '';
+    width: 40px;
+    /* ширина стрелки */
+    height: 40px;
+    /* высота стрелки */
+
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    transform: rotate(45deg);
+    /* поворот   */
+    border-left: 3px solid white;
+    /* потчеркнуть с лева  */
+    border-bottom: 3px solid white;
+    /*  подчернуть снизу */
+}
+.slick-next:after {
+    left: -1vh !important;
+    width: 40px;
+    /* ширина стрелки */
+    height: 40px;
+    /* высота стрелки */
+
+    
+    /*  подчернуть снизу */
+}
     
 }
 
@@ -1074,14 +1176,42 @@ footer {
   }
 
   .slider-2 .slick-prev {
-      top: 35% !important;
+      top: 33% !important;
       /* Поднимаем стрелку вверх */
   }
 
   .slider-2 .slick-next {
-      top: 35% !important;
+      top: 33% !important;
       /* Поднимаем стрелку вверх */
   }
+
+  .slick-prev:after {
+    content: '';
+    width: 30px;
+    /* ширина стрелки */
+    height: 30px;
+    /* высота стрелки */
+
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    transform: rotate(45deg);
+    /* поворот   */
+    border-left: 3px solid white;
+    /* потчеркнуть с лева  */
+    border-bottom: 3px solid white;
+    /*  подчернуть снизу */
+}
+.slick-next:after {
+    left: 0vh !important;
+    width: 30px;
+    /* ширина стрелки */
+    height: 30px;
+    /* высота стрелки */
+
+    
+    /*  подчернуть снизу */
+}
     
 }
 .mobilescreen {
@@ -1158,7 +1288,13 @@ footer {
         /* Расширение контейнера влево */
     }
 }
+@media screen and (min-width: 1185px) and (max-width: 1521px){
+    .card-results {
 
+        margin-left: 0vh  !important;
+
+    }
+}
 @media screen and (max-width: 1185px) {
     .card-results {
 
@@ -1877,7 +2013,7 @@ footer {
     }
 }
 .navbar{
-    font-size: 130% !important;
+    font-size: 120% !important;
 }
 h4 {
     font-size: 130% !important;
@@ -2931,12 +3067,12 @@ h4 {
     }
 
     .slider-2 .slick-prev {
-        top: 7vh !important;
+        top: 8vh !important;
         /* Поднимаем стрелку вверх */
     }
 
     .slider-2 .slick-next {
-        top: 7vh !important;
+        top: 8vh !important;
         /* Поднимаем стрелку вверх */
     }
 
