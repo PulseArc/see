@@ -945,12 +945,12 @@ footer {
         }
        
   }
-  @media (min-width: 1439px) and (max-width: 1521px) {
+  @media (min-width: 1279px) and (max-width: 1521px) {
    
     .navbar-img {
        
-      width: 24px !important;
-      height: 22px !important;
+      width: 23px !important;
+      height: 21px !important;
     }
     .search-icon .navbar-img {
         width: 20px !important; /* Фиксированный размер */
