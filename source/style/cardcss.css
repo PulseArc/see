@@ -362,14 +362,7 @@ overflow: hidden;
     
     }
 
-    .full-conteiner-video:nth-child(1) .vjs-big-play-button {
-      top: 33% !important;
-      left: 41% !important;
-      font-size: 6em !important;
-      line-height: 1.3em !important;
-      height: 1.3em !important;
-      width: 1.3em !important;
-    }
+    
 }
 @media (max-width: 850px) {
   .full-player{
