@@ -20,14 +20,13 @@
     font-size: 1.1em;
 }
 
-.full-more{
-    font-size: 1.2em;
-    color: rgb(230, 230, 250);
-    
-}
+
 .full-head{
     font-size: 1em;
     font-family: "SegoeUI", sans-serif;
+}
+.full-head-year{
+  font-size: 1.1em ;
 }
 .full-genre{
     margin-top: 1.5em;
@@ -108,15 +107,15 @@
 }
 .movie-card{
     position: absolute;
-  top: 5em; /* Размещает карточку по центру */
+  top: 7em !important; /* Размещает карточку по центру */
   left: 2em; /* Можно настроить для правильного выравнивания */
   z-index: 10; /* Карточка будет поверх фона */
-  width: 100%;
+ 
   display: flex;
   flex-direction: row; /* Размещаем элементы в строку */
   align-items: start; /* Выравнивание по вертикали */
   background-color: transparent;
-  width: 100%;
+  
   border: none;
   
 }
@@ -131,7 +130,7 @@
     border-radius: 18px;
 }
 .card-description{
-    margin-top: 1em;
+    margin-top: 6em;
     margin-left: 50px; /* Отступ между изображением и текстом */
     display: flex;
     flex-direction: column; /* Текст внутри карточки будет в столбик */
@@ -143,7 +142,7 @@
     font-size: 4em;
     font-weight: 600;
     margin-bottom: 0.2em;
-    margin-top: 0.1em;
+    margin-top:-0.1em;
     
     
     
@@ -170,10 +169,10 @@
 
 .full-player{
   position: relative;
-  padding-top: 5em;
+  padding-top: 1em;
 left: 1.7em;
 z-index: 10;
-padding-bottom: 5em;
+padding-bottom: 1em;
 display: flex;
 flex-direction: row;
 align-items: start;
@@ -216,38 +215,173 @@ overflow: hidden;
     overflow: hidden; /* Скрывает излишки изображения */
     z-index: 0;
 }
+@media (min-width: 600.05px) {
+.mobile-img-card{
 
-.background-pc-img{
-    background-size: cover; /* Масштабирует изображение, чтобы полностью покрыть элемент */
-    background-position: center; /* Центрирует изображение */
-    position: relative; /* Фиксирует фон относительно окна браузера */
-    top: 0;
-    left: 8em;
+display: none;
+}
+
+.mobile-img {
+  mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+z-index: -1;
+  /* Фильтры */
+  filter: brightness(0.55); /* Затемнение */
+  opacity: 1; /* Полупрозрачность */
+  transition: opacity 1s ease-in-out; /* Плавный эффект изменения прозрачности */
+}
+
+/* Затемнение сверху */
+.mobile-img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Затемнение снизу */
+.mobile-img::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.mobile-card-description {
+  position: absolute;
+  left: 17em;
+  top: 4em;
+  
+ 
+}
+
+.movie-card{
+  top: 2.5em;
+  left: 1.5em;
+  display: block;
+}
+.full-player{
+  top: -20em;
+}
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 8em 1fr; /* Отступ слева 8em, контент растягивается */
+  height: calc(300px + 30vmin);
+  margin-top: -4em !important;
+  background-color: transparent;
+  min-height: 600px;
+
+  img {
+    
     width: 100%;
     height: 100%;
-    z-index: -1; /* Помещает фон позади других элементов */
-    opacity: 0.7; /* Устанавливает прозрачность фона */
-    transition: opacity 0.5s ease-in-out; /* Добавляет плавный переход для изменения прозрачности */
+    min-height: 0;
+    object-fit: cover;
+  }
 
-    mask-image: radial-gradient(circle, black 50%, transparent 100%);
-    -webkit-mask-image: radial-gradient(circle, black 50%, transparent 100%);
-    mask-size: 100% 100%;
-    mask-repeat: no-repeat;
-    -webkit-mask-size: 100% 100%;
-    -webkit-mask-repeat: no-repeat;
-    filter: brightness(0.5);
-    
+  &:after {
+    content: "";
+    background-color: #000;
+    opacity: 0.5;
+    grid-area: 1/-1;
+  }
+}
+
+.hero__content {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+
+  > * {
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
 }
 
 
+.mobile-details{
+  display: block;
+  position: relative;
+  top: -2em;
+  
+}
+.mobile-about-the-film{
+  margin-top: 0.5em;
+  color: white;
+  font-size: 17.2192px;
+  font-family: 'Segoe UI',  sans-serif; 
+  width: 90%;
+  margin-left: 0.5em;
+  margin-bottom: 1em;
+}
+.mobile-more{
+  margin-left: 0.4em;
+  color: #FFFDD0;
+  font-family: 'Segoe UI',  sans-serif; 
+  font-size: 21px !important;
+}
+.container-column {
+  display: flex;
+  justify-content: flex-start; /* Выравнивание по левому краю */
+  gap: 10px; /* Расстояние между столбцами */
+  max-width: 800px; /* Ограничение ширины */
+  margin-left: 0;
+  margin-top: 1em;
+  font-family: "SegoeUI", sans-serif;
+}
+
+.column {
+  width: auto; /* Автоматическая ширина */
+  padding: 0;
+  padding-right: 1.3em;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.7em;
+}
+
+.column p {
+  margin: 0;
+}
+
+.column p:last-child {
+  white-space: nowrap; /* Запрещает перенос строки */
+}
+
+.column p {
+  margin-top: auto; /* Прижимает текст вниз */
+}
 
 .Mobile{
-  display: none;
-}
-.mobile-details{
-  display: none;
+  display: block;
+  position: relative;
 }
 
+}
 
 @media (max-width: 1184px) {
     .background-pc {
@@ -255,12 +389,12 @@ overflow: hidden;
     }
     .movie-card-img{
         
-        width: 15.5rem !important;
+        width: 15rem !important;
         width: 100%;
     }
     .movie-card {
-      left: 0.4em;
-      top: 5%;
+      top: 2.5em;
+  left: 0.5em;
       
       max-width: 300px;
     }
@@ -270,8 +404,9 @@ overflow: hidden;
     }
   
     .card-description {
-      font-size: 15px;
-      margin-left: 40px;
+      font-size: 14.0905px;
+      left: 16.5em;
+      top: 4em;
       
       
     }
@@ -287,45 +422,45 @@ overflow: hidden;
    
    
   }
-}
-@media (max-width: 1000px) {
-  .full-player{
+  .mobile-details{ 
+     
+    top: -4em ;
+     
     
-    padding-top: 10em;
- 
-  padding-bottom: 5em;
- 
+  }
+  .mobile-about-the-film{
+    margin-left: 0.5em;
+    font-size: 15.2192px;
+    
+  }
+  .mobile-more{
+    margin-left: 0.4em;
+    font-size: 19px !important;
   }
 }
-@media (max-width: 950px) {
-  .full-player{
-    
-    padding-top: 15em;
- 
-  padding-bottom: 5em;
- 
-  }
-}
+
+
 
   @media (max-width: 900px) {
     .background-pc {
       padding: 0;
     }
     .movie-card-img{
-        width: 15rem !important;
-        width: 100%;
+        width: 13rem !important;
+        
     }
     .movie-card {
        
-      top: 5%;
-      left: 0.4em;
+      top: 2.5em;
+      left: 0.5em;
       max-width: 150px;
     }
 
   
     .card-description {
-      font-size: 13px;
-      margin-left: 40px;
+      font-size: 14px;
+      left: 14em;
+      top: 3em;
     }
    
    
@@ -341,14 +476,22 @@ overflow: hidden;
      
      
     }
-    
-  .full-player{
-    
-    padding-top: 8em;
- 
-  padding-bottom: 5em;
- 
-  }
+    .mobile-details{
+      
+      top: -7em ;
+      
+       
+    }
+    .mobile-about-the-film{
+      
+      font-size: 15.2192px;
+      
+    }
+    .mobile-more{
+     
+      font-size: 19px !important;
+    }
+  
   }
   @media screen and (max-width: 915px) {
     .full-conteiner-video:nth-child(1) .video-js {
@@ -364,43 +507,29 @@ overflow: hidden;
 
     
 }
-@media (max-width: 850px) {
-  .full-player{
-    
-    padding-top: 11em;
- 
-  padding-bottom: 5em;
- 
-  }
-}
-@media (max-width: 800px) {
-  .full-player{
-    
-    padding-top: 13em;
- 
-  padding-bottom: 5em;
- 
-  }
-}
+
+
+
 
 @media (max-width: 768px) {
     .background-pc {
       padding: 0;
     }
     .movie-card-img{
-        width: 14rem !important;
+        width: 12rem !important;
         width: 100%;
     }
     .movie-card {
         
-      top: 5%;
-      left: 0.4em;
+      top: 2.5em;
+      left: 0.5em;
       max-width: 150px;
     }
   
     .card-description {
       font-size: 12px;
-      margin-left: 35px;
+      left: 14.5em;
+      top: 4em;
     }
    
    
@@ -415,33 +544,26 @@ overflow: hidden;
      margin-left: -0.5em;
      
      
-    }
-    .full-player{
+   
+  }
+  .mobile-details{
+     
+    top: -9em ;
+     
     
-      padding-top: 10em;
-   
-    padding-bottom: 5em;
-   
-    }
   }
-  @media (max-width: 750px) {
-    .full-player{
-      
-      padding-top: 13em;
-   
-    padding-bottom: 5em;
-   
-    }
+  .mobile-about-the-film{
+    
+    font-size: 14.7192px;
+    
   }
-  @media (max-width: 700px) {
-    .full-player{
-      
-      padding-top: 15em;
+  .mobile-more{
    
-    padding-bottom: 5em;
-   
-    }
+    font-size: 17.5px !important;
   }
+  }
+  
+  
 
 
 
@@ -451,19 +573,20 @@ overflow: hidden;
       padding: 0;
     }
     .movie-card-img{
-        width: 12rem !important;
+        width: 11.5rem !important;
         width: 100%;
     }
     .movie-card {
        
-      top: 5%;
-      left: 0.4em;
+      top: 2.5em;
+      left: 0.5em;
       max-width: 150px;
     }
   
     .card-description {
-      font-size: 10px;
-      margin-left: 30px;
+      font-size: 11.6px;
+      left: 14.5em;
+      top: 5em;
     }
     
    
@@ -479,24 +602,25 @@ overflow: hidden;
      
      
     }
-    .full-player{
-      
-      padding-top: 5em;
+     .mobile-details{
+     
+    top: -10em ; 
+    
+    
+  }
+  
+  .mobile-about-the-film{
+    
+    font-size: 13.2192px;
+    
+  }
+  .mobile-more{
    
-    padding-bottom: 5em;
-   
-    }
+    font-size: 17px !important;
+  }
   }
 
-  @media (max-width: 645px) {
-    .full-player{
-      
-      padding-top: 7em;
-   
-    padding-bottom: 5em;
-   
-    }
-  }
+ 
 
 
   
@@ -505,12 +629,18 @@ overflow: hidden;
     display: block;
     
   }
+  .hero{
+    display: none;
+  }
   .mobile-player{
     display: none;
   }
+  .movie-card{
+    display: block;
+  }
   .full-player{
     display: block;
-    margin-top: -25em;
+    
   }
   .mobile-details{
     display: block;
@@ -592,7 +722,7 @@ overflow: hidden;
   }
 
   .mobile-details{
-    margin-top: -6em;
+    margin-top: 2em;
   }
   .mobile-about-the-film{
     margin-top: 0.5em;
@@ -600,14 +730,45 @@ overflow: hidden;
     font-size: 13px !important;
     font-family: Helvetica, sans-serif;
     width: 95%;
-    margin-left: -0.4em;
+    margin-left: 0.5em;
     margin-bottom: 1em;
   }
   .mobile-more{
-    margin-left: -0.4em;
-    color: rgb(230, 230, 250);
+    margin-left: 0.4em;
+    color: #FFFDD0;
     font-family: Helvetica, sans-serif;
     font-size: 15px !important;
+    
+  }
+  .container-column {
+    display: flex;
+    flex-wrap: wrap; /* Разрешаем перенос элементов */
+    max-width: 800px;
+    gap: 5px; /* Отступ 5 пикселей между столбцами */
+    font-family: "SegoeUI", sans-serif;
+}
+
+.column {
+    padding: 0;
+    background-color: #050505;
+    text-align: left;
+    
+    color: white;
+    line-height: 0.5em;
+}
+
+/* Два верхних столбца */
+.column:nth-child(1),
+.column:nth-child(2) {
+    padding-right: 23px;
+}
+
+/* Третий столбец переходит на новую строку */
+.column:nth-child(3) {
+    width: 100%; /* Полная ширина */
+}
+  .full-conteiner-video{
+    margin-top: 0 !important;
   }
   
 }
@@ -645,7 +806,7 @@ overflow: hidden;
 
 .full-conteiner-video{
  position: sticky;
- margin-top: 20em !important;
+ margin-top: 20em;
   z-index: 10; /* Карточка будет поверх фона */
   
   display: flex;
