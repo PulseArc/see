@@ -685,6 +685,7 @@ z-index: -1;
   }
   
   .mobile-img {
+    margin-top: 1.5em;
       background-size: cover;
       background-position: center;
       width: 100%;
