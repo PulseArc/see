@@ -665,14 +665,12 @@ z-index: -1;
     .full-more-details{
         display: none;
     }
-    #video{
-      
-    }
+    
     
     
    
     .mobile-card-description{
-      margin-top: -11em;
+      margin-top: -14em;
       margin-left: 0.5em;
       font-size: 12px;
       width: 100%;
@@ -709,7 +707,7 @@ html, body {
 }
 .play-btn {
   position: relative;
-  top: -7.5em;
+  top: -9.5em;
   display: inline-flex;
   justify-content: center; /* Выравнивание по горизонтали */
   align-items: center;
@@ -737,11 +735,11 @@ html, body {
   
 }
 .Like{
-top: -6.6em;
+top: -8.6em;
 margin-left: -4em;
 }
 .Dislike{
-  top: -9.5em;
+  top: -11.5em;
 margin-left: 4em;
 }
 .Button-Border-Radius {
