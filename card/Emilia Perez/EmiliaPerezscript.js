@@ -4,51 +4,69 @@
 
 
 // Находим элементы
-const searchInput = document.getElementById('search'); // Поле ввода
-const resultsContainer = document.getElementById('results-container'); // Контейнер результатов
-const menuToggle = document.querySelector('#menuToggle input');
-const searchWrapper = document.querySelector('.search-wrapper'); // Внешний контейнер
-const clearIcon = document.querySelector('.clear-icon'); // Крестик для очистки
+document.addEventListener('DOMContentLoaded', function () {
+  const searchInput = document.getElementById('search'); // Поле ввода
+  const resultsContainer = document.getElementById('results-container'); // Контейнер результатов
+  const menuToggle = document.querySelector('#menuCheckbox'); // Чекбокс меню
+  const searchWrapper = document.querySelector('.search-wrapper'); // Внешний контейнер
+  const clearIcon = document.querySelector('.clear-icon'); // Крестик для очистки
+  const phoneVersion = document.querySelector('.Phone-version'); // Блок, которому меняем margin
 
-searchInput.addEventListener('input', () => {
-  const query = searchInput.value.trim(); // Получаем текст из поля поиска
-  
-  if (query.length > 0) {
-    // Показываем контейнер с результатами, если есть текст
-    resultsContainer.style.display = 'block';
-    clearIcon.style.display = 'inline'; // Показываем крестик
-    
-    // Логика обновления содержимого результатов
-    const updateContainer = document.getElementById('update');
-    updateContainer.innerHTML = `<p>Результаты для: "${query}"</p>`;
-    
-    // Прокрутка страницы вверх
-    window.scrollTo({
-      top: 0, // Начало страницы
-      behavior: 'smooth' // Плавная прокрутка
-    });
-  } else {
-    // Скрываем контейнер, если поле ввода пустое
-    resultsContainer.style.display = 'none';
-    clearIcon.style.display = 'none'; // Прячем крестик
-  }
+  searchInput.addEventListener('input', () => {
+      const query = searchInput.value.trim(); // Получаем текст из поля поиска
+      
+      if (query.length > 0) {
+          // Показываем контейнер с результатами, если есть текст
+          resultsContainer.style.display = 'block';
+          clearIcon.style.display = 'inline'; // Показываем крестик
+          
+          // Логика обновления содержимого результатов
+          const updateContainer = document.getElementById('update');
+          updateContainer.innerHTML = `<p>Результаты для: "${query}"</p>`;
+          
+          // Прокрутка страницы вверх
+          window.scrollTo({
+              top: 0, // Начало страницы
+              behavior: 'smooth' // Плавная прокрутка
+          });
+
+          // Добавляем margin-top: 12vh к .Phone-version
+          if (phoneVersion) {
+              phoneVersion.style.marginTop = '8vh';
+          }
+      } else {
+          // Скрываем контейнер, если поле ввода пустое
+          resultsContainer.style.display = 'none';
+          clearIcon.style.display = 'none'; // Прячем крестик
+
+          // Убираем margin-top, если поиск сброшен
+          if (phoneVersion) {
+              phoneVersion.style.marginTop = '';
+          }
+      }
+  });
+
+  // Событие клика по крестику для очистки поля
+  clearIcon.addEventListener('click', () => {
+      searchInput.value = ''; // Очищаем поле ввода
+      resultsContainer.style.display = 'none'; // Скрываем контейнер с результатами
+      clearIcon.style.display = 'none'; // Скрываем крестик
+
+      if (phoneVersion) {
+          phoneVersion.style.marginTop = ''; // Убираем отступ
+      }
+  });
+
+  // Событие переключения меню
+  menuToggle.addEventListener('change', () => {
+      if (menuToggle.checked) {
+          searchWrapper.classList.add('hidden'); // Применяем класс для скрытия
+      } else {
+          searchWrapper.classList.remove('hidden'); // Убираем класс для показа
+      }
+  });
 });
 
-// Событие клика по крестик
-clearIcon.addEventListener('click', () => {
-  searchInput.value = ''; // Очищаем поле ввода
-  resultsContainer.style.display = 'none'; // Скрываем контейнер с результатами
-  clearIcon.style.display = 'none'; // Скрываем крестик
-});
-
-// Событие переключения меню
-menuToggle.addEventListener('change', () => {
-  if (menuToggle.checked) {
-    searchWrapper.classList.add('hidden'); // Применяем класс для скрытия
-  } else {
-    searchWrapper.classList.remove('hidden'); // Убираем класс для показа
-  }
-});
 
 
 
