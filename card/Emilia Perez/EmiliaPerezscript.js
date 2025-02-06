@@ -1,6 +1,31 @@
+// Лайки дизлайки
+$(document).ready(function() {
+    $(".full-smile-rate-warp").click(function() {
+        let countElement = $(this).find(".full-smile-rate");
+        
+        if (!countElement.hasClass("clicked")) { 
+            let currentCount = parseInt(countElement.text());
+            countElement.text(currentCount + 1);
+            countElement.addClass("clicked"); // Блокируем повторный клик
+            $(this).addClass("clicked");
+        }
+    });
 
+    $(".Like, .Dislike").click(function() {
+        let targetId = $(this).attr("data-target");
+        let targetElement = $("#" + targetId);
 
-
+        if (targetElement.length && !targetElement.hasClass("clicked") && !$(this).hasClass("clicked")) {
+            let currentCount = parseInt(targetElement.text());
+            targetElement.text(currentCount + 1);
+            
+            // Блокируем повторное нажатие
+            targetElement.addClass("clicked");
+            $(this).addClass("clicked");
+        }
+    });
+});
+// Конец
 
 
 // Находим элементы
@@ -46,15 +71,20 @@ document.addEventListener('DOMContentLoaded', function () {
       }
   });
 
-  // Событие клика по крестику для очистки поля
-  clearIcon.addEventListener('click', () => {
-      searchInput.value = ''; // Очищаем поле ввода
-      resultsContainer.style.display = 'none'; // Скрываем контейнер с результатами
-      clearIcon.style.display = 'none'; // Скрываем крестик
-
-      if (phoneVersion) {
-          phoneVersion.style.marginTop = ''; // Убираем отступ
-      }
+  // Событие клика по крестику
+clearIcon.addEventListener('click', () => {
+    searchInput.value = ''; // Очищаем поле ввода
+    resultsContainer.style.display = 'none'; // Скрываем контейнер с результатами
+    clearIcon.style.display = 'none'; // Скрываем крестик
+    searchInput.blur(); // Убираем фокус, скрывая клавиатуру
+  });
+  
+  // Скрытие клавиатуры при нажатии Enter
+  searchInput.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault(); // Предотвращаем стандартное поведение формы
+      searchInput.blur(); // Убираем фокус с поля, скрывая клавиатуру
+    }
   });
 
   // Событие переключения меню
