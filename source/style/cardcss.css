@@ -72,7 +72,7 @@
    
     font-size: 1.1em;
     font-family: Helvetica, sans-serif;
-    color: rgb(104, 236, 104);
+    color: rgb(104, 236, 113);
 }
 .full-roles {
     margin-top: 1em;
@@ -670,7 +670,7 @@ z-index: -1;
     
    
     .mobile-card-description{
-      margin-top: -14em;
+      margin-top: -16.7em;
       margin-left: 0.5em;
       font-size: 12px;
       width: 100%;
@@ -707,22 +707,22 @@ html, body {
 }
 .play-btn {
   position: relative;
-  top: -9.5em;
+  top: -11.5em;
   display: inline-flex;
   justify-content: center; /* Выравнивание по горизонтали */
   align-items: center;
-  background-color:  rgb(138, 43, 226); /* темный красный */
+  background-color:  rgb(43, 226, 107); /* темный красный */
   
   color: #000000;
   font-family: "SegoeUI", sans-serif;
-  width: 80%;
+  width: 70%;
         height: 45px;
         font-weight: 600;
         border: none;
         font-size: 16px;
         border-radius: 6px;
         gap: 8px;
-       
+       padding-right: 0.3em;
 }
 /* кнопка лайк */
 .details-content-area {
@@ -735,11 +735,11 @@ html, body {
   
 }
 .Like{
-top: -8.6em;
+top: -10.6em;
 margin-left: -4em;
 }
 .Dislike{
-  top: -11.5em;
+  top: -13.5em;
 margin-left: 4em;
 }
 .Button-Border-Radius {
@@ -772,6 +772,14 @@ margin-left: 4em;
   justify-content: center !important;
   -webkit-box-align: center !important;
   align-items: center !important;
+}
+.kQnZoL:active {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  border-color: rgb(200, 200, 200) !important;
+  color: rgb(200, 200, 200) !important;
+}
+.kQnZoL {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
   .round-btn-margin {
       width: 47px !important;
