@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../source/style/mycss.css">
+  <link rel="stylesheet" href="../../source/style/cardcss.css">
+  <link rel="stylesheet" type="text/css" href="../../slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="../../slick/slick-theme.css" />
+  <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="../../source/files/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../source/files/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../source/files/favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="../../source/files/favicon_io/site.webmanifest">
+
+  <title>Cinematic</title>
+</head>
+
+<body>
+
+
+
+  <header>
+
+
+    <div class="navbar-placeholder"></div>
+    <nav class="navbar  navbar-expand-lg bg-dark ">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../../index.html"><img src="../../source/images/logo/cinematic.png"
+            style="width: 150px; height: 50px;" alt="..."></a>
+
+        <div class="mobilescreen ">
+          <div title="Menu" id="menuToggle">
+
+            <input type="checkbox">
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+              <li>
+                <a href="../../index.html"
+                  style="display: flex; flex-direction: column; align-items: center; text-decoration: none;">
+                  <img class="navbar-img" src="../../source/images/logo/home.png"
+                    style="width: 25px; height: 25px; margin-bottom: 5px;" alt="">
+                  Домой
+                </a>
+              </li>
+              <li>
+                <a href="../../Все Фильмы.html"
+                  style="display: flex; flex-direction: column; align-items: center; text-decoration: none;">
+                  <img class="navbar-img" src="../../source/images/logo/movies.png"
+                    style="width: 25px; height: 25px; margin-bottom: 5px;" alt="">
+                  Фильмы
+                </a>
+              </li>
+              <li>
+                <a href="../../Все Мультфильмы.html"
+                  style="display: flex; flex-direction: column; align-items: center; text-decoration: none;">
+                  <img class="navbar-img" src="../../source/images/logo/cartoones.png"
+                    style="width: 27px; height: 28px; margin-bottom: 5px; filter: invert(1);" alt="">
+                  Мультфильмы
+                </a>
+              </li>
+              <li>
+                <a href="../../Все Сериалы.html"
+                  style="display: flex; flex-direction: column; align-items: center; text-decoration: none;">
+                  <img class="navbar-img" src="../../source/images/logo/сериалы.png"
+                    style="width: 25px; height: 25px; margin-bottom: 5px;" alt="">
+                  Сериалы
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/online.cinematic" target="_blank"
+                  style="display: flex; flex-direction: column; align-items: center; text-decoration: none;">
+                  <img class="navbar-img" src="../../source/images/logo/Instagram.png"
+                    style="width: 22px; height: 22px; margin-bottom: 5px;" alt="">
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/@online.cinematic" target="_blank"
+                  style="display: flex; flex-direction: column; align-items: center; text-decoration: none;">
+                  <img class="navbar-img" src="../../source/images/logo/youtube.png"
+                    style="width: 25px; height: 20px; margin-bottom: 5px;" alt="">
+                  Youtube
+                </a>
+              </li>
+              <li>
+                <a href="https://www.tiktok.com/@online.cinematic" target="_blank"
+                  style="display: flex; flex-direction: column; align-items: center; text-decoration: none;">
+                  <img class="navbar-img" src="../../source/images/logo/tiktok.png"
+                    style="width: 25px; height: 28px; margin-bottom: 5px;" alt="">
+                  TikTok
+                </a>
+              </li>
+              <li>
+                <a href="https://x.com/onl_Cinematic" target="_blank"
+                  style="display: flex; flex-direction: column; align-items: center; text-decoration: none;">
+                  <img class="navbar-img" src="../../source/images/logo/twitter-white.png"
+                    style="width: 25px; height: 25px; margin-bottom: 5px;" alt="">
+                  X
+                </a>
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+        <div class="collapse navbar-collapse custom-navbar" id="navbarNav">
+          <ul class="navbar-nav mx-0" id="nav-menu">
+            <li class="nav-item mx-4-5">
+              <img class="navbar-img mt-2 " src="../../source/images/logo/home.png" style="width: 20px; height: 19px; "
+                alt="">
+              <a class="nav-link " aria-current="page" href="../../index.html">Домой</a>
+            </li>
+
+            <li class="nav-item mx-4-5">
+              <img class="navbar-img mt-2 " src="../../source/images/logo/movies.png"
+                style="width: 20px; height: 19px; " alt="">
+              <a class="nav-link" href="../../Все Фильмы.html">Фильмы</a>
+            </li>
+
+            <li class="nav-item mx-4-5">
+              <img class="navbar-img mt-2 " src="../../source/images/logo/cartoones.png"
+                style="width: 20px; height: 20px; filter: invert(1);" alt="">
+              <a class="nav-link cartoones-text" href="../../Все Мультфильмы.html">Мультфильмы</a>
+            </li>
+
+            <li class="nav-item mx-4-5">
+              <img class="navbar-img navbar-img-serials  " src="../../source/images/logo/сериалы.png"
+                style="width: 18px; height: 19px; margin-top: 0.6em !important;" alt="">
+              <a class="nav-link" href="../../Все Сериалы.html">Сериалы</a>
+            </li>
+
+
+
+
+        </div>
+
+        </ul>
+
+
+      </div>
+      </div>
+
+      <div class="search-wrapper">
+        <div class="search-container">
+          <div class="search-icon">
+            <img class="navbar-img  " src="../../source/images/logo/панель поиска.png"
+              style="width: 20px; height: 20px; " alt="">
+          </div>
+          <input type="text" id="search" class="search-input" placeholder="Поиск...">
+          <span class="clear-icon">&times;</span> <!-- Крестик -->
+        </div>
+
+    </nav>
+  </header>
+
+  <section>
+
+
+    <div class="container-fluid results-container " id="results-container">
+
+      <div class="row " style="overflow: hidden;">
+
+        <h4 class="results-h4">Результаты поиска</h4>
+
+        <div id="update" class="card-results">
+        </div>
+
+      </div>
+
+    </div>
+
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+
+    </div>
+    </div>
+
+
+
+
+
+
+    <!-- Название Изображение и роли -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 ">
+          <div class="Mobile">
+            <div class="Phone-version">
+              <div bis_skin_checked="1"
+                style="position: relative; top: -70px; left: 0px; width: 100%; height: 90vh; background: linear-gradient(270deg, rgba(0, 0, 0, 0) 23%, rgba(0, 0, 0, 0.1) 85%), linear-gradient(0deg, rgba(0, 0, 0, 0.05) 0%, rgba(255, 255, 255, 0) 60%), url(&quot;https://images.kinorium.com/movie/poster/9494164/w1500_53713622.jpg&quot;) center center / cover no-repeat;">
+              </div>
+
+            </div>
+
+            <div class="hero">
+              <div class="hero__content">
+
+              </div>
+
+              <img class="mobile-img" src="https://image.tmdb.org/t/p/w1280//u2eA9pqi1q3DvevT7RuDuJHxxBT.jpg" alt="">
+            </div>
+            <div class="mobile-img-card"><img class="mobile-img"
+                src="https://image.tmdb.org/t/p/w1280//u2eA9pqi1q3DvevT7RuDuJHxxBT.jpg" alt="Mobile"></div>
+
+
+            <div class="card movie-card">
+              <img src="https://image.tmdb.org/t/p/w500//6KvGEOCUBsgTUPkl1oWhH0Y3ePy.jpg"
+                class="movie-card-img sirials-watch-img " style="width: 226px; " alt="...">
+            </div>
+            <div class="details-content-area">
+              <div class="buttons-on-top">
+                <button class="play-btn" onclick="location.href='#column';">
+                  <span class="play-icon"> <img src="../../source/images/logo/play.png "
+                      style="width:16px; height: 17px; filter: invert(1);" alt=""></span>
+                  Смотреть
+                </button>
+              </div>
+              <div class="Button-Border-Radius Like" aria-label="Like" bis_skin_checked="1" data-target="like-count-1">
+                <button class="sc-db44021e-0 kQnZoL round-btn-margin gridOverlay-RoundButton"><svg
+                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true"
+                    viewBox="0 0 24 24" data-testid="ThumbUpOutlinedIcon">
+                    <path
+                      d="M9 21h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.58 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2M9 9l4.34-4.34L12 10h9v2l-3 7H9zM1 9h4v12H1z">
+                    </path>
+                  </svg></button>
+              </div>
+              <div class="Button-Border-Radius Dislike" aria-label="Dislike" bis_skin_checked="1"
+                data-target="dislike-count-1"><button
+                  class="sc-db44021e-0 kQnZoL round-btn-margin gridOverlay-RoundButton"><svg
+                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true"
+                    viewBox="0 0 24 24" data-testid="ThumbDownOffAltOutlinedIcon">
+                    <path
+                      d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2m0 12-4.34 4.34L12 14H3v-2l3-7h9zm4-12h4v12h-4z">
+                    </path>
+                  </svg></button></div>
+            </div>
+            <div class="card-description mobile-card-description">
+              <div class="full-head"><span class="full-head-year">2024</span><span class="span-gray">, Бельгия | Франция
+                  | США | Мексика</span></div>
+              <h2 class="card-title">Эмилия Перес</h1>
+
+                <div class="full-card-rate">
+                  <div class="full-rate rate-tmdb">
+                    <div>7.8</div>
+                    <div class="source-name">TMDB</div>
+                  </div>
+                  <div class="full-rate rate-imdb">
+                    <div>6.6</div>
+                    <div class="source-name">IMDB</div>
+                  </div>
+                  <div class="full-rate rate-kp">
+                    <div>6.9</div>
+                    <div class="source-name">KP</div>
+                  </div>
+                </div>
+                <div class="full-genre">
+                  <span class="full-duration">02:12</span><span class="dot">●</span>Драма | Триллер | Комедия | Мюзикл 
+
+
+                </div>
+                <div class="full-smile">
+                  <div class="full-smile-rate-warp ">
+                    <div><img class="reaction-icon" src="https://cub.red/img/reactions/fire.svg"></div>
+                    <div class="full-smile-rate">42</div>
+                  </div>
+                  <div class="full-smile-rate-warp ">
+                    <div><img class="reaction-icon" src="https://cub.red/img/reactions/nice.svg"></div>
+                    <div class="full-smile-rate">18</div>
+                  </div>
+                  <div class="full-smile-rate-warp ">
+                    <div><img class="reaction-icon" src="https://cub.red/img/reactions/shit.svg"></div>
+                    <div class="full-smile-rate">50</div>
+                  </div>
+                  <div class="full-smile-rate-warp ">
+                    <div><img class="reaction-icon" src="https://cub.red/img/reactions/think.svg"></div>
+                    <div class="full-smile-rate">9</div>
+                  </div>
+                  <div class="full-smile-rate-warp ">
+                    <div><img class="reaction-icon" src="https://cub.red/img/reactions/bore.svg"></div>
+                    <div class="full-smile-rate">7</div>
+                  </div>
+                </div>
+                
+                <div class="full-roles mobile-roles"> <span class="cast ">В ролях</span> <br>
+                  <span class="dot" style="color: white;">●</span> Селена Гомес
+                  <span class="dot" style="color: white;">●</span> Зои Салдана
+                  <span class="dot" style="color: white;">●</span> Эдгар Рамирес<br>
+                  <span class="dot" style="color: white;">●</span> Марк Иванир
+                  <span class="dot" style="color: white;">●</span> Карлос Гаскон
+                  <span class="dot" style="color: white;">●</span> Адриана Пас
+
+
+
+                </div>
+            </div>
+            <div class="mobile-details ">
+              <div class="mobile-more-details">
+                <span class="mobile-more">Подробно</span>
+                <div class="mobile-about-the-film">
+                  <p>
+                    Фильм "Эмилия Перес" рассказывает историю о квалифицированном адвокате по имени Рита, которая
+                    работает в одной из крупных мексиканских компаний. Однако, оказывается, что компания больше
+                    заинтересована в отмывании денег от преступников, чем в служении правосудию. Рита сталкивается с
+                    моральными дилеммами и непростыми выборами, но все меняется, когда ей поступает интригующее
+                    предложение, от которого трудно отказаться. Грозный босс картеля, Хуан Дель Монте, решает выйти из
+                    своего криминального бизнеса и исчезнуть навсегда, для чего он планирует сменить пол. Именно Рита
+                    выбрана для того, чтобы помочь ему в этом нелегком деле. Сталкиваясь с трудностями и опасностями,
+                    Рита должна принять решение, которое изменит ее жизнь навсегда. "Эмилия Перес" - это захватывающий
+                    триллер о предательстве, верности и цене, которую мы готовы заплатить за свои убеждения.
+                  </p>
+
+                  <div class="container-column" id="column">
+                    <div class="column">
+                      <p style="color: white;">Дата релиза</p>
+                      <p style="color: rgba(255, 255, 255, 0.6);">21 Августа 2024</p>
+                    </div>
+                    <div class="column">
+                      <p style="color: white;">Бюджет</p>
+                      <p style="color: rgba(255, 255, 255, 0.6);">$ 26 885 000</p>
+                    </div>
+                    <div class="column">
+                      <p style="color: white;">Страны</p>
+                      <p style="color: rgba(255, 255, 255, 0.6);">Бельгия, Франция, США, Мексика</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="full-player">
+                  <div class="container-fluid ">
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 ">
+                        <div class="full-conteiner-video">
+
+                          <iframe class="video-js" src="https://api.embess.ws/embed/movie/77143" frameborder="0"
+                            allowfullscreen></iframe>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="REK_CARD">
+                  <div class="container-fluid  g-0">
+                    <div class="row">
+                      <div class="col-lg-4 ">
+                        <h4 style=" margin-left: 0.5em;">Рекомендуем к просмотру</h4>
+                      </div>
+                      <div class="container-fluid   g-0">
+                        <div class="slider mt-2">
+                          <div class="col-lg-12 col-md-12">
+                            <div class="row">
+                              <div class="slider single-item" id="card-container">
+                                <!-- Здесь будут отображаться карточки -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <!-- Конец -->
+
+          <!-- Плеер -->
+
+          <!-- Конец -->
+
+          <!-- Описание для мобильных -->
+
+          <!-- конец -->
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+  </section>
+
+
+  <footer class="mt-1">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-8 col-md-12 ">
+          <p class="Available-Platforms">Доступные платформы</p>
+          <div class="platform-logos ">
+            <a href="#">
+              <img src="../../source/images/logo/Roku_logo.png" style="width: 60px;" alt="Roku">
+            </a>
+            <a href="#">
+              <img src="../../source/images/logo/Android_logo.png" style="width: 90px;" alt="Android">
+            </a>
+            <a href="#">
+              <img src="../../source/images/logo/apple-IOS-icon.png" style="width: 60px;" alt="Apple IOS">
+            </a>
+            <a href="#">
+              <img src="../../source/images/logo/vizio.png" style="width: 80px;" alt="Vizio">
+            </a>
+            <a href="#">
+              <img src="../../source/images/logo/AndroidTV_logo.png" style="width: 110px;" alt="AndroidTV">
+            </a>
+            <a href="#">
+              <img src="../../source/images/logo/tv-os.png" style="width: 75px;" alt="TV OS">
+            </a>
+            <a href="#">
+              <img src="../../source/images/logo/Google-tv.png" style="width: 110px;" alt="Google TV">
+            </a>
+            <div class="platform-logos2 ">
+              <a href="#">
+                <img src="../../source/images/logo/Fire_TV_logo.png" style="width: 55px;" alt="Fire TV">
+              </a>
+              <a href="#">
+                <img src="../../source/images/logo/samsung_logo_1.png" style="width: 90px;" alt="Samsung">
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="col-lg-4 col-md-12 media-links mt-4">
+
+          <!-- Первая картинка сверху -->
+          <a href="../../index.html">
+            <img class="logo-image logo-image-footer" src="../../source/images/logo/Лого низ.png" alt="Лого">
+          </a>
+
+          <!-- Блок с 3 картинками под первой -->
+          <div class="social-icons">
+            <a href="https://www.instagram.com/online.cinematic" target="_blank">
+              <img src="../../source/images/logo/Instagram.png" style="width: 18px;" alt="Instagram">
+            </a>
+            <a href="https://www.youtube.com/@online.cinematic" target="_blank">
+              <img src="../../source/images/logo/youtube.png" alt="YouTube">
+            </a>
+            <a href="https://x.com/onl_Cinematic" target="_blank">
+              <img src="../../source/images/logo/twitter-white.png" style="width: 18px;" alt="Twitter">
+            </a>
+            <a href="https://www.tiktok.com/@online.cinematic" target="_blank">
+              <img src="../../source/images/logo/tiktok.png" style="width: 19px;" alt="TikTok">
+            </a>
+          </div>
+
+          <!-- Текст под всеми картинками -->
+          <div class="footer-text text-center">
+            <a href="#" class="card-tex">© 2024 <span class="cinematic-text">Cinematic</span>. All Rights Reserved</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+  <script src="../../slick/slick.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+  <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+  <script src="../../source/script/card.js"></script>
+  <script src="../../source/script/script.js"></script>
+  <script src="../../source/script/movies.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
