@@ -162,13 +162,6 @@ const data = [
         "rating":"7.1"
     },
     {
-        "name": "Охота за убийцей",
-        "image": "https://image.tmdb.org/t/p/w500//lcoxNrC8Z00MiUynsqxNtwQDjvA.jpg",
-        "link": "#",
-        "year": "2024",
-        "rating":"7.0"
-    },
-    {
         "name": "Элиас",
         "image": "https://image.tmdb.org/t/p/w500//saPG6ZSORtOdCbl7S4dinNkpmA6.jpg",
         "link": "#",
@@ -849,7 +842,7 @@ const data = [
         "rating":"7.5"
     },
     {
-        "name": ">Дом Дракона",
+        "name": "Дом Дракона",
         "image": "https://image.tmdb.org/t/p/w200//o00Qod5RUoUv1BiCZvCB74tiSDQ.jpg",
         "link": "#",
         "year": "2022",
@@ -1858,3 +1851,5 @@ $('#search').keyup(function () {
     // Отображаем результаты поиска
     $('#update').html(output);
 });
+
+
