@@ -58,15 +58,28 @@
     flex-direction: row; /* Размещаем элементы в строку */
     align-items: start;
     margin-top: 0.1em;
+    cursor: pointer;
 }
 .full-smile-rate{
     font-size: 0.9em !important;
 }
 .reaction-icon {
-    width: 1.2em;
-    height: 1.2em;
-    position: relative;
-    top: -1px;
+  width: 1.2em;
+  height: 1.2em;
+  position: relative;
+  top: -1px;
+  transition: transform 0.2s ease-in-out;
+}
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-3px) rotate(-5deg); }
+  50% { transform: translateX(3px) rotate(5deg); }
+  75% { transform: translateX(-3px) rotate(-5deg); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake 0.3s ease-in-out;
 }
 .full-duration{
    
@@ -173,7 +186,7 @@
   padding-top: 1em;
 left: 1.7em;
 z-index: 10;
-padding-bottom: 1em;
+
 display: flex;
 flex-direction: row;
 align-items: start;
@@ -183,7 +196,9 @@ max-width: calc(100% - 3.4em); /* Учёт отступов от левого и
 border: none;
 overflow: hidden;
 }
-
+.REK_CARD{
+  margin-top: 2em;
+}
 .full-more-details{
    
     font-family: Helvetica, sans-serif;
@@ -205,7 +220,7 @@ overflow: hidden;
     flex-direction: column;
     justify-content: center;
     
-    margin-bottom: 50px;
+    
     
 }
 
@@ -776,14 +791,29 @@ margin-left: 4em;
   -webkit-box-align: center !important;
   align-items: center !important;
 }
-.kQnZoL:active {
-  background-color: rgba(255, 255, 255, 0.2) !important;
-  border-color: rgb(200, 200, 200) !important;
-  color: rgb(200, 200, 200) !important;
-}
 .kQnZoL {
   transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  color: white; /* Белый цвет для текста по умолчанию */
+  background-color: rgba(0, 0, 0, 0.1); /* Легкий темный фон */
+  border-color: rgb(255, 255, 255); /* Белая рамка */
 }
+
+.kQnZoL svg {
+  fill: white; /* Белый цвет для иконок по умолчанию */
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Когда кнопка активна */
+.kQnZoL.active {
+  background-color: white !important; /* Темный фон при активации */
+  color: black; /* Текст черным при активации */
+  border-color: black; /* Черная рамка при активации */
+}
+
+.kQnZoL.active svg {
+  fill: rgb(0, 0, 0); /* Черные иконки при активации */
+}
+
   .round-btn-margin {
       width: 47px !important;
       height: 47px !important;
@@ -870,7 +900,7 @@ margin-left: 4em;
     font-size: 1.1em;
   }
   .mobile-details{
-    margin-top: 1.5em;
+    margin-top: 1em;
   }
   .mobile-about-the-film{
     margin-top: 0.5em;
@@ -934,7 +964,7 @@ margin-left: 4em;
     flex-direction: column;
     justify-content: start;
     width: none;
-    margin-bottom: 50px;
+    
     
     
 }
