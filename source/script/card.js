@@ -92,7 +92,7 @@ document.querySelectorAll('.kQnZoL').forEach(button => {
 document.addEventListener('DOMContentLoaded', function () {
   const searchInput = document.getElementById('search'); // Поле ввода
   const resultsContainer = document.getElementById('results-container'); // Контейнер результатов
-  const menuToggle = document.querySelector('#menuCheckbox'); // Чекбокс меню
+  const menuToggle = document.querySelector('#menuToggle input');
   const searchWrapper = document.querySelector('.search-wrapper'); // Внешний контейнер
   const clearIcon = document.querySelector('.clear-icon'); // Крестик для очистки
   const phoneVersion = document.querySelector('.Phone-version'); // Блок, которому меняем margin
