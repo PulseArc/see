@@ -1472,27 +1472,21 @@ footer {
         position: fixed;
         top: 0;
         right: 0;
-        /* Располагаем меню справа */
         width: 30%;
-        /* Устанавливаем ширину для видимости */
         height: 100vh;
-        /* Высота элемента на весь экран */
-        overflow-y: auto;
+        max-height: 100vh; /* Ограничиваем высоту */
+        overflow-y: auto; /* Включаем прокрутку внутри меню */
         background-color: #1a1919;
         padding-top: 6rem;
+        padding-bottom: 6rem;
         padding-right: 20px;
         list-style-type: none;
         transform: translateX(100%);
-        /* Начальное положение за экраном */
         transition: transform 0.3s cubic-bezier(0.77, 0.2, 0.05, 1.0);
         text-align: center;
         display: flex;
-        /* Используем flexbox для выравнивания */
         flex-direction: column;
-        /* Устанавливаем вертикальное расположение */
         align-items: center;
-        /* Центрируем элементы по горизонтали */
-
 
 
 
