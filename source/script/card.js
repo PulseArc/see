@@ -184,32 +184,20 @@ document.addEventListener("DOMContentLoaded", function () {
 // ссылки и блоб на фильмы
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Массив байтов (пример)
-  const videoData = new Uint8Array([/* заполните массив реальными данными */]);
-
-  // Создаем Blob и URL
-  const videoBlob = new Blob([videoData], { type: 'video/mp4' });
-  const videoURL = URL.createObjectURL(videoBlob);
-
-  // Получаем элементы
-  const videoSource = document.getElementById('full-video-source');
-  const videoElement = document.getElementById('full-video');
   const playButton = document.getElementById('play-video-btn');
+  const iframe = document.querySelector('.video-js');
+  
+  if (!iframe) {
+    console.error('Видео iframe не найден');
+    return;
+  }
 
-  // Обновляем источник видео
-  videoSource.src = videoURL;
-
-  // Инициализируем Video.js плеер для контейнера с id 'full-video'
-  const player = videojs('full-video');
-
-  // Обработчик клика по кнопке для воспроизведения видео
   playButton.addEventListener('click', () => {
-    // Пытаемся воспроизвести видео после клика
-    player.play().catch((error) => {
-      console.error('Ошибка при воспроизведении видео:', error);
-    });
+    const src = iframe.getAttribute('src');
+    iframe.setAttribute('src', src + '?autoplay=1');
   });
 });
+
     
 // конец
 
