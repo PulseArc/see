@@ -163,10 +163,10 @@ select {
 .search-icon {
     position: absolute;
     top: 50%;
-    left: 7px;
+    left: 7.5px;
     transform: translateY(-50%);
     font-size: 18px;
-    color: #333;
+    
 }
 
 /* Стили поля ввода */
@@ -309,6 +309,7 @@ h4 {
     /* Устанавливаем относительное позиционирование для текста */
     padding-bottom: 1px;
     text-decoration: none;
+    font-size: 16px;
 }
 
 .nav-link::after {
@@ -939,8 +940,7 @@ footer {
    
     .navbar-img {
        
-      width: 23px !important;
-      height: 21px !important;
+      
     }
     .search-icon .navbar-img {
         width: 20px !important; /* Фиксированный размер */
