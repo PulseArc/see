@@ -1399,7 +1399,9 @@ footer {
     }
 
     /**Mobile (Hamburger-)Menu from here on**/
-
+    body:has(#menuToggle input:checked) {
+        overflow: hidden;
+    }
     /** This is kind of a styled trigger here **/
     #menuToggle {
         display: block;
