@@ -133,13 +133,13 @@
             <li class="nav-item mx-4">
               <img class="navbar-img  " src="../../../source/images/logo/movies.svg" style="width: 16px; height: 18px; margin-top: 0.7em;"
                 alt="">
-              <a class="nav-link" href="../../../Все Фильмы.html">Фильмы</a>
+              <a class="nav-link movies-text" href="../../../Все Фильмы.html">Фильмы</a>
             </li>
 
             <li class="nav-item mx-4">
               <img class="navbar-img navbar-img-serials " src="../../../source/images/logo/сериалы.svg"
                 style="width: 16px; height: 17px; margin-top: 0.7em !important; " alt="">
-              <a class="nav-link" href="../../../Все Сериалы.html">Сериалы</a>
+              <a class="nav-link serials-text" href="../../../Все Сериалы.html">Сериалы</a>
             </li>
 
             <li class="nav-item mx-4">
@@ -149,9 +149,9 @@
             </li>
 
             <li class="nav-item mx-4">
-              <img class="navbar-img " src="../../../source/images/logo/anime.svg"
+              <img class="navbar-img " src="../../../source/images/logo/anime-mobile.svg"
                 style="width: 17px; height: 17px;  filter: invert(0.9); margin-top: 0.8em;" alt="">
-              <a class="nav-link cartoones-text" href="../../../Все Мультфильмы.html">Аниме</a>
+              <a class="nav-link anime-text" href="../../../Все Мультфильмы.html">Аниме</a>
             </li>
 
 
@@ -231,7 +231,7 @@
 
 
             <div class="card movie-card">
-              <img src="https://image.tmdb.org/t/p/w500//6KvGEOCUBsgTUPkl1oWhH0Y3ePy.jpg"
+              <img src="http://image.tmdb.org/t/p/w500//mSj47ckL15imHn9pX22jQG3adFt.jpg"
                 class="movie-card-img sirials-watch-img " style="width: 226px; " alt="...">
             </div>
             <div class="details-content-area">
@@ -262,9 +262,9 @@
                   </svg></button></div>
             </div>
             <div class="card-description mobile-card-description">
-              <div class="full-head"><span class="full-head-year">2024</span><span class="span-gray">, Бельгия | Франция
+              <div class="full-head"><span class="full-head-year" id="movie-year">2024</span><span class="span-gray">, Бельгия | Франция
                   | США | Мексика</span></div>
-              <h2 class="card-title">Эмилия Перес</h1>
+              <h2 class="card-title" id="movie-title">Эмилия Перес</h1>
 
                 <div class="full-card-rate">
                   <div class="full-rate rate-tmdb">
@@ -286,27 +286,28 @@
 
                 </div>
                 <div class="full-smile">
-                  <div class="full-smile-rate-warp ">
+                  <div class="full-smile-rate-warp">
                     <div><img class="reaction-icon" src="../../../source/images/logo/fire.svg"></div>
-                    <div class="full-smile-rate">42</div>
+                    <div class="full-smile-rate" data-value="2150"></div>
                   </div>
-                  <div class="full-smile-rate-warp ">
+                  <div class="full-smile-rate-warp">
                     <div><img class="reaction-icon" src="../../../source/images/logo/nice.svg"></div>
-                    <div class="full-smile-rate">18</div>
+                    <div class="full-smile-rate" data-value="1449"></div>
                   </div>
-                  <div class="full-smile-rate-warp ">
+                  <div class="full-smile-rate-warp">
                     <div><img class="reaction-icon" src="../../../source/images/logo/shit.svg"></div>
-                    <div class="full-smile-rate">50</div>
+                    <div class="full-smile-rate" data-value="501"></div>
                   </div>
-                  <div class="full-smile-rate-warp ">
+                  <div class="full-smile-rate-warp">
                     <div><img class="reaction-icon" src="../../../source/images/logo/think.svg"></div>
-                    <div class="full-smile-rate">9</div>
+                    <div class="full-smile-rate" data-value="99"></div>
                   </div>
-                  <div class="full-smile-rate-warp ">
+                  <div class="full-smile-rate-warp">
                     <div><img class="reaction-icon" src="../../../source/images/logo/bore.svg"></div>
-                    <div class="full-smile-rate">7</div>
+                    <div class="full-smile-rate" data-value="74"></div>
                   </div>
                 </div>
+                
                 
                 <div class="full-roles mobile-roles"> <span class="cast ">В ролях</span> <br>
                   <span class="dot" style="color: white;">●</span> Селена Гомес
@@ -365,7 +366,22 @@
                     </div>
                   </div>
                 </div>
-
+                
+                <!--  
+                
+                <div class="container mt-3">
+                  <h3>Режиссер</h3>
+                  <div class="row" id="director-container"></div>
+              </div>
+      
+              <div class="container mt-3">
+                  <h3>Актеры</h3>
+                  <div class="row" id="actors-container"></div>
+              </div>
+                
+            -->
+                
+                
 
                 <div class="REK_CARD">
                   <div class="container-fluid  g-0">
@@ -492,6 +508,7 @@
   <script src="../../../source/script/card.js"></script>
   <script src="../../../source/script/script.js"></script>
   <script src="../../../source/script/movies.js"></script>
+  <!-- <script src="../../../source/script/actors.js"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
     crossorigin="anonymous"></script>
