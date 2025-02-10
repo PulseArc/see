@@ -1810,7 +1810,7 @@ const data = [
     
 ];
 $('#search').keyup(function () {
-    var searchField = $('#search').val();
+    var searchField = $('#search').val().trim();
     var myExp = new RegExp(searchField, "i");
 
     // Очистка результатов, если поле пустое
@@ -1819,37 +1819,38 @@ $('#search').keyup(function () {
         return;
     }
 
-    // Генерация результатов поиска
     var output = '';
-    var resultCount = 0; // Счётчик для ограничения количества результатов
+    var resultCount = 0;
 
     $.each(data, function (key, val) {
         if (val.name.search(myExp) != -1) {
-            // Если нашли результат, увеличиваем счётчик
             resultCount++;
 
-            // Если найдено больше 10 результатов, прекращаем вывод
             if (resultCount > 12) return false; 
 
             output += `
-            
-            <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 ">
-                <div class="card full-card cards-from-search " >
+            <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
+                <div class="card full-card cards-from-search">
                     <a href="${val.link}">
-                        <img src="${val.image}" class="card-img-top all-flim-img "  alt="${val.name}">
-                        <div class="card-rating" bis_skin_checked="1"><span class="span-rating">${val.rating}</span></div>
+                        <img src="${val.image}" class="card-img-top all-flim-img" alt="${val.name}">
+                        <div class="card-rating"><span class="span-rating">${val.rating}</span></div>
                         <div class="card-body">
-                            <span class="card-tex">${val.name}<br><span class="year">${val.year}</span></span></a>
-                    </div>
-                
+                            <span class="card-tex">${val.name}<br><span class="year">${val.year}</span></span>
+                        </div>
+                    </a>
                 </div>
             </div>
             `;
         }
     });
 
-    // Отображаем результаты поиска
+    // Если ничего не найдено, показываем сообщение
+    if (output === '') {
+        output = '<p class="no-results">По вашему запросу ничего не найдено.</p>';
+    }
+
     $('#update').html(output);
 });
+
 
 

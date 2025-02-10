@@ -20,7 +20,7 @@ searchInput.addEventListener('input', () => {
     
     // Логика обновления содержимого результатов
     const updateContainer = document.getElementById('update');
-    updateContainer.innerHTML = `<p>Результаты для: "${query}"</p>`;
+    updateContainer.innerHTML = `<p style="margin-left: 1.5em;>Результаты для: "${query}"</p>`;
     
     // Прокрутка страницы вверх
     window.scrollTo({

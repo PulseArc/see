@@ -1,66 +1,74 @@
 // кнопки со счётчиком
-$(document).ready(function() {
-  $(".full-smile-rate-warp").click(function() {
-      let countElement = $(this).find(".full-smile-rate"); // Получаем элемент для изменения числа
-      let icon = $(this).find(".reaction-icon");
+function fn(a) {
+  var n = 0;
+  while (a >= 1000) {
+    a /= 1000;
+    n++;
+  }
+  return +a.toFixed(1) + (["", "K", "M", "B", "T"][n] || "");
+}
 
-      if (countElement.length && icon.length) {
-          let currentCount = parseInt(countElement.text());
+$(document).ready(function () {
+  $(".full-smile-rate").each(function () {
+    let value = parseInt($(this).attr("data-value"), 10);
+    if (!isNaN(value)) {
+      $(this).text(fn(value));
+    }
+  });
 
-          // Если элемент уже был кликнут, блокируем повторный клик
-          if ($(this).hasClass("clicked")) {
-              return;
-          }
+  $(".full-smile-rate-warp").click(function () {
+    let countElement = $(this).find(".full-smile-rate");
+    let icon = $(this).find(".reaction-icon");
 
-          $(this).addClass("clicked"); // Блокируем дальнейшие клики
+    if (countElement.length && icon.length) {
+      let currentCount = parseInt(countElement.attr("data-value"), 10); // Берём актуальное значение
 
-          if (countElement.hasClass("clicked")) {
-              // Если уже нажали, то убираем клик и уменьшаем число
-              countElement.text(currentCount - 1);
-              countElement.removeClass("clicked");
-          } else {
-              // Добавляем анимацию тряски для иконки
-              icon.addClass("shake");
-
-              setTimeout(() => {
-                  icon.removeClass("shake");
-
-                  // Увеличение иконки
-                  icon.css({
-                      transition: "transform 0.3s ease-in-out",
-                      transform: "scale(1.3)"
-                  });
-
-                  setTimeout(() => {
-                      icon.css("transform", "scale(1)");
-                  }, 300);
-              }, 300);
-
-              // Анимация изменения числа
-              countElement.css({
-                  transition: "transform 0.3s ease-in-out",
-                  transform: "scale(1.5)",
-                  opacity: "0"
-              });
-
-              setTimeout(() => {
-                  countElement.text(currentCount + 1);
-                  countElement.css({
-                      transform: "scale(1)",
-                      opacity: "1"
-                  });
-              }, 300);
-
-              countElement.addClass("clicked");
-          }
-
-          // Разблокировка кликов после завершения анимации
-          setTimeout(() => {
-              $(this).removeClass("clicked");
-          }, 600); // Время, равное продолжительности анимации
+      if (isNaN(currentCount)) {
+        currentCount = 0; 
       }
+
+      if ($(this).hasClass("clicked")) {
+        return;
+      }
+
+      $(this).addClass("clicked");
+
+      if (countElement.hasClass("clicked")) {
+        let newCount = currentCount - 1;
+        countElement.attr("data-value", newCount); // Обновляем data-value
+        countElement.text(fn(newCount));
+        countElement.removeClass("clicked");
+      } else {
+        icon.addClass("shake");
+
+        setTimeout(() => {
+          icon.removeClass("shake");
+          icon.css({ transition: "transform 0.3s ease-in-out", transform: "scale(1.3)" });
+
+          setTimeout(() => {
+            icon.css("transform", "scale(1)");
+          }, 300);
+        }, 300);
+
+        countElement.css({ transition: "transform 0.3s ease-in-out", transform: "scale(1.5)", opacity: "0" });
+
+        setTimeout(() => {
+          let newCount = currentCount + 1;
+          countElement.attr("data-value", newCount); // Обновляем data-value
+          countElement.text(fn(newCount));
+          countElement.css({ transform: "scale(1)", opacity: "1" });
+        }, 300);
+
+        countElement.addClass("clicked");
+      }
+
+      setTimeout(() => {
+        $(this).removeClass("clicked");
+      }, 600);
+    }
   });
 });
+
 // конец
 
 // Кнопка лайк дизлайк
@@ -107,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
           
           // Логика обновления содержимого результатов
           const updateContainer = document.getElementById('update');
-          updateContainer.innerHTML = `<p>Результаты для: "${query}"</p>`;
+          updateContainer.innerHTML = `<p style="margin-left: 1.5em;>Результаты для: "${query}"</p>`;
           
           // Прокрутка страницы вверх
           window.scrollTo({

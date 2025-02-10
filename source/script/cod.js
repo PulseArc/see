@@ -21,7 +21,7 @@ searchInput.addEventListener('input', () => {
     
     // Логика обновления содержимого результатов
     const updateContainer = document.getElementById('update');
-    updateContainer.innerHTML = `<p>Результаты для: "${query}"</p>`;
+    updateContainer.innerHTML = `<p style="margin-left: 1.5em;">Результаты для: "${query}"</p>`;
     
     // Прокрутка страницы вверх
     window.scrollTo({
@@ -247,67 +247,10 @@ $('.single-item').slick({
     {
       breakpoint: 4000,
       settings: {
-        slidesToShow: 7,
+        slidesToShow: 6.2,
       }
     },
     
-    {
-      breakpoint: 1710,
-      settings: {
-        slidesToShow: 7,
-      }
-    },
-
-    {
-      breakpoint: 1665,
-      settings: {
-        slidesToShow: 7.5,
-      }
-    },
-    {
-      breakpoint: 1590,
-      settings: {
-        slidesToShow: 7.4,
-      }
-    },
-    {
-      breakpoint: 1540,
-      settings: {
-        slidesToShow: 7.2,
-      }
-    },
-
-    {
-      breakpoint: 1500,
-      settings: {
-        slidesToShow: 7.4,
-      }
-    },
-
-    {
-      breakpoint: 1400,
-      settings: {
-        slidesToShow: 7,
-      }
-    },
-    {
-      breakpoint: 1375,
-      settings: {
-        slidesToShow: 6.7,
-      }
-    },
-    {
-      breakpoint: 1350,
-      settings: {
-        slidesToShow: 6.6,
-      }
-    },
-    {
-      breakpoint: 1325,
-      settings: {
-        slidesToShow: 6.5,
-      }
-    },
     {
       breakpoint: 1300,
       settings: {
@@ -615,83 +558,6 @@ $('.single-item2').slick({
       breakpoint: 4000,
       settings: {
         slidesToShow: 5.5,
-      }
-    },
-    {
-      breakpoint: 2481,
-      settings: {
-        slidesToShow: 5.3,
-      }
-    },
-    {
-      breakpoint: 2228,
-      settings: {
-        slidesToShow: 5.3,
-      }
-      
-    },
-    {
-      breakpoint: 2011,
-      settings: {
-        slidesToShow: 6.4,
-      }
-      
-    },
-    {
-      breakpoint: 1710,
-      settings: {
-        slidesToShow: 6.2,
-      }
-    },
-
-    {
-      breakpoint: 1665,
-      settings: {
-        slidesToShow: 6,
-      }
-    },
-    {
-      breakpoint: 1590,
-      settings: {
-        slidesToShow: 5.9,
-      }
-    },
-    {
-      breakpoint: 1540,
-      settings: {
-        slidesToShow: 5.8,
-      }
-    },
-
-    {
-      breakpoint: 1500,
-      settings: {
-        slidesToShow: 5.7,
-      }
-    },
-
-    {
-      breakpoint: 1400,
-      settings: {
-        slidesToShow: 5.9,
-      }
-    },
-    {
-      breakpoint: 1375,
-      settings: {
-        slidesToShow: 5.8,
-      }
-    },
-    {
-      breakpoint: 1350,
-      settings: {
-        slidesToShow: 5.7,
-      }
-    },
-    {
-      breakpoint: 1325,
-      settings: {
-        slidesToShow: 5.6,
       }
     },
     {
@@ -1009,83 +875,7 @@ $('.single-item2').slick({
         slidesToShow: 5.5,
       }
     },
-    {
-      breakpoint: 2481,
-      settings: {
-        slidesToShow: 5.3,
-      }
-    },
-    {
-      breakpoint: 2228,
-      settings: {
-        slidesToShow: 5.3,
-      }
-      
-    },
-    {
-      breakpoint: 2011,
-      settings: {
-        slidesToShow: 6.4,
-      }
-      
-    },
-    {
-      breakpoint: 1710,
-      settings: {
-        slidesToShow: 6.2,
-      }
-    },
-
-    {
-      breakpoint: 1665,
-      settings: {
-        slidesToShow: 6,
-      }
-    },
-    {
-      breakpoint: 1590,
-      settings: {
-        slidesToShow: 5.9,
-      }
-    },
-    {
-      breakpoint: 1540,
-      settings: {
-        slidesToShow: 5.8,
-      }
-    },
-
-    {
-      breakpoint: 1500,
-      settings: {
-        slidesToShow: 5.7,
-      }
-    },
-
-    {
-      breakpoint: 1400,
-      settings: {
-        slidesToShow: 5.9,
-      }
-    },
-    {
-      breakpoint: 1375,
-      settings: {
-        slidesToShow: 5.8,
-      }
-    },
-    {
-      breakpoint: 1350,
-      settings: {
-        slidesToShow: 5.7,
-      }
-    },
-    {
-      breakpoint: 1325,
-      settings: {
-        slidesToShow: 5.6,
-      }
-    },
+    
     {
       breakpoint: 1300,
       settings: {
