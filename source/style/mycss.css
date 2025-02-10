@@ -11,7 +11,11 @@
 .results-h4 {
     margin-left: 7.6vh;
 }
-
+.no-results{
+    margin-left: 13vh;
+    font-size: 18px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 #update {
     display: flex;
     flex-wrap: wrap;
@@ -319,7 +323,7 @@ h4 {
     bottom: 0;
     height: 1px;
     /* Высота линии */
-    width: 74.5%;
+    width: 75.5%;
     background: #A00000;
     /* Цвет линии */
     transform: scaleX(0);
@@ -337,6 +341,45 @@ h4 {
     /* При наведении: линия появляется */
 
 }
+.movies-text::after {
+    content: '';
+    position: absolute;
+    left: 12%;
+    bottom: 0;
+    height: 1px;
+    /* Высота линии */
+    width: 77.7%;
+    background: #A00000;
+    /* Цвет линии */
+    transform: scaleX(0);
+    /* Начальное состояние: линия скрыта */
+    transform-origin: left;
+    /* Устанавливаем точку отсчета слева */
+    transition: transform 0.5s ease;
+    /* Плавный переход */
+    z-index: 0;
+    /* За текстом */
+}
+.serials-text::after {
+    content: '';
+    position: absolute;
+    left: 12%;
+    bottom: 0;
+    height: 1px;
+    /* Высота линии */
+    width: 76%;
+    background: #A00000;
+    /* Цвет линии */
+    transform: scaleX(0);
+    /* Начальное состояние: линия скрыта */
+    transform-origin: left;
+    /* Устанавливаем точку отсчета слева */
+    transition: transform 0.5s ease;
+    /* Плавный переход */
+    z-index: 0;
+    /* За текстом */
+}
+
 .cartoones-text::after{
     content: '';
     position: absolute;
@@ -344,7 +387,27 @@ h4 {
     bottom: 0;
     height: 1px;
     /* Высота линии */
-    width: 86%;
+    width: 85%;
+    background: #A00000;
+    /* Цвет линии */
+    transform: scaleX(0);
+    /* Начальное состояние: линия скрыта */
+    transform-origin: left;
+    /* Устанавливаем точку отсчета слева */
+    transition: transform 0.5s ease;
+    /* Плавный переход */
+    z-index: 0;
+    /* За текстом */
+}
+
+.anime-text::after{
+    content: '';
+    position: absolute;
+    left: 12%;
+    bottom: 0;
+    height: 1px;
+    /* Высота линии */
+    width: 74.5%;
     background: #A00000;
     /* Цвет линии */
     transform: scaleX(0);
@@ -498,16 +561,18 @@ h4 {
 
 .span-rating {
     margin-left: 5px;
+    margin-top: 1px;
 }
 
 .card-rating-trand {
+    
     color: #ffffff;
 
     background: rgba(0, 0, 0, 0.5);
     font-size: 1em;
     font-weight: 700;
     font-weight: 700;
-    padding: 0.2em 0.4em;
+    padding: 0.2em 0.40em;
     -webkit-border-radius: 1em;
     -moz-border-radius: 1em;
     border-radius: 1em;
@@ -533,7 +598,7 @@ h4 {
     font-size: 1em;
     font-weight: 700;
     font-weight: 700;
-    padding: 0.2em 0.4em;
+    padding: 0.2em 0.40em;
     -webkit-border-radius: 1em;
     -moz-border-radius: 1em;
     border-radius: 1em;
@@ -900,8 +965,8 @@ footer {
         top:30px;
     }
     .search-container{
-        width: 45px;
-        height: 45px; /* Сделано равным ширине */
+        width: 40px;
+        height: 40px; /* Сделано равным ширине */
         border-radius: 25px;
         
         
@@ -912,14 +977,17 @@ footer {
     }
     .navbar-img {
        
-      width: 27px !important;
-      height: 25px !important;
+      width: 22px !important;
+      height: 22px !important;
     }
     .clear-icon{
-        font-size: 125% !important;
+        font-size: 120% !important;
         padding-right: 5px !important;
     }
-    
+    .search-icon .navbar-img {
+       margin-left: 0.1em;
+       
+      }
       .search-input{
         font-size: 103% !important;
       }
@@ -938,10 +1006,7 @@ footer {
   }
   @media (min-width: 1279px) and (max-width: 1521px) {
    
-    .navbar-img {
-       
-      
-    }
+    
     .search-icon .navbar-img {
         width: 20px !important; /* Фиксированный размер */
         height: 19px !important;
@@ -1048,7 +1113,16 @@ footer {
     top: 62px !important;
     /* Поднимаем стрелку вверх */
 }
-
+@media (min-width: 2300px) and (max-width: 4000px) {
+    h4{
+        font-size: 210% !important;
+    }
+}
+@media (min-width: 2019px) and (max-width: 2300px) {
+    h4{
+        font-size: 190% !important;
+    }
+}
 @media (min-width: 2019px) and (max-width: 4000px) {
     
     
@@ -1063,12 +1137,12 @@ footer {
     }
 
     .slider-2 .slick-prev {
-        top: 40% !important;
+        top: 31% !important;
         /* Поднимаем стрелку вверх */
     }
 
     .slider-2 .slick-next {
-        top: 40% !important;
+        top: 31% !important;
         /* Поднимаем стрелку вверх */
     }
     .slick-prev:after {
@@ -1097,9 +1171,113 @@ footer {
     
         
         /*  подчернуть снизу */
+
+        
     }
-      
+    
+
+    
+   
+    .card-rating,
+    .card-rating-trand {
+        font-size: 180% !important;
+        width: auto !important;
+        height: auto !important;
+        /* Увеличение размера текста рейтинга */
+    }
+    
+
+    .full-card  .all-flim-img{
+        width: 150% !important;
+        height: 100%;
+    }
+    
+    .card-tex {
+        font-size: 180% !important;
+    
+    }
+    
+    .year {
+        font-size: 95% !important;
+    }
+    
+    .btn-show-all {
+        width: 100%;
+    }
+    
+    .show-all-link {
+        font-size: 150% !important;
+    }
+    
+    .show-more-btn,
+    .show-more-btn1 .show-more-btn2 {
+        width: 100%;
+        
+    }
+    
+    .toggle-btn{
+        font-size: 140% !important;
+    }
+    
+    
+    .span-rating {
+        margin-right: 0.3em;
+        
+    }
   }
+  @media (min-width: 1900px) and (max-width: 2019px) {
+h4{
+    font-size: 160% !important;
+}
+.search-icon .navbar-img {
+    margin-left: 0.15em !important;
+    
+   }
+
+.card-rating,
+.card-rating-trand {
+    font-size: 150% !important;
+    width: auto !important;
+    height: auto !important;
+    /* Увеличение размера текста рейтинга */
+}
+
+.card-tex {
+    font-size: 150% ;
+
+}
+
+.year {
+    font-size: 90% !important;
+}
+
+.btn-show-all {
+    width: 100%;
+}
+
+.show-all-link {
+    font-size: 150%;
+}
+
+.show-more-btn,
+.show-more-btn1 .show-more-btn2 {
+    width: 100%;
+    
+}
+
+.yet {
+    font-size: 150%;
+}
+
+.span-rating {
+    margin-right: 0.3em;
+}
+.full-card  .all-flim-img{
+    width: 150% !important;
+    height: 100%;
+}
+  }
+
   @media (min-width: 1521px) and (max-width: 2019px) {
     
     
@@ -1114,12 +1292,12 @@ footer {
   }
 
   .slider-2 .slick-prev {
-      top: 30% !important;
+      top: 32% !important;
       /* Поднимаем стрелку вверх */
   }
 
   .slider-2 .slick-next {
-      top: 30% !important;
+      top: 32% !important;
       /* Поднимаем стрелку вверх */
   }
   .slick-prev:after {
@@ -1289,7 +1467,7 @@ footer {
     }
 
     h4 {
-        margin-left: 2vh;
+        margin-left: 0.7em;
     }
 
     .show-all {
@@ -1319,6 +1497,11 @@ footer {
     }
 }
 @media screen and (max-width: 1184.5px) {
+    .no-results{
+        margin-left: 7.6vh;
+        font-size: 18px;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
     .search-wrapper{
         margin-right: -2.5em;
     }
@@ -1788,7 +1971,7 @@ footer {
     }
 }
 
-@media (max-width: 4000px) {
+@media(min-width: 1521px) and (max-width: 4000px) {
 
     .all-film {
         margin-left: 10px !important;
@@ -1797,7 +1980,7 @@ footer {
 
     .all-flim-img {
 
-        width: 140%;
+        width: 150%;
         height: 100%;
     }
 
@@ -1807,11 +1990,9 @@ footer {
         height: 100%;
     }
 
-    .sirials-watch-img {
-        width: 168% !important;
-        height: 10em !important;
-    }
-
+    
+    
+    
 }
 
 
@@ -1819,7 +2000,44 @@ footer {
 
 
 @media (min-width: 1900px) {
-    
+
+    .search-wrapper{
+        top:30px;
+    }
+    .search-container{
+        width: 43px;
+        height: 43px; /* Сделано равным ширине */
+        border-radius: 25px;
+        
+        
+    }
+    .search-wrapper:hover .search-container {
+        width: 270px !important;
+        /* Расширение контейнера влево */
+    }
+    .navbar-img {
+       
+      width: 22px !important;
+      height: 22px !important;
+    }
+    .clear-icon{
+        font-size: 123% !important;
+        padding-right: 5px !important;
+    }
+    .search-icon .navbar-img {
+       margin-left: 0.1em;
+      }
+      .search-input{
+        font-size: 103% !important;
+      }
+
+    .nav-link {
+        font-size: 118% !important;
+    }
+    .navbar-img{
+        width: 24px!important;
+        height: 24px !important; ;
+    }
 
     .all-film {
         margin-left: 40px !important;
@@ -1841,53 +2059,16 @@ footer {
     }
 
 
-    .card-rating,
-    .card-rating-trand {
-        font-size: 130% !important;
-        width: auto !important;
-        height: auto !important;
-        /* Увеличение размера текста рейтинга */
-    }
-
-    .span-rating {
-        margin-right: 0.3em;
-    }
+   
     .navbar{
         font-size: 130% !important;
     }
     
-    h4 {
-        font-size: 130% !important;
-    }
+    
     .navbar{
         font-size: 130% !important;
     }
-    .card-tex {
-        font-size: 130% !important;
-
-    }
-
-    .year {
-        font-size: 90% !important;
-    }
-
-    .btn-show-all {
-        width: 100%;
-    }
-
-    .show-all-link {
-        font-size: 150%;
-    }
-
-    .show-more-btn,
-    .show-more-btn1 .show-more-btn2 {
-        width: 100%;
-        
-    }
-
-    .yet {
-        font-size: 150%;
-    }
+   
 
 
 
@@ -1954,13 +2135,17 @@ footer {
 }
 
 @media (min-width: 1705px) and (max-width: 1899.5px) {
+
+    .nav-link {
+        font-size: 115% !important;
+    }
     .all-film {
         margin-left: 40px !important;
 
     }
 
     .full-card {
-        width: 80% !important;
+        width: 85% !important;
     }
 
     .card-media2 {
@@ -1975,7 +2160,13 @@ footer {
 
     .card-media3 {
         width: 57% !important;
+        height: 100%;
         margin-top: 1em;
+    }
+
+    .sirials-watch-img {
+        width: 164% !important;
+        height: 100% !important;
     }
 
     .card-rating,
@@ -2006,11 +2197,11 @@ footer {
     font-size: 120% !important;
 }
 h4 {
-    font-size: 130% !important;
+    font-size: 130% ;
 }
 
 .card-tex {
-    font-size: 130% !important;
+    font-size: 130% ;
 
 }
 
@@ -2050,13 +2241,17 @@ h4 {
 
 
 @media (min-width: 1521px) and (max-width: 1705px) {
+    .nav-link{
+        font-size: 90%;
+    }
+    
     .all-film {
         margin-left: 40px !important;
 
     }
 
     .full-card {
-        width: 80% !important;
+        width: 85% !important;
     }
 
     .card-media2 {
@@ -2073,6 +2268,10 @@ h4 {
         width: 68% !important;
         margin-top: 1em;
     }
+    .sirials-watch-img {
+        width: 140% !important;
+        height: 100% !important;
+    }
 
     .card-rating,
     .card-rating-trand {
@@ -2085,9 +2284,7 @@ h4 {
     .span-rating {
         margin-right: 0.3em;
     }
-    .navbar{
-        font-size: 120% !important;
-    }
+    
     h4 {
         font-size: 140% !important;
     }
@@ -2101,11 +2298,11 @@ h4 {
         font-size: 130% !important;
     }
     h4 {
-        font-size: 130% !important;
+        font-size: 140% !important;
     }
 
     .card-tex {
-        font-size: 130% !important;
+        font-size: 130% ;
 
     }
 
@@ -2125,6 +2322,9 @@ h4 {
     .show-more-btn1 .show-more-btn2 {
         width: 100%;
 
+    }
+    .toggle-btn{
+        font-size: 115%;
     }
 
     .yet {
@@ -2154,7 +2354,15 @@ h4 {
         width: 68% !important;
         margin-top: 1em;
     }
+    .card-img-top {
 
+        width: 110%;
+        height: 100%;
+    }
+    .sirials-watch-img {
+        width: 140% !important;
+        height: 100% !important;
+    }
     .card-rating,
     .card-rating-trand {
         font-size: 100% !important;
@@ -2171,10 +2379,14 @@ h4 {
         font-size: 100% !important;
 
     }
-
+    
     .year {
-        font-size: 95% !important;
+        font-size: 90% !important;
     }
+    .toggle-btn{
+        font-size: 95%;
+    }
+    
 }
 
 
@@ -2195,12 +2407,12 @@ h4 {
 
     .card-img-top {
 
-        width: 96%;
+        width: 105%;
         height: 100%;
     }
 
     .sirials-watch-img {
-        width: 114% !important;
+        width: 120% !important;
         height: 100% !important;
     }
     .card-tex {
@@ -2246,7 +2458,10 @@ h4 {
         margin-left: 15px !important;
 
     }
-
+    .sirials-watch-img {
+        width: 117% !important;
+        height: 100% !important;
+    }
 
     .all-flim-img {
         width: 92%;
@@ -2255,10 +2470,11 @@ h4 {
 
     .card-img-top {
 
-        width: 100%;
+        width: 102%;
         height: 100%;
     }
 }
+
 
 @media screen and (max-width: 1260px) {
     .all-film {

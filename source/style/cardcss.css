@@ -34,18 +34,19 @@
     font-family: Helvetica, sans-serif;
 }
 .full-smile-rate-warp{
-    font-family: Helvetica, sans-serif;
-    background: #373737;
-    border-radius: 0.8em ;
-    border: 1.5px solid #424242;
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Выровнять текст по центру */
-    font-size: 1.2em;
-    margin-right: 1em;
-    padding-left: 0.3em;
-    width: 4.3em;
-    margin-top: 1em;
+  font-family: Helvetica, sans-serif;
+  background: #373737;
+  border-radius: 0.8em;
+  border: 1.5px solid #424242;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  margin-right: 1em;
+  padding: 0.1em 0.3em; /* Добавил равные отступы слева и справа */
+  min-width: 3.6em; /* Минимальная ширина, но элемент будет расширяться при добавлении текста */
+  margin-top: 1em;
+  
 }
 .full-smile-rate-warp > div:last-child {
     font-size: 0.7em;
@@ -287,7 +288,7 @@ z-index: -1;
 .mobile-card-description {
   position: absolute;
   left: 17em;
-  top: 4em;
+  top: 1.7em;
   
  
 }
@@ -431,13 +432,13 @@ z-index: -1;
     .card-description {
       font-size: 14.0905px;
       left: 16.5em;
-      top: 4em;
+      top: 3.7em;
       
       
     }
     
 
- 
+  
   
   .full-more-details{
    
@@ -485,7 +486,7 @@ z-index: -1;
     .card-description {
       font-size: 14px;
       left: 14em;
-      top: 3em;
+      top: 2em;
     }
    
    
@@ -611,7 +612,7 @@ z-index: -1;
     .card-description {
       font-size: 11.6px;
       left: 14.5em;
-      top: 5em;
+      top: 4.5em;
     }
     
    
@@ -1003,4 +1004,201 @@ margin-left: 4em;
   border-radius: 5px ;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) ;
  
+}
+
+/* медиа для изображения заднего фона */
+@media (min-width: 2300px) and (max-width: 4000px) {
+  .hero{
+    height: calc(600px + 60vmin);
+    min-height: 1100px;
+    max-height: 1100px;
+  }
+}
+@media (min-width: 1900px) and (max-width: 2300px) {
+  .hero{
+    height: calc(500px + 50vmin);
+    min-height: 1000px;
+    max-height: 1000px;
+  }
+}
+@media (min-width: 1439px) and (max-width: 1900px) {
+  .hero{
+    height: calc(450px + 45vmin);
+    min-height: 750px;
+  max-height: 750px;
+  }
+}
+@media (min-width: 1300px) and (max-width: 1439px) {
+  .hero{
+  height: calc(400px + 40vmin);
+  min-height: 700px;
+  max-height: 700px;
+  }
+}
+/* конец */
+@media (min-width: 2300px) and (max-width: 4000px) {
+  .movie-card-img{
+    width: 30rem !important;
+    height: 100% !important;
+  }
+  .card-description {
+    font-size: 30.5px;
+    left: 17.5em;
+    top: -1.7em;
+}
+.mobile-details{
+  margin-top: -8.7em;
+  
+}
+.mobile-more{
+  font-size: 33.5px !important;
+  }
+  .mobile-about-the-film{
+    font-size: 32.5px;
+  }
+  .video-js{
+    width: 1375px !important;
+    height: 800px !important;
+    border: 4px solid #333333 ;
+    border-radius: 5.5px ;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) ;
+  }
+}
+@media (min-width: 2100px) and (max-width: 2300px) {
+  .video-js{
+    width: 1160px !important;
+    height: 675px !important;
+    border: 3.5px solid #333333 ;
+    border-radius: 5.5px ;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) ;
+  }
+}
+@media (min-width: 1900px) and (max-width: 2100px) {
+  .video-js{
+    width: 1045px !important;
+    height: 600px !important;
+    border: 3px solid #333333 ;
+    border-radius: 5.5px ;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) ;
+  }
+}
+
+@media (min-width: 1900px) and (max-width: 2300px) {
+  .movie-card-img{
+    width: 24rem !important;
+    height: 100% !important;
+  }
+  .card-description {
+    font-size: 24.5px;
+    left: 17.5em;
+    top: -1em;
+}
+.mobile-details{
+  margin-top: -12.7em;
+  
+}
+.mobile-more{
+  font-size: 27.5px !important;
+  }
+  .mobile-about-the-film{
+    font-size: 26.5px;
+  }
+  
+}
+
+@media (min-width: 1705px) and (max-width: 1900px){
+  .movie-card-img{
+    width: 21rem !important;
+    height: 100% !important;
+  }
+  .card-description {
+    font-size: 21.5px;
+    left: 17.5em;
+    top: -0.5em;
+}
+.mobile-details{
+  margin-top: -1.7em;
+  
+}
+.mobile-more{
+  font-size: 23.5px !important;
+  }
+  .mobile-about-the-film{
+    font-size: 22.5px;
+  }
+  .video-js{
+    width: 930px !important;
+    height: 525px !important;
+    border: 3px solid #333333 ;
+    border-radius: 5.5px ;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) ;
+  }
+}
+
+@media (min-width: 1521px) and (max-width: 1705px){
+  .movie-card-img{
+    width: 19rem !important;
+    height: 100%;
+  }
+  .card-description {
+    font-size: 19px;
+    left: 17.5em;
+    top: 0.5em;
+}
+.mobile-details{
+  margin-top: -4.7em;
+  
+}
+.mobile-more{
+  font-size: 23px !important;
+  }
+  .mobile-about-the-film{
+    font-size: 21px;
+  }
+  .video-js{
+    width: 875px !important;
+    height: 500px !important;
+    border: 2.5px solid #333333 ;
+    border-radius: 5.5px ;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) ;
+  }
+}
+
+
+@media (min-width: 1439px) and (max-width: 1521px) {
+  .movie-card-img{
+    width: 17rem !important;
+    height: 100%;
+  }
+  .card-description {
+    font-size: 18px;
+    left: 16.5em;
+    top: 0em;
+}
+.mobile-details{
+  margin-top: -7.7em;
+  
+}
+.mobile-more{
+font-size: 19px;
+}
+.mobile-about-the-film{
+  font-size: 18px;
+}
+}
+@media (min-width: 1400px) and (max-width: 1521px) {
+  .video-js{
+    width: 775px !important;
+    height: 445px !important;
+    border: 2.5px solid #333333 ;
+    border-radius: 5.5px ;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) ;
+  }
+}
+@media (min-width: 1300px) and (max-width: 1439px) {
+  .mobile-details{
+    
+    margin-top: -6.25em;
+  }
+  
 }
