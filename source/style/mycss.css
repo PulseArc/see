@@ -560,8 +560,10 @@ h4 {
 }
 
 .span-rating {
-    margin-left: 5px;
-    margin-top: 1px;
+    display: flex; /* Используем flexbox */
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center; /* Центрируем по вертикали */
+    
 }
 
 .card-rating-trand {
@@ -598,7 +600,7 @@ h4 {
     font-size: 1em;
     font-weight: 700;
     font-weight: 700;
-    padding: 0.2em 0.40em;
+    padding: 0.2em 0.4em;
     -webkit-border-radius: 1em;
     -moz-border-radius: 1em;
     border-radius: 1em;
@@ -1221,8 +1223,11 @@ footer {
     
     
     .span-rating {
-        margin-right: 0.3em;
-        
+        display: flex; /* Используем flexbox */
+        justify-content: center; /* Центрируем по горизонтали */
+        align-items: center; /* Центрируем по вертикали */
+        padding-left: 0.15em;
+        padding-right: 0.15em;
     }
   }
   @media (min-width: 1900px) and (max-width: 2019px) {
@@ -1269,9 +1274,7 @@ h4{
     font-size: 150%;
 }
 
-.span-rating {
-    margin-right: 0.3em;
-}
+
 .full-card  .all-flim-img{
     width: 150% !important;
     height: 100%;
@@ -1329,7 +1332,15 @@ h4{
 }
     
 }
-
+@media (min-width: 1320px) and (max-width: 4000px) {
+.span-rating {
+    display: flex; /* Используем flexbox */
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center; /* Центрируем по вертикали */
+    padding-left: 0.15em;
+    padding-right: 0.15em;
+}
+}
 @media (min-width: 1321px) and (max-width: 1521px) {
     
     
@@ -2177,9 +2188,7 @@ h4{
         /* Увеличение размера текста рейтинга */
     }
 
-    .span-rating {
-        margin-right: 0.3em;
-    }
+    
     .navbar{
         font-size: 130% !important;
     }
@@ -2281,9 +2290,7 @@ h4 {
         /* Увеличение размера текста рейтинга */
     }
 
-    .span-rating {
-        margin-right: 0.3em;
-    }
+    
     
     h4 {
         font-size: 140% !important;
@@ -2371,9 +2378,7 @@ h4 {
         /* Увеличение размера текста рейтинга */
     }
 
-    .span-rating {
-        margin-right: 0.3em;
-    }
+    
 
     .card-tex {
         font-size: 100% !important;
