@@ -187,6 +187,13 @@ function generateRandomCards() {
             "rating":"6.2"
         },
         {
+            "name": "Трансформеры: Начало",
+            "image": "https://image.tmdb.org/t/p/w500//47mnEdahUv5I28CKuBx5drLRcuK.jpg",
+            "link": "#",
+            "year": "2024",
+            "rating":"7.6"
+        },
+        {
             "name": "Кошмар перед Рождеством",
             "image": "https://image.tmdb.org/t/p/w500//xvqFn90FxKTJflG4n0spZY7vySu.jpg",
             "link": "#",

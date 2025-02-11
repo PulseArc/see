@@ -397,11 +397,11 @@ function generateRandomCards() {
             "rating":"6.1"
         },
         {
-            "name": "Трансформеры: Начало",
-            "image": "https://image.tmdb.org/t/p/w500//47mnEdahUv5I28CKuBx5drLRcuK.jpg",
+            "name": "Оппенгеймер",
+            "image": "http://image.tmdb.org/t/p/w500//8OQzw8keE6sDNH25sOqPRTxhFTO.jpg",
             "link": "#",
-            "year": "2024",
-            "rating":"7.6"
+            "year": "2023",
+            "rating":"8.1"
         },
         {
             "name": "Деревенские против пришельцев",

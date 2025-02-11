@@ -175,342 +175,265 @@ $('.single-item3').slick({
       }
     },
     {
-      breakpoint: 2481,
-      settings: {
-        slidesToShow: 5.3,
-      }
-    },
-    {
-      breakpoint: 2228,
-      settings: {
-        slidesToShow: 5.3,
-      }
-      
-    },
-    {
-      breakpoint: 2011,
-      settings: {
-        slidesToShow: 6.4,
-      }
-      
-    },
-    {
-      breakpoint: 1710,
-      settings: {
-        slidesToShow: 6.2,
-      }
-    },
-
-    {
-      breakpoint: 1665,
-      settings: {
-        slidesToShow: 6,
-      }
-    },
-    {
-      breakpoint: 1590,
-      settings: {
-        slidesToShow: 5.9,
-      }
-    },
-    {
-      breakpoint: 1540,
-      settings: {
-        slidesToShow: 5.8,
-      }
-    },
-
-    {
-      breakpoint: 1500,
-      settings: {
-        slidesToShow: 5.7,
-      }
-    },
-
-    {
-      breakpoint: 1400,
-      settings: {
-        slidesToShow: 5.9,
-      }
-    },
-    {
-      breakpoint: 1375,
-      settings: {
-        slidesToShow: 5.8,
-      }
-    },
-    {
-      breakpoint: 1350,
-      settings: {
-        slidesToShow: 5.7,
-      }
-    },
-    {
-      breakpoint: 1325,
-      settings: {
-        slidesToShow: 5.6,
-      }
-    },
-    {
       breakpoint: 1300,
       settings: {
-        slidesToShow: 5.5,
+        slidesToShow: 5.45,
       }
     },
     {
       breakpoint: 1275,
       settings: {
-        slidesToShow: 5.4,
+        slidesToShow: 5.35,
       }
     },
     {
       breakpoint: 1250,
       settings: {
-        slidesToShow: 5.3,
+        slidesToShow: 5.25,
       }
     },
     {
       breakpoint: 1225,
       settings: {
-        slidesToShow: 5.2,
+        slidesToShow: 5.15,
       }
     },
 
     {
      breakpoint: 1200,
      settings: {
-       slidesToShow: 5.1,
+       slidesToShow: 5.05,
      }
    },
    
   {
     breakpoint: 1175,
     settings: {
-      slidesToShow: 5,
+      slidesToShow: 4.95,
     }
   },
   {
     breakpoint: 1150,
     settings: {
-      slidesToShow: 4.9,
+      slidesToShow: 4.85,
     }
   },
        {
          breakpoint: 1125,
          settings: {
-           slidesToShow: 4.8,
+           slidesToShow: 4.75,
          }
        },
        {
         breakpoint: 1100,
         settings: {
-          slidesToShow: 4.7,
+          slidesToShow: 4.65,
         }
       },
       {
         breakpoint: 1075,
         settings: {
-          slidesToShow: 4.6,
+          slidesToShow: 4.55,
         }
       },
       {
         breakpoint: 1050,
         settings: {
-          slidesToShow: 4.5,
+          slidesToShow: 4.45,
         }
       },
       {
         breakpoint: 1025,
         settings: {
-          slidesToShow: 4.4,
+          slidesToShow: 4.35,
         }
       },
 
        {
          breakpoint: 1000,
          settings: {
-           slidesToShow: 4.3,
+           slidesToShow: 4.25,
          }
        },
        {
         breakpoint: 975,
         settings: {
-          slidesToShow: 4.2,
+          slidesToShow: 4.15,
         }
       },
       {
         breakpoint: 950,
         settings: {
-          slidesToShow: 4.1,
+          slidesToShow: 4.05,
         }
       },
       {
         breakpoint: 925,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 3.95,
         }
       },
        {
          breakpoint: 900,
          settings: {
-           slidesToShow: 3.9,
+           slidesToShow: 3.85,
          }
        },
        {
         breakpoint: 875,
         settings: {
-          slidesToShow: 3.8,
+          slidesToShow: 3.75,
         }
       },
       {
         breakpoint: 850,
         settings: {
-          slidesToShow: 3.7,
+          slidesToShow: 3.65,
         }
       },
       {
         breakpoint: 825,
         settings: {
-          slidesToShow: 3.6,
+          slidesToShow: 3.55,
         }
       },
        {
          breakpoint: 800,
          settings: {
-           slidesToShow: 3.5,
+           slidesToShow: 3.45,
          }
        },
        {
         breakpoint: 775,
         settings: {
-          slidesToShow: 3.4,
+          slidesToShow: 3.35,
         }
       },
        {
         breakpoint: 750,
         settings: {
-          slidesToShow: 3.3,
+          slidesToShow: 3.25,
         }
       },
        {
         breakpoint: 725,
         settings: {
-          slidesToShow: 3.2,
+          slidesToShow: 3.12,
         }
       },
        {
          breakpoint: 700,
          settings: {
-           slidesToShow: 3.1,
+           slidesToShow: 3.05,
          }
        },
        {
         breakpoint: 675,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2.95,
         }
       },
        {
         breakpoint: 650,
         settings: {
-          slidesToShow: 2.9,
+          slidesToShow: 2.85,
         }
       },
        {
         breakpoint: 625,
         settings: {
-          slidesToShow: 2.7,
+          slidesToShow: 2.65,
         }
       },
        {
          breakpoint: 600,
          settings: {
-           slidesToShow: 2.6,
+           slidesToShow: 2.55,
          }
        },
        {
         breakpoint: 575,
         settings: {
-          slidesToShow: 2.51,
+          slidesToShow: 2.415,
         }
       },
        {
         breakpoint: 550,
         settings: {
-          slidesToShow: 2.4,
+          slidesToShow: 2.35,
         }
       },
       {
         breakpoint: 525,
         settings: {
-          slidesToShow: 2.31,
+          slidesToShow: 2.215,
         }
       },
        {
          breakpoint: 500,
          settings: {
-           slidesToShow: 2.22,
+           slidesToShow: 2.157,
          }
        },
        {
         breakpoint: 480,
         settings: {
-          slidesToShow: 2.1,
+          slidesToShow: 2.05,
         }
       },
       {
         breakpoint: 465,
         settings: {
-          slidesToShow: 2.05,
+          slidesToShow: 1.95,
         }
       },
        {
          breakpoint: 450,
          settings: {
-           slidesToShow: 2,
+           slidesToShow: 1.95,
          }
        },
        {
         breakpoint: 435,
         settings: {
-          slidesToShow: 1.95,
+          slidesToShow: 1.85,
         }
       },
       {
         breakpoint: 420,
         settings: {
-          slidesToShow: 1.92,
+          slidesToShow: 1.825,
         }
       },
        {
          breakpoint: 400,
          settings: {
-           slidesToShow: 1.8,
+           slidesToShow: 1.75,
          }
        },
        {
         breakpoint: 380,
         settings: {
-          slidesToShow: 1.75,
+          slidesToShow: 1.65,
         }
       },
       {
         breakpoint: 365,
         settings: {
-          slidesToShow: 1.65,
+          slidesToShow: 1.55,
         }
       },
        
        {
          breakpoint: 350,
          settings: {
-           slidesToShow: 1.6,
+           slidesToShow: 1.55,
          }
        },
        {
         breakpoint: 340,
         settings: {
-          slidesToShow: 1.55,
+          slidesToShow: 1.45,
         }
       }
      ]
@@ -535,64 +458,4 @@ $('.single-item3').on('touchend', function (e) {
   }
 });
 
- $('.single-item4').slick({
-  infinite: true, // Бесконечная прокрутка
-  dots: true, // Точки навигации
-  slidesToShow: 6.1, // Показываем 5.3 слайда
-  slidesToScroll: 1, // Прокручиваем минимум 1 слайд
-  swipeToSlide: true, // Плавный переход при свайпе или скролле
-  touchThreshold: 10, // Настройка для длинного свайпа
-  responsive: [
-    {
-      breakpoint: 2481,
-      settings: {
-        slidesToShow: 4,
-      }
-    },
-    {
-      breakpoint: 1800,
-      settings: {
-        slidesToShow: 3,
-      }
-    },
-   
-    {
-    breakpoint: 1400,
-    settings: {
-      slidesToShow: 2,
-    }
-  },
-  {
-    breakpoint: 1000,
-    settings: {
-      slidesToShow: 1.8,
-    }
-  },
-  {
-    breakpoint: 900,
-    settings: {
-      slidesToShow: 1.5,
-    }
-  },
-
-  {
-    breakpoint: 700,
-    settings: {
-      slidesToShow: 1.3,
-    }
-  },
-  {
-    breakpoint: 600,
-    settings: {
-      slidesToShow: 1.2,
-    }
-  },
-  
-  {
-    breakpoint: 500,
-    settings: {
-      slidesToShow: 1,
-    }
-  }
-]
-});
+ 
