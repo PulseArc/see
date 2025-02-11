@@ -2879,12 +2879,12 @@ h4 {
         height: 100%;
     }
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 769.5px) {
 
 
 
     .all-flim-img {
-        width: 73% !important;
+        width: 89% !important;
         height: 100%;
     }
 }
@@ -2893,7 +2893,7 @@ h4 {
 
 
     .all-flim-img {
-        width: 72% !important;
+        width: 88% !important;
         height: 100%;
     }
 }
@@ -2902,7 +2902,7 @@ h4 {
 
 
     .all-flim-img {
-        width: 71% !important;
+        width: 87% !important;
         height: 100%;
     }
 }
@@ -2912,7 +2912,7 @@ h4 {
 
 
     .all-flim-img {
-        width: 70% !important;
+        width: 86% !important;
         height: 100%;
     }
 }
@@ -2921,7 +2921,7 @@ h4 {
 
 
     .all-flim-img {
-        width: 69% !important;
+        width: 85% !important;
         height: 100%;
     }
 }
@@ -2930,14 +2930,14 @@ h4 {
 
 
     .all-flim-img {
-        width: 68% !important;
+        width: 84% !important;
         height: 100%;
     }
 }
 @media screen and (max-width: 713px) {
 
     .all-flim-img {
-        width: 67% !important;
+        width: 83% !important;
         height: 100%;
     }
 }
@@ -2945,36 +2945,42 @@ h4 {
 @media screen and (max-width: 700px) {
 
     .all-flim-img {
-        width: 66% !important;
+        width: 82% !important;
         height: 100%;
     }
 }
 @media screen and (max-width: 693px) {
 
     .all-flim-img {
-        width: 64% !important;
+        width: 81% !important;
         height: 100%;
     }
 }
 @media screen and (max-width: 683px) {
 
     .all-flim-img {
-        width: 63% !important;
+        width: 80% !important;
         height: 100%;
     }
 }
 @media screen and (max-width: 673px) {
 
     .all-flim-img {
-        width: 62% !important;
+        width: 79% !important;
         height: 100%;
     }
 }
+@media screen and (max-width: 663px) {
 
+    .all-flim-img {
+        width: 78% !important;
+        height: 100%;
+    }
+}
 @media screen and (max-width: 653px) {
 
     .all-flim-img {
-        width: 60% !important;
+        width: 76% !important;
         height: 100%;
     }
 }
@@ -2982,15 +2988,21 @@ h4 {
 @media screen and (max-width: 640px) {
 
     .all-flim-img {
-        width: 59% !important;
+        width: 75% !important;
         height: 100%;
     }
 }
+@media screen and (max-width: 633px) {
 
+    .all-flim-img {
+        width: 74% !important;
+        height: 100%;
+    }
+}
 @media screen and (max-width: 623px) {
 
     .all-flim-img {
-        width: 58% !important;
+        width: 71.5% !important;
         height: 100%;
     }
 }
@@ -2998,7 +3010,7 @@ h4 {
 @media screen and (max-width: 603px) {
 
     .all-flim-img {
-        width: 56% !important;
+        width: 71% !important;
         height: 100%;
     }
 }
@@ -3006,7 +3018,7 @@ h4 {
 @media screen and (max-width: 590px) {
 
     .all-flim-img {
-        width: 55% !important;
+        width: 69.5% !important;
         height: 100%;
     }
 }
@@ -3388,11 +3400,17 @@ h4 {
     .card-tex{
         width: 58% !important;
     }
+    
    
+}
+@media (max-width: 769.5px) {
+    .card-tex{
+        width: 75% !important;
+    }
 }
 @media (max-width: 672px) {
     .card-tex{
-        width: 55% !important;
+        width: 73% !important;
     }
     .slider.single-item2 .card-tex {
         width: 80% !important; /* Или нужное значение */
@@ -3405,6 +3423,18 @@ h4 {
     .slider.single-item .card-tex {
         width: 80% !important; /* Или нужное значение */
         
+    }
+    
+}
+@media (max-width: 640px) {
+    .card-tex{
+        width: 69% !important;
+    }
+    
+}
+@media (max-width: 580px) {
+    .card-tex{
+        width: 55% !important;
     }
     
 }
@@ -3484,8 +3514,8 @@ h4 {
 /* Для экранов от 401px до 992px показываем 5 карт */
 @media (min-width: 580px) and (max-width: 992px) {
     .col-4 {
-        flex: 0 0 20%;
-        max-width: 20%;
+        flex: 0 0 25%;
+        max-width: 25%;
     }
 }
 
@@ -3500,8 +3530,8 @@ h4 {
 /* Для экранов от 992px до 1199px показываем 5 карт */
 @media (min-width: 580px) and (max-width: 761px) {
     .col-4 {
-        flex: 0 0 20%;
-        max-width: 20%;
+        flex: 0 0 25%;
+        max-width: 25%;
     }
 }
 
