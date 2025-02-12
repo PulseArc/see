@@ -1,75 +1,79 @@
-const API_KEY = '3da216c9cc3fe78b5488855d25d26e13'; // Вставьте ваш API ключ
+const API_KEY = '3da216c9cc3fe78b5488855d25d26e13'; // Ваш API ключ
 const DEFAULT_IMG = '../../../source/images/logo/actor.svg'; // Место для изображения, если его нет
 
-// Получаем ID фильма по названию и году
+// Получаем ID фильма или сериала по названию и году
 async function getMovieId(movieTitle, movieYear) {
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(movieTitle)}&language=ru-RU`;
+    const url = `https://api.themoviedb.org/3/search/multi?api_key=${API_KEY}&query=${encodeURIComponent(movieTitle)}&language=ru-RU`;
     const response = await fetch(url);
     const data = await response.json();
 
-    // Фильтруем результаты, чтобы найти фильм с нужным годом
-    const matchedMovie = data.results.find(movie => movie.release_date && movie.release_date.includes(movieYear));
+    // Фильтруем результаты, чтобы найти точное совпадение по году
+    const matchedMovie = data.results.find(item => {
+        const releaseDate = item.release_date || item.first_air_date; // У сериалов другое поле даты
+        return releaseDate && new Date(releaseDate).getFullYear().toString() === movieYear;
+    });
 
-    return matchedMovie ? matchedMovie.id : null;
+    if (!matchedMovie) return null;
+
+    return {
+        id: matchedMovie.id,
+        type: matchedMovie.media_type // Определяем, это фильм или сериал
+    };
 }
 
-// Получаем кредиты фильма (актеров и режиссера)
-async function getCredits(movieId) {
-    const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${API_KEY}&language=ru-RU`;
+// Получаем кредиты фильма (актеров)
+async function getCredits(movieId, type) {
+    const url = `https://api.themoviedb.org/3/${type}/${movieId}/credits?api_key=${API_KEY}&language=ru-RU`;
     const response = await fetch(url);
     return response.json();
 }
 
-// Показать детали фильма (актеров и режиссера)
+// Показать детали фильма (актеров)
 async function showMovieDetails() {
     const movieTitle = document.getElementById('movie-title').innerText;  // Получаем название фильма
     const movieYear = document.getElementById('movie-year').innerText;  // Получаем год фильма
-    const movieId = await getMovieId(movieTitle, movieYear);
+    const movieData = await getMovieId(movieTitle, movieYear);
 
-    if (!movieId) {
-        console.error('Фильм не найден');
+    if (!movieData) {
+        console.error('Фильм/сериал не найден');
         return;
     }
 
-    const credits = await getCredits(movieId);
+    const { id: movieId, type } = movieData;
+    const credits = await getCredits(movieId, type);
 
-    // Режиссер
-    const director = credits.crew.find(person => person.job === "Director");
-    const directorContainer = document.getElementById('director-container');
-    directorContainer.innerHTML = director ? `
-        <div class="col-md-4">
-            <div class="card text-center">
-                <img src="${director.profile_path ? 'https://image.tmdb.org/t/p/w500' + director.profile_path : DEFAULT_IMG}" class="card-img-top" alt="${director.name}">
-                <div class="card-body">
-                    <h5 class="card-title">${director.name}</h5>
-                </div>
-            </div>
-        </div>
-    ` : '<p>Режиссер не найден</p>';
-
-    // Актеры (первые 12 актеров)
-    const actors = credits.cast.slice(0, 12);
+    // Актеры (первые 12)
     const actorsContainer = document.getElementById('actors-container');
     actorsContainer.innerHTML = '';
 
+    // Если актеров нет или их меньше 12, выводим как есть
+    const actors = credits.cast.slice(0, 12);
     if (actors.length === 0) {
         actorsContainer.innerHTML = '<p>Актеры не найдены</p>';
     } else {
         actors.forEach(actor => {
-            const actorCard = `
-                <div class="col-md-3">
-                    <div class="card text-center">
-                        <img src="${actor.profile_path ? 'https://image.tmdb.org/t/p/w500' + actor.profile_path : DEFAULT_IMG}" class="card-img-top" alt="${actor.name}">
-                        <div class="card-body">
-                            <h5 class="card-title">${actor.name}</h5>
-                        </div>
-                    </div>
-                </div>
+            actorsContainer.innerHTML += `
+<div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2 ">
+            
+            <div class="actor-cards-container">
+              <div class="actor-card-wrapper">
+                 <div class="actor-card">
+                    <img src="${actor.profile_path ? 'https://image.tmdb.org/t/p/w500' + actor.profile_path : DEFAULT_IMG}" class="actor-photo" alt="${actor.name}">
+                <div class="actor-name-overlay">
+                <h5 class="actor-name">${actor.name}</h5>
+            </div>
+        </div>
+    </div>
+    <!-- Повторите блок .actor-card-wrapper для остальных карточек -->
+   </div>
+
+    
+
+</div>
             `;
-            actorsContainer.innerHTML += actorCard;
         });
     }
 }
 
-// Загрузка данных фильма при загрузке страницы
+// Загружаем данные фильма при загрузке страницы
 document.addEventListener("DOMContentLoaded", showMovieDetails);
