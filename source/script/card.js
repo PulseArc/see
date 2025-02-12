@@ -105,6 +105,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const clearIcon = document.querySelector('.clear-icon'); // Крестик для очистки
   const phoneVersion = document.querySelector('.Phone-version'); // Блок, которому меняем margin
 
+  // Проверяем, существуют ли элементы перед тем, как с ними работать
+  if (!searchInput || !resultsContainer || !clearIcon) return;
+
   searchInput.addEventListener('input', () => {
       const query = searchInput.value.trim(); // Получаем текст из поля поиска
       
@@ -115,7 +118,9 @@ document.addEventListener('DOMContentLoaded', function () {
           
           // Логика обновления содержимого результатов
           const updateContainer = document.getElementById('update');
-          updateContainer.innerHTML = `<p style="margin-left: 1.5em;>Результаты для: "${query}"</p>`;
+          if (updateContainer) {
+              updateContainer.innerHTML = `<p style="margin-left: 1.5em;">Результаты для: "${query}"</p>`; // Исправлена ошибка с кавычками
+          }
           
           // Прокрутка страницы вверх
           window.scrollTo({
@@ -123,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
               behavior: 'smooth' // Плавная прокрутка
           });
 
-          // Добавляем margin-top: 12vh к .Phone-version
+          // Устанавливаем marginTop, если есть результат
           if (phoneVersion) {
               phoneVersion.style.marginTop = '8vh';
           }
@@ -132,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
           resultsContainer.style.display = 'none';
           clearIcon.style.display = 'none'; // Прячем крестик
 
-          // Убираем margin-top, если поиск сброшен
+          // Плавно убираем marginTop, если поиск сброшен
           if (phoneVersion) {
               phoneVersion.style.marginTop = '';
           }
@@ -140,30 +145,38 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Событие клика по крестику
-clearIcon.addEventListener('click', () => {
-    searchInput.value = ''; // Очищаем поле ввода
-    resultsContainer.style.display = 'none'; // Скрываем контейнер с результатами
-    clearIcon.style.display = 'none'; // Скрываем крестик
-    searchInput.blur(); // Убираем фокус, скрывая клавиатуру
+  clearIcon.addEventListener('click', () => {
+      searchInput.value = ''; // Очищаем поле ввода
+      resultsContainer.style.display = 'none'; // Скрываем контейнер с результатами
+      clearIcon.style.display = 'none'; // Скрываем крестик
+      searchInput.blur(); // Убираем фокус, скрывая клавиатуру
+
+      // Плавно возвращаем marginTop, если результаты скрыты
+      if (phoneVersion) {
+          phoneVersion.style.marginTop = '';
+      }
   });
-  
+
   // Скрытие клавиатуры при нажатии Enter
   searchInput.addEventListener('keypress', (event) => {
-    if (event.key === 'Enter') {
-      event.preventDefault(); // Предотвращаем стандартное поведение формы
-      searchInput.blur(); // Убираем фокус с поля, скрывая клавиатуру
-    }
+      if (event.key === 'Enter') {
+          event.preventDefault(); // Предотвращаем стандартное поведение формы
+          searchInput.blur(); // Убираем фокус с поля, скрывая клавиатуру
+      }
   });
 
   // Событие переключения меню
-  menuToggle.addEventListener('change', () => {
-      if (menuToggle.checked) {
-          searchWrapper.classList.add('hidden'); // Применяем класс для скрытия
-      } else {
-          searchWrapper.classList.remove('hidden'); // Убираем класс для показа
-      }
-  });
+  if (menuToggle && searchWrapper) {
+      menuToggle.addEventListener('change', () => {
+          if (menuToggle.checked) {
+              searchWrapper.classList.add('hidden'); // Применяем класс для скрытия
+          } else {
+              searchWrapper.classList.remove('hidden'); // Убираем класс для показа
+          }
+      });
+  }
 });
+
 
 
 
