@@ -965,39 +965,7 @@ footer {
     margin-left: 5px;
 }
 @media (min-width: 1521px) and (max-width: 4000px) {
-    .navbar{
-        height: 90px;
-    }
-    .search-wrapper{
-        top:30px;
-    }
-    .search-container{
-        width: 40px;
-        height: 40px; /* Сделано равным ширине */
-        border-radius: 25px;
-        
-        
-    }
-    .search-wrapper:hover .search-container {
-        width: 270px !important;
-        /* Расширение контейнера влево */
-    }
-    .navbar-img {
-       
-      width: 22px !important;
-      height: 22px !important;
-    }
-    .clear-icon{
-        font-size: 120% !important;
-        padding-right: 5px !important;
-    }
-    .search-icon .navbar-img {
-       margin-left: 0.1em;
-       
-      }
-      .search-input{
-        font-size: 103% !important;
-      }
+    
      
         .card-results {
     
@@ -1121,16 +1089,109 @@ footer {
     /* Поднимаем стрелку вверх */
 }
 @media (min-width: 2300px) and (max-width: 4000px) {
+    .navbar{
+        height: 120px;
+    }
+.navbar-brand img{
+    width: 215px !important;
+    height: 71.66px !important;
+
+        }
+        .nav-link{
+            font-size: 150% !important;
+        }
+        .navbar-img-home, .navbar-img-movies, .navbar-img-serials, .navbar-img-cartoon, .navbar-img-anime{
+            margin-top: 4.5px !important;
+            width: 23.9px !important;
+            height: 24.5px !important;
+        }
+        
+        .search-wrapper{
+            top: 2em;
+            
+        }
+        .search-container{
+            width: 53px !important;
+            height: 53px !important; /* Сделано равным ширине */
+            border-radius: 27.5px;
+            
+            
+        }
+        .search-wrapper:hover .search-container {
+            width: 400px !important;
+            /* Расширение контейнера влево */
+        }
+        .search-icon .navbar-img {
+            margin-left: 0.2em;
+            width:31px !important;
+            height: 31px !important;
+           }
+           .clear-icon{
+            font-size: 150% !important;
+            padding-right: 5px !important;
+        }
+        
+          .search-input{
+            font-size: 145% !important;
+          }
+
+         
     h4{
         font-size: 210% !important;
     }
 }
 @media (min-width: 2019px) and (max-width: 2300px) {
+    .navbar{
+        height: 110px;
+    }
+.navbar-brand img{
+    width: 205px !important;
+    height: 68.33px !important;
+
+        }
+        .nav-link{
+            font-size: 135% !important;
+        }
+        .navbar-img-home, .navbar-img-movies, .navbar-img-serials, .navbar-img-cartoon, .navbar-img-anime{
+            margin-top: 4.5px !important;
+            width: 21.9px !important;
+            height: 22.5px !important;
+        }
+        
+        .search-wrapper{
+            top: 1.8em;
+            
+        }
+        .search-container{
+            width: 48px !important;
+            height: 48px !important; /* Сделано равным ширине */
+            border-radius: 25px;
+            
+            
+        }
+        .search-wrapper:hover .search-container {
+            width: 345px !important;
+            /* Расширение контейнера влево */
+        }
+        .search-icon .navbar-img {
+            margin-left: 0.15em;
+            width:28px !important;
+            height: 28px !important;
+           }
+           .clear-icon{
+            font-size: 130% !important;
+            padding-right: 5px !important;
+        }
+        
+          .search-input{
+            font-size: 125% !important;
+          }
     h4{
         font-size: 190% !important;
     }
 }
 @media (min-width: 2019px) and (max-width: 4000px) {
+    
     
     
       .slider .slick-prev {
@@ -1236,13 +1297,57 @@ footer {
     }
   }
   @media (min-width: 1900px) and (max-width: 2019px) {
+    .navbar{
+        height: 100px;
+    }
+.navbar-brand img{
+    width: 195px !important;
+    height: 65px !important;
+
+        }
+        .nav-link{
+            font-size: 130% !important;
+        }
+        .navbar-img-home, .navbar-img-movies, .navbar-img-serials, .navbar-img-cartoon, .navbar-img-anime{
+            margin-top: 4.5px !important;
+            width: 19.9px !important;
+            height: 20.5px !important;
+        }
+        
+        .search-wrapper{
+            top: 1.8em;
+            
+        }
+        .search-container{
+            width: 45px !important;
+            height: 45px !important; /* Сделано равным ширине */
+            border-radius: 25px;
+            
+            
+        }
+        .search-wrapper:hover .search-container {
+            width: 315px !important;
+            /* Расширение контейнера влево */
+        }
+        .search-icon .navbar-img {
+            margin-left: 0.1em;
+            width:25px !important;
+            height: 25px !important;
+           }
+           .clear-icon{
+            font-size: 122% !important;
+            padding-right: 5px !important;
+        }
+        
+          .search-input{
+            font-size: 120% !important;
+          }
+
+
 h4{
     font-size: 160% !important;
 }
-.search-icon .navbar-img {
-    margin-left: 0.15em !important;
-    
-   }
+
 
 .card-rating,
 .card-rating-trand {
@@ -1494,8 +1599,7 @@ h4{
     
     .navbar-brand img{
         margin-left: -6vh;
-        
-        
+  
     }
 
     
@@ -2017,43 +2121,7 @@ h4{
 
 @media (min-width: 1900px) {
 
-    .search-wrapper{
-        top:30px;
-    }
-    .search-container{
-        width: 43px;
-        height: 43px; /* Сделано равным ширине */
-        border-radius: 25px;
-        
-        
-    }
-    .search-wrapper:hover .search-container {
-        width: 270px !important;
-        /* Расширение контейнера влево */
-    }
-    .navbar-img {
-       
-      width: 22px !important;
-      height: 22px !important;
-    }
-    .clear-icon{
-        font-size: 123% !important;
-        padding-right: 5px !important;
-    }
-    .search-icon .navbar-img {
-       margin-left: 0.1em;
-      }
-      .search-input{
-        font-size: 103% !important;
-      }
-
-    .nav-link {
-        font-size: 118% !important;
-    }
-    .navbar-img{
-        width: 24px!important;
-        height: 24px !important; ;
-    }
+ 
 
     .all-film {
         margin-left: 40px !important;
@@ -2152,9 +2220,52 @@ h4{
 
 @media (min-width: 1705px) and (max-width: 1899.5px) {
 
-    .nav-link {
-        font-size: 115% !important;
+    .navbar{
+        height: 90px;
     }
+.navbar-brand img{
+    width: 185px !important;
+    height: 61.66px !important;
+
+        }
+        .nav-link{
+            font-size: 125% !important;
+        }
+        .navbar-img-home, .navbar-img-movies, .navbar-img-serials, .navbar-img-cartoon, .navbar-img-anime{
+            margin-top: 4.5px !important;
+            width: 18.9px !important;
+            height: 19.5px !important;
+        }
+        
+        .search-wrapper{
+            top: 1.5em;
+            margin-right: -0.8em;
+        }
+        .search-container{
+            width: 40px;
+            height: 40px; /* Сделано равным ширине */
+            border-radius: 25px;
+            
+            
+        }
+        .search-wrapper:hover .search-container {
+            width: 285px !important;
+            /* Расширение контейнера влево */
+        }
+        .search-icon .navbar-img {
+            margin-left: 0.09em;
+            width:22px !important;
+            height: 22px !important;
+           }
+           .clear-icon{
+            font-size: 130% !important;
+            padding-right: 5px !important;
+        }
+        
+          .search-input{
+            font-size: 115% !important;
+          }
+
     .all-film {
         margin-left: 40px !important;
 
@@ -2255,9 +2366,54 @@ h4 {
 
 
 @media (min-width: 1521px) and (max-width: 1705px) {
-    .nav-link{
-        font-size: 90%;
+    .navbar{
+        height: 80px;
     }
+.navbar-brand img{
+    width: 175px !important;
+    height: 58.33px !important;
+
+        }
+        .nav-link{
+            font-size: 100% !important;
+        }
+        .navbar-img-home, .navbar-img-movies, .navbar-img-serials, .navbar-img-cartoon, .navbar-img-anime{
+            margin-top: 4.5px !important;
+            width: 16.9px !important;
+            height: 17.5px !important;
+        }
+        
+        .search-wrapper{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        .search-container{
+            width: 37px;
+            height: 37px; /* Сделано равным ширине */
+            border-radius: 25px;
+            
+            
+        }
+        .search-wrapper:hover .search-container {
+            width: 255px !important;
+            /* Расширение контейнера влево */
+        }
+        .search-icon .navbar-img {
+            margin-left: 0.05em;
+            width:21px !important;
+            height: 21px !important;
+           }
+           .clear-icon{
+            font-size: 115% !important;
+            padding-right: 3px !important;
+        }
+        
+          .search-input{
+            font-size: 96% !important;
+          }
+    
     
     .all-film {
         margin-left: 40px !important;
@@ -2343,9 +2499,52 @@ h4 {
         font-size: 125%;
     }
 }
+@media (min-width: 1439px) and (max-width: 1521px) {
+    .navbar{
+        height: 80px;
+    }
+.navbar-brand img{
+    width: 175px !important;
+    height: 58.33px !important;
 
+        }
+        .nav-link{
+            font-size: 98% !important;
+        }
+        .navbar-img-home, .navbar-img-movies, .navbar-img-serials, .navbar-img-cartoon, .navbar-img-anime{
+            margin-top: 4.5px !important;
+            width: 16.9px !important;
+            height: 17.5px !important;
+        }
+        
+        .search-container{
+            width: 37px;
+            height: 37px; /* Сделано равным ширине */
+            border-radius: 25px;
+            
+            
+        }
+        .search-wrapper:hover .search-container {
+            width: 255px !important;
+            /* Расширение контейнера влево */
+        }
+        .search-icon .navbar-img {
+            margin-left: 0.05em;
+            width:21px !important;
+            height: 21px !important;
+           }
+           .clear-icon{
+            font-size: 115% !important;
+            padding-right: 3px !important;
+        }
+        
+          .search-input{
+            font-size: 96% !important;
+          }
 
-
+        
+    }
+    
 
 @media (min-width: 1321px) and (max-width: 1520.5px) {
     .full-card {
@@ -3279,7 +3478,7 @@ h4 {
 
     .card-img-top {
 
-        width: 9rem;
+        width: 9.5rem;
         height: 100%;
 
     }
