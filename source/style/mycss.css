@@ -428,6 +428,11 @@ h4 {
     /* Выравниваем по центру по вертикали */
 
 }
+.navbar-img-home, .navbar-img-movies, .navbar-img-serials, .navbar-img-cartoon, .navbar-img-anime{
+    margin-top: 4.5px !important;
+    width: 16.4px !important;
+    height: 17px !important;
+}
 
 .show-all {
     margin-right: 8vh;

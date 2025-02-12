@@ -22,7 +22,7 @@
 
 
 .full-head{
-    font-size: 1em;
+    font-size: 1.018em;
     font-family: "SegoeUI", sans-serif;
 }
 .full-head-year{
@@ -88,14 +88,34 @@
     font-family: Helvetica, sans-serif;
     color: rgb(104, 236, 113);
 }
-.full-roles {
+.full-quality {
     margin-top: 1em;
     font-family: Helvetica, sans-serif;
     line-height: 2; /* Межстрочный интервал */
     color: rgb(218, 215, 215);
    
   }
-
+  .age, .Inlet {
+    margin-top: 0.5em;
+    display: inline-block;
+    padding: 3px 6px;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+    
+    text-align: center;
+    
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+  }
+  .age {
+    margin-right: 0.5em;
+  }
+  
+  
 .full-card-rate{
     display: flex;
   flex-direction: row; /* Размещаем элементы в строку */
@@ -104,7 +124,7 @@
 }
 .full-rate {
     font-family: Helvetica, sans-serif;
-    background: rgba(114, 113, 113, 0.15);
+    background: rgba(139, 138, 138, 0.15);
     border-radius: 0.3em;
     display: flex;
     align-items: center;
@@ -157,12 +177,16 @@
     font-size: 4em;
     font-weight: 600;
     margin-bottom: 0.2em;
-    margin-top:-0.1em;
+    margin-top:0.1em;
     
-    
+    display: block;
+    width: 95%;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
     
     margin-left: -0.03em;
-    line-height: 1.3;
+    line-height: 1;
 }
 .none{
  
@@ -197,8 +221,19 @@ max-width: calc(100% - 3.4em); /* Учёт отступов от левого и
 border: none;
 overflow: hidden;
 }
+
+.text-capitalize {
+  text-transform: capitalize;
+  
+}
+
+.text-capitalize span {
+  display: inline-block;
+  padding-right: 2em;
+}
+
 .REK_CARD{
-  margin-top: 2em;
+  margin-top: 1em;
 }
 .full-more-details{
    
@@ -407,8 +442,81 @@ z-index: -1;
   position: relative;
 }
 
+
+/* Адаптация под разные экраны */
+
+
+
 }
 
+.actor-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  
+}
+
+.actor-card-wrapper {
+  flex: 1 1 calc(100% - 20px); /* 6 карточек в ряду */
+  max-width: calc(100% - 20px);
+  box-sizing: border-box;
+}
+
+.actor-card {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+  cursor: pointer;
+  margin-top: 1em;
+}
+
+.actor-card:hover,
+.actor-card:active {
+  transform: scale(1.05);
+}
+
+.actor-photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.actor-name-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  border-radius: 50%;
+  transition: opacity 0.3s;
+  
+}
+
+.actor-card:hover .actor-name-overlay,
+.actor-card:active .actor-name-overlay {
+  opacity: 1;
+}
+
+.actor-name {
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
 @media (max-width: 1184px) {
     .background-pc {
       padding: 0;
@@ -644,6 +752,8 @@ z-index: -1;
    
     font-size: 17px !important;
   }
+
+  
   }
 
  
@@ -695,9 +805,10 @@ z-index: -1;
       width: 100%;
       z-index: 12;
     }
-    .mobile-roles{
+    .mobile-quality{
       width: 100%;
-      font-size: 1.1em;
+      font-size: 1.3em;
+      color: white;
     }
     .mobile-img-card {
       position: relative;
@@ -897,8 +1008,11 @@ margin-left: 4em;
       z-index: 2;
       pointer-events: none;
   }
+  .full-card-rate{
+    font-size: 1.13em;
+  }
   .full-genre{
-    font-size: 1.1em;
+    font-size: 1.15em;
   }
   .mobile-details{
     margin-top: 1em;
@@ -906,7 +1020,7 @@ margin-left: 4em;
   .mobile-about-the-film{
     margin-top: 0.5em;
     color: rgb(218, 215, 215);
-    font-size: 13px !important;
+    font-size: 13.5px !important;
     font-family: Helvetica, sans-serif;
     width: 95%;
     margin-left: 0.5em;
@@ -916,7 +1030,7 @@ margin-left: 4em;
     margin-left: 0.4em;
     color: #ffffff;
     font-family: Helvetica, sans-serif;
-    font-size: 15px !important;
+    font-size: 17px !important;
     
   }
   .container-column {
@@ -925,6 +1039,12 @@ margin-left: 4em;
     max-width: 800px;
     gap: 5px; /* Отступ 5 пикселей между столбцами */
     font-family: "SegoeUI", sans-serif;
+}
+.text-capitalize{
+  width: 90%;
+}
+.text-capitalize span {
+  padding-right: 1.5em;
 }
 
 .column {
@@ -948,6 +1068,10 @@ margin-left: 4em;
 }
   .full-conteiner-video{
     margin-top: 0 !important;
+  }
+
+  .actor-name{
+    font-size: 13.5px;
   }
   
 }
@@ -1056,6 +1180,9 @@ margin-left: 4em;
   .mobile-about-the-film{
     font-size: 32.5px;
   }
+  .actor-name{
+    font-size: 32.5px;
+  }
   .video-js{
     width: 1375px !important;
     height: 800px !important;
@@ -1103,6 +1230,9 @@ margin-left: 4em;
   .mobile-about-the-film{
     font-size: 26.5px;
   }
+  .actor-name{
+    font-size: 26.5px;
+  }
   
 }
 
@@ -1124,6 +1254,9 @@ margin-left: 4em;
   font-size: 23.5px !important;
   }
   .mobile-about-the-film{
+    font-size: 22.5px;
+  }
+  .actor-name{
     font-size: 22.5px;
   }
   .video-js{
@@ -1155,6 +1288,9 @@ margin-left: 4em;
   .mobile-about-the-film{
     font-size: 21px;
   }
+  .actor-name{
+    font-size: 21px;
+  }
   .video-js{
     width: 875px !important;
     height: 500px !important;
@@ -1183,6 +1319,9 @@ margin-left: 4em;
 font-size: 19px;
 }
 .mobile-about-the-film{
+  font-size: 18px;
+}
+.actor-name{
   font-size: 18px;
 }
 }
