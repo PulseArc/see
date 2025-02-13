@@ -103,7 +103,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const menuToggle = document.querySelector('#menuToggle input');
   const searchWrapper = document.querySelector('.search-wrapper'); // Внешний контейнер
   const clearIcon = document.querySelector('.clear-icon'); // Крестик для очистки
-  const phoneVersion = document.querySelector('.Phone-version'); // Блок, которому меняем margin
+  const phoneVersion = document.querySelector('.Phone-version'); // Блок Phone-version
+  const hero = document.querySelector('.hero'); // Блок hero
 
   // Проверяем, существуют ли элементы перед тем, как с ними работать
   if (!searchInput || !resultsContainer || !clearIcon) return;
@@ -119,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
           // Логика обновления содержимого результатов
           const updateContainer = document.getElementById('update');
           if (updateContainer) {
-              updateContainer.innerHTML = `<p style="margin-left: 1.5em;">Результаты для: "${query}"</p>`; // Исправлена ошибка с кавычками
+              updateContainer.innerHTML = `<p style="margin-left: 1.5em;">Результаты для: "${query}"</p>`;
           }
           
           // Прокрутка страницы вверх
@@ -130,7 +131,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
           // Устанавливаем marginTop, если есть результат
           if (phoneVersion) {
-              phoneVersion.style.marginTop = '8vh';
+              phoneVersion.style.marginTop = '4em';
+          }
+
+          // Устанавливаем marginTop для hero, если есть результат
+          if (hero) {
+              hero.style.marginTop = '-1em';
           }
       } else {
           // Скрываем контейнер, если поле ввода пустое
@@ -140,6 +146,11 @@ document.addEventListener('DOMContentLoaded', function () {
           // Плавно убираем marginTop, если поиск сброшен
           if (phoneVersion) {
               phoneVersion.style.marginTop = '';
+          }
+
+          // Плавно убираем marginTop для hero, если поиск сброшен
+          if (hero) {
+              hero.style.marginTop = '';
           }
       }
   });
@@ -154,6 +165,11 @@ document.addEventListener('DOMContentLoaded', function () {
       // Плавно возвращаем marginTop, если результаты скрыты
       if (phoneVersion) {
           phoneVersion.style.marginTop = '';
+      }
+
+      // Плавно возвращаем marginTop для hero, если результаты скрыты
+      if (hero) {
+          hero.style.marginTop = '';
       }
   });
 
@@ -183,22 +199,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
-  const navbar = document.querySelector('.navbar');
-  const navbarPlaceholder = document.querySelector('.navbar-placeholder');
-  const navbarHeight = navbar.offsetHeight;
 
-  window.addEventListener('scroll', function () {
-      if (window.scrollY > 10) {
-          navbar.classList.add('scrolled');
-          navbarPlaceholder.style.display = 'block'; // Показываем фиктивный элемент
-          navbarPlaceholder.style.height = `${navbarHeight}px`; // Устанавливаем высоту фиктивного элемента
-      } else {
-          navbar.classList.remove('scrolled');
-          navbarPlaceholder.style.display = 'none'; // Скрываем фиктивный элемент
-      }
-  });
+window.addEventListener('scroll', function() {
+  const navbar = document.querySelector('.navbar');
+  if (window.innerWidth > 1100) { 
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  } else {
+    navbar.classList.remove('scrolled'); // Убираем класс, если ширина меньше 1100px
+  }
 });
+
 
 
 

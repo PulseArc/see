@@ -51,25 +51,22 @@ menuToggle.addEventListener('change', () => {
 });
 
 
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
+window.addEventListener('scroll', function() {
   const navbar = document.querySelector('.navbar');
-  const navbarPlaceholder = document.querySelector('.navbar-placeholder');
-  const navbarHeight = navbar.offsetHeight;
-
-  window.addEventListener('scroll', function () {
-      if (window.scrollY > 10) {
-          navbar.classList.add('scrolled');
-          navbarPlaceholder.style.display = 'block'; // Показываем фиктивный элемент
-          navbarPlaceholder.style.height = `${navbarHeight}px`; // Устанавливаем высоту фиктивного элемента
-      } else {
-          navbar.classList.remove('scrolled');
-          navbarPlaceholder.style.display = 'none'; // Скрываем фиктивный элемент
-      }
-  });
+  if (window.innerWidth > 1100) { 
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  } else {
+    navbar.classList.remove('scrolled'); // Убираем класс, если ширина меньше 1100px
+  }
 });
+
+
+
+
 // кнопка ещё
 document.getElementById("show-more-btn").addEventListener("click", function () {
   const button = this;
