@@ -12,11 +12,11 @@
   <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
 
   <link rel="icon" type="image/png" href="source/images/favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="source/images/favicon/favicon.svg" />
-<link rel="shortcut icon" href="source/images/favicon/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="source/images/favicon/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="Cinematic" />
-<link rel="manifest" href="source/images/favicon/site.webmanifest" />
+  <link rel="icon" type="image/svg+xml" href="source/images/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="source/images/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="source/images/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Cinematic" />
+  <link rel="manifest" href="source/images/favicon/site.webmanifest" />
 
   <title>Cinematic</title>
 </head>
@@ -120,39 +120,37 @@
 
         <div class="collapse navbar-collapse custom-navbar" id="navbarNav">
           <ul class="navbar-nav mx-0" id="nav-menu">
-            <li class="nav-item mx-4" >
-              <img class="navbar-img  " src="source/images/logo/home.svg" style="width: 16px; height: 17px; margin-left: 1.5em; margin-top: 0.65em;"
+            <li class="nav-item mx-4">
+              <img class="navbar-img  navbar-img-home" src="source/images/logo/home.svg" style=" margin-left: 1.3em; "
                 alt="">
               <a class="nav-link " aria-current="page" href="index.html">Домой</a>
             </li>
 
             <li class="nav-item mx-4">
-              <img class="navbar-img  " src="source/images/logo/movies.svg" style="width: 16px; height: 18px; margin-top: 0.7em;"
-                alt="">
+              <img class="navbar-img  navbar-img-movies" src="source/images/logo/movies.svg" alt="">
               <a class="nav-link movies-text" href="Все Фильмы.html">Фильмы</a>
             </li>
 
             <li class="nav-item mx-4">
-              <img class="navbar-img navbar-img-serials " src="source/images/logo/сериалы.svg"
-                style="width: 16px; height: 17px; margin-top: 0.7em !important; " alt="">
+              <img class="navbar-img navbar-img-serials " src="source/images/logo/сериалы.svg" alt="">
               <a class="nav-link serials-text" href="Все Сериалы.html">Сериалы</a>
             </li>
 
             <li class="nav-item mx-4">
-              <img class="navbar-img " src="source/images/logo/cartoon.svg"
-                style="width: 17px; height: 17px; filter: invert(0.9);margin-top: 0.7em;" alt="">
+              <img class="navbar-img navbar-img-cartoon" src="source/images/logo/cartoon.svg"
+                style="filter: invert(0.9);" alt="">
               <a class="nav-link cartoones-text" href="Все Мультфильмы.html">Мультфильмы</a>
             </li>
 
             <li class="nav-item mx-4">
-              <img class="navbar-img " src="source/images/logo/anime-mobile.svg"
-                style="width: 17px; height: 17px;  filter: invert(0.9); margin-top: 0.8em;" alt="">
+              <img class="navbar-img navbar-img-anime" src="source/images/logo/anime-mobile.svg"
+                style="filter: invert(1);" alt="">
               <a class="nav-link anime-text" href="Все Мультфильмы.html">Аниме</a>
             </li>
 
 
 
-            
+
 
 
 
@@ -191,8 +189,29 @@
       </div>
 
     </div>
-
-    <div class="container-fluid content mt-4 ">
+    <div class="Home-background-image">
+      <div bis_skin_checked="1"
+        style="position: relative; top: -60px; left: 0px; width: 100%; height: 90vh; background: linear-gradient(270deg, rgba(0, 0, 0, 0) 23%, rgba(0, 0, 0, 0.64) 85%), linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(255, 255, 255, 0) 60%), url(&quot;http://image.tmdb.org/t/p/w1280//lBoHzOgft2QfpjkVVvZCqeM4ttT.jpg&quot;) center center / cover no-repeat;">
+        <div class="background-blur-parent" bis_skin_checked="1">
+          <div class="backgroundgradient-bottom" bis_skin_checked="1"></div>
+          <div class="background-blur-image" bis_skin_checked="1"></div>
+        </div>
+      </div>
+      <div class="btn-name-film">
+        <p class="name-film">
+            <span class="title">Дюна:</span>
+            <span class="subtitle">«Час настал»</span>
+        </p> 
+        <button class="btn-film">
+            Посмотреть премьеру
+        </button>
+        <p class="film-genre">
+          <span class="subtitle-genre">Фантастика | Приключения</span>
+      </p> 
+    </div>
+    </div>
+    </div>
+    <div class="container-fluid content" style="margin-top: -4.5em;">
       <div class="row">
         <div class="col-lg-3 ">
 
@@ -1836,10 +1855,9 @@
 
               <!-- конец -->
               <div class="col-lg-12 col-md-12 text-center mt-4">
-                <button id="show-more-btn" class=" toggle-btn btn-lg my-4 "><span
-                    class="yet">Ещё</span></button>
+                <button id="show-more-btn" class=" toggle-btn btn-lg my-4 "><span class="yet">Ещё</span></button>
               </div>
-              
+
               <div class="col-lg-4 ms-2">
                 <h4 style="margin-bottom: 1em;">Популярные мультфильмы</h4>
               </div>
@@ -2653,8 +2671,7 @@
               </div>
               <!-- конец -->
               <div class="col-lg-12 col-md-12 text-center mt-4">
-                <button id="show-more-btn1" class=" toggle-btn btn-lg my-4 "><span
-                    class="yet">Ещё</span></button>
+                <button id="show-more-btn1" class=" toggle-btn btn-lg my-4 "><span class="yet">Ещё</span></button>
               </div>
               <div class="col-lg-4 ms-2">
                 <h4 style="margin-bottom: 1em;">Популярные сериалы</h4>
@@ -2816,8 +2833,8 @@
                   <div class="col-lg-3 ms-1">
                     <h4>Сериалы</h4>
                   </div>
-                  <div class="show-all"><button class=" toggle-btn btn-lg my-4 btn-show-all "><a
-                        href="Все Сериалы.html" class="show-all-link">Смотреть всё</a></button></div>
+                  <div class="show-all"><button class=" toggle-btn btn-lg my-4 btn-show-all "><a href="Все Сериалы.html"
+                        class="show-all-link">Смотреть всё</a></button></div>
                 </div>
                 <div class="row g-0">
                   <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
@@ -3612,8 +3629,7 @@
               </div>
               <!-- конец -->
               <div class="col-lg-12 col-md-12 text-center mt-4">
-                <button id="show-more-btn2" class=" toggle-btn btn-lg my-4 "><span
-                    class="yet">Ещё</span></button>
+                <button id="show-more-btn2" class=" toggle-btn btn-lg my-4 "><span class="yet">Ещё</span></button>
               </div>
             </div>
           </div>
