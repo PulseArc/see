@@ -11,11 +11,13 @@
 .results-h4 {
     margin-left: 7.6vh;
 }
-.no-results{
+
+.no-results {
     margin-left: 13vh;
     font-size: 18px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 #update {
     display: flex;
     flex-wrap: wrap;
@@ -23,14 +25,18 @@
     margin-top: calc(-1 * var(--bs-gutter-y));
     margin-right: calc(-0.5 * var(--bs-gutter-x));
     margin-left: calc(-0.5 * var(--bs-gutter-x));
-    gap: 0; /* Убираем gap */
-    
+    gap: 0;
+    /* Убираем gap */
+
 }
 
 #update .card {
-    flex: 0 0 calc(16.66% - 10px); /* Ширина карточек с учетом отступов */
-    margin-right: 10px; /* Отступ между карточками */
-    margin-bottom: 10px; /* Отступ между строками */
+    flex: 0 0 calc(16.66% - 10px);
+    /* Ширина карточек с учетом отступов */
+    margin-right: 10px;
+    /* Отступ между карточками */
+    margin-bottom: 10px;
+    /* Отступ между строками */
     box-sizing: border-box;
 }
 
@@ -49,13 +55,14 @@
     /* Скрываем результаты поиска по умолчанию */
 
     margin-top: 20px;
-    
-   
-width: 100%;
+
+
+    width: 100%;
     border-bottom: 2px solid #414141;
     margin-bottom: 4vh;
 }
-.cards-from-search{
+
+.cards-from-search {
     margin-left: 2vh !important;
     width: 90%;
 }
@@ -170,7 +177,7 @@ select {
     left: 7.5px;
     transform: translateY(-50%);
     font-size: 18px;
-    
+
 }
 
 /* Стили поля ввода */
@@ -212,17 +219,20 @@ select {
     color: #333;
     cursor: pointer;
     opacity: 0;
-    pointer-events: none; /* Отключаем кликабельность, пока крестик не виден */
+    pointer-events: none;
+    /* Отключаем кликабельность, пока крестик не виден */
     transition: opacity 0.3s ease;
 }
 
 .search-wrapper:hover .search-container .clear-icon {
-    opacity: 0; /* По умолчанию скрыт */
+    opacity: 0;
+    /* По умолчанию скрыт */
     pointer-events: none;
 }
 
-.search-wrapper:hover .search-container .search-input:not(:placeholder-shown) + .clear-icon {
-    opacity: 1; /* Появляется только при наличии текста */
+.search-wrapper:hover .search-container .search-input:not(:placeholder-shown)+.clear-icon {
+    opacity: 1;
+    /* Появляется только при наличии текста */
     pointer-events: auto;
 }
 
@@ -259,6 +269,39 @@ h4 {
 
 }
 
+
+
+
+
+
+.navbar {
+    position: relative;
+    /* Позиционирование для навигационной панели */
+    background-color: transparent !important;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9) 20%, rgba(0, 0, 0, 0));
+    /* Более насыщенный полупрозрачный фон при прокрутке */
+    transition: all .3s ease-in-out;
+    backdrop-filter: none;
+    /* Размытие фона */
+    position: fixed;
+    /* Фиксированное положение */
+    top: 0;
+    width: 100%;
+    /* Занимает всю ширину */
+
+    /* Над другими элементами */
+    /* Более насыщенный полупрозрачный фон при прокрутке */
+    height: 70px;
+    padding-left: 8vh;
+    display: flex;
+    justify-content: space-between;
+    /* или flex-start, в зависимости от вашего дизайна */
+    align-items: center;
+    z-index: 1000;
+
+
+}
+
 .navbar.scrolled {
     background-color: #050500b7 !important;
     /* Более насыщенный полупрозрачный фон при прокрутке */
@@ -272,36 +315,18 @@ h4 {
     /* Занимает всю ширину */
     z-index: 1000;
     /* Над другими элементами */
-}
-
-
-
-
-.navbar {
-    position: relative;
-    /* Позиционирование для навигационной панели */
-    z-index: 4;
-    /* Устанавливаем индекс, чтобы навигация была выше всего */
-    background-color: #050500b7 !important;
-    /* Более насыщенный полупрозрачный фон при прокрутке */
-    height: 70px;
-    padding-left: 8vh;
-    display: flex;
-    justify-content: space-between;
-    /* или flex-start, в зависимости от вашего дизайна */
-    align-items: center;
-    z-index: 1000;
-
 
 }
+
 .navbar-brand {
-    
+
     opacity: 1;
 }
+
 .navbar-placeholder {
     height: 60px;
     /* Устанавливаем ту же высоту, что и у .navbar */
-    display: none;
+    display: block;
     /* Скрыт по умолчанию */
 }
 
@@ -341,6 +366,7 @@ h4 {
     /* При наведении: линия появляется */
 
 }
+
 .movies-text::after {
     content: '';
     position: absolute;
@@ -360,6 +386,7 @@ h4 {
     z-index: 0;
     /* За текстом */
 }
+
 .serials-text::after {
     content: '';
     position: absolute;
@@ -380,7 +407,7 @@ h4 {
     /* За текстом */
 }
 
-.cartoones-text::after{
+.cartoones-text::after {
     content: '';
     position: absolute;
     left: 7%;
@@ -400,7 +427,7 @@ h4 {
     /* За текстом */
 }
 
-.anime-text::after{
+.anime-text::after {
     content: '';
     position: absolute;
     left: 12%;
@@ -428,7 +455,12 @@ h4 {
     /* Выравниваем по центру по вертикали */
 
 }
-.navbar-img-home, .navbar-img-movies, .navbar-img-serials, .navbar-img-cartoon, .navbar-img-anime{
+
+.navbar-img-home,
+.navbar-img-movies,
+.navbar-img-serials,
+.navbar-img-cartoon,
+.navbar-img-anime {
     margin-top: 4.5px !important;
     width: 16.4px !important;
     height: 17px !important;
@@ -453,9 +485,11 @@ h4 {
     color: inherit;
     /* Оставляет тот же цвет для посещенной, активной и при наведении */
 }
-.btn{
+
+.btn {
     border-width: 1.5px;
 }
+
 /* Стили для кнопки */
 /* Стили для кнопки */
 .toggle-btn {
@@ -468,49 +502,56 @@ h4 {
     cursor: pointer;
     transition: all 0.3s ease;
     font-family: Helvetica;
-  }
-  .toggle-btn.red {
+}
+
+.toggle-btn.red {
     background-color: #9B111E;
     color: white;
-    
-  }
-  /* Эффект при наведении на кнопке для компьютеров */
-  @media (min-width: 1100px) {
+
+}
+
+/* Эффект при наведении на кнопке для компьютеров */
+@media (min-width: 1100px) {
     .toggle-btn:hover {
-      background-color: white;
-      color: black;
-      border-color: black; /* бордер меняется на черный при наведении */
+        background-color: white;
+        color: black;
+        border-color: black;
+        /* бордер меняется на черный при наведении */
     }
-  }
-  
-  /* Эффект при нажатии на кнопке для всех устройств (мобильных и ПК) */
-  .toggle-btn:active {
+}
+
+/* Эффект при нажатии на кнопке для всех устройств (мобильных и ПК) */
+.toggle-btn:active {
     background-color: white;
     color: black;
-    border-color: black; /* бордер остается черным при нажатии */
+    border-color: black;
+    /* бордер остается черным при нажатии */
     transition: background-color 0.2s, color 0.2s, border-color 0.2s;
-  }
-  @media (max-width: 1188px) {
-    
+}
 
-    .card-tex{
+@media (max-width: 1188px) {
+
+
+    .card-tex {
         width: 90% !important;
     }
-  }
-  /* Для мобильных устройств */
-  @media (max-width: 1100px) {
+}
+
+/* Для мобильных устройств */
+@media (max-width: 1100px) {
     .toggle-btn:active {
-      background-color: white;
-      color: black;
-      border-color: black; /* бордер остается черным на мобильных устройствах */
+        background-color: white;
+        color: black;
+        border-color: black;
+        /* бордер остается черным на мобильных устройствах */
     }
 
-    .card-tex{
+    .card-tex {
         width: 70% !important;
     }
-  }
-  
-  
+}
+
+
 
 
 
@@ -526,6 +567,91 @@ h4 {
 
     transition: all 0.3s ease;/
 }
+
+.Home-background-image {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+
+.Home-background-image::before {
+    content: "";
+    position: absolute;
+    top: -4em;
+    /* Сдвигаем наверх, чтобы затемнение начиналось ниже */
+    left: 0;
+    width: 100%;
+    height: 4%;
+    background: linear-gradient(black 0%, rgba(0, 0, 0, 0) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+
+
+.btn-name-film {
+    position: absolute;
+    bottom: 20%; /* Фиксируем блок от нижнего края */
+    left: 5%;
+    text-align: left;
+    color: white;
+    transform: translateY(0); /* Убираем translate */
+}
+
+.name-film {
+    font-size: 50px;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 55px;
+}
+
+.subtitle {
+    font-size: 45px;
+}
+
+.film-genre {
+    position: static;
+    margin-left: 12%;
+    font-family: sans-serif;
+    margin-top: 20px;
+}
+
+.subtitle-genre {
+    font-size: 15px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.btn-film {
+    padding: 15px 25px;
+    background-color: transparent;
+    font-size: 20px;
+    color: white;
+    border: 1.5px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-film:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    transform: scale(1.05);
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.15);
+}
+
+
+/* Респонсив для разных экранов */
+
+
+
 
 .card {
     z-index: 1;
@@ -556,23 +682,28 @@ h4 {
 .single-item3 .card:hover .card-img-top {
     margin-bottom: -2px;
 }
+
 .single-item2 .card:hover .card-img-top {
     margin-bottom: -2px;
 }
+
 .card-img-top {
     margin-top: 3px;
 
 }
 
 .span-rating {
-    display: flex; /* Используем flexbox */
-    justify-content: center; /* Центрируем по горизонтали */
-    align-items: center; /* Центрируем по вертикали */
-    
+    display: flex;
+    /* Используем flexbox */
+    justify-content: center;
+    /* Центрируем по горизонтали */
+    align-items: center;
+    /* Центрируем по вертикали */
+
 }
 
 .card-rating-trand {
-    
+
     color: #ffffff;
 
     background: rgba(0, 0, 0, 0.5);
@@ -637,7 +768,7 @@ h4 {
     width: 100%;
     /* Устанавливаем ширину ссылки на 100% */
     transition: color 0.5s;
-    font-family:  Helvetica;
+    font-family: Helvetica;
 
 }
 
@@ -679,17 +810,23 @@ h4 {
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
+
 .slider.single-item2 .card-tex {
-    width: 100% !important; /* Или нужное значение */
-    
+    width: 100% !important;
+    /* Или нужное значение */
+
 }
+
 .slider.single-item3 .card-tex {
-    width: 100% !important; /* Или нужное значение */
-    
+    width: 100% !important;
+    /* Или нужное значение */
+
 }
+
 .slider.single-item .card-tex {
-    width: 100% !important; /* Или нужное значение */
-    
+    width: 100% !important;
+    /* Или нужное значение */
+
 }
 
 #nav-menu li a {
@@ -964,31 +1101,35 @@ footer {
 .all-film {
     margin-left: 5px;
 }
+
 @media (min-width: 1521px) and (max-width: 4000px) {
-    
-     
-        .card-results {
-    
-            margin-left: 1vh  !important;
-    
-        }
-        .card-body {
-            padding-top: 15px !important;
-            text-align: left;
-            width: 100%;
-        }
-       
-  }
-  @media (min-width: 1279px) and (max-width: 1521px) {
-   
-    
+
+
+    .card-results {
+
+        margin-left: 1vh !important;
+
+    }
+
+    .card-body {
+        padding-top: 15px !important;
+        text-align: left;
+        width: 100%;
+    }
+
+}
+
+@media (min-width: 1279px) and (max-width: 1521px) {
+
+
     .search-icon .navbar-img {
-        width: 20px !important; /* Фиксированный размер */
+        width: 20px !important;
+        /* Фиксированный размер */
         height: 19px !important;
-      }
-        }
-       
-  
+    }
+}
+
+
 
 /* слайдер стрелки  */
 .slick-prev {
@@ -1088,113 +1229,179 @@ footer {
     top: 62px !important;
     /* Поднимаем стрелку вверх */
 }
+
 @media (min-width: 2300px) and (max-width: 4000px) {
-    .navbar{
+    .title {
+        font-size: 86px; /* Размер шрифта для "Дюна:" */
+    }
+    
+    .subtitle {
+        font-size: 76px; /* Размер шрифта для "«Час настал»" */
+    }
+    .subtitle-genre {
+        font-size: 38px; /* Размер шрифта для "«Час настал»" */
+        
+    }
+    .film-genre {
+        margin-left: 12%; /* Центрируем по горизонтали */
+        
+    }
+    
+    .btn-film {    
+        font-size: 50px;   
+    }
+    .navbar {
         height: 120px;
     }
-.navbar-brand img{
-    width: 215px !important;
-    height: 71.66px !important;
 
-        }
-        .nav-link{
-            font-size: 150% !important;
-        }
-        .navbar-img-home, .navbar-img-movies, .navbar-img-serials, .navbar-img-cartoon, .navbar-img-anime{
-            margin-top: 4.5px !important;
-            width: 23.9px !important;
-            height: 24.5px !important;
-        }
-        
-        .search-wrapper{
-            top: 2em;
-            
-        }
-        .search-container{
-            width: 53px !important;
-            height: 53px !important; /* Сделано равным ширине */
-            border-radius: 27.5px;
-            
-            
-        }
-        .search-wrapper:hover .search-container {
-            width: 400px !important;
-            /* Расширение контейнера влево */
-        }
-        .search-icon .navbar-img {
-            margin-left: 0.2em;
-            width:31px !important;
-            height: 31px !important;
-           }
-           .clear-icon{
-            font-size: 150% !important;
-            padding-right: 5px !important;
-        }
-        
-          .search-input{
-            font-size: 145% !important;
-          }
+    .navbar-brand img {
+        width: 215px !important;
+        height: 71.66px !important;
 
-         
-    h4{
+    }
+
+    .nav-link {
+        font-size: 150% !important;
+    }
+
+    .navbar-img-home,
+    .navbar-img-movies,
+    .navbar-img-serials,
+    .navbar-img-cartoon,
+    .navbar-img-anime {
+        margin-top: 4.5px !important;
+        width: 23.9px !important;
+        height: 24.5px !important;
+    }
+
+    .search-wrapper {
+        top: 2em;
+
+    }
+
+    .search-container {
+        width: 53px !important;
+        height: 53px !important;
+        /* Сделано равным ширине */
+        border-radius: 27.5px;
+
+
+    }
+
+    .search-wrapper:hover .search-container {
+        width: 400px !important;
+        /* Расширение контейнера влево */
+    }
+
+    .search-icon .navbar-img {
+        margin-left: 0.2em;
+        width: 31px !important;
+        height: 31px !important;
+    }
+
+    .clear-icon {
+        font-size: 150% !important;
+        padding-right: 5px !important;
+    }
+
+    .search-input {
+        font-size: 145% !important;
+    }
+
+
+    h4 {
         font-size: 210% !important;
     }
 }
+
 @media (min-width: 2019px) and (max-width: 2300px) {
-    .navbar{
+    .title {
+        font-size: 72px; /* Размер шрифта для "Дюна:" */
+    }
+    
+    .subtitle {
+        font-size: 62px; /* Размер шрифта для "«Час настал»" */
+    }
+    .subtitle-genre {
+        font-size: 26.5px; /* Размер шрифта для "«Час настал»" */
+        
+    }
+    .film-genre {
+        margin-left: 12%; /* Центрируем по горизонтали */
+        
+    }
+    
+    .btn-film {    
+        font-size: 35px;   
+    }
+    .navbar {
         height: 110px;
     }
-.navbar-brand img{
-    width: 205px !important;
-    height: 68.33px !important;
 
-        }
-        .nav-link{
-            font-size: 135% !important;
-        }
-        .navbar-img-home, .navbar-img-movies, .navbar-img-serials, .navbar-img-cartoon, .navbar-img-anime{
-            margin-top: 4.5px !important;
-            width: 21.9px !important;
-            height: 22.5px !important;
-        }
-        
-        .search-wrapper{
-            top: 1.8em;
-            
-        }
-        .search-container{
-            width: 48px !important;
-            height: 48px !important; /* Сделано равным ширине */
-            border-radius: 25px;
-            
-            
-        }
-        .search-wrapper:hover .search-container {
-            width: 345px !important;
-            /* Расширение контейнера влево */
-        }
-        .search-icon .navbar-img {
-            margin-left: 0.15em;
-            width:28px !important;
-            height: 28px !important;
-           }
-           .clear-icon{
-            font-size: 130% !important;
-            padding-right: 5px !important;
-        }
-        
-          .search-input{
-            font-size: 125% !important;
-          }
-    h4{
+    .navbar-brand img {
+        width: 205px !important;
+        height: 68.33px !important;
+
+    }
+
+    .nav-link {
+        font-size: 135% !important;
+    }
+
+    .navbar-img-home,
+    .navbar-img-movies,
+    .navbar-img-serials,
+    .navbar-img-cartoon,
+    .navbar-img-anime {
+        margin-top: 4.5px !important;
+        width: 21.9px !important;
+        height: 22.5px !important;
+    }
+
+    .search-wrapper {
+        top: 1.8em;
+
+    }
+
+    .search-container {
+        width: 48px !important;
+        height: 48px !important;
+        /* Сделано равным ширине */
+        border-radius: 25px;
+
+
+    }
+
+    .search-wrapper:hover .search-container {
+        width: 345px !important;
+        /* Расширение контейнера влево */
+    }
+
+    .search-icon .navbar-img {
+        margin-left: 0.15em;
+        width: 28px !important;
+        height: 28px !important;
+    }
+
+    .clear-icon {
+        font-size: 130% !important;
+        padding-right: 5px !important;
+    }
+
+    .search-input {
+        font-size: 125% !important;
+    }
+
+    h4 {
         font-size: 190% !important;
     }
 }
+
 @media (min-width: 2019px) and (max-width: 4000px) {
-    
-    
-    
-      .slider .slick-prev {
+
+
+
+    .slider .slick-prev {
         top: 40% !important;
         /* Поднимаем стрелку вверх */
     }
@@ -1213,13 +1420,14 @@ footer {
         top: 31% !important;
         /* Поднимаем стрелку вверх */
     }
+
     .slick-prev:after {
         content: '';
         width: 40px;
         /* ширина стрелки */
         height: 40px;
         /* высота стрелки */
-    
+
         position: absolute;
         top: 15px;
         left: 15px;
@@ -1230,22 +1438,23 @@ footer {
         border-bottom: 3px solid white;
         /*  подчернуть снизу */
     }
+
     .slick-next:after {
         left: -1vh !important;
         width: 40px;
         /* ширина стрелки */
         height: 40px;
         /* высота стрелки */
-    
-        
+
+
         /*  подчернуть снизу */
 
-        
-    }
-    
 
-    
-   
+    }
+
+
+
+
     .card-rating,
     .card-rating-trand {
         font-size: 180% !important;
@@ -1253,256 +1462,301 @@ footer {
         height: auto !important;
         /* Увеличение размера текста рейтинга */
     }
-    
 
-    .full-card  .all-flim-img{
+
+    .full-card .all-flim-img {
         width: 150% !important;
         height: 100%;
     }
-    
+
     .card-tex {
         font-size: 180% !important;
-    
+
     }
-    
+
     .year {
         font-size: 95% !important;
     }
-    
+
     .btn-show-all {
         width: 100%;
     }
-    
+
     .show-all-link {
         font-size: 150% !important;
     }
-    
+
     .show-more-btn,
     .show-more-btn1 .show-more-btn2 {
         width: 100%;
-        
+
     }
-    
-    .toggle-btn{
+
+    .toggle-btn {
         font-size: 140% !important;
     }
-    
-    
+
+
     .span-rating {
-        display: flex; /* Используем flexbox */
-        justify-content: center; /* Центрируем по горизонтали */
-        align-items: center; /* Центрируем по вертикали */
+        display: flex;
+        /* Используем flexbox */
+        justify-content: center;
+        /* Центрируем по горизонтали */
+        align-items: center;
+        /* Центрируем по вертикали */
         padding-left: 0.15em;
         padding-right: 0.15em;
     }
-  }
-  @media (min-width: 1900px) and (max-width: 2019px) {
-    .navbar{
+}
+
+@media (min-width: 1900px) and (max-width: 2019px) {
+    .title {
+        font-size: 72px; /* Размер шрифта для "Дюна:" */
+    }
+    
+    .subtitle {
+        font-size: 62px; /* Размер шрифта для "«Час настал»" */
+    }
+    .subtitle-genre {
+        font-size: 26.5px; /* Размер шрифта для "«Час настал»" */
+        
+    }
+    .film-genre {
+        margin-left: 12%; /* Центрируем по горизонтали */
+        
+    }
+    
+    .btn-film {    
+        font-size: 35px;   
+    }
+
+    .navbar {
         height: 100px;
     }
-.navbar-brand img{
-    width: 195px !important;
-    height: 65px !important;
 
-        }
-        .nav-link{
-            font-size: 130% !important;
-        }
-        .navbar-img-home, .navbar-img-movies, .navbar-img-serials, .navbar-img-cartoon, .navbar-img-anime{
-            margin-top: 4.5px !important;
-            width: 19.9px !important;
-            height: 20.5px !important;
-        }
-        
-        .search-wrapper{
-            top: 1.8em;
-            
-        }
-        .search-container{
-            width: 45px !important;
-            height: 45px !important; /* Сделано равным ширине */
-            border-radius: 25px;
-            
-            
-        }
-        .search-wrapper:hover .search-container {
-            width: 315px !important;
-            /* Расширение контейнера влево */
-        }
-        .search-icon .navbar-img {
-            margin-left: 0.1em;
-            width:25px !important;
-            height: 25px !important;
-           }
-           .clear-icon{
-            font-size: 122% !important;
-            padding-right: 5px !important;
-        }
-        
-          .search-input{
-            font-size: 120% !important;
-          }
+    .navbar-brand img {
+        width: 195px !important;
+        height: 65px !important;
+
+    }
+
+    .nav-link {
+        font-size: 130% !important;
+    }
+
+    .navbar-img-home,
+    .navbar-img-movies,
+    .navbar-img-serials,
+    .navbar-img-cartoon,
+    .navbar-img-anime {
+        margin-top: 4.5px !important;
+        width: 19.9px !important;
+        height: 20.5px !important;
+    }
+
+    .search-wrapper {
+        top: 1.8em;
+
+    }
+
+    .search-container {
+        width: 45px !important;
+        height: 45px !important;
+        /* Сделано равным ширине */
+        border-radius: 25px;
 
 
-h4{
-    font-size: 160% !important;
+    }
+
+    .search-wrapper:hover .search-container {
+        width: 315px !important;
+        /* Расширение контейнера влево */
+    }
+
+    .search-icon .navbar-img {
+        margin-left: 0.1em;
+        width: 25px !important;
+        height: 25px !important;
+    }
+
+    .clear-icon {
+        font-size: 122% !important;
+        padding-right: 5px !important;
+    }
+
+    .search-input {
+        font-size: 120% !important;
+    }
+
+
+    h4 {
+        font-size: 160% !important;
+    }
+
+
+    .card-rating,
+    .card-rating-trand {
+        font-size: 150% !important;
+        width: auto !important;
+        height: auto !important;
+        /* Увеличение размера текста рейтинга */
+    }
+
+    .card-tex {
+        font-size: 150%;
+
+    }
+
+    .year {
+        font-size: 90% !important;
+    }
+
+    .btn-show-all {
+        width: 100%;
+    }
+
+    .show-all-link {
+        font-size: 150%;
+    }
+
+    .show-more-btn,
+    .show-more-btn1 .show-more-btn2 {
+        width: 100%;
+
+    }
+
+    .yet {
+        font-size: 150%;
+    }
+
+
+    .full-card .all-flim-img {
+        width: 150% !important;
+        height: 100%;
+    }
 }
 
-
-.card-rating,
-.card-rating-trand {
-    font-size: 150% !important;
-    width: auto !important;
-    height: auto !important;
-    /* Увеличение размера текста рейтинга */
-}
-
-.card-tex {
-    font-size: 150% ;
-
-}
-
-.year {
-    font-size: 90% !important;
-}
-
-.btn-show-all {
-    width: 100%;
-}
-
-.show-all-link {
-    font-size: 150%;
-}
-
-.show-more-btn,
-.show-more-btn1 .show-more-btn2 {
-    width: 100%;
-    
-}
-
-.yet {
-    font-size: 150%;
-}
+@media (min-width: 1521px) and (max-width: 2019px) {
 
 
-.full-card  .all-flim-img{
-    width: 150% !important;
-    height: 100%;
-}
-  }
-
-  @media (min-width: 1521px) and (max-width: 2019px) {
-    
-    
     .slider .slick-prev {
-      top: 40% !important;
-      /* Поднимаем стрелку вверх */
-  }
+        top: 40% !important;
+        /* Поднимаем стрелку вверх */
+    }
 
-  .slider .slick-next {
-      top: 40% !important;
-      /* Поднимаем стрелку вверх */
-  }
+    .slider .slick-next {
+        top: 40% !important;
+        /* Поднимаем стрелку вверх */
+    }
 
-  .slider-2 .slick-prev {
-      top: 32% !important;
-      /* Поднимаем стрелку вверх */
-  }
+    .slider-2 .slick-prev {
+        top: 32% !important;
+        /* Поднимаем стрелку вверх */
+    }
 
-  .slider-2 .slick-next {
-      top: 32% !important;
-      /* Поднимаем стрелку вверх */
-  }
-  .slick-prev:after {
-    content: '';
-    width: 40px;
-    /* ширина стрелки */
-    height: 40px;
-    /* высота стрелки */
+    .slider-2 .slick-next {
+        top: 32% !important;
+        /* Поднимаем стрелку вверх */
+    }
 
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    transform: rotate(45deg);
-    /* поворот   */
-    border-left: 3px solid white;
-    /* потчеркнуть с лева  */
-    border-bottom: 3px solid white;
-    /*  подчернуть снизу */
+    .slick-prev:after {
+        content: '';
+        width: 40px;
+        /* ширина стрелки */
+        height: 40px;
+        /* высота стрелки */
+
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        transform: rotate(45deg);
+        /* поворот   */
+        border-left: 3px solid white;
+        /* потчеркнуть с лева  */
+        border-bottom: 3px solid white;
+        /*  подчернуть снизу */
+    }
+
+    .slick-next:after {
+        left: -1vh !important;
+        width: 40px;
+        /* ширина стрелки */
+        height: 40px;
+        /* высота стрелки */
+
+
+        /*  подчернуть снизу */
+    }
+
 }
-.slick-next:after {
-    left: -1vh !important;
-    width: 40px;
-    /* ширина стрелки */
-    height: 40px;
-    /* высота стрелки */
 
-    
-    /*  подчернуть снизу */
-}
-    
-}
 @media (min-width: 1320px) and (max-width: 4000px) {
-.span-rating {
-    display: flex; /* Используем flexbox */
-    justify-content: center; /* Центрируем по горизонтали */
-    align-items: center; /* Центрируем по вертикали */
-    padding-left: 0.15em;
-    padding-right: 0.15em;
+    .span-rating {
+        display: flex;
+        /* Используем flexbox */
+        justify-content: center;
+        /* Центрируем по горизонтали */
+        align-items: center;
+        /* Центрируем по вертикали */
+        padding-left: 0.15em;
+        padding-right: 0.15em;
+    }
 }
-}
+
 @media (min-width: 1321px) and (max-width: 1521px) {
-    
-    
+
+
     .slider .slick-prev {
-      top: 40% !important;
-      /* Поднимаем стрелку вверх */
-  }
+        top: 40% !important;
+        /* Поднимаем стрелку вверх */
+    }
 
-  .slider .slick-next {
-      top: 40% !important;
-      /* Поднимаем стрелку вверх */
-  }
+    .slider .slick-next {
+        top: 40% !important;
+        /* Поднимаем стрелку вверх */
+    }
 
-  .slider-2 .slick-prev {
-      top: 33% !important;
-      /* Поднимаем стрелку вверх */
-  }
+    .slider-2 .slick-prev {
+        top: 33% !important;
+        /* Поднимаем стрелку вверх */
+    }
 
-  .slider-2 .slick-next {
-      top: 33% !important;
-      /* Поднимаем стрелку вверх */
-  }
+    .slider-2 .slick-next {
+        top: 33% !important;
+        /* Поднимаем стрелку вверх */
+    }
 
-  .slick-prev:after {
-    content: '';
-    width: 30px;
-    /* ширина стрелки */
-    height: 30px;
-    /* высота стрелки */
+    .slick-prev:after {
+        content: '';
+        width: 30px;
+        /* ширина стрелки */
+        height: 30px;
+        /* высота стрелки */
 
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    transform: rotate(45deg);
-    /* поворот   */
-    border-left: 3px solid white;
-    /* потчеркнуть с лева  */
-    border-bottom: 3px solid white;
-    /*  подчернуть снизу */
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        transform: rotate(45deg);
+        /* поворот   */
+        border-left: 3px solid white;
+        /* потчеркнуть с лева  */
+        border-bottom: 3px solid white;
+        /*  подчернуть снизу */
+    }
+
+    .slick-next:after {
+        left: 0vh !important;
+        width: 30px;
+        /* ширина стрелки */
+        height: 30px;
+        /* высота стрелки */
+
+
+        /*  подчернуть снизу */
+    }
+
 }
-.slick-next:after {
-    left: 0vh !important;
-    width: 30px;
-    /* ширина стрелки */
-    height: 30px;
-    /* высота стрелки */
 
-    
-    /*  подчернуть снизу */
-}
-    
-}
 .mobilescreen {
     display: none;
 }
@@ -1578,10 +1832,10 @@ h4{
     }
 }
 
-    
+
 
 @media screen and (max-width: 1185px) {
-    
+
 
     .results-h4 {
         margin-left: 2vh;
@@ -1596,48 +1850,54 @@ h4{
         /* Сдвигает элемент вправо */
 
     }
-    
-    .navbar-brand img{
+
+    .navbar-brand img {
         margin-left: -6vh;
-  
+
     }
 
-    
+
 
     .search-wrapper:hover .search-container {
         width: 150px;
         /* Расширение контейнера влево */
     }
 
-    .Available-Platforms{
+    .Available-Platforms {
         margin-left: 2vh;
     }
-    .platform-logos{
-         margin-left: 2vh;
+
+    .platform-logos {
+        margin-left: 2vh;
     }
 }
+
 @media screen and (max-width: 1184.5px) {
-    .no-results{
+    .no-results {
         margin-left: 7.6vh;
         font-size: 18px;
-        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-    .search-wrapper{
+
+    .search-wrapper {
         margin-right: -2.5em;
     }
 }
+
 @media screen and (max-width: 1100px) {
     #nav-menu {
         display: none;
         /* Расширение контейнера влево */
     }
-    .navbar.scrolled {background-color: transparent !important;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.9) 20%, rgba(0, 0, 0, 0)) ;
+
+    .navbar {
+        background-color: transparent !important;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.9) 20%, rgba(0, 0, 0, 0));
         /* Более насыщенный полупрозрачный фон при прокрутке */
         transition: all .6s ease-in-out;
         backdrop-filter: none;
         /* Размытие фона */
-        position: fixed;
+        position: fixed !important;
         /* Фиксированное положение */
         top: 0;
         width: 100%;
@@ -1645,11 +1905,11 @@ h4{
         z-index: 1000;
         /* Над другими элементами */
     }
-    
-    
-  
-    
-    
+
+
+
+
+
     .navbar {
         position: relative;
         z-index: 4;
@@ -1660,16 +1920,19 @@ h4{
         justify-content: space-between;
         align-items: center;
         z-index: 1000;
-        border: none; /* Убираем границу */
-        box-shadow: none; /* Убираем возможную тень */
-    
-    
-    }
-    .search-wrapper{
-        margin-right: 0.5em ;
-      }
+        border: none;
+        /* Убираем границу */
+        box-shadow: none;
+        /* Убираем возможную тень */
 
-      .search-wrapper:hover .search-container {
+
+    }
+
+    .search-wrapper {
+        margin-right: 0.5em;
+    }
+
+    .search-wrapper:hover .search-container {
         width: 200px !important;
         /* Расширение контейнера влево */
     }
@@ -1705,6 +1968,7 @@ h4{
     body:has(#menuToggle input:checked) {
         overflow: hidden;
     }
+
     /** This is kind of a styled trigger here **/
     #menuToggle {
         display: block;
@@ -1777,8 +2041,10 @@ h4{
         right: 0;
         width: 30%;
         height: 100vh;
-        max-height: 100vh; /* Ограничиваем высоту */
-        overflow-y: auto; /* Включаем прокрутку внутри меню */
+        max-height: 100vh;
+        /* Ограничиваем высоту */
+        overflow-y: auto;
+        /* Включаем прокрутку внутри меню */
         background-color: #1a1919;
         padding-top: 6rem;
         padding-bottom: 6rem;
@@ -1859,11 +2125,11 @@ h4{
 
 
 @media screen and (max-width: 991.5px) {
-    .search-wrapper{
-        margin-right: 0.5em ;
-      }
+    .search-wrapper {
+        margin-right: 0.5em;
+    }
 
-    
+
 
     .search-wrapper:hover .search-container {
         width: 200px !important;
@@ -2029,7 +2295,7 @@ h4{
         /* Устанавливаем ширину элемента списка */
         text-align: center;
         /* Центрируем текст внутри li */
-        
+
     }
 
     #menu li a {
@@ -2056,11 +2322,12 @@ h4{
 
 
     /* конец */
-    .footer-text{
+    .footer-text {
         padding-bottom: 1em;
     }
-    
+
 }
+
 @media (max-width: 991.5px) {
     .platform-logos2 {
         margin-top: 0.4em;
@@ -2110,9 +2377,9 @@ h4{
         height: 100%;
     }
 
-    
-    
-    
+
+
+
 }
 
 
@@ -2121,7 +2388,7 @@ h4{
 
 @media (min-width: 1900px) {
 
- 
+
 
     .all-film {
         margin-left: 40px !important;
@@ -2143,16 +2410,16 @@ h4{
     }
 
 
-   
-    .navbar{
+
+    .navbar {
         font-size: 130% !important;
     }
-    
-    
-    .navbar{
+
+
+    .navbar {
         font-size: 130% !important;
     }
-   
+
 
 
 
@@ -2219,52 +2486,84 @@ h4{
 }
 
 @media (min-width: 1705px) and (max-width: 1899.5px) {
+   
+        .title {
+            font-size: 68px; /* Размер шрифта для "Дюна:" */
+        }
+        
+        .subtitle {
+            font-size: 58px; /* Размер шрифта для "«Час настал»" */
+        }
+        .subtitle-genre {
+            font-size: 23.5px; /* Размер шрифта для "«Час настал»" */
+            
+        }
+        .film-genre {
+            margin-left: 12%; /* Центрируем по горизонтали */
+            
+        }
+        
+        .btn-film {    
+            font-size: 31px;   
+        }
 
-    .navbar{
+    .navbar {
         height: 90px;
     }
-.navbar-brand img{
-    width: 185px !important;
-    height: 61.66px !important;
 
-        }
-        .nav-link{
-            font-size: 125% !important;
-        }
-        .navbar-img-home, .navbar-img-movies, .navbar-img-serials, .navbar-img-cartoon, .navbar-img-anime{
-            margin-top: 4.5px !important;
-            width: 18.9px !important;
-            height: 19.5px !important;
-        }
-        
-        .search-wrapper{
-            top: 1.5em;
-            margin-right: -0.8em;
-        }
-        .search-container{
-            width: 40px;
-            height: 40px; /* Сделано равным ширине */
-            border-radius: 25px;
-            
-            
-        }
-        .search-wrapper:hover .search-container {
-            width: 285px !important;
-            /* Расширение контейнера влево */
-        }
-        .search-icon .navbar-img {
-            margin-left: 0.09em;
-            width:22px !important;
-            height: 22px !important;
-           }
-           .clear-icon{
-            font-size: 130% !important;
-            padding-right: 5px !important;
-        }
-        
-          .search-input{
-            font-size: 115% !important;
-          }
+    .navbar-brand img {
+        width: 185px !important;
+        height: 61.66px !important;
+
+    }
+
+    .nav-link {
+        font-size: 125% !important;
+    }
+
+    .navbar-img-home,
+    .navbar-img-movies,
+    .navbar-img-serials,
+    .navbar-img-cartoon,
+    .navbar-img-anime {
+        margin-top: 4.5px !important;
+        width: 18.9px !important;
+        height: 19.5px !important;
+    }
+
+    .search-wrapper {
+        top: 1.5em;
+        margin-right: -0.8em;
+    }
+
+    .search-container {
+        width: 40px;
+        height: 40px;
+        /* Сделано равным ширине */
+        border-radius: 25px;
+
+
+    }
+
+    .search-wrapper:hover .search-container {
+        width: 285px !important;
+        /* Расширение контейнера влево */
+    }
+
+    .search-icon .navbar-img {
+        margin-left: 0.09em;
+        width: 22px !important;
+        height: 22px !important;
+    }
+
+    .clear-icon {
+        font-size: 130% !important;
+        padding-right: 5px !important;
+    }
+
+    .search-input {
+        font-size: 115% !important;
+    }
 
     .all-film {
         margin-left: 40px !important;
@@ -2304,10 +2603,11 @@ h4{
         /* Увеличение размера текста рейтинга */
     }
 
-    
-    .navbar{
+
+    .navbar {
         font-size: 130% !important;
     }
+
     h4 {
         font-size: 130% !important;
     }
@@ -2318,15 +2618,17 @@ h4{
         /* Увеличение размера текста */
     }
 }
-.navbar{
+
+.navbar {
     font-size: 120% !important;
 }
+
 h4 {
-    font-size: 130% ;
+    font-size: 130%;
 }
 
 .card-tex {
-    font-size: 130% ;
+    font-size: 130%;
 
 }
 
@@ -2366,55 +2668,87 @@ h4 {
 
 
 @media (min-width: 1521px) and (max-width: 1705px) {
-    .navbar{
+    .title {
+        font-size: 65px; /* Размер шрифта для "Дюна:" */
+    }
+    
+    .subtitle {
+        font-size: 55px; /* Размер шрифта для "«Час настал»" */
+    }
+    .subtitle-genre {
+        font-size: 22px; /* Размер шрифта для "«Час настал»" */
+        
+    }
+    .film-genre {
+        margin-left: 12%; /* Центрируем по горизонтали */
+        
+    }
+    
+    .btn-film {    
+        font-size: 29px;   
+    }
+
+    .navbar {
         height: 80px;
     }
-.navbar-brand img{
-    width: 175px !important;
-    height: 58.33px !important;
 
-        }
-        .nav-link{
-            font-size: 100% !important;
-        }
-        .navbar-img-home, .navbar-img-movies, .navbar-img-serials, .navbar-img-cartoon, .navbar-img-anime{
-            margin-top: 4.5px !important;
-            width: 16.9px !important;
-            height: 17.5px !important;
-        }
-        
-        .search-wrapper{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            
-        }
-        .search-container{
-            width: 37px;
-            height: 37px; /* Сделано равным ширине */
-            border-radius: 25px;
-            
-            
-        }
-        .search-wrapper:hover .search-container {
-            width: 255px !important;
-            /* Расширение контейнера влево */
-        }
-        .search-icon .navbar-img {
-            margin-left: 0.05em;
-            width:21px !important;
-            height: 21px !important;
-           }
-           .clear-icon{
-            font-size: 115% !important;
-            padding-right: 3px !important;
-        }
-        
-          .search-input{
-            font-size: 96% !important;
-          }
-    
-    
+    .navbar-brand img {
+        width: 175px !important;
+        height: 58.33px !important;
+
+    }
+
+    .nav-link {
+        font-size: 100% !important;
+    }
+
+    .navbar-img-home,
+    .navbar-img-movies,
+    .navbar-img-serials,
+    .navbar-img-cartoon,
+    .navbar-img-anime {
+        margin-top: 4.5px !important;
+        width: 16.9px !important;
+        height: 17.5px !important;
+    }
+
+    .search-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .search-container {
+        width: 37px;
+        height: 37px;
+        /* Сделано равным ширине */
+        border-radius: 25px;
+
+
+    }
+
+    .search-wrapper:hover .search-container {
+        width: 255px !important;
+        /* Расширение контейнера влево */
+    }
+
+    .search-icon .navbar-img {
+        margin-left: 0.05em;
+        width: 21px !important;
+        height: 21px !important;
+    }
+
+    .clear-icon {
+        font-size: 115% !important;
+        padding-right: 3px !important;
+    }
+
+    .search-input {
+        font-size: 96% !important;
+    }
+
+
     .all-film {
         margin-left: 40px !important;
 
@@ -2438,6 +2772,7 @@ h4 {
         width: 68% !important;
         margin-top: 1em;
     }
+
     .sirials-watch-img {
         width: 140% !important;
         height: 100% !important;
@@ -2451,8 +2786,8 @@ h4 {
         /* Увеличение размера текста рейтинга */
     }
 
-    
-    
+
+
     h4 {
         font-size: 140% !important;
     }
@@ -2462,15 +2797,17 @@ h4 {
         ;
         /* Увеличение размера текста */
     }
-    .navbar{
+
+    .navbar {
         font-size: 130% !important;
     }
+
     h4 {
         font-size: 140% !important;
     }
 
     .card-tex {
-        font-size: 130% ;
+        font-size: 130%;
 
     }
 
@@ -2491,7 +2828,8 @@ h4 {
         width: 100%;
 
     }
-    .toggle-btn{
+
+    .toggle-btn {
         font-size: 115%;
     }
 
@@ -2499,52 +2837,83 @@ h4 {
         font-size: 125%;
     }
 }
+
 @media (min-width: 1439px) and (max-width: 1521px) {
-    .navbar{
-        height: 80px;
+    .title {
+        font-size: 60px; /* Размер шрифта для "Дюна:" */
     }
-.navbar-brand img{
-    width: 175px !important;
-    height: 58.33px !important;
-
-        }
-        .nav-link{
-            font-size: 98% !important;
-        }
-        .navbar-img-home, .navbar-img-movies, .navbar-img-serials, .navbar-img-cartoon, .navbar-img-anime{
-            margin-top: 4.5px !important;
-            width: 16.9px !important;
-            height: 17.5px !important;
-        }
+    
+    .subtitle {
+        font-size: 50px; /* Размер шрифта для "«Час настал»" */
+    }
+    .subtitle-genre {
+        font-size: 19px; /* Размер шрифта для "«Час настал»" */
         
-        .search-container{
-            width: 37px;
-            height: 37px; /* Сделано равным ширине */
-            border-radius: 25px;
-            
-            
-        }
-        .search-wrapper:hover .search-container {
-            width: 255px !important;
-            /* Расширение контейнера влево */
-        }
-        .search-icon .navbar-img {
-            margin-left: 0.05em;
-            width:21px !important;
-            height: 21px !important;
-           }
-           .clear-icon{
-            font-size: 115% !important;
-            padding-right: 3px !important;
-        }
-        
-          .search-input{
-            font-size: 96% !important;
-          }
-
+    }
+    .film-genre {
+        margin-left: 12%; /* Центрируем по горизонтали */
         
     }
     
+    .btn-film {    
+        font-size: 25px;   
+    }
+    .navbar {
+        height: 80px;
+    }
+
+    .navbar-brand img {
+        width: 175px !important;
+        height: 58.33px !important;
+
+    }
+
+    .nav-link {
+        font-size: 98% !important;
+    }
+
+    .navbar-img-home,
+    .navbar-img-movies,
+    .navbar-img-serials,
+    .navbar-img-cartoon,
+    .navbar-img-anime {
+        margin-top: 4.5px !important;
+        width: 16.9px !important;
+        height: 17.5px !important;
+    }
+
+    .search-container {
+        width: 37px;
+        height: 37px;
+        /* Сделано равным ширине */
+        border-radius: 25px;
+
+
+    }
+
+    .search-wrapper:hover .search-container {
+        width: 255px !important;
+        /* Расширение контейнера влево */
+    }
+
+    .search-icon .navbar-img {
+        margin-left: 0.05em;
+        width: 21px !important;
+        height: 21px !important;
+    }
+
+    .clear-icon {
+        font-size: 115% !important;
+        padding-right: 3px !important;
+    }
+
+    .search-input {
+        font-size: 96% !important;
+    }
+
+
+}
+
 
 @media (min-width: 1321px) and (max-width: 1520.5px) {
     .full-card {
@@ -2565,15 +2934,18 @@ h4 {
         width: 68% !important;
         margin-top: 1em;
     }
+
     .card-img-top {
 
         width: 110%;
         height: 100%;
     }
+
     .sirials-watch-img {
         width: 140% !important;
         height: 100% !important;
     }
+
     .card-rating,
     .card-rating-trand {
         font-size: 100% !important;
@@ -2582,20 +2954,21 @@ h4 {
         /* Увеличение размера текста рейтинга */
     }
 
-    
+
 
     .card-tex {
         font-size: 100% !important;
 
     }
-    
+
     .year {
         font-size: 90% !important;
     }
-    .toggle-btn{
+
+    .toggle-btn {
         font-size: 95%;
     }
-    
+
 }
 
 
@@ -2624,20 +2997,24 @@ h4 {
         width: 120% !important;
         height: 100% !important;
     }
+
     .card-tex {
         font-size: 100% !important;
-    
+
     }
-    
+
     .year {
         font-size: 90% !important;
     }
-    .navbar{
+
+    .navbar {
         font-size: 100% !important;
     }
+
     h4 {
         font-size: 130% !important;
     }
+
     .btn-show-all {
         width: 100%;
     }
@@ -2659,14 +3036,16 @@ h4 {
 }
 
 @media screen and (max-width: 1290px) {
-    .cards-from-search{
+    .cards-from-search {
         margin-left: 4vh;
-        
+
     }
+
     .all-film {
         margin-left: 15px !important;
 
     }
+
     .sirials-watch-img {
         width: 117% !important;
         height: 100% !important;
@@ -2697,6 +3076,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 1250px) {
 
 
@@ -2706,6 +3086,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 1240px) {
 
 
@@ -2715,6 +3096,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 1230px) {
     .all-film {
         margin-left: 10px !important;
@@ -2741,6 +3123,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 1190px) {
 
 
@@ -2750,6 +3133,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 1150px) {
 
 
@@ -2759,6 +3143,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 1170px) {
     .all-film {
         margin-left: 10px !important;
@@ -2771,6 +3156,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 1150px) {
 
 
@@ -2780,6 +3166,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 1140px) {
     .all-film {
         margin-left: 10px !important;
@@ -2792,6 +3179,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 1120px) {
 
 
@@ -2801,6 +3189,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 1110px) {
     .all-film {
         margin-left: 10px !important;
@@ -2823,6 +3212,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 1060px) {
 
 
@@ -2833,6 +3223,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 1050px) {
 
 
@@ -2897,6 +3288,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 970px) {
 
 
@@ -2910,6 +3302,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 960px) {
 
 
@@ -2919,6 +3312,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 950px) {
 
 
@@ -2932,6 +3326,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 940px) {
 
 
@@ -2955,6 +3350,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 922px) {
 
 
@@ -2964,6 +3360,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 912px) {
 
 
@@ -2977,6 +3374,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 900px) {
 
 
@@ -2986,6 +3384,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 890px) {
 
 
@@ -3005,6 +3404,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 865px) {
 
 
@@ -3013,6 +3413,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 855px) {
 
 
@@ -3021,6 +3422,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 845px) {
 
 
@@ -3029,6 +3431,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 835px) {
 
 
@@ -3037,6 +3440,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 825px) {
 
 
@@ -3045,6 +3449,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 812px) {
 
 
@@ -3054,6 +3459,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 802px) {
     .card-tex {
         display: block;
@@ -3079,6 +3485,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 780px) {
 
 
@@ -3088,6 +3495,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 769.5px) {
 
 
@@ -3097,6 +3505,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 763px) {
 
 
@@ -3106,6 +3515,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 753px) {
 
 
@@ -3125,6 +3535,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 733px) {
 
 
@@ -3134,6 +3545,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 723px) {
 
 
@@ -3143,6 +3555,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 713px) {
 
     .all-flim-img {
@@ -3158,6 +3571,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 693px) {
 
     .all-flim-img {
@@ -3165,6 +3579,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 683px) {
 
     .all-flim-img {
@@ -3172,6 +3587,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 673px) {
 
     .all-flim-img {
@@ -3179,6 +3595,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 663px) {
 
     .all-flim-img {
@@ -3186,6 +3603,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 653px) {
 
     .all-flim-img {
@@ -3201,6 +3619,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 633px) {
 
     .all-flim-img {
@@ -3208,6 +3627,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 623px) {
 
     .all-flim-img {
@@ -3247,6 +3667,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 560px) {
 
     .all-flim-img {
@@ -3254,6 +3675,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 550px) {
 
     .all-flim-img {
@@ -3261,6 +3683,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 540px) {
 
     .all-flim-img {
@@ -3268,6 +3691,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 530px) {
 
     .all-flim-img {
@@ -3275,6 +3699,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 518px) {
 
     .all-flim-img {
@@ -3282,6 +3707,7 @@ h4 {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 510px) {
 
     .all-flim-img {
@@ -3411,24 +3837,27 @@ h4 {
 }
 
 @media screen and (max-width: 350px) {
-    .btn-show-all{
+    .btn-show-all {
         font-size: 90% !important;
     }
+
     h4 {
         font-size: 115% !important;
     }
+
     .all-flim-img {
         width: 52% !important;
         height: 100%;
     }
 }
+
 @media screen and (max-width: 335px) {
 
     .all-flim-img {
         width: 48% !important;
         height: 100%;
     }
-    
+
 }
 
 @media screen and (max-width: 355px) {
@@ -3465,11 +3894,11 @@ h4 {
 }
 
 @media screen and (max-width: 480px) {
-   #menu{
-    width: 50%;
-    padding-top: 6rem;
-    text-align: center;
-   }
+    #menu {
+        width: 50%;
+        padding-top: 6rem;
+        text-align: center;
+    }
 
     .search-wrapper:hover .search-container {
         width: 140px !important;
@@ -3520,6 +3949,7 @@ h4 {
         width: 9rem;
         height: 100%;
     }
+
     .slider .slick-prev {
         top: 15vh !important;
         /* Поднимаем стрелку вверх */
@@ -3569,101 +3999,120 @@ h4 {
         /* Ваши стили */
     }
 }
-@media (max-width: 1188px) {
-    
 
-    .card-tex{
+@media (max-width: 1188px) {
+
+
+    .card-tex {
         width: 90% !important;
     }
-  }
-  /* Для мобильных устройств */
-  @media (max-width: 1100px) {
+}
+
+/* Для мобильных устройств */
+@media (max-width: 1100px) {
     .card-results {
 
-        margin-left: -1.7vh  !important;
+        margin-left: -1.7vh !important;
 
     }
-    .card-tex{
+
+    .card-tex {
         width: 70% !important;
     }
-  }
+}
+
 @media (max-width: 950px) {
-    .card-tex{
+    .card-tex {
         width: 65% !important;
     }
-   
+
 }
+
 @media (max-width: 900px) {
-    .card-tex{
+    .card-tex {
         width: 63% !important;
     }
-   
+
 }
+
 @media (max-width: 850px) {
-    .card-tex{
+    .card-tex {
         width: 60% !important;
     }
-   
+
 }
+
 @media (max-width: 800px) {
-    .card-tex{
+    .card-tex {
         width: 58% !important;
     }
-    
-   
+
+
 }
+
 @media (max-width: 769.5px) {
-    .card-tex{
+    .card-tex {
         width: 75% !important;
     }
 }
+
 @media (max-width: 672px) {
-    .card-tex{
+    .card-tex {
         width: 73% !important;
     }
+
     .slider.single-item2 .card-tex {
-        width: 80% !important; /* Или нужное значение */
-        
+        width: 80% !important;
+        /* Или нужное значение */
+
     }
+
     .slider.single-item3 .card-tex {
-        width: 80% !important; /* Или нужное значение */
-        
+        width: 80% !important;
+        /* Или нужное значение */
+
     }
+
     .slider.single-item .card-tex {
-        width: 80% !important; /* Или нужное значение */
-        
+        width: 80% !important;
+        /* Или нужное значение */
+
     }
-    
+
 }
+
 @media (max-width: 640px) {
-    .card-tex{
+    .card-tex {
         width: 69% !important;
     }
-    
+
 }
+
 @media (max-width: 580px) {
-    .card-tex{
+    .card-tex {
         width: 55% !important;
     }
-    
+
 }
+
 @media (max-width: 490px) {
-    .card-tex{
+    .card-tex {
         width: 50% !important;
     }
-    
+
 }
+
 @media (max-width: 450px) {
-    .card-tex{
+    .card-tex {
         width: 60% !important;
     }
-    
+
 }
 
 @media (max-width: 350px) {
-        .card-tex{
-            width: 55% !important;
-        }
+    .card-tex {
+        width: 55% !important;
+    }
 
 }
 
@@ -3672,22 +4121,13 @@ h4 {
 
 
 
-@media (min-width: 660px) and (max-width: 670px) {
-
-   
-}
+@media (min-width: 660px) and (max-width: 670px) {}
 
 
 
-@media (min-width: 740px) and (max-width: 750px) {
+@media (min-width: 740px) and (max-width: 750px) {}
 
-    
-}
-
-@media (min-width: 610px) and (max-width: 900px) {
-
-    
-}
+@media (min-width: 610px) and (max-width: 900px) {}
 
 
 
@@ -3695,12 +4135,7 @@ h4 {
 
 
 
-@media (min-width: 910px) and (max-width: 951px) {
-
-   
-
-
-}
+@media (min-width: 910px) and (max-width: 951px) {}
 
 @media (max-width: 450px) {
     .col-4 {
@@ -3785,24 +4220,22 @@ h4 {
 
     .footer-text {
         display: flex;
-    justify-content: flex-start;
-    position: absolute; /* или fixed, если нужно закрепить */
-    margin-top: -0.3em;
-    left: 2.8vh;
-    text-align: left; /* Текст всегда начинается слева */
-    white-space: normal; /* Разрешает перенос строк */
-    max-width: 100%; /* Ограничивает ширину, чтобы текст не растягивался */}
+        justify-content: flex-start;
+        position: absolute;
+        /* или fixed, если нужно закрепить */
+        margin-top: -0.3em;
+        left: 2.8vh;
+        text-align: left;
+        /* Текст всегда начинается слева */
+        white-space: normal;
+        /* Разрешает перенос строк */
+        max-width: 100%;
+        /* Ограничивает ширину, чтобы текст не растягивался */
+    }
 }
 
-@media (max-width: 430px) {
-    
-}
+@media (max-width: 430px) {}
 
-@media (max-width: 420px) {
-    
-}
+@media (max-width: 420px) {}
 
-@media (max-width: 400px) {
-    
-}
-
+@media (max-width: 400px) {}

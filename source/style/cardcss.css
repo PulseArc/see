@@ -267,6 +267,7 @@ overflow: hidden;
     overflow: hidden; /* Скрывает излишки изображения */
     z-index: 0;
 }
+
 @media (min-width: 600.05px) {
   .Phone-version{
     display: none;
@@ -281,12 +282,13 @@ display: none;
 }
 
 .mobile-img {
-  mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
-  -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
-  mask-size: 100% 100%;
-  mask-repeat: no-repeat;
-  -webkit-mask-size: 100% 100%;
-  -webkit-mask-repeat: no-repeat;
+  
+  mask-image:  linear-gradient(black 70%, transparent 100%),  /* сверху */
+    linear-gradient(to top, black 70%, transparent 100%), /* снизу */
+    linear-gradient(to right, black 70%, transparent 100%), /* слева */
+    linear-gradient(to left, black 70%, transparent 100%); /* справа */
+  mask-composite: intersect;
+  
 z-index: -1;
   /* Фильтры */
   filter: brightness(0.55); /* Затемнение */
@@ -295,30 +297,7 @@ z-index: -1;
 }
 
 /* Затемнение сверху */
-.mobile-img::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 15%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
-  z-index: 1;
-  pointer-events: none;
-}
 
-/* Затемнение снизу */
-.mobile-img::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 10%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
-  z-index: 1;
-  pointer-events: none;
-}
 
 .mobile-card-description {
   position: absolute;
@@ -342,9 +321,10 @@ z-index: -1;
   display: grid;
   grid-template-columns: 8em 1fr; /* Отступ слева 8em, контент растягивается */
   height: calc(300px + 30vmin);
-  margin-top: -4em !important;
+  margin-top: -4em ;
   background-color: transparent;
   min-height: 600px;
+  
 
   img {
     
@@ -947,7 +927,7 @@ margin-left: 4em;
 .Phone-version::before {
   content: "";
   position: absolute;
-  top: -12%; /* Сдвигаем наверх, чтобы затемнение начиналось ниже */
+  top: -4em; /* Сдвигаем наверх, чтобы затемнение начиналось ниже */
   left: 0;
   width: 100%;
   height: 15%;
@@ -1153,6 +1133,7 @@ margin-left: 4em;
   max-height: 750px;
   }
 }
+
 @media (min-width: 1300px) and (max-width: 1439px) {
   .hero{
   height: calc(400px + 40vmin);
@@ -1270,6 +1251,7 @@ margin-left: 4em;
 }
 
 @media (min-width: 1521px) and (max-width: 1705px){
+  
   .movie-card-img{
     width: 19rem !important;
     height: 100%;
@@ -1303,6 +1285,7 @@ margin-left: 4em;
 
 
 @media (min-width: 1439px) and (max-width: 1521px) {
+  
   .movie-card-img{
     width: 17rem !important;
     height: 100%;
