@@ -1165,10 +1165,10 @@ footer {
     color: #555;
     /* Цвет текста */
 }
-
-.call-anim {
-    animation: call 2s ease 0s infinite normal forwards;
-}
+.splide__slide {
+    width: 100%; /* Это растягивает карточку на всю ширину */
+    flex: 1;     /* Это тоже */
+  }
 
 .slider {
     position: relative;
@@ -1315,7 +1315,7 @@ footer {
     /* Поднимаем стрелку вверх */
 }
 
-@media (min-width: 2300px) and (max-width: 4000px) {
+@media (min-width: 2300px) {
     .title {
         font-size: 86px; /* Размер шрифта для "Дюна:" */
     }
@@ -1400,6 +1400,15 @@ footer {
 
     h4 {
         font-size: 210% !important;
+    }
+    .card-media3 {
+       
+        margin-top: 1em;
+    }
+    .sirials-watch-img {
+        
+        width: 28rem !important;
+        height: 100% !important;
     }
 }
 
@@ -1486,6 +1495,15 @@ footer {
 
     h4 {
         font-size: 190% !important;
+    }
+    .card-media3 {
+       
+        margin-top: 1em;
+    }
+    .sirials-watch-img {
+        
+        width: 23rem !important;
+        height: 100% !important;
     }
 }
 
@@ -1687,6 +1705,15 @@ footer {
         font-size: 160% !important;
     }
 
+    .card-media3 {
+       
+        margin-top: 1em;
+    }
+    .sirials-watch-img {
+        
+        width: 22rem !important;
+        height: 100% !important;
+    }
 
     .card-rating,
     .card-rating-trand {
@@ -2498,10 +2525,7 @@ footer {
         margin-top: 1em;
     }
 
-    .card-media3 {
-        width: 82% !important;
-        margin-top: 1em;
-    }
+   
 
 
 
@@ -2524,10 +2548,7 @@ footer {
     }
 
 
-    .sirials-watch-img {
-        width: 114% !important;
-        height: 100% !important;
-    }
+    
 
 }
 
@@ -2682,13 +2703,12 @@ footer {
     }
 
     .card-media3 {
-        width: 57% !important;
-        height: 100%;
+       
         margin-top: 1em;
     }
 
     .sirials-watch-img {
-        width: 164% !important;
+        width: 20rem !important;
         height: 100% !important;
     }
 
@@ -2868,14 +2888,11 @@ h4 {
     }
 
     .card-media3 {
-        width: 68% !important;
+        width: 13rem !important;
         margin-top: 1em;
     }
 
-    .sirials-watch-img {
-        width: 140% !important;
-        height: 100% !important;
-    }
+    
 
     .card-rating,
     .card-rating-trand {
@@ -3032,7 +3049,7 @@ h4 {
     }
 
     .card-media3 {
-        width: 68% !important;
+        width: 12rem !important;
         margin-top: 1em;
     }
 
@@ -3042,10 +3059,7 @@ h4 {
         height: 100%;
     }
 
-    .sirials-watch-img {
-        width: 140% !important;
-        height: 100% !important;
-    }
+    
 
     .card-rating,
     .card-rating-trand {
