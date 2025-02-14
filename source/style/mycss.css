@@ -599,6 +599,7 @@ h4 {
     transform: translateY(0);
     display: flex;
     flex-direction: column;
+    
      /* Расстояние между кнопками */
 }
 
@@ -644,7 +645,7 @@ h4 {
 }
 /* Если изменить жанр нужно подогнать падинг под размер кнопки */
 .film-genre {
-    padding: 15px 59px;
+    padding-top: 30px;
     font-size: 15px;
     color: white;
     border: none;
@@ -673,7 +674,7 @@ h4 {
     }
     /* Если изменить жанр нужно подогнать падинг под размер кнопки */
     .film-genre {
-        padding: 15px 52.5px;
+        padding-top: 30px;
         font-size: 13px;
         color: white;
         border: none;
@@ -717,7 +718,7 @@ h4 {
     }
     /* Если изменить жанр нужно подогнать падинг под размер кнопки */
     .film-genre {
-        padding: 15px 33.5px;
+        padding-top: 30px;
         font-size: 14px;
         color: white;
         border: none;
@@ -1324,7 +1325,7 @@ footer {
     }
      /* Если изменить жанр нужно подогнать падинг под размер кнопки */
      .film-genre {
-        padding: 15px 107px;
+        padding-top: 30px;
        
         font-size: 38px;
         color: white;
@@ -1412,7 +1413,7 @@ footer {
     }
     /* Если изменить жанр нужно подогнать падинг под размер кнопки */
     .film-genre {
-        padding: 15px 83px;
+        padding-top: 30px;
         font-size: 26.5px;
         color: white;
         border: none;
@@ -1610,7 +1611,7 @@ footer {
     }
     /* Если изменить жанр нужно подогнать падинг под размер кнопки */
     .film-genre {
-        padding: 15px 83px;
+        padding-top: 30px;
         font-size: 26.5px;
         color: white;
         border: none;
@@ -2589,7 +2590,7 @@ footer {
         }
         /* Если изменить жанр нужно подогнать падинг под размер кнопки */
         .film-genre {
-            padding: 15px 76px;
+            padding-top: 30px;
             font-size: 23.5px;
             color: white;
             border: none;
@@ -2773,7 +2774,7 @@ h4 {
     }
   /* Если изменить жанр нужно подогнать падинг под размер кнопки */
 .film-genre {
-    padding: 15px 73px;
+    padding-top: 30px;
     font-size: 22px;
     color: white;
     border: none;
@@ -2946,7 +2947,7 @@ h4 {
     }
   /* Если изменить жанр нужно подогнать падинг под размер кнопки */
 .film-genre {
-    padding: 15px 66px;
+    padding-top: 30px;
     font-size: 19px;
     color: white;
     border: none;
