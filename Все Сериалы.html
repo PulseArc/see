@@ -10,7 +10,7 @@
   <link rel="stylesheet" type="text/css" href="slick/slick.css" />
   <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
   <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
   <link rel="icon" type="image/png" href="source/images/favicon/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="source/images/favicon/favicon.svg" />
 <link rel="shortcut icon" href="source/images/favicon/favicon.ico" />
@@ -210,143 +210,151 @@
             <div class="col-lg-4 ">
               <h4  style="margin-bottom: 0.5em;">Топ 10 сериалов</h4>
             </div>
-
-            <!-- основной экран -->
-            <div class="slider slider-2 mt-2">
+  
+            <div class="slider mt-2">
               <div class="col-lg-12 col-md-12">
                 <div class="row ">
-
-                  <div class="slider  single-item3">
-                    <div class="col-lg-2 col-md-3 ">
-                      <div class="card card-media3" style="width: 12rem ">
-                        <img src="source/images/Шерлок.jpg" class="card-img-top sirials-watch-img"
-                          style="width: 226px; height: 127px;" alt="...">
-                        <div class="card-rating" bis_skin_checked="1"><span class="span-rating">8.5</span></div>
-                        <div class="card-body">
-
-                          <a href="#" class="card-tex">Шерлок <br><span class="year">2010</span></a>
-                        </div>
-                      </div>
+                  <div class="splide" id="image-slider">
+                    <div class="splide__track">
+                      <ul class="splide__list">
+                        <li class="splide__slide">
+  
+                          <div class="card card-media3" style="width: 12rem ">
+                            <img src="source/images/Шерлок.jpg" class="card-img-top sirials-watch-img"
+                              style="width: 226px; height: 127px;" alt="...">
+                            <div class="card-rating" bis_skin_checked="1"><span class="span-rating">8.5</span></div>
+                            <div class="card-body">
+    
+                              <a href="#" class="card-tex">Шерлок <br><span class="year">2010</span></a>
+                            </div>
+                          </div>
+  
+                        </li>
+                        <li class="splide__slide">
+  
+                          <div class="card card-media3" style="width: 12rem ">
+                            <img src="source/images/Очень странные дела.jpg" class="card-img-top sirials-watch-img"
+                              style="width: 226px; height: 127px;" alt="...">
+                            <div class="card-rating" bis_skin_checked="1"><span class="span-rating">8.6</span></div>
+                            <div class="card-body">
+    
+                              <a href="#" class="card-tex">Очень странные дела <br><span class="year">2016</span></a>
+                            </div>
+                          </div>
+  
+                        </li>
+                        <li class="splide__slide">
+  
+                          <div class="card card-media3" style="width: 12rem">
+                            <img src="source/images/Друзья.jpg" class="card-img-top sirials-watch-img"
+                              style="width: 226px; height: 127px;" alt="...">
+                            <div class="card-rating" bis_skin_checked="1"><span class="span-rating">8.4</span></div>
+                            <div class="card-body">
+    
+                              <a href="#" class="card-tex">Друзья <br><span class="year">1994</span></a>
+                            </div>
+                          </div>
+  
+                        </li>
+                        <li class="splide__slide">
+  
+                          <div class="card card-media3" style="width: 12rem">
+                            <img src="source/images/Ходячие мертвецы.jpg" class="card-img-top sirials-watch-img"
+                              style="width: 226px; height: 127px;" alt="...">
+                            <div class="card-rating" bis_skin_checked="1"><span class="span-rating">8.1</span></div>
+                            <div class="card-body">
+    
+                              <a href="#" class="card-tex">Ходячие мертвецы <br><span class="year">2010</span></a>
+                            </div>
+                          </div>
+  
+                        </li>
+                        <li class="splide__slide">
+  
+                          <div class="card card-media3" style="width: 12rem">
+                            <img src="source/images/Мандалорец.jpg" class="card-img-top sirials-watch-img"
+                              style="width: 226px; height: 127px;" alt="...">
+                            <div class="card-rating" bis_skin_checked="1"><span class="span-rating">8.4</span></div>
+                            <div class="card-body">
+    
+                              <a href="#" class="card-tex">Мандалорец <br><span class="year">2019</span></a>
+                            </div>
+                          </div>
+  
+                        </li>
+                        <li class="splide__slide">
+  
+                          <div class="card card-media3" style="width: 12rem">
+                            <img src="source/images/Американская история ужасов.jpg" class="card-img-top sirials-watch-img"
+                              style="width: 226px; height: 127px !important; " alt="...">
+                            <div class="card-rating" bis_skin_checked="1"><span class="span-rating">8.1</span></div>
+                            <div class="card-body">
+    
+                              <a href="#" class="card-tex">Американская история ужасов<br><span class="year">2011</span></a>
+                            </div>
+                          </div>
+  
+                        </li>
+                        <li class="splide__slide">
+  
+                          <div class="card card-media3" style="width: 12rem">
+                            <img src="source/images/Ганнибал.jpeg" class="card-img-top sirials-watch-img"
+                              style="width: 226px; height: 127px;" alt="...">
+                            <div class="card-rating" bis_skin_checked="1"><span class="span-rating">8.2</span></div>
+                            <div class="card-body">
+    
+                              <a href="#" class="card-tex">Ганнибал<br><span class="year">2013</span></a>
+                            </div>
+                          </div>
+  
+                        </li>
+                        <li class="splide__slide">
+  
+                          <div class="card card-media3" style="width: 12rem">
+                            <img src="https://images.kinorium.com/movie/poster/1672104/w1500_51958386.jpg" class="card-img-top sirials-watch-img"
+                              style="width: 226px; height: 127px;" alt="...">
+                            <div class="card-rating" bis_skin_checked="1"><span class="span-rating">8.3</span></div>
+                            <div class="card-body">
+    
+                              <a href="#" class="card-tex">Половое воспитание <br><span class="year">2019</span></a>
+                            </div>
+                          </div>
+  
+                        </li>
+                        <li class="splide__slide">
+  
+                          <div class="card card-media3" style="width: 12rem">
+                            <img src="source/images/Пацаны.jpg" class="card-img-top sirials-watch-img"
+                              style="width: 226px; height: 127px;" alt="...">
+                            <div class="card-rating" bis_skin_checked="1"><span class="span-rating">8.5</span></div>
+                            <div class="card-body">
+    
+                              <a href="#" class="card-tex">Пацаны<br><span class="year">2019</span></a>
+                            </div>
+                          </div>
+  
+                        </li>
+                        <li class="splide__slide">
+  
+                          <div class="card card-media3" style="width: 12rem">
+                            <img src="source/images/Игра престолов.jpg" class="card-img-top sirials-watch-img"
+                              style="width: 226px; height: 127px;" alt="...">
+                            <div class="card-rating" bis_skin_checked="1"><span class="span-rating">8.5</span></div>
+                            <div class="card-body">
+    
+                              <a href="#" class="card-tex">Игра престолов<br><span class="year">2011</span></a>
+                            </div>
+                          </div>
+  
+                        </li>
+                      </ul>
                     </div>
-
-                    <div class="col-lg-2 col-md-3 ">
-                      <div class="card card-media3" style="width: 12rem ">
-                        <img src="source/images/Очень странные дела.jpg" class="card-img-top sirials-watch-img"
-                          style="width: 226px; height: 127px;" alt="...">
-                        <div class="card-rating" bis_skin_checked="1"><span class="span-rating">8.6</span></div>
-                        <div class="card-body">
-
-                          <a href="#" class="card-tex">Очень странные дела <br><span class="year">2016</span></a>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-3 ">
-                      <div class="card card-media3" style="width: 12rem">
-                        <img src="source/images/Друзья.jpg" class="card-img-top sirials-watch-img"
-                          style="width: 226px; height: 127px;" alt="...">
-                        <div class="card-rating" bis_skin_checked="1"><span class="span-rating">8.4</span></div>
-                        <div class="card-body">
-
-                          <a href="#" class="card-tex">Друзья <br><span class="year">1994</span></a>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-3 ">
-                      <div class="card card-media3" style="width: 12rem">
-                        <img src="source/images/Ходячие мертвецы.jpg" class="card-img-top sirials-watch-img"
-                          style="width: 226px; height: 127px;" alt="...">
-                        <div class="card-rating" bis_skin_checked="1"><span class="span-rating">8.1</span></div>
-                        <div class="card-body">
-
-                          <a href="#" class="card-tex">Ходячие мертвецы <br><span class="year">2010</span></a>
-                        </div>
-                      </div>
-                    </div>
-
-
-
-                    <div class="col-lg-2 col-md-3 ">
-                      <div class="card card-media3" style="width: 12rem">
-                        <img src="source/images/Мандалорец.jpg" class="card-img-top sirials-watch-img"
-                          style="width: 226px; height: 127px;" alt="...">
-                        <div class="card-rating" bis_skin_checked="1"><span class="span-rating">8.4</span></div>
-                        <div class="card-body">
-
-                          <a href="#" class="card-tex">Мандалорец <br><span class="year">2019</span></a>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-3 ">
-                      <div class="card card-media3" style="width: 12rem">
-                        <img src="source/images/Американская история ужасов.jpg" class="card-img-top sirials-watch-img"
-                          style="width: 226px; height: 127px !important; " alt="...">
-                        <div class="card-rating" bis_skin_checked="1"><span class="span-rating">8.1</span></div>
-                        <div class="card-body">
-
-                          <a href="#" class="card-tex">Американская история ужасов<br><span class="year">2011</span></a>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-3 ">
-                      <div class="card card-media3" style="width: 12rem">
-                        <img src="source/images/Ганнибал.jpeg" class="card-img-top sirials-watch-img"
-                          style="width: 226px; height: 127px;" alt="...">
-                        <div class="card-rating" bis_skin_checked="1"><span class="span-rating">8.2</span></div>
-                        <div class="card-body">
-
-                          <a href="#" class="card-tex">Ганнибал<br><span class="year">2013</span></a>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-3 ">
-                      <div class="card card-media3" style="width: 12rem">
-                        <img src="https://images.kinorium.com/movie/poster/1672104/w1500_51958386.jpg" class="card-img-top sirials-watch-img"
-                          style="width: 226px; height: 127px;" alt="...">
-                        <div class="card-rating" bis_skin_checked="1"><span class="span-rating">8.3</span></div>
-                        <div class="card-body">
-
-                          <a href="#" class="card-tex">Половое воспитание <br><span class="year">2019</span></a>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-3 ">
-                      <div class="card card-media3" style="width: 12rem">
-                        <img src="source/images/Пацаны.jpg" class="card-img-top sirials-watch-img"
-                          style="width: 226px; height: 127px;" alt="...">
-                        <div class="card-rating" bis_skin_checked="1"><span class="span-rating">8.5</span></div>
-                        <div class="card-body">
-
-                          <a href="#" class="card-tex">Пацаны<br><span class="year">2019</span></a>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-3 ">
-                      <div class="card card-media3" style="width: 12rem">
-                        <img src="source/images/Игра престолов.jpg" class="card-img-top sirials-watch-img"
-                          style="width: 226px; height: 127px;" alt="...">
-                        <div class="card-rating" bis_skin_checked="1"><span class="span-rating">8.5</span></div>
-                        <div class="card-body">
-
-                          <a href="#" class="card-tex">Игра престолов<br><span class="year">2011</span></a>
-                        </div>
-                      </div>
-                    </div>
-
-
                   </div>
 
 
-
-
-
-                  <div class="container all-film  ">
+<!-- Конец Слайдера -->
+        
+                  <div class="container all-film  mt-4">
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="col-lg-3 ms-1">
                         <h4 style="margin-bottom: 0.5em;">Сериалы</h4>
@@ -1270,7 +1278,7 @@
 
   <script src="slick/slick.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js" defer></script>
   <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
   <script src="source/script/pages.js"></script>
   <script src="source/script/script.js"></script>
