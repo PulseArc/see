@@ -1179,3 +1179,107 @@ $('.single-item2').slick({
 
 // Конец
 
+
+
+// Широкие Картинки Слайдер
+
+document.addEventListener('DOMContentLoaded', function () {
+  new Splide('#trend', {
+    type: 'loop',
+    focus: 'center',
+    autoWidth: true, 
+    gap: '40px', // По умолчанию 40px
+    pauseOnHover: true,
+    pauseOnFocus: true,
+    arrows: true,
+    pagination: false,
+    drag: true,
+    perPage: 3, // Показываем 3 карточки (слайда)
+    breakpoints: {
+      5000: {
+        gap: '275px', // При ширине экрана до 1200px
+        perPage: 3,
+      },
+      2299.5: {
+        gap: '190px', // При ширине экрана до 1200px
+        perPage: 3,
+      },
+      2018.5: {
+        gap: '175px', // При ширине экрана до 1200px
+        perPage: 3,
+      },
+      1899.5: {
+        gap: '140px', // При ширине экрана до 1200px
+        perPage: 3,
+      },
+      1704.5: {
+        gap: '90px', // При ширине экрана до 1200px
+        perPage: 3,
+      },
+      1520.5: {
+        gap: '80px', // При ширине экрана до 1200px
+        perPage: 3,
+      },
+      1320.5: {
+        gap: '40px', // При ширине экрана до 768px
+        perPage: 3, // Можно уменьшить количество слайдов на маленьких экранах
+      }
+    }
+  }).mount();
+});
+// Конец
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  new Splide('#pop-films', {
+    type: 'loop',
+    focus: 'center',
+    autoWidth: true, 
+    gap: '40px', // По умолчанию 40px
+    pauseOnHover: true,
+    pauseOnFocus: true,
+    arrows: true,
+    pagination: false,
+    drag: true,
+    perPage: 3, // Показываем 3 карточки (слайда)
+    breakpoints: {
+      5000: {
+        gap: '275px', // При ширине экрана до 1200px
+        perPage: 3,
+      },
+      2299.5: {
+        gap: '190px', // При ширине экрана до 1200px
+        perPage: 3,
+      },
+      2018.5: {
+        gap: '175px', // При ширине экрана до 1200px
+        perPage: 3,
+      },
+      1899.5: {
+        gap: '140px', // При ширине экрана до 1200px
+        perPage: 3,
+      },
+      1704.5: {
+        gap: '90px', // При ширине экрана до 1200px
+        perPage: 3,
+      },
+      1520.5: {
+        gap: '80px', // При ширине экрана до 1200px
+        perPage: 3,
+      },
+      1320.5: {
+        gap: '40px', // При ширине экрана до 768px
+        perPage: 3, // Можно уменьшить количество слайдов на маленьких экранах
+      }
+    }
+  }).mount();
+});
