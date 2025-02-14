@@ -1,3 +1,155 @@
+var swiper = new Swiper('.swiper-container', {
+  slidesPerView: 5.3, // По умолчанию как в Slick
+  spaceBetween: 20,
+  loop: true,
+  autoplay: {
+    delay: 1800,
+    disableOnInteraction: false,
+  },
+  speed: 500,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  breakpoints: {
+    4000: {
+      slidesPerView: 5.5,
+    },
+    1300: {
+      slidesPerView: 5.45,
+    },
+    1275: {
+      slidesPerView: 5.35,
+    },
+    1250: {
+      slidesPerView: 5.25,
+    },
+    1225: {
+      slidesPerView: 5.15,
+    },
+    1200: {
+      slidesPerView: 5.05,
+    },
+    1175: {
+      slidesPerView: 4.95,
+    },
+    1150: {
+      slidesPerView: 4.85,
+    },
+    1125: {
+      slidesPerView: 4.75,
+    },
+    1100: {
+      slidesPerView: 4.65,
+    },
+    1075: {
+      slidesPerView: 4.55,
+    },
+    1050: {
+      slidesPerView: 4.45,
+    },
+    1025: {
+      slidesPerView: 4.35,
+    },
+    1000: {
+      slidesPerView: 4.25,
+    },
+    975: {
+      slidesPerView: 4.15,
+    },
+    950: {
+      slidesPerView: 4.05,
+    },
+    925: {
+      slidesPerView: 3.95,
+    },
+    900: {
+      slidesPerView: 3.85,
+    },
+    875: {
+      slidesPerView: 3.75,
+    },
+    850: {
+      slidesPerView: 3.65,
+    },
+    825: {
+      slidesPerView: 3.55,
+    },
+    800: {
+      slidesPerView: 3.45,
+    },
+    775: {
+      slidesPerView: 3.35,
+    },
+    750: {
+      slidesPerView: 3.25,
+    },
+    725: {
+      slidesPerView: 3.12,
+    },
+    700: {
+      slidesPerView: 3.05,
+    },
+    675: {
+      slidesPerView: 2.95,
+    },
+    650: {
+      slidesPerView: 2.85,
+    },
+    625: {
+      slidesPerView: 2.65,
+    },
+    600: {
+      slidesPerView: 2.55,
+    },
+    575: {
+      slidesPerView: 2.415,
+    },
+    550: {
+      slidesPerView: 2.35,
+    },
+    525: {
+      slidesPerView: 2.215,
+    },
+    500: {
+      slidesPerView: 2.157,
+    },
+    480: {
+      slidesPerView: 2.05,
+    },
+    465: {
+      slidesPerView: 1.95,
+    },
+    450: {
+      slidesPerView: 1.95,
+    },
+    435: {
+      slidesPerView: 1.85,
+    },
+    420: {
+      slidesPerView: 1.825,
+    },
+    400: {
+      slidesPerView: 1.75,
+    },
+    380: {
+      slidesPerView: 1.65,
+    },
+    365: {
+      slidesPerView: 1.65,
+    },
+    350: {
+      slidesPerView: 1.55,
+    },
+    340: {
+      slidesPerView: 1.45,
+    }
+  }
+});
 
 
 
