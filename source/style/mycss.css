@@ -305,6 +305,9 @@ h4 {
 .second-slider1 .splide__arrow{
     top: 39.5% !important;
 }
+.second-slider2 .splide__arrow{
+    top: 40.5% !important;
+}
 
 .navbar {
     position: relative;
@@ -1298,11 +1301,20 @@ footer {
         background: none !important;
     }
     .second-slider .splide__arrow{
-        top: 32.5% !important;
+        top: 32% !important;
     }
     .second-slider1 .splide__arrow{
         top: 35% !important;
     }
+    .second-slider2 .splide__arrow{
+        top: 34% !important;
+    }
+    .second-slider3 .splide__arrow{
+        top: 34.5% !important;
+    }
+    
+    
+
 
 
 
@@ -1449,11 +1461,18 @@ footer {
     .splide__arrow {
         background: none !important;
     }
+    
     .second-slider .splide__arrow{
-        top: 30.5% !important;
+        top: 30.05% !important;
     }
     .second-slider1 .splide__arrow{
         top: 34% !important;
+    }
+    .second-slider2 .splide__arrow{
+        top: 34% !important;
+    }
+    .second-slider3 .splide__arrow{
+        top: 33% !important;
     }
 
     .title {
@@ -1658,13 +1677,19 @@ footer {
     .splide__arrow {
         background: none !important;
     }
+  
     .second-slider .splide__arrow{
         top: 36.5% !important;
     }
     .second-slider1 .splide__arrow{
         top: 40% !important;
     }
-
+    .second-slider2 .splide__arrow{
+        top: 38% !important;
+    }
+    .second-slider3 .splide__arrow{
+        top: 38% !important;
+    }
     .title {
         font-size: 72px; /* Размер шрифта для "Дюна:" */
     }
@@ -2592,7 +2617,13 @@ footer {
     .second-slider1 .splide__arrow{
         top: 40.5% !important;
     }
-   
+    
+    .second-slider2 .splide__arrow{
+        top: 38% !important;
+    }
+    .second-slider3 .splide__arrow{
+        top: 36% !important;
+    }
         .title {
             font-size: 68px; /* Размер шрифта для "Дюна:" */
         }
@@ -2812,7 +2843,7 @@ footer {
         opacity: 1 !important;
         padding: 0;
         position: absolute;
-        top: 44% !important;
+        top: 42% !important;
         transform: translateY(-50%);
         width: 2.8em !important;
         z-index: 1;
@@ -2826,7 +2857,14 @@ footer {
     .second-slider1 .splide__arrow{
         top: 40.5% !important;
     }
-
+  
+    
+    .second-slider2 .splide__arrow{
+        top: 38% !important;
+    }
+    .second-slider3 .splide__arrow{
+        top: 36% !important;
+    }
     .title {
         font-size: 65px; /* Размер шрифта для "Дюна:" */
     }
@@ -3039,6 +3077,16 @@ footer {
     }
     .second-slider1 .splide__arrow{
         top: 40.5% !important;
+    }
+
+    .second-slider2 .splide__arrow{
+        top: 40% !important;
+    }
+    .second-slider3 .splide__arrow{
+        top: 41% !important;
+    }
+    .title {
+        font-size: 65px; /* Размер шрифта для "Дюна:" */
     }
     .title {
         font-size: 60px; /* Размер шрифта для "Дюна:" */
