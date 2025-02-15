@@ -1,47 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
-  new Splide('#image-slider', {
-    type: 'loop',
-    focus: 'center',
-    autoWidth: true, 
-    gap: '40px', // По умолчанию 40px
-    pauseOnHover: true,
-    pauseOnFocus: true,
-    arrows: true,
-    pagination: false,
-    drag: true,
-    perPage: 3, // Показываем 3 карточки (слайда)
-    breakpoints: {
-      5000: {
-        gap: '275px', // При ширине экрана до 1200px
-        perPage: 3,
-      },
-      2299.5: {
-        gap: '190px', // При ширине экрана до 1200px
-        perPage: 3,
-      },
-      2018.5: {
-        gap: '175px', // При ширине экрана до 1200px
-        perPage: 3,
-      },
-      1899.5: {
-        gap: '140px', // При ширине экрана до 1200px
-        perPage: 3,
-      },
-      1704.5: {
-        gap: '90px', // При ширине экрана до 1200px
-        perPage: 3,
-      },
-      1520.5: {
-        gap: '80px', // При ширине экрана до 1200px
-        perPage: 3,
-      },
-      1320.5: {
-        gap: '40px', // При ширине экрана до 768px
-        perPage: 3, // Можно уменьшить количество слайдов на маленьких экранах
-      }
-    }
-  }).mount();
-});
+
 
 
 
@@ -186,320 +143,55 @@ document.getElementById("show-more-btn").addEventListener("click", function () {
 
 
 
-
-
-
-
-
-
-
-
-
-
-$('.single-item3').slick({
-  infinite: true, // Бесконечная прокрутка
-  dots: true, // Точки навигации
-  autoplay: true, // Автоматическая прокрутка
-  autoplaySpeed: 1800,
-  pauseOnFocus: true,
-  pauseOnHover: true,
-  pauseOnDotsHover: true,
-  swipe: true,
-  touchThreshold: 10,
-  slidesToShow: 5.3,
-  slidesToScroll: 1,
-  waitForAnimate: false,
-  speed: 500,
-  touchMove: true,
-  responsive: [
-    {
-      breakpoint: 4000,
-      settings: {
-        slidesToShow: 5.5,
+document.addEventListener('DOMContentLoaded', function () {
+  new Splide('#image-slider', {
+    type: 'loop',
+    focus: 'center',
+    autoWidth: true, 
+    gap: '40px', // По умолчанию 40px
+    pauseOnHover: true,
+    pauseOnFocus: true,
+    arrows: true,
+    pagination: false,
+    drag: true,
+    perPage: 3, // Показываем 3 карточки (слайда)
+    breakpoints: {
+      5000: {
+        gap: '280px', // При ширине экрана до 1200px
+        perPage: 3,
+      },
+      2299.5: {
+        gap: '198px', // При ширине экрана до 1200px
+        perPage: 3,
+      },
+      2018.5: {
+        gap: '180px', // При ширине экрана до 1200px
+        perPage: 3,
+      },
+      1899.5: {
+        gap: '180px', // При ширине экрана до 1200px
+        perPage: 3,
+      },
+      1704.5: {
+        gap: '100px', // При ширине экрана до 1200px
+        perPage: 3,
+      },
+      1520.5: {
+        gap: '100px', // При ширине экрана до 1200px
+        perPage: 3,
+      },
+      1320.5: {
+        gap: '93px', // При ширине экрана до 768px
+        perPage: 3, // Можно уменьшить количество слайдов на маленьких экранах
       }
-    },
-    {
-      breakpoint: 1300,
-      settings: {
-        slidesToShow: 5.45,
-      }
-    },
-    {
-      breakpoint: 1275,
-      settings: {
-        slidesToShow: 5.35,
-      }
-    },
-    {
-      breakpoint: 1250,
-      settings: {
-        slidesToShow: 5.25,
-      }
-    },
-    {
-      breakpoint: 1225,
-      settings: {
-        slidesToShow: 5.15,
-      }
-    },
-
-    {
-     breakpoint: 1200,
-     settings: {
-       slidesToShow: 5.05,
-     }
-   },
-   
-  {
-    breakpoint: 1175,
-    settings: {
-      slidesToShow: 4.95,
     }
-  },
-  {
-    breakpoint: 1150,
-    settings: {
-      slidesToShow: 4.85,
-    }
-  },
-       {
-         breakpoint: 1125,
-         settings: {
-           slidesToShow: 4.75,
-         }
-       },
-       {
-        breakpoint: 1100,
-        settings: {
-          slidesToShow: 4.65,
-        }
-      },
-      {
-        breakpoint: 1075,
-        settings: {
-          slidesToShow: 4.55,
-        }
-      },
-      {
-        breakpoint: 1050,
-        settings: {
-          slidesToShow: 4.45,
-        }
-      },
-      {
-        breakpoint: 1025,
-        settings: {
-          slidesToShow: 4.35,
-        }
-      },
-
-       {
-         breakpoint: 1000,
-         settings: {
-           slidesToShow: 4.25,
-         }
-       },
-       {
-        breakpoint: 975,
-        settings: {
-          slidesToShow: 4.15,
-        }
-      },
-      {
-        breakpoint: 950,
-        settings: {
-          slidesToShow: 4.05,
-        }
-      },
-      {
-        breakpoint: 925,
-        settings: {
-          slidesToShow: 3.95,
-        }
-      },
-       {
-         breakpoint: 900,
-         settings: {
-           slidesToShow: 3.85,
-         }
-       },
-       {
-        breakpoint: 875,
-        settings: {
-          slidesToShow: 3.75,
-        }
-      },
-      {
-        breakpoint: 850,
-        settings: {
-          slidesToShow: 3.65,
-        }
-      },
-      {
-        breakpoint: 825,
-        settings: {
-          slidesToShow: 3.55,
-        }
-      },
-       {
-         breakpoint: 800,
-         settings: {
-           slidesToShow: 3.45,
-         }
-       },
-       {
-        breakpoint: 775,
-        settings: {
-          slidesToShow: 3.35,
-        }
-      },
-       {
-        breakpoint: 750,
-        settings: {
-          slidesToShow: 3.25,
-        }
-      },
-       {
-        breakpoint: 725,
-        settings: {
-          slidesToShow: 3.12,
-        }
-      },
-       {
-         breakpoint: 700,
-         settings: {
-           slidesToShow: 3.05,
-         }
-       },
-       {
-        breakpoint: 675,
-        settings: {
-          slidesToShow: 2.95,
-        }
-      },
-       {
-        breakpoint: 650,
-        settings: {
-          slidesToShow: 2.85,
-        }
-      },
-       {
-        breakpoint: 625,
-        settings: {
-          slidesToShow: 2.65,
-        }
-      },
-       {
-         breakpoint: 600,
-         settings: {
-           slidesToShow: 2.55,
-         }
-       },
-       {
-        breakpoint: 575,
-        settings: {
-          slidesToShow: 2.415,
-        }
-      },
-       {
-        breakpoint: 550,
-        settings: {
-          slidesToShow: 2.35,
-        }
-      },
-      {
-        breakpoint: 525,
-        settings: {
-          slidesToShow: 2.215,
-        }
-      },
-       {
-         breakpoint: 500,
-         settings: {
-           slidesToShow: 2.157,
-         }
-       },
-       {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 2.05,
-        }
-      },
-      {
-        breakpoint: 465,
-        settings: {
-          slidesToShow: 1.95,
-        }
-      },
-       {
-         breakpoint: 450,
-         settings: {
-           slidesToShow: 1.95,
-         }
-       },
-       {
-        breakpoint: 435,
-        settings: {
-          slidesToShow: 1.85,
-        }
-      },
-      {
-        breakpoint: 420,
-        settings: {
-          slidesToShow: 1.825,
-        }
-      },
-       {
-         breakpoint: 400,
-         settings: {
-           slidesToShow: 1.75,
-         }
-       },
-       {
-        breakpoint: 380,
-        settings: {
-          slidesToShow: 1.65,
-        }
-      },
-      {
-        breakpoint: 365,
-        settings: {
-          slidesToShow: 1.55,
-        }
-      },
-       
-       {
-         breakpoint: 350,
-         settings: {
-           slidesToShow: 1.55,
-         }
-       },
-       {
-        breakpoint: 340,
-        settings: {
-          slidesToShow: 1.45,
-        }
-      }
-     ]
-  
- });
- $('.single-item3').on('touchstart', function (e) {
-  startX = e.originalEvent.touches[0].clientX;
+  }).mount();
 });
 
-// Завершаем свайп и обрабатываем длину
-$('.single-item3').on('touchend', function (e) {
-  const endX = e.originalEvent.changedTouches[0].clientX;
-  swipeDistance = Math.abs(endX - startX);
 
-  const slider = $(this).slick('getSlick');
 
-  if (swipeDistance > 200) { 
-    // Длинный свайп: сдвигаем на 5 слайдов
-    const direction = endX < startX ? 1 : -1; // Определяем направление свайпа
-    const nextSlide = slider.currentSlide + direction * 5; // Переход на 5 слайдов
-    slider.slickGoTo(nextSlide);
-  }
-});
+
+
+
 
  

@@ -2,6 +2,10 @@
 
 // Генерация карточек с случайными рейтингами
 // Фильмы
+document.addEventListener('DOMContentLoaded', function () {
+    generateRandomCards();
+});
+
 function generateRandomCards() {
     var cardData = [
         {
@@ -808,34 +812,26 @@ function generateRandomCards() {
         
     ];
 
-    var cardContainer = $('#card-container'); // Контейнер для отображения карточек
+    var cardContainer = $('#card-container'); 
 
     // Очищаем контейнер перед добавлением новых карточек
     cardContainer.html("");
 
-    // Получаем название из card-title
-    var cardTitle = $(".card-title").text().trim();
-
     // Перемешиваем карточки случайным образом
     cardData = shuffleArray(cardData);
 
-    var count = 0; // Счетчик карточек
+    var count = 0; 
 
     cardData.forEach(function (val) {
-        if (count >= 10) return; // Прекращаем, когда карточек становится больше 10
+        if (count >= 10) return;
 
-        var randomRating = val.rating; // Оставляем рейтинг постоянным
-
-        // Проверка на совпадение названия с cardTitle
-        if (val.name === cardTitle) {
-            return; // Пропускаем добавление карточки
-        }
+        var randomRating = val.rating;
 
         var cardHTML = `
-        <div class="col-lg-2 col-md-3">
+        <li class="splide__slide">
             <div class="card card-media" style="width: 12rem" data-rating="${randomRating}">
                 <a href="${val.link}">
-                    <img src="${val.image}" class="card-img-top mt-2" alt="${val.name}">
+                    <img src="${val.image}" class="card-img-top img-9x16 mt-2" alt="${val.name}">
                     <div class="card-rating-trand" bis_skin_checked="1">
                         <span class="span-rating">${randomRating}</span>
                     </div>
@@ -844,7 +840,7 @@ function generateRandomCards() {
                     </div>
                 </a>
             </div>
-        </div>
+        </li>
         `;
 
         // Добавляем карточку в контейнер
@@ -852,9 +848,57 @@ function generateRandomCards() {
 
         count++;
     });
+
+    // Инициализируем Splide после добавления карточек
+    new Splide('#Collections', {
+        type: 'loop',
+        focus: 'center',
+        autoWidth: true, 
+        gap: '40px', // По умолчанию 40px
+        pauseOnHover: true,
+        pauseOnFocus: true,
+        arrows: true,
+        pagination: false,
+        drag: true,
+        perPage: 3, // Показываем 3 карточки (слайда)
+        breakpoints: {
+          5000: {
+            gap: '23px', // При ширине экрана до 1200px
+            perPage: 3,
+          },
+          2299.5: {
+            gap: '20px', // При ширине экрана до 1200px
+            perPage: 3,
+          },
+          2018.5: {
+            gap: '18px', // При ширине экрана до 1200px
+            perPage: 3,
+          },
+          1899.5: {
+            gap: '18px', // При ширине экрана до 1200px
+            perPage: 3,
+          },
+          1704.5: {
+            gap: '12px', // При ширине экрана до 1200px
+            perPage: 3,
+          },
+          1520.5: {
+            gap: '12px', // При ширине экрана до 1200px
+            perPage: 3,
+          },
+          1320.5: {
+            gap: '28px', // При ширине экрана до 768px
+            perPage: 3, // Можно уменьшить количество слайдов на маленьких экранах
+          },
+          480: {
+            gap: '28px', // При ширине экрана до 1200px
+            perPage: 3,
+          }
+        }
+    }).mount();
 }
 
-// Функция перемешивания массива (Фишера-Йетса)
+// Функция перемешивания массива
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
@@ -862,16 +906,4 @@ function shuffleArray(array) {
     }
     return array;
 }
-
-// Функция для перемешивания массива случайным образом
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];  // Обмен элементов местами
-    }
-    return array;
-}
-
-// Вызов функции для генерации случайных карточек
-generateRandomCards();
 
