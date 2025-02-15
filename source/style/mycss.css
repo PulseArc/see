@@ -802,7 +802,19 @@ h4 {
     margin-bottom: 2px;
     /* Подсвечивание бордера красным */
 }
-
+.card:hover .card-tex,
+.card:active .card-tex {
+    color: #ffffff !important;
+    text-shadow:
+        1px 1px 0 #000000,
+        -1px 1px 0 #000000,
+        1px -1px 0 #000000,
+        -1px -1px 0 #000000,
+        0px 1px 0 #000000,
+        1px 0px 0 #000000,
+        -1px 0px 0 #000000,
+        0px -1px 0 #000000;
+}
 
 
 .single-item2 .card:hover .card-img-top {
