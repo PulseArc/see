@@ -3049,7 +3049,7 @@ h4 {
     }
 
     .card-media3 {
-        width: 12rem !important;
+        width: 14rem !important;
         margin-top: 1em;
     }
 
@@ -3058,7 +3058,10 @@ h4 {
         width: 110%;
         height: 100%;
     }
-
+    .img-9x16{
+        width: 14rem !important;
+        height: 100% !important;
+    }
     
 
     .card-rating,
@@ -3107,10 +3110,14 @@ h4 {
         width: 105%;
         height: 100%;
     }
-
-    .sirials-watch-img {
-        width: 120% !important;
+    .img-9x16{
+        width:13rem !important;
         height: 100% !important;
+    }
+
+    .card-media3 {
+        width: 13rem !important;
+        margin-top: 1em;
     }
 
     .card-tex {
@@ -3161,9 +3168,9 @@ h4 {
 
     }
 
-    .sirials-watch-img {
-        width: 117% !important;
-        height: 100% !important;
+    .card-media3 {
+        width: 13rem !important;
+        margin-top: 1em;
     }
 
     .all-flim-img {
@@ -4026,7 +4033,10 @@ h4 {
         height: 100%;
 
     }
-
+    .img-9x16{
+        width: 13rem !important;
+        height: 100% !important;
+    }
     .slider .slick-prev {
         top: 14vh !important;
         /* Поднимаем стрелку вверх */
@@ -4063,6 +4073,10 @@ h4 {
 
         width: 9rem;
         height: 100%;
+    }
+    .img-9x16{
+        width: 13rem !important;
+        height: 100% !important;
     }
 
     .slider .slick-prev {
