@@ -270,9 +270,41 @@ h4 {
 }
 
 
-
-
-
+.splide__arrow svg {
+    fill: white !important;
+    height: 5.2em !important;
+    width: 2em !important;
+}
+.splide__arrow {
+    -ms-flex-align: center;
+    align-items: center;
+    
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    display: -ms-flexbox;
+    display: flex
+;
+    height: 2em;
+    -ms-flex-pack: center;
+    justify-content: center;
+    opacity: 1 !important;
+    padding: 0;
+    position: absolute;
+    top: 40% !important;
+    transform: translateY(-50%);
+    width: 2em;
+    z-index: 1;
+}
+.splide__arrow {
+    background: none !important;
+}
+.second-slider .splide__arrow{
+    top: 38% !important;
+}
+.second-slider1 .splide__arrow{
+    top: 38.5% !important;
+}
 
 .navbar {
     position: relative;
@@ -549,6 +581,13 @@ h4 {
     .card-tex {
         width: 70% !important;
     }
+    .card-media3 .card-tex{
+        width: 95% !important;
+    }
+    .card-media .card-tex{
+        width: 95% !important;
+    }
+
 }
 
 
@@ -764,12 +803,10 @@ h4 {
     /* Подсвечивание бордера красным */
 }
 
-.single-item3 .card:hover .card-img-top {
-    margin-bottom: -2px;
-}
+
 
 .single-item2 .card:hover .card-img-top {
-    margin-bottom: -2px;
+    margin-bottom: -1.8px;
 }
 
 .card-img-top {
@@ -1216,106 +1253,47 @@ footer {
 
 
 
-/* слайдер стрелки  */
-.slick-prev {
-    position: absolute;
-    left: 3vh !important;
-    /* отступ слева  */
-    z-index: 3;
-    top: 145px !important;
-    width: 50px !important;
-    height: 50px !important;
-    border: 0 !important;
-    outline: none !important;
 
-    border-radius: 50% !important;
-    opacity: 0.9 !important;
-    transition: all 0.15s;
-    cursor: pointer;
-
-}
-
-.slick-prev:before {
-    font-size: 0 !important;
-    /* отл старые стрелки */
-}
-
-.slick-prev:hover {
-    opacity: 1 !important;
-    /* прозрачность после наведения */
-
-}
-
-.slick-prev:after {
-    content: '';
-    width: 20px;
-    /* ширина стрелки */
-    height: 20px;
-    /* высота стрелки */
-
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    transform: rotate(45deg);
-    /* поворот   */
-    border-left: 3px solid white;
-    /* потчеркнуть с лева  */
-    border-bottom: 3px solid white;
-    /*  подчернуть снизу */
-}
-
-
-.slick-next {
-    position: absolute;
-    right: 3vh !important;
-    z-index: 3;
-    top: 145px !important;
-    width: 50px !important;
-    height: 50px !important;
-    border: 0 !important;
-    outline: none !important;
-
-    border-radius: 50% !important;
-    opacity: 0.9 !important;
-    transition: all 0.15s;
-    cursor: pointer;
-}
-
-.slick-next:before {
-    font-size: 0 !important;
-}
-
-.slick-next:hover {
-    opacity: 1 !important;
-}
-
-.slick-next:after {
-    content: '';
-    width: 20px;
-    height: 20px;
-
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    transform: rotate(45deg);
-    border-right: 3px solid white;
-    border-top: 3px solid white;
-}
-
-/* конец слайдер стрелки  */
-
-
-.slider-2 .slick-prev {
-    top: 62px !important;
-    /* Поднимаем стрелку вверх */
-}
-
-.slider-2 .slick-next {
-    top: 62px !important;
-    /* Поднимаем стрелку вверх */
-}
 
 @media (min-width: 2300px) {
+    .splide__arrow svg {
+        fill: white !important;
+        height: 7.2em !important;
+        width: 5em !important;
+    }
+    .splide__arrow {
+        -ms-flex-align: center;
+        align-items: center;
+        
+        border: 0;
+        border-radius: 50%;
+        cursor: pointer;
+        display: -ms-flexbox;
+        display: flex
+    ;
+        height: 22em !important;
+        -ms-flex-pack: center;
+        justify-content: center;
+        opacity: 1 !important;
+        padding: 0;
+        position: absolute;
+        top: 42% !important;
+        transform: translateY(-50%);
+        width: 4em !important;
+        z-index: 1;
+    }
+    .splide__arrow {
+        background: none !important;
+    }
+    .second-slider .splide__arrow{
+        top: 32.5% !important;
+    }
+    .second-slider1 .splide__arrow{
+        top: 35% !important;
+    }
+
+
+
     .title {
         font-size: 86px; /* Размер шрифта для "Дюна:" */
     }
@@ -1400,6 +1378,19 @@ footer {
 
     h4 {
         font-size: 210% !important;
+       
+    }
+    .Top-h4{
+        margin-top: 3em;
+    }
+    .card-tex{
+        width: 150% !important;
+    }
+    .card-media3 .card-tex{
+        width: 150% !important;
+    }
+    .card-media .card-tex{
+        width: 150% !important;
     }
     .card-media3 {
        
@@ -1410,9 +1401,49 @@ footer {
         width: 28rem !important;
         height: 100% !important;
     }
+    .img-9x16{
+        width: 23rem !important;
+        height: 100% !important;
+    }
 }
 
 @media (min-width: 2019px) and (max-width: 2300px) {
+    .splide__arrow svg {
+        fill: white !important;
+        height: 7.2em !important;
+        width: 5em !important;
+    }
+    .splide__arrow {
+        -ms-flex-align: center;
+        align-items: center;
+        
+        border: 0;
+        border-radius: 50%;
+        cursor: pointer;
+        display: -ms-flexbox;
+        display: flex
+    ;
+        height: 22em !important;
+        -ms-flex-pack: center;
+        justify-content: center;
+        opacity: 1 !important;
+        padding: 0;
+        position: absolute;
+        top: 41% !important;
+        transform: translateY(-50%);
+        width: 4em !important;
+        z-index: 1;
+    }
+    .splide__arrow {
+        background: none !important;
+    }
+    .second-slider .splide__arrow{
+        top: 30.5% !important;
+    }
+    .second-slider1 .splide__arrow{
+        top: 34% !important;
+    }
+
     .title {
         font-size: 72px; /* Размер шрифта для "Дюна:" */
     }
@@ -1495,7 +1526,18 @@ footer {
 
     h4 {
         font-size: 190% !important;
+        
     }
+    .Top-h4{
+        margin-top: 2.5em;
+    }
+    .card-media3 .card-tex{
+        width: 150% !important;
+    }
+    .card-tex{
+        width: 150% !important;
+    }
+    
     .card-media3 {
        
         margin-top: 1em;
@@ -1505,62 +1547,17 @@ footer {
         width: 23rem !important;
         height: 100% !important;
     }
+    .img-9x16{
+        width: 19rem !important;
+        height: 100% !important;
+    }
 }
 
 @media (min-width: 2019px) and (max-width: 4000px) {
 
 
 
-    .slider .slick-prev {
-        top: 40% !important;
-        /* Поднимаем стрелку вверх */
-    }
-
-    .slider .slick-next {
-        top: 40% !important;
-        /* Поднимаем стрелку вверх */
-    }
-
-    .slider-2 .slick-prev {
-        top: 31% !important;
-        /* Поднимаем стрелку вверх */
-    }
-
-    .slider-2 .slick-next {
-        top: 31% !important;
-        /* Поднимаем стрелку вверх */
-    }
-
-    .slick-prev:after {
-        content: '';
-        width: 40px;
-        /* ширина стрелки */
-        height: 40px;
-        /* высота стрелки */
-
-        position: absolute;
-        top: 15px;
-        left: 15px;
-        transform: rotate(45deg);
-        /* поворот   */
-        border-left: 3px solid white;
-        /* потчеркнуть с лева  */
-        border-bottom: 3px solid white;
-        /*  подчернуть снизу */
-    }
-
-    .slick-next:after {
-        left: -1vh !important;
-        width: 40px;
-        /* ширина стрелки */
-        height: 40px;
-        /* высота стрелки */
-
-
-        /*  подчернуть снизу */
-
-
-    }
+    
 
 
 
@@ -1620,6 +1617,42 @@ footer {
 }
 
 @media (min-width: 1900px) and (max-width: 2019px) {
+    .splide__arrow svg {
+        fill: white !important;
+        height: 7.2em !important;
+        width: 3.5em !important;
+    }
+    .splide__arrow {
+        -ms-flex-align: center;
+        align-items: center;
+        
+        border: 0;
+        border-radius: 50%;
+        cursor: pointer;
+        display: -ms-flexbox;
+        display: flex
+    ;
+        height: 22em !important;
+        -ms-flex-pack: center;
+        justify-content: center;
+        opacity: 1 !important;
+        padding: 0;
+        position: absolute;
+        top: 44% !important;
+        transform: translateY(-50%);
+        width: 3.5em !important;
+        z-index: 1;
+    }
+    .splide__arrow {
+        background: none !important;
+    }
+    .second-slider .splide__arrow{
+        top: 36.5% !important;
+    }
+    .second-slider1 .splide__arrow{
+        top: 40% !important;
+    }
+
     .title {
         font-size: 72px; /* Размер шрифта для "Дюна:" */
     }
@@ -1703,6 +1736,10 @@ footer {
 
     h4 {
         font-size: 160% !important;
+       
+    }
+    .Top-h4{
+        margin-top: 2.5em;
     }
 
     .card-media3 {
@@ -1712,6 +1749,10 @@ footer {
     .sirials-watch-img {
         
         width: 22rem !important;
+        height: 100% !important;
+    }
+    .img-9x16{
+        width: 18rem !important;
         height: 100% !important;
     }
 
@@ -1727,7 +1768,15 @@ footer {
         font-size: 150%;
 
     }
-
+    .card-media3 .card-tex{
+        width: 150% !important;
+    }
+    .card-media .card-tex{
+        width: 150% !important;
+    }
+    .card-tex{
+        width: 140% !important;
+    }
     .year {
         font-size: 90% !important;
     }
@@ -1757,59 +1806,6 @@ footer {
     }
 }
 
-@media (min-width: 1521px) and (max-width: 2019px) {
-
-
-    .slider .slick-prev {
-        top: 40% !important;
-        /* Поднимаем стрелку вверх */
-    }
-
-    .slider .slick-next {
-        top: 40% !important;
-        /* Поднимаем стрелку вверх */
-    }
-
-    .slider-2 .slick-prev {
-        top: 32% !important;
-        /* Поднимаем стрелку вверх */
-    }
-
-    .slider-2 .slick-next {
-        top: 32% !important;
-        /* Поднимаем стрелку вверх */
-    }
-
-    .slick-prev:after {
-        content: '';
-        width: 40px;
-        /* ширина стрелки */
-        height: 40px;
-        /* высота стрелки */
-
-        position: absolute;
-        top: 15px;
-        left: 15px;
-        transform: rotate(45deg);
-        /* поворот   */
-        border-left: 3px solid white;
-        /* потчеркнуть с лева  */
-        border-bottom: 3px solid white;
-        /*  подчернуть снизу */
-    }
-
-    .slick-next:after {
-        left: -1vh !important;
-        width: 40px;
-        /* ширина стрелки */
-        height: 40px;
-        /* высота стрелки */
-
-
-        /*  подчернуть снизу */
-    }
-
-}
 
 @media (min-width: 1320px) and (max-width: 4000px) {
     .span-rating {
@@ -1824,59 +1820,7 @@ footer {
     }
 }
 
-@media (min-width: 1321px) and (max-width: 1521px) {
 
-
-    .slider .slick-prev {
-        top: 40% !important;
-        /* Поднимаем стрелку вверх */
-    }
-
-    .slider .slick-next {
-        top: 40% !important;
-        /* Поднимаем стрелку вверх */
-    }
-
-    .slider-2 .slick-prev {
-        top: 33% !important;
-        /* Поднимаем стрелку вверх */
-    }
-
-    .slider-2 .slick-next {
-        top: 33% !important;
-        /* Поднимаем стрелку вверх */
-    }
-
-    .slick-prev:after {
-        content: '';
-        width: 30px;
-        /* ширина стрелки */
-        height: 30px;
-        /* высота стрелки */
-
-        position: absolute;
-        top: 15px;
-        left: 15px;
-        transform: rotate(45deg);
-        /* поворот   */
-        border-left: 3px solid white;
-        /* потчеркнуть с лева  */
-        border-bottom: 3px solid white;
-        /*  подчернуть снизу */
-    }
-
-    .slick-next:after {
-        left: 0vh !important;
-        width: 30px;
-        /* ширина стрелки */
-        height: 30px;
-        /* высота стрелки */
-
-
-        /*  подчернуть снизу */
-    }
-
-}
 
 .mobilescreen {
     display: none;
@@ -2601,6 +2545,41 @@ footer {
 }
 
 @media (min-width: 1705px) and (max-width: 1899.5px) {
+    .splide__arrow svg {
+        fill: white !important;
+        height: 7.2em !important;
+        width: 3.5em !important;
+    }
+    .splide__arrow {
+        -ms-flex-align: center;
+        align-items: center;
+        
+        border: 0;
+        border-radius: 50%;
+        cursor: pointer;
+        display: -ms-flexbox;
+        display: flex
+    ;
+        height: 22em !important;
+        -ms-flex-pack: center;
+        justify-content: center;
+        opacity: 1 !important;
+        padding: 0;
+        position: absolute;
+        top: 44% !important;
+        transform: translateY(-50%);
+        width: 3.5em !important;
+        z-index: 1;
+    }
+    .splide__arrow {
+        background: none !important;
+    }
+    .second-slider .splide__arrow{
+        top: 36.5% !important;
+    }
+    .second-slider1 .splide__arrow{
+        top: 40.5% !important;
+    }
    
         .title {
             font-size: 68px; /* Размер шрифта для "Дюна:" */
@@ -2708,7 +2687,12 @@ footer {
     }
 
     .sirials-watch-img {
-        width: 20rem !important;
+        width: 22rem !important;
+        height: 100% !important;
+        
+    }
+    .img-9x16{
+        width: 18rem !important;
         height: 100% !important;
     }
 
@@ -2726,7 +2710,10 @@ footer {
     }
 
     h4 {
-        font-size: 130% !important;
+        font-size: 150% !important;
+    }
+    .Top-h4{
+        margin-top: 2.5em;
     }
 
     .card-body .card-tex {
@@ -2734,15 +2721,22 @@ footer {
         ;
         /* Увеличение размера текста */
     }
+    .card-tex{
+        width: 115% !important;
+    }
+    .card-media3 .card-tex{
+        width: 130% !important;
+    }
+    .card-media .card-tex{
+        width: 130% !important;
+    }
 }
 
 .navbar {
     font-size: 120% !important;
 }
 
-h4 {
-    font-size: 130%;
-}
+
 
 .card-tex {
     font-size: 130%;
@@ -2785,6 +2779,42 @@ h4 {
 
 
 @media (min-width: 1521px) and (max-width: 1705px) {
+    .splide__arrow svg {
+        fill: white !important;
+        height: 7.2em !important;
+        width: 2.8em !important;
+    }
+    .splide__arrow {
+        -ms-flex-align: center;
+        align-items: center;
+        
+        border: 0;
+        border-radius: 50%;
+        cursor: pointer;
+        display: -ms-flexbox;
+        display: flex
+    ;
+        height: 22em !important;
+        -ms-flex-pack: center;
+        justify-content: center;
+        opacity: 1 !important;
+        padding: 0;
+        position: absolute;
+        top: 44% !important;
+        transform: translateY(-50%);
+        width: 2.8em !important;
+        z-index: 1;
+    }
+    .splide__arrow {
+        background: none !important;
+    }
+    .second-slider .splide__arrow{
+        top: 36.5% !important;
+    }
+    .second-slider1 .splide__arrow{
+        top: 40.5% !important;
+    }
+
     .title {
         font-size: 65px; /* Размер шрифта для "Дюна:" */
     }
@@ -2888,10 +2918,13 @@ h4 {
     }
 
     .card-media3 {
-        width: 13rem !important;
+        width: 14rem !important;
         margin-top: 1em;
     }
-
+    .img-9x16{
+        width: 15rem !important;
+        height: 100% !important;
+    }
     
 
     .card-rating,
@@ -2906,6 +2939,9 @@ h4 {
 
     h4 {
         font-size: 140% !important;
+    }
+    .Top-h4{
+        margin-top: 2.5em;
     }
 
     .card-body .card-tex {
@@ -2924,8 +2960,10 @@ h4 {
 
     .card-tex {
         font-size: 130%;
-
-    }
+}
+.card-tex{
+    width: 100% !important;
+}
 
     .year {
         font-size: 90% !important;
@@ -2955,6 +2993,41 @@ h4 {
 }
 
 @media (min-width: 1439px) and (max-width: 1521px) {
+    .splide__arrow svg {
+        fill: white !important;
+        height: 7.2em !important;
+        width: 2.8em !important;
+    }
+    .splide__arrow {
+        -ms-flex-align: center;
+        align-items: center;
+        
+        border: 0;
+        border-radius: 50%;
+        cursor: pointer;
+        display: -ms-flexbox;
+        display: flex
+    ;
+        height: 22em !important;
+        -ms-flex-pack: center;
+        justify-content: center;
+        opacity: 1 !important;
+        padding: 0;
+        position: absolute;
+        top: 44% !important;
+        transform: translateY(-50%);
+        width: 2.8em !important;
+        z-index: 1;
+    }
+    .splide__arrow {
+        background: none !important;
+    }
+    .second-slider .splide__arrow{
+        top: 38.5% !important;
+    }
+    .second-slider1 .splide__arrow{
+        top: 40.5% !important;
+    }
     .title {
         font-size: 60px; /* Размер шрифта для "Дюна:" */
     }
@@ -3029,6 +3102,9 @@ h4 {
         font-size: 96% !important;
     }
 
+    .Top-h4{
+        margin-top: 2em;
+    }
 
 }
 
@@ -3113,11 +3189,13 @@ h4 {
     .img-9x16{
         width:13rem !important;
         height: 100% !important;
+        
     }
 
     .card-media3 {
         width: 13rem !important;
         margin-top: 1em;
+        
     }
 
     .card-tex {
@@ -3989,30 +4067,13 @@ h4 {
         /* Расширение контейнера влево */
     }
 
-    .slider .slick-prev {
-        top: 14vh !important;
-        /* Поднимаем стрелку вверх */
-    }
-
-    .slider .slick-next {
-        top: 14vh !important;
-        /* Поднимаем стрелку вверх */
-    }
 
 
 
 
 
 
-    .slider-2 .slick-prev {
-        top: 7vh !important;
-        /* Поднимаем стрелку вверх */
-    }
 
-    .slider-2 .slick-next {
-        top: 7vh !important;
-        /* Поднимаем стрелку вверх */
-    }
 }
 
 @media screen and (max-width: 480px) {
@@ -4037,25 +4098,7 @@ h4 {
         width: 13rem !important;
         height: 100% !important;
     }
-    .slider .slick-prev {
-        top: 14vh !important;
-        /* Поднимаем стрелку вверх */
-    }
-
-    .slider .slick-next {
-        top: 14vh !important;
-        /* Поднимаем стрелку вверх */
-    }
-
-    .slider-2 .slick-prev {
-        top: 8vh !important;
-        /* Поднимаем стрелку вверх */
-    }
-
-    .slider-2 .slick-next {
-        top: 8vh !important;
-        /* Поднимаем стрелку вверх */
-    }
+   
 
 }
 
@@ -4079,25 +4122,9 @@ h4 {
         height: 100% !important;
     }
 
-    .slider .slick-prev {
-        top: 15vh !important;
-        /* Поднимаем стрелку вверх */
-    }
+   
 
-    .slider .slick-next {
-        top: 15vh !important;
-        /* Поднимаем стрелку вверх */
-    }
-
-    .slider-2 .slick-prev {
-        top: 9vh !important;
-        /* Поднимаем стрелку вверх */
-    }
-
-    .slider-2 .slick-next {
-        top: 9vh !important;
-        /* Поднимаем стрелку вверх */
-    }
+    
 
 
 }
@@ -4153,6 +4180,9 @@ h4 {
 @media (max-width: 950px) {
     .card-tex {
         width: 65% !important;
+    }
+    .card-media3 .card-tex{
+        width: 95% !important;
     }
 
 }

@@ -366,7 +366,7 @@ z-index: -1;
 .mobile-details{
   display: block;
   position: relative;
-  top: -2em;
+  margin-top: -2em;
   
 }
 
@@ -538,7 +538,7 @@ z-index: -1;
   }
   .mobile-details{ 
      
-    top: -4em ;
+    margin-top: -4em ;
      
     
   }
@@ -592,7 +592,7 @@ z-index: -1;
     }
     .mobile-details{
       
-      top: -7em ;
+      margin-top: -7em ;
       
        
     }
@@ -662,7 +662,7 @@ z-index: -1;
   }
   .mobile-details{
      
-    top: -9em ;
+    margin-top: -9em ;
      
     
   }
@@ -718,7 +718,7 @@ z-index: -1;
     }
      .mobile-details{
      
-    top: -10em ; 
+      margin-top: -10em ; 
     
     
   }
@@ -1144,6 +1144,7 @@ margin-left: 4em;
 /* конец */
 @media (min-width: 2300px) and (max-width: 4000px) {
   .movie-card-img{
+    top: 2em;
     width: 30rem !important;
     height: 100% !important;
   }
@@ -1194,13 +1195,14 @@ margin-left: 4em;
 
 @media (min-width: 1900px) and (max-width: 2300px) {
   .movie-card-img{
+    top: 2em;
     width: 24rem !important;
     height: 100% !important;
   }
   .card-description {
     font-size: 24.5px;
     left: 17.5em;
-    top: -1em;
+    top: 0.5em;
 }
 .mobile-details{
   margin-top: -12.7em;
@@ -1220,13 +1222,14 @@ margin-left: 4em;
 
 @media (min-width: 1705px) and (max-width: 1900px){
   .movie-card-img{
+    top: 2em;
     width: 21rem !important;
     height: 100% !important;
   }
   .card-description {
     font-size: 21.5px;
     left: 17.5em;
-    top: -0.5em;
+    top: 1em;
 }
 .mobile-details{
   margin-top: -1.7em;
@@ -1253,13 +1256,14 @@ margin-left: 4em;
 @media (min-width: 1521px) and (max-width: 1705px){
   
   .movie-card-img{
+    top: 2em;
     width: 19rem !important;
     height: 100%;
   }
   .card-description {
     font-size: 19px;
     left: 17.5em;
-    top: 0.5em;
+    top: 2em;
 }
 .mobile-details{
   margin-top: -4.7em;
@@ -1285,15 +1289,17 @@ margin-left: 4em;
 
 
 @media (min-width: 1439px) and (max-width: 1521px) {
+
   
   .movie-card-img{
+    top: 2em;
     width: 17rem !important;
     height: 100%;
   }
   .card-description {
     font-size: 18px;
     left: 16.5em;
-    top: 0em;
+    top: 3.5em;
 }
 .mobile-details{
   margin-top: -7.7em;
@@ -1319,6 +1325,14 @@ font-size: 19px;
   }
 }
 @media (min-width: 1300px) and (max-width: 1439px) {
+  .movie-card-img{
+    top: 2em;
+    
+  }
+  .card-description {
+   
+    top: 3.5em;
+}
   .mobile-details{
     
     margin-top: -6.25em;
