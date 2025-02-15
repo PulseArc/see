@@ -257,7 +257,9 @@ document.addEventListener('DOMContentLoaded', function () {
     arrows: true,
     pagination: false,
     drag: true,
-    perPage: 3, // Показываем 3 карточки (слайда)
+    perPage: 3,
+    autoplay: true, // Автопрокрутка
+    interval: 3000, // Показываем 3 карточки (слайда)
     breakpoints: {
       5000: {
         gap: '280px', // При ширине экрана до 1200px
@@ -305,7 +307,9 @@ document.addEventListener('DOMContentLoaded', function () {
     arrows: true,
     pagination: false,
     drag: true,
-    perPage: 3, // Показываем 3 карточки (слайда)
+    perPage: 3,
+    autoplay: true, // Автопрокрутка
+    interval: 3300, 
     breakpoints: {
       5000: {
         gap: '23px', // При ширине экрана до 1200px
@@ -360,7 +364,9 @@ document.addEventListener('DOMContentLoaded', function () {
     arrows: true,
     pagination: false,
     drag: true,
-    perPage: 3, // Показываем 3 карточки (слайда)
+    perPage: 3,
+    autoplay: true, // Автопрокрутка
+    interval: 4300, 
     breakpoints: {
       5000: {
         gap: '280px', // При ширине экрана до 1200px
@@ -408,7 +414,9 @@ document.addEventListener('DOMContentLoaded', function () {
     arrows: true,
     pagination: false,
     drag: true,
-    perPage: 3, // Показываем 3 карточки (слайда)
+    perPage: 3,
+    autoplay: true, // Автопрокрутка
+    interval: 4600, 
     breakpoints: {
       5000: {
         gap: '280px', // При ширине экрана до 1200px
@@ -454,7 +462,9 @@ document.addEventListener('DOMContentLoaded', function () {
     arrows: true,
     pagination: false,
     drag: true,
-    perPage: 3, // Показываем 3 карточки (слайда)
+    perPage: 3, 
+    autoplay: true, // Автопрокрутка
+    interval: 4700,// Показываем 3 карточки (слайда)
     breakpoints: {
       5000: {
         gap: '280px', // При ширине экрана до 1200px

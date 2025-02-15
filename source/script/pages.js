@@ -154,7 +154,9 @@ document.addEventListener('DOMContentLoaded', function () {
     arrows: true,
     pagination: false,
     drag: true,
-    perPage: 3, // Показываем 3 карточки (слайда)
+    perPage: 3,
+    autoplay: true, // Автопрокрутка
+    interval: 3300, // Показываем 3 карточки (слайда)
     breakpoints: {
       5000: {
         gap: '280px', // При ширине экрана до 1200px
