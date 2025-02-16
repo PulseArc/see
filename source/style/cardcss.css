@@ -819,20 +819,20 @@ html, body {
   position: relative;
   top: -11.5em;
   display: inline-flex;
-  justify-content: center; /* Выравнивание по горизонтали */
+  justify-content: center;
   align-items: center;
-  background-color:  rgb(43, 226, 107); /* темный красный */
-  
+  background-color: rgb(43, 226, 107);
   color: #000000;
   font-family: "SegoeUI", sans-serif;
   width: 70%;
-        height: 45px;
-        font-weight: 600;
-        border: none;
-        font-size: 16px;
-        border-radius: 6px;
-        gap: 8px;
-       padding-right: 0.3em;
+  height: 45px;
+  font-weight: 600;
+  border: none;
+  font-size: 16px;
+  border-radius: 6px;
+  gap: 8px;
+  padding-right: 0.3em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Добавление тени */
 }
 /* кнопка лайк */
 .details-content-area {
@@ -927,7 +927,7 @@ margin-left: 4em;
 .Phone-version::before {
   content: "";
   position: absolute;
-  top: -4em; /* Сдвигаем наверх, чтобы затемнение начиналось ниже */
+  top: -5em; /* Сдвигаем наверх, чтобы затемнение начиналось ниже */
   left: 0;
   width: 100%;
   height: 15%;
@@ -943,7 +943,7 @@ margin-left: 4em;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 30%;
+  height: 50%;
   background: linear-gradient(rgba(0, 0, 0, 0) 0%, black 100%);
   z-index: 2;
   pointer-events: none;
