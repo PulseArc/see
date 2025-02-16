@@ -10,6 +10,7 @@
 
 .results-h4 {
     margin-left: 7.6vh;
+    margin-top: 1em;
 }
 
 .no-results {
@@ -1254,7 +1255,7 @@ footer {
 }
 
 .all-film {
-    margin-left: 5px;
+    margin-left: 1em;
 }
 
 @media (min-width: 1521px) and (max-width: 4000px) {
@@ -1262,7 +1263,7 @@ footer {
 
     .card-results {
 
-        margin-left: 1vh !important;
+        margin-left: 0;
 
     }
 
@@ -1289,6 +1290,10 @@ footer {
 
 
 @media (min-width: 2300px) {
+    .results-h4 {
+        
+        margin-top: 2.5em;
+    }
     .splide__arrow svg {
         fill: white !important;
         height: 7.2em !important;
@@ -1448,8 +1453,56 @@ footer {
         height: 100% !important;
     }
 }
+@media (min-width: 2300px) {
 
+    .full-card .all-flim-img {
+        width: 150% ;
+        height: 100%;
+    }
+    }
+@media (min-width: 2250px) and (max-width: 2300px) {
+
+    .full-card .all-flim-img {
+        width: 21.5rem ;
+        height: 100%;
+    }
+    }
+@media (min-width: 2200px) and (max-width: 2250px) {
+
+    .full-card .all-flim-img {
+        width: 21rem ;
+        height: 100%;
+    }
+    }
+@media (min-width: 2150px) and (max-width: 2200px) {
+
+    .full-card .all-flim-img {
+        width: 20.5rem ;
+        height: 100%;
+    }
+    }
+    @media (min-width: 2100px) and (max-width: 2150px) {
+
+        .full-card .all-flim-img {
+            width: 20rem ;
+            height: 100%;
+        }
+        }
+@media (min-width: 2019px) and (max-width: 2100px) {
+
+.full-card .all-flim-img {
+    width: 19.5rem ;
+    height: 100%;
+}
+}
 @media (min-width: 2019px) and (max-width: 2300px) {
+    .results-h4 {
+        
+        margin-top: 2.5em;
+    }
+    .card-results{
+       margin-left: 0.01vh !important;
+    }
     .splide__arrow svg {
         fill: white !important;
         height: 7.2em !important;
@@ -1580,8 +1633,13 @@ footer {
     .Top-h4{
         margin-top: 2.5em;
     }
+    
+    
     .card-media3 .card-tex{
         width: 150% !important;
+    }
+    .cards-from-search .card-tex{
+      width: 100% !important;
     }
     .card-tex{
         width: 150% !important;
@@ -1620,10 +1678,7 @@ footer {
     }
 
 
-    .full-card .all-flim-img {
-        width: 150% !important;
-        height: 100%;
-    }
+    
 
     .card-tex {
         font-size: 180% !important;
@@ -1666,6 +1721,10 @@ footer {
 }
 
 @media (min-width: 1900px) and (max-width: 2019px) {
+    .results-h4 {
+        
+        margin-top: 2.5em;
+    }
     .splide__arrow svg {
         fill: white !important;
         height: 7.2em !important;
@@ -2508,10 +2567,11 @@ footer {
 
 @media (min-width: 1900px) {
 
-
+   
+    
 
     .all-film {
-        margin-left: 40px !important;
+        margin-left: 1em !important;
     }
 
     .card-media2 {
@@ -2724,7 +2784,7 @@ footer {
     }
 
     .all-film {
-        margin-left: 40px !important;
+        margin-left: 1.2em !important;
 
     }
 
@@ -2967,7 +3027,7 @@ footer {
 
 
     .all-film {
-        margin-left: 40px !important;
+        margin-left: 1.5em !important;
 
     }
 
@@ -3249,7 +3309,7 @@ footer {
 
 @media screen and (max-width: 1320px) {
     .all-film {
-        margin-left: 15px !important;
+        margin-left: 1.2em !important;
 
     }
 
@@ -3320,7 +3380,7 @@ footer {
     }
 
     .all-film {
-        margin-left: 15px !important;
+        margin-left: 1em !important;
 
     }
 
@@ -3344,7 +3404,7 @@ footer {
 
 @media screen and (max-width: 1260px) {
     .all-film {
-        margin-left: 10px !important;
+        margin-left: 1.2em !important;
 
     }
 
@@ -3377,7 +3437,7 @@ footer {
 
 @media screen and (max-width: 1230px) {
     .all-film {
-        margin-left: 10px !important;
+        margin-left: 1.2em !important;
 
     }
 
@@ -3391,7 +3451,7 @@ footer {
 
 @media screen and (max-width: 1200px) {
     .all-film {
-        margin-left: 10px !important;
+        margin-left: 1.2em !important;
 
     }
 
@@ -3424,7 +3484,7 @@ footer {
 
 @media screen and (max-width: 1170px) {
     .all-film {
-        margin-left: 10px !important;
+        margin-left: 1.25em !important;
 
     }
 
@@ -3447,7 +3507,7 @@ footer {
 
 @media screen and (max-width: 1140px) {
     .all-film {
-        margin-left: 10px !important;
+        margin-left: 1.2em !important;
 
     }
 
@@ -3470,7 +3530,7 @@ footer {
 
 @media screen and (max-width: 1110px) {
     .all-film {
-        margin-left: 10px !important;
+        margin-left: 1.2em !important;
 
     }
 
@@ -3481,6 +3541,15 @@ footer {
     }
 }
 
+@media screen and (max-width: 1099px) {
+    .all-film {
+        margin-left: 1.1em !important;
+
+    }
+
+
+    
+}
 @media screen and (max-width: 1070px) {
 
 
@@ -3550,7 +3619,7 @@ footer {
 
 
     .all-film {
-        margin-left: 8px !important;
+        margin-left: 0.7em !important;
 
     }
 
@@ -3574,7 +3643,7 @@ footer {
 
 
     .all-film {
-        margin-left: 5px !important;
+        margin-left: 0.6em !important;
 
     }
 
@@ -3586,7 +3655,10 @@ footer {
 
 @media screen and (max-width: 960px) {
 
+    .all-film {
+        margin-left: 0.61em !important;
 
+    }
 
     .all-flim-img {
         width: 75% !important;
@@ -3598,7 +3670,7 @@ footer {
 
 
     .all-film {
-        margin-left: 5px !important;
+        margin-left: 0.61em !important;
 
     }
 
@@ -3622,7 +3694,7 @@ footer {
 
 
     .all-film {
-        margin-left: 5px !important;
+        margin-left: 0.61em !important;
 
     }
 
@@ -3646,7 +3718,7 @@ footer {
 
 
     .all-film {
-        margin-left: 5px !important;
+        margin-left: 0.7em !important;
 
     }
 
@@ -4346,7 +4418,10 @@ footer {
     .card-tex {
         width: 60% !important;
     }
+    .all-film {
+        margin-left: 0.5em !important;
 
+    }
 }
 
 @media (max-width: 350px) {
