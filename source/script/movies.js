@@ -212,6 +212,13 @@ function generateRandomCards() {
             "rating":"7.6"
         },
         {
+            "name": "21 мост",
+            "image": "http://image.tmdb.org/t/p/w500//lWDDukaPvDzIRYxgUuGFIH5YfyM.jpg",
+            "link": "/see/card/movies/801/21 Мост.html",
+            "year": "2019",
+            "rating":"6.8"
+        },
+        {
             "name": "Эмилия Перес",
             "image": "https://image.tmdb.org/t/p/w500//6KvGEOCUBsgTUPkl1oWhH0Y3ePy.jpg",
             "link": "/see/card/movies/Emilia%20Perez/Emilia%20Perez.html",
