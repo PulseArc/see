@@ -201,7 +201,37 @@ document.getElementById("show-more-btn2").addEventListener("click", function () 
   }
 });
 // конец
+document.getElementById("show-more-btn3").addEventListener("click", function () {
+  const button = this;
+  const hiddenCards = document.querySelectorAll(".card-container3.hidden");
+  const allCards = document.querySelectorAll(".card-container3");
 
+  if (button.textContent === "Ещё") {
+    // Показать до 24 карточек
+    hiddenCards.forEach((card, index) => {
+      if (index < 24) {
+        card.classList.remove("hidden");
+      }
+    });
+
+    // Проверяем, есть ли ещё скрытые карточки
+    if (document.querySelectorAll(".card-container3.hidden").length === 0) {
+      button.textContent = "Скрыть"; // Меняем текст на "Скрыть"
+      button.classList.add("red"); // Добавляем красный фон
+    }
+  } else {
+    // Скрыть все карточки, кроме первых 6
+    allCards.forEach((card, index) => {
+      if (index >= 0) {
+        card.classList.add("hidden");
+      }
+    });
+
+    button.textContent = "Ещё"; // Меняем текст на "Ещё"
+    button.classList.remove("red"); // Убираем красный фон
+  }
+});
+// конец
 // ссылки и блоб на фильмы
 
       document.addEventListener("DOMContentLoaded", function() {
@@ -258,8 +288,7 @@ document.addEventListener('DOMContentLoaded', function () {
     pagination: false,
     drag: true,
     perPage: 3,
-    autoplay: true, // Автопрокрутка
-    interval: 3000, // Показываем 3 карточки (слайда)
+    autoplay: false, // Автопрокрутка/
     breakpoints: {
       5000: {
         gap: '280px', // При ширине экрана до 1200px
@@ -308,8 +337,7 @@ document.addEventListener('DOMContentLoaded', function () {
     pagination: false,
     drag: true,
     perPage: 3,
-    autoplay: true, // Автопрокрутка
-    interval: 3300, 
+    autoplay: false, // Автопрокрутка 
     breakpoints: {
       5000: {
         gap: '23px', // При ширине экрана до 1200px
@@ -339,8 +367,12 @@ document.addEventListener('DOMContentLoaded', function () {
         gap: '28px', // При ширине экрана до 768px
         perPage: 3, // Можно уменьшить количество слайдов на маленьких экранах
       },
+      1050: {
+        gap: '12px', // При ширине экрана до 1200px
+        perPage: 3,
+      },
       480: {
-        gap: '28px', // При ширине экрана до 1200px
+        gap: '12px', // При ширине экрана до 1200px
         perPage: 3,
       }
     }
@@ -365,8 +397,7 @@ document.addEventListener('DOMContentLoaded', function () {
     pagination: false,
     drag: true,
     perPage: 3,
-    autoplay: true, // Автопрокрутка
-    interval: 4300, 
+    autoplay: false,
     breakpoints: {
       5000: {
         gap: '280px', // При ширине экрана до 1200px
@@ -415,8 +446,7 @@ document.addEventListener('DOMContentLoaded', function () {
     pagination: false,
     drag: true,
     perPage: 3,
-    autoplay: true, // Автопрокрутка
-    interval: 4600, 
+    autoplay: false,
     breakpoints: {
       5000: {
         gap: '280px', // При ширине экрана до 1200px
@@ -463,8 +493,7 @@ document.addEventListener('DOMContentLoaded', function () {
     pagination: false,
     drag: true,
     perPage: 3, 
-    autoplay: true, // Автопрокрутка
-    interval: 4700,// Показываем 3 карточки (слайда)
+    autoplay: false,
     breakpoints: {
       5000: {
         gap: '280px', // При ширине экрана до 1200px
@@ -498,6 +527,52 @@ document.addEventListener('DOMContentLoaded', function () {
   }).mount();
 });
 
+
+document.addEventListener('DOMContentLoaded', function () {
+  new Splide('#pop-anime', {
+    type: 'loop',
+    focus: 'center',
+    autoWidth: true, 
+    gap: '40px', // По умолчанию 40px
+    pauseOnHover: true,
+    pauseOnFocus: true,
+    arrows: true,
+    pagination: false,
+    drag: true,
+    perPage: 3,
+    autoplay: false,
+    breakpoints: {
+      5000: {
+        gap: '280px', // При ширине экрана до 1200px
+        perPage: 3,
+      },
+      2299.5: {
+        gap: '198px', // При ширине экрана до 1200px
+        perPage: 3,
+      },
+      2018.5: {
+        gap: '180px', // При ширине экрана до 1200px
+        perPage: 3,
+      },
+      1899.5: {
+        gap: '180px', // При ширине экрана до 1200px
+        perPage: 3,
+      },
+      1704.5: {
+        gap: '100px', // При ширине экрана до 1200px
+        perPage: 3,
+      },
+      1520.5: {
+        gap: '100px', // При ширине экрана до 1200px
+        perPage: 3,
+      },
+      1320.5: {
+        gap: '93px', // При ширине экрана до 768px
+        perPage: 3, // Можно уменьшить количество слайдов на маленьких экранах
+      }
+    }
+  }).mount();
+});
 
 
 
