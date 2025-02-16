@@ -703,6 +703,7 @@ h4 {
          bottom: 7em; /* Фиксируем блок от нижнего края */
         
      }
+    
 }
 
 @media (max-width: 900px) {
@@ -729,18 +730,35 @@ h4 {
     }
 .btn-name-film {
     left: 7.3%;
-     bottom: 7em; /* Фиксируем блок от нижнего края */
+     bottom: 6em; /* Фиксируем блок от нижнего края */
     
  }
 }
+
 @media (max-width: 850px) {
+    .btn-name-film {
+        left: 7.3%;
+         bottom: 6.5em ; /* Фиксируем блок от нижнего края */
+        
+     }
+}
+@media (max-width: 800px) {
+    .btn-name-film {
+        left: 7.3%;
+         bottom: 4.5em; /* Фиксируем блок от нижнего края */
+        
+     }
+    
+}
+@media (max-width: 770px) {
     .btn-name-film {
         left: 7.3%;
          bottom: 6.5em; /* Фиксируем блок от нижнего края */
         
      }
+    
 }
-@media (max-width: 800px) {
+@media (max-width: 600px) {
     .btn-name-film {
         left: 7.3%;
          bottom: 6em; /* Фиксируем блок от нижнего края */
@@ -2447,7 +2465,7 @@ footer {
         width: 9rem;
     }
 
-
+    
 
 }
 
@@ -3486,7 +3504,10 @@ footer {
 
 @media screen and (max-width: 1050px) {
 
-
+.img-9x16{
+    width: 12rem !important;
+    height: 90% !important;
+}
 
 
     .all-flim-img {
@@ -4155,7 +4176,7 @@ footer {
 
     }
     .img-9x16{
-        width: 13rem !important;
+        width: 12rem !important;
         height: 100% !important;
     }
    
@@ -4178,7 +4199,7 @@ footer {
         height: 100%;
     }
     .img-9x16{
-        width: 13rem !important;
+        width: 12rem !important;
         height: 100% !important;
     }
 
