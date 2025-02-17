@@ -822,6 +822,7 @@ html, body {
   justify-content: center;
   align-items: center;
   background-color: rgb(43, 226, 107);
+  
   color: #000000;
   font-family: "SegoeUI", sans-serif;
   width: 70%;
@@ -833,6 +834,7 @@ html, body {
   gap: 8px;
   padding-right: 0.3em;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Добавление тени */
+  
 }
 /* кнопка лайк */
 .details-content-area {
