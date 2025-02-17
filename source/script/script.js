@@ -1821,6 +1821,16 @@ const data = [
         "year": "2024",
         "rating":"8.6"
     },
+
+    // Аниме
+    {
+        "name": "Башня Бога",
+        "image": "http://image.tmdb.org/t/p/w500//m4FQUNPbxonuv4kcFm1YgyRgl2C.jpg",
+        "link": "/see/card/anime/100-01/Башня Бога.html",
+        "year": "2020",
+        "rating":"8.3"
+    },
+    // Конец
     
 ];
 $('#search').keyup(function () {
