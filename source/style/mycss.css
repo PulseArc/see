@@ -371,117 +371,21 @@ h4 {
 .nav-link {
     color: #ECF0F1 !important;
     position: relative;
-    /* Устанавливаем относительное позиционирование для текста */
-    padding-bottom: 1px;
+    padding: 5px 10px;
     text-decoration: none;
     font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease, filter 0.3s ease, text-shadow 0.3s ease;
 }
 
-.nav-link::after {
-    content: '';
-    position: absolute;
-    left: 12%;
-    bottom: 0;
-    height: 1px;
-    /* Высота линии */
-    width: 75.5%;
-    background: #A00000;
-    /* Цвет линии */
-    transform: scaleX(0);
-    /* Начальное состояние: линия скрыта */
-    transform-origin: left;
-    /* Устанавливаем точку отсчета слева */
-    transition: transform 0.5s ease;
-    /* Плавный переход */
-    z-index: 0;
-    /* За текстом */
+.nav-item:hover .nav-link {
+    
+    filter: blur(0.7px); /* Легкое размытие */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Тень для текста */
 }
 
-.nav-item:hover .nav-link::after {
-    transform: scaleX(1);
-    /* При наведении: линия появляется */
 
-}
 
-.movies-text::after {
-    content: '';
-    position: absolute;
-    left: 12%;
-    bottom: 0;
-    height: 1px;
-    /* Высота линии */
-    width: 77.7%;
-    background: #A00000;
-    /* Цвет линии */
-    transform: scaleX(0);
-    /* Начальное состояние: линия скрыта */
-    transform-origin: left;
-    /* Устанавливаем точку отсчета слева */
-    transition: transform 0.5s ease;
-    /* Плавный переход */
-    z-index: 0;
-    /* За текстом */
-}
-
-.serials-text::after {
-    content: '';
-    position: absolute;
-    left: 12%;
-    bottom: 0;
-    height: 1px;
-    /* Высота линии */
-    width: 76%;
-    background: #A00000;
-    /* Цвет линии */
-    transform: scaleX(0);
-    /* Начальное состояние: линия скрыта */
-    transform-origin: left;
-    /* Устанавливаем точку отсчета слева */
-    transition: transform 0.5s ease;
-    /* Плавный переход */
-    z-index: 0;
-    /* За текстом */
-}
-
-.cartoones-text::after {
-    content: '';
-    position: absolute;
-    left: 7%;
-    bottom: 0;
-    height: 1px;
-    /* Высота линии */
-    width: 85%;
-    background: #A00000;
-    /* Цвет линии */
-    transform: scaleX(0);
-    /* Начальное состояние: линия скрыта */
-    transform-origin: left;
-    /* Устанавливаем точку отсчета слева */
-    transition: transform 0.5s ease;
-    /* Плавный переход */
-    z-index: 0;
-    /* За текстом */
-}
-
-.anime-text::after {
-    content: '';
-    position: absolute;
-    left: 12%;
-    bottom: 0;
-    height: 1px;
-    /* Высота линии */
-    width: 74.5%;
-    background: #A00000;
-    /* Цвет линии */
-    transform: scaleX(0);
-    /* Начальное состояние: линия скрыта */
-    transform-origin: left;
-    /* Устанавливаем точку отсчета слева */
-    transition: transform 0.5s ease;
-    /* Плавный переход */
-    z-index: 0;
-    /* За текстом */
-}
 
 
 .navbar-nav .nav-item {
@@ -656,6 +560,7 @@ h4 {
 }
 
 .subtitle {
+    
     font-size: 45px;
 }
 
@@ -1289,6 +1194,11 @@ footer {
 
 
 @media (min-width: 2300px) {
+    .nav-item:hover .nav-link {
+    
+        filter: blur(1.3px); /* Легкое размытие */
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Тень для текста */
+    }
     .results-h4 {
         
         margin-top: 2.5em;
@@ -1495,6 +1405,11 @@ footer {
 }
 }
 @media (min-width: 2019px) and (max-width: 2300px) {
+    .nav-item:hover .nav-link {
+    
+        filter: blur(1.2px); /* Легкое размытие */
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Тень для текста */
+    }
     .results-h4 {
         
         margin-top: 2.5em;
@@ -1720,6 +1635,11 @@ footer {
 }
 
 @media (min-width: 1900px) and (max-width: 2019px) {
+    .nav-item:hover .nav-link {
+    
+        filter: blur(1.1px); /* Легкое размытие */
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Тень для текста */
+    }
     .results-h4 {
         
         margin-top: 2.5em;
@@ -2659,6 +2579,11 @@ footer {
 }
 
 @media (min-width: 1705px) and (max-width: 1899.5px) {
+    .nav-item:hover .nav-link {
+    
+        filter: blur(1.1px); /* Легкое размытие */
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Тень для текста */
+    }
     .splide__arrow svg {
         fill: white !important;
         height: 7.2em !important;
@@ -2899,6 +2824,12 @@ footer {
 
 
 @media (min-width: 1521px) and (max-width: 1705px) {
+    .nav-item:hover .nav-link {
+    
+        filter: blur(1px); /* Легкое размытие */
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Тень для текста */
+    }
+
     .splide__arrow svg {
         fill: white !important;
         height: 7.2em !important;
@@ -3120,6 +3051,11 @@ footer {
 }
 
 @media (min-width: 1439px) and (max-width: 1521px) {
+    .nav-item:hover .nav-link {
+    
+        filter: blur(1px); /* Легкое размытие */
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Тень для текста */
+    }
     .splide__arrow svg {
         fill: white !important;
         height: 7.2em !important;
