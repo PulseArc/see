@@ -170,6 +170,13 @@ function generateRandomCards() {
             "rating":"8.4"
         },
         {
+            "name": "Ущелье",
+            "image": "http://image.tmdb.org/t/p/w500//yiUINsMKnemBFcUHqpv94yJolWH.jpg",
+            "link": "/see/card/movies/802/Ущелье.html",
+            "year": "2025",
+            "rating":"7.7"
+        },
+        {
             "name": "Дорогой Санта",
             "image": "https://image.tmdb.org/t/p/w500//v4LzYnQ1VGb0Q191Eb0NDSxdEKy.jpg",
             "link": "#",
