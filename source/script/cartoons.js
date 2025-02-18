@@ -469,6 +469,41 @@ function generateRandomCards() {
             "year": "2019",
             "rating":"7.5"
         },
+        {
+            "name": "Дневник слабака",
+            "image": "http://image.tmdb.org/t/p/w500//OR5miI8pm2Shmeoha0zHk97ceK.jpg",
+            "link": "#",
+            "year": "2021",
+            "rating":"6.2"
+        },
+        {
+            "name": "Не бей копытом",
+            "image": "http://image.tmdb.org/t/p/w500//3YteNf7HJvJT9IRxpiISoyvRoRR.jpg",
+            "link": "#",
+            "year": "2004",
+            "rating":"6.1"
+        },
+        {
+            "name": "Большое путешествие",
+            "image": "http://image.tmdb.org/t/p/w500//82cjRTHAsrNBRWfMJ8VzrvXcYfX.jpg",
+            "link": "#",
+            "year": "2006",
+            "rating":"5.5"
+        },
+        {
+            "name": "Лерой и Стич",
+            "image": "http://image.tmdb.org/t/p/w500//mVXTQVYBSdhGuNWzpbF9ULt62jH.jpg",
+            "link": "#",
+            "year": "2006",
+            "rating":"6.6"
+        },
+        {
+            "name": "Базз Лайтер",
+            "image": "http://image.tmdb.org/t/p/w500//DQU4vUTMoAlUGJIC5hNfHPVELz.jpg",
+            "link": "#",
+            "year": "2022",
+            "rating":"6.9"
+        },
     
         // конец
        
