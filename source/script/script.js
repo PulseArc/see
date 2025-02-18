@@ -1873,6 +1873,34 @@ const data = [
         "year": "2020",
         "rating":"8.3"
     },
+    {
+        "name": "Поднятие уровня в одиночку",
+        "image": "http://image.tmdb.org/t/p/w500//gjemx47qD8xtuuGcsdWqlFXWR0b.jpg",
+        "link": "/see/card/anime/100-02/Поднятие уровня в одиночку.html",
+        "year": "2024",
+        "rating":"8.5"
+    },
+    {
+        "name": "Наруто: Ураганные хроники",
+        "image": "http://image.tmdb.org/t/p/w500//dIRmrc4XwLJWc3eTCe7KaOYJdKX.jpg",
+        "link": "/see/card/anime/100-03/Наруто Ураганные хроники.html",
+        "year": "2007",
+        "rating":"8.5"
+    },
+    {
+        "name": "Блич",
+        "image": "http://image.tmdb.org/t/p/w500//nqOO3OmDpTsSgVLUZn2T1Dr2mcV.jpg",
+        "link": "/see/card/anime/100-04/Блич.html",
+        "year": "2004",
+        "rating":"8.4"
+    },
+    {
+        "name": "Ванпанчмен",
+        "image": "http://image.tmdb.org/t/p/w500//nhq66gOdiAp5mnNbVsxAonliffa.jpg",
+        "link": "/see/card/anime/100-05/Ванпанчмен.html",
+        "year": "2015",
+        "rating":"8.5"
+    },
     // Конец
     
 ];
