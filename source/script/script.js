@@ -1901,6 +1901,69 @@ const data = [
         "year": "2015",
         "rating":"8.5"
     },
+    {
+        "name": "Восхождение в тени!",
+        "image": "http://image.tmdb.org/t/p/w500//eRwEUoIPJ6hNUalD848Ud4F77gZ.jpg",
+        "link": "/see/card/anime/100-05/Ванпанчмен.html",
+        "year": "2022",
+        "rating":"8.1"
+    },
+    {
+        "name": "Магическая битва",
+        "image": "http://image.tmdb.org/t/p/w500//rcHnYQHyFRpl9uOltPQILx8Cnla.jpg",
+        "link": "/see/card/anime/100-07/Магическая битва.html",
+        "year": "2020",
+        "rating":"8.6"
+    },
+    {
+        "name": "Баскетбол Куроко",
+        "image": "http://image.tmdb.org/t/p/w500//ftT1qtT6yWO5rfs237a466N8QRr.jpg",
+        "link": "/see/card/anime/100-08/Баскетбол Куроко.html",
+        "year": "2012",
+        "rating":"8.5"
+    },
+    {
+        "name": "Дорохедоро",
+        "image": "http://image.tmdb.org/t/p/w500//lzngNiuEmUYj7oKB5ZWrJggUXFL.jpg",
+        "link": "/see/card/anime/100-09/Дорохедоро.html",
+        "year": "2020",
+        "rating":"8.3"
+    },
+    {
+        "name": "Человек-бензопила",
+        "image": "http://image.tmdb.org/t/p/w500//92Ds0hOHObvZBekqneimrGpxyXh.jpg",
+        "link": "/see/card/anime/100-10/Человек-бензопила.html",
+        "year": "2022",
+        "rating":"8.6"
+    },
+    {
+        "name": "Дороро",
+        "image": "http://image.tmdb.org/t/p/w500//oudk6QIrLLtMlmVBBQoheNzcqeI.jpg",
+        "link": "/see/card/anime/100-11/Дороро.html",
+        "year": "2019",
+        "rating":"8.6"
+    },
+    {
+        "name": "Чёрный клевер",
+        "image": "http://image.tmdb.org/t/p/w500//vcsAzsoSJEHgJZ29EkxXWSEVbDN.jpg",
+        "link": "/see/card/anime/100-12/Чёрный клевер.html",
+        "year": "2017",
+        "rating":"8.5"
+    },
+    {
+        "name": "Магия и мускулы",
+        "image": "http://image.tmdb.org/t/p/w500//vp3oSq3XUSDeSjv4fvSVlT4mleC.jpg",
+        "link": "/see/card/anime/100-13/Магия и мускулы.html",
+        "year": "2023",
+        "rating":"8.3"
+    },
+    {
+        "name": "Школа-тюрьма",
+        "image": "http://image.tmdb.org/t/p/w500//50eY9B9JtWcG0KuY5SS1X7E9wQb.jpg",
+        "link": "/see/card/anime/100-14/Школа-тюрьма.html",
+        "year": "2015",
+        "rating":"8.1"
+    },
     // Конец
     
 ];

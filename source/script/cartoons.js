@@ -520,8 +520,14 @@ function generateRandomCards() {
 
     var count = 0; 
 
+    // Получаем название фильма из элемента с id="movie-title"
+    var movieTitle = $('#movie-title').text().trim();
+
     cardData.forEach(function (val) {
-        if (count >= 10) return;
+        // Проверяем, совпадает ли название карточки с movieTitle
+        if (val.name === movieTitle) return;
+
+        if (count >= 15) return;
 
         var randomRating = val.rating;
 
@@ -552,50 +558,50 @@ function generateRandomCards() {
         type: 'loop',
         focus: 'center',
         autoWidth: true, 
-        gap: '40px', // По умолчанию 40px
+        gap: '40px',
         pauseOnHover: true,
         pauseOnFocus: true,
         arrows: true,
         pagination: false,
         drag: true,
-        perPage: 3, // Показываем 3 карточки (слайда)
+        perPage: 3,
         breakpoints: {
             5000: {
-                gap: '23px', // При ширине экрана до 1200px
+                gap: '23px',
                 perPage: 3,
-              },
-              2299.5: {
-                gap: '20px', // При ширине экрана до 1200px
+            },
+            2299.5: {
+                gap: '20px',
                 perPage: 3,
-              },
-              2018.5: {
-                gap: '18px', // При ширине экрана до 1200px
+            },
+            2018.5: {
+                gap: '18px',
                 perPage: 3,
-              },
-              1899.5: {
-                gap: '18px', // При ширине экрана до 1200px
+            },
+            1899.5: {
+                gap: '18px',
                 perPage: 3,
-              },
-              1704.5: {
-                gap: '12px', // При ширине экрана до 1200px
+            },
+            1704.5: {
+                gap: '12px',
                 perPage: 3,
-              },
-              1520.5: {
-                gap: '12px', // При ширине экрана до 1200px
+            },
+            1520.5: {
+                gap: '12px',
                 perPage: 3,
-              },
-              1320.5: {
-                gap: '28px', // При ширине экрана до 768px
-                perPage: 3, // Можно уменьшить количество слайдов на маленьких экранах
-              },
-              1050: {
-                gap: '12px', // При ширине экрана до 1200px
+            },
+            1320.5: {
+                gap: '28px',
                 perPage: 3,
-              },
-              480: {
-                gap: '12px', // При ширине экрана до 1200px
+            },
+            1050: {
+                gap: '12px',
                 perPage: 3,
-              }
+            },
+            480: {
+                gap: '12px',
+                perPage: 3,
+            }
         }
     }).mount();
 }
@@ -608,4 +614,3 @@ function shuffleArray(array) {
     }
     return array;
 }
-
