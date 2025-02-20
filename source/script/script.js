@@ -1875,7 +1875,7 @@ const data = [
     },
     {
         "name": "Поднятие уровня в одиночку",
-        "image": "http://image.tmdb.org/t/p/w500//gjemx47qD8xtuuGcsdWqlFXWR0b.jpg",
+        "image": "http://image.tmdb.org/t/p/w500//orLdJQCcC1Lq13xt62P2xJycyAL.jpg",
         "link": "/see/card/anime/100-02/Поднятие уровня в одиночку.html",
         "year": "2024",
         "rating":"8.5"
