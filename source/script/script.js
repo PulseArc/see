@@ -1904,7 +1904,7 @@ const data = [
     {
         "name": "Восхождение в тени!",
         "image": "http://image.tmdb.org/t/p/w500//eRwEUoIPJ6hNUalD848Ud4F77gZ.jpg",
-        "link": "/see/card/anime/100-05/Ванпанчмен.html",
+        "link": "/see/card/anime/100-06/Восхождение в тени.html",
         "year": "2022",
         "rating":"8.1"
     },
@@ -1963,6 +1963,90 @@ const data = [
         "link": "/see/card/anime/100-14/Школа-тюрьма.html",
         "year": "2015",
         "rating":"8.1"
+    },
+    {
+        "name": "Шарлотта",
+        "image": "http://image.tmdb.org/t/p/w500//rMOGHPGfuywDViL9Oc0tA29oxtA.jpg",
+        "link": "/see/card/anime/100-15/Шарлотта.html",
+        "year": "2015",
+        "rating":"8.3"
+    },
+    {
+        "name": "Семья шпиона",
+        "image": "http://image.tmdb.org/t/p/w500//xMqGSPjjnc4awD4R8JrRTW0IGOt.jpg",
+        "link": "/see/card/anime/100-16/Семья шпиона.html",
+        "year": "2022",
+        "rating":"8.6"
+    },
+    {
+        "name": "Борьба в прямом эфире",
+        "image": "http://image.tmdb.org/t/p/w500//fJw0XoP3t1VNhKLqanyxVOMxjwX.jpg",
+        "link": "/see/card/anime/100-17/Борьба в прямом эфире.html",
+        "year": "2024",
+        "rating":"8.3"
+    },
+    {
+        "name": "Врата Штейна 0",
+        "image": "http://image.tmdb.org/t/p/w500//qpd4qivQAVnJ7Zz6QFCE9km5Jiu.jpg",
+        "link": "/see/card/anime/100-18/Врата Штейна 0.html",
+        "year": "2018",
+        "rating":"8.0"
+    },
+    {
+        "name": "Ох, уж этот экстрасенс Сайки Кусуо!",
+        "image": "http://image.tmdb.org/t/p/w500//hqOIldYJTq8eI1APi4tx4rZuiHe.jpg",
+        "link": "/see/card/anime/100-19/Ох, уж этот экстрасенс Сайки Кусуо.html",
+        "year": "2016",
+        "rating":"8.3"
+    },
+    {
+        "name": "Ван-Пис",
+        "image": "http://image.tmdb.org/t/p/w500//osRT8GsND3PfhvevsS5DK9px0LI.jpg",
+        "link": "/see/card/anime/100-20/Ван-Пис.html",
+        "year": "1999",
+        "rating":"8.7"
+    },
+    {
+        "name": "Добро пожаловать в N.H.K.",
+        "image": "http://image.tmdb.org/t/p/w500//5iXnyp9zQb3tNTSOXn0rAJOlxu0.jpg",
+        "link": "/see/card/anime/100-21/Добро пожаловать в N.H.K..html",
+        "year": "2006",
+        "rating":"8.5"
+    },
+    {
+        "name": "Атака титанов",
+        "image": "http://image.tmdb.org/t/p/w500//p5nYJj1N5pVMUixtyIJtfkw1FEr.jpg",
+        "link": "/see/card/anime/100-22/Атака титанов.html",
+        "year": "2013",
+        "rating":"8.7"
+    },
+    {
+        "name": "Драконий жемчуг супер",
+        "image": "http://image.tmdb.org/t/p/w500//9gzkpjs6N7Xxo1CnnJqhFtmYCez.jpg",
+        "link": "/see/card/anime/100-23/Драконий жемчуг супер.html",
+        "year": "2015",
+        "rating":"8.2"
+    },
+    {
+        "name": "Волейбол!!",
+        "image": "http://image.tmdb.org/t/p/w500//5lrJDEQjwCJPLdlfhBmJ8mfpnpX.jpg",
+        "link": "/see/card/anime/100-24/Волейбол.html",
+        "year": "2014",
+        "rating":"8.6"
+    },
+    {
+        "name": "Мартовский лев",
+        "image": "http://image.tmdb.org/t/p/w500//ufgAYwzv6N2JrOWwyAkoGKMlMbo.jpg",
+        "link": "/see/card/anime/100-25/Мартовский лев.html",
+        "year": "2016",
+        "rating":"7.9"
+    },
+    {
+        "name": "Истребитель демонов",
+        "image": "http://image.tmdb.org/t/p/w500//zg3GrU3jAoTGxmlGGhkfNYMOHlb.jpg",
+        "link": "/see/card/anime/100-26/Истребитель демонов.html",
+        "year": "2019",
+        "rating":"8.7"
     },
     // Конец
     
