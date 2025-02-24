@@ -2048,6 +2048,132 @@ const data = [
         "year": "2019",
         "rating":"8.7"
     },
+    {
+        "name": "Баки",
+        "image": "http://image.tmdb.org/t/p/w500//6n3DLulcCLbHbkQiC9KBHUbZfGr.jpg",
+        "link": "/see/card/anime/100-27/Баки.html",
+        "year": "2001",
+        "rating":"8.1"
+    },
+    {
+        "name": "НАНА",
+        "image": "http://image.tmdb.org/t/p/w500//5XyTQaZcWgn1iqSuxsh5FRzuJjB.jpg",
+        "link": "/see/card/anime/100-28/НАНА.html",
+        "year": "2006",
+        "rating":"8.4"
+    },
+    {
+        "name": "Моя геройская академия",
+        "image": "http://image.tmdb.org/t/p/w500//aqOnGXW5eCQpfyx74Lu3GTt0AXU.jpg",
+        "link": "/see/card/anime/100-29/Моя геройская академия.html",
+        "year": "2016",
+        "rating":"8.6"
+    },
+    {
+        "name": "Страстное Сердце: Дикий Бомбардир",
+        "image": "http://image.tmdb.org/t/p/w500//b0yW5cQX97QfhXeJU9kbQ4UYj9V.jpg",
+        "link": "/see/card/anime/100-30/Страстное Сердце Дикий Бомбардир.html",
+        "year": "2002",
+        "rating":"7.9"
+    },
+    {
+        "name": "Дарованный",
+        "image": "http://image.tmdb.org/t/p/w500//gIZtv9fPZMsITHu2PSGiFnEQqHq.jpg",
+        "link": "/see/card/anime/100-31/Дарованный.html",
+        "year": "2019",
+        "rating":"8.6"
+    },
+    {
+        "name": "Летнее время",
+        "image": "http://image.tmdb.org/t/p/w500//gyf39hodpr1qJzUXGFuGNlxysdi.jpg",
+        "link": "/see/card/anime/100-32/Летнее время.html",
+        "year": "2022",
+        "rating":"8.2"
+    },
+    {
+        "name": "Стальной Алхимик: Братство",
+        "image": "http://image.tmdb.org/t/p/w500//n2M0BslYmciTcxHc0SpwSljujUG.jpg",
+        "link": "/see/card/anime/100-33/Стальной Алхимик Братство.html",
+        "year": "2009",
+        "rating":"8.7"
+    },
+    {
+        "name": "Юри на льду",
+        "image": "http://image.tmdb.org/t/p/w500//uwHOl8SLvGcbumIlpHgFAqVCEb2.jpg",
+        "link": "/see/card/anime/100-34/Юри на льду.html",
+        "year": "2016",
+        "rating":"8.6"
+    },
+    {
+        "name": "Семь смертных грехов",
+        "image": "http://image.tmdb.org/t/p/w500//rRZdyqqRAn1h45oNpA69NehQLcI.jpg",
+        "link": "/see/card/anime/100-35/Семь смертных грехов.html",
+        "year": "2014",
+        "rating":"8.4"
+    },
+    {
+        "name": "Пес и Пускающая в ход ножницы",
+        "image": "http://image.tmdb.org/t/p/w500//aOa03hyMhuQlDLmPOovMsAphYH0.jpg",
+        "link": "/see/card/anime/100-36/Пес и Пускающая в ход ножницы.html",
+        "year": "2013",
+        "rating":"6.4"
+    },
+    {
+        "name": "Призрак в доспехах: Синдром одиночки",
+        "image": "http://image.tmdb.org/t/p/w500//wG7iZsxxFd6PPdYHndpDIMTPdaC.jpg",
+        "link": "/see/card/anime/100-37/Призрак в доспехах Синдром одиночки.html",
+        "year": "2002",
+        "rating":"8.2"
+    },
+    {
+        "name": "Токийский Гуль",
+        "image": "http://image.tmdb.org/t/p/w500//cB9pdS49LbAryFtJpPQYwfFXbJd.jpg",
+        "link": "/see/card/anime/100-38/Токийский Гуль.html",
+        "year": "2014",
+        "rating":"8.3"
+    },
+    {
+        "name": "Мастера меча онлайн",
+        "image": "http://image.tmdb.org/t/p/w500//htNohqrYEwuz4fCa9ATVF90s58S.jpg",
+        "link": "/see/card/anime/100-39/Мастера меча онлайн.html",
+        "year": "2012",
+        "rating":"8.2"
+    },
+    {
+        "name": "Убийца Акаме!",
+        "image": "http://image.tmdb.org/t/p/w500//3Jtt3UgwtjJHRFDWZBFwaOji9F.jpg",
+        "link": "/see/card/anime/100-40/Убийца Акаме!.html",
+        "year": "2014",
+        "rating":"8.3"
+    },
+    {
+        "name": "Синие Мибуро",
+        "image": "http://image.tmdb.org/t/p/w500//rADnozoUIkrJKBD1CMBPnOBWoqh.jpg",
+        "link": "/see/card/anime/100-41/Синие Мибуро.html",
+        "year": "2024",
+        "rating":"8.4"
+    },
+    {
+        "name": "Тетрадь смерти",
+        "image": "http://image.tmdb.org/t/p/w500//jtyBJAqZUUKL1WjyiUTngiviRqI.jpg",
+        "link": "/see/card/anime/100-42/Тетрадь смерти.html",
+        "year": "2006",
+        "rating":"8.6"
+    },
+    {
+        "name": "Унесённые призраками",
+        "image": "http://image.tmdb.org/t/p/w500//xV3zYcOA6xFjYwizIMDDkl2MGT7.jpg",
+        "link": "/see/card/anime/100-43/Унесённые призраками.html",
+        "year": "2001",
+        "rating":"8.5"
+    },
+    {
+        "name": "ПЛУТОН",
+        "image": "http://image.tmdb.org/t/p/w500//uO5kzuKlkISDBzW8QXchk65haRp.jpg",
+        "link": "/see/card/anime/100-44/ПЛУТОН.html",
+        "year": "2023",
+        "rating":"7.9"
+    },
     // Конец
     
 ];
