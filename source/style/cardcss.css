@@ -1017,6 +1017,10 @@ margin-left: 4em;
     font-size: 17px !important;
     
   }
+  .card-title{
+    font-size: 3.5em;
+    line-height:1.1em;
+  }
   .container-column {
     display: flex;
     flex-wrap: wrap; /* Разрешаем перенос элементов */
