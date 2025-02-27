@@ -2174,6 +2174,202 @@ const data = [
         "year": "2023",
         "rating":"7.9"
     },
+    {
+        "name": "Ходячий замок",
+        "image": "http://image.tmdb.org/t/p/w500//oQvAlVSjYsJZPg9raiQRYE0aVrv.jpg",
+        "link": "/see/card/anime/100-45/Hodyachij-zamok.html",
+        "year": "2004",
+        "rating":"8.4"
+    },
+    {
+        "name": "Перерождение: Монстр",
+        "image": "http://image.tmdb.org/t/p/w500//cxV7wPMW3Xeuu27rV9MJrZm4I7y.jpg",
+        "link": "/see/card/anime/100-46/Pererozhdenie-Monstr.html",
+        "year": "2024",
+        "rating":"8.2"
+    },
+    {
+        "name": "Звёзды Айкацу!",
+        "image": "http://image.tmdb.org/t/p/w500//fiWqW5wYF702dpQWwSeRwKOyXqZ.jpg",
+        "link": "/see/card/anime/100-47/Zvyozdy-Ajkacu!.html",
+        "year": "2016",
+        "rating":"6.8"
+    },
+    {
+        "name": "Хоримия",
+        "image": "http://image.tmdb.org/t/p/w500//2ZOfEetRHnqCBzvubdYU3ytwcq.jpg",
+        "link": "/see/card/anime/100-48/Horimiya.html",
+        "year": "2021",
+        "rating":"8.6"
+    },
+    {
+        "name": "Обещанный Неверленд",
+        "image": "http://image.tmdb.org/t/p/w500//eY2WprrRHCCD2J00PjNJ1Itodlr.jpg",
+        "link": "/see/card/anime/100-49/Obeshannyj-Neverlend.html",
+        "year": "2019",
+        "rating":"8.4"
+    },
+    {
+        "name": "Твоё имя",
+        "image": "http://image.tmdb.org/t/p/w500//iH2WDCYLIUjc7oPWRT7Kxgxza6k.jpg",
+        "link": "/see/card/anime/100-50/Tvoe-imya.html",
+        "year": "2016",
+        "rating":"8.5"
+    },
+    {
+        "name": "О моём перерождении в слизь",
+        "image": "http://image.tmdb.org/t/p/w500//dyvUkf3bFFd0tC2yJCJ6rUgeZRO.jpg",
+        "link": "/see/card/anime/100-51/O-moyom-pererozhdenii-v-sliz.html",
+        "year": "2018",
+        "rating":"8.5"
+    },
+    {
+        "name": "Могила светлячков",
+        "image": "http://image.tmdb.org/t/p/w500//nJYXr0RAznczy5tCZtYcjoYMjEg.jpg",
+        "link": "/see/card/anime/100-52/Mogila-svetlyachkov.html",
+        "year": "1988",
+        "rating":"8.5"
+    },
+    {
+        "name": "Мононокэ",
+        "image": "http://image.tmdb.org/t/p/w500//g2Hm6h1tQU0w0A1wH7gwB4tH7e7.jpg",
+        "link": "/see/card/anime/100-53/Mononoke.html",
+        "year": "2007",
+        "rating":"7.9"
+    },
+    {
+        "name": "Форма голоса",
+        "image": "http://image.tmdb.org/t/p/w500//c0Gv8xTSEmIcQPxbhINKvkbJO8s.jpg",
+        "link": "/see/card/anime/100-54/Forma-golosa.html",
+        "year": "2016",
+        "rating":"8.4"
+    },
+    {
+        "name": "Реинкарнация безработного",
+        "image": "http://image.tmdb.org/t/p/w500//bC2DRV5S6BDtW0DmAqN3g3xtLoP.jpg",
+        "link": "/see/card/anime/100-55/Reinkarnaciya-bezrabotnogo.html",
+        "year": "2021",
+        "rating":"8.5"
+    },
+    {
+        "name": "Банановая рыба",
+        "image": "http://image.tmdb.org/t/p/w500//3GiB5Ybbhzt0ePRR2zgld9R56DB.jpg",
+        "link": "/see/card/anime/100-56/Bananovaya-ryba.html",
+        "year": "2018",
+        "rating":"8.6"
+    },
+    {
+        "name": "Принцесса Мононоке",
+        "image": "http://image.tmdb.org/t/p/w500//dZE9oUyp14UEoPk5QV7emBu0Ix3.jpg",
+        "link": "/see/card/anime/100-57/Princessa-Mononoke.html",
+        "year": "1997",
+        "rating":"8.3"
+    },
+    {
+        "name": "Рок-Шоу!!",
+        "image": "http://image.tmdb.org/t/p/w500//cDhy72poqVcnevY3BOGlE76bdca.jpg",
+        "link": "/see/card/anime/100-58/Rok-Shou!!.html",
+        "year": "2020",
+        "rating":"6.0"
+    },
+    {
+        "name": "Мой сосед Тоторо",
+        "image": "http://image.tmdb.org/t/p/w500//ynClhtTAYG8N7FfU7EYK0T131rj.jpg",
+        "link": "/see/card/anime/100-59/Moj-sosed-Totoro.html",
+        "year": "1988",
+        "rating":"8.1"
+    },
+    {
+        "name": "Хост-клуб Оранской школы",
+        "image": "http://image.tmdb.org/t/p/w500//rd6QqoO7mOqrfOWiSEa6XL9Jqlv.jpg",
+        "link": "/see/card/anime/100-60/Host-klub-Oranskoj-shkoly.html",
+        "year": "2006",
+        "rating":"8.2"
+    },
+    {
+        "name": "Аватар: Легенда об Аанге",
+        "image": "http://image.tmdb.org/t/p/w500//pbTLpt8c7YUT4Vr6DE2ai3HY6U7.jpg",
+        "link": "/see/card/anime/100-61/Avatar-Legenda-ob-Aange.html",
+        "year": "2005",
+        "rating":"8.7"
+    },
+    {
+        "name": "Адский рай",
+        "image": "http://image.tmdb.org/t/p/w500//75OaIA4S8ZKFVNmKnTCgAcNqwlC.jpg",
+        "link": "/see/card/anime/100-62/Adskij-raj.html",
+        "year": "2023",
+        "rating":"8.2"
+    },
+    {
+        "name": "Дитя погоды",
+        "image": "http://image.tmdb.org/t/p/w500//unkWKrTb4SdHAEb78AD4BJvXbwh.jpg",
+        "link": "/see/card/anime/100-63/Ditya pogody.html",
+        "year": "2019",
+        "rating":"8.0"
+    },
+    {
+        "name": "Доктор Стоун",
+        "image": "http://image.tmdb.org/t/p/w500//uJQCHiHAo7hoDyRPZ792ctjSZ71.jpg",
+        "link": "/see/card/anime/100-64/Doktor-Stoun.html",
+        "year": "2019",
+        "rating":"8.5"
+    },
+    {
+        "name": "Паприка",
+        "image": "http://image.tmdb.org/t/p/w500//75lTLdVBlpWocSO8nWJqddyedCH.jpg",
+        "link": "/see/card/anime/100-65/Paprika.html",
+        "year": "2006",
+        "rating":"7.8"
+    },
+    {
+        "name": "Бродяга Кэнсин",
+        "image": "http://image.tmdb.org/t/p/w500//eNs5hTCeZtZCy6rTTsH4sMOrKGZ.jpg",
+        "link": "/see/card/anime/100-66/Brodyaga-Kensin.html",
+        "year": "2023",
+        "rating":"8.4"
+    },
+    {
+        "name": "Король шаманов",
+        "image": "http://image.tmdb.org/t/p/w500//conBjZLX8KBc18vdQjSNegZytln.jpg",
+        "link": "/see/card/anime/100-67/Korol-shamanov.html",
+        "year": "2001",
+        "rating":"8.5"
+    },
+    {
+        "name": "5 сантиметров в секунду",
+        "image": "http://image.tmdb.org/t/p/w500//ef5Kpp8knIaWCsuKHKE41cQpuPl.jpg",
+        "link": "/see/card/anime/100-68/5-santimetrov-v-sekundu.html",
+        "year": "2007",
+        "rating":"7.3"
+    },
+    {
+        "name": "Путешествие Кино",
+        "image": "http://image.tmdb.org/t/p/w500//HMCWRefv371GcIo1HsU0rkC7xx.jpg",
+        "link": "/see/card/anime/100-69/Puteshestvie-Kino.html",
+        "year": "2003",
+        "rating":"7.7"
+    },
+    {
+        "name": "Синий Экзорцист",
+        "image": "http://image.tmdb.org/t/p/w500//g2RmOH0cDET7pptUrLnzVM6w8DJ.jpg",
+        "link": "/see/card/anime/100-70/Sinij-Ekzorcist.html",
+        "year": "2011",
+        "rating":"7.9"
+    },
+    {
+        "name": "Судьба: Начало",
+        "image": "http://image.tmdb.org/t/p/w500//lkV0BOHMvdxHrfTWQfaFiKfKpRV.jpg",
+        "link": "/see/card/anime/100-71/Sudba-Nachalo.html",
+        "year": "2011",
+        "rating":"8.0"
+    },
+    {
+        "name": "Хвост Феи",
+        "image": "http://image.tmdb.org/t/p/w500//q5GiuJHgJJwwk14ufs0ToxFkKt6.jpg",
+        "link": "/see/card/anime/100-72/Hvost-Fei.html",
+        "year": "2009",
+        "rating":"7.9"
+    },
     // Конец
     
 ];
