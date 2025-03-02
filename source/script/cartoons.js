@@ -10,7 +10,7 @@ function generateRandomCards() {
     var cardData = [{
             "name": "Кот в сапогах",
             "image": "https://image.tmdb.org/t/p/w500//4iuuvaCYNswlhG5f73JqX976a9d.jpg",
-            "link": "#",
+            "link": "/see/card/cartoons/500-01/Kot-v-sapogah.html",
             "year": "2011",
             "rating":"6.6"
         },
@@ -337,11 +337,11 @@ function generateRandomCards() {
             "rating":"7.8"
         },
         {
-            "name": "Ван-Пис: Красный",
-            "image": "https://image.tmdb.org/t/p/w500//fUm0EqyGpja7W7RM10ltl5USuko.jpg",
+            "name": "Крутые бобры",
+            "image": "http://image.tmdb.org/t/p/w500//9KYUA9tZrVNVXk2LTaYNMqGpHUj.jpg",
             "link": "#",
-            "year": "2022",
-            "rating":"7.2"
+            "year": "1997",
+            "rating":"6.9"
         },
         {
             "name": "Головоломка",

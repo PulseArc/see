@@ -24,10 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
           clearIcon.style.display = 'inline'; // Показываем крестик
           
           // Логика обновления содержимого результатов
-          const updateContainer = document.getElementById('update');
-          if (updateContainer) {
-              updateContainer.innerHTML = `<p style="margin-left: 1.5em;">Результаты для: "${query}"</p>`;
-          }
+         
           
           // Прокрутка страницы вверх
           window.scrollTo({

@@ -716,11 +716,11 @@ const data = [
         "rating":"7.8"
     },
     {
-        "name": "Ван-Пис: Красный",
-        "image": "https://image.tmdb.org/t/p/w500//fUm0EqyGpja7W7RM10ltl5USuko.jpg",
+        "name": "Крутые бобры",
+        "image": "http://image.tmdb.org/t/p/w500//9KYUA9tZrVNVXk2LTaYNMqGpHUj.jpg",
         "link": "#",
-        "year": "2022",
-        "rating":"7.2"
+        "year": "1997",
+        "rating":"6.9"
     },
     {
         "name": "Головоломка",
@@ -1220,10 +1220,11 @@ const data = [
         "year": "2022",
         "rating":"7.5"
     },
+    // Мультфильмы
     {
         "name": "Кот в сапогах",
         "image": "https://image.tmdb.org/t/p/w500//4iuuvaCYNswlhG5f73JqX976a9d.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-01/Kot-v-sapogah.html",
         "year": "2011",
         "rating":"6.6"
     },
@@ -2373,48 +2374,70 @@ const data = [
     // Конец
     
 ];
-$('#search').keyup(function () {
-    var searchField = $('#search').val().trim();
-    var myExp = new RegExp(searchField, "i");
 
-    // Очистка результатов, если поле пустое
+let typingTimer;  // Таймер для отслеживания задержки
+const typingInterval = 400;  // Интервал задержки в миллисекундах
+
+$('#search').keyup(function () {
+    clearTimeout(typingTimer);  // Очищаем предыдущий таймер
+
+    var searchField = $('#search').val().trim().replace(/\s+/g, '').toLowerCase(); // Убираем пробелы и приводим к нижнему регистру
+
+    // Если поле пустое, очищаем результаты
     if (searchField === "") {
         $('#update').html("");
         return;
     }
 
-    var output = '';
-    var resultCount = 0;
-
-    $.each(data, function (key, val) {
-        if (val.name.search(myExp) != -1) {
-            resultCount++;
-
-            if (resultCount > 12) return false; 
-
-            output += `
-            <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
-                <div class="card full-card cards-from-search">
-                    <a href="${val.link}">
-                        <img src="${val.image}" class="card-img-top all-flim-img" alt="${val.name}">
-                        <div class="card-rating"><span class="span-rating">${val.rating}</span></div>
-                        <div class="card-body">
-                            <span class="card-tex">${val.name}<br><span class="year">${val.year}</span></span>
-                        </div>
-                    </a>
-                </div>
+    const updateContainer = document.getElementById('update');
+    
+    // Отображаем полосу загрузки
+    if (updateContainer) {
+        updateContainer.innerHTML = `
+            <div class="loading-bar-container">
+                <div class="loading-bar"></div>
             </div>
-            `;
-        }
-    });
-
-    // Если ничего не найдено, показываем сообщение
-    if (output === '') {
-        output = '<p class="no-results">По вашему запросу ничего не найдено.</p>';
+        `;
     }
 
-    $('#update').html(output);
+    // Устанавливаем новый таймер
+    typingTimer = setTimeout(function () {
+        var myExp = new RegExp(searchField, "i");
+        var output = '';
+        var resultCount = 0;
+
+        $.each(data, function (key, val) {
+            var nameWithoutSpaces = val.name.replace(/\s+/g, '').toLowerCase(); // Убираем пробелы и приводим к нижнему регистру
+
+            if (nameWithoutSpaces.search(searchField) != -1) {
+                resultCount++;
+
+                if (resultCount > 12) return false;
+
+                output += `
+                <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
+                    <div class="card full-card cards-from-search">
+                        <a href="${val.link}">
+                            <img src="${val.image}" class="card-img-top all-flim-img" alt="${val.name}">
+                            <div class="card-rating"><span class="span-rating">${val.rating}</span></div>
+                            <div class="card-body">
+                                <span class="card-tex">${val.name}<br><span class="year">${val.year}</span></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                `;
+            }
+        });
+
+        // Если ничего не найдено, показываем сообщение
+        if (output === '') {
+            output = '<p class="no-results">По вашему запросу ничего не найдено.</p>';
+        }
+
+        // Заменяем полосу загрузки на результаты поиска
+        if (updateContainer) {
+            updateContainer.innerHTML = output;
+        }
+    }, typingInterval);  // Задержка 400 миллисекунд
 });
-
-
-
