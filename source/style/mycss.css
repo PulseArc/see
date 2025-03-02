@@ -1,4 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Michroma&display=swap');
+/* Стиль для полосы загрузки */
+.loading-bar-container {
+    width: 40%;
+    height: 3px; /* Толщина полосы */
+    background-color: #000000; /* Светлый фон */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Анимация для заполнения полосы */
+.loading-bar {
+    width: 0;
+    height: 100%;
+    background-color: #ffffff; /* Синий цвет полосы */
+    animation: loading 0.4s linear infinite;
+}
+
+/* Анимация для движения полосы */
+@keyframes loading {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
 
 .mx-4-5 {
     margin-left: 2.490rem;
