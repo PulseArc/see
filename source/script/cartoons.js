@@ -17,23 +17,23 @@ function generateRandomCards() {
         {
             "name": "Мадагаскар",
             "image": "https://image.tmdb.org/t/p/w500//vwPFZT7tS8b9zDSN0PdvOzeGlfW.jpg",
-            "link": "#",
+            "link": "/see/card/cartoons/500-02/Madagaskar.html",
             "year": "2005",
             "rating":"6.9"
         },
         {
             "name": "Союз зверей",
             "image": "https://image.tmdb.org/t/p/w500//cg9KYCRLvRaKRjkuZF41Oef3Rbq.jpg",
-            "link": "#",
+            "link": "/see/card/cartoons/500-03/Soyuz-zverej.html",
             "year": "2010",
             "rating":"5.6"
         },
         {
-            "name": "Рапунцель",
-            "image": "https://image.tmdb.org/t/p/w500//ak5SCuJbdf8G4NbQ1KIUHjplrF1.jpg",
-            "link": "#",
-            "year": "2012",
-            "rating":"7.1"
+            "name": "Рапунцель: Запутанная история",
+            "image": "http://image.tmdb.org/t/p/w500//i6hhWWRMglTJR2Oi5xsN0JV6tNq.jpg",
+            "link": "/see/card/cartoons/500-04/Rapuncel-Zaputannaya-istoriya.html",
+            "year": "2010",
+            "rating":"7.6"
         },
         {
             "name": "Том и Джерри: Робин Гуд и мышь-весельчак",

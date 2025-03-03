@@ -172,7 +172,7 @@ function generateRandomCards() {
         {
             "name": "Ущелье",
             "image": "http://image.tmdb.org/t/p/w500//yiUINsMKnemBFcUHqpv94yJolWH.jpg",
-            "link": "/see/card/movies/802/Ущелье.html",
+            "link": "/see/card/movies/800-02/Ushele.html",
             "year": "2025",
             "rating":"7.7"
         },
@@ -221,14 +221,14 @@ function generateRandomCards() {
         {
             "name": "21 мост",
             "image": "http://image.tmdb.org/t/p/w500//lWDDukaPvDzIRYxgUuGFIH5YfyM.jpg",
-            "link": "/see/card/movies/801/21 Мост.html",
+            "link": "/see/card/movies/800-01/21-Most.html",
             "year": "2019",
             "rating":"6.8"
         },
         {
             "name": "Эмилия Перес",
             "image": "https://image.tmdb.org/t/p/w500//6KvGEOCUBsgTUPkl1oWhH0Y3ePy.jpg",
-            "link": "/see/card/movies/Emilia%20Perez/Emilia%20Perez.html",
+            "link": "/see/card/movies/800-03/Emilia-Perez.html",
             "year": "2024",
             "rating":"7.8"
         },
