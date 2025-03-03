@@ -208,19 +208,26 @@ select {
     position: absolute;
     top: 0;
     left: 35px;
-    /* Поле выдвигается влево от иконки */
-    width: calc(100% - 35px);
+    width: 0;
     height: 100%;
     border: none;
     outline: none;
-    padding: 0 10px;
+    padding: 0;
     font-size: 16px;
     background: transparent;
     color: #333;
     opacity: 0;
-    /* По умолчанию скрыто */
-    transition: opacity 0.3s ease;
+    pointer-events: none; /* Запрещаем ввод */
+    transition: opacity 0.3s ease, width 0.3s ease;
 }
+
+/* Разрешаем ввод только при раскрытии */
+.search-wrapper:hover .search-input {
+    opacity: 1;
+    width: calc(100% - 35px);
+    pointer-events: auto;
+}
+
 
 /* Расширение контейнера влево при наведении */
 .search-wrapper:hover .search-container {
@@ -230,6 +237,7 @@ select {
 
 .search-wrapper:hover .search-input {
     opacity: 1;
+    
     /* Появление поля ввода */
 }
 
@@ -1325,7 +1333,9 @@ footer {
         top: 2em;
 
     }
-
+.search-icon{
+    top: 52%;
+}
     .search-container {
         width: 53px !important;
         height: 53px !important;
