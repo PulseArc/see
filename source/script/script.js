@@ -1252,140 +1252,140 @@ const data = [
     {
         "name": "Том и Джерри: Робин Гуд и мышь-весельчак",
         "image": "https://image.tmdb.org/t/p/w500//2lDUlkOne47joTE4yNmIG71qZ0m.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-05/Tom-i-Dzherri-Robin-Gud-i-mysh-veselchak.html",
         "year": "2012",
         "rating":"6.5"
     },
     {
         "name": "Рио",
         "image": "https://image.tmdb.org/t/p/w500//oQZEFIeucAsuNFxkt7cUww8bh6s.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-06/Rio.html",
         "year": "2011",
         "rating":"6.7"
     },
     {
         "name": "Тайна красной планеты",
         "image": "https://image.tmdb.org/t/p/w500//mD4BnU0MTon8bhuJPCrc82IXLtp.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-07/Tajna-krasnoj-planety.html",
         "year": "2011",
-        "rating":"5.9"
+        "rating":"6.0"
     },
     {
         "name": "Рататуй",
         "image": "https://image.tmdb.org/t/p/w500//6u4JvZBiw1Uv6BgTlWNsFSSHlMn.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-08/Ratatuj.html",
         "year": "2007",
         "rating":"7.8"
     },
     {
         "name": "Храбрая сердцем",
         "image": "https://image.tmdb.org/t/p/w500//5A52Y3scfxXTwBKVdgEVmoa8i0q.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-09/Hrabraya-serdcem.html",
         "year": "2012",
         "rating":"7.0"
     },
     {
         "name": "В гости к Робинсонам",
         "image": "https://image.tmdb.org/t/p/w500//gx7TFtVxPZPHeuYuXdPgPGnboRU.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-10/V-gosti-k-Robinsonam.html",
         "year": "2007",
         "rating":"6.9"
     },
     {
-        "name": "Джок",
-        "image": "https://image.tmdb.org/t/p/w500//6zTwStlGAcfCLwHB2fHij8PwF4V.jpg",
-        "link": "#",
-        "year": "2011",
-        "rating":"4.4"
+        "name": "Дорога на Эльдорадо",
+        "image": "http://image.tmdb.org/t/p/w500//kbXR4E6xhi6MFcyEvz1VKQaRhc9.jpg",
+        "link": "/see/card/cartoons/500-11/Doroga-na-Eldorado.html",
+        "year": "2000",
+        "rating":"7.2"
     },
     {
         "name": "Тачки",
         "image": "https://image.tmdb.org/t/p/w500//wnnv9vLO4jBhXF1Vw2Ss8uhjJPC.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-12/Tachki.html",
         "year": "2006",
         "rating":"7.0"
     },
     {
         "name": "Франкенвини",
         "image": "https://image.tmdb.org/t/p/w500//pzqDbpshw50ulrSM5Sdc2AY70tq.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-13/Frankenvini.html",
         "year": "2012",
         "rating":"7.0"
     },
     {
-        "name": "Тэд Джонс",
-        "image": "https://image.tmdb.org/t/p/w500//wxWt1mk4EeJ60b6XQ7SuTedZHvD.jpg",
-        "link": "#",
-        "year": "2012",
-        "rating":"6.2"
+        "name": "Мегамозг",
+        "image": "http://image.tmdb.org/t/p/w500//wmbjH9s0mu5gv1WX3v8n9IwbbHq.jpg",
+        "link": "/see/card/cartoons/500-14/Megamozg.html",
+        "year": "2010",
+        "rating":"7.0"
     },
     {
         "name": "ВАЛЛ·И",
         "image": "https://image.tmdb.org/t/p/w500//i4qDsHTfrTD2EkPa7tT53cJYZkL.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-15/VALL·I.html",
         "year": "2008",
         "rating":"8.1"
     },
     {
         "name": "Фантазия",
         "image": "https://image.tmdb.org/t/p/w500//gCevkcGOmqowkB6jJaYUVZdHCVN.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-16/Fantaziya.html",
         "year": "1940",
         "rating":"7.4"
     },
     {
         "name": "Аладдин",
         "image": "https://image.tmdb.org/t/p/w500//92GjkHUHMn9HIZqihuradZNZNLb.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-17/Aladdin.html",
         "year": "1992",
         "rating":"7.7"
     },
     {
         "name": "Семейка Крудс",
         "image": "https://image.tmdb.org/t/p/w500//bYF0aegBQBHfc1Lva7mChj4cPLM.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-18/Semejka-Kruds.html",
         "year": "2013",
         "rating":"6.9"
     },
     {
         "name": "Красавица и чудовище",
         "image": "https://image.tmdb.org/t/p/w500//A9AtXMWX0V4IZ2ygBi9Cr85tQD1.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-19/Krasavica-i-chudovishe.html",
         "year": "1991",
         "rating":"7.7"
     },
     {
-        "name": "Самолеты",
+        "name": "Самолёты",
         "image": "https://image.tmdb.org/t/p/w500//1OjNMu0THjx5iXXH43a6nAF7wqm.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-20/Samolety.html",
         "year": "2013",
         "rating":"5.9"
     },
     {
         "name": "Эпик",
         "image": "https://image.tmdb.org/t/p/w500//vO3UVVzfpRN5PgxyyzCnFBfbRS2.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-21/Epik.html",
         "year": "2013",
         "rating":"6.5"
     },
     {
         "name": "Секретная служба Санта-Клауса",
         "image": "https://image.tmdb.org/t/p/w500//bHMGBqaYrdXgzVRfxn9ukN2PpN8.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-23/Sekretnaya-sluzhba-Santa-Klausa.html",
         "year": "2011",
         "rating":"6.8"
     },
     {
         "name": "В поисках Немо",
         "image": "https://image.tmdb.org/t/p/w500//wwUYKw29xtFLk5PIZV9iDAs6zlW.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-24/V-poiskah-Nemo.html",
         "year": "2003",
         "rating":"7.8"
     },
     {
         "name": "Индюки: Назад в будущее",
         "image": "https://image.tmdb.org/t/p/w500//h1iOcJ6qEgFBQ76jACsALLboHQb.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-25/Indyuki-Nazad-v-budushee.html",
         "year": "2013",
         "rating":"5.9"
     },
@@ -1427,7 +1427,7 @@ const data = [
     {
         "name": "Корпорация Монстров",
         "image": "https://image.tmdb.org/t/p/w500//zXIusESsQ7ZXP9MFwbvcTTZ3XWF.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-22/Korporaciya-Monstrov.html",
         "year": "2001",
         "rating":"7.8"
     },
