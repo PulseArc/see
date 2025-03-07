@@ -199,9 +199,9 @@ const data = [
     {
         "name": "Трансформеры: Начало",
         "image": "https://image.tmdb.org/t/p/w500//47mnEdahUv5I28CKuBx5drLRcuK.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-28/Transformery-Nachalo.html",
         "year": "2024",
-        "rating":"7.6"
+        "rating":"8.1"
     },
     {
         "name": "Деревенские против пришельцев",
@@ -599,77 +599,77 @@ const data = [
     {
         "name": "Лоракс",
         "image": "https://image.tmdb.org/t/p/w500//pCq2zMcfyC0METerLKJahBmlR0v.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-32/Loraks.html",
         "year": "2012",
         "rating":"6.5"
     },
     {
         "name": "Астерикс и тайное зелье",
         "image": "https://image.tmdb.org/t/p/w200//tjhaD88iWGGEFmUX38KZ4GsCXRJ.jpg",
-        "link": "#",
-        "year": "2019",
+        "link": "/see/card/cartoons/500-33/Asteriks-i-tajnoe-zele.html",
+        "year": "2018",
         "rating":"6.9"
     },
     {
         "name": "Пушистое превращение",
         "image": "https://image.tmdb.org/t/p/w500//uR70IF8Xiw3fnM2j5KBmDKyyP2o.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-34/Pushistoe-prevrashenie.html",
+        "year": "2024",
+        "rating":"5.1"
+    },
+    {
+        "name": "Шаг за шагом",
+        "image": "https://image.tmdb.org/t/p/w200//9xSjP8B0iZHRzvrtKcYDkaalomS.jpg",
+        "link": "/see/card/cartoons/500-35/Shag-za-shagom.html",
         "year": "2024",
         "rating":"7.5"
     },
     {
-        "name": "По кусочкам",
-        "image": "https://image.tmdb.org/t/p/w200//9xSjP8B0iZHRzvrtKcYDkaalomS.jpg",
-        "link": "#",
-        "year": "2024",
-        "rating":"7.7"
-    },
-    {
         "name": "Вперёд",
         "image": "https://image.tmdb.org/t/p/w500//6Pvojxr83EZNisODJbXmLfmOya8.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-36/Vperyod.html",
         "year": "2020",
         "rating":"7.7"
     },
     {
         "name": "Пингвины Мадагаскара",
-        "image": "https://image.tmdb.org/t/p/w500//2qhOYbIsLnUr1m5ZYODTxCqKcNP.jpg",
-        "link": "#",
+        "image": "http://image.tmdb.org/t/p/w500//uovMwhOMMF31sO9TxGvqjIGvdm8.jpg",
+        "link": "/see/card/cartoons/500-37/Pingviny-Madagaskara.html",
         "year": "2014",
-        "rating":"6.5"
-    },
-    {
-        "name": "Пришельцы в доме",
-        "image": "https://image.tmdb.org/t/p/w500//baugoi8UiAMReW62C3Mx5fk7PSP.jpg",
-        "link": "#",
-        "year": "2018",
         "rating":"6.5"
     },
     {
         "name": "Хранитель Луны",
         "image": "https://image.tmdb.org/t/p/w500//yCEBDLJrRDiB5yCEarmRI75xkYM.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-38/Hranitel-Luny.html",
         "year": "2015",
         "rating":"7.3"
     },
     {
+        "name": "Пришельцы в доме",
+        "image": "https://image.tmdb.org/t/p/w500//baugoi8UiAMReW62C3Mx5fk7PSP.jpg",
+        "link": "/see/card/cartoons/500-39/Prishelcy-v-dome.html",
+        "year": "2018",
+        "rating":"6.4"
+    },
+    {
         "name": "Король Лев",
         "image": "https://image.tmdb.org/t/p/w500//j8tdiuhbF9p5mnAeA1YOUvz82xY.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-40/Korol-Lev.html",
         "year": "1994",
         "rating":"8.3"
     },
     {
         "name": "Кокоша – маленький дракон",
         "image": "https://image.tmdb.org/t/p/w500//whaEzMfeeegBeD6URtATboFmNwf.jpg",
-        "link": "#",
-        "year": "2015",
+        "link": "/see/card/cartoons/500-41/Kokosha–malenkij-drakon.html",
+        "year": "2014",
         "rating":"5.2"
     },
     {
         "name": "Риверданс: Волшебное приключение",
         "image": "https://image.tmdb.org/t/p/w500//i6TRDlVuuEXMyLSlIkDd8YhBN0r.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-42/Riverdans-Volshebnoe-priklyuchenie.html",
         "year": "2021",
         "rating":"6.0"
     },
@@ -1392,35 +1392,35 @@ const data = [
     {
         "name": "Ральф",
         "image": "https://image.tmdb.org/t/p/w500//uqWBFXy0lhoz32qy9PsfAjgKMge.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-26/Ralf.html",
         "year": "2012",
         "rating":"7.3"
     },
     {
         "name": "Турбо",
         "image": "https://image.tmdb.org/t/p/w500//inTKQni4YW8syrfgnXHwzmNeSo4.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-27/Turbo.html",
         "year": "2013",
         "rating":"6.2"
     },
     {
         "name": "Кошмар перед Рождеством",
         "image": "https://image.tmdb.org/t/p/w500//xvqFn90FxKTJflG4n0spZY7vySu.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-29/Koshmar-pered-Rozhdestvom.html",
         "year": "1993",
         "rating":"7.8"
     },
     {
         "name": "Утиные истории: Заветная лампа",
         "image": "https://image.tmdb.org/t/p/w500//2yY39ALrHQb8ZTRwUW9yiL3x7ft.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-30/Utinye-istorii-Zavetnaya-lampa.html",
         "year": "1990",
         "rating":"6.7"
     },
     {
         "name": "История игрушек 3",
         "image": "https://image.tmdb.org/t/p/w500//2IWIk34c9fMv7xJQ5ur4Z3O1Hh9.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-31/Istoriya-igrushek-3.html",
         "year": "2010",
         "rating":"7.8"
     },
