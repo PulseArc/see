@@ -676,56 +676,56 @@ const data = [
     {
         "name": "Тайная жизнь домашних животных",
         "image": "https://image.tmdb.org/t/p/w500//qmfuTRM3vQkXty85zqY7xfdQQjQ.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-43/Tajnaya-zhizn-domashnih-zhivotnyh.html",
         "year": "2016",
         "rating":"6.3"
     },
     {
         "name": "Элементарно",
         "image": "https://image.tmdb.org/t/p/w500//88xo5uF03kEgFWXRQJerXRdONBE.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-44/Elementarno.html",
         "year": "2023",
         "rating":"7.6"
     },
     {
         "name": "Холодное сердце",
         "image": "https://image.tmdb.org/t/p/w500//5LYjyQT4IP7oM5ibawHXyDzT2Pp.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-45/Holodnoe-serdce.html",
         "year": "2013",
         "rating":"7.2"
     },
     {
         "name": "Тайна Коко",
         "image": "https://image.tmdb.org/t/p/w500//jvYsGaUqN8ymH696kRfVJjJ3GIl.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-46/Tajna-Koko.html",
         "year": "2017",
         "rating":"8.2"
     },
     {
-        "name": "Шрек",
+        "name": "Шрэк",
         "image": "https://image.tmdb.org/t/p/w500//5OPCH713UIEeWuvRZpVkkzrZ3Hd.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-47/Shrek.html",
         "year": "2001",
         "rating":"7.7"
     },
     {
         "name": "Райя и последний дракон",
         "image": "https://image.tmdb.org/t/p/w500//c8srjTN6PXUxeqmVI0T2ffK3iwC.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-48/Rajya-i-poslednij-drakon.html",
         "year": "2021",
         "rating":"7.8"
     },
     {
         "name": "Крутые бобры",
         "image": "http://image.tmdb.org/t/p/w500//9KYUA9tZrVNVXk2LTaYNMqGpHUj.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-49/Krutye-bobry.html",
         "year": "1997",
         "rating":"6.9"
     },
     {
         "name": "Головоломка",
         "image": "https://image.tmdb.org/t/p/w500//8wukxopBFO2Vrf50jlLpbrfj4OB.jpg",
-        "link": "#",
+        "link": "/see/card/cartoons/500-50/Golovolomka.html",
         "year": "2015",
         "rating":"7.9"
     },
