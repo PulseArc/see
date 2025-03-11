@@ -361,154 +361,154 @@ function generateRandomCards() {
         {
             "name": "Монстры на каникулах",
             "image": "https://image.tmdb.org/t/p/w500//dLrppCn6TF99oObWrnU87Y7CMyX.jpg",
-            "link": "#",
+            "link": "/see/card/cartoons/500-51/Monstry-na-kanikulah.html",
             "year": "2012",
             "rating":"7.0"
         },
         {
             "name": "Зверополис",
             "image": "https://image.tmdb.org/t/p/w500//qNZT8HwPWFv8Dc5rEE0O3FFODha.jpg",
-            "link": "#",
+            "link": "/see/card/cartoons/500-52/Zveropolis.html",
             "year": "2016",
-            "rating":"7.8"
+            "rating":"7.7"
         },
         {
             "name": "Паранорман, или Как приручить зомби",
             "image": "https://image.tmdb.org/t/p/w500//yDbJ3Ui5jrCjDqI3bJfccjJU3fm.jpg",
-            "link": "#",
+            "link": "/see/card/cartoons/500-53/Paranorman,-ili-Kak-priruchit-zombi.html",
             "year": "2012",
             "rating":"7.0"
         },
         {
             "name": "Дикий робот",
-            "image": "https://image.tmdb.org/t/p/w500//daKChcq5E1ZbIYtHDbWGWc4o0MC.jpg",
-            "link": "#",
+            "image": "http://image.tmdb.org/t/p/w500//sDTumQBxhIyYbZ9acsTtoLfb5ZG.jpg",
+            "link": "/see/card/cartoons/500-54/Dikij-robot.html",
             "year": "2024",
-            "rating":"8.4"
+            "rating":"8.3"
         },
         {
             "name": "Как приручить дракона",
             "image": "https://image.tmdb.org/t/p/w500//cMUmeDM2QRlSOAK9onB8PhXtdZJ.jpg",
-            "link": "#",
+            "link": "/see/card/cartoons/500-55/Kak-priruchit-drakona.html",
             "year": "2010",
             "rating":"7.8"
         },
         {
             "name": "Суперсемейка",
             "image": "https://image.tmdb.org/t/p/w500//nVJGGWCs8CQ41G4fzJoTttfCgpQ.jpg",
-            "link": "#",
+            "link": "/see/card/cartoons/500-56/Supersemejka.html",
             "year": "2004",
             "rating":"7.7"
         },
         {
             "name": "Кот в сапогах 2: Последнее желание",
             "image": "https://image.tmdb.org/t/p/w500//z2gOE3Z4mNLAcw0dQ1BlGoWLrH7.jpg",
-            "link": "#",
+            "link": "/see/card/cartoons/500-57/Kot-v-sapogah-2-Poslednee-zhelanie.html",
             "year": "2022",
             "rating":"8.2"
         },
         {
             "name": "Удача",
             "image": "https://image.tmdb.org/t/p/w500//1tNajPL9FmFbM0msgFF1DMVdpcs.jpg",
-            "link": "#",
+            "link": "/see/card/cartoons/500-58/Udacha.html",
             "year": "2022",
             "rating":"7.8"
         },
         {
             "name": "Моана",
             "image": "https://images.kinorium.com/movie/poster/772898/w1500_51627721.jpg",
-            "link": "#",
+            "link": "/see/card/cartoons/500-59/Moana.html",
             "year": "2016",
             "rating":"7.6"
         },
         {
             "name": "Человек-паук: Паутина вселенных",
             "image": "https://image.tmdb.org/t/p/w500//hsGAxOqbH0UNpIJPMsVRA6dFf85.jpg",
-            "link": "#",
+            "link": "/see/card/cartoons/500-60/Chelovek-pauk-Pautina-vselennyh.html",
             "year": "2023",
-            "rating":"8.4"
+            "rating":"8.3"
         },
         {
             "name": "Миньоны",
             "image": "https://image.tmdb.org/t/p/w500//4JubqgkLoGziLg77xCJATs8c0Ay.jpg",
-            "link": "#",
+            "link": "/see/card/cartoons/500-61/Minony.html",
             "year": "2015",
             "rating":"6.4"
         },
         {
-            "name": "Супер-питомцы",
+            "name": "Суперпитомцы",
             "image": "https://image.tmdb.org/t/p/w500//75jSDcQtHrcVoSflDolT7PC5v82.jpg",
-            "link": "#",
+            "link": "/see/card/cartoons/500-62/Superpitomcy.html",
             "year": "2022",
             "rating":"7.2"
         },
         {
             "name": "Хранители снов",
             "image": "https://image.tmdb.org/t/p/w500//338JxTywTCKqel7RsGgMIqmYooJ.jpg",
-            "link": "#",
+            "link": "/see/card/cartoons/500-63/Hraniteli-snov.html",
             "year": "2012",
             "rating":"7.4"
         },
         {
             "name": "Angry Birds в кино 2",
             "image": "https://image.tmdb.org/t/p/w500//6lKxPyArJPJxveyKjp6ihQKH3Ge.jpg",
-            "link": "#",
+            "link": "/see/card/cartoons/500-64/Angry-Birds-v-kino-2.html",
             "year": "2019",
             "rating":"7.1"
         },
         {
             "name": "Кунг-фу Панда 4",
             "image": "https://images.kinorium.com/movie/poster/9805987/w1500_51633606.jpg",
-            "link": "#",
+            "link": "/see/card/cartoons/500-65/Kung-fu-Panda-4.html",
             "year": "2024",
             "rating":"7.1"
         },
         {
             "name": "Душа",
             "image": "https://image.tmdb.org/t/p/w500//jZkksyMZdTYw7fIVKyA95nFEPnt.jpg",
-            "link": "#",
+            "link": "/see/card/cartoons/500-66/Dusha.html",
             "year": "2020",
             "rating":"8.1"
         },
         {
             "name": "Эверест",
             "image": "https://image.tmdb.org/t/p/w500//2tHCLXq7BbH2i9YjLNDMvohxpj3.jpg",
-            "link": "#",
+            "link": "/see/card/cartoons/500-67/Everest.html",
             "year": "2019",
             "rating":"7.5"
         },
         {
             "name": "Дневник слабака",
             "image": "http://image.tmdb.org/t/p/w500//OR5miI8pm2Shmeoha0zHk97ceK.jpg",
-            "link": "#",
+            "link": "/see/card/cartoons/500-68/Dnevnik-slabaka.html",
             "year": "2021",
             "rating":"6.2"
         },
         {
             "name": "Не бей копытом",
             "image": "http://image.tmdb.org/t/p/w500//3YteNf7HJvJT9IRxpiISoyvRoRR.jpg",
-            "link": "#",
+            "link": "/see/card/cartoons/500-69/Ne-bej-kopytom.html",
             "year": "2004",
             "rating":"6.1"
         },
         {
             "name": "Большое путешествие",
             "image": "http://image.tmdb.org/t/p/w500//82cjRTHAsrNBRWfMJ8VzrvXcYfX.jpg",
-            "link": "#",
+            "link": "/see/card/cartoons/500-70/Bolshoe-puteshestvie.html",
             "year": "2006",
             "rating":"5.5"
         },
         {
             "name": "Лерой и Стич",
             "image": "http://image.tmdb.org/t/p/w500//mVXTQVYBSdhGuNWzpbF9ULt62jH.jpg",
-            "link": "#",
+            "link": "/see/card/cartoons/500-71/Leroj-i-Stich.html",
             "year": "2006",
             "rating":"6.6"
         },
         {
             "name": "Базз Лайтер",
             "image": "http://image.tmdb.org/t/p/w500//DQU4vUTMoAlUGJIC5hNfHPVELz.jpg",
-            "link": "#",
+            "link": "/see/card/cartoons/500-72/Bazz-Lajter.html",
             "year": "2022",
             "rating":"6.9"
         },

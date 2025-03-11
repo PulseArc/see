@@ -10,6 +10,13 @@ document.addEventListener('DOMContentLoaded', function () {
 function generateRandomCards() {
     var cardData = [
         {
+            "name": "911 служба спасения",
+            "image": "http://image.tmdb.org/t/p/w500//9dNWZPjFWdKo5Avr5JEEzLShLMZ.jpg",
+            "link": "/see/card/series/900-01/911-sluzhba-spaseniya.html",
+            "year": "2018",
+            "rating":"8.2"
+        },
+        {
             "name": "Джентльмены",
             "image": "https://image.tmdb.org/t/p/w500//zRdUl8TxpXD3LTFqH9wiya14ZYS.jpg",
             "link": "#",
