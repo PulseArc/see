@@ -920,9 +920,11 @@ margin-left: 4em;
     justify-content: center; /* Выравнивание по горизонтали */
   align-items: center;
     top: 0;
-    left: -0.8em;
-    width: 100vw; /* Вся ширина экрана */
+    left: -0.8em !important;
+    width: 100vw !important; /* Вся ширина экрана */
     height: 90vh; /* Вся высота экрана */
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
    z-index: -1;
    transition: margin-top 0.4s ease; /* Плавный переход для изменения marginTop */
 }
