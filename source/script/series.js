@@ -290,6 +290,13 @@ function generateRandomCards() {
             "rating":"7.3"
         },
         {
+            "name": "Бригада",
+            "image": "http://image.tmdb.org/t/p/w500//nZBVnI2gWZ4OFnpxU49j3kYavYz.jpg",
+            "link": "/see/card/series/900-02/Brigada.html",
+            "year": "2002",
+            "rating":"7.8"
+        },
+        {
             "name": "Задача трёх тел",
             "image": "https://image.tmdb.org/t/p/w500//d4e2b1UiJNgU9V0kBvOxnbVPslE.jpg",
             "link": "#",
