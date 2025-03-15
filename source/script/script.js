@@ -938,6 +938,13 @@ const data = [
         "rating":"8.2"
     },
     {
+        "name": "Сверхъестественное",
+        "image": "http://image.tmdb.org/t/p/w500//hvO99pEfSBxF55clgs8r4mpRzr.jpg",
+        "link": "/see/card/series/900-03/Sverhestestvennoe.html",
+        "year": "2005",
+        "rating":"8.3"
+    },
+    {
         "name": "Дом Дракона",
         "image": "https://image.tmdb.org/t/p/w200//o00Qod5RUoUv1BiCZvCB74tiSDQ.jpg",
         "link": "#",

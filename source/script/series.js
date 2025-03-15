@@ -17,6 +17,13 @@ function generateRandomCards() {
             "rating":"8.2"
         },
         {
+            "name": "Сверхъестественное",
+            "image": "http://image.tmdb.org/t/p/w500//hvO99pEfSBxF55clgs8r4mpRzr.jpg",
+            "link": "/see/card/series/900-03/Sverhestestvennoe.html",
+            "year": "2005",
+            "rating":"8.3"
+        },
+        {
             "name": "Джентльмены",
             "image": "https://image.tmdb.org/t/p/w500//zRdUl8TxpXD3LTFqH9wiya14ZYS.jpg",
             "link": "#",
