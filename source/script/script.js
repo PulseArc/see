@@ -884,6 +884,49 @@ const data = [
         "year": "2022",
         "rating":"6.9"
     },
+    {
+        "name": "Рик и Морти",
+        "image": "http://image.tmdb.org/t/p/w500//wdzk1wPGOnO8dCnaQozSpe1oH9l.jpg",
+        "link": "/see/card/cartoons/500-73/Rik-i-Morti.html",
+        "year": "2013",
+        "rating":"8.7"
+    },
+    {
+        "name": "Время приключений",
+        "image": "http://image.tmdb.org/t/p/w500//kMXB29thNci4oHVbH2bP18XSIav.jpg",
+        "link": "/see/card/cartoons/500-74/Vremya-priklyuchenij.html",
+        "year": "2010",
+        "rating":"8.5"
+    },
+    {
+        "name": "Симпсоны",
+        "image": "http://image.tmdb.org/t/p/w500//171yRAHGCziNjtO53sEil1PH64v.jpg",
+        "link": "/see/card/cartoons/500-75/Simpsony.html",
+        "year": "1989",
+        "rating":"8.0"
+    },
+    {
+        "name": "Южный Парк",
+        "image": "http://image.tmdb.org/t/p/w500//nfttp2lquST92j4ItAYdmtdoj5t.jpg",
+        "link": "/see/card/cartoons/500-76/Yuzhnyj-Park.html",
+        "year": "1997",
+        "rating":"8.4"
+    },
+    {
+        "name": "Гриффины",
+        "image": "http://image.tmdb.org/t/p/w500//seS4Uv5EvezwCS4aVfiBcvB4q4y.jpg",
+        "link": "/see/card/cartoons/500-77/Griffiny.html",
+        "year": "1999",
+        "rating":"7.4"
+    },
+    {
+        "name": "Футурама",
+        "image": "http://image.tmdb.org/t/p/w500//407xqcHFS2O3NsqBo2XpprCjKSc.jpg",
+        "link": "/see/card/cartoons/500-78/Futurama.html",
+        "year": "1999",
+        "rating":"8.4"
+    },
+
     // конец
     
     // Сериалы
