@@ -24,74 +24,95 @@ function generateRandomCards() {
             "rating":"8.3"
         },
         {
+            "name": "Корона",
+            "image": "http://image.tmdb.org/t/p/w500//iS2m3TYiThK43IC3Ygm4snyA4UM.jpg",
+            "link": "/see/card/series/900-04/Korona.html",
+            "year": "2016",
+            "rating":"8.2"
+        },
+        {
+            "name": "Острые козырьки",
+            "image": "http://image.tmdb.org/t/p/w500//pVJzfWgb3sHN29hLaiI5jmBN9vx.jpg",
+            "link": "/see/card/series/900-05/Ostrye-kozyrki.html",
+            "year": "2013",
+            "rating":"8.5"
+        },
+        {
+            "name": "Гримм",
+            "image": "http://image.tmdb.org/t/p/w500//lTmjyJwiMTLsCdzKjkkj2L9VyCd.jpg",
+            "link": "/see/card/card/series/900-06/Grimm.html",
+            "year": "2011",
+            "rating":"8.3"
+        },
+        {
             "name": "Джентльмены",
             "image": "https://image.tmdb.org/t/p/w500//zRdUl8TxpXD3LTFqH9wiya14ZYS.jpg",
-            "link": "#",
+            "link": "/see/card/series/900-07/Dzhentlmeny.html",
             "year": "2024",
             "rating":"7.9"
         },
         {
             "name": "Бриджертоны",
             "image": "https://image.tmdb.org/t/p/w500//jMDY8c3HpkM5LmYr1Xiz7a0r0qk.jpg",
-            "link": "#",
+            "link": "/see/card/series/900-08/Bridzhertony.html",
             "year": "2020",
             "rating":"8.1"
         },
         {
             "name": "Лучше звоните Солу",
             "image": "https://image.tmdb.org/t/p/w500//rTjlrjxCnxiNNVo0PjqUSySoieH.jpg",
-            "link": "#",
+            "link": "/see/card/series/900-09/Luchshe-zvonite-Solu.html",
             "year": "2015",
             "rating":"8.7"
         },
         {
             "name": "Сто лет одиночества",
             "image": "https://image.tmdb.org/t/p/w500//vYtbH9Q5DaCDqzkB483dmYjfkA3.jpg",
-            "link": "#",
+            "link": "/see/card/series/900-10/Sto-let-odinochestva.html",
             "year": "2024",
-            "rating":"8.4"
+            "rating":"8.0"
         },
         {
             "name": "Люцифер",
             "image": "https://image.tmdb.org/t/p/w500//A7IP83pBzpLCbU7hlchJXsfcF8j.jpg",
-            "link": "#",
+            "link": "/see/card/series/900-11/Lyucifer.html",
             "year": "2016",
             "rating":"8.5"
         },
         {
             "name": "Декстер: Новая кровь",
             "image": "https://image.tmdb.org/t/p/w500//6Dlx8ck7zRKIxnFNJ1G1tXZ6p9D.jpg",
-            "link": "#",
+            "link": "/see/card/series/900-12/Dekster-Novaya-krov.html",
             "year": "2021",
             "rating":"8.0"
         },
         {
             "name": "Дневники вампира",
             "image": "https://image.tmdb.org/t/p/w500//y8hcR1R8QmGs8uLHQhIFHgCFWDd.jpg",
-            "link": "#",
+            "link": "/see/card/series/900-13/Dnevniki-vampira.html",
             "year": "2009",
             "rating":"8.3"
         },
         {
             "name": "Шерлок",
             "image": "https://image.tmdb.org/t/p/w500//kuaBGwju6CParqos7afHNvNEIdD.jpg",
-            "link": "#",
+            "link": "/see/card/series/900-14/Sherlok.html",
             "year": "2010",
             "rating":"8.5"
         },
         {
             "name": "Тьма",
             "image": "https://image.tmdb.org/t/p/w500//ikhUNN25WVfMN2uvoJLLKYXp8jE.jpg",
-            "link": "#",
+            "link": "/see/card/series/900-15/Tma.html",
             "year": "2017",
             "rating":"8.4"
         },
         {
             "name": "Игра в кальмара",
             "image": "https://image.tmdb.org/t/p/w500//3vMCgpRa5cdutE56AXqeEkGHtxI.jpg",
-            "link": "#",
+            "link": "/see/card/series/900-16/Igra-v-kalmara.html",
             "year": "2021",
-            "rating":"7.8"
+            "rating":"7.9"
         },
         {
             "name": "Тед Лассо",
