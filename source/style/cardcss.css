@@ -913,7 +913,9 @@ margin-left: 4em;
       height: 47px !important;
   }
   /* конец */
-
+  .Phone-version > div {
+    height: 80vh !important;
+  }
 
 .Phone-version {
     position: relative;
