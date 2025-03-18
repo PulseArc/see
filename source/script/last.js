@@ -14,7 +14,7 @@ function generateLastCards() {
         {
             "name": "Древние",
             "image": "https://image.tmdb.org/t/p/w500//dsVB3Mqv5sHGGsu1SGuF3fahw0Z.jpg",
-            "link": "#",
+            "link": "/see/card/series/900-34/Drevnie.html",
             "year": "2013",
             "rating":"8.6"
         },
@@ -42,14 +42,14 @@ function generateLastCards() {
         {
             "name": "Кунг-фу Панда 4",
             "image": "https://images.kinorium.com/movie/poster/9805987/w1500_51633606.jpg",
-            "link": "#",
+            "link": "/see/card/cartoons/500-65/Kung-fu-Panda-4.html",
             "year": "2024",
             "rating":"7.1"
         },
         {
             "name": "Эверест",
             "image": "https://image.tmdb.org/t/p/w500//2tHCLXq7BbH2i9YjLNDMvohxpj3.jpg",
-            "link": "#",
+            "link": "/see/card/cartoons/500-67/Everest.html",
             "year": "2019",
             "rating":"7.5"
         },

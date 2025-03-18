@@ -1816,119 +1816,119 @@ const data = [
     {
         "name": "Тед Лассо",
         "image": "https://image.tmdb.org/t/p/w500//htV1GTyatTXJB589hjiqUQPegjd.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-17/Ted-Lasso.html",
         "year": "2020",
         "rating":"8.4"
     },
     {
         "name": "Друзья",
         "image": "https://image.tmdb.org/t/p/w500//zBOs8S3UOHyWLzOl9gF8lknBxlL.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-18/Druzya.html",
         "year": "1994",
         "rating":"8.4"
     },
     {
         "name": "Хороший доктор",
         "image": "https://image.tmdb.org/t/p/w500//c3WPgJl5OjAMJotI7qPeL1zgcCX.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-19/Horoshij-doktor.html",
         "year": "2017",
         "rating":"8.5"
     },
     {
         "name": "Волчонок",
         "image": "https://image.tmdb.org/t/p/w500//bq0TmDgpYWrTuJVo8JpeMU3LLb8.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-20/Volchonok.html",
         "year": "2011",
         "rating":"8.5"
     },
     {
         "name": "Ходячие мертвецы",
         "image": "https://image.tmdb.org/t/p/w500//3metsxLVhlJU0mNj5gVfKIih0EF.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-21/Hodyachie-mertvecy.html",
         "year": "2010",
         "rating":"8.1"
     },
     {
         "name": "Мистер Робот",
         "image": "https://image.tmdb.org/t/p/w500//v0O3GfmruiKwBCFUKc1cEM1PVLF.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-22/Mister-Robot.html",
         "year": "2015",
         "rating":"8.2"
     },
     {
         "name": "Мандалорец",
         "image": "https://image.tmdb.org/t/p/w500//3JcJfU9wm6sA2R6LQtnsBJsHMmY.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-23/Mandalorec.html",
         "year": "2019",
         "rating":"8.4"
     },
     {
         "name": "Земля без людей",
         "image": "https://image.tmdb.org/t/p/w500//fRPUaAmxFtfhYPalD7Ru8Cu2MTr.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-24/Zemlya-bez-lyudej.html",
         "year": "2024",
-        "rating":"7.7"
+        "rating":"7.2"
     },
     {
         "name": "Американская история ужасов",
         "image": "https://image.tmdb.org/t/p/w500//gj2dFFgEHdhxqSBpD2oPyo4YmPD.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-25/Amerikanskaya-istoriya-uzhasov.html",
         "year": "2011",
         "rating":"8.1"
     },
     {
         "name": "День Шакала",
         "image": "https://image.tmdb.org/t/p/w500//uFdIebgylj64d9ze6y1C5jsHUZZ.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-26/Den-Shakala.html",
         "year": "2024",
         "rating":"8.3"
     },
     {
         "name": "Кросс",
         "image": "https://image.tmdb.org/t/p/w500//vjC4LAf7K6aXCWcp3CdinYsG0aG.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-27/Kross.html",
         "year": "2024",
-        "rating":"7.3"
+        "rating":"7.2"
     },
     {
         "name": "Ганнибал",
         "image": "https://image.tmdb.org/t/p/w500//cy5xnqFR88IG5RrHXxHlpqhLjEG.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-28/Gannibal.html",
         "year": "2013",
         "rating":"8.2"
     },
     {
         "name": "Сексуальное просвещение",
         "image": "https://image.tmdb.org/t/p/w500//ig9FyX4AMOhJXKQkDmau0xX0DWy.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-30/Seksualnoe-prosveshenie.html",
         "year": "2019",
-        "rating":"8.3"
+        "rating":"8.2"
     },
     {
         "name": "Ловкий Плут",
         "image": "https://image.tmdb.org/t/p/w500//3xhycTWtx8TsQDllkQ4g7s2mGBR.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-31/Lovki-Plut.html",
         "year": "2023",
         "rating":"8.0"
     },
     {
         "name": "Дорогуша",
         "image": "https://image.tmdb.org/t/p/w500//33DCNqCAtqL408AOYrzJ09NhiN7.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-32/Dorogusha.html",
         "year": "2024",
-        "rating":"7.5"
+        "rating":"7.6"
     },
     {
         "name": "Игра престолов",
         "image": "https://image.tmdb.org/t/p/w500//tbBQW8jpDH7RpAymMGnBluIsdmH.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-33/Igra-prestolov.html",
         "year": "2011",
         "rating":"8.5"
     },
     {
         "name": "Древние",
         "image": "https://image.tmdb.org/t/p/w500//dsVB3Mqv5sHGGsu1SGuF3fahw0Z.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-34/Drevnie.html",
         "year": "2013",
         "rating":"8.6"
     },
@@ -1949,7 +1949,7 @@ const data = [
     {
         "name": "Магазин светильников",
         "image": "https://image.tmdb.org/t/p/w500//edzQHpnGiwYYf1wRRv91iJETtWX.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-29/Magazin-svetilnikov.html",
         "year": "2024",
         "rating":"8.6"
     },
