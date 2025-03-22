@@ -40,7 +40,7 @@ function generateRandomCards() {
         {
             "name": "Гримм",
             "image": "http://image.tmdb.org/t/p/w500//lTmjyJwiMTLsCdzKjkkj2L9VyCd.jpg",
-            "link": "/see/card/card/series/900-06/Grimm.html",
+            "link": "/see/card/series/900-06/Grimm.html",
             "year": "2011",
             "rating":"8.3"
         },
