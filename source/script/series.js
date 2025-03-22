@@ -243,49 +243,49 @@ function generateRandomCards() {
         {
             "name": "Отбросы",
             "image": "https://image.tmdb.org/t/p/w500//jpSJDe6TTnLL5Es9uZ8Viz6MMYV.jpg",
-            "link": "#",
+            "link": "/see/card/series/900-35/Otbrosy.html",
             "year": "2009",
             "rating":"7.6"
         },
         {
             "name": "Флэш",
             "image": "https://image.tmdb.org/t/p/w500//q14oRmj0ITMBzqHUdiGwXUIvg7t.jpg",
-            "link": "#",
+            "link": "/see/card/series/900-36/Flesh.html",
             "year": "2014",
             "rating":"7.8"
         },
         {
             "name": "Дом Дракона",
-            "image": "https://image.tmdb.org/t/p/w200//o00Qod5RUoUv1BiCZvCB74tiSDQ.jpg",
-            "link": "#",
+            "image": "http://image.tmdb.org/t/p/w500//aJQltz3MvtfDMAasIq01znhNwk3.jpg",
+            "link": "/see/card/series/900-37/Dom-Drakona.html",
             "year": "2022",
             "rating":"8.4"
         },
         {
             "name": "Презумпция невиновности",
             "image": "https://image.tmdb.org/t/p/w500//l432WSWtwRw40R3IJuwakO0w6sq.jpg",
-            "link": "#",
+            "link": "/see/card/series/900-38/Prezumpciya-nevinovnosti.html",
             "year": "2024",
             "rating":"8.1"
         },
         {
-            "name": "Обреченные на славу",
+            "name": "Обречённые на славу",
             "image": "https://image.tmdb.org/t/p/w500//4NHRDQa5WgX2guZDihQLLtifYs.jpg",
-            "link": "#",
+            "link": "/see/card/series/900-39/Obrechennye-na-slavu.html",
             "year": "2024",
             "rating":"7.5"
         },
         {
             "name": "Пацаны",
-            "image": "https://image.tmdb.org/t/p/w500//qAzoBXlcEVy52haniYkTpeFU3fa.jpg",
-            "link": "#",
+            "image": "http://image.tmdb.org/t/p/w500//3NqlBDpWI83TgQ9nmeFwTVxEmtZ.jpg",
+            "link": "/see/card/series/900-40/Pacany.html",
             "year": "2019",
             "rating":"8.5"
         },
         {
             "name": "Очень странные дела",
             "image": "https://image.tmdb.org/t/p/w500//uKBjtMZ7yDlJovmqIOBe0ZVGdVM.jpg",
-            "link": "#",
+            "link": "/see/card/series/900-41/Ochen-strannye-dela.html",
             "year": "2016",
             "rating":"8.6"
         },
