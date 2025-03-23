@@ -967,7 +967,7 @@ const data = [
     },
     {
         "name": "Дом Дракона",
-        "image": "http://image.tmdb.org/t/p/w500//aJQltz3MvtfDMAasIq01znhNwk3.jpg",
+        "image": "https://images.kinorium.com/movie/poster/2241207/w1500_50655207.jpg",
         "link": "/see/card/series/900-37/Dom-Drakona.html",
         "year": "2022",
         "rating":"8.4"
@@ -1003,30 +1003,30 @@ const data = [
     {
         "name": "Шугар",
         "image": "https://image.tmdb.org/t/p/w500//z8rJ8FWiMpWt9ecbsVcxoE3UQxo.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-42/Shugar.html",
         "year": "2024",
         "rating":"7.3"
     },
     {
         "name": "Охота за убийцей",
         "image": "https://image.tmdb.org/t/p/w500//lcoxNrC8Z00MiUynsqxNtwQDjvA.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-43/Ohota-za-ubijcej.html",
         "year": "2024",
-        "rating":"7.0"
+        "rating":"6.9"
     },
     {
         "name": "Ходячие мертвецы: Выжившие",
         "image": "https://image.tmdb.org/t/p/w500//rhN08H5Yg7xAFfBzeDzVV9GAwDj.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-44/Hodyachie-mertvecy-Vyzhivshie.html",
         "year": "2024",
-        "rating":"7.5"
+        "rating":"8.0"
     },
     {
         "name": "Созвездие",
         "image": "https://image.tmdb.org/t/p/w500//pon5QHLxrsgmyZKVSUdpXmHg08C.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-45/Sozvezdie.html",
         "year": "2024",
-        "rating":"7.3"
+        "rating":"7.2"
     },
     {
         "name": "Бригада",
@@ -1038,107 +1038,107 @@ const data = [
     {
         "name": "Задача трёх тел",
         "image": "https://image.tmdb.org/t/p/w500//d4e2b1UiJNgU9V0kBvOxnbVPslE.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-46/Zadacha-tryoh-tel.html",
         "year": "2024",
-        "rating":"8.5"
+        "rating":"7.5"
     },
     {
         "name": "Хало",
         "image": "https://image.tmdb.org/t/p/w500//5SBcW0WyqxZyE7AolxfX1ift532.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-47/Halo.html",
         "year": "2022",
-        "rating":"7.1"
+        "rating":"8.3"
     },
     {
         "name": "Властелины воздуха",
-        "image": "https://image.tmdb.org/t/p/w500//ondfe0K5CTb6YO2k6LZYOxN2NOb.jpg",
-        "link": "#",
+        "image": "http://image.tmdb.org/t/p/w500//mAJJPhPJ0EbyemFho6Wtwibi7FZ.jpg",
+        "link": "/see/card/series/900-48/Vlasteliny-vozduha.html",
         "year": "2024",
-        "rating":"7.9"
+        "rating":"7.8"
     },
     {
-        "name": "Десять дней до весны",
-        "image": "https://image.tmdb.org/t/p/w500//72y8m646aJbX0nKnz0sQwIyzb7c.jpg",
-        "link": "#",
-        "year": "2024",
-        "rating":"8.0"
+        "name": "Лунный рыцарь",
+        "image": "http://image.tmdb.org/t/p/w500//pygGowaXF87Mfomit3oekliBvt7.jpg",
+        "link": "/see/card/series/900-49/Lunnyj-rycar.html",
+        "year": "2022",
+        "rating":"7.7"
     },
     {
         "name": "Извне",
         "image": "https://image.tmdb.org/t/p/w500//rGFRCzgScvIC9LCfqkdb9T7NIs0.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-50/Izvne.html",
         "year": "2022",
         "rating":"8.2"
     },
     {
         "name": "Чернобыль",
         "image": "https://image.tmdb.org/t/p/w500//qhzSVp06AGGcziMoibInZ5PY0Eg.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-51/Chernobyl.html",
         "year": "2019",
-        "rating":"9.4"
+        "rating":"8.7"
     },
     {
-        "name": "Джек Ричер",
-        "image": "https://image.tmdb.org/t/p/w500//8vmhDzJr7xqyojmX0P9xgD8ZSk1.jpg",
-        "link": "#",
+        "name": "Ричер",
+        "image": "http://image.tmdb.org/t/p/w500//zLqlW0rXmHwOZRhmOjeod14sGiT.jpg",
+        "link": "/see/card/series/900-52/Dzhek-Richer.html",
         "year": "2022",
         "rating":"8.1"
     },
     {
         "name": "Фарго",
-        "image": "https://image.tmdb.org/t/p/w500//w7JI7tG0KVQJH22TLQS6P6BlCur.jpg",
-        "link": "#",
+        "image": "http://image.tmdb.org/t/p/w500//r8HpRhKl5q0kiNehdjVOmTC7K7p.jpg",
+        "link": "/see/card/series/900-53/Fargo.html",
         "year": "2014",
-        "rating":"8.9"
+        "rating":"8.3"
     },
     {
         "name": "Третий лишний",
         "image": "https://image.tmdb.org/t/p/w500//cahNXUK7bp9RTPItIVyOF2z5m0L.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-54/Tretij-lishnij.html",
         "year": "2024",
-        "rating":"8.0"
+        "rating":"7.9"
     },
     {
-        "name": "Монарх: Наследие монстров",
+        "name": "«Монарх»: Наследие монстров",
         "image": "https://image.tmdb.org/t/p/w500//kam0gTmqC0h68uLiRxamj38nkPX.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-55/Monarh-Nasledie-monstrov.html",
         "year": "2023",
-        "rating":"7.3"
+        "rating":"7.8"
     },
     {
         "name": "Пингвин",
         "image": "https://image.tmdb.org/t/p/w500//25dj85s5VtirRWF6rmO8TpZXHJV.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-56/Pingvin.html",
         "year": "2024",
         "rating":"8.5"
     },
     {
         "name": "Ведьмак",
         "image": "https://image.tmdb.org/t/p/w500//rY2c2LhN07CRKlAbRaDZxN2XjvK.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-57/Vedmak.html",
         "year": "2019",
         "rating":"8.0"
     },
     {
         "name": "Локи",
         "image": "https://image.tmdb.org/t/p/w500//fNTS8BOMmhYYM4FqLPLuJ6KRQEF.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-58/Loki.html",
         "year": "2019",
         "rating":"8.2"
     },
     {
         "name": "Тысяча и одна ночь",
         "image": "https://image.tmdb.org/t/p/w500//vR9Dh1zc0yQSAln3bqqCPRndhEB.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-59/Tysyacha-i-odna-noch.html",
         "year": "2024",
-        "rating":"5.5"
+        "rating":"4.0"
     },
     {
         "name": "Ходячие мертвецы: Дэрил Диксон",
         "image": "https://image.tmdb.org/t/p/w500//kRTaNKcs3RQJCB626y1mGOTHVYU.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-60/Hodyachie-mertvecy-Deril-Dikson.html",
         "year": "2023",
-        "rating":"8.2"
+        "rating":"8.1"
     },
     {
         "name": "Зимний король",

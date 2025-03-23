@@ -56,30 +56,30 @@ function generateLastCards() {
         {
             "name": "Охота за убийцей",
             "image": "https://image.tmdb.org/t/p/w500//lcoxNrC8Z00MiUynsqxNtwQDjvA.jpg",
-            "link": "#",
+            "link": "/see/card/series/900-43/Ohota-za-ubijcej.html",
             "year": "2024",
-            "rating":"7.0"
+            "rating":"6.9"
         },
         {
             "name": "Ходячие мертвецы: Выжившие",
             "image": "https://image.tmdb.org/t/p/w500//rhN08H5Yg7xAFfBzeDzVV9GAwDj.jpg",
-            "link": "#",
+            "link": "/see/card/series/900-44/Hodyachie-mertvecy-Vyzhivshie.html",
             "year": "2024",
-            "rating":"7.5"
+            "rating":"8.0"
         },
         {
             "name": "Созвездие",
             "image": "https://image.tmdb.org/t/p/w500//pon5QHLxrsgmyZKVSUdpXmHg08C.jpg",
-            "link": "#",
+            "link": "/see/card/series/900-45/Sozvezdie.html",
             "year": "2024",
-            "rating":"7.3"
+            "rating":"7.2"
         },
         {
             "name": "Хало",
             "image": "https://image.tmdb.org/t/p/w500//5SBcW0WyqxZyE7AolxfX1ift532.jpg",
-            "link": "#",
+            "link": "/see/card/series/900-47/Halo.html",
             "year": "2022",
-            "rating":"7.1"
+            "rating":"8.3"
         },
         {
             "name": "Деревенские против пришельцев",
