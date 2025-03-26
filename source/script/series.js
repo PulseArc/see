@@ -439,21 +439,21 @@ function generateRandomCards() {
         {
             "name": "Поколение «Ви»",
             "image": "https://image.tmdb.org/t/p/w500//2AVCQymHu0gj8Jwci2VxEuodZq4.jpg",
-            "link": "/see/card/series/900-62/Pokolenie-«Vi»",
+            "link": "/see/card/series/900-62/Pokolenie-Vi.html",
             "year": "2023",
             "rating":"7.9"
         },
         {
             "name": "Доисторическая планета",
             "image": "https://image.tmdb.org/t/p/w500//5mj82iMTp8UmnyXFaZbwRGuc81a.jpg",
-            "link": "#",
+            "link": "/see/card/series/900-63/Doistoricheskaya-planeta.html",
             "year": "2022",
             "rating":"8.3"
         },
         {
             "name": "Одни из нас",
             "image": "https://image.tmdb.org/t/p/w500//69loIrm9JPpPRE3Akw4yRoitSYn.jpg",
-            "link": "#",
+            "link": "/see/card/series/900-64/Odni-iz-nas.html",
             "year": "2023",
             "rating":"8.6"
         },
