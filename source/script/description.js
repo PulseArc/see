@@ -1,3 +1,4 @@
+console.log(window.location.pathname); //Если работаете в браузере.
 import { getMovieId, getMovieDetails, getMovieDetailsRu, getProductionCompanies, getKeywords } from '../../../source/script/apple.js';
 
 function createKeywordSpans(keywords) {

@@ -1,4 +1,5 @@
 // actors.js
+console.log(window.location.pathname); //Если работаете в браузере.
 import { getMovieId, getCredits } from '../../../source/script/apple.js';
 
 const DEFAULT_IMG = '../../../source/images/logo/actor.svg';
