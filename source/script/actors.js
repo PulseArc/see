@@ -1,5 +1,5 @@
 // actors.js
-import { getMovieId, getCredits } from '../../../../source/script/apple.js';
+import { getMovieId, getCredits } from './apple.js';
 
 const DEFAULT_IMG = '../../../source/images/logo/actor.svg';
 
