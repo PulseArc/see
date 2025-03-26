@@ -1,5 +1,5 @@
 
-import { getMovieId, getMovieDetails, getMovieDetailsRu, getProductionCompanies, getKeywords } from '/source/script/apple.js';
+import { getMovieId, getMovieDetails, getMovieDetailsRu, getProductionCompanies, getKeywords } from './apple.js';
 
 function createKeywordSpans(keywords) {
     console.log('Ключевые слова для отображения:', keywords);
