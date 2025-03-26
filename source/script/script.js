@@ -1143,14 +1143,14 @@ const data = [
     {
         "name": "Зимний король",
         "image": "https://image.tmdb.org/t/p/w500//fYx5q9hPAmbDrWzsYUDhxZJnigC.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-61/Zimnij-korol.html",
         "year": "2023",
-        "rating":"7.3"
+        "rating":"6.8"
     },
     {
         "name": "Поколение «Ви»",
         "image": "https://image.tmdb.org/t/p/w500//2AVCQymHu0gj8Jwci2VxEuodZq4.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-62/Pokolenie-«Vi»",
         "year": "2023",
         "rating":"7.9"
     },
