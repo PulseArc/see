@@ -1,8 +1,7 @@
 // actors.js
-console.log(window.location.pathname); //Если работаете в браузере.
-import { getMovieId, getCredits } from '../../../source/script/apple.js';
+import { getMovieId, getCredits } from '/source/script/apple.js';
 
-const DEFAULT_IMG = '../../../source/images/logo/actor.svg';
+const DEFAULT_IMG = '/source/images/logo/actor.svg';
 
 async function showActors() {
     const movieTitle = document.getElementById('movie-title').innerText;
