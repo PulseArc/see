@@ -174,7 +174,7 @@
 }
 
 .card-title{
-    font-size: 4em;
+    font-size: 3.5em;
     font-weight: 600;
     margin-bottom: 0.2em;
     margin-top:0.1em;
@@ -739,7 +739,12 @@ z-index: -1;
  
 
 
-  
+  @media (min-width: 600px) and (max-width: 860px) {
+    .card-title{
+      font-size: 3em;
+    }
+  }
+
 @media screen and (max-width: 600px) {
   .Mobile{
     display: block;
