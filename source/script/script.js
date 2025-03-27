@@ -1171,142 +1171,142 @@ const data = [
     {
         "name": "Захваченный рейс",
         "image": "https://image.tmdb.org/t/p/w500//v4oAWDy33lmKI7lsktThsYhp3zU.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-65/Zahvachennyj-rejs.html",
         "year": "2023",
-        "rating":"7.3"
+        "rating":"7.8"
     },
     {
         "name": "Скрежет металла",
         "image": "https://image.tmdb.org/t/p/w500//82HaUMIagdh5PLflUOVrHn5GsI9.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-66/Skrezhet-metalla.html",
         "year": "2023",
-        "rating":"8.0"
+        "rating":"7.9"
     },
     {
         "name": "Бумажный дом",
         "image": "https://image.tmdb.org/t/p/w500//x9YQ28gwAkAXCSw7n1cAsPbJaTF.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-67/Bumazhnyj-dom.html",
         "year": "2017",
         "rating":"8.2"
     },
     {
         "name": "Любовь и смерть ",
         "image": "https://image.tmdb.org/t/p/w500//tMm4sHiTkx8kaI71BcG2ELXRKfR.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-68/Lyubov-i-smert.html",
         "year": "2023",
-        "rating":"7.4"
+        "rating":"7.9"
     },
     {
         "name": "Цитадель",
         "image": "https://image.tmdb.org/t/p/w500//hwlI6qEtzFT47FAUMP3xac8qcnz.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-69/Citadel.html",
         "year": "2023",
-        "rating":"7.2"
+        "rating":"6.9"
     },
     {
         "name": "Экстраполяции",
         "image": "https://image.tmdb.org/t/p/w500//wzyKhC005b7wuCwfCgcKIIc7DWY.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-70/Ekstrapolyacii.html",
         "year": "2023",
-        "rating":"7.2"
+        "rating":"6.0"
     },
     {
-        "name": "Fallout",
+        "name": "Фоллаут",
         "image": "https://image.tmdb.org/t/p/w500//tOrIGVF521WhBsIDwuGQ999ZbjV.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-71/Fallout.html",
         "year": "2024",
         "rating":"8.3"
     },
     {
         "name": "Связь",
         "image": "https://image.tmdb.org/t/p/w500//u79ZbVgP5F8kugRHOrrAF78PFe1.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-72/Svyaz.html",
         "year": "2023",
-        "rating":"6.4"
+        "rating":"6.3"
     },
     {
         "name": "Настоящий детектив",
-        "image": "https://image.tmdb.org/t/p/w500//dHqKLovbM9GT0fkwtL5ew5SPtmk.jpg",
-        "link": "#",
+        "image": "http://image.tmdb.org/t/p/w500//1p60ehq2diow72QQC8pyppfexky.jpg",
+        "link": "/see/card/series/900-73/Nastoyashij-detektiv.html",
         "year": "2014",
         "rating":"8.3"
     },
     {
         "name": "Всевидящее око",
         "image": "https://image.tmdb.org/t/p/w500//5axQCuuavbNOAICMa3tduIXQL5T.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-74/Vsevidyashee-oko.html",
         "year": "2023",
-        "rating":"6.8"
+        "rating":"6.7"
     },
     {
         "name": "Сёгун",
         "image": "https://image.tmdb.org/t/p/w500//cOKLRblbdBtcuf4TkAzsyJpZr23.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-75/Syogun.html",
         "year": "2024",
         "rating":"8.5"
     },
     {
         "name": "Карнивал Роу",
         "image": "https://image.tmdb.org/t/p/w500//gdaKPawLiRqT44AqDJCnxBAsy2j.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-76/Karnival-Rou.html",
         "year": "2019",
-        "rating":"7.8"
+        "rating":"7.7"
     },
     {
         "name": "Сквозь снег",
         "image": "https://image.tmdb.org/t/p/w500//mNUE6FC57NcC9iC8QUCtlMEF5n8.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-77/Skvoz-sneg.html",
         "year": "2020",
-        "rating":"7.5"
+        "rating":"7.4"
     },
     {
         "name": "Ты",
         "image": "https://image.tmdb.org/t/p/w500//aSEYa7z10DC6o3NedSZEyJ6SBXv.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-78/Ty.html",
         "year": "2018",
-        "rating":"7.8"
+        "rating":"8.0"
     },
     {
         "name": "Мэйфейрские ведьмы",
-        "image": "https://image.tmdb.org/t/p/w500//iPuGECyDYN7mzeZ6d8fCNLf77Lf.jpg",
-        "link": "#",
+        "image": "http://image.tmdb.org/t/p/w500//wTwlZ3W3euIZIWKnPqKjWARJA5v.jpg",
+        "link": "/see/card/series/900-79/Mejfejrskie-vedmy.html",
         "year": "2023",
-        "rating":"7.2"
+        "rating":"7.4"
     },
     {
         "name": "Наклз",
         "image": "https://image.tmdb.org/t/p/w500//zqT1Te9dnI3I8oDnDaLffFPaZ3c.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-80/Naklz.html",
         "year": "2024",
         "rating":"7.4"
     },
     {
         "name": "1923",
         "image": "https://image.tmdb.org/t/p/w500//zgZRJZvZn5cpsWAB0zMUdad3iZd.jpg",
-        "link": "#",
-        "year": "2020",
+        "link": "/see/card/series/900-81/1923.html",
+        "year": "2022",
         "rating":"8.1"
     },
     {
         "name": "Властелин колец: Кольца власти",
-        "image": "https://image.tmdb.org/t/p/w500//8lTAqSucGNghyBBcvPLaqi2xtJr.jpg",
-        "link": "#",
+        "image": "http://image.tmdb.org/t/p/w500//pp5yf6xRMtySYgtVf5YTDYh7fof.jpg",
+        "link": "/see/card/series/900-82/Vlastelin-kolec-Kolca-vlasti.html",
         "year": "2022",
         "rating":"7.3"
     },
     {
         "name": "Химия смерти",
         "image": "https://image.tmdb.org/t/p/w500//lUTPksMc9PhQCcWtWCmnQQrPC0B.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-83/Himiya-smerti.html",
         "year": "2023",
         "rating":"6.6"
     },
     {
         "name": "Викинги: Вальхалла",
         "image": "https://image.tmdb.org/t/p/w500//zOB0Mo1rNUcfpVunce8gJjcvvSV.jpg",
-        "link": "#",
+        "link": "/see/card/series/900-84/Vikingi-Valhalla.html",
         "year": "2022",
-        "rating":"7.5"
+        "rating":"7.7"
     },
     // Мультфильмы
     {
