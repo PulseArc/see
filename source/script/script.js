@@ -1,5 +1,159 @@
 const data = [
     {
+        "name": "Прибытие",
+        "image": "http://image.tmdb.org/t/p/w500//3K1byNV0CfChvJFNbe2ZAkiro4U.jpg",
+        "link": "/see/card/movies/800-04/Pribytie.html",
+        "year": "2016",
+        "rating":"7.6"
+    },
+    {
+        "name": "В первый раз",
+        "image": "http://image.tmdb.org/t/p/w500//cnbNuaNbwblc0K6OC0h2nrVdqbi.jpg",
+        "link": "/see/card/movies/800-05/V-pervyj-raz.html",
+        "year": "2012",
+        "rating":"7.0"
+    },
+    {
+        "name": "Паразиты",
+        "image": "http://image.tmdb.org/t/p/w500//zg3lUyLTnpbS5N29G6B3a63O7uP.jpg",
+        "link": "/see/card/movies/800-06/Parazity.html",
+        "year": "2019",
+        "rating":"8.5"
+    },
+    {
+        "name": "Идеальные незнакомцы",
+        "image": "http://image.tmdb.org/t/p/w500//x6KjNrGkNUkhHcmml1vHR0989a9.jpg",
+        "link": "/see/card/movies/800-07/Idealnye-neznakomcy.html",
+        "year": "2016",
+        "rating":"7.9"
+    },
+    {
+        "name": "Остров проклятых",
+        "image": "http://image.tmdb.org/t/p/w500//3UVMyefkUBiktshtKIEnNXvOFKH.jpg",
+        "link": "/see/card/movies/800-08/Ostrov-proklyatyh.html",
+        "year": "2010",
+        "rating":"8.2"
+    },
+    {
+        "name": "Логан",
+        "image": "http://image.tmdb.org/t/p/w500//6FSoZ8mtEwPAO3k670G3yRaBpTK.jpg",
+        "link": "/see/card/movies/800-09/Logan.html",
+        "year": "2017",
+        "rating":"7.8"
+    },
+    {
+        "name": "Топ Ган: Мэверик",
+        "image": "http://image.tmdb.org/t/p/w500//niNo4qTtIule2vvMFW05amvMtOB.jpg",
+        "link": "/see/card/movies/800-10/Top-Gan-Meverik.html",
+        "year": "2022",
+        "rating":"8.2"
+    },
+    {
+        "name": "Кит",
+        "image": "http://image.tmdb.org/t/p/w500//bUA6X03vffX3qCy3diF91PFo428.jpg",
+        "link": "/see/card/movies/800-11/Kit.html",
+        "year": "2022",
+        "rating":"7.8"
+    },
+    {
+        "name": "Миссия невыполнима: Смертельная...",
+        "image": "http://image.tmdb.org/t/p/w500//qncL23TGeAqmqmbBxJl4R6nYToJ.jpg",
+        "link": "/see/card/movies/800-12/Missiya-nevypolnima-Smertelnaya....html",
+        "year": "2023",
+        "rating":"7.5"
+    },
+    {
+        "name": "Кто там",
+        "image": "http://image.tmdb.org/t/p/w500//ji7XyfKnDvbsWH6Zwrt9niStrUL.jpg",
+        "link": "/see/card/movies/800-13/Kto-tam.html",
+        "year": "2015",
+        "rating":"5.4"
+    },
+    {
+        "name": "Стражи Галактики",
+        "image": "http://image.tmdb.org/t/p/w500//s8jpilArz8J5X07O4IB7ahMwgQP.jpg",
+        "link": "/see/card/movies/800-14/Strazhi-Galaktiki.html",
+        "year": "2014",
+        "rating":"7.9"
+    },
+    {
+        "name": "Круэлла",
+        "image": "http://image.tmdb.org/t/p/w500//hUfyYGP9Xf6cHF9y44JXJV3NxZM.jpg",
+        "link": "/see/card/movies/800-15/Kruella.html",
+        "year": "2021",
+        "rating":"8.0"
+    },
+    {
+        "name": "Бегущий по лезвию 2049",
+        "image": "http://image.tmdb.org/t/p/w500//kAq1RFHqtZrBvKve7GOGdgUU399.jpg",
+        "link": "/see/card/movies/800-16/Begushij-po-lezviyu-2049.html",
+        "year": "2017",
+        "rating":"7.6"
+    },
+    {
+        "name": "Достать ножи",
+        "image": "http://image.tmdb.org/t/p/w500//mGfb75tcFWxuT8esS1isHrNFE90.jpg",
+        "link": "/see/card/movies/800-17/Dostat-nozhi.html",
+        "year": "2019",
+        "rating":"7.8"
+    },
+    {
+        "name": "Зомби по имени Шон",
+        "image": "http://image.tmdb.org/t/p/w500//hACq0LdC5WNjPb1jzTZzuj1R4qx.jpg",
+        "link": "#",
+        "year": "2004",
+        "rating":"7.5"
+    },
+    {
+        "name": "Выживший",
+        "image": "http://image.tmdb.org/t/p/w500//gvWniVnehAkIAfy40VlcFy3vOef.jpg",
+        "link": "#",
+        "year": "2015",
+        "rating":"7.5"
+    },
+    {
+        "name": "Дюна: Часть вторая",
+        "image": "http://image.tmdb.org/t/p/w500//3aLghRkuJc9cs770fxo4a6YWht3.jpg",
+        "link": "#",
+        "year": "2024",
+        "rating":"8.1"
+    },
+    {
+        "name": "Гнев человеческий",
+        "image": "http://image.tmdb.org/t/p/w500//nRE9zOfzdp4uQMeDOgCvMf6izNh.jpg",
+        "link": "#",
+        "year": "2021",
+        "rating":"7.6"
+    },
+    {
+        "name": "Джон Уик 4",
+        "image": "http://image.tmdb.org/t/p/w500//o29otcx30U3EkqNVGC2feJVz5yr.jpg",
+        "link": "#",
+        "year": "2023",
+        "rating":"7.7"
+    },
+    {
+        "name": "Одержимость",
+        "image": "http://image.tmdb.org/t/p/w500//nq3mYsTXx6086nFXxzDReQI0J1S.jpg",
+        "link": "#",
+        "year": "2014",
+        "rating":"8.4"
+    },
+    {
+        "name": "Зелёная книга",
+        "image": "http://image.tmdb.org/t/p/w500//aEeTnDzcnGRD5IjSFwVXjusKpu0.jpg",
+        "link": "#",
+        "year": "2018",
+        "rating":"8.2"
+    },
+    {
+        "name": "Ford против Ferrari",
+        "image": "http://image.tmdb.org/t/p/w500//579BjDiFrK9VK8EnKZzYwtGGXCg.jpg",
+        "link": "#",
+        "year": "2019",
+        "rating":"8.0"
+    },
+    {
         "name": "Эмилия Перес",
         "image": "https://image.tmdb.org/t/p/w500//6KvGEOCUBsgTUPkl1oWhH0Y3ePy.jpg",
         "link": "/see/card/movies/800-03/Emilia-Perez.html",
@@ -52,7 +206,7 @@ const data = [
         "name": "Дюна: «Час настал»",
         "image": "https://image.tmdb.org/t/p/w500//3hbXNclcHaj5KiF6kK41GBMjyFr.jpg",
         "link": "#",
-        "year": "2024",
+        "year": "2021",
         "rating":"7.8"
     },
     {
