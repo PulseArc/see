@@ -451,7 +451,7 @@ function generateRandomCards() {
         },
         {
             "name": "Моана",
-            "image": "https://images.kinorium.com/movie/poster/772898/w1500_51627721.jpg",
+            "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/jo20xWDab4qDXgq8eiPyQ2dCASC.jpg",
             "link": "/see/card/cartoons/500-59/Moana.html",
             "year": "2016",
             "rating":"7.6"
@@ -493,7 +493,7 @@ function generateRandomCards() {
         },
         {
             "name": "Кунг-фу Панда 4",
-            "image": "https://images.kinorium.com/movie/poster/9805987/w1500_51633606.jpg",
+            "image": "http://image.tmdb.org/t/p/w500//7RK9GHFArnQusZERwYwIaMZwRll.jpg",
             "link": "/see/card/cartoons/500-65/Kung-fu-Panda-4.html",
             "year": "2024",
             "rating":"7.1"

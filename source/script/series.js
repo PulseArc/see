@@ -256,7 +256,7 @@ function generateRandomCards() {
         },
         {
             "name": "Дом Дракона",
-            "image": "https://images.kinorium.com/movie/poster/2241207/w1500_50655207.jpg",
+            "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/emAFaKrAn1mhJ3ZQbM2503a1X2s.jpg",
             "link": "/see/card/series/900-37/Dom-Drakona.html",
             "year": "2022",
             "rating":"8.4"

@@ -941,7 +941,7 @@ const data = [
     },
     {
         "name": "Моана",
-        "image": "https://images.kinorium.com/movie/poster/772898/w1500_51627721.jpg",
+        "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/jo20xWDab4qDXgq8eiPyQ2dCASC.jpg",
         "link": "/see/card/cartoons/500-59/Moana.html",
         "year": "2016",
         "rating":"7.6"
@@ -983,7 +983,7 @@ const data = [
     },
     {
         "name": "Кунг-фу Панда 4",
-        "image": "https://images.kinorium.com/movie/poster/9805987/w1500_51633606.jpg",
+        "image": "http://image.tmdb.org/t/p/w500//7RK9GHFArnQusZERwYwIaMZwRll.jpg",
         "link": "/see/card/cartoons/500-65/Kung-fu-Panda-4.html",
         "year": "2024",
         "rating":"7.1"
@@ -1121,7 +1121,7 @@ const data = [
     },
     {
         "name": "Дом Дракона",
-        "image": "https://images.kinorium.com/movie/poster/2241207/w1500_50655207.jpg",
+        "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/emAFaKrAn1mhJ3ZQbM2503a1X2s.jpg",
         "link": "/see/card/series/900-37/Dom-Drakona.html",
         "year": "2022",
         "rating":"8.4"
