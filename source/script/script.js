@@ -121,35 +121,35 @@ const data = [
     {
         "name": "Гнев человеческий",
         "image": "http://image.tmdb.org/t/p/w500//nRE9zOfzdp4uQMeDOgCvMf6izNh.jpg",
-        "link": "#",
+        "link": "/see/card/movies/800-21/Gnev-chelovecheskij.html",
         "year": "2021",
         "rating":"7.6"
     },
     {
         "name": "Джон Уик 4",
         "image": "http://image.tmdb.org/t/p/w500//o29otcx30U3EkqNVGC2feJVz5yr.jpg",
-        "link": "#",
+        "link": "/see/card/movies/800-22/Dzhon-Uik-4.html",
         "year": "2023",
         "rating":"7.7"
     },
     {
         "name": "Одержимость",
         "image": "http://image.tmdb.org/t/p/w500//nq3mYsTXx6086nFXxzDReQI0J1S.jpg",
-        "link": "#",
+        "link": "/see/card/movies/800-23/Oderzhimost.html",
         "year": "2014",
         "rating":"8.4"
     },
     {
         "name": "Зелёная книга",
         "image": "http://image.tmdb.org/t/p/w500//aEeTnDzcnGRD5IjSFwVXjusKpu0.jpg",
-        "link": "#",
+        "link": "/see/card/movies/800-24/Zelyonaya-kniga.html",
         "year": "2018",
         "rating":"8.2"
     },
     {
         "name": "Ford против Ferrari",
         "image": "http://image.tmdb.org/t/p/w500//579BjDiFrK9VK8EnKZzYwtGGXCg.jpg",
-        "link": "#",
+        "link": "/see/card/movies/800-25/Ford-protiv-Ferrari.html",
         "year": "2019",
         "rating":"8.0"
     },
@@ -233,7 +233,7 @@ const data = [
     
     {
         "name": "След киллера",
-        "image": "https://image.tmdb.org/t/p/w500//AusoO8766oTq3o1PQeJpuPbt9hZ.jpg",
+        "image": "https://image.tmdb.org/t/p/original/uGTulIuR0NlI2CQzTRHHEuJJejp.jpg",
         "link": "#",
         "year": "2024",
         "rating":"5.8"
@@ -1676,161 +1676,161 @@ const data = [
     {
         "name": "Миссия: Красный",
         "image": "https://image.tmdb.org/t/p/w500//6T36kuDbXCGRistIewSwKyTmijt.jpg",
-        "link": "#",
+        "link": "/see/card/movies/800-26/Missiya-Krasnyj.html",
         "year": "2024",
-        "rating":"7.0"
+        "rating":"7.1"
     },
     {
         "name": "Братья Гримм",
         "image": "https://image.tmdb.org/t/p/w500//aADABzbuqnVWjXIu2jO5M1IkEIR.jpg",
-        "link": "#",
+        "link": "/see/card/movies/800-27/Bratya-Grimm.html",
         "year": "2005",
         "rating":"5.8"
     },
     {
         "name": "Люди Икс: Дни минувшего будущего",
         "image": "https://image.tmdb.org/t/p/w500//9IdeGyzRZH66RgNq9zSZDwPPllg.jpg",
-        "link": "#",
+        "link": "/see/card/movies/800-28/Lyudi-Iks-Dni-minuvshego-budushego.html",
         "year": "2014",
         "rating":"7.5"
     },
     {
         "name": "И гаснет свет",
         "image": "https://image.tmdb.org/t/p/w500//f5njPYl9eQdwf0xUwJuQ7no6ET.jpg",
-        "link": "#",
+        "link": "/see/card/movies/800-30/I-gasnet-svet.html",
         "year": "2016",
         "rating":"6.4"
     },
     {
         "name": "Дом у дороги",
         "image": "https://image.tmdb.org/t/p/w500//z8AWDW9BaZ1oQohej87TdACGszm.jpg",
-        "link": "#",
+        "link": "/see/card/movies/800-31/Dom-u-dorogi.html",
         "year": "2024",
-        "rating":"7.0"
+        "rating":"6.9"
     },
     {
         "name": "Kingsman: Секретная служба",
         "image": "https://image.tmdb.org/t/p/w500//1br1GunwmrGaD9H3eyRPjLx1HY4.jpg",
-        "link": "#",
+        "link": "/see/card/movies/800-32/Kingsman-Sekretnaya-sluzhba.html",
         "year": "2015",
         "rating":"7.6"
     },
     {
         "name": "Побег из Шоушенка",
         "image": "https://image.tmdb.org/t/p/w500//yvmKPlTIi0xdcFQIFcQKQJcI63W.jpg",
-        "link": "#",
+        "link": "/see/card/movies/800-33/Pobeg-iz-Shoushenka.html",
         "year": "1994",
         "rating":"8.7"
     },
     {
         "name": "Счастливого дня смерти",
         "image": "https://image.tmdb.org/t/p/w500//gxOqCjZ3YGxZpkKchQbHX3DeQ3V.jpg",
-        "link": "#",
+        "link": "/see/card/movies/800-34/Schastlivogo-dnya-smerti.html",
         "year": "2017",
-        "rating":"6.6"
+        "rating":"6.7"
     },
     {
         "name": "Геошторм",
         "image": "https://image.tmdb.org/t/p/w500//8kMSc2UVFCXScIvhkSuSiROySbS.jpg",
-        "link": "#",
+        "link": "/see/card/movies/800-36/Geoshtorm.html",
         "year": "2017",
         "rating":"6.1"
     },
     {
         "name": "Вивариум",
         "image": "https://image.tmdb.org/t/p/w500//6z5otnH68jltjyC6748irDsC7B3.jpg",
-        "link": "#",
+        "link": "/see/card/movies/800-37/Vivarium.html",
         "year": "2019",
         "rating":"6.1"
     },
     {
         "name": "Тёмный рыцарь",
         "image": "https://image.tmdb.org/t/p/w500//dxWaYQtgpLbycqUpHzkqqYkT5I3.jpg",
-        "link": "#",
+        "link": "/see/card/movies/800-38/Tyomnyj-rycar.html",
         "year": "2008",
         "rating":"8.5"
     },
     {
         "name": "Комната желаний",
         "image": "https://image.tmdb.org/t/p/w500//de2V6MaJzGRclg1pQaSG2v3i0yW.jpg",
-        "link": "#",
+        "link": "/see/card/movies/800-39/Komnata-zhelanij.html",
         "year": "2019",
         "rating":"6.4"
     },
     {
         "name": "Реальные упыри",
         "image": "https://image.tmdb.org/t/p/w500//tmUHOe07a84zgwMeWCpwnAqUwU4.jpg",
-        "link": "#",
+        "link": "/see/card/movies/800-40/Realnye-upyri.html",
         "year": "2014",
         "rating":"7.6"
     },
     {
         "name": "Крёстный отец",
-        "image": "https://image.tmdb.org/t/p/w500//gZUc6DbAirZGWJL1685jsOd90Sf.jpg",
-        "link": "#",
+        "image": "http://image.tmdb.org/t/p/w500//hoowzozsn0XQGtgH8nyivAMZfPN.jpg",
+        "link": "/see/card/movies/800-41/Kryostnyj-otec.html",
         "year": "1972",
         "rating":"8.7"
     },
     {
         "name": "Джобс: Империя соблазна",
         "image": "https://image.tmdb.org/t/p/w500//vPuWVOBvMsnpdIT8Qb2suLhIFSi.jpg",
-        "link": "#",
+        "link": "/see/card/movies/800-42/Dzhobs-Imperiya-soblazna.html",
         "year": "2013",
         "rating":"6.1"
     },
     {
         "name": "Властелин колец: Возвращение короля",
         "image": "https://image.tmdb.org/t/p/w500//x6NqCWwU1SrQnvfdmVPAuATyUgD.jpg",
-        "link": "#",
+        "link": "/see/card/movies/800-43/Vlastelin-kolec-Vozvrashenie-korolya.html",
         "year": "2003",
         "rating":"8.5"
     },
     {
         "name": "Скотт Пилигрим против всех",
         "image": "https://image.tmdb.org/t/p/w500//bLJEFAh6tILVS1PS5mCRlA9HVsR.jpg",
-        "link": "#",
+        "link": "/see/card/movies/800-44/Skott-Piligrim-protiv-vseh.html",
         "year": "2010",
         "rating":"7.5"
     },
     {
         "name": "Спасти рядового Райана",
         "image": "https://image.tmdb.org/t/p/w500//vhIwsqsMmdv6uwup4V6HJSMcQxI.jpg",
-        "link": "#",
+        "link": "/see/card/movies/800-45/Spasti-ryadovogo-Rajana.html",
         "year": "1998",
         "rating":"8.2"
     },
     {
         "name": "Пассажиры",
         "image": "https://image.tmdb.org/t/p/w500//RY7YPqLRkgK5KiIq3kFQhCUJnB.jpg",
-        "link": "#",
+        "link": "/see/card/movies/800-46/Passazhiry.html",
         "year": "2016",
         "rating":"7.0"
     },
     {
         "name": "Марсианин",
         "image": "https://image.tmdb.org/t/p/w500//6U19srkH4wI6taluviXbVaIpsau.jpg",
-        "link": "#",
+        "link": "/see/card/movies/800-47/Marsianin.html",
         "year": "2015",
         "rating":"7.7"
     },
     {
         "name": "Список Шиндлера",
         "image": "https://image.tmdb.org/t/p/w500//4K8fGGcJP2EoGDucILnaJcOJhZl.jpg",
-        "link": "#",
+        "link": "/see/card/movies/800-48/Spisok-Shindlera.html",
         "year": "1993",
         "rating":"8.6"
     },
     {
-        "name": "5-ая волна",
+        "name": "5-я волна",
         "image": "https://image.tmdb.org/t/p/w500//5ngef6vRYcn55NixtJAfK2JTDxY.jpg",
-        "link": "#",
+        "link": "/see/card/movies/800-49/5-aya-volna.html",
         "year": "2016",
         "rating":"5.9"
     },
     {
         "name": "Бойцовский клуб",
         "image": "https://image.tmdb.org/t/p/w500//66RvLrRJTm4J8l3uHXWF09AICol.jpg",
-        "link": "#",
+        "link": "/see/card/movies/800-50/Bojcovskij-klub.html",
         "year": "1999",
         "rating":"8.4"
     },
@@ -1844,9 +1844,9 @@ const data = [
     {
         "name": "Дорогой Санта",
         "image": "https://image.tmdb.org/t/p/w500//v4LzYnQ1VGb0Q191Eb0NDSxdEKy.jpg",
-        "link": "#",
+        "link": "/see/card/movies/800-51/Dorogoj-Santa.html",
         "year": "2024",
-        "rating":"6.6"
+        "rating":"6.3"
     },
     {
         "name": "Назад в будущее",
@@ -1893,7 +1893,7 @@ const data = [
     {
         "name": "Посвященный",
         "image": "https://image.tmdb.org/t/p/w500//aXXEcHZsZ2lXUxPLaadnXeZVz5c.jpg",
-        "link": "#",
+        "link": "/see/card/movies/800-29/Posvyashennyj.html",
         "year": "2014",
         "rating":"6.6"
     },
