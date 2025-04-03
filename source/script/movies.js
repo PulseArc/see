@@ -109,21 +109,21 @@ function generateRandomCards() {
         {
             "name": "Зомби по имени Шон",
             "image": "http://image.tmdb.org/t/p/w500//hACq0LdC5WNjPb1jzTZzuj1R4qx.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-18/Zombi-po-imeni-Shon.html",
             "year": "2004",
             "rating":"7.5"
         },
         {
             "name": "Выживший",
             "image": "http://image.tmdb.org/t/p/w500//gvWniVnehAkIAfy40VlcFy3vOef.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-19/Vyzhivshij.html",
             "year": "2015",
             "rating":"7.5"
         },
         {
             "name": "Дюна: Часть вторая",
             "image": "http://image.tmdb.org/t/p/w500//3aLghRkuJc9cs770fxo4a6YWht3.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-20/Dyuna-Chast-vtoraya.html",
             "year": "2024",
             "rating":"8.1"
         },
