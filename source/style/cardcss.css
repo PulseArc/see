@@ -1062,6 +1062,11 @@ margin-left: 4em;
 /* Третий столбец переходит на новую строку */
 .column:nth-child(3) {
     width: 100%; /* Полная ширина */
+    
+}
+.region{
+  margin-top: -0.5em;
+  line-height: 1.5;
 }
   .full-conteiner-video{
     margin-top: 0 !important;
