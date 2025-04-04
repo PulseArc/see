@@ -347,35 +347,35 @@ function generateRandomCards() {
         {
             "name": "Назад в будущее",
             "image": "https://image.tmdb.org/t/p/w500//9a07nfvCoAAyUMfY0yQqsOjlb2C.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-52/Nazad-v-budushee.html",
             "year": "1985",
             "rating":"8.3"
         },
         {
             "name": "Щелкунчики",
             "image": "https://image.tmdb.org/t/p/w500//iAoS1l0nRLKl4d97mbKF4pUFZhn.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-53/Shelkunchiki.html",
             "year": "2024",
-            "rating":"5.6"
+            "rating":"5.9"
         },
         {
             "name": "Гладиатор",
             "image": "https://image.tmdb.org/t/p/w500//1wjNqlfsuHNTXTpCt2ZOV2iPxaf.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-54/Gladiator.html",
             "year": "2000",
             "rating":"8.2"
         },
         {
-            "name": "Почему он",
+            "name": "Почему он?",
             "image": "https://image.tmdb.org/t/p/w500//q0wK2bXSLulAre276C6M4ZS8Kfo.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-55/Pochemu-on.html",
             "year": "2016",
             "rating":"6.4"
         },
         {
             "name": "Аватар",
             "image": "https://image.tmdb.org/t/p/w200//lUKcrcO3wEPhNnzGq06JIX7GIEb.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-56/Avatar.html",
             "year": "2009",
             "rating":"7.6"
         },
@@ -396,121 +396,121 @@ function generateRandomCards() {
         {
             "name": "Спуск в бездну",
             "image": "https://image.tmdb.org/t/p/w500//bSb3ynYHWJbXSSMRhblzrsgt1lO.jpg",
-            "link": "/see/card/movies/descent%20into%20the%20abyss/descent%20into%20the%20abyss.html",
+            "link": "/see/card/movies/800-57/Spusk-v-bezdnu.html",
             "year": "2023",
-            "rating":"5.8"
+            "rating":"5.7"
         },
         {
             "name": "Город тайн: Исчезнувшая",
             "image": "https://image.tmdb.org/t/p/w500//ez9LtVmvfbWjX9Spx4DrNEFVErx.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-58/Gorod-tajn-Ischeznuvshaya.html",
             "year": "2024",
-            "rating":"6.6"
+            "rating":"6.5"
         },
         {
             "name": "Хитмен. Последнее дело",
             "image": "https://image.tmdb.org/t/p/w500//3TM9MzC1f6F3BwpPJhdv3hXWQRX.jpg",
-            "link": "#",
-            "year": "2024",
-            "rating":"6.7"
-        },
-        {
-            "name": "Непробиваемые",
-            "image": "https://image.tmdb.org/t/p/w500//z497zVpHuGDQT4lBcHZcYdf6eDT.jpg",
-            "link": "#",
-            "year": "2024",
-            "rating":"5.0"
-        },
-        {
-            "name": "Однажды в Ла-Рое",
-            "image": "https://image.tmdb.org/t/p/w500//8VQr2REac6qlshcQGBsmq5s4SiU.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-59/Hitmen-Poslednee-delo.html",
             "year": "2024",
             "rating":"6.9"
         },
         {
-            "name": "Охотники за привидениями: Леденящий ужас",
-            "image": "https://image.tmdb.org/t/p/w500//ltG6ypHUyPv3y4e4ZOxRumYwikV.jpg",
-            "link": "#",
+            "name": "Непробиваемые",
+            "image": "https://image.tmdb.org/t/p/w500//z497zVpHuGDQT4lBcHZcYdf6eDT.jpg",
+            "link": "/see/card/movies/800-60/Neprobivaemye.html",
             "year": "2024",
-            "rating":"6.6"
+            "rating":"5.6"
         },
         {
-            "name": "Дюна: «Час настал»",
+            "name": "Однажды в Ла-Рое",
+            "image": "https://image.tmdb.org/t/p/w500//8VQr2REac6qlshcQGBsmq5s4SiU.jpg",
+            "link": "/see/card/movies/800-61/Odnazhdy-v-La-Roe.html",
+            "year": "2024",
+            "rating":"6.8"
+        },
+        {
+            "name": "Охотники за привидениями: Леденящий ужас",
+            "image": "https://image.tmdb.org/t/p/w500//ltG6ypHUyPv3y4e4ZOxRumYwikV.jpg",
+            "link": "/see/card/movies/800-62/Ohotniki-za-privideniyami-Ledenyashij-uzhas.html",
+            "year": "2024",
+            "rating":"6.5"
+        },
+        {
+            "name": "Дюна:",
             "image": "https://image.tmdb.org/t/p/w500//3hbXNclcHaj5KiF6kK41GBMjyFr.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-63/Dyuna.html",
             "year": "2021",
             "rating":"7.8"
         },
         {
             "name": "Другой человек",
             "image": "https://image.tmdb.org/t/p/w500//dX5CQBzWX6ePHj8WvHWideMYw5D.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-64/Drugoj-chelovek.html",
             "year": "2024",
-            "rating":"7.0"
+            "rating":"7.1"
         },
         {
-            "name": "Вуди Вудпекер отправляется в лагерь",
+            "name": "Вуди Вудпекер в летнем лагере",
             "image": "https://image.tmdb.org/t/p/w500//oAF42DFZA430eEzRmEcrpB0D3rp.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-65/Vudi-Vudpeker-otpravlyaetsya-v-lager.html",
             "year": "2024",
             "rating":"6.5"
         },
         {
             "name": "Возвращение грозной семейки",
             "image": "https://image.tmdb.org/t/p/w500//o1SGF0txwzZxBJbOsvIgbBtRk3A.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-66/Vozvrashenie-grozno-semejki.html",
             "year": "2024",
-            "rating":"4.9"
+            "rating":"7.0"
         },
         {
             "name": "След киллера",
             "image": "https://image.tmdb.org/t/p/original/uGTulIuR0NlI2CQzTRHHEuJJejp.jpg",
-            "link": "#",
-            "year": "2024",
-            "rating":"5.8"
-        },
-        {
-            "name": "Боб Марли: Одна любовь",
-            "image": "https://image.tmdb.org/t/p/w500//79G6T8JSmUrIsypQVzsa5VjfOXU.jpg",
-            "link": "#",
-            "year": "2024",
-            "rating":"6.8"
-        },
-        {
-            "name": "Джокер: Безумие на двоих",
-            "image": "https://image.tmdb.org/t/p/w500//sqHQhhjsfZ0UAu67RiIaUkabZZD.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-67/Sled-killera.html",
             "year": "2024",
             "rating":"5.7"
         },
         {
+            "name": "Боб Марли: Одна любовь",
+            "image": "https://image.tmdb.org/t/p/w500//79G6T8JSmUrIsypQVzsa5VjfOXU.jpg",
+            "link": "/see/card/movies/800-68/Bob-Marli-Odna-lyubov.html",
+            "year": "2024",
+            "rating":"6.7"
+        },
+        {
+            "name": "Джокер: Безумие на двоих",
+            "image": "https://image.tmdb.org/t/p/w500//sqHQhhjsfZ0UAu67RiIaUkabZZD.jpg",
+            "link": "/see/card/movies/800-69/Dzhoker-Bezumie-na-dvoih.html",
+            "year": "2024",
+            "rating":"5.5"
+        },
+        {
             "name": "Дыши!",
             "image": "https://image.tmdb.org/t/p/w500//4pRonl4LTHFw567HyX0iYolyaWS.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-70/Dyshi!.html",
             "year": "2024",
-            "rating":"5.4"
+            "rating":"5.8"
         },
         {
             "name": "Жуть",
             "image": "https://image.tmdb.org/t/p/w500//krCt93RSbZMmiPIw2k1r9zzfzTb.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-71/Zhut.html",
             "year": "2024",
-            "rating":"7.4"
+            "rating":"6.6"
         },
         {
             "name": "Чёрный чай",
             "image": "https://image.tmdb.org/t/p/w500//v6HmHzoOJVwFmdKDKpdfnnsRk39.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-72/Chyornyj-chaj.html",
             "year": "2024",
-            "rating":"5.6"
+            "rating":"5.9"
         },
         {
             "name": "Ученик. Восхождение Трампа",
             "image": "https://image.tmdb.org/t/p/w500//1rXbP2AdiJzbqL6CKxdZMeFuE4O.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-73/Uchenik-Voshozhdenie-Trampa.html",
             "year": "2024",
-            "rating":"6.8"
+            "rating":"6.9"
         },
         {
             "name": "Профессионал",

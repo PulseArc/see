@@ -111,9 +111,9 @@ function generateLastCards() {
         },
         
         {
-            "name": "Почему он",
+            "name": "Почему он?",
             "image": "https://image.tmdb.org/t/p/w500//q0wK2bXSLulAre276C6M4ZS8Kfo.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-55/Pochemu-on.html",
             "year": "2016",
             "rating":"6.4"
         },
