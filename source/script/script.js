@@ -283,14 +283,14 @@ const data = [
     {
         "name": "Профессионал",
         "image": "https://image.tmdb.org/t/p/w500//uBAgrWuglga1Vo7oUlFL0KFORcN.jpg",
-        "link": "#",
+        "link": "/see/card/movies/800-74/Professional.html",
         "year": "2024",
-        "rating":"6.1"
+        "rating":"5.9"
     },
     {
-        "name": "Чудовищное лето",
+        "name": "Кошмарные каникулы",
         "image": "https://image.tmdb.org/t/p/w500//ud6dvc0s6YapooFkUNQPuZ4eg5u.jpg",
-        "link": "#",
+        "link": "/see/card/movies/800-75/Koshmarnye-kanikuly.html",
         "year": "2024",
         "rating":"6.5"
     },
