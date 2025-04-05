@@ -295,37 +295,37 @@ const data = [
         "rating":"6.5"
     },
     {
-        "name": "Подземная бездна",
-        "image": "https://image.tmdb.org/t/p/w500//foK52B7aQk14ANwAPbjfPJNEy1f.jpg",
-        "link": "#",
-        "year": "2024",
-        "rating":"6.0"
+        "name": "Подземелья и драконы: Честь среди воров",
+        "image": "http://image.tmdb.org/t/p/w500//nAbRIxxRJfCP2U9tpVJU1zWb6Ni.jpg",
+        "link": "/see/card/movies/800-76/Podzemelya-i-drakony-Chest-sredi-vorov.html",
+        "year": "2023",
+        "rating":"7.3"
     },
     {
         "name": "Мегалополис",
         "image": "https://image.tmdb.org/t/p/w500//epglGr4yDHGaZVf8faMm7ilcHDu.jpg",
-        "link": "#",
+        "link": "/see/card/movies/800-77/Megalopolis.html",
         "year": "2024",
-        "rating":"5.5"
+        "rating":"5.3"
     },
     {
         "name": "Выгон",
         "image": "https://image.tmdb.org/t/p/w500//z9GAjN21PQPDp0eRB4Ct6vIZaPF.jpg",
-        "link": "#",
+        "link": "/see/card/movies/800-78/Vygon.html",
         "year": "2024",
-        "rating":"7.1"
+        "rating":"6.8"
     },
     {
         "name": "Элиас",
         "image": "https://image.tmdb.org/t/p/w500//saPG6ZSORtOdCbl7S4dinNkpmA6.jpg",
-        "link": "#",
+        "link": "/see/card/movies/800-79/Elias.html",
         "year": "2024",
         "rating":"6.2"
     },
     {
         "name": "Граф Монте-Кристо",
         "image": "https://image.tmdb.org/t/p/w500//bv7XaMz155UTyQSOy2CHllMrAf9.jpg",
-        "link": "#",
+        "link": "/see/card/movies/800-80/Graf-Monte-Kristo.html",
         "year": "2024",
         "rating":"7.7"
     },
