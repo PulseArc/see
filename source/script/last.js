@@ -21,21 +21,21 @@ function generateLastCards() {
         {
             "name": "Уровни",
             "image": "https://image.tmdb.org/t/p/w500//yq39ChrCDlqrurYuaC8WM0vC1cx.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-81/Urovni.html",
             "year": "2024",
-            "rating":"6.0"
+            "rating":"5.7"
         },
         {
             "name": "Второй акт",
             "image": "https://image.tmdb.org/t/p/w500//8pAaShqpLUYTeik67jjN2IPaz3O.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-82/Vtoroj-akt.html",
             "year": "2024",
             "rating":"6.1"
         },
         {
             "name": "Оппенгеймер",
             "image": "http://image.tmdb.org/t/p/w500//8OQzw8keE6sDNH25sOqPRTxhFTO.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-83/Oppengejmer.html",
             "year": "2023",
             "rating":"8.1"
         },
@@ -82,11 +82,11 @@ function generateLastCards() {
             "rating":"8.3"
         },
         {
-            "name": "Деревенские против пришельцев",
-            "image": "https://image.tmdb.org/t/p/w500//qELcpKCX0HMszrWyq25GS2DTK3o.jpg",
-            "link": "#",
-            "year": "2024",
-            "rating":"5.3"
+            "name": "Ковбои против пришельцев",
+            "image": "http://image.tmdb.org/t/p/w500//iRzfV0jFnUqOjJNIvRu9M3G8Rxv.jpg",
+            "link": "/see/card/movies/800-84/Kovboi-protiv-prishelcev.html",
+            "year": "2011",
+            "rating":"5.6"
         },
         {
             "name": "Призрачный гонщик 2",
