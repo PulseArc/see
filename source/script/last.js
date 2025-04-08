@@ -91,21 +91,21 @@ function generateLastCards() {
         {
             "name": "Призрачный гонщик 2",
             "image": "https://image.tmdb.org/t/p/w500//pmjeSQ4NocblwnqFDxk7zXggSQ7.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-88/Prizrachnyj-gonshik-2.html",
             "year": "2012",
             "rating":"5.0"
         },
         {
             "name": "Время",
             "image": "https://image.tmdb.org/t/p/w500//m0rqyzs7IbNaXuJvLTubCG40F92.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-90/Vremya.html",
             "year": "2021",
             "rating":"6.3"
         },
         {
             "name": "Сплит",
             "image": "https://image.tmdb.org/t/p/w500//xrVZF8DJNTPiILFygj8sg4tmauV.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-91/Split.html",
             "year": "2017",
             "rating":"7.3"
         },
@@ -120,14 +120,14 @@ function generateLastCards() {
         {
             "name": "Оно",
             "image": "https://image.tmdb.org/t/p/w500//wEHpeWhH3zGYJbqz3OtUJ4tMMM6.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-94/Ono.html",
             "year": "2017",
             "rating":"7.2"
         },
         {
             "name": "Образцовый самец 2",
             "image": "https://image.tmdb.org/t/p/w500//hSAbrO3FYcvzyBiUHXLflIbSIGZ.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-95/Obrazcovyj-samec-2.html",
             "year": "2016",
             "rating":"4.9"
         },
