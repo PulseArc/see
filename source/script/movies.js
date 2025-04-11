@@ -866,114 +866,142 @@ function generateRandomCards() {
         {
             "name": "Ворон",
             "image": "https://image.tmdb.org/t/p/w500//msAYTWaQXWGoeChpp5EUGzpMpVb.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-124/Voron.html",
             "year": "2024",
-            "rating":"5.4"
+            "rating":"5.8"
         },
         {
             "name": "Хроника",
             "image": "https://image.tmdb.org/t/p/w500//8gik6OwbWuhUAKctvGRHUgYZJOm.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-125/Hronika.html",
             "year": "2012",
             "rating":"6.8"
         },
         {
             "name": "Грань времени",
             "image": "https://image.tmdb.org/t/p/w500//lHmF2lv5q5EzNNiZ6DXVKrRDgX.jpg",
-            "link": "#",
-            "year": "2019",
+            "link": "/see/card/movies/800-126/Gran-vremeni.html",
+            "year": "2020",
             "rating":"6.3"
         },
         {
             "name": "Не говори никому",
             "image": "https://image.tmdb.org/t/p/w500//z7tMZefbCSffsPl3SErtC6ubcdh.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-127/Ne-govori-nikomu.html",
             "year": "2024",
-            "rating":"6.8"
+            "rating":"7.2"
         },
         {
             "name": "Перси Джексон и похититель молний",
             "image": "https://image.tmdb.org/t/p/w500//xQazS5kqxp9Wpsll3KYs5z4Prqh.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-128/Persi-Dzhekson-i-pohititel-molnij.html",
             "year": "2010",
             "rating":"6.2"
         },
         {
             "name": "Мой пингвин",
             "image": "https://image.tmdb.org/t/p/w500//n5yjFZLh6sx04B6YKynae1myD2X.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-129/Moj-pingvin.html",
             "year": "2024",
-            "rating":"6.4"
+            "rating":"7.5"
         },
         {
             "name": "Гарри Поттер и философский камень",
             "image": "https://image.tmdb.org/t/p/w500//Z2CbhtMtbVaBEvhqBKMNB0p0ko.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-130/Garri-Potter-i-filosofskij-kamen.html",
             "year": "2001",
             "rating":"7.9"
         },
         {
             "name": "Чужой: Ромул",
             "image": "https://image.tmdb.org/t/p/w500//A2CU4WbCZlkYbz9gEFIpchlIGpq.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-131/Chuzhoj-Romul.html",
             "year": "2024",
-            "rating":"7.5"
+            "rating":"7.2"
         },
         {
             "name": "128 ударов сердца в минуту",
             "image": "https://image.tmdb.org/t/p/w500//jdKfkrUTl2JknNAeTOnz8We15bX.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-132/128-udarov-serdca-v-minutu.html",
             "year": "2015",
             "rating":"6.8"
         },
         {
             "name": "Дэдпул и Росомаха",
             "image": "https://image.tmdb.org/t/p/w500//8uOIWsrHvBTeZP4LSf25NomvLb6.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-133/Dedpul-i-Rosomaha.html",
             "year": "2024",
-            "rating":"8.0"
+            "rating":"7.6"
         },
         {
             "name": "Бойфренд из будущего",
             "image": "https://image.tmdb.org/t/p/w500//xWk8ukJ6dhRvlrboG3qgNWNtLJ1.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-134/Bojfrend-iz-budushego.html",
             "year": "2013",
             "rating":"7.9"
         },
         {
+            "name": "После. Навсегда",
+            "image": "http://image.tmdb.org/t/p/w500//p5NuTOVdJsje6qOjsLStoaXsoGy.jpg",
+            "link": "/see/card/movies/800-143/Posle-Navsegda.html",
+            "year": "2023",
+            "rating":"6.9"
+        },
+        {
+            "name": "После. Долго и счастливо",
+            "image": "http://image.tmdb.org/t/p/w500//7SAIQcQfPgimB7BHef9DANUQZkY.jpg",
+            "link": "/see/card/movies/800-142/Posle-Dolgo-i-schastlivo.html",
+            "year": "2022",
+            "rating":"6.8"
+        },
+        {
+            "name": "После. Глава 3",
+            "image": "http://image.tmdb.org/t/p/w500//eRmylmc17IIxKKQrGcQt1723APP.jpg",
+            "link": "/see/card/movies/800-141/Posle-Glava-3.html",
+            "year": "2021",
+            "rating":"7.0"
+        },
+        {
+            "name": "После. Глава 2",
+            "image": "http://image.tmdb.org/t/p/w500//kWkFxHdXhKBM3NmncrX8JYhVXEe.jpg",
+            "link": "/see/card/movies/800-140/Posle-Glava-2.html",
+            "year": "2020",
+            "rating":"7.2"
+        },
+        {
             "name": "После",
             "image": "https://image.tmdb.org/t/p/w500//7Prt3Le9H0EeRYVltAXFJqwDIig.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-135/Posle.html",
             "year": "2019",
             "rating":"7.1"
         },
         {
             "name": "Ребел-Ридж",
             "image": "https://image.tmdb.org/t/p/w500//8rnSpfoXiizlIGFEIRed7h8inrP.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-136/Rebel-Ridzh.html",
             "year": "2024",
-            "rating":"6.7"
+            "rating":"7.0"
         },
         {
             "name": "Ты водишь!",
             "image": "https://image.tmdb.org/t/p/w500//4GTpZgK5ijNGzJSB6tXjz8Xz7t2.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-137/Ty-vodish!.html",
             "year": "2018",
             "rating":"6.7"
         },
         {
             "name": "Место под соснами",
             "image": "https://image.tmdb.org/t/p/w500//8y4tBbEUVdD3uGjqos21EAOAxc5.jpg",
-            "link": "#",
-            "year": "2012",
+            "link": "/see/card/movies/800-138/Mesto-pod-sosnami.html",
+            "year": "2013",
             "rating":"7.0"
         },
         {
             "name": "Чаща",
             "image": "https://image.tmdb.org/t/p/w500//ihzZSZZ2eFmbxscbnqy3e5YOvtp.jpg",
-            "link": "#",
+            "link": "/see/card/movies/800-139/Chasha.html",
             "year": "2024",
-            "rating":"6.0"
+            "rating":"6.4"
         },
         // конец
        
