@@ -578,14 +578,14 @@ const data = [
     {
         "name": "Паранормальное явление: Ближайшая родня",
         "image": "https://image.tmdb.org/t/p/original/bXAVveHiLotZbWdg3PKGhAzxYKP.jpg",
-        "link": "/see/card/movies/800-103/Paranormalnoe-yavlenie-Metka-Dyavola.html",
+        "link": "/see/card/movies/800-202/Paranormalnoe-yavlenie-Blizhajshaya-rodnya.html",
         "year": "2021",
         "rating":"6.1"
     },
     {
         "name": "Паранормальное явление 5: Призраки в 3D",
         "image": "http://image.tmdb.org/t/p/w500//ozKoD30eG6kacH5SjcRD1wLnBOj.jpg",
-        "link": "/see/card/movies/800-103/Paranormalnoe-yavlenie-Metka-Dyavola.html",
+        "link": "/see/card/movies/800-203/Paranormalnoe-yavlenie-5-Prizraki-v-3D.html",
         "year": "2015",
         "rating":"5.3"
     },
@@ -599,28 +599,28 @@ const data = [
     {
         "name": "Паранормальное явление 4",
         "image": "http://image.tmdb.org/t/p/w500//xQukmfHfOZCuG0pxHARMk1xJZMs.jpg",
-        "link": "/see/card/movies/800-103/Paranormalnoe-yavlenie-Metka-Dyavola.html",
+        "link": "/see/card/movies/800-204/Paranormalnoe-yavlenie-4.html",
         "year": "2012",
         "rating":"5.4"
     },
     {
         "name": "Паранормальное явление 3",
         "image": "http://image.tmdb.org/t/p/w500//nbOOPSsezzvHWuWSEw1j3Ypa67e.jpg",
-        "link": "/see/card/movies/800-103/Paranormalnoe-yavlenie-Metka-Dyavola.html",
+        "link": "/see/card/movies/800-205/Paranormalnoe-yavlenie-3.html",
         "year": "2011",
         "rating":"5.9"
     },
     {
         "name": "Паранормальное явление 2",
         "image": "http://image.tmdb.org/t/p/w500//cq35G7cR4NAn9nAndBBbHlKNexE.jpg",
-        "link": "/see/card/movies/800-103/Paranormalnoe-yavlenie-Metka-Dyavola.html",
+        "link": "/see/card/movies/800-206/Paranormalnoe-yavlenie-2.html",
         "year": "2010",
         "rating":"5.8"
     },
     {
         "name": "Паранормальное явление",
         "image": "http://image.tmdb.org/t/p/w500//4PpnPcmAGqpZWpFX5imX0WmWTfZ.jpg",
-        "link": "/see/card/movies/800-103/Paranormalnoe-yavlenie-Metka-Dyavola.html",
+        "link": "/see/card/movies/800-207/Paranormalnoe-yavlenie.html",
         "year": "2007",
         "rating":"6.0"
     },
@@ -634,14 +634,14 @@ const data = [
     {
         "name": "Ужасающий 2",
         "image": "http://image.tmdb.org/t/p/w500//huYBDlUpa2IwZW8MOceKN9j3Auk.jpg",
-        "link": "/see/card/movies/800-104/Uzhasayushij-3.html",
+        "link": "/see/card/movies/800-208/Uzhasayushij-2.html",
         "year": "2022",
         "rating":"6.7"
     },
     {
         "name": "Ужасающий",
         "image": "http://image.tmdb.org/t/p/w500//knJUVRPou9y254Oa9ckdzK6XPpC.jpg",
-        "link": "/see/card/movies/800-104/Uzhasayushij-3.html",
+        "link": "/see/card/movies/800-209/Uzhasayushij.html",
         "year": "2018",
         "rating":"6.3"
     },
@@ -690,7 +690,7 @@ const data = [
     {
         "name": "Мачо и ботан 2",
         "image": "http://image.tmdb.org/t/p/w500//iwtNmSFyePLX9CdZ4iXy5kw6wCq.jpg",
-        "link": "/see/card/movies/800-111/Macho-i-botan.html",
+        "link": "/see/card/movies/800-210/Macho-i-botan-2.html",
         "year": "2014",
         "rating":"6.8"
     },
@@ -760,7 +760,7 @@ const data = [
     {
         "name": "Zомбилэнд: Контрольный выстрел",
         "image": "http://image.tmdb.org/t/p/w500//ociepR7KE1ixlSps5LZb51rkZwa.jpg",
-        "link": "/see/card/movies/800-120/Dobro-pozhalovat-v-Zombilend.html",
+        "link": "/see/card/movies/800-211/Zombilend-Kontrolnyj-vystrel.html",
         "year": "2019",
         "rating":"6.9"
     },
@@ -781,7 +781,7 @@ const data = [
     {
         "name": "Битлджюс",
         "image": "http://image.tmdb.org/t/p/w500//vV40BJbN1NVYkOXVdkQt4qi1PmQ.jpg",
-        "link": "/see/card/movies/800-122/Bitldzhus-Bitldzhus.html",
+        "link": "/see/card/movies/800-212/Bitldzhyus.html",
         "year": "1988",
         "rating":"7.4"
     },
@@ -802,7 +802,7 @@ const data = [
     {
         "name": "Ворон",
         "image": "http://image.tmdb.org/t/p/w500//a5ZZ2XfFkcpik8M56lDznqrsyTp.jpg",
-        "link": "/see/card/movies/800-124/Voron.html",
+        "link": "/see/card/movies/800-213/Voron1994.html",
         "year": "1994",
         "rating":"7.5"
     },
@@ -815,14 +815,14 @@ const data = [
     },
     {
         "name": "Грань времени",
-        "image": "https://image.tmdb.org/t/p/w500//lHmF2lv5q5EzNNiZ6DXVKrRDgX.jpg",
+        "image": "https://image.tmdb.org/t/p/original/wgm4gdJwb7iSYX0uBsRAZmHQmPm.jpg",
         "link": "/see/card/movies/800-126/Gran-vremeni.html",
         "year": "2020",
         "rating":"6.3"
     },
     {
         "name": "Не говори никому",
-        "image": "https://image.tmdb.org/t/p/w500//z7tMZefbCSffsPl3SErtC6ubcdh.jpg",
+        "image": "https://image.tmdb.org/t/p/original/r0xn6drfJXKWetJj58hYEySaQ3N.jpg",
         "link": "/see/card/movies/800-127/Ne-govori-nikomu.html",
         "year": "2024",
         "rating":"7.2"
@@ -837,49 +837,49 @@ const data = [
     {
         "name": "Гарри Поттер 20 лет спустя: возвращение в Хогвартс",
         "image": "http://image.tmdb.org/t/p/w500//pMlCpcBKTB7h4nhazWl26wgngvf.jpg",
-        "link": "/see/card/movies/800-92/Garri-Potter-i-Tajnaya-komnata.html",
+        "link": "/see/card/movies/800-214/Garri-Potter-20-let-spustya-vozvrashenie-v-Hogvarts.html",
         "year": "2022",
         "rating":"7.3"
     },
     {
         "name": "Гарри Поттер и Дары Смерти: Часть II",
         "image": "http://image.tmdb.org/t/p/w500//cSxvq15AOeJ2jNdVRXJvAoZU8T6.jpg",
-        "link": "/see/card/movies/800-92/Garri-Potter-i-Tajnaya-komnata.html",
+        "link": "/see/card/movies/800-215/Garri-Potter-i-Dary-Smerti-Chast-II.html",
         "year": "2011",
         "rating":"8.1"
     },
     {
         "name": "Гарри Поттер и Дары Смерти: Часть I",
         "image": "http://image.tmdb.org/t/p/w500//nUJc0DOO0lh8pjLkmMtPObA2NKf.jpg",
-        "link": "/see/card/movies/800-92/Garri-Potter-i-Tajnaya-komnata.html",
+        "link": "/see/card/movies/800-216/Garri-Potter-i-Dary-Smerti-Chast-I.html",
         "year": "2010",
         "rating":"7.7"
     },
     {
         "name": "Гарри Поттер и Принц-полукровка",
         "image": "http://image.tmdb.org/t/p/w500//zhMOIXezutmTCeP1AvPZHakGCYs.jpg",
-        "link": "/see/card/movies/800-92/Garri-Potter-i-Tajnaya-komnata.html",
+        "link": "/see/card/movies/800-217/Garri-Potter-i-Princ-polukrovka.html",
         "year": "2009",
         "rating":"7.7"
     },
     {
         "name": "Гарри Поттер и Орден Феникса",
         "image": "http://image.tmdb.org/t/p/w500//lBuFOlXNY3YYIkXInGqcd7aJoAY.jpg",
-        "link": "/see/card/movies/800-92/Garri-Potter-i-Tajnaya-komnata.html",
+        "link": "/see/card/movies/800-218/Garri-Potter-i-Orden-Feniksa.html",
         "year": "2007",
         "rating":"7.7"
     },
     {
         "name": "Гарри Поттер и Кубок огня",
         "image": "http://image.tmdb.org/t/p/w500//wWlSRexsjrdTWBYY84s671dYde5.jpg",
-        "link": "/see/card/movies/800-92/Garri-Potter-i-Tajnaya-komnata.html",
+        "link": "/see/card/movies/800-219/Garri-Potter-i-Kubok-ognya.html",
         "year": "2005",
         "rating":"7.8"
     },
     {
         "name": "Гарри Поттер и узник Азкабана",
         "image": "http://image.tmdb.org/t/p/w500//dd3dM7g6x8TIBBKr22oHM8wZxv8.jpg",
-        "link": "/see/card/movies/800-92/Garri-Potter-i-Tajnaya-komnata.html",
+        "link": "/see/card/movies/800-220/Garri-Potter-i-uznik-Azkabana.html",
         "year": "2004",
         "rating":"8.0"
     },
@@ -900,21 +900,21 @@ const data = [
     {
         "name": "Хоббит: Битва пяти воинств",
         "image": "http://image.tmdb.org/t/p/w500//19fnHQ9g3Sy87rHKtw3wqhkBGOh.jpg",
-        "link": "/see/card/movies/800-43/Vlastelin-kolec-Vozvrashenie-korolya.html",
+        "link": "/see/card/movies/800-221/Hobbit-Bitva-pyati-voinstv.html",
         "year": "2014",
         "rating":"7.3"
     },
     {
         "name": "Хоббит: Пустошь Смауга",
         "image": "http://image.tmdb.org/t/p/w500//ccbf6gnYwB2tMaU9EAgxCi88NEe.jpg",
-        "link": "/see/card/movies/800-43/Vlastelin-kolec-Vozvrashenie-korolya.html",
+        "link": "/see/card/movies/800-222/Hobbit-Pustosh-Smauga.html",
         "year": "2013",
         "rating":"7.6"
     },
     {
         "name": "Хоббит: Нежданное путешествие",
         "image": "http://image.tmdb.org/t/p/w500//zTnup9V8UJEG4jWULQQpyKB6Tq0.jpg",
-        "link": "/see/card/movies/800-43/Vlastelin-kolec-Vozvrashenie-korolya.html",
+        "link": "/see/card/movies/800-223/Hobbit-Nezhdannoe-puteshestvie.html",
         "year": "2012",
         "rating":"7.4"
     },
@@ -928,21 +928,21 @@ const data = [
     {
         "name": "Властелин колец: Две крепости",
         "image": "http://image.tmdb.org/t/p/w500//fl7QZlAoZ4MLcxvgOaBjeUxlpQt.jpg",
-        "link": "/see/card/movies/800-43/Vlastelin-kolec-Vozvrashenie-korolya.html",
+        "link": "/see/card/movies/800-224/Vlastelin-kolec-Dve-kreposti.html",
         "year": "2002",
         "rating":"8.4"
     },
     {
         "name": "Властелин колец: Братство кольца",
         "image": "http://image.tmdb.org/t/p/w500//dfoCSXJIamlzlpDCRxXVY5R9GSX.jpg",
-        "link": "/see/card/movies/800-43/Vlastelin-kolec-Vozvrashenie-korolya.html",
+        "link": "/see/card/movies/800-225/Vlastelin-kolec-Bratstvo-kolca.html",
         "year": "2001",
         "rating":"8.4"
     },
     {
         "name": "Перси Джексон и Море чудовищ",
         "image": "http://image.tmdb.org/t/p/w500//1cJWgzakpefE5TnEvVHtUfSJ8Zd.jpg",
-        "link": "/see/card/movies/800-128/Persi-Dzhekson-i-pohititel-molnij.html",
+        "link": "/see/card/movies/800-226/Persi-Dzhekson-i-More-chudovish.html",
         "year": "2013",
         "rating":"6.0"
     },
@@ -963,7 +963,7 @@ const data = [
     {
         "name": "Чужой: Завет",
         "image": "http://image.tmdb.org/t/p/w500//5ff1DVsSL7CP5zIjr8ayHaaHScP.jpg",
-        "link": "/see/card/movies/800-121/Prometej.html",
+        "link": "/see/card/movies/800-227/Chuzhoj-Zavet.html",
         "year": "2017",
         "rating":"6.2"
     },
@@ -977,42 +977,42 @@ const data = [
     {
         "name": "Чужие против Хищника: Реквием",
         "image": "http://image.tmdb.org/t/p/w500//A7vfsc9IcLgi63KaBFeOvio0yRY.jpg",
-        "link": "/see/card/movies/800-131/Chuzhoj-Romul.html",
+        "link": "/see/card/movies/800-228/Chuzhie-protiv-Hishnika-Rekviem.html",
         "year": "2007",
         "rating":"5.2"
     },
     {
         "name": "Чужой против Хищника",
         "image": "http://image.tmdb.org/t/p/w500//uIhgEqmO1Zd9uNJkJzoyvPcgHfA.jpg",
-        "link": "/see/card/movies/800-131/Chuzhoj-Romul.html",
+        "link": "/see/card/movies/800-229/Chuzhoj-protiv-Hishnika.html",
         "year": "2004",
         "rating":"5.9"
     },
     {
         "name": "Чужой: Воскрешение",
         "image": "http://image.tmdb.org/t/p/w500//pkiOQmiRtm0JbvBPtbz4PjrZQM3.jpg",
-        "link": "/see/card/movies/800-131/Chuzhoj-Romul.html",
+        "link": "/see/card/movies/800-230/Chuzhoj-Voskreshenie.html",
         "year": "1997",
         "rating":"6.2"
     },
     {
         "name": "Чужой 3",
         "image": "http://image.tmdb.org/t/p/w500//x49NIbvqwWZ2apQXAa3009FyEzi.jpg",
-        "link": "/see/card/movies/800-131/Chuzhoj-Romul.html",
+        "link": "/see/card/movies/800-231/Chuzhoj-3.html",
         "year": "1992",
         "rating":"6.4"
     },
     {
         "name": "Чужие",
         "image": "http://image.tmdb.org/t/p/w500//sSCmIDZ2EO1oLa8QMq6dL8kNFKq.jpg",
-        "link": "/see/card/movies/800-131/Chuzhoj-Romul.html",
+        "link": "/see/card/movies/800-232/Chuzhie.html",
         "year": "1986",
         "rating":"8.0"
     },
     {
         "name": "Чужой",
         "image": "http://image.tmdb.org/t/p/w500//6EXQpftMDnbEFu75fmRGGF6CuOT.jpg",
-        "link": "/see/card/movies/800-131/Chuzhoj-Romul.html",
+        "link": "/see/card/movies/800-233/Chuzhoj1979.html",
         "year": "1979",
         "rating":"8.2"
     },
@@ -1033,14 +1033,14 @@ const data = [
     {
         "name": "Дэдпул 2",
         "image": "http://image.tmdb.org/t/p/w500//6ieUmjpY7bMMZqIdFxHKUEwfwSB.jpg",
-        "link": "/see/card/movies/800-133/Dedpul-i-Rosomaha.html",
+        "link": "/see/card/movies/800-234/Dedpul-2.html",
         "year": "2018",
         "rating":"7.5"
     },
     {
         "name": "Дэдпул",
         "image": "http://image.tmdb.org/t/p/w500//r5PYZGOiIQuGpaZas9TTplNZ5Ox.jpg",
-        "link": "/see/card/movies/800-133/Dedpul-i-Rosomaha.html",
+        "link": "/see/card/movies/800-235/Dedpul.html",
         "year": "2016",
         "rating":"7.6"
     },
