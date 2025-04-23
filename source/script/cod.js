@@ -100,135 +100,114 @@ window.addEventListener('scroll', function() {
   }
 });
 
-// кнопка ещё
-document.getElementById("show-more-btn").addEventListener("click", function () {
-  const button = this;
-  const hiddenCards = document.querySelectorAll(".card-container.hidden");
-  const allCards = document.querySelectorAll(".card-container");
+// рейтинг и кнопка ещё
+function positionCardRating() {
+  const cards = document.querySelectorAll('.card');
+  cards.forEach(card => {
+    const image = card.querySelector('.card-img-top');
+    const rating = card.querySelector('.card-rating');
+    const ratingTrand = card.querySelector('.card-rating-trand');
 
-  if (button.textContent === "Ещё") {
-    // Показать до 24 карточек
-    hiddenCards.forEach((card, index) => {
-      if (index < 24) {
-        card.classList.remove("hidden");
+    if (image) {
+      const imageRect = {
+        width: image.offsetWidth,
+        height: image.offsetHeight,
+        top: image.offsetTop,
+        left: image.offsetLeft
+      };
+
+      const cardRect = {
+        width: card.offsetWidth,
+        height: card.offsetHeight,
+        top: card.offsetTop,
+        left: card.offsetLeft
+      };
+
+      const bottom = cardRect.height - imageRect.height - imageRect.top + 8;
+      const right = cardRect.width - imageRect.width - imageRect.left + 8;
+
+      if (rating) {
+        rating.style.position = 'absolute';
+        rating.style.bottom = bottom + 'px';
+        rating.style.right = right + 'px';
       }
-    });
 
-    // Проверяем, есть ли ещё скрытые карточки
-    if (document.querySelectorAll(".card-container.hidden").length === 0) {
-      button.textContent = "Скрыть"; // Меняем текст на "Скрыть"
-      button.classList.add("red"); // Добавляем красный фон
+      if (ratingTrand) {
+        ratingTrand.style.position = 'absolute';
+        ratingTrand.style.bottom = bottom + 'px';
+        ratingTrand.style.right = (right + 10) + 'px';
+      }
     }
-  } else {
-    // Скрыть все карточки, кроме первых 6
-    allCards.forEach((card, index) => {
-      if (index >= 0) {
-        card.classList.add("hidden");
-      }
-    });
+  });
+}
 
-    button.textContent = "Ещё"; // Меняем текст на "Ещё"
-    button.classList.remove("red"); // Убираем красный фон
-  }
-});
+// Функция для обработки клика на кнопку "Ещё" или "Скрыть"
+function handleShowMoreClick(buttonId, cardContainerClass) {
+  const button = document.getElementById(buttonId);
+  const batchSize = 24;
+  let shownCards = [];
+  let lastClickedButton = null; // Переменная для хранения кнопки, на которую кликнули
 
+  button.addEventListener("click", function () {
+    const allCards = document.querySelectorAll(`.${cardContainerClass}`);
 
-// конец
-// кнопка ещё
-document.getElementById("show-more-btn1").addEventListener("click", function () {
-  const button = this;
-  const hiddenCards = document.querySelectorAll(".card-container1.hidden");
-  const allCards = document.querySelectorAll(".card-container1");
+    if (button.textContent === "Ещё") {
+      // Находим скрытые карточки
+      const hiddenCards = Array.from(allCards).filter(card => card.classList.contains("hidden"));
 
-  if (button.textContent === "Ещё") {
-    // Показать до 24 карточек
-    hiddenCards.forEach((card, index) => {
-      if (index < 24) {
+      // Показать максимум 24 карточки
+      const toShow = hiddenCards.slice(0, batchSize);
+      toShow.forEach(card => {
         card.classList.remove("hidden");
-      }
-    });
+        shownCards.push(card);
+      });
 
-    // Проверяем, есть ли ещё скрытые карточки
-    if (document.querySelectorAll(".card-container1.hidden").length === 0) {
-      button.textContent = "Скрыть"; // Меняем текст на "Скрыть"
-      button.classList.add("red"); // Добавляем красный фон
+      // Если больше нет скрытых карточек, меняем кнопку
+      if (document.querySelectorAll(`.${cardContainerClass}.hidden`).length === 0) {
+        button.textContent = "Скрыть";
+        button.classList.add("red");
+      }
+      
+      // Запоминаем кнопку, на которую кликнули
+      lastClickedButton = button;
+    } else {
+      // Запоминаем текущую позицию перед скрытием
+      const scrollY = window.scrollY;
+      const rect = button.getBoundingClientRect();
+      const offsetTop = rect.top + scrollY;
+
+      // Скрываем только те карточки, которые были показаны кнопкой
+      shownCards.forEach(card => card.classList.add("hidden"));
+      shownCards = [];
+
+      // Меняем текст кнопки и убираем красный фон
+      button.textContent = "Ещё";
+      button.classList.remove("red");
+
+      // Возвращаем скролл обратно к кнопке, на которую кликнули
+      if (lastClickedButton) {
+        const lastButtonRect = lastClickedButton.getBoundingClientRect();
+        const lastButtonOffsetTop = lastButtonRect.top + window.scrollY;
+        window.scrollTo({
+          top: lastButtonOffsetTop,
+          behavior: 'auto' // Плавное прокручивание можно заменить на 'auto' для чёткости
+        });
+      }
     }
-  } else {
-    // Скрыть все карточки, кроме первых 6
-    allCards.forEach((card, index) => {
-      if (index >= 0) {
-        card.classList.add("hidden");
-      }
-    });
 
-    button.textContent = "Ещё"; // Меняем текст на "Ещё"
-    button.classList.remove("red"); // Убираем красный фон
-  }
+    positionCardRating();
+  });
+}
+
+// Запуск функции для обработки нажатия кнопки "Ещё"
+document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(positionCardRating, 100);
+
+  handleShowMoreClick("show-more-btn", "card-container");
+  handleShowMoreClick("show-more-btn1", "card-container1");
+  handleShowMoreClick("show-more-btn2", "card-container2");
+  handleShowMoreClick("show-more-btn3", "card-container3");
 });
-// конец
-// кнопка ещё
-document.getElementById("show-more-btn2").addEventListener("click", function () {
-  const button = this;
-  const hiddenCards = document.querySelectorAll(".card-container2.hidden");
-  const allCards = document.querySelectorAll(".card-container2");
-
-  if (button.textContent === "Ещё") {
-    // Показать до 24 карточек
-    hiddenCards.forEach((card, index) => {
-      if (index < 24) {
-        card.classList.remove("hidden");
-      }
-    });
-
-    // Проверяем, есть ли ещё скрытые карточки
-    if (document.querySelectorAll(".card-container2.hidden").length === 0) {
-      button.textContent = "Скрыть"; // Меняем текст на "Скрыть"
-      button.classList.add("red"); // Добавляем красный фон
-    }
-  } else {
-    // Скрыть все карточки, кроме первых 6
-    allCards.forEach((card, index) => {
-      if (index >= 0) {
-        card.classList.add("hidden");
-      }
-    });
-
-    button.textContent = "Ещё"; // Меняем текст на "Ещё"
-    button.classList.remove("red"); // Убираем красный фон
-  }
-});
-// конец
-document.getElementById("show-more-btn3").addEventListener("click", function () {
-  const button = this;
-  const hiddenCards = document.querySelectorAll(".card-container3.hidden");
-  const allCards = document.querySelectorAll(".card-container3");
-
-  if (button.textContent === "Ещё") {
-    // Показать до 24 карточек
-    hiddenCards.forEach((card, index) => {
-      if (index < 24) {
-        card.classList.remove("hidden");
-      }
-    });
-
-    // Проверяем, есть ли ещё скрытые карточки
-    if (document.querySelectorAll(".card-container3.hidden").length === 0) {
-      button.textContent = "Скрыть"; // Меняем текст на "Скрыть"
-      button.classList.add("red"); // Добавляем красный фон
-    }
-  } else {
-    // Скрыть все карточки, кроме первых 6
-    allCards.forEach((card, index) => {
-      if (index >= 0) {
-        card.classList.add("hidden");
-      }
-    });
-
-    button.textContent = "Ещё"; // Меняем текст на "Ещё"
-    button.classList.remove("red"); // Убираем красный фон
-  }
-});
-// конец
 // ссылки и блоб на фильмы
 
       document.addEventListener("DOMContentLoaded", function() {

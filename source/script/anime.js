@@ -4,6 +4,7 @@
 // Мультфильмы
 document.addEventListener('DOMContentLoaded', function () {
     generateRandomCards();
+    setTimeout(positionCardRatingTrand, 100); // Добавляем вызов для card-rating-trand
 });
 
 function generateRandomCards() {
@@ -516,109 +517,134 @@ function generateRandomCards() {
         // конец
        
         
-      ];
+    ];
 
-      var cardContainer = $('#card-container'); 
-  
-      // Очищаем контейнер перед добавлением новых карточек
-      cardContainer.html("");
-  
-      // Перемешиваем карточки случайным образом
-      cardData = shuffleArray(cardData);
-  
-      var count = 0; 
-  
-      // Получаем название фильма из элемента с id="movie-title"
-      var movieTitle = $('#movie-title').text().trim();
-  
-      cardData.forEach(function (val) {
-          // Проверяем, совпадает ли название карточки с movieTitle
-          if (val.name === movieTitle) return;
-  
-          if (count >= 15) return;
-  
-          var randomRating = val.rating;
-  
-          var cardHTML = `
-          <li class="splide__slide">
-              <div class="card card-media" style="width: 12rem" data-rating="${randomRating}">
-                  <a href="${val.link}">
-                      <img src="${val.image}" class="card-img-top img-9x16 mt-2" alt="${val.name}">
-                      <div class="card-rating-trand" bis_skin_checked="1">
-                          <span class="span-rating">${randomRating}</span>
-                      </div>
-                      <div class="card-body">
-                          <span class="card-tex">${val.name}<br><span class="year">${val.year}</span></span>
-                      </div>
-                  </a>
-              </div>
-          </li>
-          `;
-  
-          // Добавляем карточку в контейнер
-          cardContainer.append(cardHTML);
-  
-          count++;
-      });
-  
-      // Инициализируем Splide после добавления карточек
-      new Splide('#Collections', {
-          type: 'loop',
-          focus: 'center',
-          autoWidth: true, 
-          gap: '40px',
-          pauseOnHover: true,
-          pauseOnFocus: true,
-          arrows: true,
-          pagination: false,
-          drag: true,
-          perPage: 3,
-          breakpoints: {
-              5000: {
-                  gap: '23px',
-                  perPage: 3,
-              },
-              2299.5: {
-                  gap: '20px',
-                  perPage: 3,
-              },
-              2018.5: {
-                  gap: '18px',
-                  perPage: 3,
-              },
-              1899.5: {
-                  gap: '18px',
-                  perPage: 3,
-              },
-              1704.5: {
-                  gap: '12px',
-                  perPage: 3,
-              },
-              1520.5: {
-                  gap: '12px',
-                  perPage: 3,
-              },
-              1320.5: {
-                  gap: '28px',
-                  perPage: 3,
-              },
-              1050: {
-                  gap: '12px',
-                  perPage: 3,
-              },
-              480: {
-                  gap: '12px',
-                  perPage: 3,
-              }
-          }
-      }).mount();
-  }
-  
-  // Функция перемешивания массива
-  function shuffleArray(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-          let j = Math.floor(Math.random() * (i + 1));
-          [array[i], array[j]] = [array[j], array[i]];
-      }
-      return array;
-  }
+    var cardContainer = $('#card-container');
+    if (!cardContainer) {
+        console.error("#card-container not found!");
+        return;
+    }
+
+    cardContainer.html("");
+    cardData = shuffleArray(cardData);
+
+    var count = 0;
+
+    cardData.forEach(function (val) {
+        if (count >= 15) return;
+
+        var randomRating = val.rating;
+
+        var cardHTML = `
+            <li class="splide__slide">
+                <div class="card card-media" style="width: 12rem" data-rating="${randomRating}">
+                    <a href="${val.link}">
+                        <img src="${val.image}" class="card-img-top img-9x16 mt-2" alt="${val.name}">
+                        <div class="card-rating-trand" bis_skin_checked="1">
+                            <span class="span-rating">${randomRating}</span>
+                        </div>
+                        <div class="card-body">
+                            <span class="card-tex">${val.name}<br><span class="year">${val.year}</span></span>
+                        </div>
+                    </a>
+                </div>
+            </li>
+        `;
+
+        cardContainer.append(cardHTML);
+        count++;
+    });
+
+    // Инициализируем Splide после добавления карточек
+    var splide = new Splide('#Collections', {
+        type: 'loop',
+        focus: 'center',
+        autoWidth: true,
+        gap: '40px',
+        pauseOnHover: true,
+        pauseOnFocus: true,
+        arrows: true,
+        pagination: false,
+        drag: true,
+        perPage: 3,
+        breakpoints: {
+            5000: {
+                gap: '23px',
+                perPage: 3,
+            },
+            2299.5: {
+                gap: '20px',
+                perPage: 3,
+            },
+            2018.5: {
+                gap: '18px',
+                perPage: 3,
+            },
+            1899.5: {
+                gap: '18px',
+                perPage: 3,
+            },
+            1704.5: {
+                gap: '12px',
+                perPage: 3,
+            },
+            1520.5: {
+                gap: '12px',
+                perPage: 3,
+            },
+            1320.5: {
+                gap: '28px',
+                perPage: 3,
+            },
+            1050: {
+                gap: '12px',
+                perPage: 3,
+            },
+            480: {
+                gap: '12px',
+                perPage: 3,
+            }
+        }
+    }).mount();
+
+    positionCardRatingTrand(); // Вызываем после инициализации
+}
+
+function positionCardRatingTrand() {
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        const image = card.querySelector('.card-img-top');
+        const rating = card.querySelector('.card-rating-trand');
+
+        if (image && rating) {
+            const imageRect = {
+                width: image.offsetWidth,
+                height: image.offsetHeight,
+                top: image.offsetTop,
+                left: image.offsetLeft
+            };
+
+            const cardRect = {
+                width: card.offsetWidth,
+                height: card.offsetHeight,
+                top: card.offsetTop,
+                left: card.offsetLeft
+            };
+
+            const bottom = cardRect.height - imageRect.height - imageRect.top + 8;
+            const right = cardRect.width - imageRect.width - imageRect.left + 8;
+
+            rating.style.position = 'absolute';
+            rating.style.bottom = bottom + 'px';
+            rating.style.right = right + 'px';
+        }
+    });
+}
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
