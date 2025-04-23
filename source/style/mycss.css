@@ -738,31 +738,15 @@ h4 {
 .card {
     z-index: 1;
     width: 12rem;
-    overflow: visible !important;
+    
     /* Позволяет изображению выходить за пределы карточки */
 }
 
-.card-img-top {
-    transition: transform 0.3s ease, border-color 0.3s ease;
-    border: 3px solid transparent;
-    position: relative;
-    z-index: 10;
-    /* Устанавливает высокий приоритет по наложению */
-    transition: transform 0.3s ease, filter 0.3s ease;
-    /* Плавный переход для анимации */
-}
 
-.card:hover .card-img-top {
-    transform: scale(1.06);
-    /* Увеличение изображения на 5% при наведении */
-    padding: 2px;
-    border-color: #ffffff;
-    margin-bottom: 2px;
-    /* Подсвечивание бордера красным */
-}
 .card:hover .card-tex,
 .card:active .card-tex {
     color: #ffffff !important;
+    transition: transform 0.1s ease, filter 0.1s ease;
     text-shadow:
         1px 1px 0 #000000,
         -1px 1px 0 #000000,
@@ -794,58 +778,71 @@ h4 {
 
 }
 
-.card-rating-trand {
-
+.card-rating-trand { /* *** Изменено *** */
     color: #ffffff;
-
     background: rgba(0, 0, 0, 0.5);
     font-size: 1em;
     font-weight: 700;
-    font-weight: 700;
-    padding: 0.2em 0.40em;
-    -webkit-border-radius: 1em;
-    -moz-border-radius: 1em;
+    padding: 0.2em 0.5em;
     border-radius: 1em;
     text-decoration: none;
-    display: block;
-    width: 23%;
-    /* Ширина текста совпадает с контейнером */
-    transition: color 0.5s;
     position: absolute;
-    /* Фиксируем текст на месте */
-    top: 13px;
-    /* Расположение от нижнего края */
-    left: 5px;
-    /* Расположение от левого края */
-    z-index: 10;
-    /* Чтобы текст был выше изображения */
+    z-index: 11;
+    width: auto;
+    text-align: center;
+    display: inline-block;
+    line-height: 1.2;
+    transform: scale(1);
+    transition: transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    backface-visibility: hidden;
+    will-change: transform;
+    
+}
+
+.card:hover .card-rating-trand { /* *** Изменено *** */
+    transform: scale(1.06);
 }
 
 .card-rating {
     color: #ffffff;
-
     background: rgba(0, 0, 0, 0.5);
     font-size: 1em;
     font-weight: 700;
-    font-weight: 700;
-    padding: 0.2em 0.4em;
-    -webkit-border-radius: 1em;
-    -moz-border-radius: 1em;
+    padding: 0.2em 0.5em;
     border-radius: 1em;
     text-decoration: none;
-    display: block;
-    width: 23%;
-    /* Ширина текста совпадает с контейнером */
-    transition: color 0.5s;
     position: absolute;
-    /* Фиксируем текст на месте */
-    top: 8px;
-    /* Расположение от нижнего края */
-    left: 5px;
-    /* Расположение от левого края */
-    z-index: 10;
-    /* Чтобы текст был выше изображения */
+    z-index: 11;
+    width: auto;
+    text-align: center;
+    display: inline-block;
+    line-height: 1.2;
+    transform: scale(1);
+    transition: transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    backface-visibility: hidden; /* Добавлено */
+    will-change: transform; /* Добавлено */
+    /* perspective: 1000px;  Попробуйте, если не помогает */
+}
 
+.card:hover .card-rating {
+    transform: scale(1.06);
+}
+
+.card-img-top {
+    transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.2s ease, filter 0.2s ease;
+    border: 3px solid transparent;
+    position: relative;
+    z-index: 10;
+    backface-visibility: hidden; /* Добавлено */
+    will-change: transform; /* Добавлено */
+    /* perspective: 1000px;  Попробуйте, если не помогает */
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.06);
+    padding: 2px;
+    border-color: #ffffff;
+    margin-bottom: 2px;
 }
 
 .year {
