@@ -211,51 +211,48 @@ function handleShowMoreClick(buttonId, cardContainerClass) {
   const button = document.getElementById(buttonId);
   const batchSize = 24;
   let shownCards = [];
-  let lastClickedButton = null; // Переменная для хранения кнопки, на которую кликнули
+  let lastClickedButton = null;
 
   button.addEventListener("click", function () {
     const allCards = document.querySelectorAll(`.${cardContainerClass}`);
 
     if (button.textContent === "Ещё") {
-      // Находим скрытые карточки
       const hiddenCards = Array.from(allCards).filter(card => card.classList.contains("hidden"));
-
-      // Показать максимум 24 карточки
       const toShow = hiddenCards.slice(0, batchSize);
+
       toShow.forEach(card => {
+        card.classList.add("fade-in"); // Добавляем класс для анимации
         card.classList.remove("hidden");
+        // Небольшая задержка перед добавлением класса "visible", чтобы сработала анимация
+        setTimeout(() => {
+          card.classList.add("visible");
+        }, 10);
         shownCards.push(card);
       });
 
-      // Если больше нет скрытых карточек, меняем кнопку
       if (document.querySelectorAll(`.${cardContainerClass}.hidden`).length === 0) {
         button.textContent = "Скрыть";
         button.classList.add("red");
       }
-      
-      // Запоминаем кнопку, на которую кликнули
+
       lastClickedButton = button;
     } else {
-      // Запоминаем текущую позицию перед скрытием
-      const scrollY = window.scrollY;
-      const rect = button.getBoundingClientRect();
-      const offsetTop = rect.top + scrollY;
-
-      // Скрываем только те карточки, которые были показаны кнопкой
-      shownCards.forEach(card => card.classList.add("hidden"));
+      shownCards.forEach(card => {
+        card.classList.remove("visible"); // Удаляем класс "visible" для обратной анимации (если нужно)
+        card.classList.add("hidden");
+        card.classList.remove("fade-in"); // Убираем класс fade-in
+      });
       shownCards = [];
 
-      // Меняем текст кнопки и убираем красный фон
       button.textContent = "Ещё";
       button.classList.remove("red");
 
-      // Возвращаем скролл обратно к кнопке, на которую кликнули
       if (lastClickedButton) {
         const lastButtonRect = lastClickedButton.getBoundingClientRect();
         const lastButtonOffsetTop = lastButtonRect.top + window.scrollY;
         window.scrollTo({
           top: lastButtonOffsetTop,
-          behavior: 'auto' // Плавное прокручивание можно заменить на 'auto' для чёткости
+          behavior: 'auto'
         });
       }
     }
@@ -267,7 +264,23 @@ function handleShowMoreClick(buttonId, cardContainerClass) {
 // Запуск функции для обработки нажатия кнопки "Ещё"
 document.addEventListener("DOMContentLoaded", () => {
   setTimeout(positionCardRating, 100);
+
   handleShowMoreClick("show-more-btn", "card-container");
+  
+
+  // Добавим класс "hidden" ко всем карточкам изначально, кроме первых 24 (если они есть)
+  document.querySelectorAll(".card-container, .card-container1, .card-container2, .card-container3").forEach(container => {
+    const cards = container.querySelectorAll(".card");
+    if (cards.length > 24) {
+      cards.forEach((card, index) => {
+        if (index >= 24) {
+          card.classList.add("hidden");
+        }
+      });
+    } else {
+      cards.forEach(card => card.classList.remove("hidden")); // Если карточек меньше или равно 24, показываем все
+    }
+  });
 });
 
  
