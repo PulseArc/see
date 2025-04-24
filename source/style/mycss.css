@@ -45,6 +45,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    min-height: 30px;
     margin-top: calc(-1 * var(--bs-gutter-y));
     margin-right: calc(-0.5 * var(--bs-gutter-x));
     margin-left: calc(-0.5 * var(--bs-gutter-x));
@@ -745,7 +746,22 @@ h4 {
     opacity: 1;
   }
 
-  
+  .cards-from-search {
+    opacity: 0;
+    filter: blur(10px);
+    transform: scale(0.98);
+    transition: opacity 0.6s ease, filter 0.6s ease, transform 0.6s ease;
+}
+
+.cards-from-search.visible {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+}
+
+.cards-from-search {
+    will-change: opacity, transform, filter;
+}
 
 .card {
     z-index: 1;
@@ -773,7 +789,7 @@ h4 {
 
 .card-TV{ 
     left: -5px !important; 
-    top: 19px; 
+    top: 19px !important; 
     padding: 0.35em 0.35em !important;
     font-size: 0.65em !important; 
     
@@ -937,6 +953,7 @@ h4 {
     font-size: 0.8em; 
     border-radius: 0.4em; 
     z-index: 11;
+    overflow: hidden;
     transform: translateX(0) scale(1); 
     transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.15s ease-in-out; /* Додано box-shadow */
     text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.8); 
@@ -993,6 +1010,7 @@ h4 {
 
 .card {
     background: black;
+    
 }
 
 .card a {
@@ -1708,6 +1726,14 @@ footer {
         padding-left: 0.15em;
         padding-right: 0.15em;
     }
+
+    .card-TV{ 
+        left: -15px !important; 
+        top: 25px !important; 
+        padding: 0.35em 0.35em !important;
+        font-size: 1.4em !important; 
+        
+    }
 }
 
 @media (min-width: 1900px) and (max-width: 2019px) {
@@ -1888,6 +1914,13 @@ footer {
     }
     .year {
         font-size: 90% !important;
+    }
+    .card-TV{ 
+        left: -11px !important; 
+        top: 23px !important; 
+        padding: 0.35em 0.35em !important;
+        font-size: 1.15em !important; 
+        
     }
 
     .btn-show-all {
@@ -2519,7 +2552,13 @@ footer {
         width: 9rem;
     }
 
-    
+    .card-TV{ 
+        left: -5px !important; 
+        top: 19px !important; 
+        padding: 0.35em 0.35em !important;
+        font-size: 0.6em !important; 
+        
+    }
 
 }
 
@@ -2558,7 +2597,15 @@ footer {
 
 
 
-
+@media (min-width: 1705px) and (max-width: 1900px){
+    .card-TV{ 
+        left: -11px !important; 
+        top: 23px !important; 
+        padding: 0.35em 0.35em !important;
+        font-size: 1em !important; 
+        
+    }
+}
 
 @media (min-width: 1900px) {
 
@@ -3068,7 +3115,13 @@ footer {
         height: auto !important;
         /* Увеличение размера текста рейтинга */
     }
-
+    .card-TV{ 
+        left: -9px !important; 
+        top: 23px !important; 
+        padding: 0.35em 0.35em !important;
+        font-size: 0.9em !important; 
+        
+    }
 
 
     h4 {
@@ -3253,6 +3306,14 @@ footer {
 
     .Top-h4{
         margin-top: 2em;
+    }
+
+    .card-TV{ 
+        left: -7px !important; 
+        top: 23px !important; 
+        padding: 0.35em 0.35em !important;
+        font-size: 0.8em !important; 
+        
     }
 
 }
