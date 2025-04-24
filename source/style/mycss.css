@@ -759,6 +759,13 @@ h4 {
 }
 
 
+.card-TV{ 
+    left: -5px !important; 
+    top: 19px; 
+    padding: 0.35em 0.35em !important;
+    font-size: 0.65em !important; 
+    
+}
 .single-item2 .card:hover .card-img-top {
     margin-bottom: -1.8px;
 }
@@ -901,6 +908,31 @@ h4 {
     overflow-wrap: break-word;
 }
 
+.card-TV{
+    background: #ff4242;
+    color: #fff;
+    font-family: "SegoeUI", sans-serif;
+}
+.card-TV{ 
+    background: #ff4242;
+    color: #fff;
+    font-family: "SegoeUI", sans-serif;
+    position: absolute;
+    left: -8px; 
+    top: 19px; 
+    padding: 0.5em 0.6em; 
+    line-height: 1;
+    font-size: 0.8em; 
+    border-radius: 0.4em; 
+    z-index: 11;
+    transform: translateX(0) scale(1); 
+    transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.15s ease-in-out; /* Додано box-shadow */
+    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.8); 
+}
+.card:hover .card-TV{ 
+    transform: translateX(-2px) scale(1.1); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
+}
 .slider.single-item2 .card-tex {
     width: 100% !important;
     /* Или нужное значение */
