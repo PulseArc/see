@@ -734,6 +734,18 @@ h4 {
        
     }
 }
+.fade-in {
+    filter: blur(10px); /* Начальный блюр (можно настроить) */
+    opacity: 0.6; /* Немного прозрачности, чтобы блюр был заметнее */
+    transition: filter 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  }
+  
+  .fade-in.visible {
+    filter: blur(0); /* Конечный блюр (нет блюра) */
+    opacity: 1;
+  }
+
+  
 
 .card {
     z-index: 1;
