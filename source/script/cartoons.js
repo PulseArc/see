@@ -20,7 +20,8 @@ function generateRandomCards() {
             "image": "http://image.tmdb.org/t/p/w500//s12Z2uGrvjj5sA7LsBStTtfTYjC.jpg",
             "link": "/see/card/cartoons/500-04/Rapuncel-Zaputannaya-istoriya.html",
             "year": "2017",
-            "rating":"7.3"
+            "rating":"7.3",
+            "isTV": true
         },
         {
             "name": "Рапунцель: Дорога к мечте",
@@ -41,28 +42,32 @@ function generateRandomCards() {
             "image": "http://image.tmdb.org/t/p/w500//5nvIUVjFpRAiMziG5zP2KR1uLHV.jpg",
             "link": "/see/card/cartoons/500-05/Tom-i-Dzherri-Robin-Gud-i-mysh-veselchak.html",
             "year": "2021",
-            "rating":"7.0"
+            "rating":"7.0",
+            "isTV": true
         },
         {
             "name": "Том и Джерри: Сказки",
             "image": "http://image.tmdb.org/t/p/original/hMx3Ybd4Zov0Uy7GwqrjfHVcnA2.jpg",
             "link": "/see/card/cartoons/500-05/Tom-i-Dzherri-Robin-Gud-i-mysh-veselchak.html",
             "year": "2006",
-            "rating":"7.8"
+            "rating":"7.8",
+            "isTV": true
         },
         {
             "name": "Том и Джерри в детстве",
             "image": "http://image.tmdb.org/t/p/w500//pApniCXhegDnhxQda7RcpG8gFP0.jpg",
             "link": "/see/card/cartoons/500-05/Tom-i-Dzherri-Robin-Gud-i-mysh-veselchak.html",
             "year": "1990",
-            "rating":"6.3"
+            "rating":"6.3",
+            "isTV": true
         },
         {
             "name": "Том и Джерри: Комедийное шоу",
             "image": "http://image.tmdb.org/t/p/w500//4usKsUnNy3DYkrEGC8EXe3bQ8PV.jpg",
             "link": "/see/card/cartoons/500-05/Tom-i-Dzherri-Robin-Gud-i-mysh-veselchak.html",
             "year": "1980",
-            "rating":"7.5"
+            "rating":"7.5",
+            "isTV": true
         },
         {
             "name": "Том и Джерри: Бравые ковбои!",
@@ -230,7 +235,8 @@ function generateRandomCards() {
             "image": "http://image.tmdb.org/t/p/w500//kXdT6ait0Kw4ylzFgEA0z8kWaMM.jpg",
             "link": "/see/card/cartoons/500-14/Megamozg.html",
             "year": "2024",
-            "rating":"5.5"
+            "rating":"5.5",
+            "isTV": true
         },
         {
             "name": "Мегамозг против Синдиката Рока",
@@ -272,7 +278,8 @@ function generateRandomCards() {
             "image": "http://image.tmdb.org/t/p/w500//faTIP0dG6tSWfGYHjEyYw3JeBT2.jpg",
             "link": "/see/card/cartoons/500-17/Aladdin.html",
             "year": "1994",
-            "rating":"6.9"
+            "rating":"6.9",
+            "isTV": true
         },
         {
             "name": "Возвращение Джафара",
@@ -293,7 +300,8 @@ function generateRandomCards() {
             "image": "http://image.tmdb.org/t/p/original/aUgEi0VryenHDoQ0wJH0fycBwzU.jpg",
             "link": "/see/card/cartoons/500-18/Semejka-Kruds.html",
             "year": "2021",
-            "rating":"7.2"
+            "rating":"7.2",
+            "isTV": true
         },
         {
             "name": "Семейка Крудс: Новоселье",
@@ -349,7 +357,8 @@ function generateRandomCards() {
             "image": "http://image.tmdb.org/t/p/w500//gH6IQvbPekyyPN8rMXlaiR99Rxp.jpg",
             "link": "/see/card/cartoons/500-20/Samolety.html",
             "year": "2022",
-            "rating":"7.5"
+            "rating":"7.5",
+            "isTV": true
         },
         {
             "name": "Тачки 3",
@@ -461,77 +470,88 @@ function generateRandomCards() {
             "image": "http://image.tmdb.org/t/p/w500//jLwU37QusZDkkOuFNb1TA6NQZNT.jpg",
             "link": "/see/card/cartoons/500-28/Transformery-Nachalo.html",
             "year": "2022",
-            "rating":"7.0"
+            "rating":"7.0",
+            "isTV": true
         },
         {
             "name": "Трансформеры: Ботботы",
             "image": "http://image.tmdb.org/t/p/w500//hKtDA3GG3puz5DGnieFCNRGPpjK.jpg",
             "link": "/see/card/cartoons/500-28/Transformery-Nachalo.html",
             "year": "2022",
-            "rating":"5.1"
+            "rating":"5.1",
+            "isTV": true
         },
         {
             "name": "Трансформеры. Война за Кибертрон. Королевство",
             "image": "http://image.tmdb.org/t/p/w500//r2IouRpN9IXMyY8RX0YnJhkCirE.jpg",
             "link": "/see/card/cartoons/500-28/Transformery-Nachalo.html",
             "year": "2021",
-            "rating":"7.7"
+            "rating":"7.7",
+            "isTV": true
         },
         {
             "name": "Трансформеры: Войны гештальтов",
             "image": "http://image.tmdb.org/t/p/w500//reYa1VrOuNfKcMIJGQQ66kvIuBM.jpg",
             "link": "/see/card/cartoons/500-28/Transformery-Nachalo.html",
             "year": "2016",
-            "rating":"7.8"
+            "rating":"7.8",
+            "isTV": true
         },
         {
             "name": "Трансформеры. Роботы под прикрытием",
             "image": "http://image.tmdb.org/t/p/w500//pbRpKAGbXnASnNFHCGFC4CwVPla.jpg",
             "link": "/see/card/cartoons/500-28/Transformery-Nachalo.html",
             "year": "2015",
-            "rating":"7.1"
+            "rating":"7.1",
+            "isTV": true
         },
         {
             "name": "Трансформеры: Боты-спасатели",
             "image": "http://image.tmdb.org/t/p/w500//wtugHPxksnORftAs7EOGK3Oy0I5.jpg",
             "link": "/see/card/cartoons/500-28/Transformery-Nachalo.html",
             "year": "2012",
-            "rating":"7.4"
+            "rating":"7.4",
+            "isTV": true
         },
         {
             "name": "Трансформеры: Прайм",
             "image": "http://image.tmdb.org/t/p/original/nEzYyon3gBhhWdmQds9k23lHKEd.jpg",
             "link": "/see/card/cartoons/500-28/Transformery-Nachalo.html",
             "year": "2010",
-            "rating":"8.0"
+            "rating":"8.0",
+            "isTV": true
         },
         {
             "name": "Трансформеры",
             "image": "http://image.tmdb.org/t/p/w500//uEKVNu69urMrXSuAdeK54HOtvo4.jpg",
             "link": "/see/card/cartoons/500-28/Transformery-Nachalo.html",
             "year": "2007",
-            "rating":"8.0"
+            "rating":"8.0",
+            "isTV": true
         },
         {
             "name": "Трансформеры: Зверороботы",
             "image": "http://image.tmdb.org/t/p/w500//pNvziasPFwBlWDpmM346OnUB6E6.jpg",
             "link": "/see/card/cartoons/500-28/Transformery-Nachalo.html",
             "year": "1999",
-            "rating":"8.3"
+            "rating":"8.3",
+            "isTV": true
         },
         {
             "name": "Трансформеры: Битвы Зверей",
             "image": "http://image.tmdb.org/t/p/original/148PzBHH19K6QANTSUoJt3Dghi.jpg",
             "link": "/see/card/cartoons/500-28/Transformery-Nachalo.html",
             "year": "1996",
-            "rating":"8.1"
+            "rating":"8.1",
+            "isTV": true
         },
         {
             "name": "Трансформеры: Воины Великой Силы",
             "image": "http://image.tmdb.org/t/p/original/ztyqe6amne1ZmddsM9IrU0f7OcW.jpg",
             "link": "/see/card/cartoons/500-28/Transformery-Nachalo.html",
             "year": "1988",
-            "rating":"8.2"
+            "rating":"8.2",
+            "isTV": true
         },
         {
             "name": "Трансформеры",
@@ -545,7 +565,8 @@ function generateRandomCards() {
             "image": "http://image.tmdb.org/t/p/w500//h4DvodvcLWh7xdpj872Bq0V2DKS.jpg",
             "link": "/see/card/cartoons/500-28/Transformery-Nachalo.html",
             "year": "1984",
-            "rating":"7.8"
+            "rating":"7.8",
+            "isTV": true
         },
         {
             "name": "Кошмар перед Рождеством",
@@ -559,7 +580,8 @@ function generateRandomCards() {
             "image": "http://image.tmdb.org/t/p/original/2THLokQ6Ce914l4b3rYvvbEPJpz.jpg",
             "link": "/see/card/cartoons/500-30/Utinye-istorii-Zavetnaya-lampa.html",
             "year": "2017",
-            "rating":"7.8"
+            "rating":"7.8",
+            "isTV": true
         },
         {
             "name": "Утиные истории: Заветная лампа",
@@ -573,7 +595,8 @@ function generateRandomCards() {
             "image": "http://image.tmdb.org/t/p/original/l39HDf6WYzV8VLY5EnCRC81DWOy.jpg",
             "link": "/see/card/cartoons/500-30/Utinye-istorii-Zavetnaya-lampa.html",
             "year": "1987",
-            "rating":"7.6"
+            "rating":"7.6",
+            "isTV": true
         },
         {
             "name": "История игрушек 4",
@@ -636,7 +659,8 @@ function generateRandomCards() {
             "image": "http://image.tmdb.org/t/p/w500//407xqcHFS2O3NsqBo2XpprCjKSc.jpg",
             "link": "/see/card/cartoons/500-78/Futurama.html",
             "year": "1999",
-            "rating":"8.4"
+            "rating":"8.4",
+            "isTV": true
         },
         {
             "name": "Астерикс и тайное зелье",
@@ -769,7 +793,8 @@ function generateRandomCards() {
             "image": "http://image.tmdb.org/t/p/w500//yj25y94rEWsTxmcp5WdHDfuoriU.jpg",
             "link": "/see/card/cartoons/500-37/Pingviny-Madagaskara.html",
             "year": "2008",
-            "rating":"7.4"
+            "rating":"7.4",
+            "isTV": true
         },
         {
             "name": "Хранитель Луны",
@@ -790,7 +815,8 @@ function generateRandomCards() {
             "image": "http://image.tmdb.org/t/p/w500//seS4Uv5EvezwCS4aVfiBcvB4q4y.jpg",
             "link": "/see/card/cartoons/500-77/Griffiny.html",
             "year": "1999",
-            "rating":"7.4"
+            "rating":"7.4",
+            "isTV": true
         },
         {
             "name": "Пришельцы в доме",
@@ -825,7 +851,8 @@ function generateRandomCards() {
             "image": "http://image.tmdb.org/t/p/w500//uOFvLi1bWiiU3G1HSmUXdDIZKpS.jpg",
             "link": "/see/card/cartoons/500-40/Korol-Lev.html",
             "year": "1995",
-            "rating":"7.2"
+            "rating":"7.2",
+            "isTV": true
         },
         {
             "name": "Кокоша – маленький дракон",
@@ -923,7 +950,8 @@ function generateRandomCards() {
             "image": "http://image.tmdb.org/t/p/w500//nfttp2lquST92j4ItAYdmtdoj5t.jpg",
             "link": "/see/card/cartoons/500-76/Yuzhnyj-Park.html",
             "year": "1997",
-            "rating":"8.4"
+            "rating":"8.4",
+            "isTV": true
         },
         {
             "name": "Элементарно",
@@ -993,7 +1021,8 @@ function generateRandomCards() {
             "image": "http://image.tmdb.org/t/p/w500//171yRAHGCziNjtO53sEil1PH64v.jpg",
             "link": "/see/card/cartoons/500-75/Simpsony.html",
             "year": "1989",
-            "rating":"8.0"
+            "rating":"8.0",
+            "isTV": true
         },
         {
             "name": "Райя и последний дракон",
@@ -1007,7 +1036,8 @@ function generateRandomCards() {
             "image": "http://image.tmdb.org/t/p/w500//9KYUA9tZrVNVXk2LTaYNMqGpHUj.jpg",
             "link": "/see/card/cartoons/500-49/Krutye-bobry.html",
             "year": "1997",
-            "rating":"6.9"
+            "rating":"6.9",
+            "isTV": true
         },
         {
             "name": "Головоломка 2",
@@ -1070,7 +1100,8 @@ function generateRandomCards() {
             "image": "http://image.tmdb.org/t/p/w500//inzPPPr2BsE92m4rHhQn3sf2yPk.jpg",
             "link": "/see/card/cartoons/500-52/Zveropolis.html",
             "year": "2022",
-            "rating":"7.2"
+            "rating":"7.2",
+            "isTV": true
         },
         {
             "name": "Зверополис",
@@ -1161,7 +1192,8 @@ function generateRandomCards() {
             "image": "http://image.tmdb.org/t/p/w500//wdzk1wPGOnO8dCnaQozSpe1oH9l.jpg",
             "link": "/see/card/cartoons/500-73/Rik-i-Morti.html",
             "year": "2013",
-            "rating":"8.7"
+            "rating":"8.7",
+            "isTV": true
         },
         {
             "name": "Моана 2",
@@ -1196,77 +1228,88 @@ function generateRandomCards() {
             "image": "http://image.tmdb.org/t/p/w500//4uFWdcZilCMS8cwanp1b2baqFbU.jpg",
             "link": "/see/card/cartoons/500-60/Chelovek-pauk-Pautina-vselennyh.html",
             "year": "2025",
-            "rating":"7.8"
+            "rating":"7.8",
+            "isTV": true
         },
         {
             "name": "Паучок и его удивительные друзья",
             "image": "http://image.tmdb.org/t/p/w500//etO5jDS5WgR4Y1lTyXhQcilJ6u2.jpg",
             "link": "/see/card/cartoons/500-60/Chelovek-pauk-Pautina-vselennyh.html",
             "year": "2021",
-            "rating":"7.3"
+            "rating":"7.3",
+            "isTV": true
         },
         {
             "name": "Человек-паук",
             "image": "http://image.tmdb.org/t/p/w500//dKdcyyHUR5WTMnrbPdYN5y9xPVp.jpg",
             "link": "/see/card/cartoons/500-60/Chelovek-pauk-Pautina-vselennyh.html",
             "year": "2017",
-            "rating":"7.5"
+            "rating":"7.5",
+            "isTV": true
         },
         {
             "name": "Великий Человек-паук",
             "image": "http://image.tmdb.org/t/p/w500//usY6rAxW0fGJJDGypFg8UthUqvs.jpg",
             "link": "/see/card/cartoons/500-60/Chelovek-pauk-Pautina-vselennyh.html",
             "year": "2012",
-            "rating":"8.6"
+            "rating":"8.6",
+            "isTV": true
         },
         {
             "name": "Грандиозный Человек-паук",
             "image": "http://image.tmdb.org/t/p/w500//dCNxOhXT7c4lqYuRpdM3m8s9XDp.jpg",
             "link": "/see/card/cartoons/500-60/Chelovek-pauk-Pautina-vselennyh.html",
             "year": "2008",
-            "rating":"8.6"
+            "rating":"8.6",
+            "isTV": true
         },
         {
             "name": "Человек-паук",
             "image": "http://image.tmdb.org/t/p/w500//v3UfqXCAxAcI7oUO4zwtk1T9G3n.jpg",
             "link": "/see/card/cartoons/500-60/Chelovek-pauk-Pautina-vselennyh.html",
             "year": "2003",
-            "rating":"7.2"
+            "rating":"7.2",
+            "isTV": true
         },
         {
             "name": "Непобедимый Спайдермен",
             "image": "http://image.tmdb.org/t/p/w500//vLzRWbu8MHuO2bcEblWEyHr0O7N.jpg",
             "link": "/see/card/cartoons/500-60/Chelovek-pauk-Pautina-vselennyh.html",
             "year": "1999",
-            "rating":"7.5"
+            "rating":"7.5",
+            "isTV": true
         },
         {
             "name": "Человек-паук",
             "image": "http://image.tmdb.org/t/p/w500//xEJaSQaNqWUd0JQjKRhMFcc4TuA.jpg",
             "link": "/see/card/cartoons/500-60/Chelovek-pauk-Pautina-vselennyh.html",
             "year": "1994",
-            "rating":"8.3"
+            "rating":"8.3",
+            "isTV": true
         },
         {
             "name": "Человек-Паук и его удивительные друзья",
             "image": "http://image.tmdb.org/t/p/w500//4b8HFH1arZ4b05RHwxPc2JfueYv.jpg",
             "link": "/see/card/cartoons/500-60/Chelovek-pauk-Pautina-vselennyh.html",
             "year": "1981",
-            "rating":"7.4"
+            "rating":"7.4",
+            "isTV": true
         },
         {
             "name": "Человек-паук",
             "image": "http://image.tmdb.org/t/p/w500//Y43QSDxYivUkmw7eFm1JR3Qqwc.jpg",
             "link": "/see/card/cartoons/500-60/Chelovek-pauk-Pautina-vselennyh.html",
             "year": "1981",
-            "rating":"7.2"
+            "rating":"7.2",
+            "isTV": true
         },
         {
             "name": "Настоящий Человек-паук",
             "image": "http://image.tmdb.org/t/p/w500//tyvMExqaLlHObRGCuwiNZ24Ns2x.jpg",
             "link": "/see/card/cartoons/500-60/Chelovek-pauk-Pautina-vselennyh.html",
             "year": "1967",
-            "rating":"7.7"
+            "rating":"7.7",
+            "isTV": true
         },
         {
             "name": "Миньоны: Грювитация",
@@ -1329,7 +1372,8 @@ function generateRandomCards() {
             "image": "http://image.tmdb.org/t/p/w500//6ko4jfA5BrcRADDaAfMagZ4ZGpG.jpg",
             "link": "/see/card/cartoons/500-64/Angry-Birds-v-kino-2.html",
             "year": "2022",
-            "rating":"7.2"
+            "rating":"7.2",
+            "isTV": true
         },
         {
             "name": "Angry Birds в кино 2",
@@ -1350,7 +1394,8 @@ function generateRandomCards() {
             "image": "http://image.tmdb.org/t/p/w500//eIte8WWTWszppxtv2MQIqZSOWM1.jpg",
             "link": "/see/card/cartoons/500-64/Angry-Birds-v-kino-2.html",
             "year": "2013",
-            "rating":"6.1"
+            "rating":"6.1",
+            "isTV": true
         },
         {
             "name": "Кунг-фу Панда 4",
@@ -1378,7 +1423,8 @@ function generateRandomCards() {
             "image": "http://image.tmdb.org/t/p/w500//rkq5Jt7boR5v65bDbELHz3DW7sv.jpg",
             "link": "/see/card/cartoons/500-65/Kung-fu-Panda-4.html",
             "year": "2011",
-            "rating":"7.4"
+            "rating":"7.4",
+            "isTV": true
         },
         {
             "name": "Кунг-фу Панда",
@@ -1427,21 +1473,24 @@ function generateRandomCards() {
             "image": "http://image.tmdb.org/t/p/w500//eDqwpPj3H6iSwyqWVEA7c2CZzS9.jpg",
             "link": "/see/card/cartoons/500-74/Vremya-priklyuchenij.html",
             "year": "2023",
-            "rating":"8.8"
+            "rating":"8.8",
+            "isTV": true
         },
         {
             "name": "Время приключений: Далёкие земли",
             "image": "http://image.tmdb.org/t/p/original/k3E4RXC0CcWznXjlTBz01SQ2r6z.jpg",
             "link": "/see/card/cartoons/500-74/Vremya-priklyuchenij.html",
             "year": "2020",
-            "rating":"8.1"
+            "rating":"8.1",
+            "isTV": true
         },
         {
             "name": "Время приключений",
             "image": "http://image.tmdb.org/t/p/w500//kMXB29thNci4oHVbH2bP18XSIav.jpg",
             "link": "/see/card/cartoons/500-74/Vremya-priklyuchenij.html",
             "year": "2010",
-            "rating":"8.5"
+            "rating":"8.5",
+            "isTV": true
         },
         {
             "name": "Не бей копытом",
@@ -1483,7 +1532,8 @@ function generateRandomCards() {
             "image": "http://image.tmdb.org/t/p/w500//srUqap7vwsQDycwikiw3MxpuvUx.jpg",
             "link": "/see/card/cartoons/500-71/Leroj-i-Stich.html",
             "year": "2003",
-            "rating":"7.4"
+            "rating":"7.4",
+            "isTV": true
         },
         {
             "name": "Лило и Стич",
@@ -1515,54 +1565,48 @@ function generateRandomCards() {
         
     ];
 
-    var cardContainer = $('#card-container'); 
+    var cardContainer = $('#card-container');
+    if (!cardContainer) {
+        console.error("#card-container not found!");
+        return;
+    }
 
-    // Очищаем контейнер перед добавлением новых карточек
     cardContainer.html("");
-
-    // Перемешиваем карточки случайным образом
     cardData = shuffleArray(cardData);
 
-    var count = 0; 
-
-    // Получаем название фильма из элемента с id="movie-title"
-    var movieTitle = $('#movie-title').text().trim();
+    var count = 0;
 
     cardData.forEach(function (val) {
-        // Проверяем, совпадает ли название карточки с movieTitle
-        if (val.name === movieTitle) return;
-
-        if (count >= 15) return;
+        if (count >= 50) return;
 
         var randomRating = val.rating;
 
         var cardHTML = `
-        <li class="splide__slide">
-            <div class="card card-media" style="width: 12rem" data-rating="${randomRating}">
-                <a href="${val.link}">
-                    <img src="${val.image}" class="card-img-top img-9x16 mt-2" alt="${val.name}">
-                    <div class="card-rating-trand" bis_skin_checked="1">
-                        <span class="span-rating">${randomRating}</span>
-                    </div>
-                    <div class="card-body">
-                        <span class="card-tex">${val.name}<br><span class="year">${val.year}</span></span>
-                    </div>
-                </a>
-            </div>
-        </li>
+            <li class="splide__slide">
+                <div class="card card-media" style="width: 12rem" data-rating="${randomRating}">
+                    <a href="${val.link}">
+                        <img src="${val.image}" class="card-img-top img-9x16 mt-2" alt="${val.name}">
+                        <div class="card-rating-trand" bis_skin_checked="1">
+                            <span class="span-rating">${randomRating}</span>
+                        </div>
+                        ${val.isTV ? '<div class="card-TV" bis_skin_checked="1">TV</div>' : ''}
+                        <div class="card-body">
+                            <span class="card-tex">${val.name}<br><span class="year">${val.year}</span></span>
+                        </div>
+                    </a>
+                </div>
+            </li>
         `;
 
-        // Добавляем карточку в контейнер
         cardContainer.append(cardHTML);
-
         count++;
     });
 
     // Инициализируем Splide после добавления карточек
-    new Splide('#Collections', {
+    var splide = new Splide('#Collections', {
         type: 'loop',
         focus: 'center',
-        autoWidth: true, 
+        autoWidth: true,
         gap: '40px',
         pauseOnHover: true,
         pauseOnFocus: true,
@@ -1609,9 +1653,41 @@ function generateRandomCards() {
             }
         }
     }).mount();
+
+    positionCardRatingTrand(); // Вызываем после инициализации
 }
 
-// Функция перемешивания массива
+function positionCardRatingTrand() {
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        const image = card.querySelector('.card-img-top');
+        const rating = card.querySelector('.card-rating-trand');
+
+        if (image && rating) {
+            const imageRect = {
+                width: image.offsetWidth,
+                height: image.offsetHeight,
+                top: image.offsetTop,
+                left: image.offsetLeft
+            };
+
+            const cardRect = {
+                width: card.offsetWidth,
+                height: card.offsetHeight,
+                top: card.offsetTop,
+                left: card.offsetLeft
+            };
+
+            const bottom = cardRect.height - imageRect.height - imageRect.top + 8;
+            const right = cardRect.width - imageRect.width - imageRect.left + 8;
+
+            rating.style.position = 'absolute';
+            rating.style.bottom = bottom + 'px';
+            rating.style.right = right + 'px';
+        }
+    });
+}
+
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));

@@ -153,6 +153,7 @@ function generateLastCards() {
                     <div class="card-rating-trand" bis_skin_checked="1">
                         <span class="span-rating">${val.rating}</span>
                     </div>
+                    ${val.isTV ? '<div class="card-TV" bis_skin_checked="1">TV</div>' : ''}
                     <div class="card-body">
                         <span class="card-tex">${val.name}<br><span class="year">${val.year}</span></span>
                     </div>
