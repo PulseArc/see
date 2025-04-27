@@ -12,7 +12,7 @@ function generateRandomCards() {
     var cardData = [
         {
             "name": "911 служба спасения",
-            "image": "http://image.tmdb.org/t/p/w500//9dNWZPjFWdKo5Avr5JEEzLShLMZ.jpg",
+            "image": "https://image.tmdb.org/t/p/w500//9dNWZPjFWdKo5Avr5JEEzLShLMZ.jpg",
             "link": "/see/card/series/900-01/911-sluzhba-spaseniya.html",
             "year": "2018",
             "rating":"8.2",
@@ -20,7 +20,7 @@ function generateRandomCards() {
         },
         {
             "name": "Сверхъестественное",
-            "image": "http://image.tmdb.org/t/p/w500//hvO99pEfSBxF55clgs8r4mpRzr.jpg",
+            "image": "https://image.tmdb.org/t/p/w500//hvO99pEfSBxF55clgs8r4mpRzr.jpg",
             "link": "/see/card/series/900-03/Sverhestestvennoe.html",
             "year": "2005",
             "rating":"8.3",
@@ -28,7 +28,7 @@ function generateRandomCards() {
         },
         {
             "name": "Корона",
-            "image": "http://image.tmdb.org/t/p/w500//iS2m3TYiThK43IC3Ygm4snyA4UM.jpg",
+            "image": "https://image.tmdb.org/t/p/w500//iS2m3TYiThK43IC3Ygm4snyA4UM.jpg",
             "link": "/see/card/series/900-04/Korona.html",
             "year": "2016",
             "rating":"8.2",
@@ -36,7 +36,7 @@ function generateRandomCards() {
         },
         {
             "name": "Острые козырьки",
-            "image": "http://image.tmdb.org/t/p/w500//pVJzfWgb3sHN29hLaiI5jmBN9vx.jpg",
+            "image": "https://image.tmdb.org/t/p/w500//pVJzfWgb3sHN29hLaiI5jmBN9vx.jpg",
             "link": "/see/card/series/900-05/Ostrye-kozyrki.html",
             "year": "2013",
             "rating":"8.5",
@@ -44,7 +44,7 @@ function generateRandomCards() {
         },
         {
             "name": "Гримм",
-            "image": "http://image.tmdb.org/t/p/w500//lTmjyJwiMTLsCdzKjkkj2L9VyCd.jpg",
+            "image": "https://image.tmdb.org/t/p/w500//lTmjyJwiMTLsCdzKjkkj2L9VyCd.jpg",
             "link": "/see/card/series/900-06/Grimm.html",
             "year": "2011",
             "rating":"8.3",
@@ -316,7 +316,7 @@ function generateRandomCards() {
         },
         {
             "name": "Пацаны",
-            "image": "http://image.tmdb.org/t/p/w500//3NqlBDpWI83TgQ9nmeFwTVxEmtZ.jpg",
+            "image": "https://image.tmdb.org/t/p/w500//3NqlBDpWI83TgQ9nmeFwTVxEmtZ.jpg",
             "link": "/see/card/series/900-40/Pacany.html",
             "year": "2019",
             "rating":"8.5",
@@ -364,7 +364,7 @@ function generateRandomCards() {
         },
         {
             "name": "Бригада",
-            "image": "http://image.tmdb.org/t/p/w500//nZBVnI2gWZ4OFnpxU49j3kYavYz.jpg",
+            "image": "https://image.tmdb.org/t/p/w500//nZBVnI2gWZ4OFnpxU49j3kYavYz.jpg",
             "link": "/see/card/series/900-02/Brigada.html",
             "year": "2002",
             "rating":"7.8",
@@ -388,7 +388,7 @@ function generateRandomCards() {
         },
         {
             "name": "Властелины воздуха",
-            "image": "http://image.tmdb.org/t/p/w500//mAJJPhPJ0EbyemFho6Wtwibi7FZ.jpg",
+            "image": "https://image.tmdb.org/t/p/w500//mAJJPhPJ0EbyemFho6Wtwibi7FZ.jpg",
             "link": "/see/card/series/900-48/Vlasteliny-vozduha.html",
             "year": "2024",
             "rating":"7.8",
@@ -396,7 +396,7 @@ function generateRandomCards() {
         },
         {
             "name": "Лунный рыцарь",
-            "image": "http://image.tmdb.org/t/p/w500//pygGowaXF87Mfomit3oekliBvt7.jpg",
+            "image": "https://image.tmdb.org/t/p/w500//pygGowaXF87Mfomit3oekliBvt7.jpg",
             "link": "/see/card/series/900-49/Lunnyj-rycar.html",
             "year": "2022",
             "rating":"7.7",
@@ -420,7 +420,7 @@ function generateRandomCards() {
         },
         {
             "name": "Ричер",
-            "image": "http://image.tmdb.org/t/p/w500//zLqlW0rXmHwOZRhmOjeod14sGiT.jpg",
+            "image": "https://image.tmdb.org/t/p/w500//zLqlW0rXmHwOZRhmOjeod14sGiT.jpg",
             "link": "/see/card/series/900-52/Dzhek-Richer.html",
             "year": "2022",
             "rating":"8.1",
@@ -428,7 +428,7 @@ function generateRandomCards() {
         },
         {
             "name": "Фарго",
-            "image": "http://image.tmdb.org/t/p/w500//r8HpRhKl5q0kiNehdjVOmTC7K7p.jpg",
+            "image": "https://image.tmdb.org/t/p/w500//r8HpRhKl5q0kiNehdjVOmTC7K7p.jpg",
             "link": "/see/card/series/900-53/Fargo.html",
             "year": "2014",
             "rating":"8.3",
@@ -588,7 +588,7 @@ function generateRandomCards() {
         },
         {
             "name": "Настоящий детектив",
-            "image": "http://image.tmdb.org/t/p/w500//1p60ehq2diow72QQC8pyppfexky.jpg",
+            "image": "https://image.tmdb.org/t/p/w500//1p60ehq2diow72QQC8pyppfexky.jpg",
             "link": "/see/card/series/900-73/Nastoyashij-detektiv.html",
             "year": "2014",
             "rating":"8.3",
@@ -636,7 +636,7 @@ function generateRandomCards() {
         },
         {
             "name": "Мэйфейрские ведьмы",
-            "image": "http://image.tmdb.org/t/p/w500//wTwlZ3W3euIZIWKnPqKjWARJA5v.jpg",
+            "image": "https://image.tmdb.org/t/p/w500//wTwlZ3W3euIZIWKnPqKjWARJA5v.jpg",
             "link": "/see/card/series/900-79/Mejfejrskie-vedmy.html",
             "year": "2023",
             "rating":"7.4",
@@ -660,7 +660,7 @@ function generateRandomCards() {
         },
         {
             "name": "Властелин колец: Кольца власти",
-            "image": "http://image.tmdb.org/t/p/w500//pp5yf6xRMtySYgtVf5YTDYh7fof.jpg",
+            "image": "https://image.tmdb.org/t/p/w500//pp5yf6xRMtySYgtVf5YTDYh7fof.jpg",
             "link": "/see/card/series/900-82/Vlastelin-kolec-Kolca-vlasti.html",
             "year": "2022",
             "rating":"7.3",

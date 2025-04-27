@@ -6,7 +6,7 @@ function generateLastCards() {
     var cardData = [
         {
             "name": "Башня Бога",
-            "image": "http://image.tmdb.org/t/p/w500//m4FQUNPbxonuv4kcFm1YgyRgl2C.jpg",
+            "image": "https://image.tmdb.org/t/p/w500//m4FQUNPbxonuv4kcFm1YgyRgl2C.jpg",
             "link": "/see/card/anime/100-01/Башня Бога.html",
             "year": "2020",
             "rating":"8.3"
@@ -34,14 +34,14 @@ function generateLastCards() {
         },
         {
             "name": "Оппенгеймер",
-            "image": "http://image.tmdb.org/t/p/w500//8OQzw8keE6sDNH25sOqPRTxhFTO.jpg",
+            "image": "https://image.tmdb.org/t/p/w500//8OQzw8keE6sDNH25sOqPRTxhFTO.jpg",
             "link": "/see/card/movies/800-83/Oppengejmer.html",
             "year": "2023",
             "rating":"8.1"
         },
         {
             "name": "Кунг-фу Панда 4",
-            "image": "http://image.tmdb.org/t/p/w500//7RK9GHFArnQusZERwYwIaMZwRll.jpg",
+            "image": "https://image.tmdb.org/t/p/w500//7RK9GHFArnQusZERwYwIaMZwRll.jpg",
             "link": "/see/card/cartoons/500-65/Kung-fu-Panda-4.html",
             "year": "2024",
             "rating":"7.1"
@@ -83,7 +83,7 @@ function generateLastCards() {
         },
         {
             "name": "Ковбои против пришельцев",
-            "image": "http://image.tmdb.org/t/p/w500//iRzfV0jFnUqOjJNIvRu9M3G8Rxv.jpg",
+            "image": "https://image.tmdb.org/t/p/w500//iRzfV0jFnUqOjJNIvRu9M3G8Rxv.jpg",
             "link": "/see/card/movies/800-84/Kovboi-protiv-prishelcev.html",
             "year": "2011",
             "rating":"5.6"

@@ -17,7 +17,7 @@ async function loadImageUrls(movieTitle, movieYear) {
         const posterData = await posterResponse.json();
         if (posterData.posters && posterData.posters.length > 0) {
             const posterPath = posterData.posters.find(poster => poster.iso_639_1 === 'ru' || poster.iso_639_1 === null)?.file_path || posterData.posters[0].file_path;
-            imageUrls.poster = `http://image.tmdb.org/t/p/w500/${posterPath}`;
+            imageUrls.poster = `https://image.tmdb.org/t/p/w500/${posterPath}`;
         } else {
             imageUrls.poster = null;
             console.warn('Вертикальный постер не найден.');
@@ -28,7 +28,7 @@ async function loadImageUrls(movieTitle, movieYear) {
         const backdropData = await backdropResponse.json();
         if (backdropData.backdrops && backdropData.backdrops.length > 0) {
             const backdropPath = backdropData.backdrops.find(backdrop => backdrop.iso_639_1 === 'ru' || backdrop.iso_639_1 === null)?.file_path || backdropData.backdrops[0].file_path;
-            imageUrls.backdrop = `http://image.tmdb.org/t/p/w1280/${backdropPath}`;
+            imageUrls.backdrop = `https://image.tmdb.org/t/p/w1280/${backdropPath}`;
         } else {
             imageUrls.backdrop = null;
             console.warn('Горизонтальный бэкдроп не найден.');
