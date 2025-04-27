@@ -1,5 +1,6 @@
-.full-conteiner-video iframe {
-  pointer-events: auto;
+html {
+  touch-action: manipulation;
+  cursor: pointer;
 }
 .span-gray{
     color: rgba(255, 255, 255, 0.6);
