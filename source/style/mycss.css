@@ -734,6 +734,7 @@ h4 {
        bottom: 20% ; /* Фиксируем блок от нижнего края */
        
     }
+    
 }
 .fade-in {
     filter: blur(10px); /* Начальный блюр (можно настроить) */
@@ -787,13 +788,7 @@ h4 {
 }
 
 
-.card-TV{ 
-    left: -5px !important; 
-    top: 19px !important; 
-    padding: 0.35em 0.35em !important;
-    font-size: 0.65em !important; 
-    
-}
+
 .single-item2 .card:hover .card-img-top {
     margin-bottom: -1.8px;
 }
@@ -941,27 +936,49 @@ h4 {
     color: #fff;
     font-family: "SegoeUI", sans-serif;
 }
-.card-TV{ 
+.card-TV {
     background: #ff4242;
     color: #fff;
     font-family: "SegoeUI", sans-serif;
     position: absolute;
-    left: -8px; 
-    top: 19px; 
-    padding: 0.5em 0.6em; 
+    left: -8px;
+    top: 25px !important;
+    padding: 0.45em 0.55em;
+    padding-bottom: 0.4em;
     line-height: 1;
-    font-size: 0.8em; 
-    border-radius: 0.4em; 
+    font-size: 0.8em;
+    border-radius: 0.4em;
     z-index: 11;
     overflow: hidden;
-    transform: translateX(0) scale(1); 
-    transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.15s ease-in-out; /* Додано box-shadow */
-    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.8); 
-}
+    transform: translateX(0) scale(1);
+  transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.15s ease-in-out, left 0.18s ease-in-out; /* Додано transition для left */
+  text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.8);
+  
+    /* Додані властивості для центрування тексту */
+    text-align: center;
+  }
 .card:hover .card-TV{ 
     transform: translateX(-2px) scale(1.1); 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    left: -14px !important; 
+    font-size: 0.82em;
 }
+.card-TV-16x9 {
+    overflow: hidden;
+    transform: translateX(0) scale(1);
+    transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.15s ease-in-out, left 0.18s ease-in-out; /* Додано transition для left */
+    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    box-sizing: border-box;
+  }
+  
+  .card:hover .card-TV-16x9 {
+    transform: translateX(-2px) scale(1.1) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+    left: -16px !important;
+    font-size: 0.82em;
+  }
+
 .slider.single-item2 .card-tex {
     width: 100% !important;
     /* Или нужное значение */
@@ -1455,6 +1472,9 @@ footer {
         width: 23rem !important;
         height: 100% !important;
     }
+    .card-img-top{
+        border: 5px solid transparent;
+    }
 }
 @media (min-width: 2300px) {
 
@@ -1728,12 +1748,38 @@ footer {
     }
 
     .card-TV{ 
-        left: -15px !important; 
-        top: 25px !important; 
+        left: -12px !important; 
+        top: 28px !important; 
         padding: 0.35em 0.35em !important;
-        font-size: 1.4em !important; 
+        font-size: 0.9em !important; 
+        transform: translateX(0) scale(1);
+        transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.15s ease-in-out, left 0.18s ease-in-out; /* Додано transition для left */
+        text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.8);
         
-    }
+          /* Додані властивості для центрування тексту */
+          text-align: center;
+        }
+      .card:hover .card-TV{ 
+          transform: translateX(-2px) scale(1.1); 
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+          left: -15px !important;
+          font-size: 0.92em 
+      }
+      .card-TV-16x9 {
+        overflow: hidden;
+        transform: translateX(0) scale(1);
+        transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.15s ease-in-out, left 0.18s ease-in-out; /* Додано transition для left */
+        text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.8);
+        text-align: center;
+        box-sizing: border-box;
+      }
+      
+      .card:hover .card-TV-16x9 {
+        transform: translateX(-2px) scale(1.1) !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+        left: -17px !important;
+        font-size: 0.92em
+      }
 }
 
 @media (min-width: 1900px) and (max-width: 2019px) {
@@ -1919,9 +1965,35 @@ footer {
         left: -11px !important; 
         top: 23px !important; 
         padding: 0.35em 0.35em !important;
-        font-size: 1.15em !important; 
+        font-size: 0.9em !important; 
+        transform: translateX(0) scale(1);
+        transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.15s ease-in-out, left 0.18s ease-in-out; /* Додано transition для left */
+        text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.8);
         
-    }
+          /* Додані властивості для центрування тексту */
+          text-align: center;
+        }
+      .card:hover .card-TV{ 
+          transform: translateX(-2px) scale(1.1); 
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+          left: -14px !important; 
+          font-size: 0.92em
+      }
+      .card-TV-16x9 {
+        overflow: hidden;
+        transform: translateX(0) scale(1);
+        transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.15s ease-in-out, left 0.18s ease-in-out; /* Додано transition для left */
+        text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.8);
+        text-align: center;
+        box-sizing: border-box;
+      }
+      
+      .card:hover .card-TV-16x9 {
+        transform: translateX(-2px) scale(1.1) !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+        left: -16px !important;
+        font-size: 0.92em
+      }
 
     .btn-show-all {
         width: 100%;
@@ -2542,6 +2614,58 @@ footer {
     }
 
 }
+@media screen and (max-width: 1300px) {
+    .card-TV {
+        background: #ff4242;
+        color: #fff;
+        font-family: "SegoeUI", sans-serif;
+        position: absolute;
+        left: -5px;
+        top: 25px !important;
+        
+        
+        
+        font-size: 0.65em;
+        border-radius: 0.4em;
+        z-index: 11;
+        overflow: hidden;
+        transform: translateX(0) scale(1);
+        transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.15s ease-in-out, left 0.18s ease-in-out; 
+        text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.8);
+        text-align: center;
+          
+          
+        }
+        
+      .card:hover .card-TV{ 
+          transform: translateX(-2px) scale(1.1); 
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+          left: -10px !important; 
+          font-size: 0.67em;
+      }
+      
+      .card-TV-16x9 {
+        overflow: hidden;
+        transform: translateX(0) scale(1);
+        transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.15s ease-in-out, left 0.18s ease-in-out; /* Додано transition для left */
+        text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.8);
+        text-align: center;
+        box-sizing: border-box;
+      }
+      
+      .card:hover .card-TV-16x9 {
+        transform: translateX(-2px) scale(1.1) !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+        left: -14px !important;
+        font-size: 0.7em;
+      }
+     
+      }
+
+    
+
+    
+
 
 
 @media screen and (max-width: 1000px) {
@@ -2554,11 +2678,37 @@ footer {
 
     .card-TV{ 
         left: -5px !important; 
-        top: 19px !important; 
+        top: 22px !important; 
         padding: 0.35em 0.35em !important;
         font-size: 0.6em !important; 
         
-    }
+        transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.15s ease-in-out, left 0.18s ease-in-out; 
+        text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.8);
+        text-align: center;
+          
+          
+        }
+      .card:hover .card-TV{ 
+          transform: translateX(-2px) scale(1.1); 
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+          left: -7px !important; 
+          font-size: 0.61em
+      }
+      .card-TV-16x9 {
+        overflow: hidden;
+        transform: translateX(0) scale(1);
+        transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.15s ease-in-out, left 0.18s ease-in-out; /* Додано transition для left */
+        text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.8);
+        text-align: center;
+        box-sizing: border-box;
+      }
+      
+      .card:hover .card-TV-16x9 {
+        transform: translateX(-2px) scale(1.1) !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+        left: -12px !important;
+        font-size: 0.61em
+      }
 
 }
 
@@ -2600,11 +2750,37 @@ footer {
 @media (min-width: 1705px) and (max-width: 1900px){
     .card-TV{ 
         left: -11px !important; 
-        top: 23px !important; 
+        top: 25px !important; 
         padding: 0.35em 0.35em !important;
-        font-size: 1em !important; 
+        font-size: 0.9em !important; 
+        transform: translateX(0) scale(1);
+        transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.15s ease-in-out, left 0.18s ease-in-out; /* Додано transition для left */
+        text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.8);
         
-    }
+          /* Додані властивості для центрування тексту */
+          text-align: center;
+        }
+      .card:hover .card-TV{ 
+          transform: translateX(-2px) scale(1.1); 
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+          left: -14px !important; 
+          font-size: 0.92em
+      }
+      .card-TV-16x9 {
+        overflow: hidden;
+        transform: translateX(0) scale(1);
+        transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.15s ease-in-out, left 0.18s ease-in-out; /* Додано transition для left */
+        text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.8);
+        text-align: center;
+        box-sizing: border-box;
+      }
+      
+      .card:hover .card-TV-16x9 {
+        transform: translateX(-2px) scale(1.1) !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+        left: -16px !important;
+        font-size: 0.92em
+      }
 }
 
 @media (min-width: 1900px) {
@@ -3120,9 +3296,34 @@ footer {
         top: 23px !important; 
         padding: 0.35em 0.35em !important;
         font-size: 0.9em !important; 
+        transform: translateX(0) scale(1);
+        transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.15s ease-in-out, left 0.18s ease-in-out; /* Додано transition для left */
+        text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.8);
         
-    }
-
+          /* Додані властивості для центрування тексту */
+          text-align: center;
+        }
+      .card:hover .card-TV{ 
+          transform: translateX(-2px) scale(1.1); 
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+          left: -16px !important; 
+          font-size: 0.92em
+      }
+      .card-TV-16x9 {
+        overflow: hidden;
+        transform: translateX(0) scale(1);
+        transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.15s ease-in-out, left 0.18s ease-in-out; /* Додано transition для left */
+        text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.8);
+        text-align: center;
+        box-sizing: border-box;
+      }
+      
+      .card:hover .card-TV-16x9 {
+        transform: translateX(-2px) scale(1.1) !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+        left: -19px !important;
+        font-size: 0.92em
+      }
 
     h4 {
         font-size: 140% !important;
@@ -3314,8 +3515,34 @@ footer {
         padding: 0.35em 0.35em !important;
         font-size: 0.8em !important; 
         
-    }
-
+        transform: translateX(0) scale(1);
+        transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.15s ease-in-out, left 0.18s ease-in-out; /* Додано transition для left */
+        text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.8);
+        
+          /* Додані властивості для центрування тексту */
+          text-align: center;
+        }
+      .card:hover .card-TV{ 
+          transform: translateX(-2px) scale(1.1); 
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+          left: -13px !important; 
+          font-size: 0.82em
+      }
+      .card-TV-16x9 {
+        overflow: hidden;
+        transform: translateX(0) scale(1);
+        transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.15s ease-in-out, left 0.18s ease-in-out; /* Додано transition для left */
+        text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.8);
+        text-align: center;
+        box-sizing: border-box;
+      }
+      
+      .card:hover .card-TV-16x9 {
+        transform: translateX(-2px) scale(1.1) !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+        left: -15px !important;
+        font-size: 0.82em
+      }
 }
 
 
@@ -4589,6 +4816,39 @@ footer {
 }
 
 @media (max-width: 600px) {
+    .card-TV{ 
+        left: -5px !important; 
+        top: 22px !important; 
+        padding: 0.35em 0.35em !important;
+        font-size: 0.60em !important; 
+        
+        transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.15s ease-in-out, left 0.18s ease-in-out; 
+        text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.8);
+        text-align: center;
+          
+          
+        }
+      .card:hover .card-TV{ 
+          transform: translateX(-2px) scale(1.1); 
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+          left: -5px !important;
+          font-size: 0.61em 
+      }
+      
+      .card-TV-16x9 {
+        overflow: hidden;
+        transform: translateX(0) scale(1);
+        transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.15s ease-in-out, left 0.18s ease-in-out; /* Додано transition для left */
+        text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.8);
+        text-align: center;
+        box-sizing: border-box;
+      }
+      
+      .card:hover .card-TV-16x9 {
+        transform: translateX(-2px) scale(1.1) !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+        left: -11px !important;
+      }
     .platform-logos {
         justify-content: start;
         /* Уменьшаем отступ между текстом и изображениями */
