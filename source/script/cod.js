@@ -142,13 +142,46 @@ function positionCardRating() {
 }
 
 // Функция для обработки клика на кнопку "Ещё" или "Скрыть"
+function positionCardRating() {
+  const cards = document.querySelectorAll('.card');
+
+  cards.forEach(card => {
+    const image = card.querySelector('.card-img-top');
+    const rating = card.querySelector('.card-rating');
+    const ratingTrend = card.querySelector('.card-rating-trand'); // Исправлено опечатка
+
+    if (image) {
+      // Получаем размеры и позицию изображения относительно документа
+      const imageRect = image.getBoundingClientRect();
+      const cardRect = card.getBoundingClientRect();
+
+      // Вычисляем отступы
+      const bottom = cardRect.height - (imageRect.bottom - cardRect.top) + 8;
+      const right = cardRect.width - (imageRect.right - cardRect.left) + 8;
+
+      // Применяем стили, если элемент рейтинга существует
+      if (rating) {
+        rating.style.position = 'absolute';
+        rating.style.bottom = bottom + 'px';
+        rating.style.right = right + 'px';
+      }
+
+      if (ratingTrend) {
+        ratingTrend.style.position = 'absolute';
+        ratingTrend.style.bottom = bottom + 'px';
+        ratingTrend.style.right = (right + 10) + 'px';
+      }
+    }
+  });
+}
+
 function handleShowMoreClick(buttonId, cardContainerClass) {
   const button = document.getElementById(buttonId);
   const batchSize = 24;
   let shownCards = [];
   let lastClickedButton = null;
 
-  button.addEventListener("click", function () {
+  button.addEventListener("click", function() {
     const allCards = document.querySelectorAll(`.${cardContainerClass}`);
 
     if (button.textContent === "Ещё") {
@@ -156,13 +189,20 @@ function handleShowMoreClick(buttonId, cardContainerClass) {
       const toShow = hiddenCards.slice(0, batchSize);
 
       toShow.forEach(card => {
-        card.classList.add("fade-in"); // Добавляем класс для анимации
+        card.classList.add("fade-in");
         card.classList.remove("hidden");
-        // Небольшая задержка перед добавлением класса "visible", чтобы сработала анимация
+
         setTimeout(() => {
           card.classList.add("visible");
         }, 10);
+
         shownCards.push(card);
+
+        // Получаем изображение и вызываем positionCardRating после его загрузки
+        const image = card.querySelector('.card-img-top');
+        if (image) {
+          image.onload = positionCardRating; // Пересчитываем позицию после загрузки изображения
+        }
       });
 
       if (document.querySelectorAll(`.${cardContainerClass}.hidden`).length === 0) {
@@ -171,11 +211,12 @@ function handleShowMoreClick(buttonId, cardContainerClass) {
       }
 
       lastClickedButton = button;
+
     } else {
       shownCards.forEach(card => {
-        card.classList.remove("visible"); // Удаляем класс "visible" для обратной анимации (если нужно)
+        card.classList.remove("visible");
         card.classList.add("hidden");
-        card.classList.remove("fade-in"); // Убираем класс fade-in
+        card.classList.remove("fade-in");
       });
       shownCards = [];
 
@@ -192,7 +233,7 @@ function handleShowMoreClick(buttonId, cardContainerClass) {
       }
     }
 
-    positionCardRating();
+    positionCardRating(); // Вызываем после показа/скрытия
   });
 }
 
