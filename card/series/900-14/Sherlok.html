@@ -378,14 +378,13 @@
                     <div class="row">
                       <div class="col-lg-12 col-md-12">
                         <div class="full-conteiner-video">
-                          <div id="click-layer"></div> <!-- Новый слой -->
                           <iframe 
                             id="player-iframe"
                             class="video-js" 
                             src="//api.embess.ws/embed/movie/251" 
                             frameborder="0" 
                             allowfullscreen 
-                            tabindex="-1">
+                            tabindex="0">
                           </iframe>
                         </div>
                       </div>
@@ -398,7 +397,7 @@
                     position: relative;
                     width: 100%;
                     height: 0;
-                    padding-bottom: 56.25%; /* Пропорции 16:9 */
+                    padding-bottom: 56.25%; /* 16:9 */
                   }
                   iframe#player-iframe {
                     position: absolute;
@@ -406,33 +405,34 @@
                     left: 0;
                     width: 100%;
                     height: 100%;
-                    pointer-events: none; /* отключаем клики напрямую */
+                    outline: none;
+                    border: none;
+                    pointer-events: none; /* запрещаем клики напрямую! */
                   }
-                  #click-layer {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    z-index: 10;
-                    background: transparent;
-                    cursor: pointer;
+                  iframe#player-iframe.focus-enabled {
+                    pointer-events: auto; /* после активации разрешаем клики */
+                    outline: 2px solid #4A90E2;
+                    border-radius: 8px;
                   }
                 </style>
                 
                 <script>
-                  document.getElementById('click-layer').addEventListener('click', function() {
-                    // При клике на прозрачный слой — разрешаем клики по iframe
+                  document.addEventListener('keydown', function(e) {
                     const iframe = document.getElementById('player-iframe');
-                    iframe.style.pointerEvents = 'auto';
-                
-                    // Убираем прозрачный слой
-                    this.style.display = 'none';
-                
-                    // Также можно сфокусировать iframe
-                    iframe.focus();
+                    
+                    if (e.key === 'Enter' || e.key === 'OK' || e.keyCode === 13) {
+                      // Нажали "ОК" или "Enter"
+                      iframe.classList.add('focus-enabled');
+                      iframe.focus();
+                      
+                      console.log('Iframe is now focusable and clickable');
+                      
+                      e.preventDefault(); // Остановить дальнейшую обработку
+                      return false;
+                    }
                   });
                 </script>
+                
 
 
 
