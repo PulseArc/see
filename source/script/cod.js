@@ -142,24 +142,25 @@ function positionCardRating() {
 }
 
 // Функция для обработки клика на кнопку "Ещё" или "Скрыть"
+const globalResizeObserver = new ResizeObserver(entries => {
+  positionCardRating();
+});
+
 function positionCardRating() {
   const cards = document.querySelectorAll('.card');
 
   cards.forEach(card => {
     const image = card.querySelector('.card-img-top');
     const rating = card.querySelector('.card-rating');
-    const ratingTrend = card.querySelector('.card-rating-trand'); // Исправлено опечатка
+    const ratingTrend = card.querySelector('.card-rating-trand');
 
     if (image) {
-      // Получаем размеры и позицию изображения относительно документа
       const imageRect = image.getBoundingClientRect();
       const cardRect = card.getBoundingClientRect();
 
-      // Вычисляем отступы
       const bottom = cardRect.height - (imageRect.bottom - cardRect.top) + 8;
       const right = cardRect.width - (imageRect.right - cardRect.left) + 8;
 
-      // Применяем стили, если элемент рейтинга существует
       if (rating) {
         rating.style.position = 'absolute';
         rating.style.bottom = bottom + 'px';
@@ -198,10 +199,10 @@ function handleShowMoreClick(buttonId, cardContainerClass) {
 
         shownCards.push(card);
 
-        // Получаем изображение и вызываем positionCardRating после его загрузки
+        // Получаем изображение и начинаем его отслеживать
         const image = card.querySelector('.card-img-top');
         if (image) {
-          image.onload = positionCardRating; // Пересчитываем позицию после загрузки изображения
+          globalResizeObserver.observe(image);
         }
       });
 
@@ -237,7 +238,7 @@ function handleShowMoreClick(buttonId, cardContainerClass) {
   });
 }
 
-// Запуск функции для обработки нажатия кнопки "Ещё"
+// Запуск функций
 document.addEventListener("DOMContentLoaded", () => {
   setTimeout(positionCardRating, 100);
 
@@ -256,8 +257,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     } else {
-      cards.forEach(card => card.classList.remove("hidden")); // Если карточек меньше или равно 24, показываем все
+      cards.forEach(card => card.classList.remove("hidden"));
     }
+  });
+
+  // Начинаем наблюдение за всеми изображениями при загрузке страницы
+  document.querySelectorAll('.card-img-top').forEach(image => {
+    globalResizeObserver.observe(image);
   });
 });
 // ссылки и блоб на фильмы
