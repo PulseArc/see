@@ -605,7 +605,7 @@ function generateRandomCards() {
                         <div class="card-rating-trand" bis_skin_checked="1">
                             <span class="span-rating">${randomRating}</span>
                         </div>
-                        ${val.isTV ? '<div class="card-TV" bis_skin_checked="1">TV</div>' : ''}
+                        ${val.isTV ? '<div class="card-TV card-TV-trends" bis_skin_checked="1">TV</div>' : ''}
                         <div class="card-body">
                             <span class="card-tex">${val.name}<br><span class="year">${val.year}</span></span>
                         </div>
