@@ -163,14 +163,6 @@ function generateRandomCards() {
             "isTV": true
         },
         {
-            "name": "Ходячие мертвецы",
-            "image": "https://image.tmdb.org/t/p/w500//3metsxLVhlJU0mNj5gVfKIih0EF.jpg",
-            "link": "/see/card/series/900-21/Hodyachie-mertvecy.html",
-            "year": "2010",
-            "rating":"8.1",
-            "isTV": true
-        },
-        {
             "name": "Мистер Робот",
             "image": "https://image.tmdb.org/t/p/w500//v0O3GfmruiKwBCFUKc1cEM1PVLF.jpg",
             "link": "/see/card/series/900-22/Mister-Robot.html",
@@ -347,14 +339,6 @@ function generateRandomCards() {
             "isTV": true
         },
         {
-            "name": "Ходячие мертвецы: Выжившие",
-            "image": "https://image.tmdb.org/t/p/w500//rhN08H5Yg7xAFfBzeDzVV9GAwDj.jpg",
-            "link": "/see/card/series/900-44/Hodyachie-mertvecy-Vyzhivshie.html",
-            "year": "2024",
-            "rating":"8.0",
-            "isTV": true
-        },
-        {
             "name": "Созвездие",
             "image": "https://image.tmdb.org/t/p/w500//pon5QHLxrsgmyZKVSUdpXmHg08C.jpg",
             "link": "/see/card/series/900-45/Sozvezdie.html",
@@ -480,14 +464,6 @@ function generateRandomCards() {
             "link": "/see/card/series/900-59/Tysyacha-i-odna-noch.html",
             "year": "2024",
             "rating":"4.0",
-            "isTV": true
-        },
-        {
-            "name": "Ходячие мертвецы: Дэрил Диксон",
-            "image": "https://image.tmdb.org/t/p/w500//kRTaNKcs3RQJCB626y1mGOTHVYU.jpg",
-            "link": "/see/card/series/900-60/Hodyachie-mertvecy-Deril-Dikson.html",
-            "year": "2023",
-            "rating":"8.1",
             "isTV": true
         },
         {
@@ -680,6 +656,78 @@ function generateRandomCards() {
             "link": "/see/card/series/900-84/Vikingi-Valhalla.html",
             "year": "2022",
             "rating":"7.7",
+            "isTV": true
+        },
+        {
+            "name": "Черное зеркало",
+            "image": "https://image.tmdb.org/t/p/w500//rAfh65N51dtzew6r0vKCqnaiSyf.jpg",
+            "link": "/see/card/series/900-85/Chernoe-zerkalo.html",
+            "year": "2011",
+            "rating":"8.3",
+            "isTV": true
+        },
+        {
+            "name": "Во все тяжкие",
+            "image": "https://image.tmdb.org/t/p/w500//3NA1FOlnjE909OyVT534B7fw5h5.jpg",
+            "link": "/see/card/series/900-86/Vo-vse-tyazhkie.html",
+            "year": "2008",
+            "rating":"8.9",
+            "isTV": true
+        },
+        {
+            "name": "Ходячие мертвецы: Выжившие",
+            "image": "https://image.tmdb.org/t/p/w500//rhN08H5Yg7xAFfBzeDzVV9GAwDj.jpg",
+            "link": "/see/card/series/900-44/Hodyachie-mertvecy-Vyzhivshie.html",
+            "year": "2024",
+            "rating":"8.0",
+            "isTV": true
+        },
+        {
+            "name": "Ходячие мертвецы: Дэрил Диксон",
+            "image": "https://image.tmdb.org/t/p/w500//kRTaNKcs3RQJCB626y1mGOTHVYU.jpg",
+            "link": "/see/card/series/900-60/Hodyachie-mertvecy-Deril-Dikson.html",
+            "year": "2023",
+            "rating":"8.1",
+            "isTV": true
+        },
+        {
+            "name": "Ходячие мертвецы: Мертвый город",
+            "image": "https://image.tmdb.org/t/p/w500//mx5CPdGPLTsebUGcKA54Gs2i81U.jpg",
+            "link": "/see/card/series/900-87/Hodyachie-mertvecy-Mertvyj-gorod.html",
+            "year": "2023",
+            "rating":"8.0",
+            "isTV": true
+        },
+        {
+            "name": "Истории ходячих мертвецов",
+            "image": "https://image.tmdb.org/t/p/original/rlC90W3krCHQ727fXKYBYLqSmeP.jpg",
+            "link": "/see/card/series/900-88/Istorii-hodyachih-mertvecov.html",
+            "year": "2022",
+            "rating":"7.2",
+            "isTV": true
+        },
+        {
+            "name": "Ходячие мертвецы: Мир за пределами",
+            "image": "https://image.tmdb.org/t/p/original/4DuXNzJrdommCOFBM3re20mM8bd.jpg",
+            "link": "/see/card/series/900-89/Hodyachie-mertvecy-Mir-za-predelami.html",
+            "year": "2020",
+            "rating":"7.4",
+            "isTV": true
+        },
+        {
+            "name": "Бойтесь ходячих мертвецов",
+            "image": "https://image.tmdb.org/t/p/w500//3BWbdYHwSxd3rkHkLip8gFxaPZv.jpg",
+            "link": "/see/card/series/900-90/Bojtes-hodyachih-mertvecov.html",
+            "year": "2015",
+            "rating":"7.7",
+            "isTV": true
+        },
+        {
+            "name": "Ходячие мертвецы",
+            "image": "https://image.tmdb.org/t/p/w500//3metsxLVhlJU0mNj5gVfKIih0EF.jpg",
+            "link": "/see/card/series/900-21/Hodyachie-mertvecy.html",
+            "year": "2010",
+            "rating":"8.1",
             "isTV": true
         },
     

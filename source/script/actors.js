@@ -33,7 +33,7 @@ async function showActors() {
     }
 
     if (actors.length === 0) {
-        actorsContainer.innerHTML = '<p>Актеры не найдены</p>';
+        actorsContainer.innerHTML = '<p style="font-family: sans-serif;">Актеры не найдены</p>';
     } else {
         actors.forEach(actor => {
             actorsContainer.innerHTML += `

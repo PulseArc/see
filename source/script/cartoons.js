@@ -18,7 +18,7 @@ function generateRandomCards() {
         {
             "name": "Рапунцель: Новая история",
             "image": "https://image.tmdb.org/t/p/w500//s12Z2uGrvjj5sA7LsBStTtfTYjC.jpg",
-            "link": "/see/card/cartoons/500-04/Rapuncel-Zaputannaya-istoriya.html",
+            "link": "/see/card/cartoons/500-79/Rapuncel-Novaya-istoriya.html",
             "year": "2017",
             "rating":"7.3",
             "isTV": true
@@ -26,7 +26,7 @@ function generateRandomCards() {
         {
             "name": "Рапунцель: Дорога к мечте",
             "image": "https://image.tmdb.org/t/p/w500//zj82L9maBSW6CAVZltBoFBSuTk1.jpg",
-            "link": "/see/card/cartoons/500-04/Rapuncel-Zaputannaya-istoriya.html",
+            "link": "/see/card/cartoons/500-80/Rapuncel-Doroga-k-mechte.html",
             "year": "2017",
             "rating":"6.8"
         },
@@ -40,7 +40,7 @@ function generateRandomCards() {
         {
             "name": "Том и Джерри в Нью-Йорке",
             "image": "https://image.tmdb.org/t/p/w500//5nvIUVjFpRAiMziG5zP2KR1uLHV.jpg",
-            "link": "/see/card/cartoons/500-05/Tom-i-Dzherri-Robin-Gud-i-mysh-veselchak.html",
+            "link": "/see/card/cartoons/500-81/Tom-i-Dzherri-v-Nyu-Jorke.html",
             "year": "2021",
             "rating":"7.0",
             "isTV": true
@@ -48,7 +48,7 @@ function generateRandomCards() {
         {
             "name": "Том и Джерри: Сказки",
             "image": "https://image.tmdb.org/t/p/original/hMx3Ybd4Zov0Uy7GwqrjfHVcnA2.jpg",
-            "link": "/see/card/cartoons/500-05/Tom-i-Dzherri-Robin-Gud-i-mysh-veselchak.html",
+            "link": "/see/card/cartoons/500-82/Tom-i-Dzherri-Skazki.html",
             "year": "2006",
             "rating":"7.8",
             "isTV": true
@@ -56,7 +56,7 @@ function generateRandomCards() {
         {
             "name": "Том и Джерри в детстве",
             "image": "https://image.tmdb.org/t/p/w500//pApniCXhegDnhxQda7RcpG8gFP0.jpg",
-            "link": "/see/card/cartoons/500-05/Tom-i-Dzherri-Robin-Gud-i-mysh-veselchak.html",
+            "link": "/see/card/cartoons/500-83/Tom-i-Dzherri-v-detstve.html",
             "year": "1990",
             "rating":"6.3",
             "isTV": true
