@@ -395,6 +395,7 @@ h4 {
     /* Устанавливаем ту же высоту, что и у .navbar */
     display: block;
     /* Скрыт по умолчанию */
+    
 }
 
 
@@ -1460,6 +1461,7 @@ footer {
 
     .search-input {
         font-size: 145% !important;
+        padding-left: 15px !important;
     }
 
 
@@ -1672,6 +1674,7 @@ footer {
 
     .search-input {
         font-size: 125% !important;
+        padding-left: 10px !important;
     }
 
     h4 {
@@ -1936,6 +1939,7 @@ footer {
 
     .search-input {
         font-size: 120% !important;
+        padding-left: 10px !important;
     }
 
 
@@ -3553,6 +3557,7 @@ footer {
 
     .search-input {
         font-size: 96% !important;
+        
     }
 
     .Top-h4{
