@@ -627,7 +627,7 @@ h4 {
 
 .film-genre {
     font-family: Open Sans, sans-serif; /* Изменен шрифт */
-    margin-top: 0.2em; /* Относительный отступ */
+    margin-top: 0.4em; /* Относительный отступ */
     font-size: 15px; /* Твой размер */
     color: #dad6d6; /* Немного приглушенный цвет */
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
@@ -1389,9 +1389,9 @@ footer {
     }
      /* Если изменить жанр нужно подогнать падинг под размер кнопки */
      .film-genre {
-        padding-top: 30px;
+        padding-top: 10px;
        
-        font-size: 38px;
+        font-size: 30px;
         color: white;
         font-family: Arial, Helvetica, sans-serif;
         
@@ -1401,7 +1401,8 @@ footer {
     /* Конец */
     
     .btn-film {    
-        font-size: 50px;   
+        font-size: 45px;
+        border: 2px solid white;    
     }
     .navbar {
         height: 120px;
@@ -1605,7 +1606,7 @@ footer {
     }
     /* Если изменить жанр нужно подогнать падинг под размер кнопки */
     .film-genre {
-        padding-top: 30px;
+        padding-top: 10px;
         font-size: 26.5px;
         color: white;
         border: none;
@@ -1616,7 +1617,8 @@ footer {
     /* Конец */
     
     .btn-film {    
-        font-size: 35px;   
+        font-size: 35px;
+        border: 2px solid white;    
     }
     .navbar {
         height: 110px;
@@ -1869,7 +1871,7 @@ footer {
     }
     /* Если изменить жанр нужно подогнать падинг под размер кнопки */
     .film-genre {
-        padding-top: 30px;
+        padding-top: 10px;
         font-size: 26.5px;
         color: white;
         border: none;
@@ -1879,7 +1881,8 @@ footer {
     /* Конец */
     
     .btn-film {    
-        font-size: 35px;   
+        font-size: 35px; 
+        border: 2px solid white;  
     }
 
     .navbar {
@@ -2985,7 +2988,7 @@ footer {
         }
         /* Если изменить жанр нужно подогнать падинг под размер кнопки */
         .film-genre {
-            padding-top: 30px;
+            padding-top: 10px;
             font-size: 23.5px;
             color: white;
             border: none;
@@ -3232,7 +3235,7 @@ footer {
     }
   /* Если изменить жанр нужно подогнать падинг под размер кнопки */
 .film-genre {
-    padding-top: 30px;
+    padding-top: 10px;
     font-size: 22px;
     color: white;
     border: none;
@@ -3494,7 +3497,7 @@ footer {
     }
   /* Если изменить жанр нужно подогнать падинг под размер кнопки */
 .film-genre {
-    padding-top: 30px;
+    padding-top: 10px;
     font-size: 19px;
     color: white;
     border: none;
