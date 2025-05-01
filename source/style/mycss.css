@@ -298,7 +298,7 @@ h4 {
     /* Убедитесь, что padding не мешает */
     font-family: Helvetica;
     margin-top: 0.5em;
-
+    font-weight: 600;
 }
 
 
@@ -554,12 +554,10 @@ h4 {
     width: 100%;
 }
 
-
 .Home-background-image::before {
     content: "";
     position: absolute;
     top: -4em;
-    /* Сдвигаем наверх, чтобы затемнение начиналось ниже */
     left: 0;
     width: 100%;
     height: 4%;
@@ -568,69 +566,69 @@ h4 {
     pointer-events: none;
 }
 
-
-
 .btn-name-film {
     position: absolute;
-    bottom: 30%; 
+    bottom: 30%;
     left: 5%;
     color: white;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Прижимаем контент влево */
+    align-items: flex-start;
 }
 
 .name-film {
-    font-size: 50px;
-    font-family: sans-serif;
+    font-size: 50px; /* Твой размер */
+    font-family: Helvetica, sans-serif; /* Изменен шрифт */
     font-weight: bold;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
-    margin-bottom: 20px;
+    margin-bottom: 0.4em; /* Относительный отступ */
 }
 
 .title {
-    font-size: 55px;
+    font-size: 55px; /* Твой размер */
+    font-family: Helvetica, sans-serif; /* Изменен шрифт */
 }
 
 .subtitle {
-    
-    font-size: 45px;
+    font-size: 45px; /* Твой размер */
+    font-family: Open Sans, sans-serif; /* Изменен шрифт */
+    color: #dad6d6; /* Немного приглушенный цвет */
 }
 
 .btn-wrapper {
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Прижимаем кнопку влево */
+    align-items: flex-start;
 }
 
 .btn-film {
-    padding: 15px 25px;
+    padding: 0.8em 1.5em; /* Относительные отступы */
     background-color: transparent;
-    font-size: 20px;
+    font-size: 20px; /* Твой размер */
     color: white;
     border: 1.5px solid white;
-    border-radius: 5px;
+    border-radius: 6px; /* Как у toggle-btn */
     cursor: pointer;
-    font-family: sans-serif;
+    font-family: Helvetica, sans-serif; /* Как у toggle-btn */
     text-transform: uppercase;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: all 0.3s ease; /* Как у toggle-btn */
     display: inline-block;
     position: relative;
 }
 
 .btn-film:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    transform: scale(1.05);
-    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.15);
+    background-color: white;
+    color: black;
+    border-color: black;
 }
 
 .film-genre {
-    font-family: Arial, Helvetica, sans-serif;
-    margin-top: 5px;
-    font-size: 15px;
-    color: white;
+    font-family: Open Sans, sans-serif; /* Изменен шрифт */
+    margin-top: 0.2em; /* Относительный отступ */
+    font-size: 15px; /* Твой размер */
+    color: #dad6d6; /* Немного приглушенный цвет */
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     position: absolute;
     top: 100%;
@@ -876,11 +874,12 @@ h4 {
 }
 
 .year {
-    font-size: 0.9em;
+    font-size: 0.9em !important;
+    font-weight: 400;
 }
 
 .card-tex {
-    color: #dad6d6;
+    color: #ffffff;
     text-decoration: none;
     display: block;
     /* Делаем ссылку блочным элементом для полной ширины */
@@ -888,15 +887,32 @@ h4 {
     /* Устанавливаем ширину ссылки на 100% */
     transition: color 0.5s;
     font-family: Helvetica;
-    
+    font-weight: 600;
+    margin-left: -0.3em;
 
 }
 
-.card-tex:hover {
+.card-tex :hover {
     color: #ffffff !important;
     /* Темно-красный цвет текста */
     text-shadow:
 
+        1px 1px 0 #000000,
+        -1px 1px 0 #000000,
+        1px -1px 0 #000000,
+        -1px -1px 0 #000000,
+        0px 1px 0 #000000,
+        1px 0px 0 #000000,
+        -1px 0px 0 #000000,
+        0px -1px 0 #000000;
+}
+.year{
+    color: #dad6d6;
+}
+.card:hover .year,
+.card:active .year {
+    color: #ffffff !important;
+    text-shadow:
         1px 1px 0 #000000,
         -1px 1px 0 #000000,
         1px -1px 0 #000000,
@@ -978,6 +994,10 @@ h4 {
     left: -16px !important;
     font-size: 0.82em;
   }
+  .card-TV-trends{
+    top: 30px !important;
+  }
+  
 
 .slider.single-item2 .card-tex {
     width: 100% !important;
@@ -1709,12 +1729,12 @@ footer {
     
 
     .card-tex {
-        font-size: 180% !important;
-
+        font-size: 160% !important;
+        margin-left: -0.1em;
     }
 
     .year {
-        font-size: 95% !important;
+        font-size: 90% !important;
     }
 
     .btn-show-all {
@@ -1748,7 +1768,7 @@ footer {
     }
 
     .card-TV{ 
-        left: -12px !important; 
+        left: -9px !important; 
         top: 28px !important; 
         padding: 0.35em 0.35em !important;
         font-size: 0.9em !important; 
@@ -1779,6 +1799,9 @@ footer {
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
         left: -17px !important;
         font-size: 0.92em
+      }
+      .card-TV-trends{
+        top: 33px !important;
       }
 }
 
@@ -1947,7 +1970,8 @@ footer {
     }
 
     .card-tex {
-        font-size: 150%;
+        font-size: 145%;
+        margin-left: -0.1em;
 
     }
     .card-media3 .card-tex{
@@ -1960,10 +1984,10 @@ footer {
         width: 140% !important;
     }
     .year {
-        font-size: 90% !important;
+        font-size: 85% !important;
     }
     .card-TV{ 
-        left: -11px !important; 
+        left: -9px !important; 
         top: 23px !important; 
         padding: 0.35em 0.35em !important;
         font-size: 0.9em !important; 
@@ -1994,6 +2018,9 @@ footer {
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
         left: -16px !important;
         font-size: 0.92em
+      }
+      .card-TV-trends{
+        top: 28px !important;
       }
 
     .btn-show-all {
@@ -2616,6 +2643,7 @@ footer {
 
 }
 @media screen and (max-width: 1300px) {
+   
     .card-TV {
         background: #ff4242;
         color: #fff;
@@ -2660,10 +2688,17 @@ footer {
         left: -14px !important;
         font-size: 0.7em;
       }
-     
+      .card-TV-trends{
+        top: 30px !important;
+      }
+      .card:hover .card-TV-trends{ 
+        left: -12px !important; 
+      }
       }
 
-    
+      
+        
+        
 
     
 
@@ -2710,7 +2745,12 @@ footer {
         left: -12px !important;
         font-size: 0.61em
       }
-
+      .card:hover .card-TV-trends{ 
+        left: -9px !important; 
+      }
+      .card-TV-trends{
+        top: 28px !important;
+      }
 }
 
 @media screen and (max-width: 1025px) {
@@ -2781,6 +2821,12 @@ footer {
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
         left: -16px !important;
         font-size: 0.92em
+      }
+      .card:hover .card-TV-trends{ 
+        left: -15px !important; 
+      }
+      .card-TV-trends{
+        top: 30px !important;
       }
 }
 
@@ -3062,7 +3108,7 @@ footer {
     }
 
     .card-body .card-tex {
-        font-size: 130% !important;
+        font-size: 125% !important;
         ;
         /* Увеличение размера текста */
     }
@@ -3084,12 +3130,12 @@ footer {
 
 
 .card-tex {
-    font-size: 130%;
+    font-size: 125%;
 
 }
 
 .year {
-    font-size: 90% !important;
+    font-size: 85% !important;
 }
 
 .btn-show-all {
@@ -3325,6 +3371,9 @@ footer {
         left: -19px !important;
         font-size: 0.92em
       }
+      .card-TV-trends{
+        top: 28px !important;
+      }
 
     h4 {
         font-size: 140% !important;
@@ -3348,14 +3397,14 @@ footer {
     }
 
     .card-tex {
-        font-size: 130%;
+        font-size: 125%;
 }
 .card-tex{
     width: 100% !important;
 }
 
     .year {
-        font-size: 90% !important;
+        font-size: 85% !important;
     }
 
     .btn-show-all {
@@ -3544,6 +3593,9 @@ footer {
         left: -15px !important;
         font-size: 0.82em
       }
+      .card-TV-trends{
+        top: 28px !important;
+      }
 }
 
 
@@ -3589,12 +3641,12 @@ footer {
 
 
     .card-tex {
-        font-size: 100% !important;
+        font-size: 95% !important;
 
     }
 
     .year {
-        font-size: 90% !important;
+        font-size: 85% !important;
     }
 
     .toggle-btn {
@@ -3637,12 +3689,12 @@ footer {
     }
 
     .card-tex {
-        font-size: 100% !important;
+        font-size: 95% !important;
 
     }
 
     .year {
-        font-size: 90% !important;
+        font-size: 85% !important;
     }
 
     .navbar {
@@ -4850,6 +4902,14 @@ footer {
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
         left: -11px !important;
       }
+
+      .card:hover .card-TV-trends{ 
+        left: -9px !important; 
+      }
+      .card-TV-trends{
+        top: 28px !important;
+      }
+
     .platform-logos {
         justify-content: start;
         /* Уменьшаем отступ между текстом и изображениями */
