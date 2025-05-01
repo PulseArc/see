@@ -907,6 +907,7 @@ h4 {
         -1px 0px 0 #000000,
         0px -1px 0 #000000;
 }
+
 .year{
     color: #dad6d6;
 }
@@ -923,7 +924,15 @@ h4 {
         -1px 0px 0 #000000,
         0px -1px 0 #000000;
 }
-
+.footer-text.text-center a.card-tex {
+    font-weight: normal; /* Или любое другое значение, которое тебе нужно */
+    color: #dad6d6;
+    
+  }
+  .footer-text.text-center a.card-tex:hover {
+    font-weight: normal; /* Или любое другое значение, которое тебе нужно */
+    color: #ffffff;
+  }
 .card.full-card {
     display: flex;
     flex-direction: column;
@@ -1108,9 +1117,10 @@ footer {
 }
 
 .footer-text {
-    color: #D3D3D3;
+    color: #D3D3D3 !important;
     margin: auto auto;
 }
+
 
 .Available-Platforms {
     font-size: 1.6em !important;
@@ -1235,7 +1245,7 @@ footer {
 
 /* Эффект при наведении */
 .card-tex:hover .cinematic-text {
-    color: #A00000;
+    color: #A00000 !important;
     /* Красный цвет для текста */
 }
 
