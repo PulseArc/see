@@ -1164,7 +1164,7 @@ const data = [
     {
         "name": "Том и Джерри: Комедийное шоу",
         "image": "https://image.tmdb.org/t/p/w500//4usKsUnNy3DYkrEGC8EXe3bQ8PV.jpg",
-        "link": "/see/card/cartoons/500-05/Tom-i-Dzherri-Robin-Gud-i-mysh-veselchak.html",
+        "link": "/see/card/cartoons/500-84/Tom-i-Dzherri-Komedijnoe-shou.html",
         "year": "1980",
         "rating":"7.5",
         "isTV": true
@@ -1172,49 +1172,49 @@ const data = [
     {
         "name": "Том и Джерри: Бравые ковбои!",
         "image": "https://image.tmdb.org/t/p/w500//rdSW1PtCAsEmqjWZ5SijWbROLDX.jpg",
-        "link": "/see/card/cartoons/500-05/Tom-i-Dzherri-Robin-Gud-i-mysh-veselchak.html",
+        "link": "/see/card/cartoons/500-85/Tom-i-Dzherri-Bravye-kovboi.html",
         "year": "2022",
         "rating":"6.9"
     },
     {
         "name": "Том и Джерри: Страна снеговиков",
         "image": "https://image.tmdb.org/t/p/w500//c8VZDpxfrcAtdQ9bxb4qsLSkFN4.jpg",
-        "link": "/see/card/cartoons/500-05/Tom-i-Dzherri-Robin-Gud-i-mysh-veselchak.html",
+        "link": "/see/card/cartoons/500-86/Tom-i-Dzherri-Strana-snegovikov.html",
         "year": "2022",
         "rating":"6.7"
     },
     {
         "name": "Том и Джерри: Вилли Вонка и шоколадная...",
         "image": "https://image.tmdb.org/t/p/w500//vh5iYhj80l1inSdep61sF8g1S8m.jpg",
-        "link": "/see/card/cartoons/500-05/Tom-i-Dzherri-Robin-Gud-i-mysh-veselchak.html",
+        "link": "/see/card/cartoons/500-87/Tom-i-Dzherri-Villi-Vonka-i-shokoladnaya-fabrika.html",
         "year": "2017",
         "rating":"6.7"
     },
     {
         "name": "Том и джерри: возвращение в страну Оз",
         "image": "https://image.tmdb.org/t/p/w500//oXC2YDZkPdhxAaLOGOcepv1BXFB.jpg",
-        "link": "/see/card/cartoons/500-05/Tom-i-Dzherri-Robin-Gud-i-mysh-veselchak.html",
+        "link": "/see/card/cartoons/500-88/Tom-i-dzherri-vozvrashenie-v-stranu-Oz.html",
         "year": "2016",
         "rating":"5.8"
     },
     {
         "name": "Том и Джерри: Шпион Квест",
         "image": "https://image.tmdb.org/t/p/w500//vnksJqA66fWRZoLuqfkdzUWqw75.jpg",
-        "link": "/see/card/cartoons/500-05/Tom-i-Dzherri-Robin-Gud-i-mysh-veselchak.html",
+        "link": "/see/card/cartoons/500-89/Tom-i-Dzherri-Shpion-Kvest.html",
         "year": "2015",
         "rating":"6.0"
     },
     {
         "name": "Том и Джерри: Потерянный дракон",
         "image": "https://image.tmdb.org/t/p/w500//uGHtwQuPFfrsM2DMgwcnA3WGGVc.jpg",
-        "link": "/see/card/cartoons/500-05/Tom-i-Dzherri-Robin-Gud-i-mysh-veselchak.html",
+        "link": "/see/card/cartoons/500-90/Tom-i-Dzherri-Poteryannyj-drakon.html",
         "year": "2014",
         "rating":"6.0"
     },
     {
         "name": "Том и Джерри: Гигантское приключение",
         "image": "https://image.tmdb.org/t/p/w500//v5IZVUFBU6TymmUHdakVmoWmOeE.jpg",
-        "link": "/see/card/cartoons/500-05/Tom-i-Dzherri-Robin-Gud-i-mysh-veselchak.html",
+        "link": "/see/card/cartoons/500-91/Tom-i-Dzherri-Gigantskoe-priklyuchenie.html",
         "year": "2013",
         "rating":"5.8"
     },
@@ -1228,21 +1228,21 @@ const data = [
     {
         "name": "Том и Джерри и Волшебник из страны Оз",
         "image": "https://image.tmdb.org/t/p/w500//fN1LLxZx5cmcrq6c0lsC27UYmw0.jpg",
-        "link": "/see/card/cartoons/500-05/Tom-i-Dzherri-Robin-Gud-i-mysh-veselchak.html",
+        "link": "/see/card/cartoons/500-92/Tom-i-Dzherri-i-Volshebnik-iz-strany-Oz.html",
         "year": "2011",
         "rating":"6.3"
     },
     {
         "name": "Том и Джерри: Шерлок Холмс",
         "image": "https://image.tmdb.org/t/p/w500//771TGoHCnMX6afZdD7KcPO53ED7.jpg",
-        "link": "/see/card/cartoons/500-05/Tom-i-Dzherri-Robin-Gud-i-mysh-veselchak.html",
+        "link": "/see/card/cartoons/500-93/Tom-i-Dzherri-Sherlok-Holms.html",
         "year": "2010",
         "rating":"6.4"
     },
     {
         "name": "Том и Джерри: История о Щелкунчике",
         "image": "https://image.tmdb.org/t/p/w500//akjBwODBGSIYpaIxhTtGfsi3I5y.jpg",
-        "link": "/see/card/cartoons/500-05/Tom-i-Dzherri-Robin-Gud-i-mysh-veselchak.html",
+        "link": "/see/card/cartoons/500-94/Tom-i-Dzherri-Istoriya-o-Shelkunchike.html",
         "year": "2007",
         "rating":"6.8"
     },
@@ -1256,28 +1256,28 @@ const data = [
     {
         "name": "Том и Джерри: Быстрый и бешеный",
         "image": "https://image.tmdb.org/t/p/w500//q25nIkJzPG9amPibssLwDteMid1.jpg",
-        "link": "/see/card/cartoons/500-05/Tom-i-Dzherri-Robin-Gud-i-mysh-veselchak.html",
+        "link": "/see/card/cartoons/500-96/Tom-i-Dzherri-Bystryj-i-beshenyj.html",
         "year": "2005",
         "rating":"7.0"
     },
     {
         "name": "Том и Джерри: Волшебное кольцо",
         "image": "https://image.tmdb.org/t/p/w500//vP9l1bTvRWfaTnooaCl5ta20Ysx.jpg",
-        "link": "/see/card/cartoons/500-05/Tom-i-Dzherri-Robin-Gud-i-mysh-veselchak.html",
+        "link": "/see/card/cartoons/500-97/Tom-i-Dzherri-Volshebnoe-kolco.html",
         "year": "2002",
         "rating":"6.4"
     },
     {
         "name": "Том и Джерри: Мотор!",
         "image": "https://image.tmdb.org/t/p/w500//kJ6yQPWxdnDjPNWaR4nRD3GgpOT.jpg",
-        "link": "/see/card/cartoons/500-05/Tom-i-Dzherri-Robin-Gud-i-mysh-veselchak.html",
+        "link": "/see/card/cartoons/500-98/Tom-i-Dzherri-Motor.html",
         "year": "1992",
         "rating":"6.3"
     },
     {
         "name": "Рио 2",
         "image": "https://image.tmdb.org/t/p/w500//o3dmiL6W0EqRnbRpm7h6Pen31PF.jpg",
-        "link": "/see/card/cartoons/500-06/Rio.html",
+        "link": "/see/card/cartoons/500-99/Rio-2.html",
         "year": "2014",
         "rating":"6.5"
     },
@@ -1333,7 +1333,7 @@ const data = [
     {
         "name": "Правила Мегамозга!",
         "image": "https://image.tmdb.org/t/p/w500//kXdT6ait0Kw4ylzFgEA0z8kWaMM.jpg",
-        "link": "/see/card/cartoons/500-14/Megamozg.html",
+        "link": "/see/card/cartoons/500-100/Pravila-Megamozga.html",
         "year": "2024",
         "rating":"5.5",
         "isTV": true
@@ -1341,7 +1341,7 @@ const data = [
     {
         "name": "Мегамозг против Синдиката Рока",
         "image": "https://image.tmdb.org/t/p/w500//rtQYsfEhWE9hGX94dZyPFoMdg2V.jpg",
-        "link": "/see/card/cartoons/500-14/Megamozg.html",
+        "link": "/see/card/cartoons/500-101/Megamozg-protiv-Sindikata-Roka.html",
         "year": "2024",
         "rating":"5.1"
     },
@@ -1369,14 +1369,14 @@ const data = [
     {
         "name": "Аладдин и Король Разбойников",
         "image": "https://image.tmdb.org/t/p/w500//wYyCFCIXNgABzkq975JT4LASG6M.jpg",
-        "link": "/see/card/cartoons/500-17/Aladdin.html",
+        "link": "/see/card/cartoons/500-102/Aladdin-i-Korol-Razbojnikov.html",
         "year": "1996",
         "rating":"6.3"
     },
     {
         "name": "Аладдин",
         "image": "https://image.tmdb.org/t/p/w500//faTIP0dG6tSWfGYHjEyYw3JeBT2.jpg",
-        "link": "/see/card/cartoons/500-17/Aladdin.html",
+        "link": "/see/card/cartoons/500-103/Aladdin1994.html",
         "year": "1994",
         "rating":"6.9",
         "isTV": true
@@ -1384,7 +1384,7 @@ const data = [
     {
         "name": "Возвращение Джафара",
         "image": "https://image.tmdb.org/t/p/w500//yW8wI3SnjmuqsFHVFQepKL1e9T.jpg",
-        "link": "/see/card/cartoons/500-17/Aladdin.html",
+        "link": "/see/card/cartoons/500-104/Vozvrashenie-Dzhafara.html",
         "year": "1994",
         "rating":"6.2"
     },
@@ -1398,7 +1398,7 @@ const data = [
     {
         "name": "Семейка Крудс: Семейное древо",
         "image": "https://image.tmdb.org/t/p/original/aUgEi0VryenHDoQ0wJH0fycBwzU.jpg",
-        "link": "/see/card/cartoons/500-18/Semejka-Kruds.html",
+        "link": "/see/card/cartoons/500-105/Semejka-Kruds-Semejnoe-drevo.html",
         "year": "2021",
         "rating":"7.2",
         "isTV": true
@@ -1406,7 +1406,7 @@ const data = [
     {
         "name": "Семейка Крудс: Новоселье",
         "image": "https://image.tmdb.org/t/p/w500//gT8cDQklL3xoVuXPLGRdjDI3tRA.jpg",
-        "link": "/see/card/cartoons/500-18/Semejka-Kruds.html",
+        "link": "/see/card/cartoons/500-106/Semejka-Kruds-Novosele.html",
         "year": "2020",
         "rating":"7.5"
     },

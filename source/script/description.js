@@ -49,13 +49,13 @@ async function showMovieDescription() {
 
         // Отображаем описание фильма
         const descriptionContainer = document.getElementById('description-container');
-        descriptionContainer.innerHTML = movieDetails.overview ? `<p>${movieDetails.overview}</p>` : '<p>Описание не найдено</p>';
+        descriptionContainer.innerHTML = movieDetails.overview ? `<p>${movieDetails.overview}</p>` : '<p style="font-family: sans-serif;color: rgb(218, 215, 215);">Без Описания</p>';
 
         // Получаем и отображаем информацию о производственных компаниях
         const productionCompanies = await getProductionCompanies(movieId, type);
         const productionContainer = document.getElementById('production-container');
         if (productionCompanies.length === 0) {
-            productionContainer.innerHTML = '<p>Производство не указано</p>';
+            productionContainer.innerHTML = '<p style="font-family: sans-serif;color: rgb(218, 215, 215);">Производство не указано</p>';
         } else {
             productionContainer.innerHTML = productionCompanies.map(company => `<span>${company.name}</span>`).join('');
         }
@@ -66,7 +66,7 @@ async function showMovieDescription() {
         const keywordsContainer = document.getElementById('keywords-container');
 
         if (keywords.length === 0) {
-            keywordsContainer.innerHTML = '<p>Ключевые слова не доступны для этого фильма</p>';
+            keywordsContainer.innerHTML = '<p style="font-family: sans-serif;color: rgb(218, 215, 215);">Ключевые слова не доступны для этого фильма</p>';
         } else {
             keywordsContainer.innerHTML = createKeywordSpans(keywords);
         }
