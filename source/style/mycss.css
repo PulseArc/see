@@ -925,12 +925,13 @@ h4 {
         0px -1px 0 #000000;
 }
 .footer-text.text-center a.card-tex {
-    font-weight: normal; /* Или любое другое значение, которое тебе нужно */
+    font-weight: normal; 
     color: #dad6d6;
+    margin-left: 0em;
     
   }
   .footer-text.text-center a.card-tex:hover {
-    font-weight: normal; /* Или любое другое значение, которое тебе нужно */
+    font-weight: normal; 
     color: #ffffff;
   }
 .card.full-card {
@@ -4799,6 +4800,12 @@ footer {
     .card-tex {
         width: 55% !important;
     }
+    .footer-text.text-center a.card-tex {
+        font-weight: normal; 
+        color: #ffffff;
+        margin-left: 0.55em !important;
+      }
+    
 
 }
 
@@ -4966,8 +4973,34 @@ footer {
     }
 }
 
-@media (max-width: 430px) {}
 
-@media (max-width: 420px) {}
-
+@media (min-width: 300px) and (max-width: 350.5px) {
+    .footer-text.text-center a.card-tex {
+        font-weight: normal; 
+        color: #dad6d6;
+        margin-left: 0.55em;
+        
+      }
+}
+@media (min-width: 350.5px) and (max-width: 450.5px) {
+    .footer-text.text-center a.card-tex {
+        
+        margin-left: 0.30em;
+        
+      }
+}
+@media (min-width: 451px) and (max-width: 580.5px)  {
+    .footer-text.text-center a.card-tex {
+        
+        margin-left: 0.60em;
+        
+      }
+}
+@media (min-width: 581px) and (max-width: 599.5px)  {
+    .footer-text.text-center a.card-tex {
+        
+        margin-left: -0.3em ;
+        
+      }
+}
 @media (max-width: 400px) {}
