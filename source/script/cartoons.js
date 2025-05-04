@@ -320,7 +320,7 @@ function generateRandomCards() {
         {
             "name": "Красавица и Чудовище: Чудесное Рождество",
             "image": "https://image.tmdb.org/t/p/w500//afJhfRcAVpOpBa177tHlV5TJxzn.jpg",
-            "link": "/see/card/cartoons/500-19/Krasavica-i-chudovishe.html",
+            "link": "/see/card/cartoons/500-107/Krasavica-i-Chudovishe-Chudesnoe-Rozhdestvo.html",
             "year": "1997",
             "rating":"6.2"
         },
@@ -334,14 +334,14 @@ function generateRandomCards() {
         {
             "name": "Зверогонщики",
             "image": "https://image.tmdb.org/t/p/w500//5ix430YAsjDNlVdUlR5UHSmXZeY.jpg",
-            "link": "/see/card/cartoons/500-20/Samolety.html",
+            "link": "/see/card/cartoons/500-108/Zverogonshiki.html",
             "year": "2023",
             "rating":"6.7"
         },
         {
             "name": "Самолёты: Огонь и вода",
             "image": "https://image.tmdb.org/t/p/w500//fdB4qAY1xwBSnivCvCsVqR2Vg7e.jpg",
-            "link": "/see/card/cartoons/500-20/Samolety.html",
+            "link": "/see/card/cartoons/500-109/Samolyoty-Ogon-i-voda.html",
             "year": "2014",
             "rating":"6.2"
         },
@@ -355,7 +355,7 @@ function generateRandomCards() {
         {
             "name": "Тачки на дороге",
             "image": "https://image.tmdb.org/t/p/w500//gH6IQvbPekyyPN8rMXlaiR99Rxp.jpg",
-            "link": "/see/card/cartoons/500-20/Samolety.html",
+            "link": "/see/card/cartoons/500-110/Tachki-na-doroge.html",
             "year": "2022",
             "rating":"7.5",
             "isTV": true
@@ -363,14 +363,14 @@ function generateRandomCards() {
         {
             "name": "Тачки 3",
             "image": "https://image.tmdb.org/t/p/w500//yOaxBNkId5a1fZVGWayFJohxG7S.jpg",
-            "link": "/see/card/cartoons/500-12/Tachki.html",
+            "link": "/see/card/cartoons/500-111/Tachki-3.html",
             "year": "2017",
             "rating":"6.9"
         },
         {
             "name": "Тачки 2",
             "image": "https://image.tmdb.org/t/p/w500//n6wISTzNLYFTosY8Sh9Qj39Nq7f.jpg",
-            "link": "/see/card/cartoons/500-12/Tachki.html",
+            "link": "/see/card/cartoons/500-112/Tachki-2.html",
             "year": "2011",
             "rating":"6.1"
         },
@@ -391,7 +391,7 @@ function generateRandomCards() {
         {
             "name": "Университет монстров",
             "image": "https://image.tmdb.org/t/p/w500//3LkX2ZFLbgj07lhdQYzOUHaMoZd.jpg",
-            "link": "/see/card/cartoons/500-22/Korporaciya-Monstrov.html",
+            "link": "/see/card/cartoons/500-113/Universitet-monstrov.html",
             "year": "2013",
             "rating":"7.0"
         },
@@ -419,7 +419,7 @@ function generateRandomCards() {
         {
             "name": "В поисках Дори",
             "image": "https://image.tmdb.org/t/p/w500//xBUhR52S1RQHYEY40Yo04ner32I.jpg",
-            "link": "/see/card/cartoons/500-24/V-poiskah-Nemo.html",
+            "link": "/see/card/cartoons/500-115/V-poiskah-Dori.html",
             "year": "2016",
             "rating":"7.0"
         },
@@ -629,7 +629,7 @@ function generateRandomCards() {
         {
             "name": "Футурама: В дикую зелёную даль",
             "image": "https://image.tmdb.org/t/p/w500//oL6SymcxQE6TN9KrrbdyhlulnEG.jpg",
-            "link": "/see/card/cartoons/500-78/Futurama.html",
+            "link": "/see/card/cartoons/500-114/Futurama-V-dikuyu-zelyonuyu-dal.html",
             "year": "2009",
             "rating":"7.0"
         },
