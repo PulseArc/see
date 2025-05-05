@@ -1533,7 +1533,7 @@ const data = [
     {
         "name": "Ральф против Интернета",
         "image": "https://image.tmdb.org/t/p/w500//tVmomifGhoJfijkOnSGDDZwRSH5.jpg",
-        "link": "/see/card/cartoons/500-26/Ralf.html",
+        "link": "/see/card/cartoons/500-116/Ralf-protiv-Interneta.html",
         "year": "2018",
         "rating":"7.2"
     },
@@ -1554,7 +1554,7 @@ const data = [
     {
         "name": "Трансформеры: Земная Искра",
         "image": "https://image.tmdb.org/t/p/w500//jLwU37QusZDkkOuFNb1TA6NQZNT.jpg",
-        "link": "/see/card/cartoons/500-28/Transformery-Nachalo.html",
+        "link": "/see/card/cartoons/500-117/Transformery-Zemnaya-Iskra.html",
         "year": "2022",
         "rating":"7.0",
         "isTV": true
@@ -1562,7 +1562,7 @@ const data = [
     {
         "name": "Трансформеры: Ботботы",
         "image": "https://image.tmdb.org/t/p/w500//hKtDA3GG3puz5DGnieFCNRGPpjK.jpg",
-        "link": "/see/card/cartoons/500-28/Transformery-Nachalo.html",
+        "link": "/see/card/cartoons/500-118/Transformery-Botboty.html",
         "year": "2022",
         "rating":"5.1",
         "isTV": true
@@ -1570,7 +1570,7 @@ const data = [
     {
         "name": "Трансформеры. Война за Кибертрон. Королевство",
         "image": "https://image.tmdb.org/t/p/w500//r2IouRpN9IXMyY8RX0YnJhkCirE.jpg",
-        "link": "/see/card/cartoons/500-28/Transformery-Nachalo.html",
+        "link": "/see/card/cartoons/500-119/Transformery-Vojna-za-Kibertron-Korolevstvo.html",
         "year": "2021",
         "rating":"7.7",
         "isTV": true
@@ -1578,7 +1578,7 @@ const data = [
     {
         "name": "Трансформеры: Войны гештальтов",
         "image": "https://image.tmdb.org/t/p/w500//reYa1VrOuNfKcMIJGQQ66kvIuBM.jpg",
-        "link": "/see/card/cartoons/500-28/Transformery-Nachalo.html",
+        "link": "/see/card/cartoons/500-120/Transformery-Vojny-geshtaltov.html",
         "year": "2016",
         "rating":"7.8",
         "isTV": true
@@ -1586,7 +1586,7 @@ const data = [
     {
         "name": "Трансформеры. Роботы под прикрытием",
         "image": "https://image.tmdb.org/t/p/w500//pbRpKAGbXnASnNFHCGFC4CwVPla.jpg",
-        "link": "/see/card/cartoons/500-28/Transformery-Nachalo.html",
+        "link": "/see/card/cartoons/500-121/Transformery-Roboty-pod-prikrytiem.html",
         "year": "2015",
         "rating":"7.1",
         "isTV": true
@@ -1594,7 +1594,7 @@ const data = [
     {
         "name": "Трансформеры: Боты-спасатели",
         "image": "https://image.tmdb.org/t/p/w500//wtugHPxksnORftAs7EOGK3Oy0I5.jpg",
-        "link": "/see/card/cartoons/500-28/Transformery-Nachalo.html",
+        "link": "/see/card/cartoons/500-122/Transformery-Boty-spasateli.html",
         "year": "2012",
         "rating":"7.4",
         "isTV": true
@@ -1602,7 +1602,7 @@ const data = [
     {
         "name": "Трансформеры: Прайм",
         "image": "https://image.tmdb.org/t/p/original/nEzYyon3gBhhWdmQds9k23lHKEd.jpg",
-        "link": "/see/card/cartoons/500-28/Transformery-Nachalo.html",
+        "link": "/see/card/cartoons/500-123/Transformery-Prajm.html",
         "year": "2010",
         "rating":"8.0",
         "isTV": true
@@ -1610,7 +1610,7 @@ const data = [
     {
         "name": "Трансформеры",
         "image": "https://image.tmdb.org/t/p/w500//uEKVNu69urMrXSuAdeK54HOtvo4.jpg",
-        "link": "/see/card/cartoons/500-28/Transformery-Nachalo.html",
+        "link": "/see/card/cartoons/500-124/Transformery2007.html",
         "year": "2007",
         "rating":"8.0",
         "isTV": true
@@ -1618,15 +1618,15 @@ const data = [
     {
         "name": "Трансформеры: Зверороботы",
         "image": "https://image.tmdb.org/t/p/w500//pNvziasPFwBlWDpmM346OnUB6E6.jpg",
-        "link": "/see/card/cartoons/500-28/Transformery-Nachalo.html",
+        "link": "/see/card/cartoons/500-125/Transformery-Zveroroboty.html",
         "year": "1999",
-        "rating":"8.3",
+        "rating":"8.0",
         "isTV": true
     },
     {
         "name": "Трансформеры: Битвы Зверей",
         "image": "https://image.tmdb.org/t/p/original/148PzBHH19K6QANTSUoJt3Dghi.jpg",
-        "link": "/see/card/cartoons/500-28/Transformery-Nachalo.html",
+        "link": "/see/card/cartoons/500-126/Transformery-Bitvy-Zverej.html",
         "year": "1996",
         "rating":"8.1",
         "isTV": true
@@ -1634,7 +1634,7 @@ const data = [
     {
         "name": "Трансформеры: Воины Великой Силы",
         "image": "https://image.tmdb.org/t/p/original/ztyqe6amne1ZmddsM9IrU0f7OcW.jpg",
-        "link": "/see/card/cartoons/500-28/Transformery-Nachalo.html",
+        "link": "/see/card/cartoons/500-127/Transformery-Voiny-Velikoj-Sily.html",
         "year": "1988",
         "rating":"8.2",
         "isTV": true
@@ -1642,14 +1642,14 @@ const data = [
     {
         "name": "Трансформеры",
         "image": "https://image.tmdb.org/t/p/w500//5OptmOBeHvIwqah6VETRNOtTmWz.jpg",
-        "link": "/see/card/cartoons/500-28/Transformery-Nachalo.html",
+        "link": "/see/card/cartoons/500-128/Transformery1986.html",
         "year": "1986",
         "rating":"7.1"
     },
     {
         "name": "Трансформеры",
         "image": "https://image.tmdb.org/t/p/w500//h4DvodvcLWh7xdpj872Bq0V2DKS.jpg",
-        "link": "/see/card/cartoons/500-28/Transformery-Nachalo.html",
+        "link": "/see/card/cartoons/500-129/Transformery1984.html",
         "year": "1984",
         "rating":"7.8",
         "isTV": true
@@ -1664,7 +1664,7 @@ const data = [
     {
         "name": "Утиные истории",
         "image": "https://image.tmdb.org/t/p/original/2THLokQ6Ce914l4b3rYvvbEPJpz.jpg",
-        "link": "/see/card/cartoons/500-30/Utinye-istorii-Zavetnaya-lampa.html",
+        "link": "/see/card/cartoons/500-130/Utinye-istorii2017.html",
         "year": "2017",
         "rating":"7.8",
         "isTV": true
@@ -1679,7 +1679,7 @@ const data = [
     {
         "name": "Утиные истории",
         "image": "https://image.tmdb.org/t/p/original/l39HDf6WYzV8VLY5EnCRC81DWOy.jpg",
-        "link": "/see/card/cartoons/500-30/Utinye-istorii-Zavetnaya-lampa.html",
+        "link": "/see/card/cartoons/500-131/Utinye-istorii1987.html",
         "year": "1987",
         "rating":"7.6",
         "isTV": true
@@ -1687,7 +1687,7 @@ const data = [
     {
         "name": "История игрушек 4",
         "image": "https://image.tmdb.org/t/p/w500//flLgw8DJKbjSblWnZvTvvYL2pRr.jpg",
-        "link": "/see/card/cartoons/500-31/Istoriya-igrushek-3.html",
+        "link": "/see/card/cartoons/500-132/Istoriya-igrushek-4.html",
         "year": "2019",
         "rating":"7.5"
     },
@@ -1701,14 +1701,14 @@ const data = [
     {
         "name": "История игрушек 2",
         "image": "https://image.tmdb.org/t/p/w500//descLErszABnAy79SDTzupmPD7e.jpg",
-        "link": "/see/card/cartoons/500-31/Istoriya-igrushek-3.html",
+        "link": "/see/card/cartoons/500-133/Istoriya-igrushek-2.html",
         "year": "1999",
         "rating":"7.6"
     },
     {
         "name": "История игрушек",
         "image": "https://image.tmdb.org/t/p/w500//gRLk7XpdRyNa697taDKtFx3l6qV.jpg",
-        "link": "/see/card/cartoons/500-31/Istoriya-igrushek-3.html",
+        "link": "/see/card/cartoons/500-134/Istoriya-igrushek1995.html",
         "year": "1995",
         "rating":"8.0"
     },
@@ -1736,21 +1736,21 @@ const data = [
     {
         "name": "Футурама: Игра Бендера",
         "image": "https://image.tmdb.org/t/p/w500//bx8OVOBn5WP9TJJuOpRzyMCdzzb.jpg",
-        "link": "/see/card/cartoons/500-78/Futurama.html",
+        "link": "/see/card/cartoons/500-135/Futurama-Igra-Bendera.html",
         "year": "2008",
         "rating":"6.9"
     },
     {
         "name": "Футурама: Зверь с миллиардом спин",
         "image": "https://image.tmdb.org/t/p/w500//ldZZ8wdVOFCN1c11O8IzT3XzV9A.jpg",
-        "link": "/see/card/cartoons/500-78/Futurama.html",
+        "link": "/see/card/cartoons/500-136/Futurama-Zver-s-milliardom-spin.html",
         "year": "2008",
         "rating":"6.9"
     },
     {
         "name": "Футурама: Большой куш Бендера",
         "image": "https://image.tmdb.org/t/p/w500//3pJdmpC5KvOnOYYWSnLrgbTP5jE.jpg",
-        "link": "/see/card/cartoons/500-78/Futurama.html",
+        "link": "/see/card/cartoons/500-137/Futurama-Bolshoj-kush-Bendera.html",
         "year": "2007",
         "rating":"7.4"
     },
@@ -1772,21 +1772,21 @@ const data = [
     {
         "name": "Астерикс: Земля Богов",
         "image": "https://image.tmdb.org/t/p/w500//e61MmASenVYze4AQinHPIeVBPOK.jpg",
-        "link": "/see/card/cartoons/500-33/Asteriks-i-tajnoe-zele.html",
+        "link": "/see/card/cartoons/500-138/Asteriks-Zemlya-Bogov.html",
         "year": "2014",
         "rating":"6.8"
     },
     {
         "name": "Астерикс и викинги",
         "image": "https://image.tmdb.org/t/p/original/dW9h1Ez6PRx8PnZUVT27MnG8Wu5.jpg",
-        "link": "/see/card/cartoons/500-33/Asteriks-i-tajnoe-zele.html",
+        "link": "/see/card/cartoons/500-139/Asteriks-i-vikingi.html",
         "year": "2006",
         "rating":"6.1"
     },
     {
         "name": "Астерикс завоёвывает Америку",
         "image": "https://image.tmdb.org/t/p/w500//wQDCj9P67suPY55LA6zxgSH8QFl.jpg",
-        "link": "/see/card/cartoons/500-33/Asteriks-i-tajnoe-zele.html",
+        "link": "/see/card/cartoons/500-140/Asteriks-zavoyovyvaet-Ameriku.html",
         "year": "1994",
         "rating":"6.2"
     },
