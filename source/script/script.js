@@ -4581,14 +4581,41 @@ $('#search').keyup(function () {
 
             setTimeout(() => {
                 const newCards = updateContainer.querySelectorAll('.cards-from-search');
-                newCards.forEach(card => card.offsetHeight); // Reflow
-                newCards.forEach((card, index) => {
-                    setTimeout(() => {
-                        card.classList.add('visible');
-                    }, index * 50);
+                const images = updateContainer.querySelectorAll('img');
+            
+                let imagesLoaded = 0;
+                images.forEach(img => {
+                    if (img.complete) {
+                        imagesLoaded++;
+                    } else {
+                        img.onload = () => {
+                            imagesLoaded++;
+                            if (imagesLoaded === images.length) {
+                                finalize();
+                            }
+                        };
+                        img.onerror = () => {
+                            imagesLoaded++;
+                            if (imagesLoaded === images.length) {
+                                finalize();
+                            }
+                        };
+                    }
                 });
-
-                positionCardRating();
+            
+                if (imagesLoaded === images.length) {
+                    finalize();
+                }
+            
+                function finalize() {
+                    newCards.forEach(card => card.offsetHeight); // Reflow
+                    newCards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.classList.add('visible');
+                        }, index * 50);
+                    });
+                    positionCardRating();
+                }
             }, 100);
         }
     }, typingInterval);
