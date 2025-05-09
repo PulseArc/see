@@ -843,6 +843,7 @@ h4 {
     position: absolute;
     z-index: 11;
     width: auto;
+    margin-left: 2em;
     text-align: center;
     display: inline-block;
     line-height: 1.2;
