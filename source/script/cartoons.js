@@ -663,6 +663,14 @@ function generateRandomCards() {
             "isTV": true
         },
         {
+            "name": "Астерикс и Обеликс: поединок вождей",
+            "image": "https://image.tmdb.org/t/p/w500//9iD1rFwjj8E8JdXEg1pJj9SQz4r.jpg",
+            "link": "/see/card/cartoons/500-147/Asteriks-i-Obeliks-poedinok-vozhdej.html",
+            "year": "2025",
+            "rating":"8.1",
+            "isTV": true
+        },
+        {
             "name": "Астерикс и тайное зелье",
             "image": "https://image.tmdb.org/t/p/w200//tjhaD88iWGGEFmUX38KZ4GsCXRJ.jpg",
             "link": "/see/card/cartoons/500-33/Asteriks-i-tajnoe-zele.html",
@@ -693,42 +701,42 @@ function generateRandomCards() {
         {
             "name": "Большой бой Астерикса",
             "image": "https://image.tmdb.org/t/p/w500//uu0Ixw36nxrzsx03Tdfak2qN1VU.jpg",
-            "link": "/see/card/cartoons/500-33/Asteriks-i-tajnoe-zele.html",
+            "link": "/see/card/cartoons/500-141/Bolshoj-boj-Asteriksa.html",
             "year": "1989",
             "rating":"6.3"
         },
         {
             "name": "Астерикс в Британии",
             "image": "https://image.tmdb.org/t/p/w500//1MWTDqNWLzjs9HUtC8aKanNLZLH.jpg",
-            "link": "/see/card/cartoons/500-33/Asteriks-i-tajnoe-zele.html",
+            "link": "/see/card/cartoons/500-142/Asteriks-v-Britanii.html",
             "year": "1986",
             "rating":"6.8"
         },
         {
             "name": "Астерикс против Цезаря",
             "image": "https://image.tmdb.org/t/p/w500//8kY2WmF9PgkzfmtcPyW1AmQJswu.jpg",
-            "link": "/see/card/cartoons/500-33/Asteriks-i-tajnoe-zele.html",
+            "link": "/see/card/cartoons/500-143/Asteriks-protiv-Cezarya.html",
             "year": "1985",
             "rating":"6.5"
         },
         {
             "name": "12 подвигов Астерикса",
             "image": "https://image.tmdb.org/t/p/w500//b7ebaaTwig78TkuKSTxjodCQ6iA.jpg",
-            "link": "/see/card/cartoons/500-33/Asteriks-i-tajnoe-zele.html",
+            "link": "/see/card/cartoons/500-144/12-podvigov-Asteriksa.html",
             "year": "1976",
             "rating":"7.3"
         },
         {
             "name": "Астерикс и Клеопатра",
             "image": "https://image.tmdb.org/t/p/w500//sO87S5lVVJ4i7oYof1irO5OXl8B.jpg",
-            "link": "/see/card/cartoons/500-33/Asteriks-i-tajnoe-zele.html",
+            "link": "/see/cartoons/500-145/Asteriks-i-Kleopatra.html",
             "year": "1968",
             "rating":"6.9"
         },
         {
             "name": "Астерикс из Галлии",
             "image": "https://image.tmdb.org/t/p/w500//vBwwWn6irVjGROIjWJMCzPIerwg.jpg",
-            "link": "/see/card/cartoons/500-33/Asteriks-i-tajnoe-zele.html",
+            "link": "/see/card/cartoons/500-146/Asteriks-iz-Gallii.html",
             "year": "1967",
             "rating":"6.4"
         },
@@ -756,14 +764,14 @@ function generateRandomCards() {
         {
             "name": "Мадагаскар 3",
             "image": "https://image.tmdb.org/t/p/w500//aOKn2A1Ve0rKd6u8nTS1kXYSR65.jpg",
-            "link": "/see/card/cartoons/500-02/Madagaskar.html",
+            "link": "/see/card/cartoons/500-148/Madagaskar-3.html",
             "year": "2012",
             "rating":"6.6"
         },
         {
             "name": "Мадагаскар 2",
             "image": "https://image.tmdb.org/t/p/w500//rfwloSBRAZCrWwsJcXd1iveI59n.jpg",
-            "link": "/see/card/cartoons/500-02/Madagaskar.html",
+            "link": "/see/card/cartoons/500-149/Madagaskar-2.html",
             "year": "2008",
             "rating":"6.5"
         },
@@ -782,16 +790,9 @@ function generateRandomCards() {
             "rating":"6.5"
         },
         {
-            "name": "Пингвины Мадагаскара: Операция ДВД",
-            "image": "https://image.tmdb.org/t/p/w500//bOuABqAsiLS1yKfnadiKJ8CVFbm.jpg",
-            "link": "/see/card/cartoons/500-37/Pingviny-Madagaskara.html",
-            "year": "2010",
-            "rating":"6.0"
-        },
-        {
             "name": "Пингвины Мадагаскара",
             "image": "https://image.tmdb.org/t/p/w500//yj25y94rEWsTxmcp5WdHDfuoriU.jpg",
-            "link": "/see/card/cartoons/500-37/Pingviny-Madagaskara.html",
+            "link": "/see/card/cartoons/500-150/Pingviny-Madagaskara2008.html",
             "year": "2008",
             "rating":"7.4",
             "isTV": true
@@ -806,7 +807,7 @@ function generateRandomCards() {
         {
             "name": "Гриффины: Там, там, на темной стороне",
             "image": "https://image.tmdb.org/t/p/w500//fWr85GtJlzY4ZwdB2eCu3pdzWHz.jpg",
-            "link": "/see/card/cartoons/500-77/Griffiny.html",
+            "link": "/see/card/cartoons/500-151/Griffiny-Tam-tam-na-temnoj-storone.html",
             "year": "2009",
             "rating":"7.2"
         },
@@ -828,14 +829,14 @@ function generateRandomCards() {
         {
             "name": "Король Лев 3: Акуна Матата",
             "image": "https://image.tmdb.org/t/p/w500//wIIVzCF9TPeXG79FBdr6z1Fxbbl.jpg",
-            "link": "/see/card/cartoons/500-40/Korol-Lev.html",
+            "link": "/see/card/cartoons/500-152/Korol-Lev-3-Akuna-Matata.html",
             "year": "2004",
             "rating":"6.6"
         },
         {
             "name": "Король Лев 2: Гордость Симбы",
             "image": "https://image.tmdb.org/t/p/w500//1Q0juLckjyydMglTpsokxL3lafF.jpg",
-            "link": "/see/card/cartoons/500-40/Korol-Lev.html",
+            "link": "/see/card/cartoons/500-153/Korol-Lev-2-Gordost-Simby.html",
             "year": "1998",
             "rating":"6.9"
         },
@@ -849,7 +850,7 @@ function generateRandomCards() {
         {
             "name": "Тимон и Пумба",
             "image": "https://image.tmdb.org/t/p/w500//uOFvLi1bWiiU3G1HSmUXdDIZKpS.jpg",
-            "link": "/see/card/cartoons/500-40/Korol-Lev.html",
+            "link": "/see/card/cartoons/500-154/Timon-i-Pumba.html",
             "year": "1995",
             "rating":"7.2",
             "isTV": true
@@ -871,7 +872,7 @@ function generateRandomCards() {
         {
             "name": "Тайная жизнь домашних животных 2",
             "image": "https://image.tmdb.org/t/p/w500//8k4heBxuvX8ec2B7vAuhe2L9DaW.jpg",
-            "link": "/see/card/cartoons/500-43/Tajnaya-zhizn-domashnih-zhivotnyh.html",
+            "link": "/see/card/cartoons/500-155/Tajnaya-zhizn-domashnih-zhivotnyh-2.html",
             "year": "2019",
             "rating":"7.0"
         },
@@ -885,63 +886,63 @@ function generateRandomCards() {
         {
             "name": "Южный Парк: Конец ожирения",
             "image": "https://image.tmdb.org/t/p/w500//uvmz9QExwxBCrhKkFah0slqMmmi.jpg",
-            "link": "/see/card/cartoons/500-76/Yuzhnyj-Park.html",
+            "link": "/see/card/cartoons/500-156/Yuzhnyj-Park-Konec-ozhireniya.html",
             "year": "2024",
             "rating":"7.5"
         },
         {
             "name": "Южный Парк: Не предназначено для просмотра детьми",
             "image": "https://image.tmdb.org/t/p/w500//kN5H9EhUqDWBAsbnbt2XNhS7BFe.jpg",
-            "link": "/see/card/cartoons/500-76/Yuzhnyj-Park.html",
+            "link": "/see/card/cartoons/500-157/Yuzhnyj-Park-Ne-prednaznacheno-dlya-prosmotra-detmi.html",
             "year": "2023",
             "rating":"7.5"
         },
         {
             "name": "Южный Парк: Присоединение к Пандервселенной",
             "image": "https://image.tmdb.org/t/p/w500//18IsRVfs5MkkTcqTGlUAnka6sCh.jpg",
-            "link": "/see/card/cartoons/500-76/Yuzhnyj-Park.html",
+            "link": "/see/card/cartoons/500-158/Yuzhnyj-Park-Prisoedinenie-k-Pandervselennoj.html",
             "year": "2023",
             "rating":"7.7"
         },
         {
             "name": "Южный Парк: Потоковые Войны Часть 2",
             "image": "https://image.tmdb.org/t/p/w500//cqWXH5rYHTD32I5RY6pHR828BrO.jpg",
-            "link": "/see/card/cartoons/500-76/Yuzhnyj-Park.html",
+            "link": "/see/card/cartoons/500-159/Yuzhnyj-Park-Potokovye-Vojny-Chast-2.html",
             "year": "2022",
             "rating":"7.1"
         },
         {
             "name": "Южный Парк: Потоковые Войны",
             "image": "https://image.tmdb.org/t/p/w500//dfgZJlKYg5xm6dBl05bOKhfunXb.jpg",
-            "link": "/see/card/cartoons/500-76/Yuzhnyj-Park.html",
+            "link": "/see/card/cartoons/500-160/Yuzhnyj-Park-Potokovye-Vojny.html",
             "year": "2022",
             "rating":"7.2"
         },
         {
             "name": "Южный Парк: пост-ковидный: возвращение ковида",
             "image": "https://image.tmdb.org/t/p/w500//vkONqd4gcYXqboYYqlaFFEYzRE3.jpg",
-            "link": "/see/card/cartoons/500-76/Yuzhnyj-Park.html",
+            "link": "/see/card/cartoons/500-161/Yuzhnyj-Park-post-kovidnyj-vozvrashenie-kovida.html",
             "year": "2021",
             "rating":"7.4"
         },
         {
             "name": "Южный Парк: пост-ковидный",
             "image": "https://image.tmdb.org/t/p/w500//slwTmP4737sJV1hYMYezMoYCjYa.jpg",
-            "link": "/see/card/cartoons/500-76/Yuzhnyj-Park.html",
+            "link": "/see/card/cartoons/500-162/Yuzhnyj-Park-post-kovidnyj.html",
             "year": "2021",
             "rating":"7.2"
         },
         {
             "name": "Южный Парк: Воображляндия",
             "image": "https://image.tmdb.org/t/p/w500//eENI0WN2AAuQWfPmQupzMD6G4gV.jpg",
-            "link": "/see/card/cartoons/500-76/Yuzhnyj-Park.html",
+            "link": "/see/card/cartoons/500-163/Yuzhnyj-Park-Voobrazhlyandiya.html",
             "year": "2008",
             "rating":"7.9"
         },
         {
             "name": "Южный Парк: Большой, длинный и необрезанный",
             "image": "https://image.tmdb.org/t/p/original/tS0PedvA2mFO9VCHYwQpaU1K36U.jpg",
-            "link": "/see/card/cartoons/500-76/Yuzhnyj-Park.html",
+            "link": "/see/card/cartoons/500-164/Yuzhnyj-Park-Bolshoj-dlinnyj-i-neobrezannyj.html",
             "year": "1999",
             "rating":"7.3"
         },
@@ -963,7 +964,7 @@ function generateRandomCards() {
         {
             "name": "Холодное сердце 2",
             "image": "https://image.tmdb.org/t/p/w500//4NIQcsmtyBOoJKI3c1Rg5sFFaUj.jpg",
-            "link": "/see/card/cartoons/500-45/Holodnoe-serdce.html",
+            "link": "/see/card/cartoons/500-165/Holodnoe-serdce-2.html",
             "year": "2019",
             "rating":"7.3"
         },
@@ -984,21 +985,21 @@ function generateRandomCards() {
         {
             "name": "Шрэк Навсегда",
             "image": "https://image.tmdb.org/t/p/w500//6n740zxR80xTNCHK3Uo3Mzj5CED.jpg",
-            "link": "/see/card/cartoons/500-47/Shrek.html",
+            "link": "/see/card/cartoons/500-166/Shrek-Navsegda.html",
             "year": "2010",
             "rating":"6.4"
         },
         {
             "name": "Шрэк 3",
             "image": "https://image.tmdb.org/t/p/w500//o2uojIx8bgL7Bxs4PGXbKStMz2o.jpg",
-            "link": "/see/card/cartoons/500-47/Shrek.html",
+            "link": "/see/card/cartoons/500-167/Shrek-3.html",
             "year": "2007",
             "rating":"6.3"
         },
         {
             "name": "Шрэк 2",
             "image": "https://image.tmdb.org/t/p/w500//vALSn7rJEuX742gWKcmCVLquw5J.jpg",
-            "link": "/see/card/cartoons/500-47/Shrek.html",
+            "link": "/see/card/cartoons/500-168/Shrek-2.html",
             "year": "2004",
             "rating":"7.3"
         },
@@ -1012,7 +1013,7 @@ function generateRandomCards() {
         {
             "name": "Симпсоны в кино",
             "image": "https://image.tmdb.org/t/p/w500//51mnJmefPpRYNgQ9j1G13Rcar6J.jpg",
-            "link": "/see/card/cartoons/500-75/Simpsony.html",
+            "link": "/see/card/cartoons/500-169/Simpsony-v-kino.html",
             "year": "2007",
             "rating":"7.0"
         },
@@ -1042,7 +1043,7 @@ function generateRandomCards() {
         {
             "name": "Головоломка 2",
             "image": "https://image.tmdb.org/t/p/w500//5fXrqBIvatwSuph7nTuSETBQYxm.jpg",
-            "link": "/see/card/cartoons/500-50/Golovolomka.html",
+            "link": "/see/card/cartoons/500-170/Golovolomka-2.html",
             "year": "2024",
             "rating":"7.6"
         },
@@ -1056,21 +1057,21 @@ function generateRandomCards() {
         {
             "name": "Монстры на каникулах: Трансформания",
             "image": "https://image.tmdb.org/t/p/w500//AlNkzripIDbRfP0ipKFDYXJa1e0.jpg",
-            "link": "/see/card/cartoons/500-51/Monstry-na-kanikulah.html",
+            "link": "/see/card/cartoons/500-171/Monstry-na-kanikulah-Transformaniya.html",
             "year": "2022",
             "rating":"7.1"
         },
         {
             "name": "Монстры на каникулах 3: Море зовёт",
             "image": "https://image.tmdb.org/t/p/w500//p4on3LYdFXgMefXLpUlIyNoEb4P.jpg",
-            "link": "/see/card/cartoons/500-51/Monstry-na-kanikulah.html",
+            "link": "/see/card/cartoons/500-172/Monstry-na-kanikulah-3-More-zovyot.html",
             "year": "2018",
             "rating":"6.9"
         },
         {
             "name": "Монстры на каникулах 2",
             "image": "https://image.tmdb.org/t/p/w500//75lGCEnBRD26y2fZq45k4tgwWTQ.jpg",
-            "link": "/see/card/cartoons/500-51/Monstry-na-kanikulah.html",
+            "link": "/see/card/cartoons/500-173/Monstry-na-kanikulah-2.html",
             "year": "2015",
             "rating":"6.8"
         },
@@ -1084,21 +1085,21 @@ function generateRandomCards() {
         {
             "name": "Зверопой 2",
             "image": "https://image.tmdb.org/t/p/w500//cYWc9bCi2gprrXnIMa4MqXUTpNu.jpg",
-            "link": "/see/card/cartoons/500-52/Zveropolis.html",
+            "link": "/see/card/cartoons/500-174/Zveropoj-2.html",
             "year": "2021",
             "rating":"7.8"
         },
         {
             "name": "Зверопой",
             "image": "https://image.tmdb.org/t/p/w500//vlXBtiqwNrcheDh4TB5kHTRnlUY.jpg",
-            "link": "/see/card/cartoons/500-52/Zveropolis.html",
+            "link": "/see/card/cartoons/500-175/Zveropoj.html",
             "year": "2016",
             "rating":"7.1"
         },
         {
             "name": "Зверополис+",
             "image": "https://image.tmdb.org/t/p/w500//inzPPPr2BsE92m4rHhQn3sf2yPk.jpg",
-            "link": "/see/card/cartoons/500-52/Zveropolis.html",
+            "link": "/see/card/cartoons/500-176/Zveropolis-2022.html",
             "year": "2022",
             "rating":"7.2",
             "isTV": true
@@ -1113,9 +1114,9 @@ function generateRandomCards() {
         {
             "name": "Как приручить бизона",
             "image": "https://image.tmdb.org/t/p/w500//r9BeqSkZdGuvFGQ7BoIPSbMAihh.jpg",
-            "link": "/see/card/cartoons/500-53/Paranorman,-ili-Kak-priruchit-zombi.html",
+            "link": "/see/card/cartoons/500-177/Kak-priruchit-bizona.html",
             "year": "2024",
-            "rating":"6.7"
+            "rating":"6.8"
         },
         {
             "name": "Паранорман, или Как приручить зомби",
