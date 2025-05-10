@@ -1298,7 +1298,7 @@ function generateRandomCards() {
         },
         {
             "name": "Человек-паук",
-            "image": "https://image.tmdb.org/t/p/w500//Y43QSDxYivUkmw7eFm1JR3Qqwc.jpg",
+            "image": "https://image.tmdb.org/t/p/original/nJomMoPbzmud9Ar0G0wQTWagFaS.jpg",
             "link": "/see/card/cartoons/500-192/Chelovek-pauk-1981.html",
             "year": "1981",
             "rating":"7.2",
