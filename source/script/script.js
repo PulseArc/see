@@ -217,6 +217,13 @@ const data = [
         "rating":"7.8"
     },
     {
+        "name": "Золото джунглей",
+        "image": "https://image.tmdb.org/t/p/w500//1HuoF1IYoixGXhYznep4kBtijLZ.jpg",
+        "link": "/see/card/movies/800-236/Zoloto-dzhunglej.html",
+        "year": "2017",
+        "rating":"5.7"
+    },
+    {
         "name": "Вуди Вудпекер в летнем лагере",
         "image": "https://image.tmdb.org/t/p/w500//oAF42DFZA430eEzRmEcrpB0D3rp.jpg",
         "link": "/see/card/movies/800-65/Vudi-Vudpeker-otpravlyaetsya-v-lager.html",
@@ -2220,14 +2227,14 @@ const data = [
     {
         "name": "Как приручить дракона 3",
         "image": "https://image.tmdb.org/t/p/w500//AdIhqttutOdkKUttw8ofld870Dx.jpg",
-        "link": "/see/card/cartoons/500-55/Kak-priruchit-drakona.html",
+        "link": "/see/card/cartoons/500-178/Kak-priruchit-drakona-3.html",
         "year": "2019",
         "rating":"7.7"
     },
     {
         "name": "Как приручить дракона 2",
         "image": "https://image.tmdb.org/t/p/w500//1o0MBGNfvL0doZR7kWJdqVBXs7r.jpg",
-        "link": "/see/card/cartoons/500-55/Kak-priruchit-drakona.html",
+        "link": "/see/card/cartoons/500-179/Kak-priruchit-drakona-2.html",
         "year": "2014",
         "rating":"7.7"
     },
@@ -2241,7 +2248,7 @@ const data = [
     {
         "name": "Суперсемейка 2",
         "image": "https://image.tmdb.org/t/p/w500//vwer36JvbZxeZ6ZRBvzrsUm6tYt.jpg",
-        "link": "/see/card/cartoons/500-56/Supersemejka.html",
+        "link": "/see/card/cartoons/500-180/Supersemejka-2.html",
         "year": "2018",
         "rating":"7.5"
     },
@@ -2276,7 +2283,7 @@ const data = [
     {
         "name": "Моана 2",
         "image": "https://image.tmdb.org/t/p/w500//wrg0C7sw1T1ogXvS8P4kiawY9xv.jpg",
-        "link": "/see/card/cartoons/500-59/Moana.html",
+        "link": "/see/card/cartoons/500-181/Moana-2.html",
         "year": "2024",
         "rating":"7.1"
     },
@@ -2297,14 +2304,14 @@ const data = [
     {
         "name": "Человек-паук: Через вселенные",
         "image": "https://image.tmdb.org/t/p/w500//wmEKJr81CABBU68Qy2wYPwQHn0L.jpg",
-        "link": "/see/card/cartoons/500-60/Chelovek-pauk-Pautina-vselennyh.html",
+        "link": "/see/card/cartoons/500-182/Chelovek-pauk-Cherez-vselennye.html",
         "year": "2018",
         "rating":"8.4"
     },
     {
         "name": "Ваш дружелюбный сосед Человек-Паук",
         "image": "https://image.tmdb.org/t/p/w500//4uFWdcZilCMS8cwanp1b2baqFbU.jpg",
-        "link": "/see/card/cartoons/500-60/Chelovek-pauk-Pautina-vselennyh.html",
+        "link": "/see/card/cartoons/500-183/Vash-druzhelyubnyj-sosed-Chelovek-Pauk.html",
         "year": "2025",
         "rating":"7.8",
         "isTV": true
@@ -2312,7 +2319,7 @@ const data = [
     {
         "name": "Паучок и его удивительные друзья",
         "image": "https://image.tmdb.org/t/p/w500//etO5jDS5WgR4Y1lTyXhQcilJ6u2.jpg",
-        "link": "/see/card/cartoons/500-60/Chelovek-pauk-Pautina-vselennyh.html",
+        "link": "/see/card/cartoons/500-184/Pauchok-i-ego-udivitelnye-druzya.html",
         "year": "2021",
         "rating":"7.3",
         "isTV": true
@@ -2320,7 +2327,7 @@ const data = [
     {
         "name": "Человек-паук",
         "image": "https://image.tmdb.org/t/p/w500//dKdcyyHUR5WTMnrbPdYN5y9xPVp.jpg",
-        "link": "/see/card/cartoons/500-60/Chelovek-pauk-Pautina-vselennyh.html",
+        "link": "/see/card/cartoons/500-185/Chelovek-pauk-2017.html",
         "year": "2017",
         "rating":"7.5",
         "isTV": true
@@ -2328,15 +2335,15 @@ const data = [
     {
         "name": "Великий Человек-паук",
         "image": "https://image.tmdb.org/t/p/w500//usY6rAxW0fGJJDGypFg8UthUqvs.jpg",
-        "link": "/see/card/cartoons/500-60/Chelovek-pauk-Pautina-vselennyh.html",
+        "link": "/see/card/cartoons/500-186/Velikij-Chelovek-pauk.html",
         "year": "2012",
-        "rating":"8.6",
+        "rating":"7.7",
         "isTV": true
     },
     {
         "name": "Грандиозный Человек-паук",
         "image": "https://image.tmdb.org/t/p/w500//dCNxOhXT7c4lqYuRpdM3m8s9XDp.jpg",
-        "link": "/see/card/cartoons/500-60/Chelovek-pauk-Pautina-vselennyh.html",
+        "link": "/see/card/cartoons/500-187/Grandioznyj-Chelovek-pauk.html",
         "year": "2008",
         "rating":"8.6",
         "isTV": true
@@ -2344,7 +2351,7 @@ const data = [
     {
         "name": "Человек-паук",
         "image": "https://image.tmdb.org/t/p/w500//v3UfqXCAxAcI7oUO4zwtk1T9G3n.jpg",
-        "link": "/see/card/cartoons/500-60/Chelovek-pauk-Pautina-vselennyh.html",
+        "link": "/see/card/cartoons/500-188/Chelovek-pauk-2003.html",
         "year": "2003",
         "rating":"7.2",
         "isTV": true
@@ -2352,7 +2359,7 @@ const data = [
     {
         "name": "Непобедимый Спайдермен",
         "image": "https://image.tmdb.org/t/p/w500//vLzRWbu8MHuO2bcEblWEyHr0O7N.jpg",
-        "link": "/see/card/cartoons/500-60/Chelovek-pauk-Pautina-vselennyh.html",
+        "link": "/see/card/cartoons/500-189/Nepobedimyj-Spajdermen.html",
         "year": "1999",
         "rating":"7.5",
         "isTV": true
@@ -2360,7 +2367,7 @@ const data = [
     {
         "name": "Человек-паук",
         "image": "https://image.tmdb.org/t/p/w500//xEJaSQaNqWUd0JQjKRhMFcc4TuA.jpg",
-        "link": "/see/card/cartoons/500-60/Chelovek-pauk-Pautina-vselennyh.html",
+        "link": "/see/card/cartoons/500-190/Chelovek-pauk-1994.html",
         "year": "1994",
         "rating":"8.3",
         "isTV": true
@@ -2368,7 +2375,7 @@ const data = [
     {
         "name": "Человек-Паук и его удивительные друзья",
         "image": "https://image.tmdb.org/t/p/w500//4b8HFH1arZ4b05RHwxPc2JfueYv.jpg",
-        "link": "/see/card/cartoons/500-60/Chelovek-pauk-Pautina-vselennyh.html",
+        "link": "/see/card/cartoons/500-191/Chelovek-Pauk-i-ego-udivitelnye-druzya.html",
         "year": "1981",
         "rating":"7.4",
         "isTV": true
@@ -2376,7 +2383,7 @@ const data = [
     {
         "name": "Человек-паук",
         "image": "https://image.tmdb.org/t/p/w500//Y43QSDxYivUkmw7eFm1JR3Qqwc.jpg",
-        "link": "/see/card/cartoons/500-60/Chelovek-pauk-Pautina-vselennyh.html",
+        "link": "/see/card/cartoons/500-192/Chelovek-pauk-1981.html",
         "year": "1981",
         "rating":"7.2",
         "isTV": true
@@ -2384,7 +2391,7 @@ const data = [
     {
         "name": "Настоящий Человек-паук",
         "image": "https://image.tmdb.org/t/p/w500//tyvMExqaLlHObRGCuwiNZ24Ns2x.jpg",
-        "link": "/see/card/cartoons/500-60/Chelovek-pauk-Pautina-vselennyh.html",
+        "link": "/see/card/cartoons/500-193/Nastoyashij-Chelovek-pauk.html",
         "year": "1967",
         "rating":"7.7",
         "isTV": true
@@ -2392,7 +2399,7 @@ const data = [
     {
         "name": "Миньоны: Грювитация",
         "image": "https://image.tmdb.org/t/p/w500//mz14SJeXJ3sLMxM2fS7APWklFfX.jpg",
-        "link": "/see/card/cartoons/500-61/Minony.html",
+        "link": "/see/card/cartoons/500-194/Minony-Gryuvitaciya.html",
         "year": "2022",
         "rating":"7.3"
     },
@@ -2406,28 +2413,28 @@ const data = [
     {
         "name": "Гадкий я 4",
         "image": "https://image.tmdb.org/t/p/w500//ppSdlmiEmfjsdx9jNHfJ2DQ2IVp.jpg",
-        "link": "/see/card/cartoons/500-61/Minony.html",
+        "link": "/see/card/cartoons/500-195/Gadkij-ya-4.html",
         "year": "2024",
         "rating":"7.1"
     },
     {
         "name": "Гадкий я 3",
         "image": "https://image.tmdb.org/t/p/w500//wlSfRcfo2mkHwegiXCoeiQnQ874.jpg",
-        "link": "/see/card/cartoons/500-61/Minony.html",
+        "link": "/see/card/cartoons/500-196/Gadkij-ya-3.html",
         "year": "2017",
         "rating":"6.5"
     },
     {
         "name": "Гадкий я 2",
         "image": "https://image.tmdb.org/t/p/w500//onACDW8RBbHhhuLCasaeK0sLKT0.jpg",
-        "link": "/see/card/cartoons/500-61/Minony.html",
+        "link": "/see/card/cartoons/500-197/Gadkij-ya-2.html",
         "year": "2013",
         "rating":"6.9"
     },
     {
         "name": "Гадкий я",
         "image": "https://image.tmdb.org/t/p/w500//n1PD367AaU6J2abLmiZrxeuqyb0.jpg",
-        "link": "/see/card/cartoons/500-61/Minony.html",
+        "link": "/see/card/cartoons/500-198/Gadkij-ya.html",
         "year": "2010",
         "rating":"7.2"
     },
@@ -2448,7 +2455,7 @@ const data = [
     {
         "name": "Angry Birds: Летнее безумие",
         "image": "https://image.tmdb.org/t/p/w500//6ko4jfA5BrcRADDaAfMagZ4ZGpG.jpg",
-        "link": "/see/card/cartoons/500-64/Angry-Birds-v-kino-2.html",
+        "link": "/see/card/cartoons/500-199/Angry-Birds-Letnee-bezumie.html",
         "year": "2022",
         "rating":"7.2",
         "isTV": true
@@ -2463,14 +2470,14 @@ const data = [
     {
         "name": "Angry Birds в кино",
         "image": "https://image.tmdb.org/t/p/w500//rRBnDVllqsYG3F0A8Qc75wMiw5I.jpg",
-        "link": "/see/card/cartoons/500-64/Angry-Birds-v-kino-2.html",
+        "link": "/see/card/cartoons/500-200/Angry-Birds-v-kino.html",
         "year": "2016",
         "rating":"6.2"
     },
     {
         "name": "Angry Birds. Сердитые птички",
         "image": "https://image.tmdb.org/t/p/w500//eIte8WWTWszppxtv2MQIqZSOWM1.jpg",
-        "link": "/see/card/cartoons/500-64/Angry-Birds-v-kino-2.html",
+        "link": "/see/card/cartoons/500-201/Angry-Birds-Serditye-ptichki.html",
         "year": "2013",
         "rating":"6.1",
         "isTV": true

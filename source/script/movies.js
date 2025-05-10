@@ -759,6 +759,13 @@ function generateRandomCards() {
             "rating":"7.8"
         },
         {
+            "name": "Золото джунглей",
+            "image": "https://image.tmdb.org/t/p/w500//1HuoF1IYoixGXhYznep4kBtijLZ.jpg",
+            "link": "/see/card/movies/800-236/Zoloto-dzhunglej.html",
+            "year": "2017",
+            "rating":"5.7"
+        },
+        {
             "name": "Вуди Вудпекер в летнем лагере",
             "image": "https://image.tmdb.org/t/p/w500//oAF42DFZA430eEzRmEcrpB0D3rp.jpg",
             "link": "/see/card/movies/800-65/Vudi-Vudpeker-otpravlyaetsya-v-lager.html",
