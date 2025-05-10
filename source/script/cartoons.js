@@ -1408,21 +1408,21 @@ function generateRandomCards() {
         {
             "name": "Кунг-фу Панда 3",
             "image": "https://image.tmdb.org/t/p/w500//2YSydZMbCSMMdtCEEYVfJsDrQyc.jpg",
-            "link": "/see/card/cartoons/500-65/Kung-fu-Panda-4.html",
+            "link": "/see/card/cartoons/500-202/Kung-fu-Panda-3.html",
             "year": "2016",
             "rating":"6.9"
         },
         {
             "name": "Кунг-фу Панда 2",
             "image": "https://image.tmdb.org/t/p/w500//7DOB9aaa6PpCclaLRlMBTR34Ti.jpg",
-            "link": "/see/card/cartoons/500-65/Kung-fu-Panda-4.html",
+            "link": "/see/card/cartoons/500-203/Kung-fu-Panda-2.html",
             "year": "2011",
             "rating":"7.0"
         },
         {
             "name": "Кунг-фу Панда: Захватывающие легенды",
             "image": "https://image.tmdb.org/t/p/w500//rkq5Jt7boR5v65bDbELHz3DW7sv.jpg",
-            "link": "/see/card/cartoons/500-65/Kung-fu-Panda-4.html",
+            "link": "/see/card/cartoons/500-204/Kung-fu-Panda-Zahvatyvayushie-legendy.html",
             "year": "2011",
             "rating":"7.4",
             "isTV": true
@@ -1430,7 +1430,7 @@ function generateRandomCards() {
         {
             "name": "Кунг-фу Панда",
             "image": "https://image.tmdb.org/t/p/w500//3EQ7y1wVCPsCnlB3PGee618SdIc.jpg",
-            "link": "/see/card/cartoons/500-65/Kung-fu-Panda-4.html",
+            "link": "/see/card/cartoons/500-205/Kung-fu-Panda.html",
             "year": "2008",
             "rating":"7.0"
         },
@@ -1451,14 +1451,14 @@ function generateRandomCards() {
         {
             "name": "Дневник слабака: Рождественская лихорадка",
             "image": "https://image.tmdb.org/t/p/w500//tcVlrSIeafV8uWJMt4Aqwp1NCx2.jpg",
-            "link": "/see/card/cartoons/500-68/Dnevnik-slabaka.html",
+            "link": "/see/card/cartoons/500-206/Dnevnik-slabaka-Rozhdestvenskaya-lihoradka.html",
             "year": "2023",
-            "rating":"6.5"
+            "rating":"6.6"
         },
         {
             "name": "Дневник слабака: Правила Родрика",
             "image": "https://image.tmdb.org/t/p/w500//uzhA8ZkrVlNVeysfmvITMYR2MlM.jpg",
-            "link": "/see/card/cartoons/500-68/Dnevnik-slabaka.html",
+            "link": "/see/card/cartoons/500-207/Dnevnik-slabaka-Pravila-Rodrika.html",
             "year": "2022",
             "rating":"6.8"
         },
@@ -1472,7 +1472,7 @@ function generateRandomCards() {
         {
             "name": "Время приключений: Фионна и Кейк",
             "image": "https://image.tmdb.org/t/p/w500//eDqwpPj3H6iSwyqWVEA7c2CZzS9.jpg",
-            "link": "/see/card/cartoons/500-74/Vremya-priklyuchenij.html",
+            "link": "/see/card/cartoons/500-208/Vremya-priklyuchenij-Fionna-i-Kejk.html",
             "year": "2023",
             "rating":"8.8",
             "isTV": true
@@ -1480,7 +1480,7 @@ function generateRandomCards() {
         {
             "name": "Время приключений: Далёкие земли",
             "image": "https://image.tmdb.org/t/p/original/k3E4RXC0CcWznXjlTBz01SQ2r6z.jpg",
-            "link": "/see/card/cartoons/500-74/Vremya-priklyuchenij.html",
+            "link": "/see/card/cartoons/500-209/Vremya-priklyuchenij-Dalyokie-zemli.html",
             "year": "2020",
             "rating":"8.1",
             "isTV": true
@@ -1517,21 +1517,21 @@ function generateRandomCards() {
         {
             "name": "Лило и Стич 2: Большая Проблема Стича",
             "image": "https://image.tmdb.org/t/p/w500//iXI3yci0L32ItDicRH3AUyuKsGp.jpg",
-            "link": "/see/card/cartoons/500-71/Leroj-i-Stich.html",
+            "link": "/see/card/cartoons/500-210/Lilo-i-Stich-2-Bolshaya-Problema-Sticha.html",
             "year": "2005",
             "rating":"6.7"
         },
         {
             "name": "Новые Приключения Стича",
             "image": "https://image.tmdb.org/t/p/w500//7DloQFBMZzH1r355T52GP4iye5Y.jpg",
-            "link": "/see/card/cartoons/500-71/Leroj-i-Stich.html",
+            "link": "/see/card/cartoons/500-211/Novye-Priklyucheniya-Sticha.html",
             "year": "2003",
             "rating":"6.4"
         },
         {
             "name": "Лило и Стич",
             "image": "https://image.tmdb.org/t/p/w500//srUqap7vwsQDycwikiw3MxpuvUx.jpg",
-            "link": "/see/card/cartoons/500-71/Leroj-i-Stich.html",
+            "link": "/see/card/cartoons/500-212/Lilo-i-Stich.html",
             "year": "2003",
             "rating":"7.4",
             "isTV": true
@@ -1539,7 +1539,7 @@ function generateRandomCards() {
         {
             "name": "Лило и Стич",
             "image": "https://image.tmdb.org/t/p/w500//6YhJyjmkGiP34uVa56ZkfSs8UXm.jpg",
-            "link": "/see/card/cartoons/500-71/Leroj-i-Stich.html",
+            "link": "/see/card/cartoons/500-213/Lilo-i-Stich-2002.html",
             "year": "2002",
             "rating":"7.5"
         },
@@ -1551,11 +1551,12 @@ function generateRandomCards() {
             "rating":"6.9"
         },
         {
-            "name": "Базз Лайтер из звёздной команды: Приключения...",
+            "name": "Приключения Базза Лайтера из Звёздной Команды",
             "image": "https://image.tmdb.org/t/p/w500//4uFvEU2NMx4p4U2vEvsuC0kLcUF.jpg",
-            "link": "/see/card/cartoons/500-72/Bazz-Lajter.html",
+            "link": "/see/card/cartoons/500-214/Priklyucheniya-Bazza-Lajtera-iz-Zvyozdnoj-Komandy.html",
             "year": "2000",
-            "rating":"6.4"
+            "rating":"6.5",
+            "isTV": true
         },
        
         
