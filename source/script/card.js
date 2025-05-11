@@ -106,6 +106,51 @@ document.addEventListener('DOMContentLoaded', function () {
   const phoneVersion = document.querySelector('.Phone-version'); // Блок Phone-version
   const hero = document.querySelector('.hero'); // Блок hero
 
+
+
+
+  
+  // Функция для обновления состояния поля ввода
+  function updateSearchInputState() {
+    if (searchWrapper.classList.contains('active')) {
+        searchInput.removeAttribute('disabled'); // Разрешить ввод
+    } else {
+        searchInput.setAttribute('disabled', 'disabled'); // Запретить ввод
+    }
+}
+
+// Изначальная проверка состояния
+updateSearchInputState();
+
+// Обработчик события наведения мыши (для разворачивания поля)
+searchWrapper.addEventListener('mouseover', () => {
+    searchWrapper.classList.add('active');
+    updateSearchInputState();
+});
+
+// Обработчик события ухода мыши (для сворачивания поля)
+searchWrapper.addEventListener('mouseout', () => {
+    searchWrapper.classList.remove('active');
+    updateSearchInputState();
+});
+
+// Обработчик события изменения состояния меню (если это влияет на поиск)
+if (menuToggle && searchWrapper) {
+    menuToggle.addEventListener('change', () => {
+        // Здесь может быть ваша логика, определяющая, когда поиск активен/неактивен
+        // Например, если при открытом меню поиск должен быть неактивен:
+        if (menuToggle.checked) {
+            searchWrapper.classList.remove('active'); // Сворачиваем поиск
+        } else {
+            // searchWrapper.classList.add('active'); // Разворачиваем поиск (опционально)
+        }
+        updateSearchInputState();
+    });
+}
+
+
+
+
   // Проверяем, существуют ли элементы перед тем, как с ними работать
   if (!searchInput || !resultsContainer || !clearIcon) return;
 
