@@ -236,41 +236,12 @@ const globalResizeObserver = new ResizeObserver(entries => {
   positionCardRating();
 });
 
-function positionCardRating() {
-  const cards = document.querySelectorAll('.card');
-
-  cards.forEach(card => {
-    const image = card.querySelector('.card-img-top');
-    const rating = card.querySelector('.card-rating');
-    const ratingTrend = card.querySelector('.card-rating-trand');
-
-    if (image) {
-      const imageRect = image.getBoundingClientRect();
-      const cardRect = card.getBoundingClientRect();
-
-      const bottom = cardRect.height - (imageRect.bottom - cardRect.top) + 8;
-      const right = cardRect.width - (imageRect.right - cardRect.left) + 8;
-
-      if (rating) {
-        rating.style.position = 'absolute';
-        rating.style.bottom = bottom + 'px';
-        rating.style.right = right + 'px';
-      }
-
-      if (ratingTrend) {
-        ratingTrend.style.position = 'absolute';
-        ratingTrend.style.bottom = bottom + 'px';
-        ratingTrend.style.right = (right + 10) + 'px';
-      }
-    }
-  });
-}
-
 function handleShowMoreClick(buttonId, cardContainerClass) {
   const button = document.getElementById(buttonId);
   const batchSize = 24;
   let shownCards = [];
   let lastClickedButton = null;
+  let firstBatchShown = false; // Флаг, чтобы отслеживать, была ли показана первая партия
 
   button.addEventListener("click", function() {
     const allCards = document.querySelectorAll(`.${cardContainerClass}`);
@@ -279,7 +250,7 @@ function handleShowMoreClick(buttonId, cardContainerClass) {
       const hiddenCards = Array.from(allCards).filter(card => card.classList.contains("hidden"));
       const toShow = hiddenCards.slice(0, batchSize);
 
-      toShow.forEach(card => {
+      toShow.forEach((card, index) => {
         card.classList.add("fade-in");
         card.classList.remove("hidden");
 
@@ -289,12 +260,22 @@ function handleShowMoreClick(buttonId, cardContainerClass) {
 
         shownCards.push(card);
 
+        // Добавляем класс "first-batch-visible" только к первой партии показанных карточек
+        if (!firstBatchShown && index < toShow.length) {
+          card.classList.add("first-batch-visible");
+        }
+
         // Получаем изображение и начинаем его отслеживать
         const image = card.querySelector('.card-img-top');
         if (image) {
           globalResizeObserver.observe(image);
         }
       });
+
+      // Устанавливаем флаг после показа первой партии
+      if (!firstBatchShown && toShow.length > 0) {
+        firstBatchShown = true;
+      }
 
       if (document.querySelectorAll(`.${cardContainerClass}.hidden`).length === 0) {
         button.textContent = "Скрыть";
@@ -308,8 +289,10 @@ function handleShowMoreClick(buttonId, cardContainerClass) {
         card.classList.remove("visible");
         card.classList.add("hidden");
         card.classList.remove("fade-in");
+        card.classList.remove("first-batch-visible"); // Удаляем класс при скрытии
       });
       shownCards = [];
+      firstBatchShown = false; // Сбрасываем флаг при скрытии
 
       button.textContent = "Ещё";
       button.classList.remove("red");
