@@ -738,7 +738,7 @@ h4 {
 .fade-in {
     filter: blur(10px); /* Начальный блюр (можно настроить) */
     opacity: 0.6; /* Немного прозрачности, чтобы блюр был заметнее */
-    transition: filter 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    transition: filter 0.25s ease-in-out, opacity 0.25s ease-in-out;
   }
   
   .fade-in.visible {
@@ -831,7 +831,9 @@ h4 {
 .card:hover .card-rating-trand { /* *** Изменено *** */
     transform: scale(1.06);
 }
-
+.first-batch-visible {
+    margin-top: 0.33em !important; /* Отступ только для первой партии */
+  }
 .card-rating {
     color: #ffffff;
     background: rgba(0, 0, 0, 0.5);
