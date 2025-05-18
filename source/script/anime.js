@@ -3,19 +3,24 @@
 // Генерация карточек с случайными рейтингами
 // Мультфильмы
 document.addEventListener('DOMContentLoaded', function () {
+    console.log("DOMContentLoaded: Страница загружена");
     generateRandomCards();
-    setTimeout(positionCardRatingTrand, 100); // Добавляем вызов для card-rating-trand
+    setTimeout(positionCardRatingTrand, 100);
 });
 
 function generateRandomCards() {
-    var cardData = [
+    var currentMovieTitleElement = document.querySelector('title');
+    var currentMovieYearElement = document.getElementById('movie-year');
+    var currentMovieGenresElement = document.querySelector('.full-genre');
+    var allCardData = [
         {
             "name": "Башня Бога",
             "image": "https://image.tmdb.org/t/p/w500//m4FQUNPbxonuv4kcFm1YgyRgl2C.jpg",
             "link": "/see/card/anime/100-01/Bashnya-Boga.html",
             "year": "2020",
             "rating":"8.3",
-            "isTV": true
+            "isTV": true,
+            "genres": ["Детектив", "НФ и Фэнтези", "Боевик и Приключения"]
         },
         {
           "name": "Поднятие уровня в одиночку",
@@ -23,7 +28,8 @@ function generateRandomCards() {
           "link": "/see/card/anime/100-02/Podnyatie-urovnya-v-odinochku.html",
           "year": "2024",
           "rating":"8.5",
-          "isTV": true
+          "isTV": true,
+          "genres": ["Боевик", "Приключения", "Фэнтези"]
       },
       {
         "name": "Наруто: Ураганные хроники",
@@ -31,7 +37,8 @@ function generateRandomCards() {
         "link": "/see/card/anime/100-03/Naruto-Uragannye-hroniki.html",
         "year": "2007",
         "rating":"8.5",
-        "isTV": true
+        "isTV": true,
+        "genres": ["Боевик и Приключения", "НФ и Фэнтези"]
     },
     {
       "name": "Блич",
@@ -39,7 +46,8 @@ function generateRandomCards() {
       "link": "/see/card/anime/100-04/Blich.html",
       "year": "2004",
       "rating":"8.4",
-      "isTV": true
+      "isTV": true,
+      "genres": ["Боевик и Приключения", "НФ и Фэнтези"]
   },
   {
     "name": "Ванпанчмен",
@@ -47,7 +55,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-05/Vanpanchmen.html",
     "year": "2015",
     "rating":"8.5",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Комедия", "НФ и Фэнтези"]
 },
 {
   "name": "Восхождение в тени!",
@@ -55,7 +64,8 @@ function generateRandomCards() {
   "link": "/see/card/anime/100-06/Voshozhdenie-v-teni.html",
   "year": "2022",
   "rating":"8.1",
-  "isTV": true
+  "isTV": true,
+  "genres": ["Комедия", "НФ и Фэнтези", "Боевик и Приключения"]
 },
 {
   "name": "Магическая битва",
@@ -63,7 +73,8 @@ function generateRandomCards() {
   "link": "/see/card/anime/100-07/Magicheskaya-bitva.html",
   "year": "2020",
   "rating":"8.6",
-  "isTV": true
+  "isTV": true,
+  "genres": ["Боевик и Приключения", "НФ и Фэнтези"]
 },
 {
   "name": "Баскетбол Куроко",
@@ -71,7 +82,8 @@ function generateRandomCards() {
   "link": "/see/card/anime/100-08/Basketbol-Kuroko.html",
   "year": "2012",
   "rating":"8.5",
-  "isTV": true
+  "isTV": true,
+  "genres": ["Комедия", "Драма", "Спорт"]
 },
 {
   "name": "Дорохедоро",
@@ -79,7 +91,8 @@ function generateRandomCards() {
   "link": "/see/card/anime/100-09/Dorohedoro.html",
   "year": "2020",
   "rating":"8.3",
-  "isTV": true
+  "isTV": true,
+  "genres": ["Комедия", "Боевик и Приключения", "НФ и Фэнтези"]
 },
 {
   "name": "Человек-бензопила",
@@ -87,7 +100,8 @@ function generateRandomCards() {
   "link": "/see/card/anime/100-10/Chelovek-benzopila.html",
   "year": "2022",
   "rating":"8.6",
-  "isTV": true
+  "isTV": true,
+  "genres": ["Боевик и Приключения", "НФ и Фэнтези"]
 },
 {
   "name": "Дороро",
@@ -95,7 +109,8 @@ function generateRandomCards() {
   "link": "/see/card/anime/100-11/Dororo.html",
   "year": "2019",
   "rating":"8.6",
-  "isTV": true
+  "isTV": true,
+  "genres": ["Боевик и Приключения"]
 },
 {
   "name": "Чёрный клевер",
@@ -103,7 +118,8 @@ function generateRandomCards() {
   "link": "/see/card/anime/100-12/Chyornyj-klever.html",
   "year": "2017",
   "rating":"8.5",
-  "isTV": true
+  "isTV": true,
+  "genres": ["Боевик и Приключения", "Комедия"]
 },
 {
   "name": "Магия и мускулы",
@@ -111,7 +127,8 @@ function generateRandomCards() {
   "link": "/see/card/anime/100-13/Magiya-i-muskuly.html",
   "year": "2023",
   "rating":"8.3",
-  "isTV": true
+  "isTV": true,
+  "genres": ["Комедия", "Боевик и Приключения", "НФ и Фэнтези"]
 },
 {
   "name": "Школа-тюрьма",
@@ -119,7 +136,8 @@ function generateRandomCards() {
   "link": "/see/card/anime/100-14/Shkola-tyurma.html",
   "year": "2015",
   "rating":"8.1",
-  "isTV": true
+  "isTV": true,
+  "genres": ["Комедия"]
 },
 {
     "name": "Шарлотта",
@@ -127,7 +145,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-15/Sharlotta.html",
     "year": "2015",
     "rating":"8.3",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Драма", "НФ и Фэнтези"]
 },
 {
     "name": "Семья шпиона",
@@ -135,7 +154,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-16/Semya-shpiona.html",
     "year": "2022",
     "rating":"8.6",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Комедия", "Боевик и Приключения"]
 },
 {
     "name": "Борьба в прямом эфире",
@@ -143,7 +163,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-17/Borba-v-pryamom-efire.html",
     "year": "2024",
     "rating":"8.3",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Комедия", "Боевик и Приключения"]
 },
 {
     "name": "Врата Штейна 0",
@@ -151,7 +172,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-18/Vrata-Shtejna-0.html",
     "year": "2018",
     "rating":"8.0",
-    "isTV": true
+    "isTV": true,
+    "genres": ["НФ и Фэнтези"]
 },
 {
     "name": "Ох, уж этот экстрасенс Сайки Кусуо!",
@@ -159,7 +181,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-19/Oh,-uzh-etot-ekstrasens-Sajki-Kusuo.html",
     "year": "2016",
     "rating":"8.3",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Комедия", "НФ и Фэнтези"]
 },
 {
     "name": "Ван-Пис",
@@ -167,7 +190,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-20/Van-Pis.html",
     "year": "1999",
     "rating":"8.7",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Боевик и Приключения", "Комедия"]
 },
 {
     "name": "Добро пожаловать в N.H.K.",
@@ -175,7 +199,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-21/Dobro-pozhalovat-v-N.H.K..html",
     "year": "2006",
     "rating":"8.5",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Комедия", "Драма"]
 },
 {
     "name": "Атака титанов",
@@ -183,7 +208,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-22/Ataka-titanov.html",
     "year": "2013",
     "rating":"8.7",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Боевик и Приключения", "НФ и Фэнтези"]
 },
 {
     "name": "Драконий жемчуг супер",
@@ -191,7 +217,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-23/Drakonij-zhemchug-super.html",
     "year": "2015",
     "rating":"8.2",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Боевик и Приключения", "НФ и Фэнтези"]
 },
 {
     "name": "Волейбол!!",
@@ -199,7 +226,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-24/Volejbol.html",
     "year": "2014",
     "rating":"8.6",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Комедия", "Боевик и Приключения" , "Спорт"]
 },
 {
     "name": "Мартовский лев",
@@ -207,7 +235,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-25/Martovskij-lev.html",
     "year": "2016",
     "rating":"7.9",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Драма"]
 },
 {
     "name": "Истребитель демонов",
@@ -215,7 +244,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-26/Istrebitel-demonov.html",
     "year": "2019",
     "rating":"8.7",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Боевик и Приключения", "НФ и Фэнтези"]
 },
 {
     "name": "Баки",
@@ -223,7 +253,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-27/Baki.html",
     "year": "2001",
     "rating":"8.1",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Спорт", "Криминал", "Драма"]
 },
 {
     "name": "Нана",
@@ -231,7 +262,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-28/Nana.html",
     "year": "2006",
     "rating":"8.4",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Комедия", "Драма", "Семейный"]
 },
 {
     "name": "Моя геройская академия",
@@ -239,7 +271,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-29/Moya-gerojskaya-akademiya.html",
     "year": "2016",
     "rating":"8.6",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Боевик и Приключения", "НФ и Фэнтези"]
 },
 {
     "name": "Страстное Сердце: Дикий Бомбардир",
@@ -247,7 +280,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-30/Strastnoe-Serdce-Dikij-Bombardir.html",
     "year": "2002",
     "rating":"7.9",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Комедия", "Драма" , "Спорт"]
 },
 {
     "name": "Дарованный",
@@ -255,7 +289,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-31/Darovannyj.html",
     "year": "2019",
     "rating":"8.6",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Драма"]
 },
 {
     "name": "Летнее время",
@@ -263,7 +298,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-32/Letnee-vremya.html",
     "year": "2022",
     "rating":"8.2",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Драма" , "Детектив"]
 },
 {
     "name": "Стальной Алхимик: Братство",
@@ -271,7 +307,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-33/Stalnoj-Alhimik-Bratstvo.html",
     "year": "2009",
     "rating":"8.7",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Боевик и Приключения", "НФ и Фэнтези"]
 },
 {
     "name": "Юри на льду",
@@ -279,7 +316,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-34/Yuri-na-ldu.html",
     "year": "2016",
     "rating":"8.6",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Комедия", "Драма"]
 },
 {
     "name": "Семь смертных грехов",
@@ -287,7 +325,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-35/Sem-smertnyh-grehov.html",
     "year": "2014",
     "rating":"8.4",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Боевик и Приключения", "НФ и Фэнтези"]
 },
 {
     "name": "Пес и Пускающая в ход ножницы",
@@ -295,7 +334,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-36/Pes-i-Puskayushaya-v-hod-nozhnicy.html",
     "year": "2013",
     "rating":"6.4",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Комедия"]
 },
 {
     "name": "Призрак в доспехах: Синдром одиночки",
@@ -303,7 +343,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-37/Prizrak-v-dospehah-Sindrom-odinochki.html",
     "year": "2002",
     "rating":"8.2",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Боевик и Приключения", "Криминал", "НФ и Фэнтези"]
 },
 {
     "name": "Токийский Гуль",
@@ -311,7 +352,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-38/Tokijskij-Gul.html",
     "year": "2014",
     "rating":"8.3",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Драма", "НФ и Фэнтези"]
 },
 {
     "name": "Мастера меча онлайн",
@@ -319,7 +361,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-39/Mastera-mecha-onlajn.html",
     "year": "2012",
     "rating":"8.2",
-    "isTV": true
+    "isTV": true,
+    "genres": ["НФ и Фэнтези", "Боевик и Приключения"]
 },
 {
     "name": "Убийца Акаме!",
@@ -327,7 +370,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-40/Ubijca-Akame!.html",
     "year": "2014",
     "rating":"8.3",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Драма", "Боевик и Приключения"]
 },
 {
     "name": "Синие Мибуро",
@@ -335,7 +379,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-41/Sinie-Miburo.html",
     "year": "2024",
     "rating":"8.4",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Боевик и Приключения"]
 },
 {
     "name": "Тетрадь смерти",
@@ -343,14 +388,16 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-42/Tetrad-smerti.html",
     "year": "2006",
     "rating":"8.6",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Детектив", "НФ и Фэнтези"]
 },
 {
     "name": "Унесённые призраками",
     "image": "https://image.tmdb.org/t/p/w500//xV3zYcOA6xFjYwizIMDDkl2MGT7.jpg",
     "link": "/see/card/anime/100-43/Unesyonnye-prizrakami.html",
     "year": "2001",
-    "rating":"8.5"
+    "rating":"8.5",
+    "genres": ["Мультфильм", "Семейный", "Фэнтези"]
 },
 {
     "name": "ПЛУТОН",
@@ -358,14 +405,16 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-44/PLUTON.html",
     "year": "2023",
     "rating":"7.9",
-    "isTV": true
+    "isTV": true,
+    "genres": ["НФ и Фэнтези", "Детектив", "Криминал"]
 },
 {
     "name": "Ходячий замок",
     "image": "https://image.tmdb.org/t/p/w500//oQvAlVSjYsJZPg9raiQRYE0aVrv.jpg",
     "link": "/see/card/anime/100-45/Hodyachij-zamok.html",
     "year": "2004",
-    "rating":"8.4"
+    "rating":"8.4",
+    "genres": ["Мультфильм", "Приключения", "Фэнтези"]
 },
 {
     "name": "Перерождение: Монстр",
@@ -373,7 +422,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-46/Pererozhdenie-Monstr.html",
     "year": "2024",
     "rating":"8.2",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Боевик и Приключения", "НФ и Фэнтези"]
 },
 {
     "name": "Звёзды Айкацу!",
@@ -381,7 +431,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-47/Zvyozdy-Ajkacu!.html",
     "year": "2016",
     "rating":"6.8",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Комедия", "Драма", "Семейный", "Детский"]
 },
 {
     "name": "Хоримия",
@@ -389,7 +440,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-48/Horimiya.html",
     "year": "2021",
     "rating":"8.6",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Комедия", "Драма"]
 },
 {
     "name": "Обещанный Неверленд",
@@ -397,14 +449,16 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-49/Obeshannyj-Neverlend.html",
     "year": "2019",
     "rating":"8.4",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Детектив", "Драма", "НФ и Фэнтези"]
 },
 {
     "name": "Твоё имя",
     "image": "https://image.tmdb.org/t/p/w500//iH2WDCYLIUjc7oPWRT7Kxgxza6k.jpg",
     "link": "/see/card/anime/100-50/Tvoe-imya.html",
     "year": "2016",
-    "rating":"8.5"
+    "rating":"8.5",
+    "genres": ["Мультфильм", "Мелодрама", "Драма"]
 },
 {
     "name": "О моём перерождении в слизь",
@@ -412,14 +466,16 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-51/O-moyom-pererozhdenii-v-sliz.html",
     "year": "2018",
     "rating":"8.5",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Боевик и Приключения", "НФ и Фэнтези"]
 },
 {
     "name": "Могила светлячков",
     "image": "https://image.tmdb.org/t/p/w500//nJYXr0RAznczy5tCZtYcjoYMjEg.jpg",
     "link": "/see/card/anime/100-52/Mogila-svetlyachkov.html",
     "year": "1988",
-    "rating":"8.5"
+    "rating":"8.5",
+    "genres": ["Мультфильм", "Драма", "Военный"]
 },
 {
     "name": "Мононокэ",
@@ -427,14 +483,16 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-53/Mononoke.html",
     "year": "2007",
     "rating":"7.9",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Детектив", "НФ и Фэнтези"]
 },
 {
     "name": "Форма голоса",
     "image": "https://image.tmdb.org/t/p/w500//c0Gv8xTSEmIcQPxbhINKvkbJO8s.jpg",
     "link": "/see/card/anime/100-54/Forma-golosa.html",
     "year": "2016",
-    "rating":"8.4"
+    "rating":"8.4",
+    "genres": ["Мультфильм", "Драма", "Мелодрама"]
 },
 {
     "name": "Реинкарнация безработного",
@@ -442,7 +500,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-55/Reinkarnaciya-bezrabotnogo.html",
     "year": "2021",
     "rating":"8.5",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Боевик и Приключения", "НФ и Фэнтези"]
 },
 {
     "name": "Банановая рыба",
@@ -450,14 +509,16 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-56/Bananovaya-ryba.html",
     "year": "2018",
     "rating":"8.6",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Детектив", "Боевик и Приключения", "Драма"]
 },
 {
     "name": "Принцесса Мононоке",
     "image": "https://image.tmdb.org/t/p/w500//dZE9oUyp14UEoPk5QV7emBu0Ix3.jpg",
     "link": "/see/card/anime/100-57/Princessa-Mononoke.html",
     "year": "1997",
-    "rating":"8.3"
+    "rating":"8.3",
+    "genres": ["Мультфильм", "Приключения", "Фэнтези"]
 },
 {
     "name": "Рок-Шоу!!",
@@ -465,14 +526,16 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-58/Rok-Shou!!.html",
     "year": "2020",
     "rating":"6.0",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Комедия"]
 },
 {
     "name": "Мой сосед Тоторо",
     "image": "https://image.tmdb.org/t/p/w500//ynClhtTAYG8N7FfU7EYK0T131rj.jpg",
     "link": "/see/card/anime/100-59/Moj-sosed-Totoro.html",
     "year": "1988",
-    "rating":"8.1"
+    "rating":"8.1",
+    "genres": ["Мультфильм", "Фэнтези", "Семейный"]
 },
 {
     "name": "Хост-клуб Оранской школы",
@@ -480,7 +543,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-60/Host-klub-Oranskoj-shkoly.html",
     "year": "2006",
     "rating":"8.2",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Комедия", "Драма"]
 },
 {
     "name": "Аватар: Легенда об Аанге",
@@ -488,7 +552,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-61/Avatar-Legenda-ob-Aange.html",
     "year": "2005",
     "rating":"8.7",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Боевик и Приключения", "НФ и Фэнтези"]
 },
 {
     "name": "Адский рай",
@@ -496,14 +561,16 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-62/Adskij-raj.html",
     "year": "2023",
     "rating":"8.2",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Драма", "Боевик и Приключения", "НФ и Фэнтези"]
 },
 {
     "name": "Дитя погоды",
     "image": "https://image.tmdb.org/t/p/w500//unkWKrTb4SdHAEb78AD4BJvXbwh.jpg",
     "link": "/see/card/anime/100-63/Ditya pogody.html",
     "year": "2019",
-    "rating":"8.0"
+    "rating":"8.0",
+    "genres": ["Мультфильм", "Фэнтези", "Мелодрама", "Драма"]
 },
 {
     "name": "Доктор Стоун",
@@ -511,14 +578,16 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-64/Doktor-Stoun.html",
     "year": "2019",
     "rating":"8.5",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Боевик и Приключения", "Комедия", "НФ и Фэнтези"]
 },
 {
     "name": "Паприка",
     "image": "https://image.tmdb.org/t/p/w500//75lTLdVBlpWocSO8nWJqddyedCH.jpg",
     "link": "/see/card/anime/100-65/Paprika.html",
     "year": "2006",
-    "rating":"7.8"
+    "rating":"7.8",
+    "genres": ["Мультфильм", "Фантастика", "Триллер"]
 },
 {
     "name": "Бродяга Кэнсин",
@@ -526,7 +595,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-66/Brodyaga-Kensin.html",
     "year": "2023",
     "rating":"8.4",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Боевик и Приключения"]
 },
 {
     "name": "Король шаманов",
@@ -534,14 +604,16 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-67/Korol-shamanov.html",
     "year": "2001",
     "rating":"8.5",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Боевик и Приключения", "НФ и Фэнтези"]
 },
 {
     "name": "5 сантиметров в секунду",
     "image": "https://image.tmdb.org/t/p/w500//ef5Kpp8knIaWCsuKHKE41cQpuPl.jpg",
     "link": "/see/card/anime/100-68/5-santimetrov-v-sekundu.html",
     "year": "2007",
-    "rating":"7.3"
+    "rating":"7.3",
+    "genres": ["Мультфильм", "Мелодрама", "Драма"]
 },
 {
     "name": "Путешествие Кино",
@@ -549,7 +621,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-69/Puteshestvie-Kino.html",
     "year": "2003",
     "rating":"7.7",
-    "isTV": true
+    "isTV": true,
+    "genres": ["НФ и Фэнтези"]
 },
 {
     "name": "Синий Экзорцист",
@@ -557,7 +630,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-70/Sinij-Ekzorcist.html",
     "year": "2011",
     "rating":"7.9",
-    "isTV": true
+    "isTV": true,
+    "genres": ["НФ и Фэнтези", "Детектив", "Боевик и Приключения"]
 },
 {
     "name": "Судьба: Начало",
@@ -565,7 +639,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-71/Sudba-Nachalo.html",
     "year": "2011",
     "rating":"8.0",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Боевик и Приключения", "НФ и Фэнтези"]
 },
 {
     "name": "Хвост Феи",
@@ -573,7 +648,8 @@ function generateRandomCards() {
     "link": "/see/card/anime/100-72/Hvost-Fei.html",
     "year": "2009",
     "rating":"7.9",
-    "isTV": true
+    "isTV": true,
+    "genres": ["Боевик и Приключения", "НФ и Фэнтези"]
 },
     
         // конец
@@ -582,43 +658,96 @@ function generateRandomCards() {
     ];
 
     var cardContainer = $('#card-container');
-    if (!cardContainer) {
-        console.error("#card-container not found!");
+    if (!cardContainer.length) {
+        console.error("#card-container не найден!");
         return;
     }
-
     cardContainer.html("");
-    cardData = shuffleArray(cardData);
 
-    var count = 0;
+    if (currentMovieTitleElement && currentMovieYearElement && currentMovieGenresElement) {
+        // Извлекаем информацию о текущем фильме
+        let fullTitle = currentMovieTitleElement.textContent;
+        let currentMovieTitle = fullTitle.split('(')[0].trim();
+        var currentMovieYear = currentMovieYearElement.textContent;
+        let fullGenreText = currentMovieGenresElement.textContent;
+        let genreStartIndex = fullGenreText.indexOf('●') + 1;
+        let extractedGenres = fullGenreText.substring(genreStartIndex).trim();
+        let currentMovieGenres = extractedGenres.split('|').map(genre => genre.trim());
 
-    cardData.forEach(function (val) {
-        if (count >= 15) return;
+        const getBaseTitle = (title) => {
+            title = title.toLowerCase();
+            title = title.replace(/[:\s-]+.+?(?=\s*\d+|$)/g, '');
+            title = title.replace(/\s+\d+$/, '');
+            return title.trim();
+        };
 
-        var randomRating = val.rating;
+        const currentBaseTitle = getBaseTitle(currentMovieTitle);
+        const numCurrentGenres = currentMovieGenres.length;
 
-        var cardHTML = `
-            <li class="splide__slide">
-                <div class="card card-media" style="width: 12rem" data-rating="${randomRating}">
-                    <a href="${val.link}">
-                        <img src="${val.image}" class="card-img-top img-9x16 mt-2" alt="${val.name}">
-                        <div class="card-rating-trand" bis_skin_checked="1">
-                            <span class="span-rating">${randomRating}</span>
-                        </div>
-                        ${val.isTV ? '<div class="card-TV card-TV-trends" bis_skin_checked="1">TV</div>' : ''}
-                        <div class="card-body">
-                            <span class="card-tex">${val.name}<br><span class="year">${val.year}</span></span>
-                        </div>
-                    </a>
-                </div>
-            </li>
-        `;
+        var cardsToDisplay = [];
+        var addedCards = new Set();
 
-        cardContainer.append(cardHTML);
-        count++;
-    });
+        const getMatchingGenresCount = (cardGenres) => {
+            if (!Array.isArray(cardGenres)) return 0;
+            return currentMovieGenres.filter(genre => cardGenres.includes(genre)).length;
+        };
 
-    // Инициализируем Splide после добавления карточек
+        const isCurrentMovie = (card) => {
+            return card.name === currentMovieTitle && card.year === currentMovieYear;
+        };
+
+        const doesTitleMatch = (card) => {
+            const cardBaseTitle = getBaseTitle(card.name);
+            return cardBaseTitle.includes(currentBaseTitle) || currentBaseTitle.includes(cardBaseTitle);
+        };
+
+        // Этап 1: Карточки со схожей назвой
+        const matchingTitleCards = shuffleArray(allCardData.filter(card => !isCurrentMovie(card) && doesTitleMatch(card)));
+        matchingTitleCards.forEach(card => {
+            if (cardsToDisplay.length < 15) {
+                cardsToDisplay.push(card);
+                addedCards.add(`${card.name}-${card.year}`);
+            }
+        });
+
+        // Этап 2: Карточки с похожими жанрами (по убыванию количества совпадений)
+        for (let i = numCurrentGenres; i >= 1; i--) {
+            const shuffledAllCardData = shuffleArray([...allCardData]);
+            const matchingGenreCards = shuffledAllCardData.filter(card => {
+                if (cardsToDisplay.length >= 15) return false;
+                if (isCurrentMovie(card) || addedCards.has(`${card.name}-${card.year}`)) {
+                    return false;
+                }
+                const matchingCount = getMatchingGenresCount(card.genres);
+                return matchingCount === i;
+            });
+            matchingGenreCards.forEach(card => {
+                if (cardsToDisplay.length < 15) {
+                    cardsToDisplay.push(card);
+                    addedCards.add(`${card.name}-${card.year}`);
+                }
+            });
+            if (cardsToDisplay.length >= 15) break;
+        }
+
+        // Этап 3: Добавляем случайные карточки, если не набрали 15
+        if (cardsToDisplay.length < 15) {
+            const remainingCards = shuffleArray(allCardData.filter(card => !isCurrentMovie(card) && !addedCards.has(`${card.name}-${card.year}`)));
+            const cardsToAdd = remainingCards.slice(0, 15 - cardsToDisplay.length);
+            cardsToAdd.forEach(card => {
+                cardsToDisplay.push(card);
+                addedCards.add(`${card.name}-${card.year}`);
+            });
+        }
+
+        displayCards(cardsToDisplay.slice(0, 15), cardContainer);
+
+    } else {
+        // Логика для отображения случайных фильмов, если нет информации о текущем фильме
+        const shuffledAllCards = shuffleArray(allCardData);
+        displayCards(shuffledAllCards.slice(0, 15), cardContainer);
+    }
+
     var splide = new Splide('#Collections', {
         type: 'loop',
         focus: 'center',
@@ -631,46 +760,44 @@ function generateRandomCards() {
         drag: true,
         perPage: 3,
         breakpoints: {
-            5000: {
-                gap: '23px',
-                perPage: 3,
-            },
-            2299.5: {
-                gap: '20px',
-                perPage: 3,
-            },
-            2018.5: {
-                gap: '18px',
-                perPage: 3,
-            },
-            1899.5: {
-                gap: '18px',
-                perPage: 3,
-            },
-            1704.5: {
-                gap: '12px',
-                perPage: 3,
-            },
-            1520.5: {
-                gap: '12px',
-                perPage: 3,
-            },
-            1320.5: {
-                gap: '28px',
-                perPage: 3,
-            },
-            1050: {
-                gap: '12px',
-                perPage: 3,
-            },
-            480: {
-                gap: '12px',
-                perPage: 3,
-            }
+            5000: { gap: '23px', perPage: 3 },
+            2299.5: { gap: '20px', perPage: 3 },
+            2018.5: { gap: '18px', perPage: 3 },
+            1899.5: { gap: '18px', perPage: 3 },
+            1704.5: { gap: '12px', perPage: 3 },
+            1520.5: { gap: '12px', perPage: 3 },
+            1320.5: { gap: '28px', perPage: 3 },
+            1050: { gap: '12px', perPage: 3 },
+            480: { gap: '12px', perPage: 3 }
         }
     }).mount();
 
-    positionCardRatingTrand(); // Вызываем после инициализации
+    positionCardRatingTrand();
+}
+
+function displayCards(cards, container) {
+    var count = 0;
+    cards.forEach(function (val) {
+        if (count >= 15) return;
+        var cardHTML = `
+            <li class="splide__slide">
+                <div class="card card-media" style="width: 12rem" data-rating="${val.rating}">
+                    <a href="${val.link}">
+                        <img src="${val.image}" class="card-img-top img-9x16 mt-2" alt="${val.name}">
+                        <div class="card-rating-trand" bis_skin_checked="1">
+                            <span class="span-rating">${val.rating}</span>
+                        </div>
+                        ${val.isTV ? '<div class="card-TV" bis_skin_checked="1">TV</div>' : ''}
+                        <div class="card-body">
+                            <span class="card-tex">${val.name}<br><span class="year">${val.year}</span></span>
+                        </div>
+                    </a>
+                </div>
+            </li>
+        `;
+        container.append(cardHTML);
+        count++;
+    });
 }
 
 function positionCardRatingTrand() {
@@ -678,25 +805,11 @@ function positionCardRatingTrand() {
     cards.forEach(card => {
         const image = card.querySelector('.card-img-top');
         const rating = card.querySelector('.card-rating-trand');
-
         if (image && rating) {
-            const imageRect = {
-                width: image.offsetWidth,
-                height: image.offsetHeight,
-                top: image.offsetTop,
-                left: image.offsetLeft
-            };
-
-            const cardRect = {
-                width: card.offsetWidth,
-                height: card.offsetHeight,
-                top: card.offsetTop,
-                left: card.offsetLeft
-            };
-
+            const imageRect = { width: image.offsetWidth, height: image.offsetHeight, top: image.offsetTop, left: image.offsetLeft };
+            const cardRect = { width: card.offsetWidth, height: card.offsetHeight, top: card.offsetTop, left: card.offsetLeft };
             const bottom = cardRect.height - imageRect.height - imageRect.top + 8;
             const right = cardRect.width - imageRect.width - imageRect.left + 8;
-
             rating.style.position = 'absolute';
             rating.style.bottom = bottom + 'px';
             rating.style.right = right + 'px';

@@ -1907,10 +1907,9 @@ function generateCards() {
     cardContainer.html("");
 
     if (currentMovieTitleElement && currentMovieYearElement && currentMovieGenresElement) {
-        // Извлекаем название фильма из тега <title>
+        // Извлекаем информацию о текущем фильме
         let fullTitle = currentMovieTitleElement.textContent;
         let currentMovieTitle = fullTitle.split('(')[0].trim();
-
         var currentMovieYear = currentMovieYearElement.textContent;
         let fullGenreText = currentMovieGenresElement.textContent;
         let genreStartIndex = fullGenreText.indexOf('●') + 1;
@@ -1939,39 +1938,41 @@ function generateCards() {
             return card.name === currentMovieTitle && card.year === currentMovieYear;
         };
 
-        // Отбираем карточки по убыванию количества совпадающих жанров
-        for (let i = numCurrentGenres; i >= 1; i--) {
-            // Перемешиваем массив перед фильтрацией на каждой итерации
-            const shuffledAllCardData = shuffleArray([...allCardData]);
+        const doesTitleMatch = (card) => {
+            const cardBaseTitle = getBaseTitle(card.name);
+            return cardBaseTitle.includes(currentBaseTitle) || currentBaseTitle.includes(cardBaseTitle);
+        };
 
+        // Этап 1: Карточки со схожей назвой
+        const matchingTitleCards = shuffleArray(allCardData.filter(card => !isCurrentMovie(card) && doesTitleMatch(card)));
+        matchingTitleCards.forEach(card => {
+            if (cardsToDisplay.length < 15) {
+                cardsToDisplay.push(card);
+                addedCards.add(`${card.name}-${card.year}`);
+            }
+        });
+
+        // Этап 2: Карточки с похожими жанрами (по убыванию количества совпадений)
+        for (let i = numCurrentGenres; i >= 1; i--) {
+            const shuffledAllCardData = shuffleArray([...allCardData]);
             const matchingGenreCards = shuffledAllCardData.filter(card => {
-                // Исключаем текущий фильм по названию и году
+                if (cardsToDisplay.length >= 15) return false;
                 if (isCurrentMovie(card) || addedCards.has(`${card.name}-${card.year}`)) {
                     return false;
                 }
                 const matchingCount = getMatchingGenresCount(card.genres);
-                console.log(`Текущие жанры:`, currentMovieGenres);
-                console.log(`Жанры карточки "${card.name}":`, card.genres);
-                console.log(`Количество совпадений:`, matchingCount);
-                console.log(`Требуемое совпадений (i):`, i);
                 return matchingCount === i;
             });
-
-            // Добавляем отобранные карточки в массив
             matchingGenreCards.forEach(card => {
                 if (cardsToDisplay.length < 15) {
                     cardsToDisplay.push(card);
                     addedCards.add(`${card.name}-${card.year}`);
                 }
             });
-
-            // Если набрали 15 карточек, выходим из цикла
-            if (cardsToDisplay.length >= 15) {
-                break;
-            }
+            if (cardsToDisplay.length >= 15) break;
         }
 
-        // Если осталось место, добавляем случайные карточки (исключая текущий и добавленные)
+        // Этап 3: Добавляем случайные карточки, если не набрали 15
         if (cardsToDisplay.length < 15) {
             const remainingCards = shuffleArray(allCardData.filter(card => !isCurrentMovie(card) && !addedCards.has(`${card.name}-${card.year}`)));
             const cardsToAdd = remainingCards.slice(0, 15 - cardsToDisplay.length);
@@ -1984,7 +1985,7 @@ function generateCards() {
         displayCards(cardsToDisplay.slice(0, 15), cardContainer);
 
     } else {
-        // Логика для отображения случайных фильмов
+        // Логика для отображения случайных фильмов, если нет информации о текущем фильме
         const shuffledAllCards = shuffleArray(allCardData);
         displayCards(shuffledAllCards.slice(0, 15), cardContainer);
     }

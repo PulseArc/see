@@ -49,7 +49,7 @@ const data = [
         "rating":"7.8"
     },
     {
-        "name": "Кто там",
+        "name": "Кто там?",
         "image": "https://image.tmdb.org/t/p/original/awc6lTA5fYlkNsAAAZYZrGZ5yoq.jpg",
         "link": "/see/card/movies/800-13/Kto-tam.html",
         "year": "2015",
@@ -1191,7 +1191,7 @@ const data = [
         "rating":"6.7"
     },
     {
-        "name": "Том и Джерри: Вилли Вонка и шоколадная...",
+        "name": "Том и Джерри: Вилли Вонка и шоколадная фабрика",
         "image": "https://image.tmdb.org/t/p/w500//vh5iYhj80l1inSdep61sF8g1S8m.jpg",
         "link": "/see/card/cartoons/500-87/Tom-i-Dzherri-Villi-Vonka-i-shokoladnaya-fabrika.html",
         "year": "2017",
@@ -2651,7 +2651,7 @@ const data = [
         "isTV": true
     },
     {
-        "name": "Гриффины: Там, там, на темной стороне",
+        "name": "Гриффины: Там, там, на тёмной стороне",
         "image": "https://image.tmdb.org/t/p/w500//fWr85GtJlzY4ZwdB2eCu3pdzWHz.jpg",
         "link": "/see/card/cartoons/500-151/Griffiny-Tam-tam-na-temnoj-storone.html",
         "year": "2009",
@@ -2671,7 +2671,7 @@ const data = [
     
     // Сериалы
     {
-        "name": "911 служба спасения",
+        "name": "911: Служба спасения",
         "image": "https://image.tmdb.org/t/p/w500//9dNWZPjFWdKo5Avr5JEEzLShLMZ.jpg",
         "link": "/see/card/series/900-01/911-sluzhba-spaseniya.html",
         "year": "2018",
@@ -3413,7 +3413,7 @@ const data = [
         "rating":"6.6"
     },
     {
-        "name": "И гаснет свет",
+        "name": "И гаснет свет...",
         "image": "https://image.tmdb.org/t/p/w500//f5njPYl9eQdwf0xUwJuQ7no6ET.jpg",
         "link": "/see/card/movies/800-30/I-gasnet-svet.html",
         "year": "2016",
