@@ -5,131 +5,117 @@ document.addEventListener('DOMContentLoaded', function () {
 function generateLastCards() {
     var cardData = [
         {
-            "name": "Башня Бога",
-            "image": "https://image.tmdb.org/t/p/w500//m4FQUNPbxonuv4kcFm1YgyRgl2C.jpg",
-            "link": "/see/card/anime/100-01/Башня Бога.html",
-            "year": "2020",
-            "rating":"8.3"
+            "name": "Миллион способов потерять голову",
+            "image": "https://image.tmdb.org/t/p/w500//oza59UpAODrr1xSvtoNudWShuut.jpg",
+            "link": "/see/card/movies/800-116/Million-sposobov-poteryat-golovu.html",
+            "year": "2014",
+            "rating":"6.0"
         },
         {
-            "name": "Древние",
-            "image": "https://image.tmdb.org/t/p/w500//dsVB3Mqv5sHGGsu1SGuF3fahw0Z.jpg",
-            "link": "/see/card/series/900-34/Drevnie.html",
-            "year": "2013",
-            "rating":"8.6"
-        },
-        {
-            "name": "Уровни",
-            "image": "https://image.tmdb.org/t/p/w500//yq39ChrCDlqrurYuaC8WM0vC1cx.jpg",
-            "link": "/see/card/movies/800-81/Urovni.html",
+            "name": "Мой пингвин",
+            "image": "https://image.tmdb.org/t/p/w500//n5yjFZLh6sx04B6YKynae1myD2X.jpg",
+            "link": "/see/card/movies/800-129/Moj-pingvin.html",
             "year": "2024",
-            "rating":"5.7"
-        },
-        {
-            "name": "Второй акт",
-            "image": "https://image.tmdb.org/t/p/w500//8pAaShqpLUYTeik67jjN2IPaz3O.jpg",
-            "link": "/see/card/movies/800-82/Vtoroj-akt.html",
-            "year": "2024",
-            "rating":"6.1"
-        },
-        {
-            "name": "Оппенгеймер",
-            "image": "https://image.tmdb.org/t/p/w500//8OQzw8keE6sDNH25sOqPRTxhFTO.jpg",
-            "link": "/see/card/movies/800-83/Oppengejmer.html",
-            "year": "2023",
-            "rating":"8.1"
-        },
-        {
-            "name": "Кунг-фу Панда 4",
-            "image": "https://image.tmdb.org/t/p/w500//7RK9GHFArnQusZERwYwIaMZwRll.jpg",
-            "link": "/see/card/cartoons/500-65/Kung-fu-Panda-4.html",
-            "year": "2024",
-            "rating":"7.1"
-        },
-        {
-            "name": "Эверест",
-            "image": "https://image.tmdb.org/t/p/w500//2tHCLXq7BbH2i9YjLNDMvohxpj3.jpg",
-            "link": "/see/card/cartoons/500-67/Everest.html",
-            "year": "2019",
             "rating":"7.5"
         },
         {
-            "name": "Охота за убийцей",
-            "image": "https://image.tmdb.org/t/p/w500//lcoxNrC8Z00MiUynsqxNtwQDjvA.jpg",
-            "link": "/see/card/series/900-43/Ohota-za-ubijcej.html",
-            "year": "2024",
-            "rating":"6.9"
+            "name": "Бегущий по лезвию 2049",
+            "image": "https://image.tmdb.org/t/p/w500//kAq1RFHqtZrBvKve7GOGdgUU399.jpg",
+            "link": "/see/card/movies/800-16/Begushij-po-lezviyu-2049.html",
+            "year": "2017",
+            "rating":"7.6",
+            "genres": ["Фантастика","Драма"]
         },
         {
-            "name": "Ходячие мертвецы: Выжившие",
-            "image": "https://image.tmdb.org/t/p/w500//rhN08H5Yg7xAFfBzeDzVV9GAwDj.jpg",
-            "link": "/see/card/series/900-44/Hodyachie-mertvecy-Vyzhivshie.html",
-            "year": "2024",
+            "name": "Топ Ган: Мэверик",
+            "image": "https://image.tmdb.org/t/p/w500//niNo4qTtIule2vvMFW05amvMtOB.jpg",
+            "link": "/see/card/movies/800-10/Top-Gan-Meverik.html",
+            "year": "2022",
+            "rating":"8.2"
+        },
+        {
+            "name": "Особняк с привидениями",
+            "image": "https://image.tmdb.org/t/p/w500//pE0LqHpxaQvKZCuNR2EikRNO39e.jpg",
+            "link": "/see/card/movies/800-04/Pribytie.html",
+            "year": "2023",
+            "rating":"6.5"
+        },
+        {
+            "name": "Джобс: Империя соблазна",
+            "image": "https://image.tmdb.org/t/p/w500//vPuWVOBvMsnpdIT8Qb2suLhIFSi.jpg",
+            "link": "/see/card/movies/800-42/Dzhobs-Imperiya-soblazna.html",
+            "year": "2013",
+            "rating":"6.1"
+        },
+        {
+            "name": "Тайна красной планеты",
+            "image": "https://image.tmdb.org/t/p/w500//mD4BnU0MTon8bhuJPCrc82IXLtp.jpg",
+            "link": "/see/card/cartoons/500-07/Tajna-krasnoj-planety.html",
+            "year": "2011",
+            "rating":"6.0"
+        },
+        {
+            "name": "Игра на понижение",
+            "image": "https://image.tmdb.org/t/p/w500//i46ouFO2WBqJ1xIoTQgrD8Criol.jpg",
+            "link": "/see/card/movies/800-04/Pribytie.html",
+            "year": "2015",
+            "rating":"7.4"
+        },
+        {
+            "name": "Отель «Гранд Будапешт»",
+            "image": "https://image.tmdb.org/t/p/w500//5qFxj03eBrkI0bUiGIonb4e0AI4.jpg",
+            "link": "/see/card/movies/800-04/Pribytie.html",
+            "year": "2014",
             "rating":"8.0"
         },
         {
-            "name": "Созвездие",
-            "image": "https://image.tmdb.org/t/p/w500//pon5QHLxrsgmyZKVSUdpXmHg08C.jpg",
-            "link": "/see/card/series/900-45/Sozvezdie.html",
-            "year": "2024",
-            "rating":"7.2"
-        },
-        {
-            "name": "Хало",
-            "image": "https://image.tmdb.org/t/p/w500//5SBcW0WyqxZyE7AolxfX1ift532.jpg",
-            "link": "/see/card/series/900-47/Halo.html",
-            "year": "2022",
-            "rating":"8.3"
-        },
-        {
-            "name": "Ковбои против пришельцев",
-            "image": "https://image.tmdb.org/t/p/w500//iRzfV0jFnUqOjJNIvRu9M3G8Rxv.jpg",
-            "link": "/see/card/movies/800-84/Kovboi-protiv-prishelcev.html",
-            "year": "2011",
-            "rating":"5.6"
-        },
-        {
-            "name": "Призрачный гонщик 2",
-            "image": "https://image.tmdb.org/t/p/w500//pmjeSQ4NocblwnqFDxk7zXggSQ7.jpg",
-            "link": "/see/card/movies/800-88/Prizrachnyj-gonshik-2.html",
+            "name": "Паранорман, или Как приручить зомби",
+            "image": "https://image.tmdb.org/t/p/w500//yDbJ3Ui5jrCjDqI3bJfccjJU3fm.jpg",
+            "link": "/see/card/cartoons/500-53/Paranorman,-ili-Kak-priruchit-zombi.html#",
             "year": "2012",
+            "rating":"7.0"
+        },
+        {
+            "name": "Люди Икс: Дни минувшего будущего",
+            "image": "https://image.tmdb.org/t/p/w500//9IdeGyzRZH66RgNq9zSZDwPPllg.jpg",
+            "link": "/see/card/movies/800-28/Lyudi-Iks-Dni-minuvshego-budushego.html",
+            "year": "2014",
+            "rating":"7.5"
+        },
+        {
+            "name": "Мой сосед - монстр",
+            "image": "https://image.tmdb.org/t/p/w500//ipj9b6KZMr6yFidQBf7xxuWnKQi.jpg",
+            "link": "/see/card/movies/800-98/Moj-sosed-monstr.html",
+            "year": "2024",
+            "rating":"6.7"
+        },
+        {
+            "name": "Ford против Ferrari",
+            "image": "https://image.tmdb.org/t/p/w500//579BjDiFrK9VK8EnKZzYwtGGXCg.jpg",
+            "link": "/see/card/movies/800-25/Ford-protiv-Ferrari.html",
+            "year": "2019",
+            "rating":"8.0"
+        },
+        {
+            "name": "Прибытие",
+            "image": "https://image.tmdb.org/t/p/w500//3K1byNV0CfChvJFNbe2ZAkiro4U.jpg",
+            "link": "/see/card/movies/800-04/Pribytie.html",
+            "year": "2016",
+            "rating":"7.6"
+        },
+        {
+            "name": "Не звезди!",
+            "image": "https://image.tmdb.org/t/p/w500//tAkZCkfPlb1R7ltLODoSZ3ybbXH.jpg",
+            "link": "/see/card/movies/800-04/Pribytie.html",
+            "year": "2022",
             "rating":"5.0"
         },
         {
-            "name": "Время",
-            "image": "https://image.tmdb.org/t/p/w500//m0rqyzs7IbNaXuJvLTubCG40F92.jpg",
-            "link": "/see/card/movies/800-90/Vremya.html",
+            "name": "Король Ричард",
+            "image": "https://image.tmdb.org/t/p/w500//JHb7M3mwxWGLHHtfTu08Ys6aVz.jpg",
+            "link": "/see/card/movies/800-04/Pribytie.html",
             "year": "2021",
-            "rating":"6.3"
-        },
-        {
-            "name": "Сплит",
-            "image": "https://image.tmdb.org/t/p/w500//xrVZF8DJNTPiILFygj8sg4tmauV.jpg",
-            "link": "/see/card/movies/800-91/Split.html",
-            "year": "2017",
-            "rating":"7.3"
-        },
-        
-        {
-            "name": "Почему он?",
-            "image": "https://image.tmdb.org/t/p/w500//q0wK2bXSLulAre276C6M4ZS8Kfo.jpg",
-            "link": "/see/card/movies/800-55/Pochemu-on.html",
-            "year": "2016",
-            "rating":"6.4"
-        },
-        {
-            "name": "Оно",
-            "image": "https://image.tmdb.org/t/p/w500//wEHpeWhH3zGYJbqz3OtUJ4tMMM6.jpg",
-            "link": "/see/card/movies/800-94/Ono.html",
-            "year": "2017",
-            "rating":"7.2"
-        },
-        {
-            "name": "Образцовый самец 2",
-            "image": "https://image.tmdb.org/t/p/w500//hSAbrO3FYcvzyBiUHXLflIbSIGZ.jpg",
-            "link": "/see/card/movies/800-95/Obrazcovyj-samec-2.html",
-            "year": "2016",
-            "rating":"4.9"
+            "rating":"7.6"
         },
         
         // Добавьте остальные карточки сюда
@@ -141,7 +127,7 @@ function generateLastCards() {
     cardContainer.html("");
 
     // Берём последние 15 карточек
-    var lastCards = cardData.slice(-15);
+    var lastCards = cardData.slice(-16);
 
     // Добавляем карточки в контейнер
     lastCards.forEach(function (val) {
