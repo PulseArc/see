@@ -17,7 +17,7 @@ function generateCards() {
         {
             "name": "Престиж",
             "image": "https://image.tmdb.org/t/p/w500//9jMvxh1Ib6BPnE0pprRcaNibKDO.jpg",
-            "link": "/see/card/movies/800-04/Pribytie.html",
+            "link": "/see/card/movies/800-270/Prestizh.html",
             "year": "2006",
             "rating":"8.2",
             "genres": ["Драма", "Детектив", "Фантастика"]
@@ -25,7 +25,7 @@ function generateCards() {
         {
             "name": "Инферно Габриэля",
             "image": "https://image.tmdb.org/t/p/w500//db3t8EdVco9uWGjffTABpa16MIn.jpg",
-            "link": "/see/card/movies/800-04/Pribytie.html",
+            "link": "/see/card/movies/800-271/Inferno-Gabrielya.html",
             "year": "2020",
             "rating":"8.4",
             "genres": ["Мелодрама", "Драма"]
@@ -33,7 +33,7 @@ function generateCards() {
         {
             "name": "Миллиардер из трущоб",
             "image": "https://image.tmdb.org/t/p/w500//dFNJOjtKD9ypSHciXY6JRgK24Pw.jpg",
-            "link": "/see/card/movies/800-04/Pribytie.html",
+            "link": "/see/card/movies/800-272/Milliarder-iz-trushob.html",
             "year": "2024",
             "rating":"6.9",
             "genres": ["Комедия"]
@@ -41,7 +41,7 @@ function generateCards() {
         {
             "name": "Великая стена",
             "image": "https://image.tmdb.org/t/p/w500//cMFaJHTdwkaZebGeLoIQxKFR5KN.jpg",
-            "link": "/see/card/movies/800-04/Pribytie.html",
+            "link": "/see/card/movies/800-273/Velikaya-stena.html",
             "year": "2016",
             "rating":"6.0",
             "genres": ["Боевик", "Приключения", "Фэнтези"]
@@ -49,7 +49,7 @@ function generateCards() {
         {
             "name": "Каратэ-пацан",
             "image": "https://image.tmdb.org/t/p/w500//jZs6kX6JCzjJBkTUoMPdaQSFjFa.jpg",
-            "link": "/see/card/movies/800-04/Pribytie.html",
+            "link": "/see/card/movies/800-274/Karate-pacan.html",
             "year": "2010",
             "rating":"6.6",
             "genres": ["Боевик", "Приключения", "Семейный"]
@@ -57,7 +57,7 @@ function generateCards() {
         {
             "name": "Хроники хищных городов",
             "image": "https://image.tmdb.org/t/p/w500//6GOzuWuwcEmys4Vs4U699YiqXE3.jpg",
-            "link": "/see/card/movies/800-04/Pribytie.html",
+            "link": "/see/card/movies/800-275/Hroniki-hishnyh-gorodov.html",
             "year": "2018",
             "rating":"6.2",
             "genres": ["Приключения", "Фантастика"]
@@ -65,7 +65,7 @@ function generateCards() {
         {
             "name": "Загадочная история Бенджамина Баттона",
             "image": "https://image.tmdb.org/t/p/w500//wmVLPh1WFUe8CglklJYpXFMQqiG.jpg",
-            "link": "/see/card/movies/800-04/Pribytie.html",
+            "link": "/see/card/movies/800-276/Zagadochnaya-istoriya-Bendzhamina-Battona.html",
             "year": "2008",
             "rating":"7.6",
             "genres": ["Драма", "Фэнтези", "Мелодрама"]
@@ -73,7 +73,7 @@ function generateCards() {
         {
             "name": "Обитель теней",
             "image": "https://image.tmdb.org/t/p/w500//kEeY9gD33yOE1kZ2bv83OvHVeui.jpg",
-            "link": "/see/card/movies/800-04/Pribytie.html",
+            "link": "/see/card/movies/800-277/Obitel-tenej.html",
             "year": "2017",
             "rating":"7.3",
             "genres": ["Триллер", "Ужасы", "Детектив"]
@@ -81,7 +81,7 @@ function generateCards() {
         {
             "name": "Чип и Дейл спешат на помощь",
             "image": "https://image.tmdb.org/t/p/w500//iFqRKD0epiGXygjsRgnxpTemiO3.jpg",
-            "link": "/see/card/movies/800-04/Pribytie.html",
+            "link": "/see/card/movies/800-278/Chip-i-Dejl-speshat-na-pomosh.html",
             "year": "2022",
             "rating":"7.0",
             "genres": ["Семейный", "Комедия", "Детектив"]
@@ -89,7 +89,7 @@ function generateCards() {
         {
             "name": "Области тьмы",
             "image": "https://image.tmdb.org/t/p/w500//tpvt8Le1Pyd3d7lnp9GTW2uD7hj.jpg",
-            "link": "/see/card/movies/800-04/Pribytie.html",
+            "link": "/see/card/movies/800-279/Oblasti-tmy.html",
             "year": "2011",
             "rating":"7.2",
             "genres": ["Триллер", "Детектив", "Фантастика"]
@@ -97,7 +97,7 @@ function generateCards() {
         {
             "name": "Мальчик в полосатой пижаме",
             "image": "https://image.tmdb.org/t/p/w500//ceMjx4DarStARA96uNvQ7CkwK5c.jpg",
-            "link": "/see/card/movies/800-04/Pribytie.html",
+            "link": "/see/card/movies/800-280/Malchik-v-polosatoj-pizhame.html",
             "year": "2008",
             "rating":"7.8",
             "genres": ["Драма", "Военный", "История"]
@@ -105,7 +105,7 @@ function generateCards() {
         {
             "name": "Убойные каникулы",
             "image": "https://image.tmdb.org/t/p/w500//oId9WDFgTJGLrXz7RAvnjSrn5PX.jpg",
-            "link": "/see/card/movies/800-04/Pribytie.html",
+            "link": "/see/card/movies/800-281/Ubojnye-kanikuly.html",
             "year": "2010",
             "rating":"7.4",
             "genres": ["Комедия", "Ужасы"]
