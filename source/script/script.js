@@ -87,28 +87,21 @@ const data = [
     {
         "name": "Эта дурацкая любовь",
         "image": "https://image.tmdb.org/t/p/w500//ho2mxV5t3ZxsgSNP1JMHfxdxpkW.jpg",
-        "link": "/see/card/movies/800-04/Pribytie.html",
-        "year": "2011",
-        "rating":"7.3"
-    },
-    {
-        "name": "Эта дурацкая любовь",
-        "image": "https://image.tmdb.org/t/p/w500//ho2mxV5t3ZxsgSNP1JMHfxdxpkW.jpg",
-        "link": "/see/card/movies/800-04/Pribytie.html",
+        "link": "/see/card/movies/800-282/Eta-durackaya-lyubov.html",
         "year": "2011",
         "rating":"7.3"
     },
     {
         "name": "Предел риска",
         "image": "https://image.tmdb.org/t/p/w500//jQpZcCkvf93pBaymalTmW6IPIXf.jpg",
-        "link": "/see/card/movies/800-04/Pribytie.html",
+        "link": "/see/card/movies/800-283/Predel-riska.html",
         "year": "2011",
         "rating":"6.9"
     },
     {
         "name": "Беглец",
         "image": "https://image.tmdb.org/t/p/w500//ezNxCR9fju6gnTnJ4W6KgcZhD4.jpg",
-        "link": "/see/card/movies/800-04/Pribytie.html",
+        "link": "/see/card/movies/800-284/Beglec.html",
         "year": "2023",
         "rating":"6.8"
     },
