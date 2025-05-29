@@ -36,7 +36,7 @@ function generateLastCards() {
         {
             "name": "Особняк с привидениями",
             "image": "https://image.tmdb.org/t/p/w500//pE0LqHpxaQvKZCuNR2EikRNO39e.jpg",
-            "link": "/see/card/movies/800-04/Pribytie.html",
+            "link": "/see/card/movies/800-294/Osobnyak-s-privideniyami.html",
             "year": "2023",
             "rating":"6.5"
         },
@@ -64,7 +64,7 @@ function generateLastCards() {
         {
             "name": "Отель «Гранд Будапешт»",
             "image": "https://image.tmdb.org/t/p/w500//5qFxj03eBrkI0bUiGIonb4e0AI4.jpg",
-            "link": "/see/card/movies/800-04/Pribytie.html",
+            "link": "/see/card/movies/800-308/Otel-Grand-Budapesht.html",
             "year": "2014",
             "rating":"8.0"
         },
@@ -113,7 +113,7 @@ function generateLastCards() {
         {
             "name": "Король Ричард",
             "image": "https://image.tmdb.org/t/p/w500//JHb7M3mwxWGLHHtfTu08Ys6aVz.jpg",
-            "link": "/see/card/movies/800-04/Pribytie.html",
+            "link": "/see/card/movies/800-305/Korol-Richard.html",
             "year": "2021",
             "rating":"7.6"
         },
