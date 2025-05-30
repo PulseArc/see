@@ -311,184 +311,198 @@ const data = [
     {
         "name": "Спасатели Малибу",
         "image": "https://image.tmdb.org/t/p/w500//s4T3R588ESvNTEuIizFyftzz8Kt.jpg",
-        "link": "/see/card/movies/800-04/Pribytie.html",
+        "link": "/see/card/movies/800-314/Spasateli-Malibu.html",
         "year": "2017",
         "rating":"6.1"
     },
     {
         "name": "Призраки в Венеции",
         "image": "https://image.tmdb.org/t/p/w500//jtKew4ZqdFi8l6lfmEPGnU87T2J.jpg",
-        "link": "/see/card/movies/800-04/Pribytie.html",
+        "link": "/see/card/movies/800-315/Prizraki-v-Venecii.html",
         "year": "2023",
         "rating":"6.6"
     },
     {
         "name": "Смерть на Ниле",
         "image": "https://image.tmdb.org/t/p/w500//iFseuSAGkldPtMbvpap2VM0xqnc.jpg",
-        "link": "/see/card/movies/800-04/Pribytie.html",
+        "link": "/see/card/movies/800-316/Smert-na-Nile.html",
         "year": "2022",
         "rating":"6.4"
     },
     {
         "name": "Убийство в «Восточном экспрессе»",
         "image": "https://image.tmdb.org/t/p/w500//c0EHJ8sOgghjgEXw2PCE3j3qV0A.jpg",
-        "link": "/see/card/movies/800-04/Pribytie.html",
+        "link": "/see/card/movies/800-317/Ubijstvo-v-Vostochnom-ekspresse.html",
         "year": "2017",
         "rating":"6.7"
     },
     {
         "name": "Философы: Урок выживания",
         "image": "https://image.tmdb.org/t/p/w500//qB0xYHut6aMDnJamTlRk84tPHBp.jpg",
-        "link": "/see/card/movies/800-04/Pribytie.html",
+        "link": "/see/card/movies/800-318/Filosofy-Urok-vyzhivaniya.html",
         "year": "2013",
         "rating":"6.1"
     },
     {
         "name": "История дельфина 2",
         "image": "https://image.tmdb.org/t/p/w500//3r7rpXgCRSeHxjqX7XygIiNZSFy.jpg",
-        "link": "/see/card/movies/800-04/Pribytie.html",
+        "link": "/see/card/movies/800-319/Istoriya-delfina-2.html",
         "year": "2014",
         "rating":"6.9"
     },
     {
         "name": "История дельфина",
         "image": "https://image.tmdb.org/t/p/w500//9WWuPFkYOUHmi2lW4Fcc1G9pRUe.jpg",
-        "link": "/see/card/movies/800-04/Pribytie.html",
+        "link": "/see/card/movies/800-320/Istoriya-delfina.html",
         "year": "2011",
         "rating":"6.9"
     },
     {
         "name": "Комната",
         "image": "https://image.tmdb.org/t/p/w500//t8ee0FShxIeijkg84wFZdc62ivX.jpg",
-        "link": "/see/card/movies/800-04/Pribytie.html",
+        "link": "/see/card/movies/800-321/Komnata.html",
         "year": "2015",
         "rating":"8.0"
     },
     {
         "name": "Как заработать на убийстве",
         "image": "https://image.tmdb.org/t/p/w500//wRynb0YJqH8gw5TctwDQUIbpFaQ.jpg",
-        "link": "/see/card/movies/800-04/Pribytie.html",
+        "link": "/see/card/movies/800-322/Kak-zarabotat-na-ubijstve.html",
         "year": "2025",
         "rating":"6.6"
     },
     {
         "name": "Дюнкерк",
         "image": "https://image.tmdb.org/t/p/w500//m3xR365ajZrTN5vm2xf91L1zplv.jpg",
-        "link": "/see/card/movies/800-04/Pribytie.html",
+        "link": "/see/card/movies/800-323/Dyunkerk.html",
         "year": "2017",
         "rating":"7.5"
     },
     {
         "name": "Меню",
         "image": "https://image.tmdb.org/t/p/w500//84khkKvBldEp3h1PQUe6v8ItpR7.jpg",
-        "link": "/see/card/movies/800-04/Pribytie.html",
+        "link": "/see/card/movies/800-324/Menyu.html",
         "year": "2022",
         "rating":"7.2"
     },
     {
         "name": "Лекарство от здоровья",
         "image": "https://image.tmdb.org/t/p/w500//qN67d5SCiilDe8caBHi4GH6Ih8o.jpg",
-        "link": "/see/card/movies/800-04/Pribytie.html",
+        "link": "/see/card/movies/800-325/Lekarstvo-ot-zdorovya.html",
         "year": "2017",
         "rating":"6.3"
     },
     {
         "name": "Не звезди!",
         "image": "https://image.tmdb.org/t/p/w500//tAkZCkfPlb1R7ltLODoSZ3ybbXH.jpg",
-        "link": "/see/card/movies/800-04/Pribytie.html",
+        "link": "/see/card/movies/800-326/Ne-zvezdi.html",
         "year": "2022",
         "rating":"5.0"
     },
     {
         "name": "Диктатор",
         "image": "https://image.tmdb.org/t/p/w500//zfBGrRcTIocjWXrwdUfWmfCAeez.jpg",
-        "link": "/see/card/movies/800-04/Pribytie.html",
+        "link": "/see/card/movies/800-327/Diktator.html",
         "year": "2012",
         "rating":"6.2"
     },
     {
         "name": "Прочь",
         "image": "https://image.tmdb.org/t/p/w500//hkchWNmGfcgow2Jivyxv83JqHCy.jpg",
-        "link": "/see/card/movies/800-04/Pribytie.html",
+        "link": "/see/card/movies/800-328/Proch.html",
         "year": "2017",
         "rating":"7.6"
     },
     {
         "name": "Аладдин",
         "image": "https://image.tmdb.org/t/p/w500//t7D1Q4qQ4LjlaUXUqB7ny3xdIAy.jpg",
-        "link": "/see/card/movies/800-04/Pribytie.html",
+        "link": "/see/card/movies/800-329/Aladdin2019.html",
         "year": "2019",
         "rating":"7.1"
     },
     {
         "name": "Люси",
         "image": "https://image.tmdb.org/t/p/w500//et3oLVuK8AfAikDot01X68PbMmK.jpg",
-        "link": "/see/card/movies/800-04/Pribytie.html",
+        "link": "/see/card/movies/800-330/Lyusi.html",
         "year": "2014",
         "rating":"6.5"
     },
     {
         "name": "Война токов",
         "image": "https://image.tmdb.org/t/p/w500//oD5vaUElVgwwfF2k5aI7pSOVNdJ.jpg",
-        "link": "/see/card/movies/800-04/Pribytie.html",
+        "link": "/see/card/movies/800-331/Vojna-tokov.html",
         "year": "2018",
         "rating":"6.7"
     },
     {
         "name": "Отец-молодец",
         "image": "https://image.tmdb.org/t/p/w500//rcXVtyWQNDSJaQY2LciQ2xVU7cs.jpg",
-        "link": "/see/card/movies/800-04/Pribytie.html",
+        "link": "/see/card/movies/800-332/Otec-molodec.html",
         "year": "2013",
         "rating":"6.3"
     },
     {
         "name": "Игра на понижение",
         "image": "https://image.tmdb.org/t/p/w500//i46ouFO2WBqJ1xIoTQgrD8Criol.jpg",
-        "link": "/see/card/movies/800-04/Pribytie.html",
+        "link": "/see/card/movies/800-333/Igra-na-ponizhenie.html",
         "year": "2015",
         "rating":"7.4"
     },
     {
         "name": "Крепись!",
         "image": "https://image.tmdb.org/t/p/w500//8v1u1kU50wvqtZhV6WQMD1lVFZY.jpg",
-        "link": "/see/card/movies/800-04/Pribytie.html",
+        "link": "/see/card/movies/800-334/Krepis.html",
         "year": "2015",
         "rating":"6.0"
     },
     {
         "name": "Любовь и другие лекарства",
         "image": "https://image.tmdb.org/t/p/w500//zys6uLVuwh2o7epNMYj45cylDxl.jpg",
-        "link": "/see/card/movies/800-04/Pribytie.html",
+        "link": "/see/card/movies/800-335/Lyubov-i-drugie-lekarstva.html",
         "year": "2010",
         "rating":"7.0"
     },
     {
         "name": "Быть лучше: История Робби Уильямса",
         "image": "https://image.tmdb.org/t/p/w500//4nUN5BtOyHKi0bWmin8ZEgdTzve.jpg",
-        "link": "/see/card/movies/800-04/Pribytie.html",
+        "link": "/see/card/movies/800-336/Byt-luchshe-Istoriya-Robbi-Uilyamsa.html",
         "year": "2024",
         "rating":"7.8"
     },
     {
         "name": "Хочу как ты",
         "image": "https://image.tmdb.org/t/p/w500//b2OQYDWZJGUrfSP6dOSyXJ3xq2r.jpg",
-        "link": "/see/card/movies/800-04/Pribytie.html",
+        "link": "/see/card/movies/800-337/Hochu-kak-ty.html",
         "year": "2011",
         "rating":"6.2"
     },
     {
+        "name": "Бабули",
+        "image": "https://image.tmdb.org/t/p/w500//7yGSVs3N0USyU2N2z1NC4H6AY03.jpg",
+        "link": "/see/card/movies/800-342/Babuli.html",
+        "year": "2025",
+        "rating":"6.9"
+    },
+    {
         "name": "Я иду искать",
         "image": "https://image.tmdb.org/t/p/w500//jPGy3buduikigoc7UJFPRbWhL1b.jpg",
-        "link": "/see/card/movies/800-04/Pribytie.html",
+        "link": "/see/card/movies/800-338/Ya-idu-iskat.html",
         "year": "2019",
         "rating":"7.0"
     },
     {
         "name": "Одарённая",
         "image": "https://image.tmdb.org/t/p/w500//z6wow2HLj15W3xGJeToIm45647e.jpg",
-        "link": "/see/card/movies/800-04/Pribytie.html",
+        "link": "/see/card/movies/800-339/Odaryonnaya.html",
         "year": "2017",
         "rating":"8.0"
+    },
+    {
+        "name": "Тетрадь смерти",
+        "image": "https://image.tmdb.org/t/p/w500//AkU1W85hrAYABv0oTDMrYaX8T8F.jpg",
+        "link": "/see/card/movies/800-340/Tetrad-smerti.html",
+        "year": "2017",
+        "rating":"4.3"
     },
     {
         "name": "Прибытие",
@@ -496,6 +510,13 @@ const data = [
         "link": "/see/card/movies/800-04/Pribytie.html",
         "year": "2016",
         "rating":"7.6"
+    },
+    {
+        "name": "Богемская рапсодия",
+        "image": "https://image.tmdb.org/t/p/w500//fXGXv5myFWcQjrVol546Fa9lmo6.jpg",
+        "link": "/see/card/movies/800-341/Bogemskaya-rapsodiya.html",
+        "year": "2018",
+        "rating":"8.0"
     },
     {
         "name": "В первый раз",

@@ -57,7 +57,7 @@ function generateLastCards() {
         {
             "name": "Игра на понижение",
             "image": "https://image.tmdb.org/t/p/w500//i46ouFO2WBqJ1xIoTQgrD8Criol.jpg",
-            "link": "/see/card/movies/800-04/Pribytie.html",
+            "link": "/see/card/movies/800-333/Igra-na-ponizhenie.html",
             "year": "2015",
             "rating":"7.4"
         },
@@ -106,7 +106,7 @@ function generateLastCards() {
         {
             "name": "Не звезди!",
             "image": "https://image.tmdb.org/t/p/w500//tAkZCkfPlb1R7ltLODoSZ3ybbXH.jpg",
-            "link": "/see/card/movies/800-04/Pribytie.html",
+            "link": "/see/card/movies/800-326/Ne-zvezdi.html",
             "year": "2022",
             "rating":"5.0"
         },
