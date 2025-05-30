@@ -23,15 +23,7 @@ if (menuToggle && searchWrapper) {
           searchWrapper.classList.add('hidden-by-menu'); // <--- ВОТ ЭТА СТРОКА
           searchWrapper.classList.remove('active'); // Сворачиваем поиск визуально
 
-          // ЭТИ ДЕЙСТВИЯ JS ВСЕ ЕЩЕ ВАЖНЫ ДЛЯ КОРРЕКТНОГО ПОВЕДЕНИЯ КЛАВИАТУРЫ
-          searchInput.setAttribute('disabled', 'disabled'); // Полностью отключаем поле ввода
-          searchInput.blur(); // Убираем фокус, скрывая клавиатуру
-          searchInput.value = ''; // Очищаем поле
-          resultsContainer.style.display = 'none'; // Скрываем результаты
-          clearIcon.style.display = 'none'; // Скрываем крестик
-          if (homeBackgroundImage) {
-              homeBackgroundImage.style.marginTop = '';
-          }
+          
       } else {
           // Меню закрыто
           searchWrapper.classList.remove('hidden-by-menu'); // <--- И ВОТ ЭТА СТРОКА
