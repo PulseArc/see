@@ -107,6 +107,14 @@ document.addEventListener('DOMContentLoaded', function () {
       }
   });
 
+  // Скрывает клавиатуру поиска
+  document.addEventListener('touchend', function(event) {
+    if (searchInput === document.activeElement && !searchInput.contains(event.target)) {
+        searchInput.blur();
+    }
+});
+// Конец
+
   // Скрытие клавиатуры при нажатии Enter
   searchInput.addEventListener('keypress', (event) => {
       if (searchInput.disabled) { // Проверяем, заблокировано ли поле
