@@ -2612,7 +2612,16 @@ footer {
         /* Показываем меню при активации */
     }
 
-
+    
+    
+    /* Стили, которые будут применяться, когда меню открыто */
+    .search-wrapper.hidden-by-menu {
+        opacity: 0; /* Делаем полностью прозрачным */
+        visibility: hidden; /* Скрываем после анимации, чтобы не реагировал на события */
+        pointer-events: none; /* Отключаем все события мыши/касания */
+    }
+    
+    
     #menu li {
         font-family: Helvetica, sans-serif;
         padding: 15px 0;
