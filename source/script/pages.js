@@ -15,6 +15,33 @@ document.addEventListener('DOMContentLoaded', function () {
   const clearIcon = document.querySelector('.clear-icon');
   const homeBackgroundImage = document.querySelector('.Home-background-image');
 
+  // Бургер
+if (menuToggle && searchWrapper) {
+  menuToggle.addEventListener('change', () => {
+      if (menuToggle.checked) {
+          // Меню открыто
+          searchWrapper.classList.add('hidden-by-menu'); // <--- ВОТ ЭТА СТРОКА
+          searchWrapper.classList.remove('active'); // Сворачиваем поиск визуально
+
+          // ЭТИ ДЕЙСТВИЯ JS ВСЕ ЕЩЕ ВАЖНЫ ДЛЯ КОРРЕКТНОГО ПОВЕДЕНИЯ КЛАВИАТУРЫ
+          searchInput.setAttribute('disabled', 'disabled'); // Полностью отключаем поле ввода
+          searchInput.blur(); // Убираем фокус, скрывая клавиатуру
+          searchInput.value = ''; // Очищаем поле
+          resultsContainer.style.display = 'none'; // Скрываем результаты
+          clearIcon.style.display = 'none'; // Скрываем крестик
+          if (homeBackgroundImage) {
+              homeBackgroundImage.style.marginTop = '';
+          }
+      } else {
+          // Меню закрыто
+          searchWrapper.classList.remove('hidden-by-menu'); // <--- И ВОТ ЭТА СТРОКА
+          searchInput.removeAttribute('disabled'); // Разрешаем ввод
+          updateSearchInputState(); // Обновляем состояние на основе mouseover/mouseout
+      }
+  });
+}
+// конец
+
   // Функция для обновления состояния поля ввода
   function updateSearchInputState() {
       if (searchWrapper.classList.contains('active')) {
