@@ -367,6 +367,19 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   }).mount();
+  // Добавляем слушатель события для начала перетаскивания (свайпа) слайдера
+  splideTrend.on('drag', function () {
+    if (searchInput === document.activeElement) { // Проверяем, активно ли поле поиска
+        searchInput.blur(); // Убираем фокус с поля ввода
+    }
+});
+
+// Также можно добавить на событие 'move' (после перемещения слайда)
+splideTrend.on('move', function () {
+    if (searchInput === document.activeElement) {
+        searchInput.blur();
+    }
+});
 });
 // Конец
 
