@@ -118,7 +118,7 @@
     right: 4em;
     /* Фиксируем положение справа */
     display: inline-block;
-    z-index: 50;
+    
 }
 
 .search-wrapper {
