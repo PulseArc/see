@@ -17,7 +17,7 @@ function generateCards() {
         {
             "name": "Престиж",
             "image": "https://image.tmdb.org/t/p/w500//9jMvxh1Ib6BPnE0pprRcaNibKDO.jpg",
-            "link": "/see/card/movies/800-270/Prestizh.html",
+            "link": "/card/movies/800-270/Prestizh.html",
             "year": "2006",
             "rating":"8.2",
             "genres": ["Драма", "Детектив", "Фантастика"]
@@ -25,7 +25,7 @@ function generateCards() {
         {
             "name": "Инферно Габриэля",
             "image": "https://image.tmdb.org/t/p/w500//db3t8EdVco9uWGjffTABpa16MIn.jpg",
-            "link": "/see/card/movies/800-271/Inferno-Gabrielya.html",
+            "link": "/card/movies/800-271/Inferno-Gabrielya.html",
             "year": "2020",
             "rating":"8.4",
             "genres": ["Мелодрама", "Драма"]
@@ -33,7 +33,7 @@ function generateCards() {
         {
             "name": "Миллиардер из трущоб",
             "image": "https://image.tmdb.org/t/p/w500//dFNJOjtKD9ypSHciXY6JRgK24Pw.jpg",
-            "link": "/see/card/movies/800-272/Milliarder-iz-trushob.html",
+            "link": "/card/movies/800-272/Milliarder-iz-trushob.html",
             "year": "2024",
             "rating":"6.9",
             "genres": ["Комедия"]
@@ -41,7 +41,7 @@ function generateCards() {
         {
             "name": "Великая стена",
             "image": "https://image.tmdb.org/t/p/w500//cMFaJHTdwkaZebGeLoIQxKFR5KN.jpg",
-            "link": "/see/card/movies/800-273/Velikaya-stena.html",
+            "link": "/card/movies/800-273/Velikaya-stena.html",
             "year": "2016",
             "rating":"6.0",
             "genres": ["Боевик", "Приключения", "Фэнтези"]
@@ -49,7 +49,7 @@ function generateCards() {
         {
             "name": "Каратэ-пацан",
             "image": "https://image.tmdb.org/t/p/w500//jZs6kX6JCzjJBkTUoMPdaQSFjFa.jpg",
-            "link": "/see/card/movies/800-274/Karate-pacan.html",
+            "link": "/card/movies/800-274/Karate-pacan.html",
             "year": "2010",
             "rating":"6.6",
             "genres": ["Боевик", "Приключения", "Семейный"]
@@ -57,7 +57,7 @@ function generateCards() {
         {
             "name": "Хроники хищных городов",
             "image": "https://image.tmdb.org/t/p/w500//6GOzuWuwcEmys4Vs4U699YiqXE3.jpg",
-            "link": "/see/card/movies/800-275/Hroniki-hishnyh-gorodov.html",
+            "link": "/card/movies/800-275/Hroniki-hishnyh-gorodov.html",
             "year": "2018",
             "rating":"6.2",
             "genres": ["Приключения", "Фантастика"]
@@ -65,7 +65,7 @@ function generateCards() {
         {
             "name": "Загадочная история Бенджамина Баттона",
             "image": "https://image.tmdb.org/t/p/w500//wmVLPh1WFUe8CglklJYpXFMQqiG.jpg",
-            "link": "/see/card/movies/800-276/Zagadochnaya-istoriya-Bendzhamina-Battona.html",
+            "link": "/card/movies/800-276/Zagadochnaya-istoriya-Bendzhamina-Battona.html",
             "year": "2008",
             "rating":"7.6",
             "genres": ["Драма", "Фэнтези", "Мелодрама"]
@@ -73,7 +73,7 @@ function generateCards() {
         {
             "name": "Обитель теней",
             "image": "https://image.tmdb.org/t/p/w500//kEeY9gD33yOE1kZ2bv83OvHVeui.jpg",
-            "link": "/see/card/movies/800-277/Obitel-tenej.html",
+            "link": "/card/movies/800-277/Obitel-tenej.html",
             "year": "2017",
             "rating":"7.3",
             "genres": ["Триллер", "Ужасы", "Детектив"]
@@ -81,7 +81,7 @@ function generateCards() {
         {
             "name": "Чип и Дейл спешат на помощь",
             "image": "https://image.tmdb.org/t/p/w500//iFqRKD0epiGXygjsRgnxpTemiO3.jpg",
-            "link": "/see/card/movies/800-278/Chip-i-Dejl-speshat-na-pomosh.html",
+            "link": "/card/movies/800-278/Chip-i-Dejl-speshat-na-pomosh.html",
             "year": "2022",
             "rating":"7.0",
             "genres": ["Семейный", "Комедия", "Детектив"]
@@ -89,7 +89,7 @@ function generateCards() {
         {
             "name": "Области тьмы",
             "image": "https://image.tmdb.org/t/p/w500//tpvt8Le1Pyd3d7lnp9GTW2uD7hj.jpg",
-            "link": "/see/card/movies/800-279/Oblasti-tmy.html",
+            "link": "/card/movies/800-279/Oblasti-tmy.html",
             "year": "2011",
             "rating":"7.2",
             "genres": ["Триллер", "Детектив", "Фантастика"]
@@ -97,7 +97,7 @@ function generateCards() {
         {
             "name": "Мальчик в полосатой пижаме",
             "image": "https://image.tmdb.org/t/p/w500//ceMjx4DarStARA96uNvQ7CkwK5c.jpg",
-            "link": "/see/card/movies/800-280/Malchik-v-polosatoj-pizhame.html",
+            "link": "/card/movies/800-280/Malchik-v-polosatoj-pizhame.html",
             "year": "2008",
             "rating":"7.8",
             "genres": ["Драма", "Военный", "История"]
@@ -105,7 +105,7 @@ function generateCards() {
         {
             "name": "Убойные каникулы",
             "image": "https://image.tmdb.org/t/p/w500//oId9WDFgTJGLrXz7RAvnjSrn5PX.jpg",
-            "link": "/see/card/movies/800-281/Ubojnye-kanikuly.html",
+            "link": "/card/movies/800-281/Ubojnye-kanikuly.html",
             "year": "2010",
             "rating":"7.4",
             "genres": ["Комедия", "Ужасы"]
@@ -113,7 +113,7 @@ function generateCards() {
         {
             "name": "Эта дурацкая любовь",
             "image": "https://image.tmdb.org/t/p/w500//ho2mxV5t3ZxsgSNP1JMHfxdxpkW.jpg",
-            "link": "/see/card/movies/800-282/Eta-durackaya-lyubov.html",
+            "link": "/card/movies/800-282/Eta-durackaya-lyubov.html",
             "year": "2011",
             "rating":"7.3",
             "genres": ["Комедия", "Драма", "Мелодрама"]
@@ -121,7 +121,7 @@ function generateCards() {
         {
             "name": "Предел риска",
             "image": "https://image.tmdb.org/t/p/w500//jQpZcCkvf93pBaymalTmW6IPIXf.jpg",
-            "link": "/see/card/movies/800-283/Predel-riska.html",
+            "link": "/card/movies/800-283/Predel-riska.html",
             "year": "2011",
             "rating":"6.9",
             "genres": ["Триллер", "Драма"]
@@ -129,7 +129,7 @@ function generateCards() {
         {
             "name": "Беглец",
             "image": "https://image.tmdb.org/t/p/w500//ezNxCR9fju6gnTnJ4W6KgcZhD4.jpg",
-            "link": "/see/card/movies/800-284/Beglec.html",
+            "link": "/card/movies/800-284/Beglec.html",
             "year": "2023",
             "rating":"6.8",
             "genres": ["Боевик", "Триллер"]
@@ -137,7 +137,7 @@ function generateCards() {
         {
             "name": "Гренландия",
             "image": "https://image.tmdb.org/t/p/w500//5Ko11P6zf8Wfe9IMFJEOAyNf0FK.jpg",
-            "link": "/see/card/movies/800-285/Grenlandiya.html",
+            "link": "/card/movies/800-285/Grenlandiya.html",
             "year": "2020",
             "rating":"7.1",
             "genres": ["Боевик", "Приключения", "Фантастика"]
@@ -145,7 +145,7 @@ function generateCards() {
         {
             "name": "Последний день Земли",
             "image": "https://image.tmdb.org/t/p/w500//fH1O6CAhZYtSJtQhM0ezUDwYAJJ.jpg",
-            "link": "/see/card/movies/800-286/Poslednij-den-Zemli.html",
+            "link": "/card/movies/800-286/Poslednij-den-Zemli.html",
             "year": "2024",
             "rating":"5.8",
             "genres": ["Фантастика", "Триллер", "Боевик"]
@@ -153,7 +153,7 @@ function generateCards() {
         {
             "name": "Солт",
             "image": "https://image.tmdb.org/t/p/w500//gd7oyofwqEgBhur6XLiGoqMQm2e.jpg",
-            "link": "/see/card/movies/800-287/Solt.html",
+            "link": "/card/movies/800-287/Solt.html",
             "year": "2010",
             "rating":"6.4",
             "genres": ["Боевик", "Детектив", "Триллер"]
@@ -161,7 +161,7 @@ function generateCards() {
         {
             "name": "Земля будущего",
             "image": "https://image.tmdb.org/t/p/w500//d0FN6g1xOevTnq6OYDUg0vURIbJ.jpg",
-            "link": "/see/card/movies/800-288/Zemlya-budushego.html",
+            "link": "/card/movies/800-288/Zemlya-budushego.html",
             "year": "2015",
             "rating":"6.3",
             "genres": ["Приключения", "Семейный", "Фантастика"]
@@ -169,7 +169,7 @@ function generateCards() {
         {
             "name": "Красное уведомление",
             "image": "https://image.tmdb.org/t/p/w500//u6m4JTp9ZEAF25mSo0xfStmXSHh.jpg",
-            "link": "/see/card/movies/800-289/Krasnoe-uvedomlenie.html",
+            "link": "/card/movies/800-289/Krasnoe-uvedomlenie.html",
             "year": "2021",
             "rating":"6.8",
             "genres": ["Боевик", "Комедия", "Криминал"]
@@ -177,7 +177,7 @@ function generateCards() {
         {
             "name": "Самый быстрый Indian",
             "image": "https://image.tmdb.org/t/p/w500//oBFzq9Fdb8GIg8Pc2oFVTvkUmDZ.jpg",
-            "link": "/see/card/movies/800-290/Samyj-bystryj-Indian.html",
+            "link": "/card/movies/800-290/Samyj-bystryj-Indian.html",
             "year": "2005",
             "rating":"7.7",
             "genres": ["Драма", "Приключения", "История"]
@@ -185,7 +185,7 @@ function generateCards() {
         {
             "name": "Сокровище Амазонки",
             "image": "https://image.tmdb.org/t/p/w500//9bKYACG9Uv4TlqKoBdMI8tKNXcl.jpg",
-            "link": "/see/card/movies/800-291/Sokrovishe-Amazonki.html",
+            "link": "/card/movies/800-291/Sokrovishe-Amazonki.html",
             "year": "2003",
             "rating":"6.5",
             "genres": ["Приключения", "Боевик", "Комедия"]
@@ -193,7 +193,7 @@ function generateCards() {
         {
             "name": "Человек, который изменил всё",
             "image": "https://image.tmdb.org/t/p/w500//sVTliDUi3ehhRKxHwGC4LxdXg85.jpg",
-            "link": "/see/card/movies/800-292/Chelovek-kotoryj-izmenil-vsyo.html",
+            "link": "/card/movies/800-292/Chelovek-kotoryj-izmenil-vsyo.html",
             "year": "2011",
             "rating":"7.3",
             "genres": ["Драма"]
@@ -201,7 +201,7 @@ function generateCards() {
         {
             "name": "Легенда",
             "image": "https://image.tmdb.org/t/p/w500//vkjHGlBxNgeLQDA8XpxpJDy0iij.jpg",
-            "link": "/see/card/movies/800-293/Legenda.html",
+            "link": "/card/movies/800-293/Legenda.html",
             "year": "2015",
             "rating":"7.1",
             "genres": ["Криминал", "Триллер"]
@@ -209,7 +209,7 @@ function generateCards() {
         {
             "name": "Особняк с привидениями",
             "image": "https://image.tmdb.org/t/p/w500//pE0LqHpxaQvKZCuNR2EikRNO39e.jpg",
-            "link": "/see/card/movies/800-294/Osobnyak-s-privideniyami.html",
+            "link": "/card/movies/800-294/Osobnyak-s-privideniyami.html",
             "year": "2023",
             "rating":"6.5",
             "genres": ["Комедия", "Триллер", "Детектив", "Фэнтези" ]
@@ -217,7 +217,7 @@ function generateCards() {
         {
             "name": "Особняк с привидениями",
             "image": "https://image.tmdb.org/t/p/w500//l5Z7r1VZfHBE0FlanKrC95EQDw5.jpg",
-            "link": "/see/card/movies/800-295/Osobnyak-s-privideniyami2003.html",
+            "link": "/card/movies/800-295/Osobnyak-s-privideniyami2003.html",
             "year": "2003",
             "rating":"5.7",
             "genres": ["Комедия", "Триллер", "Детектив", "Фэнтези" ]
@@ -225,7 +225,7 @@ function generateCards() {
         {
             "name": "Гравитация",
             "image": "https://image.tmdb.org/t/p/w500//u8cZd9KAS0LvLTf2Z4cPflAf0Wz.jpg",
-            "link": "/see/card/movies/800-296/Gravitaciya.html",
+            "link": "/card/movies/800-296/Gravitaciya.html",
             "year": "2013",
             "rating":"7.2",
             "genres": ["Фантастика", "Триллер", "Драма" ]
@@ -233,7 +233,7 @@ function generateCards() {
         {
             "name": "12 лет рабства",
             "image": "https://image.tmdb.org/t/p/w500//qBY5A6iX3BtTEBIYGUdKm373pxH.jpg",
-            "link": "/see/card/movies/800-297/12-let-rabstva.html",
+            "link": "/card/movies/800-297/12-let-rabstva.html",
             "year": "2013",
             "rating":"7.9",
             "genres": ["Драма", "История" ]
@@ -241,7 +241,7 @@ function generateCards() {
         {
             "name": "Каникулы",
             "image": "https://image.tmdb.org/t/p/w500//7K4pewvTT1yc7cbFNS6GOZYlNtW.jpg",
-            "link": "/see/card/movies/800-298/Kanikuly.html",
+            "link": "/card/movies/800-298/Kanikuly.html",
             "year": "2015",
             "rating":"6.3",
             "genres": ["Комедия"]
@@ -249,7 +249,7 @@ function generateCards() {
         {
             "name": "Лунный свет",
             "image": "https://image.tmdb.org/t/p/w500//8DD8b6jcAAWLFM55vM51UhYT42h.jpg",
-            "link": "/see/card/movies/800-299/Lunnyj-svet.html",
+            "link": "/card/movies/800-299/Lunnyj-svet.html",
             "year": "2016",
             "rating":"7.4",
             "genres": ["Драма"]
@@ -257,7 +257,7 @@ function generateCards() {
         {
             "name": "Первому игроку приготовиться",
             "image": "https://image.tmdb.org/t/p/w500//eVvMjpcw2lkS1A7hTeOzZDk0Ocf.jpg",
-            "link": "/see/card/movies/800-300/Pervomu-igroku-prigotovitsya.html",
+            "link": "/card/movies/800-300/Pervomu-igroku-prigotovitsya.html",
             "year": "2018",
             "rating":"7.6",
             "genres": ["Боевик", "Приключения", "Фантастика"]
@@ -265,7 +265,7 @@ function generateCards() {
         {
             "name": "Дракула",
             "image": "https://image.tmdb.org/t/p/original/yw5K6HeWPE2zicm1PcewSkNdJ0v.jpg",
-            "link": "/see/card/movies/800-301/Drakula.html",
+            "link": "/card/movies/800-301/Drakula.html",
             "year": "2014",
             "rating":"6.4",
             "genres": ["Ужасы", "Боевик", "Фэнтези"]
@@ -273,7 +273,7 @@ function generateCards() {
         {
             "name": "Пиксели",
             "image": "https://image.tmdb.org/t/p/w500//hpZKgjYqY9Fy0glIvQrddvgz9Ov.jpg",
-            "link": "/see/card/movies/800-302/Pikseli.html",
+            "link": "/card/movies/800-302/Pikseli.html",
             "year": "2015",
             "rating":"5.7",
             "genres": ["Боевик", "Комедия", "Фантастика"]
@@ -281,7 +281,7 @@ function generateCards() {
         {
             "name": "Всё везде и сразу",
             "image": "https://image.tmdb.org/t/p/w500//oFiudghfudYUtW3yHgvv82xgoXP.jpg",
-            "link": "/see/card/movies/800-303/Vsyo-vezde-i-srazu.html",
+            "link": "/card/movies/800-303/Vsyo-vezde-i-srazu.html",
             "year": "2022",
             "rating":"7.8",
             "genres": ["Боевик", "Приключения", "Фантастика"]
@@ -289,7 +289,7 @@ function generateCards() {
         {
             "name": "Миа и белый лев",
             "image": "https://image.tmdb.org/t/p/w500//yaFw0YbkGuWeTiidqSNQo4jjxRc.jpg",
-            "link": "/see/card/movies/800-304/Mia-i-belyj-lev.html",
+            "link": "/card/movies/800-304/Mia-i-belyj-lev.html",
             "year": "2018",
             "rating":"7.3",
             "genres": ["Приключения", "Семейный", "Драма"]
@@ -297,7 +297,7 @@ function generateCards() {
         {
             "name": "Король Ричард",
             "image": "https://image.tmdb.org/t/p/w500//JHb7M3mwxWGLHHtfTu08Ys6aVz.jpg",
-            "link": "/see/card/movies/800-305/Korol-Richard.html",
+            "link": "/card/movies/800-305/Korol-Richard.html",
             "year": "2021",
             "rating":"7.6",
             "genres": ["Драма", "История"]
@@ -305,7 +305,7 @@ function generateCards() {
         {
             "name": "Источник вечной молодости",
             "image": "https://image.tmdb.org/t/p/w500//sxsoSQP16e0Jt8E9Hc8NvwByu8T.jpg",
-            "link": "/see/card/movies/800-306/Istochnik-vechnoj-molodosti.html",
+            "link": "/card/movies/800-306/Istochnik-vechnoj-molodosti.html",
             "year": "2025",
             "rating":"6.6",
             "genres": ["Приключения", "Фэнтези", "Детектив"]
@@ -313,7 +313,7 @@ function generateCards() {
         {
             "name": "Боги Египта",
             "image": "https://image.tmdb.org/t/p/w500//aAMAc3eIQRkEXXwkreZwpJkNJdG.jpg",
-            "link": "/see/card/movies/800-307/Bogi-Egipta.html",
+            "link": "/card/movies/800-307/Bogi-Egipta.html",
             "year": "2016",
             "rating":"5.7",
             "genres": ["Боевик", "Приключения", "Фэнтези"]
@@ -321,7 +321,7 @@ function generateCards() {
         {
             "name": "Отель «Гранд Будапешт»",
             "image": "https://image.tmdb.org/t/p/w500//5qFxj03eBrkI0bUiGIonb4e0AI4.jpg",
-            "link": "/see/card/movies/800-308/Otel-Grand-Budapesht.html",
+            "link": "/card/movies/800-308/Otel-Grand-Budapesht.html",
             "year": "2014",
             "rating":"8.0",
             "genres": ["Комедия"]
@@ -329,7 +329,7 @@ function generateCards() {
         {
             "name": "Шафер напрокат",
             "image": "https://image.tmdb.org/t/p/w500//1rjskQMrE3QrKry64jLsz8GjEbr.jpg",
-            "link": "/see/card/movies/800-309/Shafer-naprokat.html",
+            "link": "/card/movies/800-309/Shafer-naprokat.html",
             "year": "2015",
             "rating":"6.5",
             "genres": ["Комедия"]
@@ -337,7 +337,7 @@ function generateCards() {
         {
             "name": "Прогулка",
             "image": "https://image.tmdb.org/t/p/w500//uosoDdJkXtLdXT9Vc9kGDpWaQFK.jpg",
-            "link": "/see/card/movies/800-310/Progulka.html",
+            "link": "/card/movies/800-310/Progulka.html",
             "year": "2015",
             "rating":"7.0",
             "genres": ["История", "Драма", "Приключения"]
@@ -345,7 +345,7 @@ function generateCards() {
         {
             "name": "Эверест",
             "image": "https://image.tmdb.org/t/p/w500//zIuSZWPQ51PNXD1HnwjkJ3sm9w8.jpg",
-            "link": "/see/card/movies/800-311/Everest.html",
+            "link": "/card/movies/800-311/Everest.html",
             "year": "2015",
             "rating":"6.8",
             "genres": ["Приключения", "Драма", "История"]
@@ -353,7 +353,7 @@ function generateCards() {
         {
             "name": "Исчезнувшая",
             "image": "https://image.tmdb.org/t/p/w500//dBFu1XPsa8NptOJnGiKUJKMVe3C.jpg",
-            "link": "/see/card/movies/800-312/Ischeznuvshaya.html",
+            "link": "/card/movies/800-312/Ischeznuvshaya.html",
             "year": "2014",
             "rating":"7.9",
             "genres": ["Детектив", "Триллер", "Драма"]
@@ -361,7 +361,7 @@ function generateCards() {
         {
             "name": "Дожить до Рассвета",
             "image": "https://image.tmdb.org/t/p/w500//s00A7xz0CtnRO7jAXQxCKnVt3XB.jpg",
-            "link": "/see/card/movies/800-313/Dozhit-do-Rassveta.html",
+            "link": "/card/movies/800-313/Dozhit-do-Rassveta.html",
             "year": "2025",
             "rating":"6.5",
             "genres": ["Ужасы", "Детектив"]
@@ -369,7 +369,7 @@ function generateCards() {
         {
             "name": "Спасатели Малибу",
             "image": "https://image.tmdb.org/t/p/w500//s4T3R588ESvNTEuIizFyftzz8Kt.jpg",
-            "link": "/see/card/movies/800-314/Spasateli-Malibu.html",
+            "link": "/card/movies/800-314/Spasateli-Malibu.html",
             "year": "2017",
             "rating":"6.1",
             "genres": ["Комедия", "Боевик", "Криминал"]
@@ -377,7 +377,7 @@ function generateCards() {
         {
             "name": "Призраки в Венеции",
             "image": "https://image.tmdb.org/t/p/w500//jtKew4ZqdFi8l6lfmEPGnU87T2J.jpg",
-            "link": "/see/card/movies/800-315/Prizraki-v-Venecii.html",
+            "link": "/card/movies/800-315/Prizraki-v-Venecii.html",
             "year": "2023",
             "rating":"6.6",
             "genres": ["Детектив", "Драма", "Криминал", "Триллер"]
@@ -385,7 +385,7 @@ function generateCards() {
         {
             "name": "Смерть на Ниле",
             "image": "https://image.tmdb.org/t/p/w500//iFseuSAGkldPtMbvpap2VM0xqnc.jpg",
-            "link": "/see/card/movies/800-316/Smert-na-Nile.html",
+            "link": "/card/movies/800-316/Smert-na-Nile.html",
             "year": "2022",
             "rating":"6.4",
             "genres": ["Детектив", "Драма", "Криминал"]
@@ -393,7 +393,7 @@ function generateCards() {
         {
             "name": "Убийство в «Восточном экспрессе»",
             "image": "https://image.tmdb.org/t/p/w500//c0EHJ8sOgghjgEXw2PCE3j3qV0A.jpg",
-            "link": "/see/card/movies/800-317/Ubijstvo-v-Vostochnom-ekspresse.html",
+            "link": "/card/movies/800-317/Ubijstvo-v-Vostochnom-ekspresse.html",
             "year": "2017",
             "rating":"6.7",
             "genres": ["Детектив", "Драма", "Криминал"]
@@ -401,7 +401,7 @@ function generateCards() {
         {
             "name": "Философы: Урок выживания",
             "image": "https://image.tmdb.org/t/p/w500//qB0xYHut6aMDnJamTlRk84tPHBp.jpg",
-            "link": "/see/card/movies/800-318/Filosofy-Urok-vyzhivaniya.html",
+            "link": "/card/movies/800-318/Filosofy-Urok-vyzhivaniya.html",
             "year": "2013",
             "rating":"6.1",
             "genres": ["Драма", "Фантастика", "Триллер"]
@@ -409,7 +409,7 @@ function generateCards() {
         {
             "name": "История дельфина 2",
             "image": "https://image.tmdb.org/t/p/w500//3r7rpXgCRSeHxjqX7XygIiNZSFy.jpg",
-            "link": "/see/card/movies/800-319/Istoriya-delfina-2.html",
+            "link": "/card/movies/800-319/Istoriya-delfina-2.html",
             "year": "2014",
             "rating":"6.9",
             "genres": ["Драма", "Семейный"]
@@ -417,7 +417,7 @@ function generateCards() {
         {
             "name": "История дельфина",
             "image": "https://image.tmdb.org/t/p/w500//9WWuPFkYOUHmi2lW4Fcc1G9pRUe.jpg",
-            "link": "/see/card/movies/800-320/Istoriya-delfina.html",
+            "link": "/card/movies/800-320/Istoriya-delfina.html",
             "year": "2011",
             "rating":"6.9",
             "genres": ["Драма", "Семейный"]
@@ -425,7 +425,7 @@ function generateCards() {
         {
             "name": "Комната",
             "image": "https://image.tmdb.org/t/p/w500//t8ee0FShxIeijkg84wFZdc62ivX.jpg",
-            "link": "/see/card/movies/800-321/Komnata.html",
+            "link": "/card/movies/800-321/Komnata.html",
             "year": "2015",
             "rating":"8.0",
             "genres": ["Драма", "Триллер"]
@@ -433,7 +433,7 @@ function generateCards() {
         {
             "name": "Как заработать на убийстве",
             "image": "https://image.tmdb.org/t/p/w500//wRynb0YJqH8gw5TctwDQUIbpFaQ.jpg",
-            "link": "/see/card/movies/800-322/Kak-zarabotat-na-ubijstve.html",
+            "link": "/card/movies/800-322/Kak-zarabotat-na-ubijstve.html",
             "year": "2025",
             "rating":"6.6",
             "genres": ["Комедия", "Триллер"]
@@ -441,7 +441,7 @@ function generateCards() {
         {
             "name": "Дюнкерк",
             "image": "https://image.tmdb.org/t/p/w500//m3xR365ajZrTN5vm2xf91L1zplv.jpg",
-            "link": "/see/card/movies/800-323/Dyunkerk.html",
+            "link": "/card/movies/800-323/Dyunkerk.html",
             "year": "2017",
             "rating":"7.5",
             "genres": ["Военный", "Боевик" , "Драма"]
@@ -449,7 +449,7 @@ function generateCards() {
         {
             "name": "Меню",
             "image": "https://image.tmdb.org/t/p/w500//84khkKvBldEp3h1PQUe6v8ItpR7.jpg",
-            "link": "/see/card/movies/800-324/Menyu.html",
+            "link": "/card/movies/800-324/Menyu.html",
             "year": "2022",
             "rating":"7.2",
             "genres": ["Комедия", "Ужасы" , "Триллер"]
@@ -457,7 +457,7 @@ function generateCards() {
         {
             "name": "Лекарство от здоровья",
             "image": "https://image.tmdb.org/t/p/w500//qN67d5SCiilDe8caBHi4GH6Ih8o.jpg",
-            "link": "/see/card/movies/800-325/Lekarstvo-ot-zdorovya.html",
+            "link": "/card/movies/800-325/Lekarstvo-ot-zdorovya.html",
             "year": "2017",
             "rating":"6.3",
             "genres": ["Ужасы", "Детектив" , "Фантастика"]
@@ -465,7 +465,7 @@ function generateCards() {
         {
             "name": "Не звезди!",
             "image": "https://image.tmdb.org/t/p/w500//tAkZCkfPlb1R7ltLODoSZ3ybbXH.jpg",
-            "link": "/see/card/movies/800-326/Ne-zvezdi.html",
+            "link": "/card/movies/800-326/Ne-zvezdi.html",
             "year": "2022",
             "rating":"5.0",
             "genres": ["Комедия"]
@@ -473,7 +473,7 @@ function generateCards() {
         {
             "name": "Диктатор",
             "image": "https://image.tmdb.org/t/p/w500//zfBGrRcTIocjWXrwdUfWmfCAeez.jpg",
-            "link": "/see/card/movies/800-327/Diktator.html",
+            "link": "/card/movies/800-327/Diktator.html",
             "year": "2012",
             "rating":"6.2",
             "genres": ["Комедия"]
@@ -481,7 +481,7 @@ function generateCards() {
         {
             "name": "Прочь",
             "image": "https://image.tmdb.org/t/p/w500//hkchWNmGfcgow2Jivyxv83JqHCy.jpg",
-            "link": "/see/card/movies/800-328/Proch.html",
+            "link": "/card/movies/800-328/Proch.html",
             "year": "2017",
             "rating":"7.6",
             "genres": ["Детектив", "Триллер" , "Ужасы"]
@@ -489,7 +489,7 @@ function generateCards() {
         {
             "name": "Аладдин",
             "image": "https://image.tmdb.org/t/p/w500//t7D1Q4qQ4LjlaUXUqB7ny3xdIAy.jpg",
-            "link": "/see/card/movies/800-329/Aladdin2019.html",
+            "link": "/card/movies/800-329/Aladdin2019.html",
             "year": "2019",
             "rating":"7.1",
             "genres": ["Приключения", "Семейный" , "Мелодрама"]
@@ -497,7 +497,7 @@ function generateCards() {
         {
             "name": "Люси",
             "image": "https://image.tmdb.org/t/p/w500//et3oLVuK8AfAikDot01X68PbMmK.jpg",
-            "link": "/see/card/movies/800-330/Lyusi.html",
+            "link": "/card/movies/800-330/Lyusi.html",
             "year": "2014",
             "rating":"6.5",
             "genres": ["Боевик", "Фантастика"]
@@ -505,7 +505,7 @@ function generateCards() {
         {
             "name": "Война токов",
             "image": "https://image.tmdb.org/t/p/w500//oD5vaUElVgwwfF2k5aI7pSOVNdJ.jpg",
-            "link": "/see/card/movies/800-331/Vojna-tokov.html",
+            "link": "/card/movies/800-331/Vojna-tokov.html",
             "year": "2018",
             "rating":"6.7",
             "genres": ["Драма", "История"]
@@ -513,7 +513,7 @@ function generateCards() {
         {
             "name": "Отец-молодец",
             "image": "https://image.tmdb.org/t/p/w500//rcXVtyWQNDSJaQY2LciQ2xVU7cs.jpg",
-            "link": "/see/card/movies/800-332/Otec-molodec.html",
+            "link": "/card/movies/800-332/Otec-molodec.html",
             "year": "2013",
             "rating":"6.3",
             "genres": ["Комедия"]
@@ -521,7 +521,7 @@ function generateCards() {
         {
             "name": "Игра на понижение",
             "image": "https://image.tmdb.org/t/p/w500//i46ouFO2WBqJ1xIoTQgrD8Criol.jpg",
-            "link": "/see/card/movies/800-333/Igra-na-ponizhenie.html",
+            "link": "/card/movies/800-333/Igra-na-ponizhenie.html",
             "year": "2015",
             "rating":"7.4",
             "genres": ["Драма", "Комедия"]
@@ -529,7 +529,7 @@ function generateCards() {
         {
             "name": "Крепись!",
             "image": "https://image.tmdb.org/t/p/w500//8v1u1kU50wvqtZhV6WQMD1lVFZY.jpg",
-            "link": "/see/card/movies/800-334/Krepis.html",
+            "link": "/card/movies/800-334/Krepis.html",
             "year": "2015",
             "rating":"6.0",
             "genres": ["Комедия"]
@@ -537,7 +537,7 @@ function generateCards() {
         {
             "name": "Любовь и другие лекарства",
             "image": "https://image.tmdb.org/t/p/w500//zys6uLVuwh2o7epNMYj45cylDxl.jpg",
-            "link": "/see/card/movies/800-335/Lyubov-i-drugie-lekarstva.html",
+            "link": "/card/movies/800-335/Lyubov-i-drugie-lekarstva.html",
             "year": "2010",
             "rating":"7.0",
             "genres": ["Драма", "Комедия", "Мелодрама"]
@@ -545,7 +545,7 @@ function generateCards() {
         {
             "name": "Быть лучше: История Робби Уильямса",
             "image": "https://image.tmdb.org/t/p/w500//4nUN5BtOyHKi0bWmin8ZEgdTzve.jpg",
-            "link": "/see/card/movies/800-336/Byt-luchshe-Istoriya-Robbi-Uilyamsa.html",
+            "link": "/card/movies/800-336/Byt-luchshe-Istoriya-Robbi-Uilyamsa.html",
             "year": "2024",
             "rating":"7.8",
             "genres": ["Музыка", "Драма"]
@@ -553,7 +553,7 @@ function generateCards() {
         {
             "name": "Хочу как ты",
             "image": "https://image.tmdb.org/t/p/w500//b2OQYDWZJGUrfSP6dOSyXJ3xq2r.jpg",
-            "link": "/see/card/movies/800-337/Hochu-kak-ty.html",
+            "link": "/card/movies/800-337/Hochu-kak-ty.html",
             "year": "2011",
             "rating":"6.2",
             "genres": ["Комедия"]
@@ -561,7 +561,7 @@ function generateCards() {
         {
             "name": "Бабули",
             "image": "https://image.tmdb.org/t/p/w500//7yGSVs3N0USyU2N2z1NC4H6AY03.jpg",
-            "link": "/see/card/movies/800-342/Babuli.html",
+            "link": "/card/movies/800-342/Babuli.html",
             "year": "2025",
             "rating":"6.9",
             "genres": ["Комедия"]
@@ -569,7 +569,7 @@ function generateCards() {
         {
             "name": "Я иду искать",
             "image": "https://image.tmdb.org/t/p/w500//jPGy3buduikigoc7UJFPRbWhL1b.jpg",
-            "link": "/see/card/movies/800-338/Ya-idu-iskat.html",
+            "link": "/card/movies/800-338/Ya-idu-iskat.html",
             "year": "2019",
             "rating":"7.0",
             "genres": ["Ужасы", "Комедия"]
@@ -577,7 +577,7 @@ function generateCards() {
         {
             "name": "Одарённая",
             "image": "https://image.tmdb.org/t/p/w500//z6wow2HLj15W3xGJeToIm45647e.jpg",
-            "link": "/see/card/movies/800-339/Odaryonnaya.html",
+            "link": "/card/movies/800-339/Odaryonnaya.html",
             "year": "2017",
             "rating":"8.0",
             "genres": ["Драма", "Комедия"]
@@ -585,7 +585,7 @@ function generateCards() {
         {
             "name": "Тетрадь смерти",
             "image": "https://image.tmdb.org/t/p/w500//AkU1W85hrAYABv0oTDMrYaX8T8F.jpg",
-            "link": "/see/card/movies/800-340/Tetrad-smerti.html",
+            "link": "/card/movies/800-340/Tetrad-smerti.html",
             "year": "2017",
             "rating":"4.3",
             "genres": ["Криминал", "Фэнтези", "Ужасы"]
@@ -593,7 +593,7 @@ function generateCards() {
         {
             "name": "Прибытие",
             "image": "https://image.tmdb.org/t/p/w500//3K1byNV0CfChvJFNbe2ZAkiro4U.jpg",
-            "link": "/see/card/movies/800-04/Pribytie.html",
+            "link": "/card/movies/800-04/Pribytie.html",
             "year": "2016",
             "rating":"7.6",
             "genres": ["Драма", "Фантастика", "Детектив"]
@@ -601,7 +601,7 @@ function generateCards() {
         {
             "name": "Богемская рапсодия",
             "image": "https://image.tmdb.org/t/p/w500//fXGXv5myFWcQjrVol546Fa9lmo6.jpg",
-            "link": "/see/card/movies/800-341/Bogemskaya-rapsodiya.html",
+            "link": "/card/movies/800-341/Bogemskaya-rapsodiya.html",
             "year": "2018",
             "rating":"8.0",
             "genres": ["Музыка", "Драма"]
@@ -609,7 +609,7 @@ function generateCards() {
         {
             "name": "В первый раз",
             "image": "https://image.tmdb.org/t/p/w500//cnbNuaNbwblc0K6OC0h2nrVdqbi.jpg",
-            "link": "/see/card/movies/800-05/V-pervyj-raz.html",
+            "link": "/card/movies/800-05/V-pervyj-raz.html",
             "year": "2012",
             "rating":"7.0",
             "genres": ["Драма", "Комедия", "Мелодрама"]
@@ -617,7 +617,7 @@ function generateCards() {
         {
             "name": "Паразиты",
             "image": "https://image.tmdb.org/t/p/w500//zg3lUyLTnpbS5N29G6B3a63O7uP.jpg",
-            "link": "/see/card/movies/800-06/Parazity.html",
+            "link": "/card/movies/800-06/Parazity.html",
             "year": "2019",
             "rating":"8.5",
             "genres": ["Триллер", "Драма"]
@@ -625,7 +625,7 @@ function generateCards() {
         {
             "name": "Идеальные незнакомцы",
             "image": "https://image.tmdb.org/t/p/w500//x6KjNrGkNUkhHcmml1vHR0989a9.jpg",
-            "link": "/see/card/movies/800-07/Idealnye-neznakomcy.html",
+            "link": "/card/movies/800-07/Idealnye-neznakomcy.html",
             "year": "2016",
             "rating":"7.9",
             "genres": ["Комедия", "Драма"]
@@ -633,7 +633,7 @@ function generateCards() {
         {
             "name": "Остров проклятых",
             "image": "https://image.tmdb.org/t/p/w500//3UVMyefkUBiktshtKIEnNXvOFKH.jpg",
-            "link": "/see/card/movies/800-08/Ostrov-proklyatyh.html",
+            "link": "/card/movies/800-08/Ostrov-proklyatyh.html",
             "year": "2010",
             "rating":"8.2",
             "genres": ["Драма", "Триллер", "Детектив"]
@@ -641,7 +641,7 @@ function generateCards() {
         {
             "name": "Логан",
             "image": "https://image.tmdb.org/t/p/w500//6FSoZ8mtEwPAO3k670G3yRaBpTK.jpg",
-            "link": "/see/card/movies/800-09/Logan.html",
+            "link": "/card/movies/800-09/Logan.html",
             "year": "2017",
             "rating":"7.8",
             "genres": ["Боевик", "Драма", "Фантастика"]
@@ -649,7 +649,7 @@ function generateCards() {
         {
             "name": "Кит",
             "image": "https://image.tmdb.org/t/p/w500//bUA6X03vffX3qCy3diF91PFo428.jpg",
-            "link": "/see/card/movies/800-11/Kit.html",
+            "link": "/card/movies/800-11/Kit.html",
             "year": "2022",
             "rating":"7.8",
             "genres": ["Драма"]
@@ -657,7 +657,7 @@ function generateCards() {
         {
             "name": "Кто там?",
             "image": "https://image.tmdb.org/t/p/original/awc6lTA5fYlkNsAAAZYZrGZ5yoq.jpg",
-            "link": "/see/card/movies/800-13/Kto-tam.html",
+            "link": "/card/movies/800-13/Kto-tam.html",
             "year": "2015",
             "rating":"5.4",
             "genres": ["Ужасы", "Триллер", "Криминал"]
@@ -665,7 +665,7 @@ function generateCards() {
         {
             "name": "Круэлла",
             "image": "https://image.tmdb.org/t/p/w500//hUfyYGP9Xf6cHF9y44JXJV3NxZM.jpg",
-            "link": "/see/card/movies/800-15/Kruella.html",
+            "link": "/card/movies/800-15/Kruella.html",
             "year": "2021",
             "rating":"8.0",
             "genres": ["Комедия", "Криминал", "Приключения"]
@@ -673,7 +673,7 @@ function generateCards() {
         {
             "name": "Зомби по имени Шон",
             "image": "https://image.tmdb.org/t/p/w500//hACq0LdC5WNjPb1jzTZzuj1R4qx.jpg",
-            "link": "/see/card/movies/800-18/Zombi-po-imeni-Shon.html",
+            "link": "/card/movies/800-18/Zombi-po-imeni-Shon.html",
             "year": "2004",
             "rating":"7.5",
             "genres": ["Ужасы", "Комедия"]
@@ -681,7 +681,7 @@ function generateCards() {
         {
             "name": "Выживший",
             "image": "https://image.tmdb.org/t/p/w500//gvWniVnehAkIAfy40VlcFy3vOef.jpg",
-            "link": "/see/card/movies/800-19/Vyzhivshij.html",
+            "link": "/card/movies/800-19/Vyzhivshij.html",
             "year": "2015",
             "rating":"7.5",
             "genres": ["Вестерн", "Драма", "Приключения"]
@@ -689,7 +689,7 @@ function generateCards() {
         {
             "name": "Гнев человеческий",
             "image": "https://image.tmdb.org/t/p/w500//nRE9zOfzdp4uQMeDOgCvMf6izNh.jpg",
-            "link": "/see/card/movies/800-21/Gnev-chelovecheskij.html",
+            "link": "/card/movies/800-21/Gnev-chelovecheskij.html",
             "year": "2021",
             "rating":"7.6",
             "genres": ["Боевик", "Криминал", "Триллер"]
@@ -697,7 +697,7 @@ function generateCards() {
         {
             "name": "Одержимость",
             "image": "https://image.tmdb.org/t/p/w500//nq3mYsTXx6086nFXxzDReQI0J1S.jpg",
-            "link": "/see/card/movies/800-23/Oderzhimost.html",
+            "link": "/card/movies/800-23/Oderzhimost.html",
             "year": "2014",
             "rating":"8.4",
             "genres": ["Драма", "Музыка"]
@@ -705,7 +705,7 @@ function generateCards() {
         {
             "name": "Зелёная книга",
             "image": "https://image.tmdb.org/t/p/w500//aEeTnDzcnGRD5IjSFwVXjusKpu0.jpg",
-            "link": "/see/card/movies/800-24/Zelyonaya-kniga.html",
+            "link": "/card/movies/800-24/Zelyonaya-kniga.html",
             "year": "2018",
             "rating":"8.2",
             "genres": ["Драма", "История"]
@@ -713,7 +713,7 @@ function generateCards() {
         {
             "name": "Последний охотник на демонов",
             "image": "https://image.tmdb.org/t/p/w500//t1U8Rvxb2uimjlH5J45kGg2AHYS.jpg",
-            "link": "/see/card/movies/800-243/Poslednij-ohotnik-na-demonov.html",
+            "link": "/card/movies/800-243/Poslednij-ohotnik-na-demonov.html",
             "year": "2025",
             "rating":"6.2",
             "genres": ["Ужасы", "Боевик", "Триллер"]
@@ -721,7 +721,7 @@ function generateCards() {
         {
             "name": "Ford против Ferrari",
             "image": "https://image.tmdb.org/t/p/w500//579BjDiFrK9VK8EnKZzYwtGGXCg.jpg",
-            "link": "/see/card/movies/800-25/Ford-protiv-Ferrari.html",
+            "link": "/card/movies/800-25/Ford-protiv-Ferrari.html",
             "year": "2019",
             "rating":"8.0",
             "genres": ["Драма", "Боевик", "История"]
@@ -729,7 +729,7 @@ function generateCards() {
         {
             "name": "Миссия: Красный",
             "image": "https://image.tmdb.org/t/p/w500//6T36kuDbXCGRistIewSwKyTmijt.jpg",
-            "link": "/see/card/movies/800-26/Missiya-Krasnyj.html",
+            "link": "/card/movies/800-26/Missiya-Krasnyj.html",
             "year": "2024",
             "rating":"7.1",
             "genres": ["Боевик", "Комедия", "Фэнтези"]
@@ -737,7 +737,7 @@ function generateCards() {
         {
             "name": "Братья Гримм",
             "image": "https://image.tmdb.org/t/p/w500//aADABzbuqnVWjXIu2jO5M1IkEIR.jpg",
-            "link": "/see/card/movies/800-27/Bratya-Grimm.html",
+            "link": "/card/movies/800-27/Bratya-Grimm.html",
             "year": "2005",
             "rating":"5.8",
             "genres": ["Приключения", "Фэнтези", "Комедия", "Триллер"]
@@ -745,7 +745,7 @@ function generateCards() {
         {
             "name": "Посвященный",
             "image": "https://image.tmdb.org/t/p/w500//aXXEcHZsZ2lXUxPLaadnXeZVz5c.jpg",
-            "link": "/see/card/movies/800-29/Posvyashennyj.html",
+            "link": "/card/movies/800-29/Posvyashennyj.html",
             "year": "2014",
             "rating":"6.6",
             "genres": ["Драма", "Фантастика"]
@@ -753,7 +753,7 @@ function generateCards() {
         {
             "name": "Рейс навылет",
             "image": "https://image.tmdb.org/t/p/w500//1Os0R2vgXPIBAl6MyMoBhJcmbHw.jpg",
-            "link": "/see/card/movies/800-244/Rejs-navylet.html",
+            "link": "/card/movies/800-244/Rejs-navylet.html",
             "year": "2025",
             "rating":"5.9",
             "genres": ["Боевик", "Комедия", "Триллер"]
@@ -761,7 +761,7 @@ function generateCards() {
         {
             "name": "И гаснет свет",
             "image": "https://image.tmdb.org/t/p/w500//f5njPYl9eQdwf0xUwJuQ7no6ET.jpg",
-            "link": "/see/card/movies/800-30/I-gasnet-svet.html",
+            "link": "/card/movies/800-30/I-gasnet-svet.html",
             "year": "2016",
             "rating":"6.4",
             "genres": ["Ужасы"]
@@ -769,7 +769,7 @@ function generateCards() {
         {
             "name": "Комната желаний",
             "image": "https://image.tmdb.org/t/p/w500//de2V6MaJzGRclg1pQaSG2v3i0yW.jpg",
-            "link": "/see/card/movies/800-39/Komnata-zhelanij.html",
+            "link": "/card/movies/800-39/Komnata-zhelanij.html",
             "year": "2019",
             "rating":"6.4",
             "genres": ["Ужасы", "Драма", "Фантастика"]
@@ -777,7 +777,7 @@ function generateCards() {
         {
             "name": "Школа мистера Пингвина",
             "image": "https://image.tmdb.org/t/p/w500//xiavsOGJJD0NGliB5BZtrJdbQLT.jpg",
-            "link": "/see/card/movies/800-245/Shkola-mistera-Pingvina.html",
+            "link": "/card/movies/800-245/Shkola-mistera-Pingvina.html",
             "year": "2025",
             "rating":"7.2",
             "genres": ["Драма"]
@@ -785,7 +785,7 @@ function generateCards() {
         {
             "name": "Дорогой Санта",
             "image": "https://image.tmdb.org/t/p/w500//v4LzYnQ1VGb0Q191Eb0NDSxdEKy.jpg",
-            "link": "/see/card/movies/800-51/Dorogoj-Santa.html",
+            "link": "/card/movies/800-51/Dorogoj-Santa.html",
             "year": "2024",
             "rating":"6.3",
             "genres": ["Фэнтези", "Комедия"]
@@ -793,7 +793,7 @@ function generateCards() {
         {
             "name": "Вивариум",
             "image": "https://image.tmdb.org/t/p/w500//6z5otnH68jltjyC6748irDsC7B3.jpg",
-            "link": "/see/card/movies/800-37/Vivarium.html",
+            "link": "/card/movies/800-37/Vivarium.html",
             "year": "2019",
             "rating":"6.1",
             "genres": ["Фантастика", "Триллер", "Детектив"]
@@ -801,7 +801,7 @@ function generateCards() {
         {
             "name": "Смерть Единорога",
             "image": "https://image.tmdb.org/t/p/w500//lVINt3dHhoMBLscMog0oYzrjCzR.jpg",
-            "link": "/see/card/movies/800-246/Smert-Edinoroga.html",
+            "link": "/card/movies/800-246/Smert-Edinoroga.html",
             "year": "2025",
             "rating":"6.5",
             "genres": ["Ужасы", "Фэнтези", "Комедия"]
@@ -809,7 +809,7 @@ function generateCards() {
         {
             "name": "Марсианин",
             "image": "https://image.tmdb.org/t/p/w500//6U19srkH4wI6taluviXbVaIpsau.jpg",
-            "link": "/see/card/movies/800-47/Marsianin.html",
+            "link": "/card/movies/800-47/Marsianin.html",
             "year": "2015",
             "rating":"7.7",
             "genres": ["Драма", "Приключения", "Фантастика"]
@@ -817,7 +817,7 @@ function generateCards() {
         {
             "name": "Наполеон",
             "image": "https://image.tmdb.org/t/p/w500//z7E0ZtNnRheOZThX2QtSu3RmtXP.jpg",
-            "link": "/see/card/movies/800-89/Napoleon.html",
+            "link": "/card/movies/800-89/Napoleon.html",
             "year": "2023",
             "rating":"6.4",
             "genres": ["История", "Военный", "Мелодрама"]
@@ -825,7 +825,7 @@ function generateCards() {
         {
             "name": "Другой человек",
             "image": "https://image.tmdb.org/t/p/w500//dX5CQBzWX6ePHj8WvHWideMYw5D.jpg",
-            "link": "/see/card/movies/800-64/Drugoj-chelovek.html",
+            "link": "/card/movies/800-64/Drugoj-chelovek.html",
             "year": "2024",
             "rating":"7.1",
             "genres": ["Комедия", "Драма"]
@@ -833,7 +833,7 @@ function generateCards() {
         {
             "name": "Собачья жизнь 2",
             "image": "https://image.tmdb.org/t/p/w500//nTIYb1c3JcqFRo9V1RIzflsJTmj.jpg",
-            "link": "/see/card/movies/800-151/Sobachya-zhizn-2.html",
+            "link": "/card/movies/800-151/Sobachya-zhizn-2.html",
             "year": "2019",
             "rating":"8.1",
             "genres": ["Семейный", "Приключения", "Драма"]
@@ -841,7 +841,7 @@ function generateCards() {
         {
             "name": "Собачья жизнь",
             "image": "https://image.tmdb.org/t/p/w500//iTSNCcbjehovQf26YcW2uTRKBhH.jpg",
-            "link": "/see/card/movies/800-152/Sobachya-zhizn.html",
+            "link": "/card/movies/800-152/Sobachya-zhizn.html",
             "year": "2017",
             "rating":"7.6",
             "genres": ["Приключения", "Комедия", "Семейный", "Драма"]
@@ -849,7 +849,7 @@ function generateCards() {
         {
             "name": "Микки 17",
             "image": "https://image.tmdb.org/t/p/w500//884NNRoCyADkpk7pzxpCaSZCzor.jpg",
-            "link": "/see/card/movies/800-247/Mikki-17.html",
+            "link": "/card/movies/800-247/Mikki-17.html",
             "year": "2025",
             "rating":"6.9",
             "genres": ["Фантастика", "Комедия", "Приключения"]
@@ -857,7 +857,7 @@ function generateCards() {
         {
             "name": "Топ Ган: Мэверик",
             "image": "https://image.tmdb.org/t/p/w500//niNo4qTtIule2vvMFW05amvMtOB.jpg",
-            "link": "/see/card/movies/800-10/Top-Gan-Meverik.html",
+            "link": "/card/movies/800-10/Top-Gan-Meverik.html",
             "year": "2022",
             "rating":"8.2",
             "genres": ["Боевик", "Драма"]
@@ -865,7 +865,7 @@ function generateCards() {
         {
             "name": "Лучший стрелок",
             "image": "https://image.tmdb.org/t/p/w500//8khU38Bv9ovTAP9M7lHqFA5ezAU.jpg",
-            "link": "/see/card/movies/800-144/Luchshij-strelok.html",
+            "link": "/card/movies/800-144/Luchshij-strelok.html",
             "year": "1986",
             "rating":"7.1",
             "genres": ["Боевик", "Драма"]
@@ -873,7 +873,7 @@ function generateCards() {
         {
             "name": "Миссия невыполнима: Смертельная...",
             "image": "https://image.tmdb.org/t/p/w500//qncL23TGeAqmqmbBxJl4R6nYToJ.jpg",
-            "link": "/see/card/movies/800-12/Missiya-nevypolnima-Smertelnaya....html",
+            "link": "/card/movies/800-12/Missiya-nevypolnima-Smertelnaya....html",
             "year": "2023",
             "rating":"7.5",
             "genres": ["Боевик", "Приключения"]
@@ -881,7 +881,7 @@ function generateCards() {
         {
             "name": "Миссия невыполнима: Последствия",
             "image": "https://image.tmdb.org/t/p/w500//2hDzCRhXWm5ry2nFs9HQBIon1DJ.jpg",
-            "link": "/see/card/movies/800-145/Missiya-nevypolnima-Posledstviya.html",
+            "link": "/card/movies/800-145/Missiya-nevypolnima-Posledstviya.html",
             "year": "2018",
             "rating":"7.4",
             "genres": ["Боевик", "Приключения"]
@@ -889,7 +889,7 @@ function generateCards() {
         {
             "name": "Миссия невыполнима: Племя изгоев",
             "image": "https://image.tmdb.org/t/p/w500//fTZcCAdMtMQllBRabszq6tZwhxS.jpg",
-            "link": "/see/card/movies/800-146/Missiya-nevypolnima-Plemya-izgoev.html",
+            "link": "/card/movies/800-146/Missiya-nevypolnima-Plemya-izgoev.html",
             "year": "2015",
             "rating":"7.2",
             "genres": ["Боевик", "Триллер", "Приключения"]
@@ -897,7 +897,7 @@ function generateCards() {
         {
             "name": "Миссия невыполнима: Протокол Фантом",
             "image": "https://image.tmdb.org/t/p/w500//neKiBzXzI6yuN8Fn8beoLcYASsE.jpg",
-            "link": "/see/card/movies/800-147/Missiya-nevypolnima-Protokol-Fantom.html",
+            "link": "/card/movies/800-147/Missiya-nevypolnima-Protokol-Fantom.html",
             "year": "2011",
             "rating":"7.1",
             "genres": ["Боевик", "Триллер", "Приключения"]
@@ -905,7 +905,7 @@ function generateCards() {
         {
             "name": "Миссия невыполнима 3",
             "image": "https://image.tmdb.org/t/p/w500//1QgOjoYLproxIWRZxhZx9pXsmuY.jpg",
-            "link": "/see/card/movies/800-148/Missiya-nevypolnima-3.html",
+            "link": "/card/movies/800-148/Missiya-nevypolnima-3.html",
             "year": "2006",
             "rating":"6.7",
             "genres": ["Боевик","Приключения", "Триллер"]
@@ -913,7 +913,7 @@ function generateCards() {
         {
             "name": "Миссия невыполнима 2",
             "image": "https://image.tmdb.org/t/p/w500//er6j9Gh6cX2na9B0wXMcPAD2tbl.jpg",
-            "link": "/see/card/movies/800-149/Missiya-nevypolnima-2.html",
+            "link": "/card/movies/800-149/Missiya-nevypolnima-2.html",
             "year": "2000",
             "rating":"6.1",
             "genres": ["Приключения","Боевик", "Триллер"]
@@ -921,7 +921,7 @@ function generateCards() {
         {
             "name": "Миссия невыполнима",
             "image": "https://image.tmdb.org/t/p/w500//1qnh1n1tVRq7JY8MYbvaZgfRfq2.jpg",
-            "link": "/see/card/movies/800-150/Missiya-nevypolnima.html",
+            "link": "/card/movies/800-150/Missiya-nevypolnima.html",
             "year": "1996",
             "rating":"7.0",
             "genres": ["Приключения","Боевик", "Триллер"]
@@ -929,7 +929,7 @@ function generateCards() {
         {
             "name": "Стражи Галактики. Часть 3",
             "image": "https://image.tmdb.org/t/p/w500//5rHLzqZvw85tnhy8qpnAsN8Q7xO.jpg",
-            "link": "/see/card/movies/800-153/Strazhi-Galaktiki-Chast-3.html",
+            "link": "/card/movies/800-153/Strazhi-Galaktiki-Chast-3.html",
             "year": "2023",
             "rating":"7.9",
             "genres": ["Фантастика","Боевик", "Комедия"]
@@ -937,7 +937,7 @@ function generateCards() {
         {
             "name": "Стражи Галактики. Часть 2",
             "image": "https://image.tmdb.org/t/p/w500//miAFwzWPkv7l8VPwgH2sV5oQQKx.jpg",
-            "link": "/see/card/movies/800-154/Strazhi-Galaktiki-Chast-2.html",
+            "link": "/card/movies/800-154/Strazhi-Galaktiki-Chast-2.html",
             "year": "2017",
             "rating":"7.6",
             "genres": ["Фантастика","Приключения", "Боевик"]
@@ -945,7 +945,7 @@ function generateCards() {
         {
             "name": "Стражи Галактики",
             "image": "https://image.tmdb.org/t/p/w500//s8jpilArz8J5X07O4IB7ahMwgQP.jpg",
-            "link": "/see/card/movies/800-14/Strazhi-Galaktiki.html",
+            "link": "/card/movies/800-14/Strazhi-Galaktiki.html",
             "year": "2014",
             "rating":"7.9",
             "genres": ["Боевик","Фантастика", "Приключения"]
@@ -953,7 +953,7 @@ function generateCards() {
         {
             "name": "Достать ножи: Стеклянная луковица",
             "image": "https://image.tmdb.org/t/p/w500//14PudL6hCEhqwPDbxoBt2RHK5cC.jpg",
-            "link": "/see/card/movies/800-155/Dostat-nozhi-Steklyannaya-lukovica.html",
+            "link": "/card/movies/800-155/Dostat-nozhi-Steklyannaya-lukovica.html",
             "year": "2022",
             "rating":"7.1",
             "genres": ["Комедия","Криминал", "Детектив"]
@@ -961,7 +961,7 @@ function generateCards() {
         {
             "name": "Достать ножи",
             "image": "https://image.tmdb.org/t/p/w500//mGfb75tcFWxuT8esS1isHrNFE90.jpg",
-            "link": "/see/card/movies/800-17/Dostat-nozhi.html",
+            "link": "/card/movies/800-17/Dostat-nozhi.html",
             "year": "2019",
             "rating":"7.8",
             "genres": ["Комедия","Криминал", "Детектив"]
@@ -969,7 +969,7 @@ function generateCards() {
         {
             "name": "Бегущий по лезвию 2049",
             "image": "https://image.tmdb.org/t/p/w500//kAq1RFHqtZrBvKve7GOGdgUU399.jpg",
-            "link": "/see/card/movies/800-16/Begushij-po-lezviyu-2049.html",
+            "link": "/card/movies/800-16/Begushij-po-lezviyu-2049.html",
             "year": "2017",
             "rating":"7.6",
             "genres": ["Фантастика","Драма"]
@@ -977,7 +977,7 @@ function generateCards() {
         {
             "name": "Бегущий по лезвию",
             "image": "https://image.tmdb.org/t/p/w500//dFzA82XdkobzdOjrYLMIfApzCVC.jpg",
-            "link": "/see/card/movies/800-156/Begushij-po-lezviyu.html",
+            "link": "/card/movies/800-156/Begushij-po-lezviyu.html",
             "year": "1982",
             "rating":"7.9",
             "genres": ["Фантастика","Драма", "Триллер"]
@@ -985,7 +985,7 @@ function generateCards() {
         {
             "name": "Джон Уик 4",
             "image": "https://image.tmdb.org/t/p/w500//o29otcx30U3EkqNVGC2feJVz5yr.jpg",
-            "link": "/see/card/movies/800-22/Dzhon-Uik-4.html",
+            "link": "/card/movies/800-22/Dzhon-Uik-4.html",
             "year": "2023",
             "rating":"7.7",
             "genres": ["Боевик","Триллер", "Криминал"]
@@ -993,7 +993,7 @@ function generateCards() {
         {
             "name": "Джон Уик 3",
             "image": "https://image.tmdb.org/t/p/w500//2RDx4bMYF5TbTdTBoOwDLDgIej.jpg",
-            "link": "/see/card/movies/800-157/Dzhon-Uik-3.html",
+            "link": "/card/movies/800-157/Dzhon-Uik-3.html",
             "year": "2019",
             "rating":"7.4",
             "genres": ["Боевик","Триллер", "Криминал"]
@@ -1001,7 +1001,7 @@ function generateCards() {
         {
             "name": "Джон Уик 2",
             "image": "https://image.tmdb.org/t/p/w500//60dPOD22s6TS2SfQiiOGOePBg8N.jpg",
-            "link": "/see/card/movies/800-158/Dzhon-Uik-2.html",
+            "link": "/card/movies/800-158/Dzhon-Uik-2.html",
             "year": "2017",
             "rating":"7.3",
             "genres": ["Боевик","Триллер", "Криминал"]
@@ -1009,7 +1009,7 @@ function generateCards() {
         {
             "name": "Джон Уик",
             "image": "https://image.tmdb.org/t/p/w500//2hfeF2566IKZ30c1BAay0N2lxBr.jpg",
-            "link": "/see/card/movies/800-159/Dzhon-Uik.html",
+            "link": "/card/movies/800-159/Dzhon-Uik.html",
             "year": "2014",
             "rating":"7.4",
             "genres": ["Боевик","Триллер"]
@@ -1017,7 +1017,7 @@ function generateCards() {
         {
             "name": "Новые мутанты",
             "image": "https://image.tmdb.org/t/p/w500//2lyCa61EoF44vcQPXQfJzNvKT2D.jpg",
-            "link": "/see/card/movies/800-160/Novye-mutanty.html",
+            "link": "/card/movies/800-160/Novye-mutanty.html",
             "year": "2020",
             "rating":"6.1",
             "genres": ["Фантастика","Ужасы", "Боевик"]
@@ -1025,7 +1025,7 @@ function generateCards() {
         {
             "name": "Люди Икс: Тёмный Феникс",
             "image": "https://image.tmdb.org/t/p/w500//927lqua6AHPW4mUflU26yV3APKZ.jpg",
-            "link": "/see/card/card/movies/800-161/Lyudi-Iks-Tyomnyj-Feniks.html",
+            "link": "/card/card/movies/800-161/Lyudi-Iks-Tyomnyj-Feniks.html",
             "year": "2019",
             "rating":"6.0",
             "genres": ["Фантастика","Боевик", "Приключения"]
@@ -1033,7 +1033,7 @@ function generateCards() {
         {
             "name": "Люди Икс: Апокалипсис",
             "image": "https://image.tmdb.org/t/p/w500//aJ0WyuZpyRjTpz1DT1jcwgReXnP.jpg",
-            "link": "/see/card/movies/800-162/Lyudi-Iks-Apokalipsis.html",
+            "link": "/card/movies/800-162/Lyudi-Iks-Apokalipsis.html",
             "year": "2016",
             "rating":"6.5",
             "genres": ["Приключения","Боевик", "Фантастика"]
@@ -1041,7 +1041,7 @@ function generateCards() {
         {
             "name": "Люди Икс: Дни минувшего будущего",
             "image": "https://image.tmdb.org/t/p/w500//9IdeGyzRZH66RgNq9zSZDwPPllg.jpg",
-            "link": "/see/card/movies/800-28/Lyudi-Iks-Dni-minuvshego-budushego.html",
+            "link": "/card/movies/800-28/Lyudi-Iks-Dni-minuvshego-budushego.html",
             "year": "2014",
             "rating":"7.5",
             "genres": ["Боевик","Приключения", "Фантастика"]
@@ -1049,7 +1049,7 @@ function generateCards() {
         {
             "name": "Росомаха: Бессмертный",
             "image": "https://image.tmdb.org/t/p/w500//ol7Qyzx31q6HG9zGOvqiPIUIk3f.jpg",
-            "link": "/see/card/movies/800-163/Rosomaha-Bessmertnyj.html",
+            "link": "/card/movies/800-163/Rosomaha-Bessmertnyj.html",
             "year": "2013",
             "rating":"6.4",
             "genres": ["Боевик","Приключения", "Фантастика"]
@@ -1057,7 +1057,7 @@ function generateCards() {
         {
             "name": "Люди Икс: Первый класс",
             "image": "https://image.tmdb.org/t/p/w500//6vkQtWNHqq3uzcS0PH2mER7Gzjd.jpg",
-            "link": "/see/card/movies/800-164/Lyudi-Iks-Pervyj-klass.html",
+            "link": "/card/movies/800-164/Lyudi-Iks-Pervyj-klass.html",
             "year": "2011",
             "rating":"7.3",
             "genres": ["Боевик","Приключения", "Фантастика"]
@@ -1065,7 +1065,7 @@ function generateCards() {
         {
             "name": "Люди Икс: Начало. Росомаха",
             "image": "https://image.tmdb.org/t/p/w500//nuOayxoKOCT6jog60i4A0iEfVk0.jpg",
-            "link": "/see/card/movies/800-165/Lyudi-Iks-Nachalo-Rosomaha.html",
+            "link": "/card/movies/800-165/Lyudi-Iks-Nachalo-Rosomaha.html",
             "year": "2009",
             "rating":"6.3",
             "genres": ["Приключения","Боевик", "Фантастика"]
@@ -1073,7 +1073,7 @@ function generateCards() {
         {
             "name": "Люди Икс: Последняя битва",
             "image": "https://image.tmdb.org/t/p/w500//jD5bK5jxDprc1StAhHXMAgaEBMY.jpg",
-            "link": "/see/card/movies/800-166/Lyudi-Iks-Poslednyaya-bitva.html",
+            "link": "/card/movies/800-166/Lyudi-Iks-Poslednyaya-bitva.html",
             "year": "2006",
             "rating":"6.4",
             "genres": ["Боевик","Фантастика", "Триллер"]
@@ -1081,7 +1081,7 @@ function generateCards() {
         {
             "name": "Люди Икс 2",
             "image": "https://image.tmdb.org/t/p/w500//qkQ3KZ0wF7pyPWMzL5TxnEKKDiJ.jpg",
-            "link": "/see/card/movies/800-167/Lyudi-Iks-2.html",
+            "link": "/card/movies/800-167/Lyudi-Iks-2.html",
             "year": "2003",
             "rating":"7.0",
             "genres": ["Приключения","Боевик", "Фантастика"]
@@ -1089,7 +1089,7 @@ function generateCards() {
         {
             "name": "Люди Икс",
             "image": "https://image.tmdb.org/t/p/w500//wBqh8PMSOoUmSCyilXR8IRnjhwN.jpg",
-            "link": "/see/card/movies/800-168/Lyudi-Iks.html",
+            "link": "/card/movies/800-168/Lyudi-Iks.html",
             "year": "2000",
             "rating":"7.0",
             "genres": ["Приключения","Боевик", "Фантастика"]
@@ -1097,7 +1097,7 @@ function generateCards() {
         {
             "name": "Дом у дороги",
             "image": "https://image.tmdb.org/t/p/w500//z8AWDW9BaZ1oQohej87TdACGszm.jpg",
-            "link": "/see/card/movies/800-31/Dom-u-dorogi.html",
+            "link": "/card/movies/800-31/Dom-u-dorogi.html",
             "year": "2024",
             "rating":"6.9",
             "genres": ["Боевик","Триллер"]
@@ -1105,7 +1105,7 @@ function generateCards() {
         {
             "name": "Придорожная закусочная",
             "image": "https://image.tmdb.org/t/p/w500//2vYF1J7QeM1On7thBAL2RnVibHk.jpg",
-            "link": "/see/card/movies/800-169/Pridorozhnaya-zakusochnaya.html",
+            "link": "/card/movies/800-169/Pridorozhnaya-zakusochnaya.html",
             "year": "1989",
             "rating":"6.7",
             "genres": ["Боевик","Триллер"]
@@ -1113,7 +1113,7 @@ function generateCards() {
         {
             "name": "King’s Man: Начало",
             "image": "https://image.tmdb.org/t/p/w500//9NyzS42sc9mvNLyPJtYqTqpkEoY.jpg",
-            "link": "/see/card/movies/800-170/King’s-Man-Nachalo.html",
+            "link": "/card/movies/800-170/King’s-Man-Nachalo.html",
             "year": "2021",
             "rating":"6.7",
             "genres": ["Боевик","Приключения", "Триллер"]
@@ -1121,7 +1121,7 @@ function generateCards() {
         {
             "name": "Kingsman: Золотое кольцо",
             "image": "https://image.tmdb.org/t/p/w500//vVQXYV7x6gpk9oVFbzsBxkIxdqT.jpg",
-            "link": "/see/card/movies/800-171/Kingsman-Zolotoe-kolco.html",
+            "link": "/card/movies/800-171/Kingsman-Zolotoe-kolco.html",
             "year": "2017",
             "rating":"7.0",
             "genres": ["Боевик","Приключения", "Комедия", "Триллер"]
@@ -1129,7 +1129,7 @@ function generateCards() {
         {
             "name": "Kingsman: Секретная служба",
             "image": "https://image.tmdb.org/t/p/w500//1br1GunwmrGaD9H3eyRPjLx1HY4.jpg",
-            "link": "/see/card/movies/800-32/Kingsman-Sekretnaya-sluzhba.html",
+            "link": "/card/movies/800-32/Kingsman-Sekretnaya-sluzhba.html",
             "year": "2015",
             "rating":"7.6",
             "genres": ["Криминал","Комедия", "Боевик"]
@@ -1137,7 +1137,7 @@ function generateCards() {
         {
             "name": "Побег из Шоушенка",
             "image": "https://image.tmdb.org/t/p/w500//yvmKPlTIi0xdcFQIFcQKQJcI63W.jpg",
-            "link": "/see/card/movies/800-33/Pobeg-iz-Shoushenka.html",
+            "link": "/card/movies/800-33/Pobeg-iz-Shoushenka.html",
             "year": "1994",
             "rating":"8.7",
             "genres": ["Драма","Криминал"]
@@ -1145,7 +1145,7 @@ function generateCards() {
         {
             "name": "Счастливого нового дня смерти",
             "image": "https://image.tmdb.org/t/p/w500//ZstlucYRCRfkZ74O2LUfbbNbyb.jpg",
-            "link": "/see/card/movies/800-172/Schastlivogo-novogo-dnya-smerti.html",
+            "link": "/card/movies/800-172/Schastlivogo-novogo-dnya-smerti.html",
             "year": "2019",
             "rating":"6.3",
             "genres": ["Комедия","Ужасы", "Фантастика"]
@@ -1153,7 +1153,7 @@ function generateCards() {
         {
             "name": "Счастливого дня смерти",
             "image": "https://image.tmdb.org/t/p/w500//gxOqCjZ3YGxZpkKchQbHX3DeQ3V.jpg",
-            "link": "/see/card/movies/800-34/Schastlivogo-dnya-smerti.html",
+            "link": "/card/movies/800-34/Schastlivogo-dnya-smerti.html",
             "year": "2017",
             "rating":"6.7",
             "genres": ["Комедия","Ужасы", "Фантастика"]
@@ -1161,7 +1161,7 @@ function generateCards() {
         {
             "name": "Геошторм",
             "image": "https://image.tmdb.org/t/p/w500//8kMSc2UVFCXScIvhkSuSiROySbS.jpg",
-            "link": "/see/card/movies/800-36/Geoshtorm.html",
+            "link": "/card/movies/800-36/Geoshtorm.html",
             "year": "2017",
             "rating":"6.1",
             "genres": ["Боевик","Фантастика", "Триллер"]
@@ -1169,7 +1169,7 @@ function generateCards() {
         {
             "name": "Тёмный рыцарь: Возрождение легенды",
             "image": "https://image.tmdb.org/t/p/w500//2NaeRiOuxkpWv8s0uBzSlp7SuCn.jpg",
-            "link": "/see/card/movies/800-173/Tyomnyj-rycar-Vozrozhdenie-legendy.html",
+            "link": "/card/movies/800-173/Tyomnyj-rycar-Vozrozhdenie-legendy.html",
             "year": "2012",
             "rating":"7.8",
             "genres": ["Боевик","Криминал", "Драма", "Триллер"]
@@ -1177,7 +1177,7 @@ function generateCards() {
         {
             "name": "Тёмный рыцарь",
             "image": "https://image.tmdb.org/t/p/w500//dxWaYQtgpLbycqUpHzkqqYkT5I3.jpg",
-            "link": "/see/card/movies/800-38/Tyomnyj-rycar.html",
+            "link": "/card/movies/800-38/Tyomnyj-rycar.html",
             "year": "2008",
             "rating":"8.5",
             "genres": ["Боевик","Криминал", "Драма", "Триллер"]
@@ -1185,7 +1185,7 @@ function generateCards() {
         {
             "name": "Бэтмен: Начало",
             "image": "https://image.tmdb.org/t/p/w500//fIfmG3EaIy3eqebyq7hXjl1ymQW.jpg",
-            "link": "/see/card/movies/800-174/Betmen-Nachalo.html",
+            "link": "/card/movies/800-174/Betmen-Nachalo.html",
             "year": "2005",
             "rating":"7.7",
             "genres": ["Боевик","Криминал", "Драма", "Триллер"]
@@ -1193,7 +1193,7 @@ function generateCards() {
         {
             "name": "Реальные упыри",
             "image": "https://image.tmdb.org/t/p/w500//tmUHOe07a84zgwMeWCpwnAqUwU4.jpg",
-            "link": "/see/card/movies/800-40/Realnye-upyri.html",
+            "link": "/card/movies/800-40/Realnye-upyri.html",
             "year": "2014",
             "rating":"7.6",
             "genres": ["Комедия","Ужасы"]
@@ -1201,7 +1201,7 @@ function generateCards() {
         {
             "name": "Крёстный отец 3",
             "image": "https://image.tmdb.org/t/p/w500//b0kAYDl4NApOfzNWdlYzmXwujYU.jpg",
-            "link": "/see/card/movies/800-175/Kryostnyj-otec-3.html",
+            "link": "/card/movies/800-175/Kryostnyj-otec-3.html",
             "year": "1990",
             "rating":"7.4",
             "genres": ["Криминал", "Драма", "Триллер"]
@@ -1209,7 +1209,7 @@ function generateCards() {
         {
             "name": "Крёстный отец 2",
             "image": "https://image.tmdb.org/t/p/w500//tOLQ3iRDfbwhVaw3QjDzIOS7zcu.jpg",
-            "link": "/see/card/movies/800-176/Kryostnyj-otec-2.html",
+            "link": "/card/movies/800-176/Kryostnyj-otec-2.html",
             "year": "1974",
             "rating":"8.6",
             "genres": ["Криминал", "Драма", "Триллер"]
@@ -1217,7 +1217,7 @@ function generateCards() {
         {
             "name": "Крёстный отец",
             "image": "https://image.tmdb.org/t/p/w500//hoowzozsn0XQGtgH8nyivAMZfPN.jpg",
-            "link": "/see/card/movies/800-41/Kryostnyj-otec.html",
+            "link": "/card/movies/800-41/Kryostnyj-otec.html",
             "year": "1972",
             "rating":"8.7",
             "genres": ["Криминал", "Драма", "Триллер"]
@@ -1225,7 +1225,7 @@ function generateCards() {
         {
             "name": "Джобс: Империя соблазна",
             "image": "https://image.tmdb.org/t/p/w500//vPuWVOBvMsnpdIT8Qb2suLhIFSi.jpg",
-            "link": "/see/card/movies/800-42/Dzhobs-Imperiya-soblazna.html",
+            "link": "/card/movies/800-42/Dzhobs-Imperiya-soblazna.html",
             "year": "2013",
             "rating":"6.1",
             "genres": ["Драма", "История"]
@@ -1233,7 +1233,7 @@ function generateCards() {
         {
             "name": "Скотт Пилигрим против всех",
             "image": "https://image.tmdb.org/t/p/w500//bLJEFAh6tILVS1PS5mCRlA9HVsR.jpg",
-            "link": "/see/card/movies/800-44/Skott-Piligrim-protiv-vseh.html",
+            "link": "/card/movies/800-44/Skott-Piligrim-protiv-vseh.html",
             "year": "2010",
             "rating":"7.5",
             "genres": ["Боевик", "Комедия", "Мелодрама"]
@@ -1241,7 +1241,7 @@ function generateCards() {
         {
             "name": "Спасти рядового Райана",
             "image": "https://image.tmdb.org/t/p/w500//vhIwsqsMmdv6uwup4V6HJSMcQxI.jpg",
-            "link": "/see/card/movies/800-45/Spasti-ryadovogo-Rajana.html",
+            "link": "/card/movies/800-45/Spasti-ryadovogo-Rajana.html",
             "year": "1998",
             "rating":"8.2",
             "genres": ["Драма", "История", "Военный"]
@@ -1249,7 +1249,7 @@ function generateCards() {
         {
             "name": "Пассажиры",
             "image": "https://image.tmdb.org/t/p/w500//RY7YPqLRkgK5KiIq3kFQhCUJnB.jpg",
-            "link": "/see/card/movies/800-46/Passazhiry.html",
+            "link": "/card/movies/800-46/Passazhiry.html",
             "year": "2016",
             "rating":"7.0",
             "genres": ["Драма", "Мелодрама", "Фантастика"]
@@ -1257,7 +1257,7 @@ function generateCards() {
         {
             "name": "Список Шиндлера",
             "image": "https://image.tmdb.org/t/p/w500//4K8fGGcJP2EoGDucILnaJcOJhZl.jpg",
-            "link": "/see/card/movies/800-48/Spisok-Shindlera.html",
+            "link": "/card/movies/800-48/Spisok-Shindlera.html",
             "year": "1993",
             "rating":"8.6",
             "genres": ["Драма", "История", "Военный"]
@@ -1265,7 +1265,7 @@ function generateCards() {
         {
             "name": "5-я волна",
             "image": "https://image.tmdb.org/t/p/w500//5ngef6vRYcn55NixtJAfK2JTDxY.jpg",
-            "link": "/see/card/movies/800-49/5-aya-volna.html",
+            "link": "/card/movies/800-49/5-aya-volna.html",
             "year": "2016",
             "rating":"5.9",
             "genres": ["Приключения", "Боевик", "Фантастика",]
@@ -1273,7 +1273,7 @@ function generateCards() {
         {
             "name": "Бойцовский клуб",
             "image": "https://image.tmdb.org/t/p/w500//66RvLrRJTm4J8l3uHXWF09AICol.jpg",
-            "link": "/see/card/movies/800-50/Bojcovskij-klub.html",
+            "link": "/card/movies/800-50/Bojcovskij-klub.html",
             "year": "1999",
             "rating":"8.4",
             "genres": ["Драма", "Криминал", "Триллер"]
@@ -1281,7 +1281,7 @@ function generateCards() {
         {
             "name": "Ущелье",
             "image": "https://image.tmdb.org/t/p/w500//yiUINsMKnemBFcUHqpv94yJolWH.jpg",
-            "link": "/see/card/movies/800-02/Ushele.html",
+            "link": "/card/movies/800-02/Ushele.html",
             "year": "2025",
             "rating":"7.7",
             "genres": ["Триллер", "Мелодрама", "Фантастика"]
@@ -1289,7 +1289,7 @@ function generateCards() {
         {
             "name": "Назад в будущее 3",
             "image": "https://image.tmdb.org/t/p/w500//xLRedXsCU3jDALWiQYNv1ZUbH5T.jpg",
-            "link": "/see/card/movies/800-177/Nazad-v-budushee-3.html",
+            "link": "/card/movies/800-177/Nazad-v-budushee-3.html",
             "year": "1990",
             "rating":"7.5",
             "genres": ["Приключения", "Комедия", "Фантастика"]
@@ -1297,7 +1297,7 @@ function generateCards() {
         {
             "name": "Назад в будущее 2",
             "image": "https://image.tmdb.org/t/p/w500//ieHWlIrxpTpdmvqjgxxq0lXsgYc.jpg",
-            "link": "/see/card/movies/800-178/Nazad-v-budushee-2.html",
+            "link": "/card/movies/800-178/Nazad-v-budushee-2.html",
             "year": "1989",
             "rating":"7.8",
             "genres": ["Приключения", "Комедия", "Фантастика"]
@@ -1305,7 +1305,7 @@ function generateCards() {
         {
             "name": "Назад в будущее",
             "image": "https://image.tmdb.org/t/p/w500//9a07nfvCoAAyUMfY0yQqsOjlb2C.jpg",
-            "link": "/see/card/movies/800-52/Nazad-v-budushee.html",
+            "link": "/card/movies/800-52/Nazad-v-budushee.html",
             "year": "1985",
             "rating":"8.3",
             "genres": ["Приключения", "Комедия", "Фантастика"]
@@ -1313,7 +1313,7 @@ function generateCards() {
         {
             "name": "Щелкунчики",
             "image": "https://image.tmdb.org/t/p/w500//iAoS1l0nRLKl4d97mbKF4pUFZhn.jpg",
-            "link": "/see/card/movies/800-53/Shelkunchiki.html",
+            "link": "/card/movies/800-53/Shelkunchiki.html",
             "year": "2024",
             "rating":"5.9",
             "genres": ["Драма", "Комедия"]
@@ -1321,7 +1321,7 @@ function generateCards() {
         {
             "name": "Гладиатор 2",
             "image": "https://image.tmdb.org/t/p/w500//6N7F1Ga9m0CTHziA2Fs7BQczaKZ.jpg",
-            "link": "/see/card/movies/800-179/Gladiator-2.html",
+            "link": "/card/movies/800-179/Gladiator-2.html",
             "year": "2024",
             "rating":"6.8",
             "genres": ["Боевик", "Приключения", "Драма"]
@@ -1329,7 +1329,7 @@ function generateCards() {
         {
             "name": "Гладиатор",
             "image": "https://image.tmdb.org/t/p/w500//1wjNqlfsuHNTXTpCt2ZOV2iPxaf.jpg",
-            "link": "/see/card/movies/800-54/Gladiator.html",
+            "link": "/card/movies/800-54/Gladiator.html",
             "year": "2000",
             "rating":"8.2",
             "genres": ["Боевик", "Приключения", "Драма"]
@@ -1337,7 +1337,7 @@ function generateCards() {
         {
             "name": "Почему он?",
             "image": "https://image.tmdb.org/t/p/w500//q0wK2bXSLulAre276C6M4ZS8Kfo.jpg",
-            "link": "/see/card/movies/800-55/Pochemu-on.html",
+            "link": "/card/movies/800-55/Pochemu-on.html",
             "year": "2016",
             "rating":"6.4",
             "genres": ["Комедия"]
@@ -1345,7 +1345,7 @@ function generateCards() {
         {
             "name": "Аватар: Путь воды",
             "image": "https://image.tmdb.org/t/p/w500//yFNn7uWudLLWDJqfj3fwh5CcUdR.jpg",
-            "link": "/see/card/movies/800-180/Avatar-Put-vody.html",
+            "link": "/card/movies/800-180/Avatar-Put-vody.html",
             "year": "2022",
             "rating":"7.6",
             "genres": ["Фантастика", "Приключения", "Боевик"]
@@ -1353,7 +1353,7 @@ function generateCards() {
         {
             "name": "Аватар",
             "image": "https://image.tmdb.org/t/p/w200//lUKcrcO3wEPhNnzGq06JIX7GIEb.jpg",
-            "link": "/see/card/movies/800-56/Avatar.html",
+            "link": "/card/movies/800-56/Avatar.html",
             "year": "2009",
             "rating":"7.6",
             "genres": ["Фантастика", "Приключения", "Боевик"]
@@ -1361,7 +1361,7 @@ function generateCards() {
         {
             "name": "21 мост",
             "image": "https://image.tmdb.org/t/p/w500//lWDDukaPvDzIRYxgUuGFIH5YfyM.jpg",
-            "link": "/see/card/movies/800-01/21-Most.html",
+            "link": "/card/movies/800-01/21-Most.html",
             "year": "2019",
             "rating":"6.8",
             "genres": ["Криминал", "Боевик", "Драма"]
@@ -1369,7 +1369,7 @@ function generateCards() {
         {
             "name": "Эмилия Перес",
             "image": "https://image.tmdb.org/t/p/w500//6KvGEOCUBsgTUPkl1oWhH0Y3ePy.jpg",
-            "link": "/see/card/movies/800-03/Emilia-Perez.html",
+            "link": "/card/movies/800-03/Emilia-Perez.html",
             "year": "2024",
             "rating":"7.8",
             "genres": ["Драма", "Триллер", "Комедия", "Мюзикл"]
@@ -1377,7 +1377,7 @@ function generateCards() {
         {
             "name": "Грешники",
             "image": "https://image.tmdb.org/t/p/w500//atPV0sdDhFrs4irt1Hw5Fq4aO4V.jpg",
-            "link": "/see/card/movies/800-237/Greshniki.html",
+            "link": "/card/movies/800-237/Greshniki.html",
             "year": "2025",
             "rating":"7.6",
             "genres": ["Ужасы", "Триллер"]
@@ -1385,7 +1385,7 @@ function generateCards() {
         {
             "name": "Спуск в бездну",
             "image": "https://image.tmdb.org/t/p/w500//bSb3ynYHWJbXSSMRhblzrsgt1lO.jpg",
-            "link": "/see/card/movies/800-57/Spusk-v-bezdnu.html",
+            "link": "/card/movies/800-57/Spusk-v-bezdnu.html",
             "year": "2023",
             "rating":"5.7",
             "genres": ["Приключения", "Ужасы", "Драма"]
@@ -1393,7 +1393,7 @@ function generateCards() {
         {
             "name": "Город тайн: Исчезнувшая",
             "image": "https://image.tmdb.org/t/p/w500//ez9LtVmvfbWjX9Spx4DrNEFVErx.jpg",
-            "link": "/see/card/movies/800-58/Gorod-tajn-Ischeznuvshaya.html",
+            "link": "/card/movies/800-58/Gorod-tajn-Ischeznuvshaya.html",
             "year": "2024",
             "rating":"6.5",
             "genres": ["Детектив", "Триллер"]
@@ -1401,7 +1401,7 @@ function generateCards() {
         {
             "name": "Город тайн",
             "image": "https://image.tmdb.org/t/p/w500//phG9MqZdBuzyB2G8wTgGKEQZgNH.jpg",
-            "link": "/see/card/movies/800-181/Gorod-tajn.html",
+            "link": "/card/movies/800-181/Gorod-tajn.html",
             "year": "2021",
             "rating":"6.8",
             "genres": ["Детектив", "Триллер"]
@@ -1409,7 +1409,7 @@ function generateCards() {
         {
             "name": "Хитмен. Последнее дело",
             "image": "https://image.tmdb.org/t/p/w500//3TM9MzC1f6F3BwpPJhdv3hXWQRX.jpg",
-            "link": "/see/card/movies/800-59/Hitmen-Poslednee-delo.html",
+            "link": "/card/movies/800-59/Hitmen-Poslednee-delo.html",
             "year": "2024",
             "rating":"6.9",
             "genres": ["Боевик", "Криминал", "Триллер"]
@@ -1417,7 +1417,7 @@ function generateCards() {
         {
             "name": "Хитмэн: Агент 47",
             "image": "https://image.tmdb.org/t/p/original/AsLFRe7eORaNBO5yEVjLGYt4nxj.jpg",
-            "link": "/see/card/movies/800-182/Hitmen-Agent-47.html",
+            "link": "/card/movies/800-182/Hitmen-Agent-47.html",
             "year": "2015",
             "rating":"5.9",
             "genres": ["Боевик", "Криминал", "Триллер"]
@@ -1425,7 +1425,7 @@ function generateCards() {
         {
             "name": "Хитмэн",
             "image": "https://image.tmdb.org/t/p/original/iHSpeT9cXOFDzXCWtkxxo8ZzREE.jpg",
-            "link": "/see/card/movies/800-183/Hitmen.html",
+            "link": "/card/movies/800-183/Hitmen.html",
             "year": "2007",
             "rating":"6.1",
             "genres": ["Боевик", "Криминал", "Триллер"]
@@ -1433,7 +1433,7 @@ function generateCards() {
         {
             "name": "Непробиваемые",
             "image": "https://image.tmdb.org/t/p/w500//z497zVpHuGDQT4lBcHZcYdf6eDT.jpg",
-            "link": "/see/card/movies/800-60/Neprobivaemye.html",
+            "link": "/card/movies/800-60/Neprobivaemye.html",
             "year": "2024",
             "rating":"5.6",
             "genres": ["Боевик", "Криминал", "Драма"]
@@ -1441,7 +1441,7 @@ function generateCards() {
         {
             "name": "Западня",
             "image": "https://image.tmdb.org/t/p/w500//zHCLkP6xYYPFYlM9U6DA0FaZAvZ.jpg",
-            "link": "/see/card/movies/800-242/Zapadnya.html",
+            "link": "/card/movies/800-242/Zapadnya.html",
             "year": "2025",
             "rating":"6.3",
             "genres": ["Триллер"]
@@ -1449,7 +1449,7 @@ function generateCards() {
         {
             "name": "Однажды в Ла-Рое",
             "image": "https://image.tmdb.org/t/p/w500//8VQr2REac6qlshcQGBsmq5s4SiU.jpg",
-            "link": "/see/card/movies/800-61/Odnazhdy-v-La-Roe.html",
+            "link": "/card/movies/800-61/Odnazhdy-v-La-Roe.html",
             "year": "2024",
             "rating":"6.8",
             "genres": ["Криминал", "Комедия", "Триллер"]
@@ -1457,7 +1457,7 @@ function generateCards() {
         {
             "name": "Охотники за привидениями: Леденящий ужас",
             "image": "https://image.tmdb.org/t/p/w500//ltG6ypHUyPv3y4e4ZOxRumYwikV.jpg",
-            "link": "/see/card/movies/800-62/Ohotniki-za-privideniyami-Ledenyashij-uzhas.html",
+            "link": "/card/movies/800-62/Ohotniki-za-privideniyami-Ledenyashij-uzhas.html",
             "year": "2024",
             "rating":"6.5",
             "genres": ["Фэнтези", "Приключения", "Комедия"]
@@ -1465,7 +1465,7 @@ function generateCards() {
         {
             "name": "Охотники за привидениями: Наследники",
             "image": "https://image.tmdb.org/t/p/w500//wqXTMwkoBVrQ94FSBDAIwhK2ONa.jpg",
-            "link": "/see/card/movies/800-184/Ohotniki-za-privideniyami-Nasledniki.html",
+            "link": "/card/movies/800-184/Ohotniki-za-privideniyami-Nasledniki.html",
             "year": "2021",
             "rating":"7.3",
             "genres": ["Фэнтези", "Приключения", "Комедия"]
@@ -1473,7 +1473,7 @@ function generateCards() {
         {
             "name": "Охотники за привидениями",
             "image": "https://image.tmdb.org/t/p/w500//xXcZFa1vXZ7JJAdFmmDL3IAURBS.jpg",
-            "link": "/see/card/movies/800-185/Ohotniki-za-privideniyami2016.html",
+            "link": "/card/movies/800-185/Ohotniki-za-privideniyami2016.html",
             "year": "2016",
             "rating":"5.3",
             "genres": ["Фэнтези", "Приключения", "Комедия"]
@@ -1481,7 +1481,7 @@ function generateCards() {
         {
             "name": "Охотники за привидениями 2",
             "image": "https://image.tmdb.org/t/p/w500//sNVd1heRFJFlwgOZEvQpLOsNusG.jpg",
-            "link": "/see/card/movies/800-186/Ohotniki-za-privideniyami-2.html",
+            "link": "/card/movies/800-186/Ohotniki-za-privideniyami-2.html",
             "year": "1989",
             "rating":"6.6",
             "genres": ["Фэнтези", "Приключения", "Комедия"]
@@ -1489,7 +1489,7 @@ function generateCards() {
         {
             "name": "Охотники за привидениями",
             "image": "https://image.tmdb.org/t/p/w500//4T0fzZK0hQkEkM0FIVTkgMRYzBn.jpg",
-            "link": "/see/card/movies/800-187/Ohotniki-za-privideniyami1984.html",
+            "link": "/card/movies/800-187/Ohotniki-za-privideniyami1984.html",
             "year": "1984",
             "rating":"7.5",
             "genres": ["Фэнтези", "Приключения", "Комедия"]
@@ -1497,7 +1497,7 @@ function generateCards() {
         {
             "name": "Дюна: Часть вторая",
             "image": "https://image.tmdb.org/t/p/w500//3aLghRkuJc9cs770fxo4a6YWht3.jpg",
-            "link": "/see/card/movies/800-20/Dyuna-Chast-vtoraya.html",
+            "link": "/card/movies/800-20/Dyuna-Chast-vtoraya.html",
             "year": "2024",
             "rating":"8.1",
             "genres": ["Фантастика", "Приключения"]
@@ -1505,7 +1505,7 @@ function generateCards() {
         {
             "name": "Дюна",
             "image": "https://image.tmdb.org/t/p/w500//3hbXNclcHaj5KiF6kK41GBMjyFr.jpg",
-            "link": "/see/card/movies/800-63/Dyuna.html",
+            "link": "/card/movies/800-63/Dyuna.html",
             "year": "2021",
             "rating":"7.8",
             "genres": ["Фантастика", "Приключения"]
@@ -1513,7 +1513,7 @@ function generateCards() {
         {
             "name": "Громовержцы*",
             "image": "https://image.tmdb.org/t/p/w500//l4UtldCA7OgORWY9UcyWBqaHWHF.jpg",
-            "link": "/see/card/movies/800-241/Gromoverzhcy.html",
+            "link": "/card/movies/800-241/Gromoverzhcy.html",
             "year": "2025",
             "rating":"7.5",
             "genres": ["Боевик", "Фантастика", "Приключения"]
@@ -1521,7 +1521,7 @@ function generateCards() {
         {
             "name": "Капитан Америка: Новый Мир",
             "image": "https://image.tmdb.org/t/p/w500//bljRQO5fTGen0qRV7KuPRXIdRGx.jpg",
-            "link": "/see/card/movies/800-250/Kapitan-Amerika-Novyj-Mir.html",
+            "link": "/card/movies/800-250/Kapitan-Amerika-Novyj-Mir.html",
             "year": "2025",
             "rating":"6.1",
             "genres": ["Боевик", "Триллер", "Фантастика"]
@@ -1529,7 +1529,7 @@ function generateCards() {
         {
             "name": "Золото джунглей",
             "image": "https://image.tmdb.org/t/p/w500//1HuoF1IYoixGXhYznep4kBtijLZ.jpg",
-            "link": "/see/card/movies/800-236/Zoloto-dzhunglej.html",
+            "link": "/card/movies/800-236/Zoloto-dzhunglej.html",
             "year": "2017",
             "rating":"5.7",
             "genres": ["История", "Драма", "Боевик"]
@@ -1537,7 +1537,7 @@ function generateCards() {
         {
             "name": "Вуди Вудпекер в летнем лагере",
             "image": "https://image.tmdb.org/t/p/w500//oAF42DFZA430eEzRmEcrpB0D3rp.jpg",
-            "link": "/see/card/movies/800-65/Vudi-Vudpeker-otpravlyaetsya-v-lager.html",
+            "link": "/card/movies/800-65/Vudi-Vudpeker-otpravlyaetsya-v-lager.html",
             "year": "2024",
             "rating":"6.5",
             "genres": ["Семейный", "Комедия"]
@@ -1545,7 +1545,7 @@ function generateCards() {
         {
             "name": "Вуди Вудпекер",
             "image": "https://image.tmdb.org/t/p/w500//9F4ccwQlDToaG83IMlxb4w6ftN0.jpg",
-            "link": "/see/card/movies/800-188/Vudi-Vudpeker.html",
+            "link": "/card/movies/800-188/Vudi-Vudpeker.html",
             "year": "2017",
             "rating":"6.6",
             "genres": ["Семейный", "Комедия"]
@@ -1553,7 +1553,7 @@ function generateCards() {
         {
             "name": "Minecraft в Кино",
             "image": "https://image.tmdb.org/t/p/w500//3txl2FUNZCQUnHQPzkuNc17yLIs.jpg",
-            "link": "/see/card/movies/800-240/Minecraft-v-Kino.html",
+            "link": "/card/movies/800-240/Minecraft-v-Kino.html",
             "year": "2025",
             "rating":"6.5",
             "genres": ["Семейный", "Комедия", "Фэнтези"]
@@ -1561,7 +1561,7 @@ function generateCards() {
         {
             "name": "Возвращение грозной семейки",
             "image": "https://image.tmdb.org/t/p/w500//o1SGF0txwzZxBJbOsvIgbBtRk3A.jpg",
-            "link": "/see/card/movies/800-66/Vozvrashenie-grozno-semejki.html",
+            "link": "/card/movies/800-66/Vozvrashenie-grozno-semejki.html",
             "year": "2024",
             "rating":"7.0",
             "genres": ["Семейный", "Фантастика", "Комедия"]
@@ -1569,7 +1569,7 @@ function generateCards() {
         {
             "name": "След киллера",
             "image": "https://image.tmdb.org/t/p/original/uGTulIuR0NlI2CQzTRHHEuJJejp.jpg",
-            "link": "/see/card/movies/800-67/Sled-killera.html",
+            "link": "/card/movies/800-67/Sled-killera.html",
             "year": "2024",
             "rating":"5.7",
             "genres": ["Боевик", "Драма", "Триллер", "Криминал"]
@@ -1577,7 +1577,7 @@ function generateCards() {
         {
             "name": "Боб Марли: Одна любовь",
             "image": "https://image.tmdb.org/t/p/w500//79G6T8JSmUrIsypQVzsa5VjfOXU.jpg",
-            "link": "/see/card/movies/800-68/Bob-Marli-Odna-lyubov.html",
+            "link": "/card/movies/800-68/Bob-Marli-Odna-lyubov.html",
             "year": "2024",
             "rating":"6.7",
             "genres": ["Музыка", "История", "Драма"]
@@ -1585,7 +1585,7 @@ function generateCards() {
         {
             "name": "Джокер: Безумие на двоих",
             "image": "https://image.tmdb.org/t/p/w500//sqHQhhjsfZ0UAu67RiIaUkabZZD.jpg",
-            "link": "/see/card/movies/800-69/Dzhoker-Bezumie-na-dvoih.html",
+            "link": "/card/movies/800-69/Dzhoker-Bezumie-na-dvoih.html",
             "year": "2024",
             "rating":"5.5",
             "genres": ["Музыка", "Драма", "Криминал", "Триллер"]
@@ -1593,7 +1593,7 @@ function generateCards() {
         {
             "name": "Джокер",
             "image": "https://image.tmdb.org/t/p/w500//5itx9nz3gXWgoD2I1UdaqOrphYm.jpg",
-            "link": "/see/card/movies/800-189/Dzhoker.html",
+            "link": "/card/movies/800-189/Dzhoker.html",
             "year": "2019",
             "rating":"8.1",
             "genres": ["Драма", "Криминал", "Триллер"]
@@ -1601,7 +1601,7 @@ function generateCards() {
         {
             "name": "Очи",
             "image": "https://image.tmdb.org/t/p/w500//tKIRObB9Gwq0fnCDjapdz9zAmJz.jpg",
-            "link": "/see/card/movies/800-238/Ochi.html",
+            "link": "/card/movies/800-238/Ochi.html",
             "year": "2025",
             "rating":"5.9",
             "genres": ["Фэнтези", "Приключения", "Семейный"]
@@ -1609,7 +1609,7 @@ function generateCards() {
         {
             "name": "Дыши!",
             "image": "https://image.tmdb.org/t/p/w500//4pRonl4LTHFw567HyX0iYolyaWS.jpg",
-            "link": "/see/card/movies/800-70/Dyshi!.html",
+            "link": "/card/movies/800-70/Dyshi!.html",
             "year": "2024",
             "rating":"5.8",
             "genres": ["Боевик", "Фантастика", "Детектив"]
@@ -1617,7 +1617,7 @@ function generateCards() {
         {
             "name": "Жуть",
             "image": "https://image.tmdb.org/t/p/w500//krCt93RSbZMmiPIw2k1r9zzfzTb.jpg",
-            "link": "/see/card/movies/800-71/Zhut.html",
+            "link": "/card/movies/800-71/Zhut.html",
             "year": "2024",
             "rating":"6.6",
             "genres": ["Ужасы", "Триллер"]
@@ -1625,7 +1625,7 @@ function generateCards() {
         {
             "name": "Чёрный чай",
             "image": "https://image.tmdb.org/t/p/w500//v6HmHzoOJVwFmdKDKpdfnnsRk39.jpg",
-            "link": "/see/card/movies/800-72/Chyornyj-chaj.html",
+            "link": "/card/movies/800-72/Chyornyj-chaj.html",
             "year": "2024",
             "rating":"5.9",
             "genres": ["Мелодрама", "Драма"]
@@ -1633,7 +1633,7 @@ function generateCards() {
         {
             "name": "Ученик. Восхождение Трампа",
             "image": "https://image.tmdb.org/t/p/w500//1rXbP2AdiJzbqL6CKxdZMeFuE4O.jpg",
-            "link": "/see/card/movies/800-73/Uchenik-Voshozhdenie-Trampa.html",
+            "link": "/card/movies/800-73/Uchenik-Voshozhdenie-Trampa.html",
             "year": "2024",
             "rating":"6.9",
             "genres": ["История", "Драма"]
@@ -1641,7 +1641,7 @@ function generateCards() {
         {
             "name": "Профессионал",
             "image": "https://image.tmdb.org/t/p/w500//uBAgrWuglga1Vo7oUlFL0KFORcN.jpg",
-            "link": "/see/card/movies/800-74/Professional.html",
+            "link": "/card/movies/800-74/Professional.html",
             "year": "2024",
             "rating":"5.9",
             "genres": ["Боевик", "Криминал", "Триллер", "Детектив"]
@@ -1649,7 +1649,7 @@ function generateCards() {
         {
             "name": "Кошмарные каникулы",
             "image": "https://image.tmdb.org/t/p/w500//ud6dvc0s6YapooFkUNQPuZ4eg5u.jpg",
-            "link": "/see/card/movies/800-75/Koshmarnye-kanikuly.html",
+            "link": "/card/movies/800-75/Koshmarnye-kanikuly.html",
             "year": "2024",
             "rating":"6.5",
             "genres": ["Приключения", "Детектив", "Ужасы"]
@@ -1657,7 +1657,7 @@ function generateCards() {
         {
             "name": "Подземелья и драконы: Честь среди воров",
             "image": "https://image.tmdb.org/t/p/w500//nAbRIxxRJfCP2U9tpVJU1zWb6Ni.jpg",
-            "link": "/see/card/movies/800-76/Podzemelya-i-drakony-Chest-sredi-vorov.html",
+            "link": "/card/movies/800-76/Podzemelya-i-drakony-Chest-sredi-vorov.html",
             "year": "2023",
             "rating":"7.3",
             "genres": ["Приключения", "Фэнтези", "Комедия"]
@@ -1665,7 +1665,7 @@ function generateCards() {
         {
             "name": "Мегалополис",
             "image": "https://image.tmdb.org/t/p/w500//epglGr4yDHGaZVf8faMm7ilcHDu.jpg",
-            "link": "/see/card/movies/800-77/Megalopolis.html",
+            "link": "/card/movies/800-77/Megalopolis.html",
             "year": "2024",
             "rating":"5.3",
             "genres": ["Фантастика", "Драма"]
@@ -1673,7 +1673,7 @@ function generateCards() {
         {
             "name": "Выгон",
             "image": "https://image.tmdb.org/t/p/w500//z9GAjN21PQPDp0eRB4Ct6vIZaPF.jpg",
-            "link": "/see/card/movies/800-78/Vygon.html",
+            "link": "/card/movies/800-78/Vygon.html",
             "year": "2024",
             "rating":"6.8",
             "genres": ["Драма"]
@@ -1681,7 +1681,7 @@ function generateCards() {
         {
             "name": "Элиас",
             "image": "https://image.tmdb.org/t/p/w500//saPG6ZSORtOdCbl7S4dinNkpmA6.jpg",
-            "link": "/see/card/movies/800-79/Elias.html",
+            "link": "/card/movies/800-79/Elias.html",
             "year": "2024",
             "rating":"6.2",
             "genres": ["Боевик", "Триллер"]
@@ -1689,7 +1689,7 @@ function generateCards() {
         {
             "name": "Граф Монте-Кристо",
             "image": "https://image.tmdb.org/t/p/w500//bv7XaMz155UTyQSOy2CHllMrAf9.jpg",
-            "link": "/see/card/movies/800-80/Graf-Monte-Kristo.html",
+            "link": "/card/movies/800-80/Graf-Monte-Kristo.html",
             "year": "2024",
             "rating":"7.7",
             "genres": ["Боевик", "Драма", "Приключения"]
@@ -1697,7 +1697,7 @@ function generateCards() {
         {
             "name": "Граф Монте-Кристо",
             "image": "https://image.tmdb.org/t/p/original/7O2N253Np012Fm8NGQTe5alTiwy.jpg",
-            "link": "/see/card/movies/800-190/Graf-Monte-Kristo2002.html",
+            "link": "/card/movies/800-190/Graf-Monte-Kristo2002.html",
             "year": "2002",
             "rating":"7.7",
             "genres": ["Боевик", "Драма", "Приключения"]
@@ -1705,7 +1705,7 @@ function generateCards() {
         {
             "name": "Мастер",
             "image": "https://image.tmdb.org/t/p/w500//zmcXyVExW9vVIKOgzeDpPTWJySF.jpg",
-            "link": "/see/card/movies/800-249/Master.html",
+            "link": "/card/movies/800-249/Master.html",
             "year": "2025",
             "rating":"6.6",
             "genres": ["Боевик", "Криминал", "Триллер"]
@@ -1713,7 +1713,7 @@ function generateCards() {
         {
             "name": "Уровни",
             "image": "https://image.tmdb.org/t/p/w500//yq39ChrCDlqrurYuaC8WM0vC1cx.jpg",
-            "link": "/see/card/movies/800-81/Urovni.html",
+            "link": "/card/movies/800-81/Urovni.html",
             "year": "2024",
             "rating":"5.7",
             "genres": ["Боевик", "Фантастика", "Триллер"]
@@ -1721,7 +1721,7 @@ function generateCards() {
         {
             "name": "Второй акт",
             "image": "https://image.tmdb.org/t/p/w500//8pAaShqpLUYTeik67jjN2IPaz3O.jpg",
-            "link": "/see/card/movies/800-82/Vtoroj-akt.html",
+            "link": "/card/movies/800-82/Vtoroj-akt.html",
             "year": "2024",
             "rating":"6.1",
             "genres": ["Комедия"]
@@ -1729,7 +1729,7 @@ function generateCards() {
         {
             "name": "В потерянных землях",
             "image": "https://image.tmdb.org/t/p/w500//hoMFjgg9uwhkOjXsw1tmyNM9vsV.jpg",
-            "link": "/see/card/movies/800-248/V-poteryannyh-zemlyah.html",
+            "link": "/card/movies/800-248/V-poteryannyh-zemlyah.html",
             "year": "2025",
             "rating":"6.4",
             "genres": ["Боевик", "Фэнтези", "Приключения"]
@@ -1737,7 +1737,7 @@ function generateCards() {
         {
             "name": "Оппенгеймер",
             "image": "https://image.tmdb.org/t/p/w500//8OQzw8keE6sDNH25sOqPRTxhFTO.jpg",
-            "link": "/see/card/movies/800-83/Oppengejmer.html",
+            "link": "/card/movies/800-83/Oppengejmer.html",
             "year": "2023",
             "rating":"8.1",
             "genres": ["Драма", "История"]
@@ -1745,7 +1745,7 @@ function generateCards() {
         {
             "name": "Ковбои против пришельцев",
             "image": "https://image.tmdb.org/t/p/w500//iRzfV0jFnUqOjJNIvRu9M3G8Rxv.jpg",
-            "link": "/see/card/movies/800-84/Kovboi-protiv-prishelcev.html",
+            "link": "/card/movies/800-84/Kovboi-protiv-prishelcev.html",
             "year": "2011",
             "rating":"5.6",
             "genres": ["Фантастика", "Триллер", "Вестерн"]
@@ -1753,7 +1753,7 @@ function generateCards() {
         {
             "name": "Стрим",
             "image": "https://image.tmdb.org/t/p/w500//7GVqDiiTUBzyJ2wYpPIO2tWpsYx.jpg",
-            "link": "/see/card/movies/800-85/Strim.html",
+            "link": "/card/movies/800-85/Strim.html",
             "year": "2024",
             "rating":"5.5",
             "genres": ["Ужасы", "Боевик", "Триллер"]
@@ -1761,7 +1761,7 @@ function generateCards() {
         {
             "name": "Дурное влияние",
             "image": "https://image.tmdb.org/t/p/w500//oogmlZekRCHP0JDhHKDZIyDIfpP.jpg",
-            "link": "/see/card/movies/800-253/Durnoe-vliyanie.html",
+            "link": "/card/movies/800-253/Durnoe-vliyanie.html",
             "year": "2025",
             "rating":"5.7",
             "genres": ["Триллер", "Драма", "Мелодрама"]
@@ -1769,7 +1769,7 @@ function generateCards() {
         {
             "name": "Меган: К вашим услугам ",
             "image": "https://image.tmdb.org/t/p/w200//oGoQ5W5Zxo55hbqCu1PsqEmQJIX.jpg",
-            "link": "/see/card/movies/800-86/Megan-K-vashim-uslugam.html",
+            "link": "/card/movies/800-86/Megan-K-vashim-uslugam.html",
             "year": "2024",
             "rating":"6.7",
             "genres": ["Ужасы", "Фантастика", "Триллер"]
@@ -1777,7 +1777,7 @@ function generateCards() {
         {
             "name": "Особо опасный пассажир ",
             "image": "https://image.tmdb.org/t/p/w500//oifl3tfR9c4GhWwhJ8m0d6ummZH.jpg",
-            "link": "/see/card/movies/800-260/Osobo-opasnyj-passazhir.html",
+            "link": "/card/movies/800-260/Osobo-opasnyj-passazhir.html",
             "year": "2025",
             "rating":"6.1",
             "genres": ["Боевик", "Триллер"]
@@ -1785,7 +1785,7 @@ function generateCards() {
         {
             "name": "Псы войны",
             "image": "https://image.tmdb.org/t/p/w500//yhGps0BKzV9AiD2u03Iwc52BW4p.jpg",
-            "link": "/see/card/movies/800-87/Psy-vojny.html",
+            "link": "/card/movies/800-87/Psy-vojny.html",
             "year": "2024",
             "rating":"6.3",
             "genres": ["Боевик", "Триллер"]
@@ -1793,7 +1793,7 @@ function generateCards() {
         {
             "name": "Багровая отмель",
             "image": "https://image.tmdb.org/t/p/original/v2sF5vnXSo6R6YWrkzTGKzROkGI.jpg",
-            "link": "/see/card/movies/800-259/Bagrovaya-otmel.html",
+            "link": "/card/movies/800-259/Bagrovaya-otmel.html",
             "year": "2025",
             "rating":"5.5",
             "genres": ["Боевик", "Ужасы", "Триллер"]
@@ -1801,7 +1801,7 @@ function generateCards() {
         {
             "name": "Призрачный гонщик 2",
             "image": "https://image.tmdb.org/t/p/w500//pmjeSQ4NocblwnqFDxk7zXggSQ7.jpg",
-            "link": "/see/card/movies/800-88/Prizrachnyj-gonshik-2.html",
+            "link": "/card/movies/800-88/Prizrachnyj-gonshik-2.html",
             "year": "2012",
             "rating":"5.0",
             "genres": ["Боевик", "Фэнтези", "Триллер"]
@@ -1809,7 +1809,7 @@ function generateCards() {
         {
             "name": "Призрачный гонщик",
             "image": "https://image.tmdb.org/t/p/w500//4ULbCH7RO1bkCCsBEI9gAOm9cWp.jpg",
-            "link": "/see/card/movies/800-191/Prizrachnyj-gonshik.html",
+            "link": "/card/movies/800-191/Prizrachnyj-gonshik.html",
             "year": "2007",
             "rating":"5.6",
             "genres": ["Боевик", "Фэнтези", "Триллер"]
@@ -1817,7 +1817,7 @@ function generateCards() {
         {
             "name": "Мудрые парни",
             "image": "https://image.tmdb.org/t/p/w500//dOFv3tCliqlTgeBOFRdQFcuhgGK.jpg",
-            "link": "/see/card/movies/800-258/Mudrye-parni.html",
+            "link": "/card/movies/800-258/Mudrye-parni.html",
             "year": "2025",
             "rating":"6.2",
             "genres": ["Криминал", "Драма", "История"]
@@ -1825,7 +1825,7 @@ function generateCards() {
         {
             "name": "Время",
             "image": "https://image.tmdb.org/t/p/w500//m0rqyzs7IbNaXuJvLTubCG40F92.jpg",
-            "link": "/see/card/movies/800-90/Vremya.html",
+            "link": "/card/movies/800-90/Vremya.html",
             "year": "2021",
             "rating":"6.3",
             "genres": ["Триллер", "Детектив", "Ужасы"]
@@ -1833,7 +1833,7 @@ function generateCards() {
         {
             "name": "Электрический штат",
             "image": "https://image.tmdb.org/t/p/w500//yoxaghGvZ0L0zJi2UdgJfb8zqTr.jpg",
-            "link": "/see/card/movies/800-257/Elektricheskij-shtat.html",
+            "link": "/card/movies/800-257/Elektricheskij-shtat.html",
             "year": "2025",
             "rating":"6.6",
             "genres": ["Фантастика", "Приключения", "Боевик"]
@@ -1841,7 +1841,7 @@ function generateCards() {
         {
             "name": "Стекло",
             "image": "https://image.tmdb.org/t/p/w500//vICN2wjUMQrrpChnPCzJ1W2LPa1.jpg",
-            "link": "/see/card/movies/800-192/Steklo.html",
+            "link": "/card/movies/800-192/Steklo.html",
             "year": "2019",
             "rating":"6.7",
             "genres": ["Триллер", "Драма", "Фантастика"]
@@ -1849,7 +1849,7 @@ function generateCards() {
         {
             "name": "Сплит",
             "image": "https://image.tmdb.org/t/p/w500//xrVZF8DJNTPiILFygj8sg4tmauV.jpg",
-            "link": "/see/card/movies/800-91/Split.html",
+            "link": "/card/movies/800-91/Split.html",
             "year": "2017",
             "rating":"7.3",
             "genres": ["Триллер", "Драма", "Фантастика"]
@@ -1857,7 +1857,7 @@ function generateCards() {
         {
             "name": "Неуязвимый",
             "image": "https://image.tmdb.org/t/p/w500//jz968bMurZtNJr1kGNdnqVgqmrJ.jpg",
-            "link": "/see/card/movies/800-193/Neuyazvimyj.html",
+            "link": "/card/movies/800-193/Neuyazvimyj.html",
             "year": "2000",
             "rating":"7.1",
             "genres": ["Триллер", "Драма", "Фантастика"]
@@ -1865,7 +1865,7 @@ function generateCards() {
         {
             "name": "Время жить",
             "image": "https://image.tmdb.org/t/p/w500//3PeStsMSHG3sNPpJ9NT1ZGMsi3P.jpg",
-            "link": "/see/card/movies/800-93/Vremya-zhit.html",
+            "link": "/card/movies/800-93/Vremya-zhit.html",
             "year": "2024",
             "rating":"7.3",
             "genres": ["Мелодрама", "Драма"]
@@ -1873,7 +1873,7 @@ function generateCards() {
         {
             "name": "Дыхание шторма",
             "image": "https://image.tmdb.org/t/p/w500//k6QMEYGNjszAupPJRPa3c3F7KXy.jpg",
-            "link": "/see/card/movies/800-256/Dyhanie-shtorma.html",
+            "link": "/card/movies/800-256/Dyhanie-shtorma.html",
             "year": "2025",
             "rating":"7.0",
             "genres": ["Триллер", "Драма"]
@@ -1881,7 +1881,7 @@ function generateCards() {
         {
             "name": "Оно 2",
             "image": "https://image.tmdb.org/t/p/w500//rjM13nwgzt80xAUKXVp9mzRYyHp.jpg",
-            "link": "/see/card/movies/800-194/Ono-2.html",
+            "link": "/card/movies/800-194/Ono-2.html",
             "year": "2019",
             "rating":"6.8",
             "genres": ["Ужасы", "Триллер"]
@@ -1889,7 +1889,7 @@ function generateCards() {
         {
             "name": "Оно",
             "image": "https://image.tmdb.org/t/p/w500//wEHpeWhH3zGYJbqz3OtUJ4tMMM6.jpg",
-            "link": "/see/card/movies/800-94/Ono.html",
+            "link": "/card/movies/800-94/Ono.html",
             "year": "2017",
             "rating":"7.2",
             "genres": ["Ужасы", "Триллер"]
@@ -1897,7 +1897,7 @@ function generateCards() {
         {
             "name": "Новокаин",
             "image": "https://image.tmdb.org/t/p/w500//sPHcPY7eKqw2FHTMkpwMr1CRQB1.jpg",
-            "link": "/see/card/movies/800-255/Novokain.html",
+            "link": "/card/movies/800-255/Novokain.html",
             "year": "2025",
             "rating":"6.9",
             "genres": ["Боевик", "Комедия", "Триллер"]
@@ -1905,7 +1905,7 @@ function generateCards() {
         {
             "name": "Образцовый самец 2",
             "image": "https://image.tmdb.org/t/p/w500//hSAbrO3FYcvzyBiUHXLflIbSIGZ.jpg",
-            "link": "/see/card/movies/800-95/Obrazcovyj-samec-2.html",
+            "link": "/card/movies/800-95/Obrazcovyj-samec-2.html",
             "year": "2016",
             "rating":"4.9",
             "genres": ["Комедия", "Приключения", "Боевик"]
@@ -1913,7 +1913,7 @@ function generateCards() {
         {
             "name": "Образцовый самец",
             "image": "https://image.tmdb.org/t/p/w500//7PPWHLcJF7pjuYjorUX8HzmsESu.jpg",
-            "link": "/see/card/movies/800-195/Obrazcovyj-samec.html",
+            "link": "/card/movies/800-195/Obrazcovyj-samec.html",
             "year": "2001",
             "rating":"6.2",
             "genres": ["Комедия", "Приключения", "Боевик"]
@@ -1921,7 +1921,7 @@ function generateCards() {
         {
             "name": "Улыбка 2",
             "image": "https://image.tmdb.org/t/p/w500//xceYC3jmhyZVzBpZVaiJWIoVWa2.jpg",
-            "link": "/see/card/movies/800-96/Ulybka-2.html",
+            "link": "/card/movies/800-96/Ulybka-2.html",
             "year": "2024",
             "rating":"6.6",
             "genres": ["Ужасы", "Детектив"]
@@ -1929,7 +1929,7 @@ function generateCards() {
         {
             "name": "Улыбка",
             "image": "https://image.tmdb.org/t/p/w500//fiBVwImRr5MerRBfyFHeyOHKtCH.jpg",
-            "link": "/see/card/movies/800-196/Ulybka.html",
+            "link": "/card/movies/800-196/Ulybka.html",
             "year": "2022",
             "rating":"6.7",
             "genres": ["Ужасы", "Детектив"]
@@ -1937,7 +1937,7 @@ function generateCards() {
         {
             "name": "Компаньон",
             "image": "https://image.tmdb.org/t/p/w500//wxFGXmNmFf9Y38XQVsMIrqIom8f.jpg",
-            "link": "/see/card/movies/800-254/Kompanon.html",
+            "link": "/card/movies/800-254/Kompanon.html",
             "year": "2025",
             "rating":"7.1",
             "genres": ["Ужасы", "Фантастика", "Триллер"]
@@ -1945,7 +1945,7 @@ function generateCards() {
         {
             "name": "Грань будущего",
             "image": "https://image.tmdb.org/t/p/w500//98Ll6igWXdjHiKuZtCacTzRGyNX.jpg",
-            "link": "/see/card/movies/800-97/Gran-budushego.html",
+            "link": "/card/movies/800-97/Gran-budushego.html",
             "year": "2014",
             "rating":"7.6",
             "genres": ["Боевик", "Фантастика"]
@@ -1953,7 +1953,7 @@ function generateCards() {
         {
             "name": "Мой сосед - монстр",
             "image": "https://image.tmdb.org/t/p/w500//ipj9b6KZMr6yFidQBf7xxuWnKQi.jpg",
-            "link": "/see/card/movies/800-98/Moj-sosed-monstr.html",
+            "link": "/card/movies/800-98/Moj-sosed-monstr.html",
             "year": "2024",
             "rating":"6.7",
             "genres": ["Мелодрама", "Комедия", "Ужасы"]
@@ -1961,7 +1961,7 @@ function generateCards() {
         {
             "name": "Вышка",
             "image": "https://image.tmdb.org/t/p/w500//8xukbVG9JJfnpcdIEYPijVVOfhH.jpg",
-            "link": "/see/card/movies/800-99/Vyshka.html",
+            "link": "/card/movies/800-99/Vyshka.html",
             "year": "2022",
             "rating":"7.1",
             "genres": ["Триллер"]
@@ -1969,7 +1969,7 @@ function generateCards() {
         {
             "name": "Пол: Секретный материальчик",
             "image": "https://image.tmdb.org/t/p/w500//h5JcoPVADhTh5jSn4QKjvM4tKlK.jpg",
-            "link": "/see/card/movies/800-100/Pol-Sekretnyj-materialchik.html",
+            "link": "/card/movies/800-100/Pol-Sekretnyj-materialchik.html",
             "year": "2011",
             "rating":"6.7",
             "genres": ["Приключения", "Комедия", "Фантастика"]
@@ -1977,7 +1977,7 @@ function generateCards() {
         {
             "name": "Один дома",
             "image": "https://image.tmdb.org/t/p/w500//nkXZwR8k46VDdjdcOctVgZC3MJ5.jpg",
-            "link": "/see/card/movies/800-197/Odin-doma2021.html",
+            "link": "/card/movies/800-197/Odin-doma2021.html",
             "year": "2021",
             "rating":"4.9",
             "genres": ["Семейный", "Комедия",]
@@ -1985,7 +1985,7 @@ function generateCards() {
         {
             "name": "Один дома 5: Праздничное ограбление",
             "image": "https://image.tmdb.org/t/p/w500//6bZdqzK3le84IVUIJCppYMG7UeA.jpg",
-            "link": "/see/card/movies/800-198/Odin-doma-5-Prazdnichnoe-ograblenie.html",
+            "link": "/card/movies/800-198/Odin-doma-5-Prazdnichnoe-ograblenie.html",
             "year": "2012",
             "rating":"5.2",
             "genres": ["Семейный", "Комедия",]
@@ -1993,7 +1993,7 @@ function generateCards() {
         {
             "name": "Один дома 4",
             "image": "https://image.tmdb.org/t/p/w500//t5qYSUiF0mlRc7LXBNbCoY7lsJO.jpg",
-            "link": "/see/card/movies/800-199/Odin-doma-4.html",
+            "link": "/card/movies/800-199/Odin-doma-4.html",
             "year": "2002",
             "rating":"4.5",
             "genres": ["Семейный", "Комедия",]
@@ -2001,7 +2001,7 @@ function generateCards() {
         {
             "name": "Один дома 3",
             "image": "https://image.tmdb.org/t/p/w500//pkejadStkq8fMaZtKb3EqBWOJz.jpg",
-            "link": "/see/card/movies/800-200/Odin-doma-3.html",
+            "link": "/card/movies/800-200/Odin-doma-3.html",
             "year": "1997",
             "rating":"5.3",
             "genres": ["Семейный", "Комедия",]
@@ -2009,7 +2009,7 @@ function generateCards() {
         {
             "name": "Один дома 2: Затерянный в Нью-Йорке",
             "image": "https://image.tmdb.org/t/p/w500//tOpSeLYsZLL4h1N9tHcqRm1Y5t2.jpg",
-            "link": "/see/card/movies/800-201/Odin-doma-2-Zateryannyj-v-Nyu-Jorke.html",
+            "link": "/card/movies/800-201/Odin-doma-2-Zateryannyj-v-Nyu-Jorke.html",
             "year": "1992",
             "rating":"6.8",
             "genres": ["Семейный", "Комедия",]
@@ -2017,7 +2017,7 @@ function generateCards() {
         {
             "name": "Один дома",
             "image": "https://image.tmdb.org/t/p/w500//yeS4fjFnTm6jBRiU6zSzFZ8t9W5.jpg",
-            "link": "/see/card/movies/800-101/Odin-doma.html",
+            "link": "/card/movies/800-101/Odin-doma.html",
             "year": "1990",
             "rating":"7.4",
             "genres": ["Семейный", "Комедия",]
@@ -2025,7 +2025,7 @@ function generateCards() {
         {
             "name": "Проводник смерти",
             "image": "https://image.tmdb.org/t/p/w500//yn1aTogxzXyHIXs0ZvUAmalujLo.jpg",
-            "link": "/see/card/movies/800-102/Provodnik-smerti.html",
+            "link": "/card/movies/800-102/Provodnik-smerti.html",
             "year": "2024",
             "rating":"5.5",
             "genres": ["Триллер", "Драма",]
@@ -2033,7 +2033,7 @@ function generateCards() {
         {
             "name": "Паранормальное явление: Ближайшая родня",
             "image": "https://image.tmdb.org/t/p/original/bXAVveHiLotZbWdg3PKGhAzxYKP.jpg",
-            "link": "/see/card/movies/800-202/Paranormalnoe-yavlenie-Blizhajshaya-rodnya.html",
+            "link": "/card/movies/800-202/Paranormalnoe-yavlenie-Blizhajshaya-rodnya.html",
             "year": "2021",
             "rating":"6.1",
             "genres": ["Ужасы", "Детектив",]
@@ -2041,7 +2041,7 @@ function generateCards() {
         {
             "name": "Паранормальное явление 5: Призраки в 3D",
             "image": "https://image.tmdb.org/t/p/w500//ozKoD30eG6kacH5SjcRD1wLnBOj.jpg",
-            "link": "/see/card/movies/800-203/Paranormalnoe-yavlenie-5-Prizraki-v-3D.html",
+            "link": "/card/movies/800-203/Paranormalnoe-yavlenie-5-Prizraki-v-3D.html",
             "year": "2015",
             "rating":"5.3",
             "genres": ["Ужасы", "Детектив",]
@@ -2049,7 +2049,7 @@ function generateCards() {
         {
             "name": "Паранормальное явление: Метка Дьявола",
             "image": "https://image.tmdb.org/t/p/w500//1rrHvalz3i96FfmHTcIMcwZ6qGC.jpg",
-            "link": "/see/card/movies/800-103/Paranormalnoe-yavlenie-Metka-Dyavola.html",
+            "link": "/card/movies/800-103/Paranormalnoe-yavlenie-Metka-Dyavola.html",
             "year": "2014",
             "rating":"5.4",
             "genres": ["Ужасы", "Детектив",]
@@ -2057,7 +2057,7 @@ function generateCards() {
         {
             "name": "Паранормальное явление 4",
             "image": "https://image.tmdb.org/t/p/w500//xQukmfHfOZCuG0pxHARMk1xJZMs.jpg",
-            "link": "/see/card/movies/800-204/Paranormalnoe-yavlenie-4.html",
+            "link": "/card/movies/800-204/Paranormalnoe-yavlenie-4.html",
             "year": "2012",
             "rating":"5.4",
             "genres": ["Ужасы", "Детектив",]
@@ -2065,7 +2065,7 @@ function generateCards() {
         {
             "name": "Паранормальное явление 3",
             "image": "https://image.tmdb.org/t/p/w500//nbOOPSsezzvHWuWSEw1j3Ypa67e.jpg",
-            "link": "/see/card/movies/800-205/Paranormalnoe-yavlenie-3.html",
+            "link": "/card/movies/800-205/Paranormalnoe-yavlenie-3.html",
             "year": "2011",
             "rating":"5.9",
             "genres": ["Ужасы", "Детектив",]
@@ -2073,7 +2073,7 @@ function generateCards() {
         {
             "name": "Паранормальное явление 2",
             "image": "https://image.tmdb.org/t/p/w500//cq35G7cR4NAn9nAndBBbHlKNexE.jpg",
-            "link": "/see/card/movies/800-206/Paranormalnoe-yavlenie-2.html",
+            "link": "/card/movies/800-206/Paranormalnoe-yavlenie-2.html",
             "year": "2010",
             "rating":"5.8",
             "genres": ["Ужасы", "Детектив",]
@@ -2081,7 +2081,7 @@ function generateCards() {
         {
             "name": "Паранормальное явление",
             "image": "https://image.tmdb.org/t/p/w500//4PpnPcmAGqpZWpFX5imX0WmWTfZ.jpg",
-            "link": "/see/card/movies/800-207/Paranormalnoe-yavlenie.html",
+            "link": "/card/movies/800-207/Paranormalnoe-yavlenie.html",
             "year": "2007",
             "rating":"6.0",
             "genres": ["Ужасы", "Детектив",]
@@ -2089,7 +2089,7 @@ function generateCards() {
         {
             "name": "Ужасающий 3",
             "image": "https://image.tmdb.org/t/p/w500//5jbCnDREJeciL3KR7ZWdSotEgzG.jpg",
-            "link": "/see/card/movies/800-104/Uzhasayushij-3.html",
+            "link": "/card/movies/800-104/Uzhasayushij-3.html",
             "year": "2024",
             "rating":"6.9",
             "genres": ["Ужасы", "Триллер",]
@@ -2097,7 +2097,7 @@ function generateCards() {
         {
             "name": "Ужасающий 2",
             "image": "https://image.tmdb.org/t/p/w500//huYBDlUpa2IwZW8MOceKN9j3Auk.jpg",
-            "link": "/see/card/movies/800-208/Uzhasayushij-2.html",
+            "link": "/card/movies/800-208/Uzhasayushij-2.html",
             "year": "2022",
             "rating":"6.7",
             "genres": ["Ужасы", "Триллер",]
@@ -2105,7 +2105,7 @@ function generateCards() {
         {
             "name": "Ужасающий",
             "image": "https://image.tmdb.org/t/p/w500//knJUVRPou9y254Oa9ckdzK6XPpC.jpg",
-            "link": "/see/card/movies/800-209/Uzhasayushij.html",
+            "link": "/card/movies/800-209/Uzhasayushij.html",
             "year": "2018",
             "rating":"6.3",
             "genres": ["Ужасы", "Триллер",]
@@ -2113,7 +2113,7 @@ function generateCards() {
         {
             "name": "Полтора шпиона",
             "image": "https://image.tmdb.org/t/p/w500//z0myyIDZRsGiksfS8hlN3p3NNwc.jpg",
-            "link": "/see/card/movies/800-105/Poltora-shpiona.html",
+            "link": "/card/movies/800-105/Poltora-shpiona.html",
             "year": "2016",
             "rating":"6.4",
             "genres": ["Боевик", "Комедия",]
@@ -2121,7 +2121,7 @@ function generateCards() {
         {
             "name": "Ловушка",
             "image": "https://image.tmdb.org/t/p/w500//3VmHv2WVdDFpD8xtoV2wfjtS5rl.jpg",
-            "link": "/see/card/movies/800-106/Lovushka.html",
+            "link": "/card/movies/800-106/Lovushka.html",
             "year": "2024",
             "rating":"6.3",
             "genres": ["Криминал", "Триллер", "Ужасы"]
@@ -2129,7 +2129,7 @@ function generateCards() {
         {
             "name": "Робот по имени Чаппи",
             "image": "https://image.tmdb.org/t/p/w500//gEYz6t7RqsseZrJgjD0wR77p3T7.jpg",
-            "link": "/see/card/movies/800-107/Robot-po-imeni-Chappi.html",
+            "link": "/card/movies/800-107/Robot-po-imeni-Chappi.html",
             "year": "2015",
             "rating":"6.8",
             "genres": ["Криминал", "Боевик", "Фантастика"]
@@ -2137,7 +2137,7 @@ function generateCards() {
         {
             "name": "Субстанция",
             "image": "https://image.tmdb.org/t/p/w500//x3yhBGbTqlAjxM450BANUNCHpOO.jpg",
-            "link": "/see/card/movies/800-108/Substanciya.html",
+            "link": "/card/movies/800-108/Substanciya.html",
             "year": "2024",
             "rating":"7.1",
             "genres": ["Ужасы", "Фантастика"]
@@ -2145,7 +2145,7 @@ function generateCards() {
         {
             "name": "Простушка",
             "image": "https://image.tmdb.org/t/p/w500//tTBQSoiv9w9M5mf9qVGfkFDaSF5.jpg",
-            "link": "/see/card/movies/800-109/Prostushka.html",
+            "link": "/card/movies/800-109/Prostushka.html",
             "year": "2015",
             "rating":"6.8",
             "genres": ["Мелодрама", "Комедия"]
@@ -2153,7 +2153,7 @@ function generateCards() {
         {
             "name": "Затерянное место",
             "image": "https://image.tmdb.org/t/p/w500//qVukhgesgdhVIlRZpsTO6wLVcWI.jpg",
-            "link": "/see/card/movies/800-110/Zateryannoe-mesto.html",
+            "link": "/card/movies/800-110/Zateryannoe-mesto.html",
             "year": "2024",
             "rating":"6.2",
             "genres": ["Ужасы"]
@@ -2161,7 +2161,7 @@ function generateCards() {
         {
             "name": "Мачо и ботан 2",
             "image": "https://image.tmdb.org/t/p/w500//iwtNmSFyePLX9CdZ4iXy5kw6wCq.jpg",
-            "link": "/see/card/movies/800-210/Macho-i-botan-2.html",
+            "link": "/card/movies/800-210/Macho-i-botan-2.html",
             "year": "2014",
             "rating":"6.8",
             "genres": ["Криминал", "Комедия", "Боевик"]
@@ -2169,7 +2169,7 @@ function generateCards() {
         {
             "name": "Мачо и ботан",
             "image": "https://image.tmdb.org/t/p/w500//xjNJi44FDx0xSmUPxpmKIXa8zoY.jpg",
-            "link": "/see/card/movies/800-111/Macho-i-botan.html",
+            "link": "/card/movies/800-111/Macho-i-botan.html",
             "year": "2012",
             "rating":"6.9",
             "genres": ["Криминал", "Комедия", "Боевик"]
@@ -2177,7 +2177,7 @@ function generateCards() {
         {
             "name": "Одинокие волки",
             "image": "https://image.tmdb.org/t/p/w500//54U26SA33pxxJ2lf5mRxWeqRTLu.jpg",
-            "link": "/see/card/movies/800-112/Odinokie-volki.html",
+            "link": "/card/movies/800-112/Odinokie-volki.html",
             "year": "2024",
             "rating":"6.5",
             "genres": ["Криминал", "Комедия", "Боевик"]
@@ -2185,7 +2185,7 @@ function generateCards() {
         {
             "name": "Хэнкок",
             "image": "https://image.tmdb.org/t/p/w500//zH9RhVlpMBzGp9VM7jVmlnZpRuR.jpg",
-            "link": "/see/card/movies/800-113/Henkok.html",
+            "link": "/card/movies/800-113/Henkok.html",
             "year": "2008",
             "rating":"6.3",
             "genres": ["Фэнтези", "Боевик"]
@@ -2193,7 +2193,7 @@ function generateCards() {
         {
             "name": "Спящие псы",
             "image": "https://image.tmdb.org/t/p/w500//7IIWX53p0h54ZtbhFXLobnAOm8s.jpg",
-            "link": "/see/card/movies/800-239/Spyashie-psy.html",
+            "link": "/card/movies/800-239/Spyashie-psy.html",
             "year": "2024",
             "rating":"7.0",
             "genres": ["Детектив", "Триллер", "Криминал"]
@@ -2201,7 +2201,7 @@ function generateCards() {
         {
             "name": "Пчеловод",
             "image": "https://image.tmdb.org/t/p/w500//1mbla3dGMbzyAz1PgpMcy4Yjtir.jpg",
-            "link": "/see/card/movies/800-261/Pchelovod.html",
+            "link": "/card/movies/800-261/Pchelovod.html",
             "year": "2024",
             "rating":"7.3",
             "genres": ["Боевик", "Криминал", "Триллер"]
@@ -2209,7 +2209,7 @@ function generateCards() {
         {
             "name": "Подай знак",
             "image": "https://image.tmdb.org/t/p/w500//7bIXHZLZoBvo5EbeIdAnL2wCCla.jpg",
-            "link": "/see/card/movies/800-114/Podaj-znak.html",
+            "link": "/card/movies/800-114/Podaj-znak.html",
             "year": "2024",
             "rating":"6.7",
             "genres": ["Детектив", "Триллер"]
@@ -2217,7 +2217,7 @@ function generateCards() {
         {
             "name": "Гран Туризмо",
             "image": "https://image.tmdb.org/t/p/w500//zS3cofAvqaKAvdXCPrZjToI3N6H.jpg",
-            "link": "/see/card/movies/800-269/Gran-Turizmo.html",
+            "link": "/card/movies/800-269/Gran-Turizmo.html",
             "year": "2023",
             "rating":"7.8",
             "genres": ["Приключения", "Боевик", "Драма"]
@@ -2225,7 +2225,7 @@ function generateCards() {
         {
             "name": "Я – Четвертый",
             "image": "https://image.tmdb.org/t/p/w500//iCTi4zBFmqKQb0Q8D8FZ3i5hFyx.jpg",
-            "link": "/see/card/movies/800-115/Ya–Chetvertyj.html",
+            "link": "/card/movies/800-115/Ya–Chetvertyj.html",
             "year": "2011",
             "rating":"6.2",
             "genres": ["Боевик", "Триллер", "Фантастика"]
@@ -2233,7 +2233,7 @@ function generateCards() {
         {
             "name": "Министерство неджентльменских дел",
             "image": "https://image.tmdb.org/t/p/w500//fxLCzo1HzlcvNIXmb1lLTkAJsfV.jpg",
-            "link": "/see/card/movies/800-268/Ministerstvo-nedzhentlmenskih-del.html",
+            "link": "/card/movies/800-268/Ministerstvo-nedzhentlmenskih-del.html",
             "year": "2024",
             "rating":"7.1",
             "genres": ["Боевик", "Комедия", "Военный"]
@@ -2241,7 +2241,7 @@ function generateCards() {
         {
             "name": "Миллион способов потерять голову",
             "image": "https://image.tmdb.org/t/p/w500//oza59UpAODrr1xSvtoNudWShuut.jpg",
-            "link": "/see/card/movies/800-116/Million-sposobov-poteryat-golovu.html",
+            "link": "/card/movies/800-116/Million-sposobov-poteryat-golovu.html",
             "year": "2014",
             "rating":"6.0",
             "genres": ["Комедия", "Вестерн"]
@@ -2249,7 +2249,7 @@ function generateCards() {
         {
             "name": "Атлас",
             "image": "https://image.tmdb.org/t/p/w500//6z8NNTDR6NMVAWkCOdyprHeS49p.jpg",
-            "link": "/see/card/movies/800-262/Atlas.html",
+            "link": "/card/movies/800-262/Atlas.html",
             "year": "2024",
             "rating":"6.7",
             "genres": ["Фантастика", "Боевик"]
@@ -2257,7 +2257,7 @@ function generateCards() {
         {
             "name": "Озеро Каддо",
             "image": "https://image.tmdb.org/t/p/w500//tk7g8DWPfak1MNtwX5RY7rcbpO1.jpg",
-            "link": "/see/card/movies/800-117/Ozero-Kaddo.html",
+            "link": "/card/movies/800-117/Ozero-Kaddo.html",
             "year": "2024",
             "rating":"7.3",
             "genres": ["Триллер", "Детектив", "Драма", "Фантастика"]
@@ -2265,7 +2265,7 @@ function generateCards() {
         {
             "name": "Звук свободы",
             "image": "https://image.tmdb.org/t/p/w500//r5VQb0LDEZ0r5OHmAQirhOsWrru.jpg",
-            "link": "/see/card/movies/800-264/Zvuk-svobody.html",
+            "link": "/card/movies/800-264/Zvuk-svobody.html",
             "year": "2023",
             "rating":"8.0",
             "genres": ["Боевик", "Драма"]
@@ -2273,7 +2273,7 @@ function generateCards() {
         {
             "name": "Интерстеллар",
             "image": "https://image.tmdb.org/t/p/w500//vReLRjDV9XPhiOSEW7QWow4DXwf.jpg",
-            "link": "/see/card/movies/800-118/Interstellar.html",
+            "link": "/card/movies/800-118/Interstellar.html",
             "year": "2014",
             "rating":"8.5",
             "genres": ["Приключения", "Драма", "Фантастика"]
@@ -2281,7 +2281,7 @@ function generateCards() {
         {
             "name": "Артур, ты король",
             "image": "https://image.tmdb.org/t/p/w500//aufA1yiiDpQF8YELXRV16T5aSrG.jpg",
-            "link": "/see/card/movies/800-263/Artur-ty-korol.html",
+            "link": "/card/movies/800-263/Artur-ty-korol.html",
             "year": "2024",
             "rating":"7.6",
             "genres": ["Приключения", "Драма"]
@@ -2289,7 +2289,7 @@ function generateCards() {
         {
             "name": "За гранью З/Л/А",
             "image": "https://image.tmdb.org/t/p/w500//jaxQj8lnTMuPkVB2Rp7pkr0M1Ki.jpg",
-            "link": "/see/card/movies/800-119/Za-granyu-ZLA.html",
+            "link": "/card/movies/800-119/Za-granyu-ZLA.html",
             "year": "2024",
             "rating":"6.7",
             "genres": ["Ужасы", "Фантастика", "Триллер"]
@@ -2297,7 +2297,7 @@ function generateCards() {
         {
             "name": "Каскадёры",
             "image": "https://image.tmdb.org/t/p/w500//hegoKiLI9FxPXfqn3rMsnRC0RPY.jpg",
-            "link": "/see/card/movies/800-265/Kaskadyory.html",
+            "link": "/card/movies/800-265/Kaskadyory.html",
             "year": "2024",
             "rating":"7.0",
             "genres": ["Боевик", "Комедия", "Драма", "Мелодрама"]
@@ -2305,7 +2305,7 @@ function generateCards() {
         {
             "name": "Zомбилэнд: Контрольный выстрел",
             "image": "https://image.tmdb.org/t/p/w500//ociepR7KE1ixlSps5LZb51rkZwa.jpg",
-            "link": "/see/card/movies/800-211/Zombilend-Kontrolnyj-vystrel.html",
+            "link": "/card/movies/800-211/Zombilend-Kontrolnyj-vystrel.html",
             "year": "2019",
             "rating":"6.9",
             "genres": ["Комедия", "Ужасы", "Боевик"]
@@ -2313,7 +2313,7 @@ function generateCards() {
         {
             "name": "Добро пожаловать в Zомбилэнд",
             "image": "https://image.tmdb.org/t/p/w500//kKImcJWO19FWRwcVf1jJMJ7Q72S.jpg",
-            "link": "/see/card/movies/800-120/Dobro-pozhalovat-v-Zombilend.html",
+            "link": "/card/movies/800-120/Dobro-pozhalovat-v-Zombilend.html",
             "year": "2009",
             "rating":"7.3",
             "genres": ["Комедия", "Ужасы", "Боевик"]
@@ -2321,7 +2321,7 @@ function generateCards() {
         {
             "name": "Битлджус Битлджус",
             "image": "https://image.tmdb.org/t/p/w500//cC27Z2eQJXjII2Bw7D4BDCsTCr1.jpg",
-            "link": "/see/card/movies/800-122/Bitldzhus-Bitldzhus.html",
+            "link": "/card/movies/800-122/Bitldzhus-Bitldzhus.html",
             "year": "2024",
             "rating":"7.0",
             "genres": ["Ужасы", "Комедия", "Фэнтези"]
@@ -2329,7 +2329,7 @@ function generateCards() {
         {
             "name": "Битлджюс",
             "image": "https://image.tmdb.org/t/p/w500//vV40BJbN1NVYkOXVdkQt4qi1PmQ.jpg",
-            "link": "/see/card/movies/800-212/Bitldzhyus.html",
+            "link": "/card/movies/800-212/Bitldzhyus.html",
             "year": "1988",
             "rating":"7.4",
             "genres": ["Ужасы", "Комедия", "Фэнтези"]
@@ -2337,7 +2337,7 @@ function generateCards() {
         {
             "name": "Игра в имитацию",
             "image": "https://image.tmdb.org/t/p/w500//iM1C3NYISOzLbWEo8HcUDBASprh.jpg",
-            "link": "/see/card/movies/800-123/Igra-v-imitaciyu.html",
+            "link": "/card/movies/800-123/Igra-v-imitaciyu.html",
             "year": "2014",
             "rating":"8.0",
             "genres": ["История", "Драма", "Триллер", "Военный"]
@@ -2345,7 +2345,7 @@ function generateCards() {
         {
             "name": "Догмен",
             "image": "https://image.tmdb.org/t/p/w500//rhvNgsWZXJ1Hix9RafDMIbd6SsO.jpg",
-            "link": "/see/card/movies/800-266/Dogmen.html",
+            "link": "/card/movies/800-266/Dogmen.html",
             "year": "2023",
             "rating":"7.9",
             "genres": ["Боевик", "Драма", "Криминал"]
@@ -2353,7 +2353,7 @@ function generateCards() {
         {
             "name": "Ворон",
             "image": "https://image.tmdb.org/t/p/w500//msAYTWaQXWGoeChpp5EUGzpMpVb.jpg",
-            "link": "/see/card/movies/800-124/Voron.html",
+            "link": "/card/movies/800-124/Voron.html",
             "year": "2024",
             "rating":"5.8",
             "genres": ["Боевик", "Фэнтези", "Ужасы"]
@@ -2361,7 +2361,7 @@ function generateCards() {
         {
             "name": "Ворон",
             "image": "https://image.tmdb.org/t/p/w500//a5ZZ2XfFkcpik8M56lDznqrsyTp.jpg",
-            "link": "/see/card/movies/800-213/Voron1994.html",
+            "link": "/card/movies/800-213/Voron1994.html",
             "year": "1994",
             "rating":"7.5",
             "genres": ["Боевик", "Фэнтези", "Ужасы"]
@@ -2369,7 +2369,7 @@ function generateCards() {
         {
             "name": "Хроника",
             "image": "https://image.tmdb.org/t/p/w500//8gik6OwbWuhUAKctvGRHUgYZJOm.jpg",
-            "link": "/see/card/movies/800-125/Hronika.html",
+            "link": "/card/movies/800-125/Hronika.html",
             "year": "2012",
             "rating":"6.8",
             "genres": ["Фантастика", "Драма", "Триллер"]
@@ -2377,7 +2377,7 @@ function generateCards() {
         {
             "name": "За пивом!",
             "image": "https://image.tmdb.org/t/p/w500//reEdwRv8FPxc7lBzeQHUNmhJCxC.jpg",
-            "link": "/see/card/movies/800-267/Za-pivom.html",
+            "link": "/card/movies/800-267/Za-pivom.html",
             "year": "2022",
             "rating":"7.6",
             "genres": ["Драма", "Комедия", "Военный"]
@@ -2385,7 +2385,7 @@ function generateCards() {
         {
             "name": "Грань времени",
             "image": "https://image.tmdb.org/t/p/original/wgm4gdJwb7iSYX0uBsRAZmHQmPm.jpg",
-            "link": "/see/card/movies/800-126/Gran-vremeni.html",
+            "link": "/card/movies/800-126/Gran-vremeni.html",
             "year": "2020",
             "rating":"6.3",
             "genres": ["Ужасы", "Фантастика", "Триллер"]
@@ -2393,7 +2393,7 @@ function generateCards() {
         {
             "name": "Не говори никому",
             "image": "https://image.tmdb.org/t/p/original/r0xn6drfJXKWetJj58hYEySaQ3N.jpg",
-            "link": "/see/card/movies/800-127/Ne-govori-nikomu.html",
+            "link": "/card/movies/800-127/Ne-govori-nikomu.html",
             "year": "2024",
             "rating":"7.2",
             "genres": ["Ужасы", "Триллер"]
@@ -2401,7 +2401,7 @@ function generateCards() {
         {
             "name": "Мой пингвин",
             "image": "https://image.tmdb.org/t/p/w500//n5yjFZLh6sx04B6YKynae1myD2X.jpg",
-            "link": "/see/card/movies/800-129/Moj-pingvin.html",
+            "link": "/card/movies/800-129/Moj-pingvin.html",
             "year": "2024",
             "rating":"7.5",
             "genres": ["Семейный", "Приключения", "Драма"]
@@ -2409,7 +2409,7 @@ function generateCards() {
         {
             "name": "Гарри Поттер 20 лет спустя: возвращение в Хогвартс",
             "image": "https://image.tmdb.org/t/p/w500//pMlCpcBKTB7h4nhazWl26wgngvf.jpg",
-            "link": "/see/card/movies/800-214/Garri-Potter-20-let-spustya-vozvrashenie-v-Hogvarts.html",
+            "link": "/card/movies/800-214/Garri-Potter-20-let-spustya-vozvrashenie-v-Hogvarts.html",
             "year": "2022",
             "rating":"7.3",
             "genres": ["Документальный"]
@@ -2417,7 +2417,7 @@ function generateCards() {
         {
             "name": "Гарри Поттер и Дары Смерти: Часть II",
             "image": "https://image.tmdb.org/t/p/w500//cSxvq15AOeJ2jNdVRXJvAoZU8T6.jpg",
-            "link": "/see/card/movies/800-215/Garri-Potter-i-Dary-Smerti-Chast-II.html",
+            "link": "/card/movies/800-215/Garri-Potter-i-Dary-Smerti-Chast-II.html",
             "year": "2011",
             "rating":"8.1",
             "genres": ["Фэнтези", "Приключения"]
@@ -2425,7 +2425,7 @@ function generateCards() {
         {
             "name": "Гарри Поттер и Дары Смерти: Часть I",
             "image": "https://image.tmdb.org/t/p/w500//nUJc0DOO0lh8pjLkmMtPObA2NKf.jpg",
-            "link": "/see/card/movies/800-216/Garri-Potter-i-Dary-Smerti-Chast-I.html",
+            "link": "/card/movies/800-216/Garri-Potter-i-Dary-Smerti-Chast-I.html",
             "year": "2010",
             "rating":"7.7",
             "genres": ["Фэнтези", "Приключения"]
@@ -2433,7 +2433,7 @@ function generateCards() {
         {
             "name": "Гарри Поттер и Принц-полукровка",
             "image": "https://image.tmdb.org/t/p/w500//zhMOIXezutmTCeP1AvPZHakGCYs.jpg",
-            "link": "/see/card/movies/800-217/Garri-Potter-i-Princ-polukrovka.html",
+            "link": "/card/movies/800-217/Garri-Potter-i-Princ-polukrovka.html",
             "year": "2009",
             "rating":"7.7",
             "genres": ["Фэнтези", "Приключения"]
@@ -2441,7 +2441,7 @@ function generateCards() {
         {
             "name": "Гарри Поттер и Орден Феникса",
             "image": "https://image.tmdb.org/t/p/w500//lBuFOlXNY3YYIkXInGqcd7aJoAY.jpg",
-            "link": "/see/card/movies/800-218/Garri-Potter-i-Orden-Feniksa.html",
+            "link": "/card/movies/800-218/Garri-Potter-i-Orden-Feniksa.html",
             "year": "2007",
             "rating":"7.7",
             "genres": ["Фэнтези", "Приключения"]
@@ -2449,7 +2449,7 @@ function generateCards() {
         {
             "name": "Гарри Поттер и Кубок огня",
             "image": "https://image.tmdb.org/t/p/w500//wWlSRexsjrdTWBYY84s671dYde5.jpg",
-            "link": "/see/card/movies/800-219/Garri-Potter-i-Kubok-ognya.html",
+            "link": "/card/movies/800-219/Garri-Potter-i-Kubok-ognya.html",
             "year": "2005",
             "rating":"7.8",
             "genres": ["Фэнтези", "Приключения"]
@@ -2457,7 +2457,7 @@ function generateCards() {
         {
             "name": "Гарри Поттер и узник Азкабана",
             "image": "https://image.tmdb.org/t/p/w500//dd3dM7g6x8TIBBKr22oHM8wZxv8.jpg",
-            "link": "/see/card/movies/800-220/Garri-Potter-i-uznik-Azkabana.html",
+            "link": "/card/movies/800-220/Garri-Potter-i-uznik-Azkabana.html",
             "year": "2004",
             "rating":"8.0",
             "genres": ["Фэнтези", "Приключения"]
@@ -2465,7 +2465,7 @@ function generateCards() {
         {
             "name": "Гарри Поттер и Тайная комната",
             "image": "https://image.tmdb.org/t/p/w500//33Wj3LSyoAqtqkeh7YXcVMvTQzc.jpg",
-            "link": "/see/card/movies/800-92/Garri-Potter-i-Tajnaya-komnata.html",
+            "link": "/card/movies/800-92/Garri-Potter-i-Tajnaya-komnata.html",
             "year": "2002",
             "rating":"7.7",
             "genres": ["Фэнтези", "Приключения"]
@@ -2473,7 +2473,7 @@ function generateCards() {
         {
             "name": "Гарри Поттер и философский камень",
             "image": "https://image.tmdb.org/t/p/w500//Z2CbhtMtbVaBEvhqBKMNB0p0ko.jpg",
-            "link": "/see/card/movies/800-130/Garri-Potter-i-filosofskij-kamen.html",
+            "link": "/card/movies/800-130/Garri-Potter-i-filosofskij-kamen.html",
             "year": "2001",
             "rating":"7.9",
             "genres": ["Фэнтези", "Приключения"]
@@ -2481,7 +2481,7 @@ function generateCards() {
         {
             "name": "Хоббит: Битва пяти воинств",
             "image": "https://image.tmdb.org/t/p/w500//19fnHQ9g3Sy87rHKtw3wqhkBGOh.jpg",
-            "link": "/see/card/movies/800-221/Hobbit-Bitva-pyati-voinstv.html",
+            "link": "/card/movies/800-221/Hobbit-Bitva-pyati-voinstv.html",
             "year": "2014",
             "rating":"7.3",
             "genres": ["Боевик", "Приключения", "Фэнтези"]
@@ -2489,7 +2489,7 @@ function generateCards() {
         {
             "name": "Хоббит: Пустошь Смауга",
             "image": "https://image.tmdb.org/t/p/w500//ccbf6gnYwB2tMaU9EAgxCi88NEe.jpg",
-            "link": "/see/card/movies/800-222/Hobbit-Pustosh-Smauga.html",
+            "link": "/card/movies/800-222/Hobbit-Pustosh-Smauga.html",
             "year": "2013",
             "rating":"7.6",
             "genres": ["Боевик", "Приключения", "Фэнтези"]
@@ -2497,7 +2497,7 @@ function generateCards() {
         {
             "name": "Хоббит: Нежданное путешествие",
             "image": "https://image.tmdb.org/t/p/w500//zTnup9V8UJEG4jWULQQpyKB6Tq0.jpg",
-            "link": "/see/card/movies/800-223/Hobbit-Nezhdannoe-puteshestvie.html",
+            "link": "/card/movies/800-223/Hobbit-Nezhdannoe-puteshestvie.html",
             "year": "2012",
             "rating":"7.4",
             "genres": ["Боевик", "Приключения", "Фэнтези"]
@@ -2505,7 +2505,7 @@ function generateCards() {
         {
             "name": "Властелин колец: Возвращение короля",
             "image": "https://image.tmdb.org/t/p/w500//x6NqCWwU1SrQnvfdmVPAuATyUgD.jpg",
-            "link": "/see/card/movies/800-43/Vlastelin-kolec-Vozvrashenie-korolya.html",
+            "link": "/card/movies/800-43/Vlastelin-kolec-Vozvrashenie-korolya.html",
             "year": "2003",
             "rating":"8.5",
             "genres": ["Боевик", "Приключения", "Фэнтези"]
@@ -2513,7 +2513,7 @@ function generateCards() {
         {
             "name": "Властелин колец: Две крепости",
             "image": "https://image.tmdb.org/t/p/w500//fl7QZlAoZ4MLcxvgOaBjeUxlpQt.jpg",
-            "link": "/see/card/movies/800-224/Vlastelin-kolec-Dve-kreposti.html",
+            "link": "/card/movies/800-224/Vlastelin-kolec-Dve-kreposti.html",
             "year": "2002",
             "rating":"8.4",
             "genres": ["Боевик", "Приключения", "Фэнтези"]
@@ -2521,7 +2521,7 @@ function generateCards() {
         {
             "name": "Властелин колец: Братство кольца",
             "image": "https://image.tmdb.org/t/p/w500//dfoCSXJIamlzlpDCRxXVY5R9GSX.jpg",
-            "link": "/see/card/movies/800-225/Vlastelin-kolec-Bratstvo-kolca.html",
+            "link": "/card/movies/800-225/Vlastelin-kolec-Bratstvo-kolca.html",
             "year": "2001",
             "rating":"8.4",
             "genres": ["Боевик", "Приключения", "Фэнтези"]
@@ -2529,7 +2529,7 @@ function generateCards() {
         {
             "name": "Опустошение",
             "image": "https://image.tmdb.org/t/p/w500//tgSmrSZHMtI0PFBiDIrjfRV3qAm.jpg",
-            "link": "/see/card/movies/800-251/Opustoshenie.html",
+            "link": "/card/movies/800-251/Opustoshenie.html",
             "year": "2025",
             "rating":"6.5",
             "genres": ["Боевик", "Криминал", "Триллер"]
@@ -2537,7 +2537,7 @@ function generateCards() {
         {
             "name": "Перси Джексон и Море чудовищ",
             "image": "https://image.tmdb.org/t/p/w500//1cJWgzakpefE5TnEvVHtUfSJ8Zd.jpg",
-            "link": "/see/card/movies/800-226/Persi-Dzhekson-i-More-chudovish.html",
+            "link": "/card/movies/800-226/Persi-Dzhekson-i-More-chudovish.html",
             "year": "2013",
             "rating":"6.0",
             "genres": ["Приключения", "Семейный", "Фэнтези"]
@@ -2545,7 +2545,7 @@ function generateCards() {
         {
             "name": "Перси Джексон и похититель молний",
             "image": "https://image.tmdb.org/t/p/w500//xQazS5kqxp9Wpsll3KYs5z4Prqh.jpg",
-            "link": "/see/card/movies/800-128/Persi-Dzhekson-i-pohititel-molnij.html",
+            "link": "/card/movies/800-128/Persi-Dzhekson-i-pohititel-molnij.html",
             "year": "2010",
             "rating":"6.2",
             "genres": ["Приключения", "Семейный", "Фэнтези"]
@@ -2553,7 +2553,7 @@ function generateCards() {
         {
             "name": "Чужой: Ромул",
             "image": "https://image.tmdb.org/t/p/w500//A2CU4WbCZlkYbz9gEFIpchlIGpq.jpg",
-            "link": "/see/card/movies/800-131/Chuzhoj-Romul.html",
+            "link": "/card/movies/800-131/Chuzhoj-Romul.html",
             "year": "2024",
             "rating":"7.2",
             "genres": ["Ужасы", "Фантастика"]
@@ -2561,7 +2561,7 @@ function generateCards() {
         {
             "name": "Чужой: Завет",
             "image": "https://image.tmdb.org/t/p/w500//5ff1DVsSL7CP5zIjr8ayHaaHScP.jpg",
-            "link": "/see/card/movies/800-227/Chuzhoj-Zavet.html",
+            "link": "/card/movies/800-227/Chuzhoj-Zavet.html",
             "year": "2017",
             "rating":"6.2",
             "genres": ["Ужасы", "Фантастика"]
@@ -2569,7 +2569,7 @@ function generateCards() {
         {
             "name": "Прометей",
             "image": "https://image.tmdb.org/t/p/w500//kE9dT4e44v1hiVM0GBjWEFczCFc.jpg",
-            "link": "/see/card/movies/800-121/Prometej.html",
+            "link": "/card/movies/800-121/Prometej.html",
             "year": "2012",
             "rating":"6.6",
             "genres": ["Ужасы", "Фантастика"]
@@ -2577,7 +2577,7 @@ function generateCards() {
         {
             "name": "Чужие против Хищника: Реквием",
             "image": "https://image.tmdb.org/t/p/w500//A7vfsc9IcLgi63KaBFeOvio0yRY.jpg",
-            "link": "/see/card/movies/800-228/Chuzhie-protiv-Hishnika-Rekviem.html",
+            "link": "/card/movies/800-228/Chuzhie-protiv-Hishnika-Rekviem.html",
             "year": "2007",
             "rating":"5.2",
             "genres": ["Ужасы", "Фантастика"]
@@ -2585,7 +2585,7 @@ function generateCards() {
         {
             "name": "Чужой против Хищника",
             "image": "https://image.tmdb.org/t/p/w500//uIhgEqmO1Zd9uNJkJzoyvPcgHfA.jpg",
-            "link": "/see/card/movies/800-229/Chuzhoj-protiv-Hishnika.html",
+            "link": "/card/movies/800-229/Chuzhoj-protiv-Hishnika.html",
             "year": "2004",
             "rating":"5.9",
             "genres": ["Ужасы", "Фантастика"]
@@ -2593,7 +2593,7 @@ function generateCards() {
         {
             "name": "Чужой: Воскрешение",
             "image": "https://image.tmdb.org/t/p/w500//pkiOQmiRtm0JbvBPtbz4PjrZQM3.jpg",
-            "link": "/see/card/movies/800-230/Chuzhoj-Voskreshenie.html",
+            "link": "/card/movies/800-230/Chuzhoj-Voskreshenie.html",
             "year": "1997",
             "rating":"6.2",
             "genres": ["Ужасы", "Фантастика"]
@@ -2601,7 +2601,7 @@ function generateCards() {
         {
             "name": "Чужой 3",
             "image": "https://image.tmdb.org/t/p/w500//x49NIbvqwWZ2apQXAa3009FyEzi.jpg",
-            "link": "/see/card/movies/800-231/Chuzhoj-3.html",
+            "link": "/card/movies/800-231/Chuzhoj-3.html",
             "year": "1992",
             "rating":"6.4",
             "genres": ["Ужасы", "Фантастика"]
@@ -2609,7 +2609,7 @@ function generateCards() {
         {
             "name": "Чужие",
             "image": "https://image.tmdb.org/t/p/w500//sSCmIDZ2EO1oLa8QMq6dL8kNFKq.jpg",
-            "link": "/see/card/movies/800-232/Chuzhie.html",
+            "link": "/card/movies/800-232/Chuzhie.html",
             "year": "1986",
             "rating":"8.0",
             "genres": ["Ужасы", "Фантастика"]
@@ -2617,7 +2617,7 @@ function generateCards() {
         {
             "name": "Чужой",
             "image": "https://image.tmdb.org/t/p/w500//6EXQpftMDnbEFu75fmRGGF6CuOT.jpg",
-            "link": "/see/card/movies/800-233/Chuzhoj1979.html",
+            "link": "/card/movies/800-233/Chuzhoj1979.html",
             "year": "1979",
             "rating":"8.2",
             "genres": ["Ужасы", "Фантастика"]
@@ -2625,7 +2625,7 @@ function generateCards() {
         {
             "name": "Игры возмездия",
             "image": "https://image.tmdb.org/t/p/w500//x0v0MIrnl4HrtmgmOFAQubOCMEr.jpg",
-            "link": "/see/card/movies/800-252/Igry-vozmezdiya.html",
+            "link": "/card/movies/800-252/Igry-vozmezdiya.html",
             "year": "2025",
             "rating":"5.0",
             "genres": ["Боевик", "Триллер"]
@@ -2633,7 +2633,7 @@ function generateCards() {
         {
             "name": "128 ударов сердца в минуту",
             "image": "https://image.tmdb.org/t/p/w500//jdKfkrUTl2JknNAeTOnz8We15bX.jpg",
-            "link": "/see/card/movies/800-132/128-udarov-serdca-v-minutu.html",
+            "link": "/card/movies/800-132/128-udarov-serdca-v-minutu.html",
             "year": "2015",
             "rating":"6.8",
             "genres": ["Драма", "Музыка", "Мелодрама", "Комедия"]
@@ -2641,7 +2641,7 @@ function generateCards() {
         {
             "name": "Дэдпул и Росомаха",
             "image": "https://image.tmdb.org/t/p/w500//8uOIWsrHvBTeZP4LSf25NomvLb6.jpg",
-            "link": "/see/card/movies/800-133/Dedpul-i-Rosomaha.html",
+            "link": "/card/movies/800-133/Dedpul-i-Rosomaha.html",
             "year": "2024",
             "rating":"7.6",
             "genres": ["Боевик", "Комедия", "Фантастика"]
@@ -2649,7 +2649,7 @@ function generateCards() {
         {
             "name": "Дэдпул 2",
             "image": "https://image.tmdb.org/t/p/w500//6ieUmjpY7bMMZqIdFxHKUEwfwSB.jpg",
-            "link": "/see/card/movies/800-234/Dedpul-2.html",
+            "link": "/card/movies/800-234/Dedpul-2.html",
             "year": "2018",
             "rating":"7.5",
             "genres": ["Боевик", "Комедия", "Фантастика"]
@@ -2657,7 +2657,7 @@ function generateCards() {
         {
             "name": "Дэдпул",
             "image": "https://image.tmdb.org/t/p/w500//r5PYZGOiIQuGpaZas9TTplNZ5Ox.jpg",
-            "link": "/see/card/movies/800-235/Dedpul.html",
+            "link": "/card/movies/800-235/Dedpul.html",
             "year": "2016",
             "rating":"7.6",
             "genres": ["Боевик", "Комедия", "Фантастика"]
@@ -2665,7 +2665,7 @@ function generateCards() {
         {
             "name": "Бойфренд из будущего",
             "image": "https://image.tmdb.org/t/p/w500//xWk8ukJ6dhRvlrboG3qgNWNtLJ1.jpg",
-            "link": "/see/card/movies/800-134/Bojfrend-iz-budushego.html",
+            "link": "/card/movies/800-134/Bojfrend-iz-budushego.html",
             "year": "2013",
             "rating":"7.9",
             "genres": ["Драма", "Мелодрама", "Фэнтези"]
@@ -2673,7 +2673,7 @@ function generateCards() {
         {
             "name": "После. Навсегда",
             "image": "https://image.tmdb.org/t/p/w500//p5NuTOVdJsje6qOjsLStoaXsoGy.jpg",
-            "link": "/see/card/movies/800-143/Posle-Navsegda.html",
+            "link": "/card/movies/800-143/Posle-Navsegda.html",
             "year": "2023",
             "rating":"6.9",
             "genres": ["Мелодрама", "Драма"]
@@ -2681,7 +2681,7 @@ function generateCards() {
         {
             "name": "После. Долго и счастливо",
             "image": "https://image.tmdb.org/t/p/w500//7SAIQcQfPgimB7BHef9DANUQZkY.jpg",
-            "link": "/see/card/movies/800-142/Posle-Dolgo-i-schastlivo.html",
+            "link": "/card/movies/800-142/Posle-Dolgo-i-schastlivo.html",
             "year": "2022",
             "rating":"6.8",
             "genres": ["Мелодрама", "Драма"]
@@ -2689,7 +2689,7 @@ function generateCards() {
         {
             "name": "После. Глава 3",
             "image": "https://image.tmdb.org/t/p/w500//eRmylmc17IIxKKQrGcQt1723APP.jpg",
-            "link": "/see/card/movies/800-141/Posle-Glava-3.html",
+            "link": "/card/movies/800-141/Posle-Glava-3.html",
             "year": "2021",
             "rating":"7.0",
             "genres": ["Мелодрама", "Драма"]
@@ -2697,7 +2697,7 @@ function generateCards() {
         {
             "name": "После. Глава 2",
             "image": "https://image.tmdb.org/t/p/w500//kWkFxHdXhKBM3NmncrX8JYhVXEe.jpg",
-            "link": "/see/card/movies/800-140/Posle-Glava-2.html",
+            "link": "/card/movies/800-140/Posle-Glava-2.html",
             "year": "2020",
             "rating":"7.2",
             "genres": ["Мелодрама", "Драма"]
@@ -2705,7 +2705,7 @@ function generateCards() {
         {
             "name": "После",
             "image": "https://image.tmdb.org/t/p/w500//7Prt3Le9H0EeRYVltAXFJqwDIig.jpg",
-            "link": "/see/card/movies/800-135/Posle.html",
+            "link": "/card/movies/800-135/Posle.html",
             "year": "2019",
             "rating":"7.1",
             "genres": ["Мелодрама", "Драма"]
@@ -2713,7 +2713,7 @@ function generateCards() {
         {
             "name": "Ребел-Ридж",
             "image": "https://image.tmdb.org/t/p/w500//8rnSpfoXiizlIGFEIRed7h8inrP.jpg",
-            "link": "/see/card/movies/800-136/Rebel-Ridzh.html",
+            "link": "/card/movies/800-136/Rebel-Ridzh.html",
             "year": "2024",
             "rating":"7.0",
             "genres": ["Криминал", "Боевик", "Триллер", "Драма"]
@@ -2721,7 +2721,7 @@ function generateCards() {
         {
             "name": "Ты водишь!",
             "image": "https://image.tmdb.org/t/p/w500//4GTpZgK5ijNGzJSB6tXjz8Xz7t2.jpg",
-            "link": "/see/card/movies/800-137/Ty-vodish!.html",
+            "link": "/card/movies/800-137/Ty-vodish!.html",
             "year": "2018",
             "rating":"6.7",
             "genres": ["Комедия", "Боевик"]
@@ -2729,7 +2729,7 @@ function generateCards() {
         {
             "name": "Место под соснами",
             "image": "https://image.tmdb.org/t/p/w500//8y4tBbEUVdD3uGjqos21EAOAxc5.jpg",
-            "link": "/see/card/movies/800-138/Mesto-pod-sosnami.html",
+            "link": "/card/movies/800-138/Mesto-pod-sosnami.html",
             "year": "2013",
             "rating":"7.0",
             "genres": ["Драма", "Криминал"]
@@ -2737,7 +2737,7 @@ function generateCards() {
         {
             "name": "Чаща",
             "image": "https://image.tmdb.org/t/p/w500//ihzZSZZ2eFmbxscbnqy3e5YOvtp.jpg",
-            "link": "/see/card/movies/800-139/Chasha.html",
+            "link": "/card/movies/800-139/Chasha.html",
             "year": "2024",
             "rating":"6.4",
             "genres": ["Криминал", "Триллер", "Вестерн"]
