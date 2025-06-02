@@ -3,16 +3,36 @@
 // Генерация карточек с случайными рейтингами
 // Фильмы
 document.addEventListener('DOMContentLoaded', function () {
-    console.log("DOMContentLoaded: Страница загружена");
     generateCards();
-    setTimeout(positionCardRatingTrand, 100);
+    
+    setTimeout(positionCardRatingTrand, 200);
 });
 
-function generateCards() {
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // Обмен элементов
+    }
+    return array;
+}
+
+// Вспомогательная функция для стандартизации названий фильмов (без года)
+const getBaseTitle = (title) => {
+    title = title.toLowerCase();
+    title = title.replace(/\s*\(.*\)\s*$/, '').replace(/\s*\[.*\]\s*$/, '');
+    title = title.replace(/[:–—\-].*$/, '');
+    title = title.replace(/\s+\d{4}$/, '');
+    return title.trim();
+};
+
+async function generateCards() {
     var currentMovieTitleElement = document.querySelector('title');
     var currentMovieYearElement = document.getElementById('movie-year');
-    var currentMovieGenresElement = document.querySelector('.full-genre');
-    var allCardData = [
+    var currentMovieLink = window.location.pathname;
+
+    
+    var localCardData = [
         
         {
             "name": "Престиж",
@@ -2749,95 +2769,156 @@ function generateCards() {
 
     var cardContainer = $('#card-container');
     if (!cardContainer.length) {
-        console.error("#card-container не найден!");
-        return;
+        return; // Возвращаемся, если контейнер не найден
     }
-    cardContainer.html("");
+    cardContainer.html(""); // Очищаем существующие карточки
 
-    if (currentMovieTitleElement && currentMovieYearElement && currentMovieGenresElement) {
-        // Извлекаем информацию о текущем фильме
-        let fullTitle = currentMovieTitleElement.textContent;
-        let currentMovieTitle = fullTitle.split('(')[0].trim();
-        var currentMovieYear = currentMovieYearElement.textContent;
-        let fullGenreText = currentMovieGenresElement.textContent;
-        let genreStartIndex = fullGenreText.indexOf('●') + 1;
-        let extractedGenres = fullGenreText.substring(genreStartIndex).trim();
-        let currentMovieGenres = extractedGenres.split('|').map(genre => genre.trim());
+    // Нормализация текущей ссылки для поиска в localCardData
+    let normalizedCurrentLink = currentMovieLink;
+    const cardPathIndex = currentMovieLink.toLowerCase().indexOf('/card/');
+    if (cardPathIndex !== -1) {
+        normalizedCurrentLink = currentMovieLink.substring(cardPathIndex);
+        normalizedCurrentLink = decodeURIComponent(normalizedCurrentLink);
+    }
 
-        const getBaseTitle = (title) => {
-            title = title.toLowerCase();
-            title = title.replace(/[:\s-]+.+?(?=\s*\d+|$)/g, '');
-            title = title.replace(/\s+\d+$/, '');
-            return title.trim();
-        };
+    if (currentMovieTitleElement && currentMovieYearElement) {
+        let currentMovieRawTitle = currentMovieTitleElement.textContent.split('(')[0].trim();
+        let currentMovieBaseTitle = getBaseTitle(currentMovieRawTitle);
+        let currentMovieYear = currentMovieYearElement.textContent;
 
-        const currentBaseTitle = getBaseTitle(currentMovieTitle);
-        const numCurrentGenres = currentMovieGenres.length;
+        let cardsToDisplay = [];
+        const addedCardsTracker = new Set();
 
-        var cardsToDisplay = [];
-        var addedCards = new Set();
+        let currentMovieGenres = [];
 
-        const getMatchingGenresCount = (cardGenres) => {
-            if (!Array.isArray(cardGenres)) return 0;
-            return currentMovieGenres.filter(genre => cardGenres.includes(genre)).length;
-        };
+        // Поиск текущего фильма в локальных данных по нормализованной ссылке
+        const currentLocalCard = localCardData.find(card => card.link === normalizedCurrentLink);
 
-        const isCurrentMovie = (card) => {
-            return card.name === currentMovieTitle && card.year === currentMovieYear;
-        };
-
-        const doesTitleMatch = (card) => {
-            const cardBaseTitle = getBaseTitle(card.name);
-            return cardBaseTitle.includes(currentBaseTitle) || currentBaseTitle.includes(cardBaseTitle);
-        };
-
-        // Этап 1: Карточки со схожей назвой
-        const matchingTitleCards = shuffleArray(allCardData.filter(card => !isCurrentMovie(card) && doesTitleMatch(card)));
-        matchingTitleCards.forEach(card => {
-            if (cardsToDisplay.length < 15) {
-                cardsToDisplay.push(card);
-                addedCards.add(`${card.name}-${card.year}`);
-            }
-        });
-
-        // Этап 2: Карточки с похожими жанрами (по убыванию количества совпадений)
-        for (let i = numCurrentGenres; i >= 1; i--) {
-            const shuffledAllCardData = shuffleArray([...allCardData]);
-            const matchingGenreCards = shuffledAllCardData.filter(card => {
-                if (cardsToDisplay.length >= 15) return false;
-                if (isCurrentMovie(card) || addedCards.has(`${card.name}-${card.year}`)) {
-                    return false;
-                }
-                const matchingCount = getMatchingGenresCount(card.genres);
-                return matchingCount === i;
-            });
-            matchingGenreCards.forEach(card => {
-                if (cardsToDisplay.length < 15) {
-                    cardsToDisplay.push(card);
-                    addedCards.add(`${card.name}-${card.year}`);
-                }
-            });
-            if (cardsToDisplay.length >= 15) break;
+        if (currentLocalCard) {
+            const currentCardIdentifier = `${getBaseTitle(currentLocalCard.name)}-${currentLocalCard.year}-${currentLocalCard.link}`;
+            addedCardsTracker.add(currentCardIdentifier);
+            currentMovieGenres = currentLocalCard.genres;
+        } else {
+            addedCardsTracker.add(`${currentMovieBaseTitle}-${currentMovieYear}-N/A`);
         }
 
-        // Этап 3: Добавляем случайные карточки, если не набрали 15
+        // Определите веса для специфических жанров.
+        const specificGenreWeights = {
+            'ужасы': 5.0,
+            'фэнтези': 4.0,
+            'научная фантастика': 4.2,
+            'вестерн': 5.0,
+            'мультфильм': 5.0,
+            'документальный': 5.0,
+            'мюзикл': 4.0,
+            'триллер': 2.5,
+            'детектив': 3.8,
+            'боевик': 1.8,
+            'комедия': 4.2,
+            'драма': 0.5,
+            'мелодрама': 5.0,
+            'приключения': 3.5,
+            'криминал': 2.0,
+            'история': 3.5,
+            'романтика': 2.0,
+            'семейный': 5.0,
+            'музыка': 4.0,
+            'военный': 2.8,
+            'Биография': 4.0,
+            'Боевик и Приключения': 4.0,
+            'Детский': 4.5,
+            'Война и Политика': 4.2,
+            'фантастика': 4.5
+        };
+
+        const MIN_GENRE_SCORE_THRESHOLD = 1.0;
+        const NON_MATCHING_GENRE_PENALTY_MULTIPLIER = 0.5;
+        const FRANCHISE_BONUS = 3.0;
+
+        // ЭТАП 1: Подбор по жанрам и франшизам из localCardData
+        if (currentMovieGenres.length > 0) {
+            const genreRelevantCandidates = [];
+            const currentGenresLower = new Set(currentMovieGenres.map(g => g.toLowerCase()));
+
+            for (const card of localCardData) {
+                const cardIdentifier = `${getBaseTitle(card.name)}-${card.year}-${card.link}`;
+                if (addedCardsTracker.has(cardIdentifier)) {
+                    continue;
+                }
+
+                let genreMatchScore = 0;
+                let nonMatchingGenrePenalty = 0;
+
+                for (const localGenre of card.genres) {
+                    const lowerLocalGenre = localGenre.toLowerCase();
+                    if (currentGenresLower.has(lowerLocalGenre)) {
+                        let scoreToAdd = 1;
+                        if (specificGenreWeights[lowerLocalGenre]) {
+                            scoreToAdd += specificGenreWeights[lowerLocalGenre];
+                        }
+                        genreMatchScore += scoreToAdd;
+                    } else {
+                        if (specificGenreWeights[lowerLocalGenre] && specificGenreWeights[lowerLocalGenre] > 1.5) {
+                            let penaltyAmount = specificGenreWeights[lowerLocalGenre] * NON_MATCHING_GENRE_PENALTY_MULTIPLIER;
+                            nonMatchingGenrePenalty += penaltyAmount;
+                        }
+                    }
+                }
+
+                const cardBaseTitle = getBaseTitle(card.name);
+                if (currentMovieBaseTitle === cardBaseTitle && card.year !== currentMovieYear) {
+                    genreMatchScore += FRANCHISE_BONUS;
+                }
+
+                genreMatchScore -= nonMatchingGenrePenalty;
+
+                if (genreMatchScore > MIN_GENRE_SCORE_THRESHOLD) {
+                    genreRelevantCandidates.push({ card: card, score: genreMatchScore });
+                }
+            }
+
+            shuffleArray(genreRelevantCandidates);
+            genreRelevantCandidates.sort((a, b) => b.score - a.score);
+
+            for (const item of genreRelevantCandidates) {
+                if (cardsToDisplay.length < 15) {
+                    cardsToDisplay.push(item.card);
+                    addedCardsTracker.add(`${getBaseTitle(item.card.name)}-${item.card.year}-${item.card.link}`);
+                } else {
+                    break;
+                }
+            }
+        }
+
+        // ЭТАП 2: Заполняем оставшиеся места случайными картами, если все еще не хватает
         if (cardsToDisplay.length < 15) {
-            const remainingCards = shuffleArray(allCardData.filter(card => !isCurrentMovie(card) && !addedCards.has(`${card.name}-${card.year}`)));
-            const cardsToAdd = remainingCards.slice(0, 15 - cardsToDisplay.length);
-            cardsToAdd.forEach(card => {
-                cardsToDisplay.push(card);
-                addedCards.add(`${card.name}-${card.year}`);
-            });
+            const remainingLocalCards = shuffleArray(localCardData.filter(card =>
+                !addedCardsTracker.has(`${getBaseTitle(card.name)}-${card.year}-${card.link}`)
+            ));
+
+            for (const card of remainingLocalCards) {
+                if (cardsToDisplay.length < 15) {
+                    cardsToDisplay.push(card);
+                    addedCardsTracker.add(`${getBaseTitle(card.name)}-${card.year}-${card.link}`);
+                } else {
+                    break;
+                }
+            }
+        }
+
+        // ЭТАП 3: Финальное перемешивание всего списка для максимального разнообразия
+        if (cardsToDisplay.length > 0) {
+            shuffleArray(cardsToDisplay);
         }
 
         displayCards(cardsToDisplay.slice(0, 15), cardContainer);
 
     } else {
-        // Логика для отображения случайных фильмов, если нет информации о текущем фильме
-        const shuffledAllCards = shuffleArray(allCardData);
+        const shuffledAllCards = shuffleArray(localCardData);
         displayCards(shuffledAllCards.slice(0, 15), cardContainer);
     }
 
+    // Инициализация Splide. Убедитесь, что Splide.js подключен.
     var splide = new Splide('#Collections', {
         type: 'loop',
         focus: 'center',
@@ -2865,19 +2946,21 @@ function generateCards() {
     positionCardRatingTrand();
 }
 
+// Вспомогательная функция для отображения карточек в контейнере
 function displayCards(cards, container) {
     var count = 0;
+    container.empty();
     cards.forEach(function (val) {
-        if (count >= 15) return;
+        if (count >= 15) return; // Ограничиваем до 15 карточек
         var cardHTML = `
             <li class="splide__slide">
                 <div class="card card-media" style="width: 12rem" data-rating="${val.rating}">
                     <a href="${val.link}">
                         <img src="${val.image}" class="card-img-top img-9x16 mt-2" alt="${val.name}">
-                        <div class="card-rating-trand" bis_skin_checked="1">
+                        <div class="card-rating-trand">
                             <span class="span-rating">${val.rating}</span>
                         </div>
-                        ${val.isTV ? '<div class="card-TV" bis_skin_checked="1">TV</div>' : ''}
+                        ${val.isTV ? '<div class="card-TV">TV</div>' : ''}
                         <div class="card-body">
                             <span class="card-tex">${val.name}<br><span class="year">${val.year}</span></span>
                         </div>
@@ -2890,27 +2973,22 @@ function displayCards(cards, container) {
     });
 }
 
+// Функция для позиционирования рейтинга на карточках
 function positionCardRatingTrand() {
     const cards = document.querySelectorAll('.card');
     cards.forEach(card => {
         const image = card.querySelector('.card-img-top');
         const rating = card.querySelector('.card-rating-trand');
         if (image && rating) {
-            const imageRect = { width: image.offsetWidth, height: image.offsetHeight, top: image.offsetTop, left: image.offsetLeft };
-            const cardRect = { width: card.offsetWidth, height: card.offsetHeight, top: card.offsetTop, left: card.offsetLeft };
-            const bottom = cardRect.height - imageRect.height - imageRect.top + 8;
-            const right = cardRect.width - imageRect.width - imageRect.left + 8;
+            const imageRect = image.getBoundingClientRect();
+            const cardRect = card.getBoundingClientRect();
+
+            const bottom = cardRect.bottom - imageRect.bottom + 8;
+            const right = cardRect.right - imageRect.right + 8;
+
             rating.style.position = 'absolute';
             rating.style.bottom = bottom + 'px';
             rating.style.right = right + 'px';
         }
     });
-}
-
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
 }

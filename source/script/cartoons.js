@@ -3,16 +3,34 @@
 // Генерация карточек с случайными рейтингами
 // Мультфильмы
 document.addEventListener('DOMContentLoaded', function () {
-    console.log("DOMContentLoaded: Страница загружена");
-    generateRandomCards();
-    setTimeout(positionCardRatingTrand, 100);
+    generateCards();
+    setTimeout(positionCardRatingTrand, 200);
 });
 
-function generateRandomCards() {
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+// Перенесена сюда, чтобы была доступна глобально, если нужна для other functions
+const getBaseTitle = (title) => {
+    title = title.toLowerCase();
+    // Использование вашей логики очистки названия
+    title = title.replace(/[:\s-]+.+?(?=\s*\d+|$)/g, '');
+    title = title.replace(/\s+\d+$/, '');
+    return title.trim();
+};
+
+async function generateCards() {
     var currentMovieTitleElement = document.querySelector('title');
     var currentMovieYearElement = document.getElementById('movie-year');
-    var currentMovieGenresElement = document.querySelector('.full-genre');
-    var allCardData = [
+    var currentMovieGenresElement = document.getElementById('movie-genres'); // Использование вашего элемента для жанров
+
+    var localCardData = [ // Переименовано на localCardData для соответствия вашему примеру
+        
         {
             "name": "Союз зверей",
             "image": "https://image.tmdb.org/t/p/w500//cg9KYCRLvRaKRjkuZF41Oef3Rbq.jpg",
@@ -1788,95 +1806,168 @@ function generateRandomCards() {
 
     var cardContainer = $('#card-container');
     if (!cardContainer.length) {
-        console.error("#card-container не найден!");
+        console.error("#card-container не найден!"); // Оставляем эту полезную ошибку
         return;
     }
     cardContainer.html("");
 
-    if (currentMovieTitleElement && currentMovieYearElement && currentMovieGenresElement) {
-        // Извлекаем информацию о текущем фильме
-        let fullTitle = currentMovieTitleElement.textContent;
-        let currentMovieTitle = fullTitle.split('(')[0].trim();
-        var currentMovieYear = currentMovieYearElement.textContent;
+    // Извлечение информации о текущем фильме
+    let currentMovieTitle = '';
+    let currentMovieYear = '';
+    let currentMovieGenres = [];
+    let currentBaseTitle = '';
+
+    // Ваша логика извлечения данных о текущем фильме
+    if (currentMovieTitleElement) {
+        currentMovieTitle = currentMovieTitleElement.textContent.split('(')[0].trim();
+        currentBaseTitle = getBaseTitle(currentMovieTitle);
+    }
+    if (currentMovieYearElement) {
+        currentMovieYear = currentMovieYearElement.textContent;
+    }
+    if (currentMovieGenresElement) {
         let fullGenreText = currentMovieGenresElement.textContent;
         let genreStartIndex = fullGenreText.indexOf('●') + 1;
         let extractedGenres = fullGenreText.substring(genreStartIndex).trim();
-        let currentMovieGenres = extractedGenres.split('|').map(genre => genre.trim());
-
-        const getBaseTitle = (title) => {
-            title = title.toLowerCase();
-            title = title.replace(/[:\s-]+.+?(?=\s*\d+|$)/g, '');
-            title = title.replace(/\s+\d+$/, '');
-            return title.trim();
-        };
-
-        const currentBaseTitle = getBaseTitle(currentMovieTitle);
-        const numCurrentGenres = currentMovieGenres.length;
-
-        var cardsToDisplay = [];
-        var addedCards = new Set();
-
-        const getMatchingGenresCount = (cardGenres) => {
-            if (!Array.isArray(cardGenres)) return 0;
-            return currentMovieGenres.filter(genre => cardGenres.includes(genre)).length;
-        };
-
-        const isCurrentMovie = (card) => {
-            return card.name === currentMovieTitle && card.year === currentMovieYear;
-        };
-
-        const doesTitleMatch = (card) => {
-            const cardBaseTitle = getBaseTitle(card.name);
-            return cardBaseTitle.includes(currentBaseTitle) || currentBaseTitle.includes(cardBaseTitle);
-        };
-
-        // Этап 1: Карточки со схожей назвой
-        const matchingTitleCards = shuffleArray(allCardData.filter(card => !isCurrentMovie(card) && doesTitleMatch(card)));
-        matchingTitleCards.forEach(card => {
-            if (cardsToDisplay.length < 15) {
-                cardsToDisplay.push(card);
-                addedCards.add(`${card.name}-${card.year}`);
-            }
-        });
-
-        // Этап 2: Карточки с похожими жанрами (по убыванию количества совпадений)
-        for (let i = numCurrentGenres; i >= 1; i--) {
-            const shuffledAllCardData = shuffleArray([...allCardData]);
-            const matchingGenreCards = shuffledAllCardData.filter(card => {
-                if (cardsToDisplay.length >= 15) return false;
-                if (isCurrentMovie(card) || addedCards.has(`${card.name}-${card.year}`)) {
-                    return false;
-                }
-                const matchingCount = getMatchingGenresCount(card.genres);
-                return matchingCount === i;
-            });
-            matchingGenreCards.forEach(card => {
-                if (cardsToDisplay.length < 15) {
-                    cardsToDisplay.push(card);
-                    addedCards.add(`${card.name}-${card.year}`);
-                }
-            });
-            if (cardsToDisplay.length >= 15) break;
-        }
-
-        // Этап 3: Добавляем случайные карточки, если не набрали 15
-        if (cardsToDisplay.length < 15) {
-            const remainingCards = shuffleArray(allCardData.filter(card => !isCurrentMovie(card) && !addedCards.has(`${card.name}-${card.year}`)));
-            const cardsToAdd = remainingCards.slice(0, 15 - cardsToDisplay.length);
-            cardsToAdd.forEach(card => {
-                cardsToDisplay.push(card);
-                addedCards.add(`${card.name}-${card.year}`);
-            });
-        }
-
-        displayCards(cardsToDisplay.slice(0, 15), cardContainer);
-
-    } else {
-        // Логика для отображения случайных фильмов, если нет информации о текущем фильме
-        const shuffledAllCards = shuffleArray(allCardData);
-        displayCards(shuffledAllCards.slice(0, 15), cardContainer);
+        currentMovieGenres = extractedGenres.split('|').map(genre => genre.trim());
     }
 
+    // Вспомогательные функции, основанные на вашем примере
+    const isCurrentMovie = (card) => {
+        // Убедимся, что сравниваем по названию и году, так как ссылка может быть разной
+        return getBaseTitle(card.name) === currentBaseTitle && card.year === currentMovieYear;
+    };
+
+    const doesTitleMatch = (card) => {
+        const cardBaseTitle = getBaseTitle(card.name);
+        // Используем вашу логику includes для гибкого соответствия франшизам
+        return cardBaseTitle.includes(currentBaseTitle) || currentBaseTitle.includes(cardBaseTitle);
+    };
+
+    const getMatchingGenresCount = (cardGenres) => {
+        if (!Array.isArray(cardGenres)) return 0;
+        // Убедимся, что currentMovieGenres определён
+        if (!currentMovieGenres || currentMovieGenres.length === 0) return 0;
+        return currentMovieGenres.filter(genre => cardGenres.includes(genre)).length;
+    };
+
+    var cardsToDisplay = [];
+    var addedCards = new Set(); // Используем Set для быстрого поиска уже добавленных карточек
+
+    const MAX_CARDS = 15;
+
+    // --- Этап 0: Добавляем текущий фильм в addedCards, чтобы он не рекомендовался самому себе ---
+    // Это важно сделать в первую очередь, чтобы он не попал ни в одну из следующих категорий.
+    if (currentMovieTitle && currentMovieYear) {
+        addedCards.add(`${currentMovieTitle}-${currentMovieYear}`);
+    }
+
+
+    // --- Этап 1: Карточки со схожим названием (франшизы) ---
+    // Находим все потенциальные франшизные фильмы, исключая текущий и уже добавленные.
+    const matchingTitleCards = shuffleArray(localCardData.filter(card => 
+        !isCurrentMovie(card) && doesTitleMatch(card) && !addedCards.has(`${card.name}-${card.year}`)
+    ));
+    
+    matchingTitleCards.forEach(card => {
+        if (cardsToDisplay.length < MAX_CARDS) {
+            cardsToDisplay.push(card);
+            addedCards.add(`${card.name}-${card.year}`); // Добавляем в Set, чтобы не дублировать
+        }
+    });
+
+    // --- Этап 2: Карточки с похожими жанрами (по убыванию количества совпадений) ---
+    // Этот этап выполняется только если currentMovieGenres определен и есть свободные места.
+    if (currentMovieGenres.length > 0 && cardsToDisplay.length < MAX_CARDS) {
+        const specificGenreWeights = {
+            'ужасы': 5.0,
+            'фэнтези': 4.5,
+            'научная фантастика': 4.2, 
+            'вестерн': 5.0,
+            'мультфильм': 5.0, 
+            'документальный': 5.0, 
+            'мюзикл': 4.0, 
+            'триллер': 2.5,
+            'детектив': 3.8, 
+            'боевик': 1.8, 
+            'комедия': 2.2, 
+            'драма': 0.5,
+            'мелодрама': 5.0, 
+            'приключения': 2.5, 
+            'криминал': 2.0, 
+            'история': 3.5,
+            'романтика': 2.0, 
+            'семейный': 5.0, 
+            'музыка': 4.0, 
+            'военный': 2.8,
+            'Боевик и Приключения': 4.0,
+            'Война и Политика': 4.2,
+            'Детский': 4.5,
+            'фантастика': 4.5
+        };
+        const MIN_GENRE_SCORE_THRESHOLD = 1.0;
+        const NON_MATCHING_GENRE_PENALTY_MULTIPLIER = 0.5;
+
+        const genreRelevantCandidates = [];
+        const currentGenresLower = new Set(currentMovieGenres.map(g => g.toLowerCase()));
+
+        // Проходим по всем карточкам, которые еще не были добавлены
+        const remainingForGenreCheck = localCardData.filter(card => !addedCards.has(`${card.name}-${card.year}`));
+
+        for (const card of remainingForGenreCheck) {
+            let genreMatchScore = 0;
+            let nonMatchingGenrePenalty = 0;
+
+            for (const localGenre of card.genres) {
+                const lowerLocalGenre = localGenre.toLowerCase();
+                if (currentGenresLower.has(lowerLocalGenre)) {
+                    genreMatchScore += (specificGenreWeights[lowerLocalGenre] || 1);
+                } else {
+                    if (specificGenreWeights[lowerLocalGenre] && specificGenreWeights[lowerLocalGenre] > 1.5) {
+                        nonMatchingGenrePenalty += specificGenreWeights[lowerLocalGenre] * NON_MATCHING_GENRE_PENALTY_MULTIPLIER;
+                    }
+                }
+            }
+            
+            genreMatchScore -= nonMatchingGenrePenalty;
+
+            if (genreMatchScore > MIN_GENRE_SCORE_THRESHOLD) {
+                genreRelevantCandidates.push({ card: card, score: genreMatchScore });
+            }
+        }
+
+        shuffleArray(genreRelevantCandidates); // Перемешиваем перед сортировкой
+        genreRelevantCandidates.sort((a, b) => b.score - a.score);
+
+        for (const item of genreRelevantCandidates) {
+            if (cardsToDisplay.length < MAX_CARDS) {
+                cardsToDisplay.push(item.card);
+                addedCards.add(`${item.card.name}-${item.card.year}`);
+            } else {
+                break;
+            }
+        }
+    }
+
+    // --- Этап 3: Добавляем случайные карточки, если не набрали MAX_CARDS ---
+    if (cardsToDisplay.length < MAX_CARDS) {
+        const remainingCards = shuffleArray(localCardData.filter(card => 
+            !addedCards.has(`${card.name}-${card.year}`)
+        ));
+        
+        for (const card of remainingCards) {
+            if (cardsToDisplay.length < MAX_CARDS) {
+                cardsToDisplay.push(card);
+                addedCards.add(`${card.name}-${card.year}`); // Добавляем в Set, чтобы не дублировать
+            } else {
+                break;
+            }
+        }
+    }
+
+    displayCards(cardsToDisplay.slice(0, MAX_CARDS), cardContainer);
+
+    // Инициализация Splide
     var splide = new Splide('#Collections', {
         type: 'loop',
         focus: 'center',
@@ -1906,6 +1997,7 @@ function generateRandomCards() {
 
 function displayCards(cards, container) {
     var count = 0;
+    container.empty();
     cards.forEach(function (val) {
         if (count >= 15) return;
         var cardHTML = `
@@ -1913,10 +2005,10 @@ function displayCards(cards, container) {
                 <div class="card card-media" style="width: 12rem" data-rating="${val.rating}">
                     <a href="${val.link}">
                         <img src="${val.image}" class="card-img-top img-9x16 mt-2" alt="${val.name}">
-                        <div class="card-rating-trand" bis_skin_checked="1">
+                        <div class="card-rating-trand">
                             <span class="span-rating">${val.rating}</span>
                         </div>
-                        ${val.isTV ? '<div class="card-TV" bis_skin_checked="1">TV</div>' : ''}
+                        ${val.isTV ? '<div class="card-TV">TV</div>' : ''}
                         <div class="card-body">
                             <span class="card-tex">${val.name}<br><span class="year">${val.year}</span></span>
                         </div>
@@ -1935,21 +2027,16 @@ function positionCardRatingTrand() {
         const image = card.querySelector('.card-img-top');
         const rating = card.querySelector('.card-rating-trand');
         if (image && rating) {
-            const imageRect = { width: image.offsetWidth, height: image.offsetHeight, top: image.offsetTop, left: image.offsetLeft };
-            const cardRect = { width: card.offsetWidth, height: card.offsetHeight, top: card.offsetTop, left: card.offsetLeft };
-            const bottom = cardRect.height - imageRect.height - imageRect.top + 8;
-            const right = cardRect.width - imageRect.width - imageRect.left + 8;
+            const imageRect = image.getBoundingClientRect();
+            const cardRect = card.getBoundingClientRect();
+
+            // Расчет смещения от нижнего правого угла изображения к нижнему правому углу карточки
+            const bottom = cardRect.bottom - imageRect.bottom + 8; // 8px отступ
+            const right = cardRect.right - imageRect.right + 8; // 8px отступ
+
             rating.style.position = 'absolute';
             rating.style.bottom = bottom + 'px';
             rating.style.right = right + 'px';
         }
     });
-}
-
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
 }
