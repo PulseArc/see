@@ -78,6 +78,6 @@ async function updateImages() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Небольшая задержка, чтобы убедиться, что название и год фильма уже подставлены
-    setTimeout(updateImages, 10);
+    // === Убрана задержка setTimeout ===
+    updateImages();
 });

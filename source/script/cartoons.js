@@ -2008,7 +2008,7 @@ function displayCards(cards, container) {
                         <div class="card-rating-trand">
                             <span class="span-rating">${val.rating}</span>
                         </div>
-                        ${val.isTV ? '<div class="card-TV">TV</div>' : ''}
+                        ${val.isTV ? '<div class="card-TV card-TV-trends">TV</div>' : ''}
                         <div class="card-body">
                             <span class="card-tex">${val.name}<br><span class="year">${val.year}</span></span>
                         </div>
