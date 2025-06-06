@@ -1,5 +1,197 @@
 var data = [
 // Фильмы
+{
+    "name": "Мама",
+    "image": "https://image.tmdb.org/t/p/w500//ahMqF353szhxtdzltopouUJLJhY.jpg",
+    "link": "/card/movies/800-343/Mama.html",
+    "year": "2013",
+    "rating":"6.3",
+    "type": "movie"
+},
+{
+    "name": "Тихое место 2",
+    "image": "https://image.tmdb.org/t/p/w500//9mLRf87tqKKpOjEx8M1yl1jZa1k.jpg",
+    "link": "/card/movies/800-344/Tihoe-mesto-2.html",
+    "year": "2021",
+    "rating":"7.5",
+    "type": "movie"
+},
+{
+    "name": "Тихое место",
+    "image": "https://image.tmdb.org/t/p/w500//b6MMVZWO7LPITq9XS5a4R22CZjG.jpg",
+    "link": "/card/movies/800-345/Tihoe-mesto.html",
+    "year": "2018",
+    "rating":"7.4",
+    "type": "movie"
+},
+{
+    "name": "Обезьяна",
+    "image": "https://image.tmdb.org/t/p/w500//ehrnPGBOA7EDYDYijNQxcEWLW9F.jpg",
+    "link": "/card/movies/800-346/Obezyana.html",
+    "year": "2025",
+    "rating":"5.9",
+    "type": "movie"
+},
+{
+    "name": "Под Сильвер-Лэйк",
+    "image": "https://image.tmdb.org/t/p/w500//tDV86snXPfKknIo8nurftjOS6Sg.jpg",
+    "link": "/card/movies/800-347/Pod-Silver-Lejk.html",
+    "year": "2018",
+    "rating":"6.4",
+    "type": "movie"
+},
+{
+    "name": "Ветреная река",
+    "image": "https://image.tmdb.org/t/p/w500//jl2w7A4dVbQvCUXvNnduPWrNHZT.jpg",
+    "link": "/card/movies/800-348/Vetrenaya-reka.html",
+    "year": "2017",
+    "rating":"7.4",
+    "type": "movie"
+},
+{
+    "name": "Ночные игры",
+    "image": "https://image.tmdb.org/t/p/w500//bUXx4kR3SsOxMpqpcy8z0rar028.jpg",
+    "link": "/card/movies/800-349/Nochnye-igry.html",
+    "year": "2018",
+    "rating":"6.8",
+    "type": "movie"
+},
+{
+    "name": "Всё могу",
+    "image": "https://image.tmdb.org/t/p/w500//gkEDDnkAoD8XbWWel61iTzHYpSa.jpg",
+    "link": "/card/movies/800-350/Vsyo-mogu.html",
+    "year": "2015",
+    "rating":"5.9",
+    "type": "movie"
+},
+{
+    "name": "Как быть мужиком",
+    "image": "https://image.tmdb.org/t/p/w500//9X9wf40QWAc7K6VDAGv49ifk4uh.jpg",
+    "link": "/card/movies/800-351/Kak-byt-muzhikom.html",
+    "year": "2013",
+    "rating":"6.4",
+    "type": "movie"
+},
+{
+    "name": "Самый удачливый человек в Америке",
+    "image": "https://image.tmdb.org/t/p/w500//d5X7zcYvQRCMeDOMmRwh8EEtavE.jpg",
+    "link": "/card/movies/800-352/Samyj-udachlivyj-chelovek-v-Amerike.html",
+    "year": "2025",
+    "rating":"6.7",
+    "type": "movie"
+},
+{
+    "name": "Охота на дикарей",
+    "image": "https://image.tmdb.org/t/p/w500//2MK52LiSL8ERDSkapfSZeyNEBHE.jpg",
+    "link": "/card/movies/800-353/Ohota-na-dikarej.html",
+    "year": "2016",
+    "rating":"7.6",
+    "type": "movie"
+},
+{
+    "name": "Машина времени в джакузи 2",
+    "image": "https://image.tmdb.org/t/p/w500//pvVkNrm2q3LXxYPhmn7aqZfnkHN.jpg",
+    "link": "/card/movies/800-354/Mashina-vremeni-v-dzhakuzi-2.html",
+    "year": "2015",
+    "rating":"5.2",
+    "type": "movie"
+},
+{
+    "name": "Машина времени в джакузи",
+    "image": "https://image.tmdb.org/t/p/w500//rWGA9tP2iIIHa5XTr7TFAi8ef16.jpg",
+    "link": "/card/movies/800-355/Mashina-vremeni-v-dzhakuzi.html",
+    "year": "2010",
+    "rating":"6.0",
+    "type": "movie"
+},
+{
+    "name": "Патерсон",
+    "image": "https://image.tmdb.org/t/p/w500//pGM4NX8F9hqDmxsc9xFuVHqxE6X.jpg",
+    "link": "/card/movies/800-356/Paterson.html",
+    "year": "2016",
+    "rating":"7.1",
+    "type": "movie"
+},
+{
+    "name": "Маяк",
+    "image": "https://image.tmdb.org/t/p/w500//70wtLK20nQAg5TrT7e6eMJtaHPW.jpg",
+    "link": "/card/movies/800-357/Mayak.html",
+    "year": "2019",
+    "rating":"7.5",
+    "type": "movie"
+},
+{
+    "name": "Из машины",
+    "image": "https://image.tmdb.org/t/p/original/ofDay63FNRFW8T92NurTj7IOJAh.jpg",
+    "link": "/card/movies/800-358/Iz-mashiny.html",
+    "year": "2015",
+    "rating":"7.6",
+    "type": "movie"
+},
+{
+    "name": "Мина",
+    "image": "https://image.tmdb.org/t/p/w500//aA2s6vZPgBGMHSoSpvjSPRP9u1D.jpg",
+    "link": "/card/movies/800-359/Mina.html",
+    "year": "2016",
+    "rating":"6.6",
+    "type": "movie"
+},
+{
+    "name": "Лок",
+    "image": "https://image.tmdb.org/t/p/w500//n3bGK6pMgQG1tVDhYA5VYORlBmx.jpg",
+    "link": "/card/movies/800-360/Lok.html",
+    "year": "2014",
+    "rating":"6.9",
+    "type": "movie"
+},
+{
+    "name": "Враг общества",
+    "image": "https://image.tmdb.org/t/p/w500//qoy7q0ZYCvQcjZNlw23ur7Piy30.jpg",
+    "link": "/card/movies/800-361/Vrag-obshestva.html",
+    "year": "2009",
+    "rating":"6.7",
+    "type": "movie"
+},
+{
+    "name": "Проект X: Дорвались",
+    "image": "https://image.tmdb.org/t/p/w500//tYk4TGtQqtXDrxVDshmLzkNHMkR.jpg",
+    "link": "/card/movies/800-362/Proekt-X-Dorvalis.html",
+    "year": "2012",
+    "rating":"6.9",
+    "type": "movie"
+},
+{
+    "name": "Соседи: На тропе войны 2",
+    "image": "https://image.tmdb.org/t/p/w500//rWWp4mH8vGUxhQCEffUFaw2yhDi.jpg",
+    "link": "/card/movies/800-363/Sosedi-Na-trope-vojny-2.html",
+    "year": "2016",
+    "rating":"5.8",
+    "type": "movie"
+},
+{
+    "name": "Соседи: На тропе войны",
+    "image": "https://image.tmdb.org/t/p/w500//jLQxIV4y8GSknnbO9wsT645UaBg.jpg",
+    "link": "/card/movies/800-364/Sosedi-Na-trope-vojny.html",
+    "year": "2014",
+    "rating":"6.2",
+    "type": "movie"
+},
+{
+    "name": "Моя девушка – монстр",
+    "image": "https://image.tmdb.org/t/p/w500//6x8QfyCKKjsqxsw7Zqx0sQ6Ogc7.jpg",
+    "link": "/card/movies/800-365/Moya-devushka-monstr.html",
+    "year": "2017",
+    "rating":"6.3",
+    "type": "movie"
+},
+{
+    "name": "Путешествия Гулливера",
+    "image": "https://image.tmdb.org/t/p/w500//oj165IiIp469ysflTjE62BAIzNr.jpg",
+    "link": "/card/movies/800-366/Puteshestviya-Gullivera.html",
+    "year": "2010",
+    "rating":"5.2",
+    "type": "movie"
+},
     {
         "name": "Престиж",
         "image": "https://image.tmdb.org/t/p/w500//9jMvxh1Ib6BPnE0pprRcaNibKDO.jpg",
