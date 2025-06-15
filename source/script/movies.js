@@ -2,44 +2,450 @@
 
 // Генерация карточек с случайными рейтингами
 // Фильмы
-document.addEventListener('DOMContentLoaded', function () {
-    generateCards();
-    
-    setTimeout(positionCardRatingTrand, 200);
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', async () => {
+    await generateCards();
 });
 
-
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
+// --- Вспомогательные функции ---
+const shuffleArray = (a) => {
+    for (let i = a.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]]; // Обмен элементов
+        [a[i], a[j]] = [a[j], a[i]];
     }
-    return array;
-}
-
-// Вспомогательная функция для стандартизации названий фильмов (без года)
-const getBaseTitle = (title) => {
-    title = title.toLowerCase();
-    title = title.replace(/\s*\(.*\)\s*$/, '').replace(/\s*\[.*\]\s*$/, '');
-    title = title.replace(/[:–—\-].*$/, '');
-    title = title.replace(/\s+\d{4}$/, '');
-    return title.trim();
+    return a;
 };
 
-async function generateCards() {
-    var currentMovieTitleElement = document.querySelector('title');
-    var currentMovieYearElement = document.getElementById('movie-year');
-    var currentMovieLink = window.location.pathname;
+const getBaseTitle = (t) => {
+    if (!t) return '';
+    let cleaned = t.toLowerCase();
 
+    // Более мягкое удаление общих фраз и номеров, чтобы сохранить уникальность
+    cleaned = cleaned.replace(/\s*(?:и|или|of|the|a|an|часть|part|эпизод|[:–—\-]|,\s*\d+\s*|\s+\d+\s*|\s+[ivx]+\s*|film|movie|сезон|season|фильм|фильмов|фильма|сага|история|серия|том|глава|мир|возвращение|восстание|начало|конец|последний|новый|старый|приключение|приключения|хроники|самоубийц|отряд|планета|гнев|месть|эпоха|последний рыцарь|исход|генезис|судный день|смертельная расплата).*$/, '').trim();
+
+    // Удаляет (Год) и подобные в скобках
+    cleaned = cleaned.replace(/\s*[\(\[].*[\)\]]\s*$/, '').trim();
+    // Удаляет год в конце без скобок
+    cleaned = cleaned.replace(/\s*\d{4}\s*$/, '').trim();
+    // Удаляет "смотреть онлайн бесплатно"
+    cleaned = cleaned.replace(/смотреть онлайн бесплатно/i, '').trim();
+
+    // Финальное удаление неалфавитно-цифровых символов (знаков пунктуации) с конца строки
+    cleaned = cleaned.replace(/[^a-z0-9а-яё]+$/, '').trim();
+
+    // Если осталось очень короткое название (менее 3 символов), возможно, это ошибка или слишком агрессивная обрезка.
+    // В этом случае лучше вернуть исходное, но очищенное от простых паттернов.
+    if (cleaned.length < 3 && t.length > 3) {
+        let lessAggressiveClean = t.toLowerCase();
+        lessAggressiveClean = lessAggressiveClean.replace(/\s*[\(\[].*[\)\]]\s*$/, '').trim();
+        lessAggressiveClean = lessAggressiveClean.replace(/\s*\d{4}\s*$/, '').trim();
+        return lessAggressiveClean.replace(/[^a-z0-9а-яё]+$/, '').trim();
+    }
+
+    return cleaned;
+};
+
+
+const getRating = (c) => parseFloat(c.rating) || -1;
+
+// --- Константы TMDB API ---
+const TMDB_API_KEY = '3da216c9cc3fe78b5488855d25d26e13';
+const BASE_TMDB_URL = 'https://api.themoviedb.org/3';
+
+// --- Кэширование и получение данных TMDB ---
+let processedLocalCards = [];
+let processingPromise = null;
+
+async function fetchTmdbMovieData(id) {
+    if (!id) return null;
+    try {
+        const r = await fetch(`${BASE_TMDB_URL}/movie/${id}?api_key=${TMDB_API_KEY}&append_to_response=keywords,release_dates&language=ru-RU`);
+        if (!r.ok) {
+            return null;
+        }
+        const data = await r.json();
+        let certification = null;
+        if (data.release_dates && data.release_dates.results) {
+            const ruRelease = data.release_dates.results.find(res => res.iso_3166_1 === 'RU');
+            if (ruRelease && ruRelease.release_dates.length > 0) {
+                certification = ruRelease.release_dates.find(r => r.certification)?.certification;
+            } else {
+                const usRelease = data.release_dates.results.find(res => res.iso_3166_1 === 'US');
+                if (usRelease && usRelease.release_dates.length > 0) {
+                    certification = usRelease.release_dates.find(r => r.certification)?.certification;
+                } else if (data.release_dates.results.length > 0) {
+                    certification = data.release_dates.results[0].release_dates.find(r => r.certification)?.certification;
+                }
+            }
+        }
+        data.certification = certification;
+        return data;
+    } catch (e) {
+        console.error("Ошибка при получении данных TMDB для ID:", id, e);
+        return null;
+    }
+}
+
+async function processLocalCardData(data) {
+    if (processedLocalCards.length && !processingPromise) return processedLocalCards;
+    if (processingPromise) return await processingPromise;
+
+    processingPromise = Promise.all(data.map(async (c) => {
+        const u = { ...c };
+        if (c.tmdb_id) {
+            const m = await fetchTmdbMovieData(c.tmdb_id);
+            if (m) {
+                u.genres = m.genres?.map(g => g.name) || [];
+                u.keywords = m.keywords?.keywords?.map(k => k.name) || [];
+                u.collection_id = m.belongs_to_collection?.id || null;
+                u.certification = m.certification || c.certification || null;
+            } else {
+                u.genres = u.genres || [];
+                u.keywords = u.keywords || [];
+                u.collection_id = null;
+                u.certification = c.certification || null;
+            }
+        } else {
+            u.genres = u.genres || [];
+            u.keywords = u.keywords || [];
+            u.collection_id = null;
+            u.certification = c.certification || null;
+        }
+        return u;
+    })).finally(() => {
+        processingPromise = null;
+    });
+    processedLocalCards = await processingPromise;
+    return processedLocalCards;
+}
+
+async function getTmdbRecommendations(id) {
+    let m = [];
+    for (const e of [`recommendations`, `similar`]) {
+        try {
+            const r = await fetch(`${BASE_TMDB_URL}/movie/${id}/${e}?api_key=${TMDB_API_KEY}&language=ru-RU&page=1`);
+            if (r.ok) {
+                const d = await r.json();
+                if (d.results?.length) {
+                    m = d.results;
+                    break;
+                }
+            }
+        } catch (e) { /* Игнорируем ошибки API для рекомендаций/похожих */ }
+    }
+    return m;
+}
+
+async function getTmdbCollectionMovies(id) {
+    if (!id) return [];
+    try {
+        const r = await fetch(`${BASE_TMDB_URL}/collection/${id}?api_key=${TMDB_API_KEY}&language=ru-RU`);
+        return r.ok ? (await r.json()).parts || [] : [];
+    } catch (e) {
+        return [];
+    }
+}
+
+// --- Функции отображения UI (без изменений) ---
+function displayCards(cards, container) {
+    container.empty();
+    cards.slice(0, 12).forEach((card) => {
+        container.append(`
+            <li class="splide__slide">
+                <div class="card card-media" style="width: 12rem" data-rating="${card.rating}">
+                    <a href="${card.link}">
+                        <img src="${card.image}" class="card-img-top img-9x16 mt-2" alt="${card.name}" loading="lazy" onerror="this.onerror=null;this.src='/path/to/default-image.jpg';">
+                        <div class="card-rating-trand"><span class="span-rating">${card.rating}</span></div>
+                        ${card.isTV ? '<div class="card-TV card-TV-trends">TV</div>' : ''}
+                        <div class="card-body"><span class="card-tex">${card.name}<br><span class="year">${card.year}</span></span></div>
+                    </a>
+                </div>
+            </li>
+        `);
+    });
+
+    const images = container.find('img.card-img-top');
+    let loadedImages = 0;
+    if (images.length === 0) {
+        positionCardRatingTrand();
+    } else {
+        images.each(function() {
+            if (this.complete) {
+                loadedImages++;
+            } else {
+                this.onload = this.onerror = () => {
+                    loadedImages++;
+                    if (loadedImages === images.length) positionCardRatingTrand();
+                };
+            }
+        });
+        if (loadedImages === images.length) positionCardRatingTrand();
+    }
+}
+
+function positionCardRatingTrand() {
+    $('.card-item, .card-media').each(function() {
+        const $item = $(this);
+        const $img = $item.find('img');
+        const $rating = $item.find('.card-rating-trand');
+        if ($img.length && $rating.length && $img[0].complete) {
+            const iRect = $img[0].getBoundingClientRect();
+            const cRect = $item[0].getBoundingClientRect();
+            $rating.css({
+                'position': 'absolute',
+                'bottom': `${cRect.bottom - iRect.bottom + 8}px`,
+                'right': `${cRect.right - iRect.right + 8}px`,
+                'left': 'auto'
+            });
+        }
+    });
+}
+
+// --- Упрощенные и усиленные константы для жанров ---
+// --- Упрощенные и усиленные константы для жанров ---
+// --- Упрощенные и усиленные константы для жанров ---
+const GENRE_MATCH_BONUS = 250; // Бонус за совпадение жанра
+const KEYWORD_MATCH_BONUS = 500; // Бонус за совпадение ключевого слова
+const IRRELEVANT_SCORE = -7000; // Порог для отсечения
+
+// Обновленные "противоположные" жанры - ТОЛЬКО АБСОЛЮТНО НЕСОВМЕСТИМЫЕ И ОЧЕВИДНЫЕ
+// Это те пары, при наличии которых фильм СРАЗУ отсекается.
+const OPPOSITE_GENRE_PENALTIES = {
+    // Жанр текущего фильма: [Список жанров кандидата, которые считаются противоположными]
+    "ужасы": ["комедия", "семейный", "мультфильм", "музыка", "спорт", "вестерн"],
+    "комедия": ["ужасы", "военный", "нуар"],
+    "семейный": ["ужасы", "криминал", "военный", "боевик", "нуар"],
+    "мультфильм": ["ужасы", "криминал", "военный", "нуар"],
+    "боевик": ["мультфильм", "семейный", "музыка", "спорт"],
+    "документальный": ["мультфильм", "фэнтези", "фантастика", "ужасы", "комедия", "мюзикл"],
+    "мюзикл": ["ужасы", "военный", "документальный", "криминал", "боевик", "триллер", "детектив"],
+    "мелодрама": ["боевик", "ужасы", "военный", "спорт", "нуар", "вестерн"], // Мелодрама обычно не сочетается с этими жанрами
+    // ВНИМАНИЕ: Для "мелодрамы" УБРАНЫ "комедия" и "драма" из OPPOSITE_GENRE_PENALTIES.
+    // Теперь они могут сосуществовать без мгновенного отсечения.
+};
+
+// Новая концепция: если у кандидата есть эти жанры, а у текущего фильма их нет, то штраф.
+// Это более мягкий фильтр, который НЕ должен мгновенно отсекать фильм.
+const UNWANTED_GENRE_PENALTIES = {
+    // Жанр кандидата: Штраф (отрицательный балл)
+    "ужасы": -1500,
+    "комедия": -500,
+    "мультфильм": -1000,
+    "семейный": -1000,
+    "документальный": -1200,
+    "мюзикл": -800,
+    "вестерн": -800,
+    "история": -300,
+    "спорт": -500,
+    "музыка": -500,
+    "нуар": -800,
+    "боевик": -400,
+    "триллер": -300,
+    "фантастика": -300,
+    "фэнтези": -300,
+    "приключения": -200,
+    "криминал": -200,
+    "детектив": -200
+    // Драму не включаем сюда, так как она очень универсальна
+    // Мелодраму тоже не включаем в общие нежелаемые, она сама по себе целевой жанр
+};
+
+
+const CERTIFICATION_PENALTIES = {
+    'G': ['R', 'NC-17'],
+    'PG': ['R', 'NC-17'],
+    'PG-13': ['NC-17'],
+    'R': ['G', 'PG'],
+    'NC-17': ['G', 'PG', 'PG-13']
+};
+
+// --- Улучшенная функция скоринга релевантности ---
+const scoreCard = (card, currentMovieRef) => {
+    if (!currentMovieRef) return 0;
+    let score = 0;
+    const cGenres = new Set(card.genres?.map(g => g.toLowerCase()) || []);
+    const currentGenres = new Set(currentMovieRef.genres?.map(g => g.toLowerCase()) || []);
+    const cKeywords = new Set(card.keywords?.map(k => k.toLowerCase()) || []);
+    const currentKeywords = new Set(currentMovieRef.keywords?.map(k => k.toLowerCase()) || []);
+
+    // Проверяем, является ли фильм частью той же франшизы
+    const isSameFranchise = (card.collection_id && currentMovieRef.collection_id && card.collection_id === currentMovieRef.collection_id) ||
+                           (getBaseTitle(card.name) === getBaseTitle(currentMovieRef.name) && getBaseTitle(card.name) !== '');
+
+    // НЕМЕДЛЕННЫЙ ШТРАФ: если текущий фильм 'семейный', а кандидат нет И это не та же франшиза
+    if (!isSameFranchise && currentGenres.has('семейный') && !cGenres.has('семейный')) {
+        console.log(`DEBUG: '${card.name}' - НЕМЕДЛЕННЫЙ ШТРАФ: текущий фильм 'семейный', а кандидат нет.`);
+        return IRRELEVANT_SCORE;
+    }
     
-    var localCardData = [
+    // НОВОЕ ПРАВИЛО: Если текущий фильм - просто "комедия" (без "семейный"), а кандидат - "семейная комедия".
+    if (!isSameFranchise && currentGenres.has('комедия') && !currentGenres.has('семейный') && cGenres.has('семейный') && cGenres.has('комедия')) {
+        score -= 1500; // Значительный штраф
+        console.log(`DEBUG: '${card.name}' - Штраф за семейную комедию при не-семейной текущей комедии. Текущий счет: ${score}`);
+    }
+
+
+    // 1. Базовый рейтинг фильма - ВЛИЯНИЕ ОБНУЛЕНО
+    score += getRating(card) * 0; // Рейтинг не важен
+
+    // 2. Скоринг по жанрам
+    let matchedGenreCount = 0;
+    currentGenres.forEach(cG => {
+        if (cGenres.has(cG)) {
+            score += GENRE_MATCH_BONUS; // Хороший бонус за совпадение
+            matchedGenreCount++;
+        }
+    });
+
+    // Штрафы за "противоположные" жанры (ТОЛЬКО АБСОЛЮТНЫЕ НЕСОВМЕСТИМОСТИ - МГНОВЕННЫЙ ОТСЕВ)
+    if (!isSameFranchise) {
+        for (const cG of currentGenres) {
+            const opposites = OPPOSITE_GENRE_PENALTIES[cG];
+            if (opposites) {
+                for (const oppositeGenre of opposites) {
+                    if (cGenres.has(oppositeGenre)) {
+                        console.log(`DEBUG: '${card.name}' - ОГРОМНЫЙ ШТРАФ за противоположный жанр: ${cG} (текущий) vs ${oppositeGenre} (кандидат). Мгновенный отсев.`);
+                        return IRRELEVANT_SCORE; // Мгновенно отсекаем
+                    }
+                }
+            }
+        }
+    }
+
+    // НОВЫЕ ШТРАФЫ: за "нежелаемые" жанры у кандидата, если их нет у текущего фильма
+    // Это более мягкий, но все еще значимый штраф.
+    if (!isSameFranchise) {
+        for (const cG of cGenres) { // Итерируем по жанрам кандидата
+            if (!currentGenres.has(cG) && UNWANTED_GENRE_PENALTIES[cG]) { // Если текущий фильм не имеет этот жанр, и он в списке нежелаемых
+                score += UNWANTED_GENRE_PENALTIES[cG]; // Применяем штраф из UNWANTED_GENRE_PENALTIES
+                console.log(`DEBUG: '${card.name}' - Штраф за нежелаемый жанр '${cG}'. Текущий счет: ${score}`);
+            }
+        }
+    }
+
+    // *** ВРЕМЕННО ОТКЛЮЧЕНО ПРАВИЛО "нет совпадения по жанрам" ***
+    /*
+    if (!isSameFranchise && matchedGenreCount === 0 && !currentGenres.has('семейный')) {
+        console.log(`DEBUG: '${card.name}' - НЕМЕДЛЕННЫЙ ШТРАФ: нет совпадения по жанрам с текущим фильмом.`);
+        return IRRELEVANT_SCORE;
+    }
+    */
+    
+    // Дополнительный штраф, если у фильма есть конкретный жанр, а у кандидата его нет.
+    // Это для усиления "похожести" по ключевым жанрам текущего фильма.
+    if (!isSameFranchise) {
+        if (currentGenres.has('фантастика') && !cGenres.has('фантастика')) {
+            score -= 600;
+            console.log(`DEBUG: '${card.name}' - Штраф за отсутствие "фантастики". Текущий счет: ${score}`);
+        }
+        if (currentGenres.has('детектив') && !cGenres.has('детектив')) {
+            score -= 400;
+            console.log(`DEBUG: '${card.name}' - Штраф за отсутствие "детектива". Текущий счет: ${score}`);
+        }
+        if (currentGenres.has('ужасы') && !cGenres.has('ужасы')) {
+            score -= 600;
+            console.log(`DEBUG: '${card.name}' - Штраф за отсутствие "ужасов". Текущий счет: ${score}`);
+        }
+        if (currentGenres.has('триллер') && !cGenres.has('триллер')) {
+            score -= 400;
+            console.log(`DEBUG: '${card.name}' - Штраф за отсутствие "триллера". Текущий счет: ${score}`);
+        }
+        if (currentGenres.has('драма') && !cGenres.has('драма')) {
+            score -= 300;
+            console.log(`DEBUG: '${card.name}' - Штраф за отсутствие "драмы". Текущий счет: ${score}`);
+        }
+        if (currentGenres.has('боевик') && !cGenres.has('боевик')) {
+            score -= 300;
+            console.log(`DEBUG: '${card.name}' - Штраф за отсутствие "боевика". Текущий счет: ${score}`);
+        }
+    
+        // НОВЫЕ ШТРАФЫ: Комедия, Фэнтези
+        if (currentGenres.has('комедия') && !cGenres.has('комедия')) {
+            score -= 500; // Используйте значение, которое считаете подходящим
+            console.log(`DEBUG: '${card.name}' - Штраф за отсутствие "комедии". Текущий счет: ${score}`);
+        }
+        if (currentGenres.has('фэнтези') && !cGenres.has('фэнтези')) {
+            score -= 500; // Используйте значение, которое считаете подходящим
+            console.log(`DEBUG: '${card.name}' - Штраф за отсутствие "фэнтези". Текущий счет: ${score}`);
+        }
+        // Фантастика уже есть выше в этом блоке! Не дублируйте.
+    
+        // Специальный штраф, если текущий фильм - ужасы-комедия, а кандидат - просто ужасы или просто комедия
+        if (currentGenres.has('ужасы') && currentGenres.has('комедия') && (!cGenres.has('ужасы') || !cGenres.has('комедия'))) {
+            score -= 500; // Менее релевантно, чем ужасы-комедия
+            console.log(`DEBUG: '${card.name}' - Штраф за неполное совпадение ужасы-комедия. Текущий счет: ${score}`);
+        }
+    
+        // Специальные штрафы для мелодрам
+        if (currentGenres.has('мелодрама')) {
+            if (!cGenres.has('мелодрама')) {
+                score -= 700; // Высокий штраф, если у кандидата нет мелодрамы
+                console.log(`DEBUG: '${card.name}' - Штраф за отсутствие "мелодрамы". Текущий счет: ${score}`);
+            }
+            // Штраф, если текущий фильм - чистая мелодрама, а кандидат - мелодрама-комедия или мелодрама-драма
+            if (currentGenres.size === 1 && currentGenres.has('мелодрама')) { // Если текущий фильм ТОЛЬКО мелодрама
+                if (cGenres.has('комедия')) {
+                    score -= 200; // Небольшой штраф за комедию, если текущая - чистая мелодрама
+                    console.log(`DEBUG: '${card.name}' - Штраф за комедию в мелодраме-кандидате. Текущий счет: ${score}`);
+                }
+                if (cGenres.has('драма') && cGenres.size > 1 && !cGenres.has('мелодрама')) { // Если кандидат имеет драму, но не мелодраму
+                    score -= 100; // Очень маленький штраф за драму, если текущая - чистая мелодрама
+                    console.log(`DEBUG: '${card.name}' - Штраф за драму в мелодраме-кандидате. Текущий счет: ${score}`);
+                }
+            }
+        }
+    }
+
+
+    // 3. Совпадение по ключевым словам
+    currentKeywords.forEach(k => {
+        if (cKeywords.has(k)) score += KEYWORD_MATCH_BONUS;
+    });
+
+    // 4. Штраф за разницу в возрастных рейтингах (certification)
+    // Применяем штрафы только если фильм НЕ является частью той же франшизы
+    if (!isSameFranchise && currentMovieRef.certification && card.certification) {
+        const currentCert = currentMovieRef.certification.toUpperCase();
+        const candidateCert = card.certification.toUpperCase();
+
+        if (CERTIFICATION_PENALTIES[currentCert] && CERTIFICATION_PENALTIES[currentCert].includes(candidateCert)) {
+            score -= 500; // Увеличен штраф
+            console.log(`DEBUG: '${card.name}' - Штраф за возрастной рейтинг. Текущий счет: ${score}`);
+        }
+    }
+
+    // 5. Штраф за большую разницу в годах - ВЛИЯНИЕ ОБНУЛЕНО
+    score -= Math.abs(parseInt(card.year || 0) - parseInt(currentMovieRef.year || 0)) * 0; // Год не важен
+
+    console.log(`Score for "${card.name}" (Current: "${currentMovieRef.name}"): ${score.toFixed(2)}. Candidate Genres: [${Array.from(cGenres).join(', ')}]. Current Movie Genres: [${Array.from(currentGenres).join(', ')}]. Is Same Franchise: ${isSameFranchise}`);
+    return score;
+};
+
+
+// --- Основная логика генерации рекомендаций ---
+async function generateCards() {
+    const cardContainer = $('#card-container');
+    if (!cardContainer.length) return;
+
+    console.log("Текущая страница:", window.location.pathname);
+    console.log("Заголовок страницы:", document.title);
+
+    // --- Локальные данные карточек (ПРИМЕР) ---
+    // В реальном приложении этот массив будет заполняться из вашего бэкенда или JSON файла
+    const localCardData = [
         {
             "name": "Мама",
             "image": "https://image.tmdb.org/t/p/w500//ahMqF353szhxtdzltopouUJLJhY.jpg",
             "link": "/card/movies/800-343/Mama.html",
             "year": "2013",
             "rating":"6.3",
-            "genres": ["Ужасы"]
+            "genres": ["Ужасы"],
+            "tmdb_id": 132232
         },
         {
             "name": "Тихое место 2",
@@ -47,7 +453,8 @@ async function generateCards() {
             "link": "/card/movies/800-344/Tihoe-mesto-2.html",
             "year": "2021",
             "rating":"7.5",
-            "genres": ["Ужасы", "Триллер", "Фантастика"]
+            "genres": ["Ужасы", "Триллер", "Фантастика"],
+            "tmdb_id": 520763
         },
         {
             "name": "Тихое место",
@@ -55,7 +462,8 @@ async function generateCards() {
             "link": "/card/movies/800-345/Tihoe-mesto.html",
             "year": "2018",
             "rating":"7.4",
-            "genres": ["Ужасы", "Драма", "Фантастика"]
+            "genres": ["Ужасы", "Драма", "Фантастика"],
+            "tmdb_id": 447332
         },
         {
             "name": "Обезьяна",
@@ -64,7 +472,8 @@ async function generateCards() {
             "year": "2025",
             "rating":"5.9",
             "type": "movie",
-            "genres": ["Ужасы", "Комедия"]
+            "genres": ["Ужасы", "Комедия"],
+            "tmdb_id": 1124620
         },
         {
             "name": "Под Сильвер-Лэйк",
@@ -72,7 +481,8 @@ async function generateCards() {
             "link": "/card/movies/800-347/Pod-Silver-Lejk.html",
             "year": "2018",
             "rating":"6.4",
-            "genres": ["Криминал", "Драма", "Детектив"]
+            "genres": ["Криминал", "Драма", "Детектив"],
+            "tmdb_id": 396461
         },
         {
             "name": "Ветреная река",
@@ -80,7 +490,8 @@ async function generateCards() {
             "link": "/card/movies/800-348/Vetrenaya-reka.html",
             "year": "2017",
             "rating":"7.4",
-            "genres": ["Криминал", "Детектив", "Триллер"]
+            "genres": ["Криминал", "Детектив", "Триллер"],
+            "tmdb_id": 395834
         },
         {
             "name": "Ночные игры",
@@ -88,7 +499,8 @@ async function generateCards() {
             "link": "/card/movies/800-349/Nochnye-igry.html",
             "year": "2018",
             "rating":"6.8",
-            "genres": ["Детектив", "Комедия", "Криминал"]
+            "genres": ["Детектив", "Комедия", "Криминал"],
+            "tmdb_id": 445571
         },
         {
             "name": "Всё могу",
@@ -97,7 +509,8 @@ async function generateCards() {
             "year": "2015",
             "rating":"5.9",
             "type": "movie",
-            "genres": ["Комедия", "Фантастика"]
+            "genres": ["Комедия", "Фантастика"],
+            "tmdb_id": 86828
         },
         {
             "name": "Как быть мужиком",
@@ -105,7 +518,8 @@ async function generateCards() {
             "link": "/card/movies/800-351/Kak-byt-muzhikom.html",
             "year": "2013",
             "rating":"6.4",
-            "genres": ["Комедия"]
+            "genres": ["Комедия"],
+            "tmdb_id": 213417
         },
         {
             "name": "Самый удачливый человек в Америке",
@@ -113,7 +527,8 @@ async function generateCards() {
             "link": "/card/movies/800-352/Samyj-udachlivyj-chelovek-v-Amerike.html",
             "year": "2025",
             "rating":"6.7",
-            "genres": ["Драма", "Триллер"]
+            "genres": ["Драма", "Триллер"],
+            "tmdb_id": 1288070
         },
         {
             "name": "Охота на дикарей",
@@ -121,7 +536,8 @@ async function generateCards() {
             "link": "/card/movies/800-353/Ohota-na-dikarej.html",
             "year": "2016",
             "rating":"7.6",
-            "genres": ["Приключения", "Комедия", "Драма"]
+            "genres": ["Приключения", "Комедия", "Драма"],
+            "tmdb_id": 371645
         },
         {
             "name": "Машина времени в джакузи 2",
@@ -129,7 +545,8 @@ async function generateCards() {
             "link": "/card/movies/800-354/Mashina-vremeni-v-dzhakuzi-2.html",
             "year": "2015",
             "rating":"5.2",
-            "genres": ["Фантастика", "Комедия", "Приключения"]
+            "genres": ["Фантастика", "Комедия", "Приключения"],
+            "tmdb_id": 243938
         },
         {
             "name": "Машина времени в джакузи",
@@ -137,7 +554,8 @@ async function generateCards() {
             "link": "/card/movies/800-355/Mashina-vremeni-v-dzhakuzi.html",
             "year": "2010",
             "rating":"6.0",
-            "genres": ["Фантастика", "Комедия", "Приключения"]
+            "genres": ["Фантастика", "Комедия", "Приключения"],
+            "tmdb_id": 23048
         },
         {
             "name": "Патерсон",
@@ -145,7 +563,8 @@ async function generateCards() {
             "link": "/card/movies/800-356/Paterson.html",
             "year": "2016",
             "rating":"7.1",
-            "genres": ["Драма", "Комедия", "Мелодрама"]
+            "genres": ["Драма", "Комедия", "Мелодрама"],
+            "tmdb_id": 370755
         },
         {
             "name": "Маяк",
@@ -153,7 +572,8 @@ async function generateCards() {
             "link": "/card/movies/800-357/Mayak.html",
             "year": "2019",
             "rating":"7.5",
-            "genres": ["Драма", "Фэнтези", "Триллер"]
+            "genres": ["Драма", "Фэнтези", "Триллер"],
+            "tmdb_id": 503919
         },
         {
             "name": "Из машины",
@@ -161,7 +581,8 @@ async function generateCards() {
             "link": "/card/movies/800-358/Iz-mashiny.html",
             "year": "2015",
             "rating":"7.6",
-            "genres": ["Драма", "Фантастика"]
+            "genres": ["Драма", "Фантастика"],
+            "tmdb_id": 264660
         },
         {
             "name": "Мина",
@@ -169,7 +590,8 @@ async function generateCards() {
             "link": "/card/movies/800-359/Mina.html",
             "year": "2016",
             "rating":"6.6",
-            "genres": ["Военный ", "Триллер"]
+            "genres": ["Военный ", "Триллер"],
+            "tmdb_id": 345009
         },
         {
             "name": "Лок",
@@ -177,7 +599,8 @@ async function generateCards() {
             "link": "/card/movies/800-360/Lok.html",
             "year": "2014",
             "rating":"6.9",
-            "genres": ["Драма", "Триллер"]
+            "genres": ["Драма", "Триллер"],
+            "tmdb_id": 210479
         },
         {
             "name": "Враг общества",
@@ -185,7 +608,8 @@ async function generateCards() {
             "link": "/card/movies/800-361/Vrag-obshestva.html",
             "year": "2009",
             "rating":"6.7",
-            "genres": ["Криминал", "История", "Драма"]
+            "genres": ["Криминал", "История", "Драма"],
+            "tmdb_id": 11322
         },
         {
             "name": "Проект X: Дорвались",
@@ -193,7 +617,8 @@ async function generateCards() {
             "link": "/card/movies/800-362/Proekt-X-Dorvalis.html",
             "year": "2012",
             "rating":"6.9",
-            "genres": ["Комедия"]
+            "genres": ["Комедия"],
+            "tmdb_id": 57214
         },
         {
             "name": "Соседи: На тропе войны 2",
@@ -201,7 +626,8 @@ async function generateCards() {
             "link": "/card/movies/800-363/Sosedi-Na-trope-vojny-2.html",
             "year": "2016",
             "rating":"5.8",
-            "genres": ["Комедия"]
+            "genres": ["Комедия"],
+            "tmdb_id": 325133
         },
         {
             "name": "Соседи: На тропе войны",
@@ -209,7 +635,8 @@ async function generateCards() {
             "link": "/card/movies/800-364/Sosedi-Na-trope-vojny.html",
             "year": "2014",
             "rating":"6.2",
-            "genres": ["Комедия"]
+            "genres": ["Комедия"],
+            "tmdb_id": 195589
         },
         {
             "name": "Моя девушка – монстр",
@@ -217,7 +644,8 @@ async function generateCards() {
             "link": "/card/movies/800-365/Moya-devushka-monstr.html",
             "year": "2017",
             "rating":"6.3",
-            "genres": ["Драма", "Фэнтези", "Фантастика"]
+            "genres": ["Драма", "Фэнтези", "Фантастика"],
+            "tmdb_id": 339967
         },
         {
             "name": "Путешествия Гулливера",
@@ -225,7 +653,8 @@ async function generateCards() {
             "link": "/card/movies/800-366/Puteshestviya-Gullivera.html",
             "year": "2010",
             "rating":"5.2",
-            "genres": ["Семейный", "Комедия", "Фэнтези", "Приключения"]
+            "genres": ["Семейный", "Комедия", "Фэнтези", "Приключения"],
+            "tmdb_id": 38745
         },
         {
             "name": "Престиж",
@@ -233,7 +662,8 @@ async function generateCards() {
             "link": "/card/movies/800-270/Prestizh.html",
             "year": "2006",
             "rating":"8.2",
-            "genres": ["Драма", "Детектив", "Фантастика"]
+            "genres": ["Драма", "Детектив", "Фантастика"],
+            "tmdb_id": 1124
         },
         {
             "name": "Инферно Габриэля",
@@ -241,7 +671,8 @@ async function generateCards() {
             "link": "/card/movies/800-271/Inferno-Gabrielya.html",
             "year": "2020",
             "rating":"8.4",
-            "genres": ["Мелодрама", "Драма"]
+            "genres": ["Мелодрама", "Драма"],
+            "tmdb_id": 696374
         },
         {
             "name": "Миллиардер из трущоб",
@@ -249,7 +680,8 @@ async function generateCards() {
             "link": "/card/movies/800-272/Milliarder-iz-trushob.html",
             "year": "2024",
             "rating":"6.9",
-            "genres": ["Комедия"]
+            "genres": ["Комедия"],
+            "tmdb_id": 1299537
         },
         {
             "name": "Великая стена",
@@ -257,7 +689,8 @@ async function generateCards() {
             "link": "/card/movies/800-273/Velikaya-stena.html",
             "year": "2016",
             "rating":"6.0",
-            "genres": ["Боевик", "Приключения", "Фэнтези"]
+            "genres": ["Боевик", "Приключения", "Фэнтези"],
+            "tmdb_id": 311324
         },
         {
             "name": "Каратэ-пацан",
@@ -265,7 +698,8 @@ async function generateCards() {
             "link": "/card/movies/800-274/Karate-pacan.html",
             "year": "2010",
             "rating":"6.6",
-            "genres": ["Боевик", "Приключения", "Семейный"]
+            "genres": ["Боевик", "Приключения", "Семейный"],
+            "tmdb_id": 38575
         },
         {
             "name": "Хроники хищных городов",
@@ -273,7 +707,8 @@ async function generateCards() {
             "link": "/card/movies/800-275/Hroniki-hishnyh-gorodov.html",
             "year": "2018",
             "rating":"6.2",
-            "genres": ["Приключения", "Фантастика"]
+            "genres": ["Приключения", "Фантастика"],
+            "tmdb_id": 428078
         },
         {
             "name": "Загадочная история Бенджамина Баттона",
@@ -281,7 +716,8 @@ async function generateCards() {
             "link": "/card/movies/800-276/Zagadochnaya-istoriya-Bendzhamina-Battona.html",
             "year": "2008",
             "rating":"7.6",
-            "genres": ["Драма", "Фэнтези", "Мелодрама"]
+            "genres": ["Драма", "Фэнтези", "Мелодрама"],
+            "tmdb_id": 4922
         },
         {
             "name": "Обитель теней",
@@ -289,7 +725,8 @@ async function generateCards() {
             "link": "/card/movies/800-277/Obitel-tenej.html",
             "year": "2017",
             "rating":"7.3",
-            "genres": ["Триллер", "Ужасы", "Детектив"]
+            "genres": ["Триллер", "Ужасы", "Детектив"],
+            "tmdb_id": 399366
         },
         {
             "name": "Чип и Дейл спешат на помощь",
@@ -297,7 +734,8 @@ async function generateCards() {
             "link": "/card/movies/800-278/Chip-i-Dejl-speshat-na-pomosh.html",
             "year": "2022",
             "rating":"7.0",
-            "genres": ["Семейный", "Комедия", "Детектив"]
+            "genres": ["Семейный", "Комедия", "Детектив"],
+            "tmdb_id": 420821
         },
         {
             "name": "Области тьмы",
@@ -305,7 +743,8 @@ async function generateCards() {
             "link": "/card/movies/800-279/Oblasti-tmy.html",
             "year": "2011",
             "rating":"7.2",
-            "genres": ["Триллер", "Детектив", "Фантастика"]
+            "genres": ["Триллер", "Детектив", "Фантастика"],
+            "tmdb_id": 51876
         },
         {
             "name": "Мальчик в полосатой пижаме",
@@ -313,7 +752,8 @@ async function generateCards() {
             "link": "/card/movies/800-280/Malchik-v-polosatoj-pizhame.html",
             "year": "2008",
             "rating":"7.8",
-            "genres": ["Драма", "Военный", "История"]
+            "genres": ["Драма", "Военный", "История"],
+            "tmdb_id": 14574
         },
         {
             "name": "Убойные каникулы",
@@ -321,7 +761,8 @@ async function generateCards() {
             "link": "/card/movies/800-281/Ubojnye-kanikuly.html",
             "year": "2010",
             "rating":"7.4",
-            "genres": ["Комедия", "Ужасы"]
+            "genres": ["Комедия", "Ужасы"],
+            "tmdb_id": 46838
         },
         {
             "name": "Эта дурацкая любовь",
@@ -329,7 +770,8 @@ async function generateCards() {
             "link": "/card/movies/800-282/Eta-durackaya-lyubov.html",
             "year": "2011",
             "rating":"7.3",
-            "genres": ["Комедия", "Драма", "Мелодрама"]
+            "genres": ["Комедия", "Драма", "Мелодрама"],
+            "tmdb_id": 50646
         },
         {
             "name": "Предел риска",
@@ -337,7 +779,8 @@ async function generateCards() {
             "link": "/card/movies/800-283/Predel-riska.html",
             "year": "2011",
             "rating":"6.9",
-            "genres": ["Триллер", "Драма"]
+            "genres": ["Триллер", "Драма"],
+            "tmdb_id": 50839
         },
         {
             "name": "Беглец",
@@ -345,7 +788,8 @@ async function generateCards() {
             "link": "/card/movies/800-284/Beglec.html",
             "year": "2023",
             "rating":"6.8",
-            "genres": ["Боевик", "Триллер"]
+            "genres": ["Боевик", "Триллер"],
+            "tmdb_id": 717930
         },
         {
             "name": "Гренландия",
@@ -353,7 +797,8 @@ async function generateCards() {
             "link": "/card/movies/800-285/Grenlandiya.html",
             "year": "2020",
             "rating":"7.1",
-            "genres": ["Боевик", "Приключения", "Фантастика"]
+            "genres": ["Боевик", "Приключения", "Фантастика"],
+            "tmdb_id": 524047
         },
         {
             "name": "Последний день Земли",
@@ -361,7 +806,8 @@ async function generateCards() {
             "link": "/card/movies/800-286/Poslednij-den-Zemli.html",
             "year": "2024",
             "rating":"5.8",
-            "genres": ["Фантастика", "Триллер", "Боевик"]
+            "genres": ["Фантастика", "Триллер", "Боевик"],
+            "tmdb_id": 1196470
         },
         {
             "name": "Солт",
@@ -369,7 +815,8 @@ async function generateCards() {
             "link": "/card/movies/800-287/Solt.html",
             "year": "2010",
             "rating":"6.4",
-            "genres": ["Боевик", "Детектив", "Триллер"]
+            "genres": ["Боевик", "Детектив", "Триллер"],
+            "tmdb_id": 27576
         },
         {
             "name": "Земля будущего",
@@ -377,7 +824,8 @@ async function generateCards() {
             "link": "/card/movies/800-288/Zemlya-budushego.html",
             "year": "2015",
             "rating":"6.3",
-            "genres": ["Приключения", "Семейный", "Фантастика"]
+            "genres": ["Приключения", "Семейный", "Фантастика"],
+            "tmdb_id": 158852
         },
         {
             "name": "Красное уведомление",
@@ -385,7 +833,8 @@ async function generateCards() {
             "link": "/card/movies/800-289/Krasnoe-uvedomlenie.html",
             "year": "2021",
             "rating":"6.8",
-            "genres": ["Боевик", "Комедия", "Криминал"]
+            "genres": ["Боевик", "Комедия", "Криминал"],
+            "tmdb_id": 512195
         },
         {
             "name": "Самый быстрый Indian",
@@ -393,7 +842,8 @@ async function generateCards() {
             "link": "/card/movies/800-290/Samyj-bystryj-Indian.html",
             "year": "2005",
             "rating":"7.7",
-            "genres": ["Драма", "Приключения", "История"]
+            "genres": ["Драма", "Приключения", "История"],
+            "tmdb_id": 9912
         },
         {
             "name": "Сокровище Амазонки",
@@ -401,7 +851,8 @@ async function generateCards() {
             "link": "/card/movies/800-291/Sokrovishe-Amazonki.html",
             "year": "2003",
             "rating":"6.5",
-            "genres": ["Приключения", "Боевик", "Комедия"]
+            "genres": ["Приключения", "Боевик", "Комедия"],
+            "tmdb_id": 10159
         },
         {
             "name": "Человек, который изменил всё",
@@ -409,7 +860,8 @@ async function generateCards() {
             "link": "/card/movies/800-292/Chelovek-kotoryj-izmenil-vsyo.html",
             "year": "2011",
             "rating":"7.3",
-            "genres": ["Драма"]
+            "genres": ["Драма"],
+            "tmdb_id": 60308
         },
         {
             "name": "Легенда",
@@ -417,7 +869,8 @@ async function generateCards() {
             "link": "/card/movies/800-293/Legenda.html",
             "year": "2015",
             "rating":"7.1",
-            "genres": ["Криминал", "Триллер"]
+            "genres": ["Криминал", "Триллер"],
+            "tmdb_id": 276907
         },
         {
             "name": "Особняк с привидениями",
@@ -425,7 +878,8 @@ async function generateCards() {
             "link": "/card/movies/800-294/Osobnyak-s-privideniyami.html",
             "year": "2023",
             "rating":"6.5",
-            "genres": ["Комедия", "Триллер", "Детектив", "Фэнтези" ]
+            "genres": ["Комедия", "Триллер", "Детектив", "Фэнтези" ],
+            "tmdb_id": 616747
         },
         {
             "name": "Особняк с привидениями",
@@ -433,7 +887,8 @@ async function generateCards() {
             "link": "/card/movies/800-295/Osobnyak-s-privideniyami2003.html",
             "year": "2003",
             "rating":"5.7",
-            "genres": ["Комедия", "Триллер", "Детектив", "Фэнтези" ]
+            "genres": ["Комедия", "Триллер", "Детектив", "Фэнтези" ],
+            "tmdb_id": 10756
         },
         {
             "name": "Гравитация",
@@ -441,7 +896,8 @@ async function generateCards() {
             "link": "/card/movies/800-296/Gravitaciya.html",
             "year": "2013",
             "rating":"7.2",
-            "genres": ["Фантастика", "Триллер", "Драма" ]
+            "genres": ["Фантастика", "Триллер", "Драма" ],
+            "tmdb_id": 49047
         },
         {
             "name": "12 лет рабства",
@@ -449,7 +905,8 @@ async function generateCards() {
             "link": "/card/movies/800-297/12-let-rabstva.html",
             "year": "2013",
             "rating":"7.9",
-            "genres": ["Драма", "История" ]
+            "genres": ["Драма", "История" ],
+            "tmdb_id": 76203
         },
         {
             "name": "Каникулы",
@@ -457,7 +914,8 @@ async function generateCards() {
             "link": "/card/movies/800-298/Kanikuly.html",
             "year": "2015",
             "rating":"6.3",
-            "genres": ["Комедия"]
+            "genres": ["Комедия"],
+            "tmdb_id": 296099
         },
         {
             "name": "Лунный свет",
@@ -465,7 +923,8 @@ async function generateCards() {
             "link": "/card/movies/800-299/Lunnyj-svet.html",
             "year": "2016",
             "rating":"7.4",
-            "genres": ["Драма"]
+            "genres": ["Драма"],
+            "tmdb_id": 376867
         },
         {
             "name": "Первому игроку приготовиться",
@@ -473,7 +932,8 @@ async function generateCards() {
             "link": "/card/movies/800-300/Pervomu-igroku-prigotovitsya.html",
             "year": "2018",
             "rating":"7.6",
-            "genres": ["Боевик", "Приключения", "Фантастика"]
+            "genres": ["Боевик", "Приключения", "Фантастика"],
+            "tmdb_id": 333339
         },
         {
             "name": "Дракула",
@@ -481,7 +941,8 @@ async function generateCards() {
             "link": "/card/movies/800-301/Drakula.html",
             "year": "2014",
             "rating":"6.4",
-            "genres": ["Ужасы", "Боевик", "Фэнтези"]
+            "genres": ["Ужасы", "Боевик", "Фэнтези"],
+            "tmdb_id": 49017
         },
         {
             "name": "Пиксели",
@@ -489,7 +950,8 @@ async function generateCards() {
             "link": "/card/movies/800-302/Pikseli.html",
             "year": "2015",
             "rating":"5.7",
-            "genres": ["Боевик", "Комедия", "Фантастика"]
+            "genres": ["Боевик", "Комедия", "Фантастика"],
+            "tmdb_id": 257344
         },
         {
             "name": "Всё везде и сразу",
@@ -497,7 +959,8 @@ async function generateCards() {
             "link": "/card/movies/800-303/Vsyo-vezde-i-srazu.html",
             "year": "2022",
             "rating":"7.8",
-            "genres": ["Боевик", "Приключения", "Фантастика"]
+            "genres": ["Боевик", "Приключения", "Фантастика"],
+            "tmdb_id": 545611
         },
         {
             "name": "Миа и белый лев",
@@ -505,7 +968,8 @@ async function generateCards() {
             "link": "/card/movies/800-304/Mia-i-belyj-lev.html",
             "year": "2018",
             "rating":"7.3",
-            "genres": ["Приключения", "Семейный", "Драма"]
+            "genres": ["Приключения", "Семейный", "Драма"],
+            "tmdb_id": 498248
         },
         {
             "name": "Король Ричард",
@@ -513,7 +977,8 @@ async function generateCards() {
             "link": "/card/movies/800-305/Korol-Richard.html",
             "year": "2021",
             "rating":"7.6",
-            "genres": ["Драма", "История"]
+            "genres": ["Драма", "История"],
+            "tmdb_id": 614917
         },
         {
             "name": "Источник вечной молодости",
@@ -521,7 +986,8 @@ async function generateCards() {
             "link": "/card/movies/800-306/Istochnik-vechnoj-molodosti.html",
             "year": "2025",
             "rating":"6.6",
-            "genres": ["Приключения", "Фэнтези", "Детектив"]
+            "genres": ["Приключения", "Фэнтези", "Детектив"],
+            "tmdb_id": 1098006
         },
         {
             "name": "Боги Египта",
@@ -529,7 +995,8 @@ async function generateCards() {
             "link": "/card/movies/800-307/Bogi-Egipta.html",
             "year": "2016",
             "rating":"5.7",
-            "genres": ["Боевик", "Приключения", "Фэнтези"]
+            "genres": ["Боевик", "Приключения", "Фэнтези"],
+            "tmdb_id": 205584
         },
         {
             "name": "Отель «Гранд Будапешт»",
@@ -537,7 +1004,8 @@ async function generateCards() {
             "link": "/card/movies/800-308/Otel-Grand-Budapesht.html",
             "year": "2014",
             "rating":"8.0",
-            "genres": ["Комедия"]
+            "genres": ["Комедия"],
+            "tmdb_id": 120467
         },
         {
             "name": "Шафер напрокат",
@@ -545,7 +1013,8 @@ async function generateCards() {
             "link": "/card/movies/800-309/Shafer-naprokat.html",
             "year": "2015",
             "rating":"6.5",
-            "genres": ["Комедия"]
+            "genres": ["Комедия"],
+            "tmdb_id": 252838
         },
         {
             "name": "Прогулка",
@@ -553,7 +1022,8 @@ async function generateCards() {
             "link": "/card/movies/800-310/Progulka.html",
             "year": "2015",
             "rating":"7.0",
-            "genres": ["История", "Драма", "Приключения"]
+            "genres": ["История", "Драма", "Приключения"],
+            "tmdb_id": 285783
         },
         {
             "name": "Эверест",
@@ -561,7 +1031,8 @@ async function generateCards() {
             "link": "/card/movies/800-311/Everest.html",
             "year": "2015",
             "rating":"6.8",
-            "genres": ["Приключения", "Драма", "История"]
+            "genres": ["Приключения", "Драма", "История"],
+            "tmdb_id": 253412
         },
         {
             "name": "Исчезнувшая",
@@ -569,7 +1040,8 @@ async function generateCards() {
             "link": "/card/movies/800-312/Ischeznuvshaya.html",
             "year": "2014",
             "rating":"7.9",
-            "genres": ["Детектив", "Триллер", "Драма"]
+            "genres": ["Детектив", "Триллер", "Драма"],
+            "tmdb_id": 210577
         },
         {
             "name": "Дожить до Рассвета",
@@ -577,7 +1049,8 @@ async function generateCards() {
             "link": "/card/movies/800-313/Dozhit-do-Rassveta.html",
             "year": "2025",
             "rating":"6.5",
-            "genres": ["Ужасы", "Детектив"]
+            "genres": ["Ужасы", "Детектив"],
+            "tmdb_id": 1232546
         },
         {
             "name": "Спасатели Малибу",
@@ -585,7 +1058,8 @@ async function generateCards() {
             "link": "/card/movies/800-314/Spasateli-Malibu.html",
             "year": "2017",
             "rating":"6.1",
-            "genres": ["Комедия", "Боевик", "Криминал"]
+            "genres": ["Комедия", "Боевик", "Криминал"],
+            "tmdb_id": 339846
         },
         {
             "name": "Призраки в Венеции",
@@ -593,7 +1067,8 @@ async function generateCards() {
             "link": "/card/movies/800-315/Prizraki-v-Venecii.html",
             "year": "2023",
             "rating":"6.6",
-            "genres": ["Детектив", "Драма", "Криминал", "Триллер"]
+            "genres": ["Детектив", "Драма", "Криминал", "Триллер"],
+            "tmdb_id": 945729
         },
         {
             "name": "Смерть на Ниле",
@@ -601,7 +1076,8 @@ async function generateCards() {
             "link": "/card/movies/800-316/Smert-na-Nile.html",
             "year": "2022",
             "rating":"6.4",
-            "genres": ["Детектив", "Драма", "Криминал"]
+            "genres": ["Детектив", "Драма", "Криминал"],
+            "tmdb_id": 505026
         },
         {
             "name": "Убийство в «Восточном экспрессе»",
@@ -609,7 +1085,8 @@ async function generateCards() {
             "link": "/card/movies/800-317/Ubijstvo-v-Vostochnom-ekspresse.html",
             "year": "2017",
             "rating":"6.7",
-            "genres": ["Детектив", "Драма", "Криминал"]
+            "genres": ["Детектив", "Драма", "Криминал"],
+            "tmdb_id": 392044
         },
         {
             "name": "Философы: Урок выживания",
@@ -617,7 +1094,8 @@ async function generateCards() {
             "link": "/card/movies/800-318/Filosofy-Urok-vyzhivaniya.html",
             "year": "2013",
             "rating":"6.1",
-            "genres": ["Драма", "Фантастика", "Триллер"]
+            "genres": ["Драма", "Фантастика", "Триллер"],
+            "tmdb_id": 198287
         },
         {
             "name": "История дельфина 2",
@@ -625,7 +1103,8 @@ async function generateCards() {
             "link": "/card/movies/800-319/Istoriya-delfina-2.html",
             "year": "2014",
             "rating":"6.9",
-            "genres": ["Драма", "Семейный"]
+            "genres": ["Драма", "Семейный"],
+            "tmdb_id": 227735
         },
         {
             "name": "История дельфина",
@@ -633,7 +1112,8 @@ async function generateCards() {
             "link": "/card/movies/800-320/Istoriya-delfina.html",
             "year": "2011",
             "rating":"6.9",
-            "genres": ["Драма", "Семейный"]
+            "genres": ["Драма", "Семейный"],
+            "tmdb_id": 62837
         },
         {
             "name": "Комната",
@@ -641,7 +1121,8 @@ async function generateCards() {
             "link": "/card/movies/800-321/Komnata.html",
             "year": "2015",
             "rating":"8.0",
-            "genres": ["Драма", "Триллер"]
+            "genres": ["Драма", "Триллер"],
+            "tmdb_id": 264644
         },
         {
             "name": "Как заработать на убийстве",
@@ -649,7 +1130,8 @@ async function generateCards() {
             "link": "/card/movies/800-322/Kak-zarabotat-na-ubijstve.html",
             "year": "2025",
             "rating":"6.6",
-            "genres": ["Комедия", "Триллер"]
+            "genres": ["Комедия", "Триллер"],
+            "tmdb_id": 1210732
         },
         {
             "name": "Дюнкерк",
@@ -657,7 +1139,8 @@ async function generateCards() {
             "link": "/card/movies/800-323/Dyunkerk.html",
             "year": "2017",
             "rating":"7.5",
-            "genres": ["Военный", "Боевик" , "Драма"]
+            "genres": ["Военный", "Боевик" , "Драма"],
+            "tmdb_id": 374720
         },
         {
             "name": "Меню",
@@ -665,7 +1148,8 @@ async function generateCards() {
             "link": "/card/movies/800-324/Menyu.html",
             "year": "2022",
             "rating":"7.2",
-            "genres": ["Комедия", "Ужасы" , "Триллер"]
+            "genres": ["Комедия", "Ужасы" , "Триллер"],
+            "tmdb_id": 593643
         },
         {
             "name": "Лекарство от здоровья",
@@ -673,7 +1157,8 @@ async function generateCards() {
             "link": "/card/movies/800-325/Lekarstvo-ot-zdorovya.html",
             "year": "2017",
             "rating":"6.3",
-            "genres": ["Ужасы", "Детектив" , "Фантастика"]
+            "genres": ["Ужасы", "Детектив" , "Фантастика"],
+            "tmdb_id": 340837
         },
         {
             "name": "Не звезди!",
@@ -681,7 +1166,8 @@ async function generateCards() {
             "link": "/card/movies/800-326/Ne-zvezdi.html",
             "year": "2022",
             "rating":"5.0",
-            "genres": ["Комедия"]
+            "genres": ["Комедия"],
+            "tmdb_id": 829165
         },
         {
             "name": "Диктатор",
@@ -689,7 +1175,8 @@ async function generateCards() {
             "link": "/card/movies/800-327/Diktator.html",
             "year": "2012",
             "rating":"6.2",
-            "genres": ["Комедия"]
+            "genres": ["Комедия"],
+            "tmdb_id": 76493
         },
         {
             "name": "Прочь",
@@ -697,7 +1184,8 @@ async function generateCards() {
             "link": "/card/movies/800-328/Proch.html",
             "year": "2017",
             "rating":"7.6",
-            "genres": ["Детектив", "Триллер" , "Ужасы"]
+            "genres": ["Детектив", "Триллер" , "Ужасы"],
+            "tmdb_id": 419430
         },
         {
             "name": "Аладдин",
@@ -705,7 +1193,8 @@ async function generateCards() {
             "link": "/card/movies/800-329/Aladdin2019.html",
             "year": "2019",
             "rating":"7.1",
-            "genres": ["Приключения", "Семейный" , "Мелодрама"]
+            "genres": ["Приключения", "Семейный" , "Мелодрама"],
+            "tmdb_id": 420817
         },
         {
             "name": "Люси",
@@ -713,7 +1202,8 @@ async function generateCards() {
             "link": "/card/movies/800-330/Lyusi.html",
             "year": "2014",
             "rating":"6.5",
-            "genres": ["Боевик", "Фантастика"]
+            "genres": ["Боевик", "Фантастика"],
+            "tmdb_id": 240832
         },
         {
             "name": "Война токов",
@@ -721,7 +1211,8 @@ async function generateCards() {
             "link": "/card/movies/800-331/Vojna-tokov.html",
             "year": "2018",
             "rating":"6.7",
-            "genres": ["Драма", "История"]
+            "genres": ["Драма", "История"],
+            "tmdb_id": 418879
         },
         {
             "name": "Отец-молодец",
@@ -729,7 +1220,8 @@ async function generateCards() {
             "link": "/card/movies/800-332/Otec-molodec.html",
             "year": "2013",
             "rating":"6.3",
-            "genres": ["Комедия"]
+            "genres": ["Комедия"],
+            "tmdb_id": 146239
         },
         {
             "name": "Игра на понижение",
@@ -737,7 +1229,8 @@ async function generateCards() {
             "link": "/card/movies/800-333/Igra-na-ponizhenie.html",
             "year": "2015",
             "rating":"7.4",
-            "genres": ["Драма", "Комедия"]
+            "genres": ["Драма", "Комедия"],
+            "tmdb_id": 318846
         },
         {
             "name": "Крепись!",
@@ -745,7 +1238,8 @@ async function generateCards() {
             "link": "/card/movies/800-334/Krepis.html",
             "year": "2015",
             "rating":"6.0",
-            "genres": ["Комедия"]
+            "genres": ["Комедия"],
+            "tmdb_id": 257091
         },
         {
             "name": "Любовь и другие лекарства",
@@ -753,7 +1247,8 @@ async function generateCards() {
             "link": "/card/movies/800-335/Lyubov-i-drugie-lekarstva.html",
             "year": "2010",
             "rating":"7.0",
-            "genres": ["Драма", "Комедия", "Мелодрама"]
+            "genres": ["Драма", "Комедия", "Мелодрама"],
+            "tmdb_id": 43347
         },
         {
             "name": "Быть лучше: История Робби Уильямса",
@@ -761,7 +1256,8 @@ async function generateCards() {
             "link": "/card/movies/800-336/Byt-luchshe-Istoriya-Robbi-Uilyamsa.html",
             "year": "2024",
             "rating":"7.8",
-            "genres": ["Музыка", "Драма"]
+            "genres": ["Музыка", "Драма"],
+            "tmdb_id": 799766
         },
         {
             "name": "Хочу как ты",
@@ -769,7 +1265,8 @@ async function generateCards() {
             "link": "/card/movies/800-337/Hochu-kak-ty.html",
             "year": "2011",
             "rating":"6.2",
-            "genres": ["Комедия"]
+            "genres": ["Комедия"],
+            "tmdb_id": 49520
         },
         {
             "name": "Бабули",
@@ -777,7 +1274,8 @@ async function generateCards() {
             "link": "/card/movies/800-342/Babuli.html",
             "year": "2025",
             "rating":"6.9",
-            "genres": ["Комедия"]
+            "genres": ["Комедия"],
+            "tmdb_id": 1151039
         },
         {
             "name": "Я иду искать",
@@ -785,7 +1283,8 @@ async function generateCards() {
             "link": "/card/movies/800-338/Ya-idu-iskat.html",
             "year": "2019",
             "rating":"7.0",
-            "genres": ["Ужасы", "Комедия"]
+            "genres": ["Ужасы", "Комедия"],
+            "tmdb_id": 567609
         },
         {
             "name": "Одарённая",
@@ -793,7 +1292,8 @@ async function generateCards() {
             "link": "/card/movies/800-339/Odaryonnaya.html",
             "year": "2017",
             "rating":"8.0",
-            "genres": ["Драма", "Комедия"]
+            "genres": ["Драма", "Комедия"],
+            "tmdb_id": 400928
         },
         {
             "name": "Тетрадь смерти",
@@ -801,7 +1301,8 @@ async function generateCards() {
             "link": "/card/movies/800-340/Tetrad-smerti.html",
             "year": "2017",
             "rating":"4.3",
-            "genres": ["Криминал", "Фэнтези", "Ужасы"]
+            "genres": ["Криминал", "Фэнтези", "Ужасы"],
+            "tmdb_id": 351460
         },
         {
             "name": "Прибытие",
@@ -809,7 +1310,8 @@ async function generateCards() {
             "link": "/card/movies/800-04/Pribytie.html",
             "year": "2016",
             "rating":"7.6",
-            "genres": ["Драма", "Фантастика", "Детектив"]
+            "genres": ["Драма", "Фантастика", "Детектив"],
+            "tmdb_id": 329865
         },
         {
             "name": "Богемская рапсодия",
@@ -817,7 +1319,8 @@ async function generateCards() {
             "link": "/card/movies/800-341/Bogemskaya-rapsodiya.html",
             "year": "2018",
             "rating":"8.0",
-            "genres": ["Музыка", "Драма"]
+            "genres": ["Музыка", "Драма"],
+            "tmdb_id": 424694
         },
         {
             "name": "В первый раз",
@@ -825,7 +1328,8 @@ async function generateCards() {
             "link": "/card/movies/800-05/V-pervyj-raz.html",
             "year": "2012",
             "rating":"7.0",
-            "genres": ["Драма", "Комедия", "Мелодрама"]
+            "genres": ["Драма", "Комедия", "Мелодрама"],
+            "tmdb_id": 84199
         },
         {
             "name": "Паразиты",
@@ -833,7 +1337,8 @@ async function generateCards() {
             "link": "/card/movies/800-06/Parazity.html",
             "year": "2019",
             "rating":"8.5",
-            "genres": ["Триллер", "Драма"]
+            "genres": ["Триллер", "Драма"],
+            "tmdb_id": 496243
         },
         {
             "name": "Идеальные незнакомцы",
@@ -841,7 +1346,8 @@ async function generateCards() {
             "link": "/card/movies/800-07/Idealnye-neznakomcy.html",
             "year": "2016",
             "rating":"7.9",
-            "genres": ["Комедия", "Драма"]
+            "genres": ["Комедия", "Драма"],
+            "tmdb_id": 381341
         },
         {
             "name": "Остров проклятых",
@@ -849,7 +1355,8 @@ async function generateCards() {
             "link": "/card/movies/800-08/Ostrov-proklyatyh.html",
             "year": "2010",
             "rating":"8.2",
-            "genres": ["Драма", "Триллер", "Детектив"]
+            "genres": ["Драма", "Триллер", "Детектив"],
+            "tmdb_id": 11324
         },
         {
             "name": "Логан",
@@ -857,7 +1364,8 @@ async function generateCards() {
             "link": "/card/movies/800-09/Logan.html",
             "year": "2017",
             "rating":"7.8",
-            "genres": ["Боевик", "Драма", "Фантастика"]
+            "genres": ["Боевик", "Драма", "Фантастика"],
+            "tmdb_id": 263115
         },
         {
             "name": "Кит",
@@ -865,7 +1373,8 @@ async function generateCards() {
             "link": "/card/movies/800-11/Kit.html",
             "year": "2022",
             "rating":"7.8",
-            "genres": ["Драма"]
+            "genres": ["Драма"],
+            "tmdb_id": 785084
         },
         {
             "name": "Кто там?",
@@ -873,7 +1382,8 @@ async function generateCards() {
             "link": "/card/movies/800-13/Kto-tam.html",
             "year": "2015",
             "rating":"5.4",
-            "genres": ["Ужасы", "Триллер", "Криминал"]
+            "genres": ["Ужасы", "Триллер", "Криминал"],
+            "tmdb_id": 263472
         },
         {
             "name": "Круэлла",
@@ -881,7 +1391,8 @@ async function generateCards() {
             "link": "/card/movies/800-15/Kruella.html",
             "year": "2021",
             "rating":"8.0",
-            "genres": ["Комедия", "Криминал", "Приключения"]
+            "genres": ["Комедия", "Криминал", "Приключения"],
+            "tmdb_id": 337404
         },
         {
             "name": "Зомби по имени Шон",
@@ -889,7 +1400,8 @@ async function generateCards() {
             "link": "/card/movies/800-18/Zombi-po-imeni-Shon.html",
             "year": "2004",
             "rating":"7.5",
-            "genres": ["Ужасы", "Комедия"]
+            "genres": ["Ужасы", "Комедия"],
+            "tmdb_id": 747
         },
         {
             "name": "Выживший",
@@ -897,7 +1409,8 @@ async function generateCards() {
             "link": "/card/movies/800-19/Vyzhivshij.html",
             "year": "2015",
             "rating":"7.5",
-            "genres": ["Вестерн", "Драма", "Приключения"]
+            "genres": ["Вестерн", "Драма", "Приключения"],
+            "tmdb_id": 281957
         },
         {
             "name": "Гнев человеческий",
@@ -905,7 +1418,8 @@ async function generateCards() {
             "link": "/card/movies/800-21/Gnev-chelovecheskij.html",
             "year": "2021",
             "rating":"7.6",
-            "genres": ["Боевик", "Криминал", "Триллер"]
+            "genres": ["Боевик", "Криминал", "Триллер"],
+            "tmdb_id": 637649
         },
         {
             "name": "Одержимость",
@@ -913,7 +1427,8 @@ async function generateCards() {
             "link": "/card/movies/800-23/Oderzhimost.html",
             "year": "2014",
             "rating":"8.4",
-            "genres": ["Драма", "Музыка"]
+            "genres": ["Драма", "Музыка"],
+            "tmdb_id": 244786
         },
         {
             "name": "Зелёная книга",
@@ -921,7 +1436,8 @@ async function generateCards() {
             "link": "/card/movies/800-24/Zelyonaya-kniga.html",
             "year": "2018",
             "rating":"8.2",
-            "genres": ["Драма", "История"]
+            "genres": ["Драма", "История"],
+            "tmdb_id": 490132
         },
         {
             "name": "Последний охотник на демонов",
@@ -929,7 +1445,8 @@ async function generateCards() {
             "link": "/card/movies/800-243/Poslednij-ohotnik-na-demonov.html",
             "year": "2025",
             "rating":"6.2",
-            "genres": ["Ужасы", "Боевик", "Триллер"]
+            "genres": ["Ужасы", "Боевик", "Триллер"],
+            "tmdb_id": 1353117
         },
         {
             "name": "Ford против Ferrari",
@@ -937,7 +1454,8 @@ async function generateCards() {
             "link": "/card/movies/800-25/Ford-protiv-Ferrari.html",
             "year": "2019",
             "rating":"8.0",
-            "genres": ["Драма", "Боевик", "История"]
+            "genres": ["Драма", "Боевик", "История"],
+            "tmdb_id": 359724
         },
         {
             "name": "Миссия: Красный",
@@ -945,7 +1463,8 @@ async function generateCards() {
             "link": "/card/movies/800-26/Missiya-Krasnyj.html",
             "year": "2024",
             "rating":"7.1",
-            "genres": ["Боевик", "Комедия", "Фэнтези"]
+            "genres": ["Боевик", "Комедия", "Фэнтези"],
+            "tmdb_id": 845781
         },
         {
             "name": "Братья Гримм",
@@ -953,7 +1472,8 @@ async function generateCards() {
             "link": "/card/movies/800-27/Bratya-Grimm.html",
             "year": "2005",
             "rating":"5.8",
-            "genres": ["Приключения", "Фэнтези", "Комедия", "Триллер"]
+            "genres": ["Приключения", "Фэнтези", "Комедия", "Триллер"],
+            "tmdb_id": 4442
         },
         {
             "name": "Посвященный",
@@ -961,7 +1481,8 @@ async function generateCards() {
             "link": "/card/movies/800-29/Posvyashennyj.html",
             "year": "2014",
             "rating":"6.6",
-            "genres": ["Драма", "Фантастика"]
+            "genres": ["Драма", "Фантастика"],
+            "tmdb_id": 227156
         },
         {
             "name": "Рейс навылет",
@@ -969,7 +1490,8 @@ async function generateCards() {
             "link": "/card/movies/800-244/Rejs-navylet.html",
             "year": "2025",
             "rating":"5.9",
-            "genres": ["Боевик", "Комедия", "Триллер"]
+            "genres": ["Боевик", "Комедия", "Триллер"],
+            "tmdb_id": 1212855
         },
         {
             "name": "И гаснет свет",
@@ -977,7 +1499,8 @@ async function generateCards() {
             "link": "/card/movies/800-30/I-gasnet-svet.html",
             "year": "2016",
             "rating":"6.4",
-            "genres": ["Ужасы"]
+            "genres": ["Ужасы"],
+            "tmdb_id": 345911
         },
         {
             "name": "Комната желаний",
@@ -985,7 +1508,8 @@ async function generateCards() {
             "link": "/card/movies/800-39/Komnata-zhelanij.html",
             "year": "2019",
             "rating":"6.4",
-            "genres": ["Ужасы", "Драма", "Фантастика"]
+            "genres": ["Ужасы", "Драма", "Фантастика"],
+            "tmdb_id": 582913
         },
         {
             "name": "Школа мистера Пингвина",
@@ -993,7 +1517,8 @@ async function generateCards() {
             "link": "/card/movies/800-245/Shkola-mistera-Pingvina.html",
             "year": "2025",
             "rating":"7.2",
-            "genres": ["Драма"]
+            "genres": ["Драма"],
+            "tmdb_id": 1086497
         },
         {
             "name": "Дорогой Санта",
@@ -1001,7 +1526,8 @@ async function generateCards() {
             "link": "/card/movies/800-51/Dorogoj-Santa.html",
             "year": "2024",
             "rating":"6.3",
-            "genres": ["Фэнтези", "Комедия"]
+            "genres": ["Фэнтези", "Комедия"],
+            "tmdb_id": 1097870
         },
         {
             "name": "Вивариум",
@@ -1009,7 +1535,8 @@ async function generateCards() {
             "link": "/card/movies/800-37/Vivarium.html",
             "year": "2019",
             "rating":"6.1",
-            "genres": ["Фантастика", "Триллер", "Детектив"]
+            "genres": ["Фантастика", "Триллер", "Детектив"],
+            "tmdb_id": 458305
         },
         {
             "name": "Смерть Единорога",
@@ -1017,7 +1544,8 @@ async function generateCards() {
             "link": "/card/movies/800-246/Smert-Edinoroga.html",
             "year": "2025",
             "rating":"6.5",
-            "genres": ["Ужасы", "Фэнтези", "Комедия"]
+            "genres": ["Ужасы", "Фэнтези", "Комедия"],
+            "tmdb_id": 1153714
         },
         {
             "name": "Марсианин",
@@ -1025,7 +1553,8 @@ async function generateCards() {
             "link": "/card/movies/800-47/Marsianin.html",
             "year": "2015",
             "rating":"7.7",
-            "genres": ["Драма", "Приключения", "Фантастика"]
+            "genres": ["Драма", "Приключения", "Фантастика"],
+            "tmdb_id": 286217
         },
         {
             "name": "Наполеон",
@@ -1033,7 +1562,8 @@ async function generateCards() {
             "link": "/card/movies/800-89/Napoleon.html",
             "year": "2023",
             "rating":"6.4",
-            "genres": ["История", "Военный", "Мелодрама"]
+            "genres": ["История", "Военный", "Мелодрама"],
+            "tmdb_id": 753342
         },
         {
             "name": "Другой человек",
@@ -1041,7 +1571,8 @@ async function generateCards() {
             "link": "/card/movies/800-64/Drugoj-chelovek.html",
             "year": "2024",
             "rating":"7.1",
-            "genres": ["Комедия", "Драма"]
+            "genres": ["Комедия", "Драма"],
+            "tmdb_id": 989662
         },
         {
             "name": "Собачья жизнь 2",
@@ -1049,7 +1580,8 @@ async function generateCards() {
             "link": "/card/movies/800-151/Sobachya-zhizn-2.html",
             "year": "2019",
             "rating":"8.1",
-            "genres": ["Семейный", "Приключения", "Драма"]
+            "genres": ["Семейный", "Приключения", "Драма"],
+            "tmdb_id": 522518
         },
         {
             "name": "Собачья жизнь",
@@ -1057,7 +1589,8 @@ async function generateCards() {
             "link": "/card/movies/800-152/Sobachya-zhizn.html",
             "year": "2017",
             "rating":"7.6",
-            "genres": ["Приключения", "Комедия", "Семейный", "Драма"]
+            "genres": ["Приключения", "Комедия", "Семейный", "Драма"],
+            "tmdb_id": 381289
         },
         {
             "name": "Микки 17",
@@ -1065,7 +1598,8 @@ async function generateCards() {
             "link": "/card/movies/800-247/Mikki-17.html",
             "year": "2025",
             "rating":"6.9",
-            "genres": ["Фантастика", "Комедия", "Приключения"]
+            "genres": ["Фантастика", "Комедия", "Приключения"],
+            "tmdb_id": 696506
         },
         {
             "name": "Топ Ган: Мэверик",
@@ -1073,7 +1607,8 @@ async function generateCards() {
             "link": "/card/movies/800-10/Top-Gan-Meverik.html",
             "year": "2022",
             "rating":"8.2",
-            "genres": ["Боевик", "Драма"]
+            "genres": ["Боевик", "Драма"],
+            "tmdb_id": 361743
         },
         {
             "name": "Лучший стрелок",
@@ -1081,7 +1616,8 @@ async function generateCards() {
             "link": "/card/movies/800-144/Luchshij-strelok.html",
             "year": "1986",
             "rating":"7.1",
-            "genres": ["Боевик", "Драма"]
+            "genres": ["Боевик", "Драма"],
+            "tmdb_id": 744
         },
         {
             "name": "Миссия невыполнима: Смертельная...",
@@ -1089,7 +1625,8 @@ async function generateCards() {
             "link": "/card/movies/800-12/Missiya-nevypolnima-Smertelnaya....html",
             "year": "2023",
             "rating":"7.5",
-            "genres": ["Боевик", "Приключения"]
+            "genres": ["Боевик", "Приключения"],
+            "tmdb_id": 575264
         },
         {
             "name": "Миссия невыполнима: Последствия",
@@ -1097,7 +1634,8 @@ async function generateCards() {
             "link": "/card/movies/800-145/Missiya-nevypolnima-Posledstviya.html",
             "year": "2018",
             "rating":"7.4",
-            "genres": ["Боевик", "Приключения"]
+            "genres": ["Боевик", "Приключения"],
+            "tmdb_id": 353081
         },
         {
             "name": "Миссия невыполнима: Племя изгоев",
@@ -1105,7 +1643,8 @@ async function generateCards() {
             "link": "/card/movies/800-146/Missiya-nevypolnima-Plemya-izgoev.html",
             "year": "2015",
             "rating":"7.2",
-            "genres": ["Боевик", "Триллер", "Приключения"]
+            "genres": ["Боевик", "Триллер", "Приключения"],
+            "tmdb_id": 177677
         },
         {
             "name": "Миссия невыполнима: Протокол Фантом",
@@ -1113,7 +1652,8 @@ async function generateCards() {
             "link": "/card/movies/800-147/Missiya-nevypolnima-Protokol-Fantom.html",
             "year": "2011",
             "rating":"7.1",
-            "genres": ["Боевик", "Триллер", "Приключения"]
+            "genres": ["Боевик", "Триллер", "Приключения"],
+            "tmdb_id": 56292
         },
         {
             "name": "Миссия невыполнима 3",
@@ -1121,7 +1661,8 @@ async function generateCards() {
             "link": "/card/movies/800-148/Missiya-nevypolnima-3.html",
             "year": "2006",
             "rating":"6.7",
-            "genres": ["Боевик","Приключения", "Триллер"]
+            "genres": ["Боевик","Приключения", "Триллер"],
+            "tmdb_id": 956
         },
         {
             "name": "Миссия невыполнима 2",
@@ -1129,7 +1670,8 @@ async function generateCards() {
             "link": "/card/movies/800-149/Missiya-nevypolnima-2.html",
             "year": "2000",
             "rating":"6.1",
-            "genres": ["Приключения","Боевик", "Триллер"]
+            "genres": ["Приключения","Боевик", "Триллер"],
+            "tmdb_id": 955
         },
         {
             "name": "Миссия невыполнима",
@@ -1137,7 +1679,8 @@ async function generateCards() {
             "link": "/card/movies/800-150/Missiya-nevypolnima.html",
             "year": "1996",
             "rating":"7.0",
-            "genres": ["Приключения","Боевик", "Триллер"]
+            "genres": ["Приключения","Боевик", "Триллер"],
+            "tmdb_id": 954
         },
         {
             "name": "Стражи Галактики. Часть 3",
@@ -1145,7 +1688,8 @@ async function generateCards() {
             "link": "/card/movies/800-153/Strazhi-Galaktiki-Chast-3.html",
             "year": "2023",
             "rating":"7.9",
-            "genres": ["Фантастика","Боевик", "Комедия"]
+            "genres": ["Фантастика","Боевик", "Комедия"],
+            "tmdb_id": 447365
         },
         {
             "name": "Стражи Галактики. Часть 2",
@@ -1153,7 +1697,8 @@ async function generateCards() {
             "link": "/card/movies/800-154/Strazhi-Galaktiki-Chast-2.html",
             "year": "2017",
             "rating":"7.6",
-            "genres": ["Фантастика","Приключения", "Боевик"]
+            "genres": ["Фантастика","Приключения", "Боевик"],
+            "tmdb_id": 283995
         },
         {
             "name": "Стражи Галактики",
@@ -1161,7 +1706,8 @@ async function generateCards() {
             "link": "/card/movies/800-14/Strazhi-Galaktiki.html",
             "year": "2014",
             "rating":"7.9",
-            "genres": ["Боевик","Фантастика", "Приключения"]
+            "genres": ["Боевик","Фантастика", "Приключения"],
+            "tmdb_id": 118340
         },
         {
             "name": "Достать ножи: Стеклянная луковица",
@@ -1169,7 +1715,8 @@ async function generateCards() {
             "link": "/card/movies/800-155/Dostat-nozhi-Steklyannaya-lukovica.html",
             "year": "2022",
             "rating":"7.1",
-            "genres": ["Комедия","Криминал", "Детектив"]
+            "genres": ["Комедия","Криминал", "Детектив"],
+            "tmdb_id": 661374
         },
         {
             "name": "Достать ножи",
@@ -1177,7 +1724,8 @@ async function generateCards() {
             "link": "/card/movies/800-17/Dostat-nozhi.html",
             "year": "2019",
             "rating":"7.8",
-            "genres": ["Комедия","Криминал", "Детектив"]
+            "genres": ["Комедия","Криминал", "Детектив"],
+            "tmdb_id": 546554
         },
         {
             "name": "Бегущий по лезвию 2049",
@@ -1185,7 +1733,8 @@ async function generateCards() {
             "link": "/card/movies/800-16/Begushij-po-lezviyu-2049.html",
             "year": "2017",
             "rating":"7.6",
-            "genres": ["Фантастика","Драма"]
+            "genres": ["Фантастика","Драма"],
+            "tmdb_id": 335984
         },
         {
             "name": "Бегущий по лезвию",
@@ -1193,7 +1742,8 @@ async function generateCards() {
             "link": "/card/movies/800-156/Begushij-po-lezviyu.html",
             "year": "1982",
             "rating":"7.9",
-            "genres": ["Фантастика","Драма", "Триллер"]
+            "genres": ["Фантастика","Драма", "Триллер"],
+            "tmdb_id": 78
         },
         {
             "name": "Джон Уик 4",
@@ -1201,7 +1751,8 @@ async function generateCards() {
             "link": "/card/movies/800-22/Dzhon-Uik-4.html",
             "year": "2023",
             "rating":"7.7",
-            "genres": ["Боевик","Триллер", "Криминал"]
+            "genres": ["Боевик","Триллер", "Криминал"],
+            "tmdb_id": 603692
         },
         {
             "name": "Джон Уик 3",
@@ -1209,7 +1760,8 @@ async function generateCards() {
             "link": "/card/movies/800-157/Dzhon-Uik-3.html",
             "year": "2019",
             "rating":"7.4",
-            "genres": ["Боевик","Триллер", "Криминал"]
+            "genres": ["Боевик","Триллер", "Криминал"],
+            "tmdb_id": 458156
         },
         {
             "name": "Джон Уик 2",
@@ -1217,7 +1769,8 @@ async function generateCards() {
             "link": "/card/movies/800-158/Dzhon-Uik-2.html",
             "year": "2017",
             "rating":"7.3",
-            "genres": ["Боевик","Триллер", "Криминал"]
+            "genres": ["Боевик","Триллер", "Криминал"],
+            "tmdb_id": 324552
         },
         {
             "name": "Джон Уик",
@@ -1225,7 +1778,8 @@ async function generateCards() {
             "link": "/card/movies/800-159/Dzhon-Uik.html",
             "year": "2014",
             "rating":"7.4",
-            "genres": ["Боевик","Триллер"]
+            "genres": ["Боевик","Триллер"],
+            "tmdb_id": 245891
         },
         {
             "name": "Новые мутанты",
@@ -1233,15 +1787,17 @@ async function generateCards() {
             "link": "/card/movies/800-160/Novye-mutanty.html",
             "year": "2020",
             "rating":"6.1",
-            "genres": ["Фантастика","Ужасы", "Боевик"]
+            "genres": ["Фантастика","Ужасы", "Боевик"],
+            "tmdb_id": 340102
         },
         {
             "name": "Люди Икс: Тёмный Феникс",
             "image": "https://image.tmdb.org/t/p/w500//927lqua6AHPW4mUflU26yV3APKZ.jpg",
-            "link": "/card/card/movies/800-161/Lyudi-Iks-Tyomnyj-Feniks.html",
+            "link": "/card/movies/800-161/Lyudi-Iks-Tyomnyj-Feniks.html",
             "year": "2019",
             "rating":"6.0",
-            "genres": ["Фантастика","Боевик", "Приключения"]
+            "genres": ["Фантастика","Боевик", "Приключения"],
+            "tmdb_id": 320288
         },
         {
             "name": "Люди Икс: Апокалипсис",
@@ -1249,7 +1805,8 @@ async function generateCards() {
             "link": "/card/movies/800-162/Lyudi-Iks-Apokalipsis.html",
             "year": "2016",
             "rating":"6.5",
-            "genres": ["Приключения","Боевик", "Фантастика"]
+            "genres": ["Приключения","Боевик", "Фантастика"],
+            "tmdb_id": 246655
         },
         {
             "name": "Люди Икс: Дни минувшего будущего",
@@ -1257,7 +1814,8 @@ async function generateCards() {
             "link": "/card/movies/800-28/Lyudi-Iks-Dni-minuvshego-budushego.html",
             "year": "2014",
             "rating":"7.5",
-            "genres": ["Боевик","Приключения", "Фантастика"]
+            "genres": ["Боевик","Приключения", "Фантастика"],
+            "tmdb_id": 127585
         },
         {
             "name": "Росомаха: Бессмертный",
@@ -1265,7 +1823,8 @@ async function generateCards() {
             "link": "/card/movies/800-163/Rosomaha-Bessmertnyj.html",
             "year": "2013",
             "rating":"6.4",
-            "genres": ["Боевик","Приключения", "Фантастика"]
+            "genres": ["Боевик","Приключения", "Фантастика"],
+            "tmdb_id": 76170
         },
         {
             "name": "Люди Икс: Первый класс",
@@ -1273,7 +1832,8 @@ async function generateCards() {
             "link": "/card/movies/800-164/Lyudi-Iks-Pervyj-klass.html",
             "year": "2011",
             "rating":"7.3",
-            "genres": ["Боевик","Приключения", "Фантастика"]
+            "genres": ["Боевик","Приключения", "Фантастика"],
+            "tmdb_id": 49538
         },
         {
             "name": "Люди Икс: Начало. Росомаха",
@@ -1281,7 +1841,8 @@ async function generateCards() {
             "link": "/card/movies/800-165/Lyudi-Iks-Nachalo-Rosomaha.html",
             "year": "2009",
             "rating":"6.3",
-            "genres": ["Приключения","Боевик", "Фантастика"]
+            "genres": ["Приключения","Боевик", "Фантастика"],
+            "tmdb_id": 2080
         },
         {
             "name": "Люди Икс: Последняя битва",
@@ -1289,7 +1850,8 @@ async function generateCards() {
             "link": "/card/movies/800-166/Lyudi-Iks-Poslednyaya-bitva.html",
             "year": "2006",
             "rating":"6.4",
-            "genres": ["Боевик","Фантастика", "Триллер"]
+            "genres": ["Боевик","Фантастика", "Триллер"],
+            "tmdb_id": 36668
         },
         {
             "name": "Люди Икс 2",
@@ -1297,7 +1859,8 @@ async function generateCards() {
             "link": "/card/movies/800-167/Lyudi-Iks-2.html",
             "year": "2003",
             "rating":"7.0",
-            "genres": ["Приключения","Боевик", "Фантастика"]
+            "genres": ["Приключения","Боевик", "Фантастика"],
+            "tmdb_id": 36658
         },
         {
             "name": "Люди Икс",
@@ -1305,7 +1868,8 @@ async function generateCards() {
             "link": "/card/movies/800-168/Lyudi-Iks.html",
             "year": "2000",
             "rating":"7.0",
-            "genres": ["Приключения","Боевик", "Фантастика"]
+            "genres": ["Приключения","Боевик", "Фантастика"],
+            "tmdb_id": 36657
         },
         {
             "name": "Дом у дороги",
@@ -1313,7 +1877,8 @@ async function generateCards() {
             "link": "/card/movies/800-31/Dom-u-dorogi.html",
             "year": "2024",
             "rating":"6.9",
-            "genres": ["Боевик","Триллер"]
+            "genres": ["Боевик","Триллер"],
+            "tmdb_id": 359410
         },
         {
             "name": "Придорожная закусочная",
@@ -1321,7 +1886,8 @@ async function generateCards() {
             "link": "/card/movies/800-169/Pridorozhnaya-zakusochnaya.html",
             "year": "1989",
             "rating":"6.7",
-            "genres": ["Боевик","Триллер"]
+            "genres": ["Боевик","Триллер"],
+            "tmdb_id": 10135
         },
         {
             "name": "King’s Man: Начало",
@@ -1329,7 +1895,8 @@ async function generateCards() {
             "link": "/card/movies/800-170/King’s-Man-Nachalo.html",
             "year": "2021",
             "rating":"6.7",
-            "genres": ["Боевик","Приключения", "Триллер"]
+            "genres": ["Боевик","Приключения", "Триллер"],
+            "tmdb_id": 476669
         },
         {
             "name": "Kingsman: Золотое кольцо",
@@ -1337,7 +1904,8 @@ async function generateCards() {
             "link": "/card/movies/800-171/Kingsman-Zolotoe-kolco.html",
             "year": "2017",
             "rating":"7.0",
-            "genres": ["Боевик","Приключения", "Комедия", "Триллер"]
+            "genres": ["Боевик","Приключения", "Комедия", "Триллер"],
+            "tmdb_id": 343668
         },
         {
             "name": "Kingsman: Секретная служба",
@@ -1345,7 +1913,8 @@ async function generateCards() {
             "link": "/card/movies/800-32/Kingsman-Sekretnaya-sluzhba.html",
             "year": "2015",
             "rating":"7.6",
-            "genres": ["Криминал","Комедия", "Боевик"]
+            "genres": ["Криминал","Комедия", "Боевик"],
+            "tmdb_id": 207703
         },
         {
             "name": "Побег из Шоушенка",
@@ -1353,7 +1922,8 @@ async function generateCards() {
             "link": "/card/movies/800-33/Pobeg-iz-Shoushenka.html",
             "year": "1994",
             "rating":"8.7",
-            "genres": ["Драма","Криминал"]
+            "genres": ["Драма","Криминал"],
+            "tmdb_id": 278
         },
         {
             "name": "Счастливого нового дня смерти",
@@ -1361,7 +1931,8 @@ async function generateCards() {
             "link": "/card/movies/800-172/Schastlivogo-novogo-dnya-smerti.html",
             "year": "2019",
             "rating":"6.3",
-            "genres": ["Комедия","Ужасы", "Фантастика"]
+            "genres": ["Комедия","Ужасы", "Фантастика"],
+            "tmdb_id": 512196
         },
         {
             "name": "Счастливого дня смерти",
@@ -1369,7 +1940,8 @@ async function generateCards() {
             "link": "/card/movies/800-34/Schastlivogo-dnya-smerti.html",
             "year": "2017",
             "rating":"6.7",
-            "genres": ["Комедия","Ужасы", "Фантастика"]
+            "genres": ["Комедия","Ужасы", "Фантастика"],
+            "tmdb_id": 440021
         },
         {
             "name": "Геошторм",
@@ -1377,7 +1949,8 @@ async function generateCards() {
             "link": "/card/movies/800-36/Geoshtorm.html",
             "year": "2017",
             "rating":"6.1",
-            "genres": ["Боевик","Фантастика", "Триллер"]
+            "genres": ["Боевик","Фантастика", "Триллер"],
+            "tmdb_id": 274855
         },
         {
             "name": "Тёмный рыцарь: Возрождение легенды",
@@ -1385,7 +1958,8 @@ async function generateCards() {
             "link": "/card/movies/800-173/Tyomnyj-rycar-Vozrozhdenie-legendy.html",
             "year": "2012",
             "rating":"7.8",
-            "genres": ["Боевик","Криминал", "Драма", "Триллер"]
+            "genres": ["Боевик","Криминал", "Драма", "Триллер"],
+            "tmdb_id": 49026
         },
         {
             "name": "Тёмный рыцарь",
@@ -1393,7 +1967,8 @@ async function generateCards() {
             "link": "/card/movies/800-38/Tyomnyj-rycar.html",
             "year": "2008",
             "rating":"8.5",
-            "genres": ["Боевик","Криминал", "Драма", "Триллер"]
+            "genres": ["Боевик","Криминал", "Драма", "Триллер"],
+            "tmdb_id": 155
         },
         {
             "name": "Бэтмен: Начало",
@@ -1401,7 +1976,8 @@ async function generateCards() {
             "link": "/card/movies/800-174/Betmen-Nachalo.html",
             "year": "2005",
             "rating":"7.7",
-            "genres": ["Боевик","Криминал", "Драма", "Триллер"]
+            "genres": ["Боевик","Криминал", "Драма", "Триллер"],
+            "tmdb_id": 272
         },
         {
             "name": "Реальные упыри",
@@ -1409,7 +1985,8 @@ async function generateCards() {
             "link": "/card/movies/800-40/Realnye-upyri.html",
             "year": "2014",
             "rating":"7.6",
-            "genres": ["Комедия","Ужасы"]
+            "genres": ["Комедия","Ужасы"],
+            "tmdb_id": 246741
         },
         {
             "name": "Крёстный отец 3",
@@ -1417,7 +1994,8 @@ async function generateCards() {
             "link": "/card/movies/800-175/Kryostnyj-otec-3.html",
             "year": "1990",
             "rating":"7.4",
-            "genres": ["Криминал", "Драма", "Триллер"]
+            "genres": ["Криминал", "Драма", "Триллер"],
+            "tmdb_id": 242
         },
         {
             "name": "Крёстный отец 2",
@@ -1425,7 +2003,8 @@ async function generateCards() {
             "link": "/card/movies/800-176/Kryostnyj-otec-2.html",
             "year": "1974",
             "rating":"8.6",
-            "genres": ["Криминал", "Драма", "Триллер"]
+            "genres": ["Криминал", "Драма", "Триллер"],
+            "tmdb_id": 240
         },
         {
             "name": "Крёстный отец",
@@ -1433,7 +2012,8 @@ async function generateCards() {
             "link": "/card/movies/800-41/Kryostnyj-otec.html",
             "year": "1972",
             "rating":"8.7",
-            "genres": ["Криминал", "Драма", "Триллер"]
+            "genres": ["Криминал", "Драма", "Триллер"],
+            "tmdb_id": 238
         },
         {
             "name": "Джобс: Империя соблазна",
@@ -1441,7 +2021,8 @@ async function generateCards() {
             "link": "/card/movies/800-42/Dzhobs-Imperiya-soblazna.html",
             "year": "2013",
             "rating":"6.1",
-            "genres": ["Драма", "История"]
+            "genres": ["Драма", "История"],
+            "tmdb_id": 115782
         },
         {
             "name": "Скотт Пилигрим против всех",
@@ -1449,7 +2030,8 @@ async function generateCards() {
             "link": "/card/movies/800-44/Skott-Piligrim-protiv-vseh.html",
             "year": "2010",
             "rating":"7.5",
-            "genres": ["Боевик", "Комедия", "Мелодрама"]
+            "genres": ["Боевик", "Комедия", "Мелодрама"],
+            "tmdb_id": 22538
         },
         {
             "name": "Спасти рядового Райана",
@@ -1457,7 +2039,8 @@ async function generateCards() {
             "link": "/card/movies/800-45/Spasti-ryadovogo-Rajana.html",
             "year": "1998",
             "rating":"8.2",
-            "genres": ["Драма", "История", "Военный"]
+            "genres": ["Драма", "История", "Военный"],
+            "tmdb_id": 857
         },
         {
             "name": "Пассажиры",
@@ -1465,7 +2048,8 @@ async function generateCards() {
             "link": "/card/movies/800-46/Passazhiry.html",
             "year": "2016",
             "rating":"7.0",
-            "genres": ["Драма", "Мелодрама", "Фантастика"]
+            "genres": ["Драма", "Мелодрама", "Фантастика"],
+            "tmdb_id": 274870
         },
         {
             "name": "Список Шиндлера",
@@ -1473,7 +2057,8 @@ async function generateCards() {
             "link": "/card/movies/800-48/Spisok-Shindlera.html",
             "year": "1993",
             "rating":"8.6",
-            "genres": ["Драма", "История", "Военный"]
+            "genres": ["Драма", "История", "Военный"],
+            "tmdb_id": 424
         },
         {
             "name": "5-я волна",
@@ -1481,7 +2066,8 @@ async function generateCards() {
             "link": "/card/movies/800-49/5-aya-volna.html",
             "year": "2016",
             "rating":"5.9",
-            "genres": ["Приключения", "Боевик", "Фантастика",]
+            "genres": ["Приключения", "Боевик", "Фантастика",],
+            "tmdb_id": 299687
         },
         {
             "name": "Бойцовский клуб",
@@ -1489,7 +2075,8 @@ async function generateCards() {
             "link": "/card/movies/800-50/Bojcovskij-klub.html",
             "year": "1999",
             "rating":"8.4",
-            "genres": ["Драма", "Криминал", "Триллер"]
+            "genres": ["Драма", "Криминал", "Триллер"],
+            "tmdb_id": 550
         },
         {
             "name": "Ущелье",
@@ -1497,7 +2084,8 @@ async function generateCards() {
             "link": "/card/movies/800-02/Ushele.html",
             "year": "2025",
             "rating":"7.7",
-            "genres": ["Триллер", "Мелодрама", "Фантастика"]
+            "genres": ["Триллер", "Мелодрама", "Фантастика"],
+            "tmdb_id": 950396
         },
         {
             "name": "Назад в будущее 3",
@@ -1505,7 +2093,8 @@ async function generateCards() {
             "link": "/card/movies/800-177/Nazad-v-budushee-3.html",
             "year": "1990",
             "rating":"7.5",
-            "genres": ["Приключения", "Комедия", "Фантастика"]
+            "genres": ["Приключения", "Комедия", "Фантастика"],
+            "tmdb_id": 196
         },
         {
             "name": "Назад в будущее 2",
@@ -1513,7 +2102,8 @@ async function generateCards() {
             "link": "/card/movies/800-178/Nazad-v-budushee-2.html",
             "year": "1989",
             "rating":"7.8",
-            "genres": ["Приключения", "Комедия", "Фантастика"]
+            "genres": ["Приключения", "Комедия", "Фантастика"],
+            "tmdb_id": 165
         },
         {
             "name": "Назад в будущее",
@@ -1521,7 +2111,8 @@ async function generateCards() {
             "link": "/card/movies/800-52/Nazad-v-budushee.html",
             "year": "1985",
             "rating":"8.3",
-            "genres": ["Приключения", "Комедия", "Фантастика"]
+            "genres": ["Приключения", "Комедия", "Фантастика"],
+            "tmdb_id": 105
         },
         {
             "name": "Щелкунчики",
@@ -1529,7 +2120,8 @@ async function generateCards() {
             "link": "/card/movies/800-53/Shelkunchiki.html",
             "year": "2024",
             "rating":"5.9",
-            "genres": ["Драма", "Комедия"]
+            "genres": ["Драма", "Комедия"],
+            "tmdb_id": 1203236
         },
         {
             "name": "Гладиатор 2",
@@ -1537,7 +2129,8 @@ async function generateCards() {
             "link": "/card/movies/800-179/Gladiator-2.html",
             "year": "2024",
             "rating":"6.8",
-            "genres": ["Боевик", "Приключения", "Драма"]
+            "genres": ["Боевик", "Приключения", "Драма"],
+            "tmdb_id": 558449
         },
         {
             "name": "Гладиатор",
@@ -1545,7 +2138,8 @@ async function generateCards() {
             "link": "/card/movies/800-54/Gladiator.html",
             "year": "2000",
             "rating":"8.2",
-            "genres": ["Боевик", "Приключения", "Драма"]
+            "genres": ["Боевик", "Приключения", "Драма"],
+            "tmdb_id": 98
         },
         {
             "name": "Почему он?",
@@ -1553,7 +2147,8 @@ async function generateCards() {
             "link": "/card/movies/800-55/Pochemu-on.html",
             "year": "2016",
             "rating":"6.4",
-            "genres": ["Комедия"]
+            "genres": ["Комедия"],
+            "tmdb_id": 356305
         },
         {
             "name": "Аватар: Путь воды",
@@ -1561,7 +2156,8 @@ async function generateCards() {
             "link": "/card/movies/800-180/Avatar-Put-vody.html",
             "year": "2022",
             "rating":"7.6",
-            "genres": ["Фантастика", "Приключения", "Боевик"]
+            "genres": ["Фантастика", "Приключения", "Боевик"],
+            "tmdb_id": 76600
         },
         {
             "name": "Аватар",
@@ -1569,7 +2165,8 @@ async function generateCards() {
             "link": "/card/movies/800-56/Avatar.html",
             "year": "2009",
             "rating":"7.6",
-            "genres": ["Фантастика", "Приключения", "Боевик"]
+            "genres": ["Фантастика", "Приключения", "Боевик"],
+            "tmdb_id": 19995
         },
         {
             "name": "21 мост",
@@ -1577,7 +2174,8 @@ async function generateCards() {
             "link": "/card/movies/800-01/21-Most.html",
             "year": "2019",
             "rating":"6.8",
-            "genres": ["Криминал", "Боевик", "Драма"]
+            "genres": ["Криминал", "Боевик", "Драма"],
+            "tmdb_id": 535292
         },
         {
             "name": "Эмилия Перес",
@@ -1585,7 +2183,8 @@ async function generateCards() {
             "link": "/card/movies/800-03/Emilia-Perez.html",
             "year": "2024",
             "rating":"7.8",
-            "genres": ["Драма", "Триллер", "Комедия", "Мюзикл"]
+            "genres": ["Драма", "Триллер", "Комедия", "Мюзикл"],
+            "tmdb_id": 974950
         },
         {
             "name": "Грешники",
@@ -1593,7 +2192,8 @@ async function generateCards() {
             "link": "/card/movies/800-237/Greshniki.html",
             "year": "2025",
             "rating":"7.6",
-            "genres": ["Ужасы", "Триллер"]
+            "genres": ["Ужасы", "Триллер"],
+            "tmdb_id": 1233413
         },
         {
             "name": "Спуск в бездну",
@@ -1601,7 +2201,8 @@ async function generateCards() {
             "link": "/card/movies/800-57/Spusk-v-bezdnu.html",
             "year": "2023",
             "rating":"5.7",
-            "genres": ["Приключения", "Ужасы", "Драма"]
+            "genres": ["Приключения", "Ужасы", "Драма"],
+            "tmdb_id": 976830
         },
         {
             "name": "Город тайн: Исчезнувшая",
@@ -1609,7 +2210,8 @@ async function generateCards() {
             "link": "/card/movies/800-58/Gorod-tajn-Ischeznuvshaya.html",
             "year": "2024",
             "rating":"6.5",
-            "genres": ["Детектив", "Триллер"]
+            "genres": ["Детектив", "Триллер"],
+            "tmdb_id": 832262
         },
         {
             "name": "Город тайн",
@@ -1617,7 +2219,8 @@ async function generateCards() {
             "link": "/card/movies/800-181/Gorod-tajn.html",
             "year": "2021",
             "rating":"6.8",
-            "genres": ["Детектив", "Триллер"]
+            "genres": ["Детектив", "Триллер"],
+            "tmdb_id": 567797
         },
         {
             "name": "Хитмен. Последнее дело",
@@ -1625,7 +2228,8 @@ async function generateCards() {
             "link": "/card/movies/800-59/Hitmen-Poslednee-delo.html",
             "year": "2024",
             "rating":"6.9",
-            "genres": ["Боевик", "Криминал", "Триллер"]
+            "genres": ["Боевик", "Криминал", "Триллер"],
+            "tmdb_id": 972614
         },
         {
             "name": "Хитмэн: Агент 47",
@@ -1633,7 +2237,8 @@ async function generateCards() {
             "link": "/card/movies/800-182/Hitmen-Agent-47.html",
             "year": "2015",
             "rating":"5.9",
-            "genres": ["Боевик", "Криминал", "Триллер"]
+            "genres": ["Боевик", "Криминал", "Триллер"],
+            "tmdb_id": 249070
         },
         {
             "name": "Хитмэн",
@@ -1641,7 +2246,8 @@ async function generateCards() {
             "link": "/card/movies/800-183/Hitmen.html",
             "year": "2007",
             "rating":"6.1",
-            "genres": ["Боевик", "Криминал", "Триллер"]
+            "genres": ["Боевик", "Криминал", "Триллер"],
+            "tmdb_id": 1620
         },
         {
             "name": "Непробиваемые",
@@ -1649,7 +2255,8 @@ async function generateCards() {
             "link": "/card/movies/800-60/Neprobivaemye.html",
             "year": "2024",
             "rating":"5.6",
-            "genres": ["Боевик", "Криминал", "Драма"]
+            "genres": ["Боевик", "Криминал", "Драма"],
+            "tmdb_id": 1182387
         },
         {
             "name": "Западня",
@@ -1657,7 +2264,8 @@ async function generateCards() {
             "link": "/card/movies/800-242/Zapadnya.html",
             "year": "2025",
             "rating":"6.3",
-            "genres": ["Триллер"]
+            "genres": ["Триллер"],
+            "tmdb_id": 1083968
         },
         {
             "name": "Однажды в Ла-Рое",
@@ -1665,7 +2273,8 @@ async function generateCards() {
             "link": "/card/movies/800-61/Odnazhdy-v-La-Roe.html",
             "year": "2024",
             "rating":"6.8",
-            "genres": ["Криминал", "Комедия", "Триллер"]
+            "genres": ["Криминал", "Комедия", "Триллер"],
+            "tmdb_id": 1001783
         },
         {
             "name": "Охотники за привидениями: Леденящий ужас",
@@ -1673,7 +2282,8 @@ async function generateCards() {
             "link": "/card/movies/800-62/Ohotniki-za-privideniyami-Ledenyashij-uzhas.html",
             "year": "2024",
             "rating":"6.5",
-            "genres": ["Фэнтези", "Приключения", "Комедия"]
+            "genres": ["Фэнтези", "Приключения", "Комедия"],
+            "tmdb_id": 967847
         },
         {
             "name": "Охотники за привидениями: Наследники",
@@ -1681,7 +2291,8 @@ async function generateCards() {
             "link": "/card/movies/800-184/Ohotniki-za-privideniyami-Nasledniki.html",
             "year": "2021",
             "rating":"7.3",
-            "genres": ["Фэнтези", "Приключения", "Комедия"]
+            "genres": ["Фэнтези", "Приключения", "Комедия"],
+            "tmdb_id": 425909
         },
         {
             "name": "Охотники за привидениями",
@@ -1689,7 +2300,8 @@ async function generateCards() {
             "link": "/card/movies/800-185/Ohotniki-za-privideniyami2016.html",
             "year": "2016",
             "rating":"5.3",
-            "genres": ["Фэнтези", "Приключения", "Комедия"]
+            "genres": ["Фэнтези", "Приключения", "Комедия"],
+            "tmdb_id": 43074
         },
         {
             "name": "Охотники за привидениями 2",
@@ -1697,7 +2309,8 @@ async function generateCards() {
             "link": "/card/movies/800-186/Ohotniki-za-privideniyami-2.html",
             "year": "1989",
             "rating":"6.6",
-            "genres": ["Фэнтези", "Приключения", "Комедия"]
+            "genres": ["Фэнтези", "Приключения", "Комедия"],
+            "tmdb_id": 2978
         },
         {
             "name": "Охотники за привидениями",
@@ -1705,7 +2318,8 @@ async function generateCards() {
             "link": "/card/movies/800-187/Ohotniki-za-privideniyami1984.html",
             "year": "1984",
             "rating":"7.5",
-            "genres": ["Фэнтези", "Приключения", "Комедия"]
+            "genres": ["Фэнтези", "Приключения", "Комедия"],
+            "tmdb_id": 620
         },
         {
             "name": "Дюна: Часть вторая",
@@ -1713,7 +2327,8 @@ async function generateCards() {
             "link": "/card/movies/800-20/Dyuna-Chast-vtoraya.html",
             "year": "2024",
             "rating":"8.1",
-            "genres": ["Фантастика", "Приключения"]
+            "genres": ["Фантастика", "Приключения"],
+            "tmdb_id": 693134
         },
         {
             "name": "Дюна",
@@ -1721,7 +2336,8 @@ async function generateCards() {
             "link": "/card/movies/800-63/Dyuna.html",
             "year": "2021",
             "rating":"7.8",
-            "genres": ["Фантастика", "Приключения"]
+            "genres": ["Фантастика", "Приключения"],
+            "tmdb_id": 438631
         },
         {
             "name": "Громовержцы*",
@@ -1729,7 +2345,8 @@ async function generateCards() {
             "link": "/card/movies/800-241/Gromoverzhcy.html",
             "year": "2025",
             "rating":"7.5",
-            "genres": ["Боевик", "Фантастика", "Приключения"]
+            "genres": ["Боевик", "Фантастика", "Приключения"],
+            "tmdb_id": 986056
         },
         {
             "name": "Капитан Америка: Новый Мир",
@@ -1737,7 +2354,8 @@ async function generateCards() {
             "link": "/card/movies/800-250/Kapitan-Amerika-Novyj-Mir.html",
             "year": "2025",
             "rating":"6.1",
-            "genres": ["Боевик", "Триллер", "Фантастика"]
+            "genres": ["Боевик", "Триллер", "Фантастика"],
+            "tmdb_id": 822119
         },
         {
             "name": "Золото джунглей",
@@ -1745,7 +2363,8 @@ async function generateCards() {
             "link": "/card/movies/800-236/Zoloto-dzhunglej.html",
             "year": "2017",
             "rating":"5.7",
-            "genres": ["История", "Драма", "Боевик"]
+            "genres": ["История", "Драма", "Боевик"],
+            "tmdb_id": 436830
         },
         {
             "name": "Вуди Вудпекер в летнем лагере",
@@ -1753,7 +2372,8 @@ async function generateCards() {
             "link": "/card/movies/800-65/Vudi-Vudpeker-otpravlyaetsya-v-lager.html",
             "year": "2024",
             "rating":"6.5",
-            "genres": ["Семейный", "Комедия"]
+            "genres": ["Семейный", "Комедия"],
+            "tmdb_id": 1239146
         },
         {
             "name": "Вуди Вудпекер",
@@ -1761,7 +2381,8 @@ async function generateCards() {
             "link": "/card/movies/800-188/Vudi-Vudpeker.html",
             "year": "2017",
             "rating":"6.6",
-            "genres": ["Семейный", "Комедия"]
+            "genres": ["Семейный", "Комедия"],
+            "tmdb_id": 462883
         },
         {
             "name": "Minecraft в Кино",
@@ -1769,7 +2390,8 @@ async function generateCards() {
             "link": "/card/movies/800-240/Minecraft-v-Kino.html",
             "year": "2025",
             "rating":"6.5",
-            "genres": ["Семейный", "Комедия", "Фэнтези"]
+            "genres": ["Семейный", "Комедия", "Фэнтези"],
+            "tmdb_id": 950387
         },
         {
             "name": "Возвращение грозной семейки",
@@ -1777,7 +2399,8 @@ async function generateCards() {
             "link": "/card/movies/800-66/Vozvrashenie-grozno-semejki.html",
             "year": "2024",
             "rating":"7.0",
-            "genres": ["Семейный", "Фантастика", "Комедия"]
+            "genres": ["Семейный", "Фантастика", "Комедия"],
+            "tmdb_id": 1094556
         },
         {
             "name": "След киллера",
@@ -1785,7 +2408,8 @@ async function generateCards() {
             "link": "/card/movies/800-67/Sled-killera.html",
             "year": "2024",
             "rating":"5.7",
-            "genres": ["Боевик", "Драма", "Триллер", "Криминал"]
+            "genres": ["Боевик", "Драма", "Триллер", "Криминал"],
+            "tmdb_id": 1105407
         },
         {
             "name": "Боб Марли: Одна любовь",
@@ -1793,7 +2417,8 @@ async function generateCards() {
             "link": "/card/movies/800-68/Bob-Marli-Odna-lyubov.html",
             "year": "2024",
             "rating":"6.7",
-            "genres": ["Музыка", "История", "Драма"]
+            "genres": ["Музыка", "История", "Драма"],
+            "tmdb_id": 802219
         },
         {
             "name": "Джокер: Безумие на двоих",
@@ -1801,7 +2426,8 @@ async function generateCards() {
             "link": "/card/movies/800-69/Dzhoker-Bezumie-na-dvoih.html",
             "year": "2024",
             "rating":"5.5",
-            "genres": ["Музыка", "Драма", "Криминал", "Триллер"]
+            "genres": ["Музыка", "Драма", "Криминал", "Триллер"],
+            "tmdb_id": 889737
         },
         {
             "name": "Джокер",
@@ -1809,7 +2435,8 @@ async function generateCards() {
             "link": "/card/movies/800-189/Dzhoker.html",
             "year": "2019",
             "rating":"8.1",
-            "genres": ["Драма", "Криминал", "Триллер"]
+            "genres": ["Драма", "Криминал", "Триллер"],
+            "tmdb_id": 475557
         },
         {
             "name": "Очи",
@@ -1817,7 +2444,8 @@ async function generateCards() {
             "link": "/card/movies/800-238/Ochi.html",
             "year": "2025",
             "rating":"5.9",
-            "genres": ["Фэнтези", "Приключения", "Семейный"]
+            "genres": ["Фэнтези", "Приключения", "Семейный"],
+            "tmdb_id": 896536
         },
         {
             "name": "Дыши!",
@@ -1825,7 +2453,8 @@ async function generateCards() {
             "link": "/card/movies/800-70/Dyshi!.html",
             "year": "2024",
             "rating":"5.8",
-            "genres": ["Боевик", "Фантастика", "Детектив"]
+            "genres": ["Боевик", "Фантастика", "Детектив"],
+            "tmdb_id": 720321
         },
         {
             "name": "Жуть",
@@ -1833,7 +2462,8 @@ async function generateCards() {
             "link": "/card/movies/800-71/Zhut.html",
             "year": "2024",
             "rating":"6.6",
-            "genres": ["Ужасы", "Триллер"]
+            "genres": ["Ужасы", "Триллер"],
+            "tmdb_id": 1265517
         },
         {
             "name": "Чёрный чай",
@@ -1841,7 +2471,8 @@ async function generateCards() {
             "link": "/card/movies/800-72/Chyornyj-chaj.html",
             "year": "2024",
             "rating":"5.9",
-            "genres": ["Мелодрама", "Драма"]
+            "genres": ["Мелодрама", "Драма"],
+            "tmdb_id": 662402
         },
         {
             "name": "Ученик. Восхождение Трампа",
@@ -1849,7 +2480,8 @@ async function generateCards() {
             "link": "/card/movies/800-73/Uchenik-Voshozhdenie-Trampa.html",
             "year": "2024",
             "rating":"6.9",
-            "genres": ["История", "Драма"]
+            "genres": ["История", "Драма"],
+            "tmdb_id": 1182047
         },
         {
             "name": "Профессионал",
@@ -1857,7 +2489,8 @@ async function generateCards() {
             "link": "/card/movies/800-74/Professional.html",
             "year": "2024",
             "rating":"5.9",
-            "genres": ["Боевик", "Криминал", "Триллер", "Детектив"]
+            "genres": ["Боевик", "Криминал", "Триллер", "Детектив"],
+            "tmdb_id": 974453
         },
         {
             "name": "Кошмарные каникулы",
@@ -1865,7 +2498,8 @@ async function generateCards() {
             "link": "/card/movies/800-75/Koshmarnye-kanikuly.html",
             "year": "2024",
             "rating":"6.5",
-            "genres": ["Приключения", "Детектив", "Ужасы"]
+            "genres": ["Приключения", "Детектив", "Ужасы"],
+            "tmdb_id": 928480
         },
         {
             "name": "Подземелья и драконы: Честь среди воров",
@@ -1873,7 +2507,8 @@ async function generateCards() {
             "link": "/card/movies/800-76/Podzemelya-i-drakony-Chest-sredi-vorov.html",
             "year": "2023",
             "rating":"7.3",
-            "genres": ["Приключения", "Фэнтези", "Комедия"]
+            "genres": ["Приключения", "Фэнтези", "Комедия"],
+            "tmdb_id": 493529
         },
         {
             "name": "Мегалополис",
@@ -1881,7 +2516,8 @@ async function generateCards() {
             "link": "/card/movies/800-77/Megalopolis.html",
             "year": "2024",
             "rating":"5.3",
-            "genres": ["Фантастика", "Драма"]
+            "genres": ["Фантастика", "Драма"],
+            "tmdb_id": 592831
         },
         {
             "name": "Выгон",
@@ -1889,7 +2525,8 @@ async function generateCards() {
             "link": "/card/movies/800-78/Vygon.html",
             "year": "2024",
             "rating":"6.8",
-            "genres": ["Драма"]
+            "genres": ["Драма"],
+            "tmdb_id": 785542
         },
         {
             "name": "Элиас",
@@ -1897,7 +2534,8 @@ async function generateCards() {
             "link": "/card/movies/800-79/Elias.html",
             "year": "2024",
             "rating":"6.2",
-            "genres": ["Боевик", "Триллер"]
+            "genres": ["Боевик", "Триллер"],
+            "tmdb_id": 1154215
         },
         {
             "name": "Граф Монте-Кристо",
@@ -1905,7 +2543,8 @@ async function generateCards() {
             "link": "/card/movies/800-80/Graf-Monte-Kristo.html",
             "year": "2024",
             "rating":"7.7",
-            "genres": ["Боевик", "Драма", "Приключения"]
+            "genres": ["Боевик", "Драма", "Приключения"],
+            "tmdb_id": 1084736
         },
         {
             "name": "Граф Монте-Кристо",
@@ -1913,7 +2552,8 @@ async function generateCards() {
             "link": "/card/movies/800-190/Graf-Monte-Kristo2002.html",
             "year": "2002",
             "rating":"7.7",
-            "genres": ["Боевик", "Драма", "Приключения"]
+            "genres": ["Боевик", "Драма", "Приключения"],
+            "tmdb_id": 11362
         },
         {
             "name": "Мастер",
@@ -1921,7 +2561,8 @@ async function generateCards() {
             "link": "/card/movies/800-249/Master.html",
             "year": "2025",
             "rating":"6.6",
-            "genres": ["Боевик", "Криминал", "Триллер"]
+            "genres": ["Боевик", "Криминал", "Триллер"],
+            "tmdb_id": 1197306
         },
         {
             "name": "Уровни",
@@ -1929,7 +2570,8 @@ async function generateCards() {
             "link": "/card/movies/800-81/Urovni.html",
             "year": "2024",
             "rating":"5.7",
-            "genres": ["Боевик", "Фантастика", "Триллер"]
+            "genres": ["Боевик", "Фантастика", "Триллер"],
+            "tmdb_id": 791042
         },
         {
             "name": "Второй акт",
@@ -1937,7 +2579,8 @@ async function generateCards() {
             "link": "/card/movies/800-82/Vtoroj-akt.html",
             "year": "2024",
             "rating":"6.1",
-            "genres": ["Комедия"]
+            "genres": ["Комедия"],
+            "tmdb_id": 1161108
         },
         {
             "name": "В потерянных землях",
@@ -1945,7 +2588,8 @@ async function generateCards() {
             "link": "/card/movies/800-248/V-poteryannyh-zemlyah.html",
             "year": "2025",
             "rating":"6.4",
-            "genres": ["Боевик", "Фэнтези", "Приключения"]
+            "genres": ["Боевик", "Фэнтези", "Приключения"],
+            "tmdb_id": 324544
         },
         {
             "name": "Оппенгеймер",
@@ -1953,7 +2597,8 @@ async function generateCards() {
             "link": "/card/movies/800-83/Oppengejmer.html",
             "year": "2023",
             "rating":"8.1",
-            "genres": ["Драма", "История"]
+            "genres": ["Драма", "История"],
+            "tmdb_id": 872585
         },
         {
             "name": "Ковбои против пришельцев",
@@ -1961,7 +2606,8 @@ async function generateCards() {
             "link": "/card/movies/800-84/Kovboi-protiv-prishelcev.html",
             "year": "2011",
             "rating":"5.6",
-            "genres": ["Фантастика", "Триллер", "Вестерн"]
+            "genres": ["Фантастика", "Триллер", "Вестерн"],
+            "tmdb_id": 49849
         },
         {
             "name": "Стрим",
@@ -1969,7 +2615,8 @@ async function generateCards() {
             "link": "/card/movies/800-85/Strim.html",
             "year": "2024",
             "rating":"5.5",
-            "genres": ["Ужасы", "Боевик", "Триллер"]
+            "genres": ["Ужасы", "Боевик", "Триллер"],
+            "tmdb_id": 806731
         },
         {
             "name": "Дурное влияние",
@@ -1977,7 +2624,8 @@ async function generateCards() {
             "link": "/card/movies/800-253/Durnoe-vliyanie.html",
             "year": "2025",
             "rating":"5.7",
-            "genres": ["Триллер", "Драма", "Мелодрама"]
+            "genres": ["Триллер", "Драма", "Мелодрама"],
+            "tmdb_id": 1323784
         },
         {
             "name": "Меган: К вашим услугам ",
@@ -1985,15 +2633,17 @@ async function generateCards() {
             "link": "/card/movies/800-86/Megan-K-vashim-uslugam.html",
             "year": "2024",
             "rating":"6.7",
-            "genres": ["Ужасы", "Фантастика", "Триллер"]
+            "genres": ["Ужасы", "Фантастика", "Триллер"],
+            "tmdb_id": 1064028
         },
         {
-            "name": "Особо опасный пассажир ",
+            "name": "Особо опасный пассажир",
             "image": "https://image.tmdb.org/t/p/w500//oifl3tfR9c4GhWwhJ8m0d6ummZH.jpg",
             "link": "/card/movies/800-260/Osobo-opasnyj-passazhir.html",
             "year": "2025",
             "rating":"6.1",
-            "genres": ["Боевик", "Триллер"]
+            "genres": ["Боевик", "Триллер"],
+            "tmdb_id": 1126166
         },
         {
             "name": "Псы войны",
@@ -2001,7 +2651,8 @@ async function generateCards() {
             "link": "/card/movies/800-87/Psy-vojny.html",
             "year": "2024",
             "rating":"6.3",
-            "genres": ["Боевик", "Триллер"]
+            "genres": ["Боевик", "Триллер"],
+            "tmdb_id": 949484
         },
         {
             "name": "Багровая отмель",
@@ -2009,7 +2660,8 @@ async function generateCards() {
             "link": "/card/movies/800-259/Bagrovaya-otmel.html",
             "year": "2025",
             "rating":"5.5",
-            "genres": ["Боевик", "Ужасы", "Триллер"]
+            "genres": ["Боевик", "Ужасы", "Триллер"],
+            "tmdb_id": 1232933
         },
         {
             "name": "Призрачный гонщик 2",
@@ -2017,7 +2669,8 @@ async function generateCards() {
             "link": "/card/movies/800-88/Prizrachnyj-gonshik-2.html",
             "year": "2012",
             "rating":"5.0",
-            "genres": ["Боевик", "Фэнтези", "Триллер"]
+            "genres": ["Боевик", "Фэнтези", "Триллер"],
+            "tmdb_id": 71676
         },
         {
             "name": "Призрачный гонщик",
@@ -2025,7 +2678,8 @@ async function generateCards() {
             "link": "/card/movies/800-191/Prizrachnyj-gonshik.html",
             "year": "2007",
             "rating":"5.6",
-            "genres": ["Боевик", "Фэнтези", "Триллер"]
+            "genres": ["Боевик", "Фэнтези", "Триллер"],
+            "tmdb_id": 1250
         },
         {
             "name": "Мудрые парни",
@@ -2033,7 +2687,8 @@ async function generateCards() {
             "link": "/card/movies/800-258/Mudrye-parni.html",
             "year": "2025",
             "rating":"6.2",
-            "genres": ["Криминал", "Драма", "История"]
+            "genres": ["Криминал", "Драма", "История"],
+            "tmdb_id": 1013601
         },
         {
             "name": "Время",
@@ -2041,7 +2696,8 @@ async function generateCards() {
             "link": "/card/movies/800-90/Vremya.html",
             "year": "2021",
             "rating":"6.3",
-            "genres": ["Триллер", "Детектив", "Ужасы"]
+            "genres": ["Триллер", "Детектив", "Ужасы"],
+            "tmdb_id": 631843
         },
         {
             "name": "Электрический штат",
@@ -2049,7 +2705,8 @@ async function generateCards() {
             "link": "/card/movies/800-257/Elektricheskij-shtat.html",
             "year": "2025",
             "rating":"6.6",
-            "genres": ["Фантастика", "Приключения", "Боевик"]
+            "genres": ["Фантастика", "Приключения", "Боевик"],
+            "tmdb_id": 777443
         },
         {
             "name": "Стекло",
@@ -2057,7 +2714,8 @@ async function generateCards() {
             "link": "/card/movies/800-192/Steklo.html",
             "year": "2019",
             "rating":"6.7",
-            "genres": ["Триллер", "Драма", "Фантастика"]
+            "genres": ["Триллер", "Драма", "Фантастика"],
+            "tmdb_id": 450465
         },
         {
             "name": "Сплит",
@@ -2065,7 +2723,8 @@ async function generateCards() {
             "link": "/card/movies/800-91/Split.html",
             "year": "2017",
             "rating":"7.3",
-            "genres": ["Триллер", "Драма", "Фантастика"]
+            "genres": ["Триллер", "Драма", "Фантастика"],
+            "tmdb_id": 381288
         },
         {
             "name": "Неуязвимый",
@@ -2073,7 +2732,8 @@ async function generateCards() {
             "link": "/card/movies/800-193/Neuyazvimyj.html",
             "year": "2000",
             "rating":"7.1",
-            "genres": ["Триллер", "Драма", "Фантастика"]
+            "genres": ["Триллер", "Драма", "Фантастика"],
+            "tmdb_id": 9741
         },
         {
             "name": "Время жить",
@@ -2081,7 +2741,8 @@ async function generateCards() {
             "link": "/card/movies/800-93/Vremya-zhit.html",
             "year": "2024",
             "rating":"7.3",
-            "genres": ["Мелодрама", "Драма"]
+            "genres": ["Мелодрама", "Драма"],
+            "tmdb_id": 1100099
         },
         {
             "name": "Дыхание шторма",
@@ -2089,7 +2750,8 @@ async function generateCards() {
             "link": "/card/movies/800-256/Dyhanie-shtorma.html",
             "year": "2025",
             "rating":"7.0",
-            "genres": ["Триллер", "Драма"]
+            "genres": ["Триллер", "Драма"],
+            "tmdb_id": 972533
         },
         {
             "name": "Оно 2",
@@ -2097,7 +2759,8 @@ async function generateCards() {
             "link": "/card/movies/800-194/Ono-2.html",
             "year": "2019",
             "rating":"6.8",
-            "genres": ["Ужасы", "Триллер"]
+            "genres": ["Ужасы", "Триллер"],
+            "tmdb_id": 474350
         },
         {
             "name": "Оно",
@@ -2105,7 +2768,8 @@ async function generateCards() {
             "link": "/card/movies/800-94/Ono.html",
             "year": "2017",
             "rating":"7.2",
-            "genres": ["Ужасы", "Триллер"]
+            "genres": ["Ужасы", "Триллер"],
+            "tmdb_id": 346364
         },
         {
             "name": "Новокаин",
@@ -2113,7 +2777,8 @@ async function generateCards() {
             "link": "/card/movies/800-255/Novokain.html",
             "year": "2025",
             "rating":"6.9",
-            "genres": ["Боевик", "Комедия", "Триллер"]
+            "genres": ["Боевик", "Комедия", "Триллер"],
+            "tmdb_id": 1195506
         },
         {
             "name": "Образцовый самец 2",
@@ -2121,7 +2786,8 @@ async function generateCards() {
             "link": "/card/movies/800-95/Obrazcovyj-samec-2.html",
             "year": "2016",
             "rating":"4.9",
-            "genres": ["Комедия", "Приключения", "Боевик"]
+            "genres": ["Комедия", "Приключения", "Боевик"],
+            "tmdb_id": 329833
         },
         {
             "name": "Образцовый самец",
@@ -2129,7 +2795,8 @@ async function generateCards() {
             "link": "/card/movies/800-195/Obrazcovyj-samec.html",
             "year": "2001",
             "rating":"6.2",
-            "genres": ["Комедия", "Приключения", "Боевик"]
+            "genres": ["Комедия", "Приключения", "Боевик"],
+            "tmdb_id": 9398
         },
         {
             "name": "Улыбка 2",
@@ -2137,7 +2804,8 @@ async function generateCards() {
             "link": "/card/movies/800-96/Ulybka-2.html",
             "year": "2024",
             "rating":"6.6",
-            "genres": ["Ужасы", "Детектив"]
+            "genres": ["Ужасы", "Детектив"],
+            "tmdb_id": 1100782
         },
         {
             "name": "Улыбка",
@@ -2145,7 +2813,8 @@ async function generateCards() {
             "link": "/card/movies/800-196/Ulybka.html",
             "year": "2022",
             "rating":"6.7",
-            "genres": ["Ужасы", "Детектив"]
+            "genres": ["Ужасы", "Детектив"],
+            "tmdb_id": 882598
         },
         {
             "name": "Компаньон",
@@ -2153,7 +2822,8 @@ async function generateCards() {
             "link": "/card/movies/800-254/Kompanon.html",
             "year": "2025",
             "rating":"7.1",
-            "genres": ["Ужасы", "Фантастика", "Триллер"]
+            "genres": ["Ужасы", "Фантастика", "Триллер"],
+            "tmdb_id": 1084199
         },
         {
             "name": "Грань будущего",
@@ -2161,7 +2831,8 @@ async function generateCards() {
             "link": "/card/movies/800-97/Gran-budushego.html",
             "year": "2014",
             "rating":"7.6",
-            "genres": ["Боевик", "Фантастика"]
+            "genres": ["Боевик", "Фантастика"],
+            "tmdb_id": 137113
         },
         {
             "name": "Мой сосед - монстр",
@@ -2169,7 +2840,8 @@ async function generateCards() {
             "link": "/card/movies/800-98/Moj-sosed-monstr.html",
             "year": "2024",
             "rating":"6.7",
-            "genres": ["Мелодрама", "Комедия", "Ужасы"]
+            "genres": ["Мелодрама", "Комедия", "Ужасы"],
+            "tmdb_id": 1098378
         },
         {
             "name": "Вышка",
@@ -2177,7 +2849,8 @@ async function generateCards() {
             "link": "/card/movies/800-99/Vyshka.html",
             "year": "2022",
             "rating":"7.1",
-            "genres": ["Триллер"]
+            "genres": ["Триллер"],
+            "tmdb_id": 985939
         },
         {
             "name": "Пол: Секретный материальчик",
@@ -2185,7 +2858,8 @@ async function generateCards() {
             "link": "/card/movies/800-100/Pol-Sekretnyj-materialchik.html",
             "year": "2011",
             "rating":"6.7",
-            "genres": ["Приключения", "Комедия", "Фантастика"]
+            "genres": ["Приключения", "Комедия", "Фантастика"],
+            "tmdb_id": 39513
         },
         {
             "name": "Один дома",
@@ -2193,7 +2867,8 @@ async function generateCards() {
             "link": "/card/movies/800-197/Odin-doma2021.html",
             "year": "2021",
             "rating":"4.9",
-            "genres": ["Семейный", "Комедия",]
+            "genres": ["Семейный", "Комедия",],
+            "tmdb_id": 654974
         },
         {
             "name": "Один дома 5: Праздничное ограбление",
@@ -2201,7 +2876,8 @@ async function generateCards() {
             "link": "/card/movies/800-198/Odin-doma-5-Prazdnichnoe-ograblenie.html",
             "year": "2012",
             "rating":"5.2",
-            "genres": ["Семейный", "Комедия",]
+            "genres": ["Семейный", "Комедия",],
+            "tmdb_id": 134375
         },
         {
             "name": "Один дома 4",
@@ -2209,7 +2885,8 @@ async function generateCards() {
             "link": "/card/movies/800-199/Odin-doma-4.html",
             "year": "2002",
             "rating":"4.5",
-            "genres": ["Семейный", "Комедия",]
+            "genres": ["Семейный", "Комедия",],
+            "tmdb_id": 12536
         },
         {
             "name": "Один дома 3",
@@ -2217,7 +2894,8 @@ async function generateCards() {
             "link": "/card/movies/800-200/Odin-doma-3.html",
             "year": "1997",
             "rating":"5.3",
-            "genres": ["Семейный", "Комедия",]
+            "genres": ["Семейный", "Комедия",],
+            "tmdb_id": 9714
         },
         {
             "name": "Один дома 2: Затерянный в Нью-Йорке",
@@ -2225,7 +2903,8 @@ async function generateCards() {
             "link": "/card/movies/800-201/Odin-doma-2-Zateryannyj-v-Nyu-Jorke.html",
             "year": "1992",
             "rating":"6.8",
-            "genres": ["Семейный", "Комедия",]
+            "genres": ["Семейный", "Комедия",],
+            "tmdb_id": 772
         },
         {
             "name": "Один дома",
@@ -2233,7 +2912,8 @@ async function generateCards() {
             "link": "/card/movies/800-101/Odin-doma.html",
             "year": "1990",
             "rating":"7.4",
-            "genres": ["Семейный", "Комедия",]
+            "genres": ["Семейный", "Комедия",],
+            "tmdb_id": 771
         },
         {
             "name": "Проводник смерти",
@@ -2241,7 +2921,8 @@ async function generateCards() {
             "link": "/card/movies/800-102/Provodnik-smerti.html",
             "year": "2024",
             "rating":"5.5",
-            "genres": ["Триллер", "Драма",]
+            "genres": ["Триллер", "Драма",],
+            "tmdb_id": 1167732
         },
         {
             "name": "Паранормальное явление: Ближайшая родня",
@@ -2249,7 +2930,8 @@ async function generateCards() {
             "link": "/card/movies/800-202/Paranormalnoe-yavlenie-Blizhajshaya-rodnya.html",
             "year": "2021",
             "rating":"6.1",
-            "genres": ["Ужасы", "Детектив",]
+            "genres": ["Ужасы", "Детектив",],
+            "tmdb_id": 609972
         },
         {
             "name": "Паранормальное явление 5: Призраки в 3D",
@@ -2257,7 +2939,8 @@ async function generateCards() {
             "link": "/card/movies/800-203/Paranormalnoe-yavlenie-5-Prizraki-v-3D.html",
             "year": "2015",
             "rating":"5.3",
-            "genres": ["Ужасы", "Детектив",]
+            "genres": ["Ужасы", "Детектив",],
+            "tmdb_id": 146301
         },
         {
             "name": "Паранормальное явление: Метка Дьявола",
@@ -2265,7 +2948,8 @@ async function generateCards() {
             "link": "/card/movies/800-103/Paranormalnoe-yavlenie-Metka-Dyavola.html",
             "year": "2014",
             "rating":"5.4",
-            "genres": ["Ужасы", "Детектив",]
+            "genres": ["Ужасы", "Детектив",],
+            "tmdb_id": 227348
         },
         {
             "name": "Паранормальное явление 4",
@@ -2273,7 +2957,8 @@ async function generateCards() {
             "link": "/card/movies/800-204/Paranormalnoe-yavlenie-4.html",
             "year": "2012",
             "rating":"5.4",
-            "genres": ["Ужасы", "Детектив",]
+            "genres": ["Ужасы", "Детектив",],
+            "tmdb_id": 82990
         },
         {
             "name": "Паранормальное явление 3",
@@ -2281,7 +2966,8 @@ async function generateCards() {
             "link": "/card/movies/800-205/Paranormalnoe-yavlenie-3.html",
             "year": "2011",
             "rating":"5.9",
-            "genres": ["Ужасы", "Детектив",]
+            "genres": ["Ужасы", "Детектив",],
+            "tmdb_id": 72571
         },
         {
             "name": "Паранормальное явление 2",
@@ -2289,7 +2975,8 @@ async function generateCards() {
             "link": "/card/movies/800-206/Paranormalnoe-yavlenie-2.html",
             "year": "2010",
             "rating":"5.8",
-            "genres": ["Ужасы", "Детектив",]
+            "genres": ["Ужасы", "Детектив",],
+            "tmdb_id": 41436
         },
         {
             "name": "Паранормальное явление",
@@ -2297,7 +2984,8 @@ async function generateCards() {
             "link": "/card/movies/800-207/Paranormalnoe-yavlenie.html",
             "year": "2007",
             "rating":"6.0",
-            "genres": ["Ужасы", "Детектив",]
+            "genres": ["Ужасы", "Детектив",],
+            "tmdb_id": 23827
         },
         {
             "name": "Ужасающий 3",
@@ -2305,7 +2993,8 @@ async function generateCards() {
             "link": "/card/movies/800-104/Uzhasayushij-3.html",
             "year": "2024",
             "rating":"6.9",
-            "genres": ["Ужасы", "Триллер",]
+            "genres": ["Ужасы", "Триллер",],
+            "tmdb_id": 1034541
         },
         {
             "name": "Ужасающий 2",
@@ -2313,7 +3002,8 @@ async function generateCards() {
             "link": "/card/movies/800-208/Uzhasayushij-2.html",
             "year": "2022",
             "rating":"6.7",
-            "genres": ["Ужасы", "Триллер",]
+            "genres": ["Ужасы", "Триллер",],
+            "tmdb_id": 663712
         },
         {
             "name": "Ужасающий",
@@ -2321,7 +3011,8 @@ async function generateCards() {
             "link": "/card/movies/800-209/Uzhasayushij.html",
             "year": "2018",
             "rating":"6.3",
-            "genres": ["Ужасы", "Триллер",]
+            "genres": ["Ужасы", "Триллер",],
+            "tmdb_id": 420634
         },
         {
             "name": "Полтора шпиона",
@@ -2329,7 +3020,8 @@ async function generateCards() {
             "link": "/card/movies/800-105/Poltora-shpiona.html",
             "year": "2016",
             "rating":"6.4",
-            "genres": ["Боевик", "Комедия",]
+            "genres": ["Боевик", "Комедия",],
+            "tmdb_id": 302699
         },
         {
             "name": "Ловушка",
@@ -2337,7 +3029,8 @@ async function generateCards() {
             "link": "/card/movies/800-106/Lovushka.html",
             "year": "2024",
             "rating":"6.3",
-            "genres": ["Криминал", "Триллер", "Ужасы"]
+            "genres": ["Криминал", "Триллер", "Ужасы"],
+            "tmdb_id": 1032823
         },
         {
             "name": "Робот по имени Чаппи",
@@ -2345,7 +3038,8 @@ async function generateCards() {
             "link": "/card/movies/800-107/Robot-po-imeni-Chappi.html",
             "year": "2015",
             "rating":"6.8",
-            "genres": ["Криминал", "Боевик", "Фантастика"]
+            "genres": ["Криминал", "Боевик", "Фантастика"],
+            "tmdb_id": 198184
         },
         {
             "name": "Субстанция",
@@ -2353,7 +3047,8 @@ async function generateCards() {
             "link": "/card/movies/800-108/Substanciya.html",
             "year": "2024",
             "rating":"7.1",
-            "genres": ["Ужасы", "Фантастика"]
+            "genres": ["Ужасы", "Фантастика"],
+            "tmdb_id": 933260
         },
         {
             "name": "Простушка",
@@ -2361,7 +3056,8 @@ async function generateCards() {
             "link": "/card/movies/800-109/Prostushka.html",
             "year": "2015",
             "rating":"6.8",
-            "genres": ["Мелодрама", "Комедия"]
+            "genres": ["Мелодрама", "Комедия"],
+            "tmdb_id": 272693
         },
         {
             "name": "Затерянное место",
@@ -2369,7 +3065,8 @@ async function generateCards() {
             "link": "/card/movies/800-110/Zateryannoe-mesto.html",
             "year": "2024",
             "rating":"6.2",
-            "genres": ["Ужасы"]
+            "genres": ["Ужасы"],
+            "tmdb_id": 814889
         },
         {
             "name": "Мачо и ботан 2",
@@ -2377,7 +3074,8 @@ async function generateCards() {
             "link": "/card/movies/800-210/Macho-i-botan-2.html",
             "year": "2014",
             "rating":"6.8",
-            "genres": ["Криминал", "Комедия", "Боевик"]
+            "genres": ["Криминал", "Комедия", "Боевик"],
+            "tmdb_id": 187017
         },
         {
             "name": "Мачо и ботан",
@@ -2385,7 +3083,8 @@ async function generateCards() {
             "link": "/card/movies/800-111/Macho-i-botan.html",
             "year": "2012",
             "rating":"6.9",
-            "genres": ["Криминал", "Комедия", "Боевик"]
+            "genres": ["Криминал", "Комедия", "Боевик"],
+            "tmdb_id": 64688
         },
         {
             "name": "Одинокие волки",
@@ -2393,7 +3092,8 @@ async function generateCards() {
             "link": "/card/movies/800-112/Odinokie-volki.html",
             "year": "2024",
             "rating":"6.5",
-            "genres": ["Криминал", "Комедия", "Боевик"]
+            "genres": ["Криминал", "Комедия", "Боевик"],
+            "tmdb_id": 877817
         },
         {
             "name": "Хэнкок",
@@ -2401,7 +3101,8 @@ async function generateCards() {
             "link": "/card/movies/800-113/Henkok.html",
             "year": "2008",
             "rating":"6.3",
-            "genres": ["Фэнтези", "Боевик"]
+            "genres": ["Фэнтези", "Боевик"],
+            "tmdb_id": 8960
         },
         {
             "name": "Спящие псы",
@@ -2409,7 +3110,8 @@ async function generateCards() {
             "link": "/card/movies/800-239/Spyashie-psy.html",
             "year": "2024",
             "rating":"7.0",
-            "genres": ["Детектив", "Триллер", "Криминал"]
+            "genres": ["Детектив", "Триллер", "Криминал"],
+            "tmdb_id": 978592
         },
         {
             "name": "Пчеловод",
@@ -2417,7 +3119,8 @@ async function generateCards() {
             "link": "/card/movies/800-261/Pchelovod.html",
             "year": "2024",
             "rating":"7.3",
-            "genres": ["Боевик", "Криминал", "Триллер"]
+            "genres": ["Боевик", "Криминал", "Триллер"],
+            "tmdb_id": 866398
         },
         {
             "name": "Подай знак",
@@ -2425,7 +3128,8 @@ async function generateCards() {
             "link": "/card/movies/800-114/Podaj-znak.html",
             "year": "2024",
             "rating":"6.7",
-            "genres": ["Детектив", "Триллер"]
+            "genres": ["Детектив", "Триллер"],
+            "tmdb_id": 840705
         },
         {
             "name": "Гран Туризмо",
@@ -2433,7 +3137,8 @@ async function generateCards() {
             "link": "/card/movies/800-269/Gran-Turizmo.html",
             "year": "2023",
             "rating":"7.8",
-            "genres": ["Приключения", "Боевик", "Драма"]
+            "genres": ["Приключения", "Боевик", "Драма"],
+            "tmdb_id": 980489
         },
         {
             "name": "Я – Четвертый",
@@ -2441,7 +3146,8 @@ async function generateCards() {
             "link": "/card/movies/800-115/Ya–Chetvertyj.html",
             "year": "2011",
             "rating":"6.2",
-            "genres": ["Боевик", "Триллер", "Фантастика"]
+            "genres": ["Боевик", "Триллер", "Фантастика"],
+            "tmdb_id": 46529
         },
         {
             "name": "Министерство неджентльменских дел",
@@ -2449,7 +3155,8 @@ async function generateCards() {
             "link": "/card/movies/800-268/Ministerstvo-nedzhentlmenskih-del.html",
             "year": "2024",
             "rating":"7.1",
-            "genres": ["Боевик", "Комедия", "Военный"]
+            "genres": ["Боевик", "Комедия", "Военный"],
+            "tmdb_id": 799583
         },
         {
             "name": "Миллион способов потерять голову",
@@ -2457,7 +3164,8 @@ async function generateCards() {
             "link": "/card/movies/800-116/Million-sposobov-poteryat-golovu.html",
             "year": "2014",
             "rating":"6.0",
-            "genres": ["Комедия", "Вестерн"]
+            "genres": ["Комедия", "Вестерн"],
+            "tmdb_id": 188161
         },
         {
             "name": "Атлас",
@@ -2465,7 +3173,8 @@ async function generateCards() {
             "link": "/card/movies/800-262/Atlas.html",
             "year": "2024",
             "rating":"6.7",
-            "genres": ["Фантастика", "Боевик"]
+            "genres": ["Фантастика", "Боевик"],
+            "tmdb_id": 614933
         },
         {
             "name": "Озеро Каддо",
@@ -2473,7 +3182,8 @@ async function generateCards() {
             "link": "/card/movies/800-117/Ozero-Kaddo.html",
             "year": "2024",
             "rating":"7.3",
-            "genres": ["Триллер", "Детектив", "Драма", "Фантастика"]
+            "genres": ["Триллер", "Детектив", "Драма", "Фантастика"],
+            "tmdb_id": 863873
         },
         {
             "name": "Звук свободы",
@@ -2481,7 +3191,8 @@ async function generateCards() {
             "link": "/card/movies/800-264/Zvuk-svobody.html",
             "year": "2023",
             "rating":"8.0",
-            "genres": ["Боевик", "Драма"]
+            "genres": ["Боевик", "Драма"],
+            "tmdb_id": 678512
         },
         {
             "name": "Интерстеллар",
@@ -2489,7 +3200,8 @@ async function generateCards() {
             "link": "/card/movies/800-118/Interstellar.html",
             "year": "2014",
             "rating":"8.5",
-            "genres": ["Приключения", "Драма", "Фантастика"]
+            "genres": ["Приключения", "Драма", "Фантастика"],
+            "tmdb_id": 157336
         },
         {
             "name": "Артур, ты король",
@@ -2497,7 +3209,8 @@ async function generateCards() {
             "link": "/card/movies/800-263/Artur-ty-korol.html",
             "year": "2024",
             "rating":"7.6",
-            "genres": ["Приключения", "Драма"]
+            "genres": ["Приключения", "Драма"],
+            "tmdb_id": 618588
         },
         {
             "name": "За гранью З/Л/А",
@@ -2505,7 +3218,8 @@ async function generateCards() {
             "link": "/card/movies/800-119/Za-granyu-ZLA.html",
             "year": "2024",
             "rating":"6.7",
-            "genres": ["Ужасы", "Фантастика", "Триллер"]
+            "genres": ["Ужасы", "Фантастика", "Триллер"],
+            "tmdb_id": 1190868
         },
         {
             "name": "Каскадёры",
@@ -2513,7 +3227,8 @@ async function generateCards() {
             "link": "/card/movies/800-265/Kaskadyory.html",
             "year": "2024",
             "rating":"7.0",
-            "genres": ["Боевик", "Комедия", "Драма", "Мелодрама"]
+            "genres": ["Боевик", "Комедия", "Драма", "Мелодрама"],
+            "tmdb_id": 746036
         },
         {
             "name": "Zомбилэнд: Контрольный выстрел",
@@ -2521,7 +3236,8 @@ async function generateCards() {
             "link": "/card/movies/800-211/Zombilend-Kontrolnyj-vystrel.html",
             "year": "2019",
             "rating":"6.9",
-            "genres": ["Комедия", "Ужасы", "Боевик"]
+            "genres": ["Комедия", "Ужасы", "Боевик"],
+            "tmdb_id": 338967
         },
         {
             "name": "Добро пожаловать в Zомбилэнд",
@@ -2529,7 +3245,8 @@ async function generateCards() {
             "link": "/card/movies/800-120/Dobro-pozhalovat-v-Zombilend.html",
             "year": "2009",
             "rating":"7.3",
-            "genres": ["Комедия", "Ужасы", "Боевик"]
+            "genres": ["Комедия", "Ужасы", "Боевик"],
+            "tmdb_id": 19908
         },
         {
             "name": "Битлджус Битлджус",
@@ -2537,7 +3254,8 @@ async function generateCards() {
             "link": "/card/movies/800-122/Bitldzhus-Bitldzhus.html",
             "year": "2024",
             "rating":"7.0",
-            "genres": ["Ужасы", "Комедия", "Фэнтези"]
+            "genres": ["Ужасы", "Комедия", "Фэнтези"],
+            "tmdb_id": 917496
         },
         {
             "name": "Битлджюс",
@@ -2545,7 +3263,8 @@ async function generateCards() {
             "link": "/card/movies/800-212/Bitldzhyus.html",
             "year": "1988",
             "rating":"7.4",
-            "genres": ["Ужасы", "Комедия", "Фэнтези"]
+            "genres": ["Ужасы", "Комедия", "Фэнтези"],
+            "tmdb_id": 4011
         },
         {
             "name": "Игра в имитацию",
@@ -2553,7 +3272,8 @@ async function generateCards() {
             "link": "/card/movies/800-123/Igra-v-imitaciyu.html",
             "year": "2014",
             "rating":"8.0",
-            "genres": ["История", "Драма", "Триллер", "Военный"]
+            "genres": ["История", "Драма", "Триллер", "Военный"],
+            "tmdb_id": 205596
         },
         {
             "name": "Догмен",
@@ -2561,7 +3281,8 @@ async function generateCards() {
             "link": "/card/movies/800-266/Dogmen.html",
             "year": "2023",
             "rating":"7.9",
-            "genres": ["Боевик", "Драма", "Криминал"]
+            "genres": ["Боевик", "Драма", "Криминал"],
+            "tmdb_id": 944401
         },
         {
             "name": "Ворон",
@@ -2569,7 +3290,8 @@ async function generateCards() {
             "link": "/card/movies/800-124/Voron.html",
             "year": "2024",
             "rating":"5.8",
-            "genres": ["Боевик", "Фэнтези", "Ужасы"]
+            "genres": ["Боевик", "Фэнтези", "Ужасы"],
+            "tmdb_id": 957452
         },
         {
             "name": "Ворон",
@@ -2577,7 +3299,8 @@ async function generateCards() {
             "link": "/card/movies/800-213/Voron1994.html",
             "year": "1994",
             "rating":"7.5",
-            "genres": ["Боевик", "Фэнтези", "Ужасы"]
+            "genres": ["Боевик", "Фэнтези", "Ужасы"],
+            "tmdb_id": 9495
         },
         {
             "name": "Хроника",
@@ -2585,7 +3308,8 @@ async function generateCards() {
             "link": "/card/movies/800-125/Hronika.html",
             "year": "2012",
             "rating":"6.8",
-            "genres": ["Фантастика", "Драма", "Триллер"]
+            "genres": ["Фантастика", "Драма", "Триллер"],
+            "tmdb_id": 76726
         },
         {
             "name": "За пивом!",
@@ -2593,7 +3317,8 @@ async function generateCards() {
             "link": "/card/movies/800-267/Za-pivom.html",
             "year": "2022",
             "rating":"7.6",
-            "genres": ["Драма", "Комедия", "Военный"]
+            "genres": ["Драма", "Комедия", "Военный"],
+            "tmdb_id": 597922
         },
         {
             "name": "Грань времени",
@@ -2601,7 +3326,8 @@ async function generateCards() {
             "link": "/card/movies/800-126/Gran-vremeni.html",
             "year": "2020",
             "rating":"6.3",
-            "genres": ["Ужасы", "Фантастика", "Триллер"]
+            "genres": ["Ужасы", "Фантастика", "Триллер"],
+            "tmdb_id": 549294
         },
         {
             "name": "Не говори никому",
@@ -2609,7 +3335,8 @@ async function generateCards() {
             "link": "/card/movies/800-127/Ne-govori-nikomu.html",
             "year": "2024",
             "rating":"7.2",
-            "genres": ["Ужасы", "Триллер"]
+            "genres": ["Ужасы", "Триллер"],
+            "tmdb_id": 1114513
         },
         {
             "name": "Мой пингвин",
@@ -2617,7 +3344,8 @@ async function generateCards() {
             "link": "/card/movies/800-129/Moj-pingvin.html",
             "year": "2024",
             "rating":"7.5",
-            "genres": ["Семейный", "Приключения", "Драма"]
+            "genres": ["Семейный", "Приключения", "Драма"],
+            "tmdb_id": 1159799
         },
         {
             "name": "Гарри Поттер 20 лет спустя: возвращение в Хогвартс",
@@ -2625,7 +3353,8 @@ async function generateCards() {
             "link": "/card/movies/800-214/Garri-Potter-20-let-spustya-vozvrashenie-v-Hogvarts.html",
             "year": "2022",
             "rating":"7.3",
-            "genres": ["Документальный"]
+            "genres": ["Документальный"],
+            "tmdb_id": 899082
         },
         {
             "name": "Гарри Поттер и Дары Смерти: Часть II",
@@ -2633,7 +3362,8 @@ async function generateCards() {
             "link": "/card/movies/800-215/Garri-Potter-i-Dary-Smerti-Chast-II.html",
             "year": "2011",
             "rating":"8.1",
-            "genres": ["Фэнтези", "Приключения"]
+            "genres": ["Фэнтези", "Приключения"],
+            "tmdb_id": 12445
         },
         {
             "name": "Гарри Поттер и Дары Смерти: Часть I",
@@ -2641,7 +3371,8 @@ async function generateCards() {
             "link": "/card/movies/800-216/Garri-Potter-i-Dary-Smerti-Chast-I.html",
             "year": "2010",
             "rating":"7.7",
-            "genres": ["Фэнтези", "Приключения"]
+            "genres": ["Фэнтези", "Приключения"],
+            "tmdb_id": 12444
         },
         {
             "name": "Гарри Поттер и Принц-полукровка",
@@ -2649,7 +3380,8 @@ async function generateCards() {
             "link": "/card/movies/800-217/Garri-Potter-i-Princ-polukrovka.html",
             "year": "2009",
             "rating":"7.7",
-            "genres": ["Фэнтези", "Приключения"]
+            "genres": ["Фэнтези", "Приключения"],
+            "tmdb_id": 767
         },
         {
             "name": "Гарри Поттер и Орден Феникса",
@@ -2657,7 +3389,8 @@ async function generateCards() {
             "link": "/card/movies/800-218/Garri-Potter-i-Orden-Feniksa.html",
             "year": "2007",
             "rating":"7.7",
-            "genres": ["Фэнтези", "Приключения"]
+            "genres": ["Фэнтези", "Приключения"],
+            "tmdb_id": 675
         },
         {
             "name": "Гарри Поттер и Кубок огня",
@@ -2665,7 +3398,8 @@ async function generateCards() {
             "link": "/card/movies/800-219/Garri-Potter-i-Kubok-ognya.html",
             "year": "2005",
             "rating":"7.8",
-            "genres": ["Фэнтези", "Приключения"]
+            "genres": ["Фэнтези", "Приключения"],
+            "tmdb_id": 674
         },
         {
             "name": "Гарри Поттер и узник Азкабана",
@@ -2673,7 +3407,8 @@ async function generateCards() {
             "link": "/card/movies/800-220/Garri-Potter-i-uznik-Azkabana.html",
             "year": "2004",
             "rating":"8.0",
-            "genres": ["Фэнтези", "Приключения"]
+            "genres": ["Фэнтези", "Приключения"],
+            "tmdb_id": 673
         },
         {
             "name": "Гарри Поттер и Тайная комната",
@@ -2681,7 +3416,8 @@ async function generateCards() {
             "link": "/card/movies/800-92/Garri-Potter-i-Tajnaya-komnata.html",
             "year": "2002",
             "rating":"7.7",
-            "genres": ["Фэнтези", "Приключения"]
+            "genres": ["Фэнтези", "Приключения"],
+            "tmdb_id": 672
         },
         {
             "name": "Гарри Поттер и философский камень",
@@ -2689,7 +3425,8 @@ async function generateCards() {
             "link": "/card/movies/800-130/Garri-Potter-i-filosofskij-kamen.html",
             "year": "2001",
             "rating":"7.9",
-            "genres": ["Фэнтези", "Приключения"]
+            "genres": ["Фэнтези", "Приключения"],
+            "tmdb_id": 671
         },
         {
             "name": "Хоббит: Битва пяти воинств",
@@ -2697,7 +3434,8 @@ async function generateCards() {
             "link": "/card/movies/800-221/Hobbit-Bitva-pyati-voinstv.html",
             "year": "2014",
             "rating":"7.3",
-            "genres": ["Боевик", "Приключения", "Фэнтези"]
+            "genres": ["Боевик", "Приключения", "Фэнтези"],
+            "tmdb_id": 122917
         },
         {
             "name": "Хоббит: Пустошь Смауга",
@@ -2705,7 +3443,8 @@ async function generateCards() {
             "link": "/card/movies/800-222/Hobbit-Pustosh-Smauga.html",
             "year": "2013",
             "rating":"7.6",
-            "genres": ["Боевик", "Приключения", "Фэнтези"]
+            "genres": ["Боевик", "Приключения", "Фэнтези"],
+            "tmdb_id": 57158
         },
         {
             "name": "Хоббит: Нежданное путешествие",
@@ -2713,7 +3452,8 @@ async function generateCards() {
             "link": "/card/movies/800-223/Hobbit-Nezhdannoe-puteshestvie.html",
             "year": "2012",
             "rating":"7.4",
-            "genres": ["Боевик", "Приключения", "Фэнтези"]
+            "genres": ["Боевик", "Приключения", "Фэнтези"],
+            "tmdb_id": 49051
         },
         {
             "name": "Властелин колец: Возвращение короля",
@@ -2721,7 +3461,8 @@ async function generateCards() {
             "link": "/card/movies/800-43/Vlastelin-kolec-Vozvrashenie-korolya.html",
             "year": "2003",
             "rating":"8.5",
-            "genres": ["Боевик", "Приключения", "Фэнтези"]
+            "genres": ["Боевик", "Приключения", "Фэнтези"],
+            "tmdb_id": 122
         },
         {
             "name": "Властелин колец: Две крепости",
@@ -2729,7 +3470,8 @@ async function generateCards() {
             "link": "/card/movies/800-224/Vlastelin-kolec-Dve-kreposti.html",
             "year": "2002",
             "rating":"8.4",
-            "genres": ["Боевик", "Приключения", "Фэнтези"]
+            "genres": ["Боевик", "Приключения", "Фэнтези"],
+            "tmdb_id": 121
         },
         {
             "name": "Властелин колец: Братство кольца",
@@ -2737,7 +3479,8 @@ async function generateCards() {
             "link": "/card/movies/800-225/Vlastelin-kolec-Bratstvo-kolca.html",
             "year": "2001",
             "rating":"8.4",
-            "genres": ["Боевик", "Приключения", "Фэнтези"]
+            "genres": ["Боевик", "Приключения", "Фэнтези"],
+            "tmdb_id": 120
         },
         {
             "name": "Опустошение",
@@ -2745,7 +3488,8 @@ async function generateCards() {
             "link": "/card/movies/800-251/Opustoshenie.html",
             "year": "2025",
             "rating":"6.5",
-            "genres": ["Боевик", "Криминал", "Триллер"]
+            "genres": ["Боевик", "Криминал", "Триллер"],
+            "tmdb_id": 668489
         },
         {
             "name": "Перси Джексон и Море чудовищ",
@@ -2753,7 +3497,8 @@ async function generateCards() {
             "link": "/card/movies/800-226/Persi-Dzhekson-i-More-chudovish.html",
             "year": "2013",
             "rating":"6.0",
-            "genres": ["Приключения", "Семейный", "Фэнтези"]
+            "genres": ["Приключения", "Семейный", "Фэнтези"],
+            "tmdb_id": 76285
         },
         {
             "name": "Перси Джексон и похититель молний",
@@ -2761,7 +3506,8 @@ async function generateCards() {
             "link": "/card/movies/800-128/Persi-Dzhekson-i-pohititel-molnij.html",
             "year": "2010",
             "rating":"6.2",
-            "genres": ["Приключения", "Семейный", "Фэнтези"]
+            "genres": ["Приключения", "Семейный", "Фэнтези"],
+            "tmdb_id": 32657
         },
         {
             "name": "Чужой: Ромул",
@@ -2769,7 +3515,8 @@ async function generateCards() {
             "link": "/card/movies/800-131/Chuzhoj-Romul.html",
             "year": "2024",
             "rating":"7.2",
-            "genres": ["Ужасы", "Фантастика"]
+            "genres": ["Ужасы", "Фантастика"],
+            "tmdb_id": 945961
         },
         {
             "name": "Чужой: Завет",
@@ -2777,7 +3524,8 @@ async function generateCards() {
             "link": "/card/movies/800-227/Chuzhoj-Zavet.html",
             "year": "2017",
             "rating":"6.2",
-            "genres": ["Ужасы", "Фантастика"]
+            "genres": ["Ужасы", "Фантастика"],
+            "tmdb_id": 126889
         },
         {
             "name": "Прометей",
@@ -2785,7 +3533,8 @@ async function generateCards() {
             "link": "/card/movies/800-121/Prometej.html",
             "year": "2012",
             "rating":"6.6",
-            "genres": ["Ужасы", "Фантастика"]
+            "genres": ["Ужасы", "Фантастика"],
+            "tmdb_id": 70981
         },
         {
             "name": "Чужие против Хищника: Реквием",
@@ -2793,7 +3542,8 @@ async function generateCards() {
             "link": "/card/movies/800-228/Chuzhie-protiv-Hishnika-Rekviem.html",
             "year": "2007",
             "rating":"5.2",
-            "genres": ["Ужасы", "Фантастика"]
+            "genres": ["Ужасы", "Фантастика"],
+            "tmdb_id": 440
         },
         {
             "name": "Чужой против Хищника",
@@ -2801,7 +3551,8 @@ async function generateCards() {
             "link": "/card/movies/800-229/Chuzhoj-protiv-Hishnika.html",
             "year": "2004",
             "rating":"5.9",
-            "genres": ["Ужасы", "Фантастика"]
+            "genres": ["Ужасы", "Фантастика"],
+            "tmdb_id": 395
         },
         {
             "name": "Чужой: Воскрешение",
@@ -2809,7 +3560,8 @@ async function generateCards() {
             "link": "/card/movies/800-230/Chuzhoj-Voskreshenie.html",
             "year": "1997",
             "rating":"6.2",
-            "genres": ["Ужасы", "Фантастика"]
+            "genres": ["Ужасы", "Фантастика"],
+            "tmdb_id": 8078
         },
         {
             "name": "Чужой 3",
@@ -2817,7 +3569,8 @@ async function generateCards() {
             "link": "/card/movies/800-231/Chuzhoj-3.html",
             "year": "1992",
             "rating":"6.4",
-            "genres": ["Ужасы", "Фантастика"]
+            "genres": ["Ужасы", "Фантастика"],
+            "tmdb_id": 8077
         },
         {
             "name": "Чужие",
@@ -2825,7 +3578,8 @@ async function generateCards() {
             "link": "/card/movies/800-232/Chuzhie.html",
             "year": "1986",
             "rating":"8.0",
-            "genres": ["Ужасы", "Фантастика"]
+            "genres": ["Ужасы", "Фантастика"],
+            "tmdb_id": 679
         },
         {
             "name": "Чужой",
@@ -2833,7 +3587,8 @@ async function generateCards() {
             "link": "/card/movies/800-233/Chuzhoj1979.html",
             "year": "1979",
             "rating":"8.2",
-            "genres": ["Ужасы", "Фантастика"]
+            "genres": ["Ужасы", "Фантастика"],
+            "tmdb_id": 348
         },
         {
             "name": "Игры возмездия",
@@ -2841,7 +3596,8 @@ async function generateCards() {
             "link": "/card/movies/800-252/Igry-vozmezdiya.html",
             "year": "2025",
             "rating":"5.0",
-            "genres": ["Боевик", "Триллер"]
+            "genres": ["Боевик", "Триллер"],
+            "tmdb_id": 977294
         },
         {
             "name": "128 ударов сердца в минуту",
@@ -2849,7 +3605,8 @@ async function generateCards() {
             "link": "/card/movies/800-132/128-udarov-serdca-v-minutu.html",
             "year": "2015",
             "rating":"6.8",
-            "genres": ["Драма", "Музыка", "Мелодрама", "Комедия"]
+            "genres": ["Драма", "Музыка", "Мелодрама", "Комедия"],
+            "tmdb_id": 301351
         },
         {
             "name": "Дэдпул и Росомаха",
@@ -2857,7 +3614,8 @@ async function generateCards() {
             "link": "/card/movies/800-133/Dedpul-i-Rosomaha.html",
             "year": "2024",
             "rating":"7.6",
-            "genres": ["Боевик", "Комедия", "Фантастика"]
+            "genres": ["Боевик", "Комедия", "Фантастика"],
+            "tmdb_id": 533535
         },
         {
             "name": "Дэдпул 2",
@@ -2865,7 +3623,8 @@ async function generateCards() {
             "link": "/card/movies/800-234/Dedpul-2.html",
             "year": "2018",
             "rating":"7.5",
-            "genres": ["Боевик", "Комедия", "Фантастика"]
+            "genres": ["Боевик", "Комедия", "Фантастика"],
+            "tmdb_id": 383498
         },
         {
             "name": "Дэдпул",
@@ -2873,7 +3632,8 @@ async function generateCards() {
             "link": "/card/movies/800-235/Dedpul.html",
             "year": "2016",
             "rating":"7.6",
-            "genres": ["Боевик", "Комедия", "Фантастика"]
+            "genres": ["Боевик", "Комедия", "Фантастика"],
+            "tmdb_id": 293660
         },
         {
             "name": "Бойфренд из будущего",
@@ -2881,7 +3641,8 @@ async function generateCards() {
             "link": "/card/movies/800-134/Bojfrend-iz-budushego.html",
             "year": "2013",
             "rating":"7.9",
-            "genres": ["Драма", "Мелодрама", "Фэнтези"]
+            "genres": ["Драма", "Мелодрама", "Фэнтези"],
+            "tmdb_id": 122906
         },
         {
             "name": "После. Навсегда",
@@ -2889,7 +3650,8 @@ async function generateCards() {
             "link": "/card/movies/800-143/Posle-Navsegda.html",
             "year": "2023",
             "rating":"6.9",
-            "genres": ["Мелодрама", "Драма"]
+            "genres": ["Мелодрама", "Драма"],
+            "tmdb_id": 820525
         },
         {
             "name": "После. Долго и счастливо",
@@ -2897,7 +3659,8 @@ async function generateCards() {
             "link": "/card/movies/800-142/Posle-Dolgo-i-schastlivo.html",
             "year": "2022",
             "rating":"6.8",
-            "genres": ["Мелодрама", "Драма"]
+            "genres": ["Мелодрама", "Драма"],
+            "tmdb_id": 744276
         },
         {
             "name": "После. Глава 3",
@@ -2905,7 +3668,8 @@ async function generateCards() {
             "link": "/card/movies/800-141/Posle-Glava-3.html",
             "year": "2021",
             "rating":"7.0",
-            "genres": ["Мелодрама", "Драма"]
+            "genres": ["Мелодрама", "Драма"],
+            "tmdb_id": 744275
         },
         {
             "name": "После. Глава 2",
@@ -2913,7 +3677,8 @@ async function generateCards() {
             "link": "/card/movies/800-140/Posle-Glava-2.html",
             "year": "2020",
             "rating":"7.2",
-            "genres": ["Мелодрама", "Драма"]
+            "genres": ["Мелодрама", "Драма"],
+            "tmdb_id": 613504
         },
         {
             "name": "После",
@@ -2921,7 +3686,8 @@ async function generateCards() {
             "link": "/card/movies/800-135/Posle.html",
             "year": "2019",
             "rating":"7.1",
-            "genres": ["Мелодрама", "Драма"]
+            "genres": ["Мелодрама", "Драма"],
+            "tmdb_id": 537915
         },
         {
             "name": "Ребел-Ридж",
@@ -2929,7 +3695,8 @@ async function generateCards() {
             "link": "/card/movies/800-136/Rebel-Ridzh.html",
             "year": "2024",
             "rating":"7.0",
-            "genres": ["Криминал", "Боевик", "Триллер", "Драма"]
+            "genres": ["Криминал", "Боевик", "Триллер", "Драма"],
+            "tmdb_id": 646097
         },
         {
             "name": "Ты водишь!",
@@ -2937,7 +3704,8 @@ async function generateCards() {
             "link": "/card/movies/800-137/Ty-vodish!.html",
             "year": "2018",
             "rating":"6.7",
-            "genres": ["Комедия", "Боевик"]
+            "genres": ["Комедия", "Боевик"],
+            "tmdb_id": 455980
         },
         {
             "name": "Место под соснами",
@@ -2945,7 +3713,8 @@ async function generateCards() {
             "link": "/card/movies/800-138/Mesto-pod-sosnami.html",
             "year": "2013",
             "rating":"7.0",
-            "genres": ["Драма", "Криминал"]
+            "genres": ["Драма", "Криминал"],
+            "tmdb_id": 97367
         },
         {
             "name": "Чаща",
@@ -2953,165 +3722,212 @@ async function generateCards() {
             "link": "/card/movies/800-139/Chasha.html",
             "year": "2024",
             "rating":"6.4",
-            "genres": ["Криминал", "Триллер", "Вестерн"]
+            "genres": ["Криминал", "Триллер", "Вестерн"],
+            "tmdb_id": 395817
         },
         // конец
        
         
     ];
+    // --- Конец локальных данных ---
 
-    var cardContainer = $('#card-container');
-    if (!cardContainer.length) {
-        return; // Возвращаемся, если контейнер не найден
+
+    processedLocalCards = await processLocalCardData(localCardData);
+
+    const MAX_CARDS = 12;
+    const addedCards = new Set(); // Отслеживает добавленные карты по их ссылке
+    let recommendations = [];
+
+    // Вспомогательная функция для добавления карточки в рекомендации
+    const addCardToRecommendations = (card) => {
+        if (recommendations.length >= MAX_CARDS) return false;
+        if (addedCards.has(card.link)) return false;
+        recommendations.push(card);
+        addedCards.add(card.link);
+        console.log(`addCardToRecommendations: Добавлена рекомендация: '${card.name}'. Всего: ${recommendations.length}`);
+        return true;
+    };
+
+    const currentLink = window.location.pathname.includes('card') && window.location.pathname.split('/').some(p => p.endsWith('.html')) ?
+        '/' + window.location.pathname.split('/').slice(window.location.pathname.split('/').indexOf('card')).join('/') :
+        window.location.pathname.split('?')[0].split('#')[0];
+
+    let currentMovie = processedLocalCards.find(c => c.link.toLowerCase() === currentLink.toLowerCase());
+    if (!currentMovie) {
+        const pageTitle = document.title;
+        const cleanPageTitle = getBaseTitle(pageTitle);
+        const pageTitleMatch = pageTitle.match(/\((\d{4})\)/);
+        const pageYear = pageTitleMatch ? parseInt(pageTitleMatch[1]) : null;
+
+        currentMovie = processedLocalCards.find(c => {
+            const baseTitleMatches = getBaseTitle(c.name) === cleanPageTitle;
+            const yearMatches = pageYear ? parseInt(c.year) === pageYear : true;
+            return baseTitleMatches && yearMatches;
+        });
+
+        if (!currentMovie) {
+            currentMovie = processedLocalCards.find(c => getBaseTitle(c.name) === cleanPageTitle);
+        }
     }
-    cardContainer.html(""); // Очищаем существующие карточки
+    console.log("DEBUG: currentMovie объект после определения:", currentMovie);
 
-    // Нормализация текущей ссылки для поиска в localCardData
-    let normalizedCurrentLink = currentMovieLink;
-    const cardPathIndex = currentMovieLink.toLowerCase().indexOf('/card/');
-    if (cardPathIndex !== -1) {
-        normalizedCurrentLink = currentMovieLink.substring(cardPathIndex);
-        normalizedCurrentLink = decodeURIComponent(normalizedCurrentLink);
-    }
 
-    if (currentMovieTitleElement && currentMovieYearElement) {
-        let currentMovieRawTitle = currentMovieTitleElement.textContent.split('(')[0].trim();
-        let currentMovieBaseTitle = getBaseTitle(currentMovieRawTitle);
-        let currentMovieYear = currentMovieYearElement.textContent;
+    // --- Логика формирования рекомендаций ---
+    if (currentMovie) {
+        const currentMovieCollectionId = currentMovie.collection_id;
+        const currentMovieBaseTitle = getBaseTitle(currentMovie.name);
 
-        let cardsToDisplay = [];
-        const addedCardsTracker = new Set();
+        // --- 1. Приоритет: Фильмы той же франшизы ---
+        const moviesInCurrentFranchise = processedLocalCards.filter(c => {
+            const cBaseTitle = getBaseTitle(c.name);
+            return (cBaseTitle === currentMovieBaseTitle && cBaseTitle !== '') ||
+                   (c.collection_id && currentMovieCollectionId && c.collection_id === currentMovieCollectionId);
+        });
 
-        let currentMovieGenres = [];
+        const isCurrentMoviePartOfFranchise = moviesInCurrentFranchise.length > 1;
 
-        // Поиск текущего фильма в локальных данных по нормализованной ссылке
-        const currentLocalCard = localCardData.find(card => card.link === normalizedCurrentLink);
-
-        if (currentLocalCard) {
-            const currentCardIdentifier = `${getBaseTitle(currentLocalCard.name)}-${currentLocalCard.year}-${currentLocalCard.link}`;
-            addedCardsTracker.add(currentCardIdentifier);
-            currentMovieGenres = currentLocalCard.genres;
-        } else {
-            addedCardsTracker.add(`${currentMovieBaseTitle}-${currentMovieYear}-N/A`);
+        if (isCurrentMoviePartOfFranchise) {
+            console.log(`DEBUG: Текущий фильм '${currentMovie.name}' является частью франшизы.`);
+            moviesInCurrentFranchise.filter(c => c.link !== currentMovie.link && !addedCards.has(c.link))
+                .sort((a, b) => parseInt(a.year) - parseInt(b.year)) // Сортируем по году
+                .forEach(c => addCardToRecommendations(c));
         }
 
-        // Определите веса для специфических жанров.
-        const specificGenreWeights = {
-            'ужасы': 5.0,
-            'фэнтези': 4.0,
-            'научная фантастика': 4.2,
-            'вестерн': 5.0,
-            'мультфильм': 5.0,
-            'документальный': 5.0,
-            'мюзикл': 4.0,
-            'триллер': 2.5,
-            'детектив': 3.8,
-            'боевик': 1.8,
-            'комедия': 4.2,
-            'драма': 0.5,
-            'мелодрама': 5.0,
-            'приключения': 3.5,
-            'криминал': 2.0,
-            'история': 3.5,
-            'романтика': 2.0,
-            'семейный': 5.0,
-            'музыка': 4.0,
-            'военный': 2.8,
-            'Биография': 4.0,
-            'Боевик и Приключения': 4.0,
-            'Детский': 4.5,
-            'Война и Политика': 4.2,
-            'фантастика': 4.5
-        };
+        // --- 2. Приоритет: TMDB рекомендации/похожие, затем локальные фильмы, отсортированные по релевантности ---
+        if (recommendations.length < MAX_CARDS) {
+            let potentialRecsFromTmdb = [];
+            if (currentMovie.tmdb_id) {
+                potentialRecsFromTmdb = (await getTmdbRecommendations(currentMovie.tmdb_id))
+                    .map(t => processedLocalCards.find(c => c.tmdb_id === t.id))
+                    .filter(Boolean);
+            }
 
-        const MIN_GENRE_SCORE_THRESHOLD = 1.0;
-        const NON_MATCHING_GENRE_PENALTY_MULTIPLIER = 0.5;
-        const FRANCHISE_BONUS = 3.0;
+            // Группируем остальные фильмы по франшизам и выбираем лучший из каждой
+            const otherFranchiseBestFilms = new Map(); // key: baseTitle/collection_id, value: best_card
+            const nonFranchiseSingleFilms = [];
 
-        // ЭТАП 1: Подбор по жанрам и франшизам из localCardData
-        if (currentMovieGenres.length > 0) {
-            const genreRelevantCandidates = [];
-            const currentGenresLower = new Set(currentMovieGenres.map(g => g.toLowerCase()));
-
-            for (const card of localCardData) {
-                const cardIdentifier = `${getBaseTitle(card.name)}-${card.year}-${card.link}`;
-                if (addedCardsTracker.has(cardIdentifier)) {
-                    continue;
+            processedLocalCards.forEach(card => {
+                if (card.link === currentLink || addedCards.has(card.link)) {
+                    return; // Пропускаем текущий фильм и уже добавленные
                 }
 
-                let genreMatchScore = 0;
-                let nonMatchingGenrePenalty = 0;
-
-                for (const localGenre of card.genres) {
-                    const lowerLocalGenre = localGenre.toLowerCase();
-                    if (currentGenresLower.has(lowerLocalGenre)) {
-                        let scoreToAdd = 1;
-                        if (specificGenreWeights[lowerLocalGenre]) {
-                            scoreToAdd += specificGenreWeights[lowerLocalGenre];
-                        }
-                        genreMatchScore += scoreToAdd;
-                    } else {
-                        if (specificGenreWeights[lowerLocalGenre] && specificGenreWeights[lowerLocalGenre] > 1.5) {
-                            let penaltyAmount = specificGenreWeights[lowerLocalGenre] * NON_MATCHING_GENRE_PENALTY_MULTIPLIER;
-                            nonMatchingGenrePenalty += penaltyAmount;
-                        }
-                    }
+                // Проверяем, не является ли фильм частью ТЕКУЩЕЙ франшизы
+                const isThisCardCurrentFranchise = moviesInCurrentFranchise.some(m => m.link === card.link);
+                if (isThisCardCurrentFranchise) {
+                    return; // Пропускаем, так как они уже обработаны выше
                 }
 
                 const cardBaseTitle = getBaseTitle(card.name);
-                if (currentMovieBaseTitle === cardBaseTitle && card.year !== currentMovieYear) {
-                    genreMatchScore += FRANCHISE_BONUS;
+                const cardCollectionId = card.collection_id;
+                let groupKey = null;
+
+                if (cardCollectionId) {
+                    groupKey = `collection-${cardCollectionId}`;
+                } else if (processedLocalCards.filter(c => getBaseTitle(c.name) === cardBaseTitle && cardBaseTitle !== '').length > 1) {
+                    groupKey = `title-${cardBaseTitle}`;
                 }
 
-                genreMatchScore -= nonMatchingGenrePenalty;
-
-                if (genreMatchScore > MIN_GENRE_SCORE_THRESHOLD) {
-                    genreRelevantCandidates.push({ card: card, score: genreMatchScore });
-                }
-            }
-
-            shuffleArray(genreRelevantCandidates);
-            genreRelevantCandidates.sort((a, b) => b.score - a.score);
-
-            for (const item of genreRelevantCandidates) {
-                if (cardsToDisplay.length < 15) {
-                    cardsToDisplay.push(item.card);
-                    addedCardsTracker.add(`${getBaseTitle(item.card.name)}-${item.card.year}-${item.card.link}`);
+                if (groupKey) {
+                    const currentBest = otherFranchiseBestFilms.get(groupKey);
+                    if (!currentBest || scoreCard(card, currentMovie) > scoreCard(currentBest, currentMovie)) {
+                        otherFranchiseBestFilms.set(groupKey, card);
+                    }
                 } else {
-                    break;
+                    nonFranchiseSingleFilms.push(card);
                 }
+            });
+
+            // Собираем все фильмы для окончательной сортировки
+            const combinedPotentialRecs = [
+                ...potentialRecsFromTmdb, // TMDB рекомендации
+                ...Array.from(otherFranchiseBestFilms.values()), // Лучшие из других франшиз
+                ...nonFranchiseSingleFilms // Одиночные фильмы
+            ].filter((v, i, a) => a.findIndex(t => t.link === v.link) === i); // Удаляем дубликаты
+
+            // Сортируем все потенциальные рекомендации по скорингу
+            combinedPotentialRecs.sort((a, b) => scoreCard(b, currentMovie) - scoreCard(a, currentMovie));
+
+            for (const card of combinedPotentialRecs) {
+                if (recommendations.length >= MAX_CARDS) break;
+                // Дополнительная проверка на крайне низкий скоринг
+                if (scoreCard(card, currentMovie) <= IRRELEVANT_SCORE) { // Используем <= IRRELEVANT_SCORE
+                    console.log(`DEBUG: '${card.name}' - Отсеян из-за слишком низкого скоринга.`);
+                    continue; 
+                }
+                addCardToRecommendations(card);
             }
         }
 
-        // ЭТАП 2: Заполняем оставшиеся места случайными картами, если все еще не хватает
-        if (cardsToDisplay.length < 15) {
-            const remainingLocalCards = shuffleArray(localCardData.filter(card =>
-                !addedCardsTracker.has(`${getBaseTitle(card.name)}-${card.year}-${card.link}`)
-            ));
-
-            for (const card of remainingLocalCards) {
-                if (cardsToDisplay.length < 15) {
-                    cardsToDisplay.push(card);
-                    addedCardsTracker.add(`${getBaseTitle(card.name)}-${card.year}-${card.link}`);
-                } else {
-                    break;
-                }
-            }
-        }
-
-        // ЭТАП 3: Финальное перемешивание всего списка для максимального разнообразия
-        if (cardsToDisplay.length > 0) {
-            shuffleArray(cardsToDisplay);
-        }
-
-        displayCards(cardsToDisplay.slice(0, 15), cardContainer);
-
-    } else {
-        const shuffledAllCards = shuffleArray(localCardData);
-        displayCards(shuffledAllCards.slice(0, 15), cardContainer);
+    } else { // Логика для главной страницы или других страниц без конкретного фильма
+        // Просто перемешиваем и сортируем по рейтингу (т.к. рейтинг теперь 0, будет случайный порядок)
+        shuffleArray(processedLocalCards)
+            .sort((a, b) => getRating(b) - getRating(a)) // Если рейтинг 0, это эквивалентно случайной сортировке
+            .forEach(c => addCardToRecommendations(c));
     }
 
-    // Инициализация Splide. Убедитесь, что Splide.js подключен.
+
+    // --- Финальная сборка и отображение ---
+    // Если после всех попыток рекомендаций недостаточно, добиваем случайными фильмами
+    if (recommendations.length < MAX_CARDS) {
+        console.log("DEBUG: Недостаточно рекомендаций, добавляем оставшиеся случайные.");
+        const remainingToPick = processedLocalCards.filter(c => !addedCards.has(c.link));
+        shuffleArray(remainingToPick);
+        for (const card of remainingToPick) {
+            if (recommendations.length >= MAX_CARDS) break;
+            // При добивании случайными, мы не применяем строгие правила скоринга,
+            // но все равно можем отсеять те, что гарантированно не подходят (напр. слишком взрослые для семейных)
+            if (currentMovie && currentMovie.genres.has('семейный') && !card.genres.has('семейный') && !card.isTV) {
+                console.log(`DEBUG: '${card.name}' - Отсеян при добивании из-за отсутствия 'семейный' жанра.`);
+                continue;
+            }
+            addCardToRecommendations(card);
+        }
+    }
+
+    const finalDisplayCards = recommendations.slice(0, MAX_CARDS);
+
+    // Логика группировки (без изменений) - теперь она нужна ТОЛЬКО для сортировки внутри уже отобранных фильмов
+    const finalDisplayGrouped = [];
+    const franchiseGroups = new Map();
+
+    finalDisplayCards.forEach(card => {
+        let key = null;
+        if (card.collection_id) {
+            key = `collection-${card.collection_id}`;
+        } else {
+            // Для "Один дома" и "Аладдин" (которые имеют несколько фильмов без collection_id, но с общим базовым названием)
+            const potentialGroup = processedLocalCards.filter(pc => getBaseTitle(pc.name) === getBaseTitle(card.name) && getBaseTitle(card.name) !== '');
+            if (potentialGroup.length > 1) {
+                key = `title-${getBaseTitle(card.name)}`;
+            } else {
+                key = `single-${card.link}`; // Уникальный ключ для одиночных фильмов
+            }
+        }
+
+        if (!franchiseGroups.has(key)) {
+            franchiseGroups.set(key, []);
+        }
+        franchiseGroups.get(key).push(card);
+    });
+
+    const nonFranchiseCards = [];
+    const sortedFranchiseKeys = Array.from(franchiseGroups.keys()).sort();
+
+    for (const key of sortedFranchiseKeys) {
+        const group = franchiseGroups.get(key);
+        if (key.startsWith('collection-') || key.startsWith('title-')) { // Группы франшиз
+            group.sort((a, b) => parseInt(a.year) - parseInt(b.year));
+            finalDisplayGrouped.push(...group);
+        } else { // Одиночные фильмы
+            nonFranchiseCards.push(...group);
+        }
+    }
+    shuffleArray(nonFranchiseCards); // Перемешиваем одиночные фильмы
+    finalDisplayGrouped.push(...nonFranchiseCards);
+
+    displayCards(finalDisplayGrouped.slice(0, MAX_CARDS), cardContainer);
+
+    // --- Инициализация Splide (без изменений) ---
     var splide = new Splide('#Collections', {
         type: 'loop',
         focus: 'center',
@@ -3137,51 +3953,4 @@ async function generateCards() {
     }).mount();
 
     positionCardRatingTrand();
-}
-
-// Вспомогательная функция для отображения карточек в контейнере
-function displayCards(cards, container) {
-    var count = 0;
-    container.empty();
-    cards.forEach(function (val) {
-        if (count >= 15) return; // Ограничиваем до 15 карточек
-        var cardHTML = `
-            <li class="splide__slide">
-                <div class="card card-media" style="width: 12rem" data-rating="${val.rating}">
-                    <a href="${val.link}">
-                        <img src="${val.image}" class="card-img-top img-9x16 mt-2" alt="${val.name}">
-                        <div class="card-rating-trand">
-                            <span class="span-rating">${val.rating}</span>
-                        </div>
-                        ${val.isTV ? '<div class="card-TV">TV</div>' : ''}
-                        <div class="card-body">
-                            <span class="card-tex">${val.name}<br><span class="year">${val.year}</span></span>
-                        </div>
-                    </a>
-                </div>
-            </li>
-        `;
-        container.append(cardHTML);
-        count++;
-    });
-}
-
-// Функция для позиционирования рейтинга на карточках
-function positionCardRatingTrand() {
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(card => {
-        const image = card.querySelector('.card-img-top');
-        const rating = card.querySelector('.card-rating-trand');
-        if (image && rating) {
-            const imageRect = image.getBoundingClientRect();
-            const cardRect = card.getBoundingClientRect();
-
-            const bottom = cardRect.bottom - imageRect.bottom + 8;
-            const right = cardRect.right - imageRect.right + 8;
-
-            rating.style.position = 'absolute';
-            rating.style.bottom = bottom + 'px';
-            rating.style.right = right + 'px';
-        }
-    });
 }
