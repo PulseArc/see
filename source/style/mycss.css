@@ -208,7 +208,7 @@ select {
 .search-input {
     position: absolute;
     top: 0;
-    left: 35px;
+    left: 33px;
     width: 0;
     height: 100%;
     border: none;
@@ -225,7 +225,7 @@ select {
 /* Разрешаем ввод только при раскрытии */
 .search-wrapper:hover .search-input {
     opacity: 1;
-    width: calc(100% - 35px);
+    width: calc(100% - 33px - 23px);
     pointer-events: auto;
 }
 
