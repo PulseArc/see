@@ -2,34 +2,354 @@
 
 // Генерация карточек с случайными рейтингами
 // Мультфильмы
-document.addEventListener('DOMContentLoaded', function () {
-    generateCards();
+
+document.addEventListener('DOMContentLoaded', async () => {
+    await generateCards();
     setTimeout(positionCardRatingTrand, 200);
 });
 
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
+// --- Вспомогательные функции ---
+const shuffleArray = (a) => {
+    for (let i = a.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
+        [a[i], a[j]] = [a[j], a[i]];
     }
-    return array;
-}
-
-// Перенесена сюда, чтобы была доступна глобально, если нужна для other functions
-const getBaseTitle = (title) => {
-    title = title.toLowerCase();
-    // Использование вашей логики очистки названия
-    title = title.replace(/[:\s-]+.+?(?=\s*\d+|$)/g, '');
-    title = title.replace(/\s+\d+$/, '');
-    return title.trim();
+    return a;
 };
 
-async function generateCards() {
-    var currentMovieTitleElement = document.querySelector('title');
-    var currentMovieYearElement = document.getElementById('movie-year');
-    var currentMovieGenresElement = document.getElementById('movie-genres'); // Использование вашего элемента для жанров
+const getBaseTitle = (t) => {
+    if (!t) return '';
+    let cleaned = t.toLowerCase();
+    cleaned = cleaned.replace(/\s*(?:и|или|of|the|a|an|часть|part|эпизод|[:–—\-]|,\s*\d+\s*|\s+\d+\s*|\s+[ivx]+\s*|film|movie|сезон|season|фильм|фильмов|фильма|сага|история|серия|том|глава|мир|возвращение|восстание|начало|конец|последний|новый|старый|приключение|приключения|хроники|самоубийц|отряд|планета|гнев|месть|эпоха|последний рыцарь|исход|генезис|судный день|смертельная расплата).*$/, '').trim();
+    cleaned = cleaned.replace(/\s*[\(\[].*[\)\]]\s*$/, '').trim();
+    cleaned = cleaned.replace(/\s*\d{4}\s*$/, '').trim();
+    cleaned = cleaned.replace(/смотреть онлайн бесплатно/i, '').trim();
+    cleaned = cleaned.replace(/[^a-z0-9а-яё]+$/, '').trim();
 
-    var localCardData = [ // Переименовано на localCardData для соответствия вашему примеру
+    if (cleaned.length < 3 && t.length > 3) {
+        let lessAggressiveClean = t.toLowerCase();
+        lessAggressiveClean = lessAggressiveClean.replace(/\s*[\(\[].*[\)\]]\s*$/, '').trim();
+        lessAggressiveClean = lessAggressiveClean.replace(/\s*\d{4}\s*$/, '').trim();
+        return lessAggressiveClean.replace(/[^a-z0-9а-яё]+$/, '').trim();
+    }
+    return cleaned.replace(/[\–\—\-]/g, '-').replace(/\s+/g, ' ').trim();
+};
+
+const getRating = (c) => parseFloat(c.rating) || -1;
+
+// --- Константы TMDB API ---
+const TMDB_API_KEY = '3da216c9cc3fe78b5488855d25d26e13';
+const BASE_TMDB_URL = 'https://api.themoviedb.org/3';
+
+// --- Кэширование и получение данных TMDB ---
+let processedLocalCards = [];
+let processingPromise = null;
+
+async function fetchTmdbMovieData(id) {
+    if (!id) return null;
+    try {
+        const r = await fetch(`${BASE_TMDB_URL}/movie/${id}?api_key=${TMDB_API_KEY}&append_to_response=keywords,release_dates&language=ru-RU`);
+        if (!r.ok) return null;
+        const data = await r.json();
+        let certification = null;
+        if (data.release_dates && data.release_dates.results) {
+            const ruRelease = data.release_dates.results.find(res => res.iso_3166_1 === 'RU');
+            if (ruRelease && ruRelease.release_dates.length > 0) {
+                certification = ruRelease.release_dates.find(r => r.certification)?.certification;
+            } else {
+                const usRelease = data.release_dates.results.find(res => res.iso_3166_1 === 'US');
+                if (usRelease && usRelease.release_dates.length > 0) {
+                    certification = usRelease.release_dates.find(r => r.certification)?.certification;
+                } else if (data.release_dates.results.length > 0) {
+                    certification = data.release_dates.results[0].release_dates.find(r => r.certification)?.certification;
+                }
+            }
+        }
+        data.certification = certification;
+        return data;
+    } catch (e) {
+        return null;
+    }
+}
+
+async function processLocalCardData(data) {
+    if (processedLocalCards.length && !processingPromise) return processedLocalCards;
+    if (processingPromise) return await processingPromise;
+
+    processingPromise = Promise.all(data.map(async (c) => {
+        const u = { ...c };
+        if (c.tmdb_id) {
+            const m = await fetchTmdbMovieData(c.tmdb_id);
+            if (m) {
+                u.genres = m.genres?.map(g => g.name) || [];
+                u.keywords = m.keywords?.keywords?.map(k => k.name) || [];
+                u.collection_id = m.belongs_to_collection?.id || null;
+                u.certification = m.certification || c.certification || null;
+            } else {
+                u.genres = u.genres || [];
+                u.keywords = u.keywords || [];
+                u.collection_id = null;
+                u.certification = c.certification || null;
+            }
+        } else {
+            u.genres = u.genres || [];
+            u.keywords = u.keywords || [];
+            u.collection_id = null;
+            u.certification = c.certification || null;
+        }
+        return u;
+    })).finally(() => {
+        processingPromise = null;
+    });
+    
+    processedLocalCards = await processingPromise;
+    return processedLocalCards;
+}
+
+async function getTmdbRecommendations(id) {
+    let m = [];
+    for (const e of [`recommendations`, `similar`]) {
+        try {
+            const r = await fetch(`${BASE_TMDB_URL}/movie/${id}/${e}?api_key=${TMDB_API_KEY}&language=ru-RU&page=1`);
+            if (r.ok) {
+                const d = await r.json();
+                if (d.results?.length) {
+                    m = d.results;
+                    break;
+                }
+            }
+        } catch (e) { /* Ignore API errors for recommendations/similar */ }
+    }
+    return m;
+}
+
+// Removed getTmdbCollectionMovies as it's not directly used in the current logic flow for selecting cards.
+
+// --- Функции отображения UI (без изменений) ---
+function displayCards(cards, container) {
+    container.empty();
+    cards.slice(0, 12).forEach((card) => {
+        container.append(`
+            <li class="splide__slide">
+                <div class="card card-media" style="width: 12rem" data-rating="${card.rating}">
+                    <a href="${card.link}">
+                        <img src="${card.image}" class="card-img-top img-9x16 mt-2" alt="${card.name}" loading="lazy" onerror="this.onerror=null;this.src='/path/to/default-image.jpg';">
+                        <div class="card-rating-trand"><span class="span-rating">${card.rating}</span></div>
+                        ${card.isTV ? '<div class="card-TV card-TV-trends">TV</div>' : ''}
+                        <div class="card-body"><span class="card-tex">${card.name}<br><span class="year">${card.year}</span></span></div>
+                    </a>
+                </div>
+            </li>
+        `);
+    });
+
+    const images = container.find('img.card-img-top');
+    let loadedImages = 0;
+    if (images.length === 0) {
+        positionCardRatingTrand();
+    } else {
+        images.each(function() {
+            if (this.complete) {
+                loadedImages++;
+            } else {
+                this.onload = this.onerror = () => {
+                    loadedImages++;
+                    if (loadedImages === images.length) positionCardRatingTrand();
+                };
+            }
+        });
+        if (loadedImages === images.length) positionCardRatingTrand();
+    }
+}
+
+function positionCardRatingTrand() {
+    $('.card-item, .card-media').each(function() {
+        const $item = $(this);
+        const $img = $item.find('img');
+        const $rating = $item.find('.card-rating-trand');
+        if ($img.length && $rating.length && $img[0].complete) {
+            const iRect = $img[0].getBoundingClientRect();
+            const cRect = $item[0].getBoundingClientRect();
+            $rating.css({
+                'position': 'absolute',
+                'bottom': `${cRect.bottom - iRect.bottom + 8}px`,
+                'right': `${cRect.right - iRect.right + 8}px`,
+                'left': 'auto'
+            });
+        }
+    });
+}
+
+// --- Упрощенные и усиленные константы для жанров ---
+// --- Веса совпадений ---
+const GENRE_MATCH_BONUS = 150;
+const KEYWORD_MATCH_BONUS = 1000;
+const IRRELEVANT_SCORE = -10000;
+const YEAR_PROXIMITY_BONUS = 50;
+const YEAR_DIFFERENCE_PENALTY_FACTOR = 3;
+
+// --- Абсолютно несовместимые жанры (мгновенный отсев) ---
+const ABSOLUTE_GENRE_CONFLICTS = {
+    "ужасы": ["семейный", "мультфильм", "мюзикл", "спорт", "детский"], // Ужасы НИКОГДА не должны быть с детскими
+    "семейный": ["ужасы", "криминал", "нуар", "боевик", "триллер", "детектив", "военный", "эротика"],
+    "мультфильм": ["ужасы", "криминал", "нуар", "боевик", "триллер", "детектив", "военный", "эротика"],
+    "документальный": ["фэнтези", "фантастика", "мультфильм", "мюзикл", "спорт", "детский"], // Документальный редко бывает для детей
+    "нуар": ["семейный", "мультфильм", "музыка", "спорт", "мюзикл", "комедия", "детский"],
+    "мюзикл": ["ужасы", "криминал", "военный", "триллер", "нуар", "документальный", "спорт", "детский"],
+    "спорт": ["ужасы", "фэнтези", "фантастика", "нуар", "мюзикл", "детский"],
+    "эротика": ["семейный", "мультфильм", "детский"], // Добавляем сюда "детский"
+    "детский": ["ужасы", "криминал", "нуар", "боевик", "триллер", "детектив", "военный", "эротика", "документальный", "история", "биография"], // Все, что не для детей
+};
+
+// --- Веса для штрафов за ОТСУТСТВИЕ жанра у кандидата, если он ЕСТЬ у текущего фильма ---
+const MISSING_REQUIRED_GENRE_PENALTIES = {
+    "ужасы": -1000,
+    "фантастика": -800,
+    "фэнтези": -800,
+    "детектив": -600,
+    "триллер": -600,
+    "боевик": -500,
+    "криминал": -500,
+    "нуар": -900,
+    "вестерн": -700,
+    "документальный": -1200,
+    "мультфильм": -1000,
+    "семейный": -1000,
+    "мюзикл": -800,
+    "история": -400,
+    "военный": -900,
+    "спорт": -400,
+    "музыка": -400,
+    "драма": -150,
+    "комедия": -150,
+    "приключения": -150,
+    "романтика": -100,
+    "биография": -300,
+    "детский": -1200, // Очень высокий штраф, если ищут детское, а его нет
+};
+
+// --- Веса для штрафов за ПРИСУТСТВИЕ "нежелательного" жанра у кандидата, если его НЕТ у текущего фильма ---
+const UNWANTED_GENRE_PENALTIES = {
+    "ужасы": -1500,
+    "мультфильм": -1000,
+    "семейный": -1000,
+    "документальный": -1200,
+    "мюзикл": -800,
+    "вестерн": -800,
+    "нуар": -800,
+    "военный": -600,
+    "криминал": -500,
+    "спорт": -500,
+    "музыка": -500,
+    "комедия": -1000,
+    "боевик": -300,
+    "триллер": -300,
+    "фантастика": -900,
+    "фэнтези": -900,
+    "биография": -400,
+    "детский": -1500, // Очень высокий штраф, если в рекомендациях появляется детский фильм, когда его не ищут
+};
+
+const CERTIFICATION_PENALTIES = {
+    'G': ['R', 'NC-17'],
+    'PG': ['R', 'NC-17'],
+    'PG-13': ['NC-17'],
+    'R': ['G', 'PG'],
+    'NC-17': ['G', 'PG', 'PG-13']
+};
+
+// --- Улучшенная функция скоринга релевантности ---
+const scoreCard = (card, currentMovieRef) => {
+    if (!currentMovieRef) return 0;
+    let score = 0;
+    const cGenres = new Set(card.genres?.map(g => g.toLowerCase()) || []);
+    const currentGenres = new Set(currentMovieRef.genres?.map(g => g.toLowerCase()) || []);
+    const cKeywords = new Set(card.keywords?.map(k => k.toLowerCase()) || []);
+    const currentKeywords = new Set(currentMovieRef.keywords?.map(k => k.toLowerCase()) || []);
+
+    const isSameFranchise = (card.collection_id && currentMovieRef.collection_id && card.collection_id === currentMovieRef.collection_id) ||
+                           (getBaseTitle(card.name) === getBaseTitle(currentMovieRef.name) && getBaseTitle(card.name) !== '' && getBaseTitle(card.name).length > 2);
+
+    if (isSameFranchise) {
+        score += 5000;
+    } else {
+        for (const cG of currentGenres) {
+            const conflicts = ABSOLUTE_GENRE_CONFLICTS[cG];
+            if (conflicts) {
+                for (const conflictGenre of conflicts) {
+                    if (cGenres.has(conflictGenre)) {
+                        return IRRELEVANT_SCORE;
+                    }
+                }
+            }
+        }
+
+        currentGenres.forEach(cG => {
+            if (!cGenres.has(cG) && MISSING_REQUIRED_GENRE_PENALTIES[cG]) {
+                score += MISSING_REQUIRED_GENRE_PENALTIES[cG];
+            }
+        });
+
+        cGenres.forEach(cG => {
+            if (!currentGenres.has(cG) && UNWANTED_GENRE_PENALTIES[cG]) {
+                score += UNWANTED_GENRE_PENALTIES[cG];
+            }
+        });
+
+        if (currentGenres.has('комедия') && !currentGenres.has('семейный') && cGenres.has('семейный') && cGenres.has('комедия')) {
+            score -= 1000;
+        }
+    }
+
+    let matchedGenreCount = 0;
+    currentGenres.forEach(cG => {
+        if (cGenres.has(cG)) {
+            score += GENRE_MATCH_BONUS;
+            matchedGenreCount++;
+        }
+    });
+
+    if (!isSameFranchise && matchedGenreCount === 0 && currentGenres.size > 0) {
+        score += -1500;
+    }
+
+    let matchedKeywordCount = 0;
+    currentKeywords.forEach(k => {
+        if (cKeywords.has(k)) {
+            score += KEYWORD_MATCH_BONUS;
+            matchedKeywordCount++;
+        }
+    });
+
+    if (!isSameFranchise && matchedGenreCount === 0 && matchedKeywordCount === 0 && (currentGenres.size > 0 || currentKeywords.size > 0)) {
+        score += -1000;
+    }
+
+    if (!isSameFranchise && currentMovieRef.certification && card.certification) {
+        const currentCert = currentMovieRef.certification.toUpperCase();
+        const candidateCert = card.certification.toUpperCase();
+
+        if (CERTIFICATION_PENALTIES[currentCert] && CERTIFICATION_PENALTIES[currentCert].includes(candidateCert)) {
+            score -= 600;
+        }
+    }
+
+    score += getRating(card) * 10;
+
+    if (score < IRRELEVANT_SCORE) {
+        return IRRELEVANT_SCORE;
+    }
+    return score;
+};
+
+
+// --- Основная логика генерации рекомендаций ---
+async function generateCards() {
+    const cardContainer = $('#card-container');
+    if (!cardContainer.length) return;
+
+    // YOUR localCardData MUST BE COMPLETE AND UP-TO-DATE!
+    const localCardData = [
         
         {
             "name": "Союз зверей",
@@ -37,7 +357,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-03/Soyuz-zverej.html",
             "year": "2010",
             "rating":"5.6",
-            "genres": ["Семейный", "Комедия"]
+            "tmdb_id": 50135
         },
         {
             "name": "Рапунцель: Новая история",
@@ -45,8 +365,9 @@ async function generateCards() {
             "link": "/card/cartoons/500-79/Rapuncel-Novaya-istoriya.html",
             "year": "2017",
             "rating":"7.3",
+            "tmdb_id": 70047,
             "isTV": true,
-            "genres": ["Детский","Приключения", "Комедия", "Фэнтези"]
+            
         },
         {
             "name": "Рапунцель: Дорога к мечте",
@@ -54,7 +375,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-80/Rapuncel-Doroga-k-mechte.html",
             "year": "2017",
             "rating":"6.8",
-            "genres": ["Приключения", "Комедия", "Фэнтези"]
+            "tmdb_id": 438747
         },
         {
             "name": "Рапунцель: Запутанная история",
@@ -62,7 +383,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-04/Rapuncel-Zaputannaya-istoriya.html",
             "year": "2010",
             "rating":"7.6",
-            "genres": ["Приключения", "Комедия", "Фэнтези"]
+            "tmdb_id": 38757
         },
         {
             "name": "Том и Джерри в Нью-Йорке",
@@ -70,8 +391,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-81/Tom-i-Dzherri-v-Nyu-Jorke.html",
             "year": "2021",
             "rating":"7.0",
+            "tmdb_id": 127445,
             "isTV": true,
-            "genres": ["Детский", "Комедия"]
         },
         {
             "name": "Том и Джерри: Сказки",
@@ -79,8 +400,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-82/Tom-i-Dzherri-Skazki.html",
             "year": "2006",
             "rating":"7.8",
+            "tmdb_id": 676,
             "isTV": true,
-            "genres": ["Детский", "Комедия", "Семейный"]
         },
         {
             "name": "Том и Джерри в детстве",
@@ -88,8 +409,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-83/Tom-i-Dzherri-v-detstve.html",
             "year": "1990",
             "rating":"6.3",
+            "tmdb_id": 4274,
             "isTV": true,
-            "genres": ["Детский", "Комедия"]
         },
         {
             "name": "Том и Джерри: Комедийное шоу",
@@ -97,8 +418,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-84/Tom-i-Dzherri-Komedijnoe-shou.html",
             "year": "1980",
             "rating":"7.5",
+            "tmdb_id": 14705,
             "isTV": true,
-            "genres": ["Приключения", "Комедия"]
         },
         {
             "name": "Том и Джерри: Бравые ковбои!",
@@ -106,7 +427,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-85/Tom-i-Dzherri-Bravye-kovboi.html",
             "year": "2022",
             "rating":"6.9",
-            "genres": ["Комедия", "Семейный", "Вестерн"]
+            "tmdb_id": 892153
         },
         {
             "name": "Том и Джерри: Страна снеговиков",
@@ -114,7 +435,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-86/Tom-i-Dzherri-Strana-snegovikov.html",
             "year": "2022",
             "rating":"6.7",
-            "genres": ["Приключения", "Комедия"]
+            "tmdb_id": 1018403
         },
         {
             "name": "Том и Джерри: Вилли Вонка и шоколадная фабрика",
@@ -122,7 +443,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-87/Tom-i-Dzherri-Villi-Vonka-i-shokoladnaya-fabrika.html",
             "year": "2017",
             "rating":"6.7",
-            "genres": ["Комедия", "Семейный"]
+            "tmdb_id": 455411
         },
         {
             "name": "Том и джерри: возвращение в страну Оз",
@@ -130,7 +451,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-88/Tom-i-dzherri-vozvrashenie-v-stranu-Oz.html",
             "year": "2016",
             "rating":"5.8",
-            "genres": ["Комедия", "Семейный", "Фэнтези"]
+            "tmdb_id": 403510
         },
         {
             "name": "Том и Джерри: Шпион Квест",
@@ -138,7 +459,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-89/Tom-i-Dzherri-Shpion-Kvest.html",
             "year": "2015",
             "rating":"6.0",
-            "genres": ["Комедия", "Семейный"]
+            "tmdb_id": 343977
         },
         {
             "name": "Том и Джерри: Потерянный дракон",
@@ -146,7 +467,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-90/Tom-i-Dzherri-Poteryannyj-drakon.html",
             "year": "2014",
             "rating":"6.0",
-            "genres": ["Комедия", "Семейный", "Фэнтези"]
+            "tmdb_id": 287233
         },
         {
             "name": "Том и Джерри: Гигантское приключение",
@@ -154,7 +475,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-91/Tom-i-Dzherri-Gigantskoe-priklyuchenie.html",
             "year": "2013",
             "rating":"5.8",
-            "genres": ["Комедия", "Семейный", "Фэнтези"]
+            "tmdb_id": 199753
         },
         {
             "name": "Том и Джерри: Робин Гуд и мышь-весельчак",
@@ -162,7 +483,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-05/Tom-i-Dzherri-Robin-Gud-i-mysh-veselchak.html",
             "year": "2012",
             "rating":"6.5",
-            "genres": ["Комедия", "Приключения", "Семейный"]
+            "tmdb_id": 134623
         },
         {
             "name": "Том и Джерри и Волшебник из страны Оз",
@@ -170,7 +491,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-92/Tom-i-Dzherri-i-Volshebnik-iz-strany-Oz.html",
             "year": "2011",
             "rating":"6.3",
-            "genres": ["Комедия", "Семейный", "Фэнтези", "Приключения"]
+            "tmdb_id": 72972
         },
         {
             "name": "Том и Джерри: Шерлок Холмс",
@@ -178,7 +499,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-93/Tom-i-Dzherri-Sherlok-Holms.html",
             "year": "2010",
             "rating":"6.4",
-            "genres": ["Комедия", "Детектив", "Семейный"]
+            "tmdb_id": 43956
         },
         {
             "name": "Том и Джерри: История о Щелкунчике",
@@ -186,7 +507,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-94/Tom-i-Dzherri-Istoriya-o-Shelkunchike.html",
             "year": "2007",
             "rating":"6.8",
-            "genres": ["Комедия", "Семейный"]
+            "tmdb_id": 24696
         },
         {
             "name": "Том и Джерри: Трепещи, усатый!",
@@ -194,7 +515,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-95/Tom-i-Dzherri-Trepeshi-usatyj.html",
             "year": "2006",
             "rating":"6.9",
-            "genres": ["Комедия", "Семейный", "Приключения"]
+            "tmdb_id": 60293
         },
         {
             "name": "Том и Джерри: Быстрый и бешеный",
@@ -202,7 +523,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-96/Tom-i-Dzherri-Bystryj-i-beshenyj.html",
             "year": "2005",
             "rating":"7.0",
-            "genres": ["Комедия", "Семейный"]
+            "tmdb_id": 42246
         },
         {
             "name": "Том и Джерри: Волшебное кольцо",
@@ -210,7 +531,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-97/Tom-i-Dzherri-Volshebnoe-kolco.html",
             "year": "2002",
             "rating":"6.4",
-            "genres": ["Комедия", "Семейный", "Фэнтези"]
+            "tmdb_id": 14787
         },
         {
             "name": "Том и Джерри: Мотор!",
@@ -218,7 +539,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-98/Tom-i-Dzherri-Motor.html",
             "year": "1992",
             "rating":"6.3",
-            "genres": ["Комедия", "Семейный", "Музыка"]
+            "tmdb_id": 22582
         },
         {
             "name": "Рио 2",
@@ -226,7 +547,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-99/Rio-2.html",
             "year": "2014",
             "rating":"6.5",
-            "genres": ["Приключения", "Комедия", "Семейный"]
+            "tmdb_id": 172385
         },
         {
             "name": "Рио",
@@ -234,7 +555,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-06/Rio.html",
             "year": "2011",
             "rating":"6.7",
-            "genres": ["Приключения", "Комедия", "Семейный"]
+            "tmdb_id": 46195
         },
         {
             "name": "Тайна красной планеты",
@@ -242,7 +563,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-07/Tajna-krasnoj-planety.html",
             "year": "2011",
             "rating":"6.0",
-            "genres": ["Приключения","Фантастика", "Семейный"]
+            "tmdb_id": 50321
         },
         {
             "name": "Рататуй",
@@ -250,7 +571,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-08/Ratatuj.html",
             "year": "2007",
             "rating":"7.8",
-            "genres": ["Комедия", "Семейный", "Фэнтези"]
+            "tmdb_id": 2062
         },
         {
             "name": "Храбрая сердцем",
@@ -258,7 +579,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-09/Hrabraya-serdcem.html",
             "year": "2012",
             "rating":"7.0",
-            "genres": ["Комедия", "Семейный", "Фэнтези", "Боевик"]
+            "tmdb_id": 62177
         },
         {
             "name": "В гости к Робинсонам",
@@ -266,7 +587,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-10/V-gosti-k-Robinsonam.html",
             "year": "2007",
             "rating":"6.9",
-            "genres": ["Комедия", "Семейный"]
+            "tmdb_id": 1267
         },
         {
             "name": "Дорога на Эльдорадо",
@@ -274,7 +595,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-11/Doroga-na-Eldorado.html",
             "year": "2000",
             "rating":"7.2",
-            "genres": ["Семейный","Приключения", "Комедия"]
+            "tmdb_id": 10501
         },
         {
             "name": "Франкенвини",
@@ -282,7 +603,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-13/Frankenvini.html",
             "year": "2012",
             "rating":"7.0",
-            "genres": ["Комедия", "Семейный"]
+            "tmdb_id": 62214
         },
         {
             "name": "Правила Мегамозга!",
@@ -290,8 +611,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-100/Pravila-Megamozga.html",
             "year": "2024",
             "rating":"5.5",
+            "tmdb_id": 157432,
             "isTV": true,
-            "genres": ["Комедия", "Детский", "Приключения"]
         },
         {
             "name": "Мегамозг против Синдиката Рока",
@@ -299,7 +620,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-101/Megamozg-protiv-Sindikata-Roka.html",
             "year": "2024",
             "rating":"5.1",
-            "genres": ["Комедия", "Детский", "Приключения"]
+            "tmdb_id": 1239251
         },
         {
             "name": "Мегамозг",
@@ -307,7 +628,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-14/Megamozg.html",
             "year": "2010",
             "rating":"7.0",
-            "genres": ["Комедия", "Детский", "Приключения"]
+            "tmdb_id": 38055
         },
         {
             "name": "ВАЛЛ·И",
@@ -315,7 +636,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-15/VALL·I.html",
             "year": "2008",
             "rating":"8.1",
-            "genres": ["Семейный","Приключения", "Фантастика"]
+            "tmdb_id": 10681
         },
         {
             "name": "Фантазия",
@@ -323,7 +644,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-16/Fantaziya.html",
             "year": "1940",
             "rating":"7.4",
-            "genres": ["Семейный", "Фэнтези"]
+            "tmdb_id": 756
         },
         {
             "name": "Аладдин и Король Разбойников",
@@ -331,7 +652,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-102/Aladdin-i-Korol-Razbojnikov.html",
             "year": "1996",
             "rating":"6.3",
-            "genres": ["Приключения", "Семейный"]
+            "tmdb_id": 11238
         },
         {
             "name": "Аладдин",
@@ -339,8 +660,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-103/Aladdin1994.html",
             "year": "1994",
             "rating":"6.9",
+            "tmdb_id": 2745,
             "isTV": true,
-            "genres": ["Приключения", "Семейный"]
         },
         {
             "name": "Возвращение Джафара",
@@ -348,7 +669,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-104/Vozvrashenie-Dzhafara.html",
             "year": "1994",
             "rating":"6.2",
-            "genres": ["Приключения", "Семейный"]
+            "tmdb_id": 15969
         },
         {
             "name": "Аладдин",
@@ -356,7 +677,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-17/Aladdin.html",
             "year": "1992",
             "rating":"7.7",
-            "genres": ["Приключения", "Семейный"]
+            "tmdb_id": 812
         },
         {
             "name": "Семейка Крудс: Семейное древо",
@@ -364,8 +685,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-105/Semejka-Kruds-Semejnoe-drevo.html",
             "year": "2021",
             "rating":"7.2",
+            "tmdb_id": 132559,
             "isTV": true,
-            "genres": ["Семейный", "Приключения", "Комедия"]
         },
         {
             "name": "Семейка Крудс: Новоселье",
@@ -373,7 +694,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-106/Semejka-Kruds-Novosele.html",
             "year": "2020",
             "rating":"7.5",
-            "genres": ["Семейный", "Приключения", "Комедия"]
+            "tmdb_id": 529203
         },
         {
             "name": "Семейка Крудс",
@@ -381,7 +702,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-18/Semejka-Kruds.html",
             "year": "2013",
             "rating":"6.9",
-            "genres": ["Семейный", "Приключения", "Комедия"]
+            "tmdb_id": 49519
         },
         {
             "name": "Красавица и Чудовище: Чудесное Рождество",
@@ -389,7 +710,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-107/Krasavica-i-Chudovishe-Chudesnoe-Rozhdestvo.html",
             "year": "1997",
             "rating":"6.2",
-            "genres": ["Семейный", "Фэнтези"]
+            "tmdb_id": 13313
         },
         {
             "name": "Красавица и чудовище",
@@ -397,7 +718,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-19/Krasavica-i-chudovishe.html",
             "year": "1991",
             "rating":"7.7",
-            "genres": ["Семейный", "Фэнтези"]
+            "tmdb_id": 10020
         },
         {
             "name": "Зверогонщики",
@@ -405,7 +726,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-108/Zverogonshiki.html",
             "year": "2023",
             "rating":"6.7",
-            "genres": ["Семейный", "Комедия"]
+            "tmdb_id": 1008102
         },
         {
             "name": "Самолёты: Огонь и вода",
@@ -413,7 +734,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-109/Samolyoty-Ogon-i-voda.html",
             "year": "2014",
             "rating":"6.2",
-            "genres": ["Комедия", "Приключения", "Семейный"]
+            "tmdb_id": 218836
         },
         {
             "name": "Самолёты",
@@ -421,7 +742,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-20/Samolety.html",
             "year": "2013",
             "rating":"5.9",
-            "genres": ["Комедия", "Приключения", "Семейный"]
+            "tmdb_id": 151960
         },
         {
             "name": "Тачки на дороге",
@@ -429,8 +750,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-110/Tachki-na-doroge.html",
             "year": "2022",
             "rating":"7.5",
-            "isTV": true,
-            "genres": ["Комедия", "Детский"]
+            "tmdb_id": 114502,
+            "isTV": true
         },
         {
             "name": "Тачки 3",
@@ -438,7 +759,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-111/Tachki-3.html",
             "year": "2017",
             "rating":"6.9",
-            "genres": ["Семейный", "Комедия", "Приключения"]
+            "tmdb_id": 260514
+
         },
         {
             "name": "Тачки 2",
@@ -446,7 +768,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-112/Tachki-2.html",
             "year": "2011",
             "rating":"6.1",
-            "genres": ["Семейный", "Комедия", "Приключения"]
+            "tmdb_id": 49013
         },
         {
             "name": "Тачки",
@@ -454,7 +776,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-12/Tachki.html",
             "year": "2006",
             "rating":"7.0",
-            "genres": ["Семейный", "Комедия", "Приключения"]
+            "tmdb_id": 920
         },
         {
             "name": "Эпик",
@@ -462,7 +784,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-21/Epik.html",
             "year": "2013",
             "rating":"6.5",
-            "genres": ["Приключения", "Семейный", "Фэнтези"]
+            "tmdb_id": 116711
         },
         {
             "name": "Университет монстров",
@@ -470,7 +792,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-113/Universitet-monstrov.html",
             "year": "2013",
             "rating":"7.0",
-            "genres": ["Семейный", "Комедия"]
+            "tmdb_id": 62211
         },
         {
             "name": "Корпорация Монстров",
@@ -478,7 +800,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-22/Korporaciya-Monstrov.html",
             "year": "2001",
             "rating":"7.8",
-            "genres": ["Семейный", "Комедия"]
+            "tmdb_id": 585
         },
         {
             "name": "Секретная служба Санта-Клауса",
@@ -486,7 +808,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-23/Sekretnaya-sluzhba-Santa-Klausa.html",
             "year": "2011",
             "rating":"6.8",
-            "genres": ["Драма", "Семейный", "Комедия"]
+            "tmdb_id": 51052
         },
         {
             "name": "Турбо",
@@ -494,7 +816,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-27/Turbo.html",
             "year": "2013",
             "rating":"6.2",
-            "genres": ["Семейный", "Комедия"]
+            "tmdb_id": 77950
         },
         {
             "name": "В поисках Дори",
@@ -502,7 +824,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-115/V-poiskah-Dori.html",
             "year": "2016",
             "rating":"7.0",
-            "genres": ["Приключения", "Комедия", "Семейный"]
+            "tmdb_id": 127380
         },
         {
             "name": "В поисках Немо",
@@ -510,7 +832,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-24/V-poiskah-Nemo.html",
             "year": "2003",
             "rating":"7.8",
-            "genres": ["Приключения", "Комедия", "Семейный"]
+            "tmdb_id": 12
         },
         {
             "name": "Лоракс",
@@ -518,7 +840,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-32/Loraks.html",
             "year": "2012",
             "rating":"6.5",
-            "genres": ["Семейный"]
+            "tmdb_id": 73723
         },
         {
             "name": "Индюки: Назад в будущее",
@@ -526,7 +848,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-25/Indyuki-Nazad-v-budushee.html",
             "year": "2013",
             "rating":"5.9",
-            "genres": ["Семейный", "Комедия"]
+            "tmdb_id": 175574
         },
         {
             "name": "Ральф против Интернета",
@@ -534,7 +856,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-116/Ralf-protiv-Interneta.html",
             "year": "2018",
             "rating":"7.2",
-            "genres": ["Комедия", "Приключения"]
+            "tmdb_id": 404368
         },
         {
             "name": "Ральф",
@@ -542,7 +864,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-26/Ralf.html",
             "year": "2012",
             "rating":"7.3",
-            "genres": ["Комедия", "Приключения"]
+            "tmdb_id": 82690
         },
         {
             "name": "Трансформеры: Начало",
@@ -550,7 +872,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-28/Transformery-Nachalo.html",
             "year": "2024",
             "rating":"8.1",
-            "genres": ["Фантастика", "Приключения", "Семейный"]
+            "tmdb_id": 698687
         },
         {
             "name": "Трансформеры: Земная Искра",
@@ -558,8 +880,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-117/Transformery-Zemnaya-Iskra.html",
             "year": "2022",
             "rating":"7.0",
-            "isTV": true,
-            "genres": ["Детский", "НФ и Фэнтези", "Комедия"]
+            "tmdb_id": 157747,
+            "isTV": true
         },
         {
             "name": "Трансформеры: Ботботы",
@@ -567,8 +889,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-118/Transformery-Botboty.html",
             "year": "2022",
             "rating":"5.1",
-            "isTV": true,
-            "genres": ["Детский"]
+            "tmdb_id": 125574,
+            "isTV": true
         },
         {
             "name": "Трансформеры. Война за Кибертрон. Королевство",
@@ -576,8 +898,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-119/Transformery-Vojna-za-Kibertron-Korolevstvo.html",
             "year": "2021",
             "rating":"7.7",
-            "isTV": true,
-            "genres": ["Боевик и Приключения", "НФ и Фэнтези"]
+            "tmdb_id": 128255,
+            "isTV": true
         },
         {
             "name": "Трансформеры: Войны гештальтов",
@@ -585,8 +907,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-120/Transformery-Vojny-geshtaltov.html",
             "year": "2016",
             "rating":"7.8",
-            "isTV": true,
-            "genres": ["Приключения", "Фэнтези"]
+            "tmdb_id": 67316,
+            "isTV": true
         },
         {
             "name": "Трансформеры. Роботы под прикрытием",
@@ -594,8 +916,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-121/Transformery-Roboty-pod-prikrytiem.html",
             "year": "2015",
             "rating":"7.1",
-            "isTV": true,
-            "genres": ["Детский"]
+            "tmdb_id": 63090,
+            "isTV": true
         },
         {
             "name": "Трансформеры: Боты-спасатели",
@@ -603,8 +925,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-122/Transformery-Boty-spasateli.html",
             "year": "2012",
             "rating":"7.4",
-            "isTV": true,
-            "genres": ["Детский", "Приключения", "НФ и Фэнтези"]
+            "tmdb_id": 38881,
+            "isTV": true
         },
         {
             "name": "Трансформеры: Прайм",
@@ -612,8 +934,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-123/Transformery-Prajm.html",
             "year": "2010",
             "rating":"8.0",
-            "isTV": true,
-            "genres": ["Детский", "Приключения"]
+            "tmdb_id": 32910,
+            "isTV": true
         },
         {
             "name": "Трансформеры",
@@ -621,8 +943,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-124/Transformery2007.html",
             "year": "2007",
             "rating":"8.0",
-            "isTV": true,
-            "genres": ["Семейный", "НФ и Фэнтези", "Детский"]
+            "tmdb_id": 10548,
+            "isTV": true
         },
         {
             "name": "Трансформеры: Зверороботы",
@@ -630,8 +952,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-125/Transformery-Zveroroboty.html",
             "year": "1999",
             "rating":"8.0",
-            "isTV": true,
-            "genres": ["Боевик и Приключения", "Детский"]
+            "tmdb_id": 932,
+            "isTV": true
         },
         {
             "name": "Трансформеры: Битвы Зверей",
@@ -639,8 +961,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-126/Transformery-Bitvy-Zverej.html",
             "year": "1996",
             "rating":"8.1",
-            "isTV": true,
-            "genres": ["Боевик и Приключения"]
+            "tmdb_id": 958,
+            "isTV": true
         },
         {
             "name": "Трансформеры: Воины Великой Силы",
@@ -648,8 +970,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-127/Transformery-Voiny-Velikoj-Sily.html",
             "year": "1988",
             "rating":"8.2",
+            "tmdb_id": 11841,
             "isTV": true,
-            "genres": ["Приключения", "НФ и Фэнтези"]
         },
         {
             "name": "Трансформеры",
@@ -657,7 +979,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-128/Transformery1986.html",
             "year": "1986",
             "rating":"7.1",
-            "genres": ["Боевик и Приключения", "Семейный"]
+            "tmdb_id": 1857
         },
         {
             "name": "Трансформеры",
@@ -665,8 +987,9 @@ async function generateCards() {
             "link": "/card/cartoons/500-129/Transformery1984.html",
             "year": "1984",
             "rating":"7.8",
+            "tmdb_id": 4269,
             "isTV": true,
-            "genres": ["Детский", "Приключения", "НФ и Фэнтези"]
+
         },
         {
             "name": "Кошмар перед Рождеством",
@@ -674,7 +997,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-29/Koshmar-pered-Rozhdestvom.html",
             "year": "1993",
             "rating":"7.8",
-            "genres": ["Фэнтези", "Семейный"]
+            "tmdb_id": 9479
         },
         {
             "name": "Утиные истории",
@@ -682,8 +1005,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-130/Utinye-istorii2017.html",
             "year": "2017",
             "rating":"7.8",
+            "tmdb_id": 72350,
             "isTV": true,
-            "genres": ["Комедия", "Семейный"]
         },
         {
             "name": "Утиные истории: Заветная лампа",
@@ -691,7 +1014,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-30/Utinye-istorii-Zavetnaya-lampa.html",
             "year": "1990",
             "rating":"6.7",
-            "genres": ["Комедия", "Семейный"]
+            "tmdb_id": 10837
         },
         {
             "name": "Утиные истории",
@@ -699,8 +1022,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-131/Utinye-istorii1987.html",
             "year": "1987",
             "rating":"7.6",
-            "isTV": true,
-            "genres": ["Комедия", "Семейный"]
+            "tmdb_id": 720,
+            "isTV": true
         },
         {
             "name": "История игрушек 4",
@@ -708,7 +1031,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-132/Istoriya-igrushek-4.html",
             "year": "2019",
             "rating":"7.5",
-            "genres": ["Семейный", "Приключения", "Комедия"]
+            "tmdb_id": 301528
         },
         {
             "name": "История игрушек 3",
@@ -716,7 +1039,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-31/Istoriya-igrushek-3.html",
             "year": "2010",
             "rating":"7.8",
-            "genres": ["Семейный", "Приключения", "Комедия"]
+            "tmdb_id": 10193
         },
         {
             "name": "История игрушек 2",
@@ -724,7 +1047,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-133/Istoriya-igrushek-2.html",
             "year": "1999",
             "rating":"7.6",
-            "genres": ["Семейный", "Приключения", "Комедия"]
+            "tmdb_id": 863
         },
         {
             "name": "История игрушек",
@@ -732,7 +1055,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-134/Istoriya-igrushek1995.html",
             "year": "1995",
             "rating":"8.0",
-            "genres": ["Семейный", "Приключения", "Комедия"]
+            "tmdb_id": 862
         },
         {
             "name": "Футурама: В дикую зелёную даль",
@@ -740,7 +1063,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-114/Futurama-V-dikuyu-zelyonuyu-dal.html",
             "year": "2009",
             "rating":"7.0",
-            "genres": ["Комедия", "Фантастика"]
+            "tmdb_id": 15060
         },
         {
             "name": "Футурама: Игра Бендера",
@@ -748,7 +1071,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-135/Futurama-Igra-Bendera.html",
             "year": "2008",
             "rating":"6.9",
-            "genres": ["Комедия", "Фантастика", "Боевик"]
+            "tmdb_id": 13253
         },
         {
             "name": "Футурама: Зверь с миллиардом спин",
@@ -756,7 +1079,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-136/Futurama-Zver-s-milliardom-spin.html",
             "year": "2008",
             "rating":"6.9",
-            "genres": ["Комедия", "Фантастика", "Мелодрама"]
+            "tmdb_id": 12889
         },
         {
             "name": "Футурама: Большой куш Бендера",
@@ -764,7 +1087,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-137/Futurama-Bolshoj-kush-Bendera.html",
             "year": "2007",
             "rating":"7.4",
-            "genres": ["Комедия", "Фантастика"]
+            "tmdb_id": 7249
         },
         {
             "name": "Футурама",
@@ -772,8 +1095,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-78/Futurama.html",
             "year": "1999",
             "rating":"8.4",
-            "isTV": true,
-            "genres": ["Комедия", "Фантастика", "НФ и Фэнтези"]
+            "tmdb_id": 615,
+            "isTV": true
         },
         {
             "name": "Астерикс и Обеликс: поединок вождей",
@@ -781,8 +1104,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-147/Asteriks-i-Obeliks-poedinok-vozhdej.html",
             "year": "2025",
             "rating":"8.1",
+            "tmdb_id": 122781,
             "isTV": true,
-            "genres": ["Комедия", "Детский", "НФ и Фэнтези"]
         },
         {
             "name": "Астерикс и тайное зелье",
@@ -790,7 +1113,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-33/Asteriks-i-tajnoe-zele.html",
             "year": "2018",
             "rating":"6.9",
-            "genres": ["Семейный", "Приключения"]
+            "tmdb_id": 527729
         },
         {
             "name": "Астерикс: Земля Богов",
@@ -798,7 +1121,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-138/Asteriks-Zemlya-Bogov.html",
             "year": "2014",
             "rating":"6.8",
-            "genres": ["Комедия", "Приключения", "Семейный"]
+            "tmdb_id": 170522
         },
         {
             "name": "Астерикс и викинги",
@@ -806,7 +1129,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-139/Asteriks-i-vikingi.html",
             "year": "2006",
             "rating":"6.1",
-            "genres": ["Комедия", "Приключения", "Семейный"]
+            "tmdb_id": 9642
         },
         {
             "name": "Астерикс завоёвывает Америку",
@@ -814,7 +1137,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-140/Asteriks-zavoyovyvaet-Ameriku.html",
             "year": "1994",
             "rating":"6.2",
-            "genres": ["Семейный", "Приключения", "Комедия"]
+            "tmdb_id": 9369
         },
         {
             "name": "Большой бой Астерикса",
@@ -822,7 +1145,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-141/Bolshoj-boj-Asteriksa.html",
             "year": "1989",
             "rating":"6.3",
-            "genres": ["Семейный", "Приключения", "Комедия"]
+            "tmdb_id": 11625
         },
         {
             "name": "Астерикс в Британии",
@@ -830,7 +1153,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-142/Asteriks-v-Britanii.html",
             "year": "1986",
             "rating":"6.8",
-            "genres": ["Семейный", "Приключения", "Комедия"]
+            "tmdb_id": 9318
         },
         {
             "name": "Астерикс против Цезаря",
@@ -838,7 +1161,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-143/Asteriks-protiv-Cezarya.html",
             "year": "1985",
             "rating":"6.5",
-            "genres": ["Комедия", "Семейный", "Приключения"]
+            "tmdb_id": 8868
         },
         {
             "name": "12 подвигов Астерикса",
@@ -846,7 +1169,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-144/12-podvigov-Asteriksa.html",
             "year": "1976",
             "rating":"7.3",
-            "genres": ["Семейный", "Комедия", "Приключения"]
+            "tmdb_id": 9385
         },
         {
             "name": "Астерикс и Клеопатра",
@@ -854,7 +1177,7 @@ async function generateCards() {
             "link": "/see/cartoons/500-145/Asteriks-i-Kleopatra.html",
             "year": "1968",
             "rating":"6.9",
-            "genres": ["Семейный", "Приключения", "Комедия"]
+            "tmdb_id": 9929
         },
         {
             "name": "Астерикс из Галлии",
@@ -862,7 +1185,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-146/Asteriks-iz-Gallii.html",
             "year": "1967",
             "rating":"6.4",
-            "genres": ["Семейный", "Приключения", "Комедия"]
+            "tmdb_id": 11047
         },
         {
             "name": "Пушистое превращение",
@@ -870,7 +1193,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-34/Pushistoe-prevrashenie.html",
             "year": "2024",
             "rating":"5.1",
-            "genres": ["Приключения", "Фэнтези"]
+            "tmdb_id": 1208491
         },
         {
             "name": "Шаг за шагом",
@@ -878,7 +1201,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-35/Shag-za-shagom.html",
             "year": "2024",
             "rating":"7.5",
-            "genres": ["Мультфильм", "Музыка"]
+            "tmdb_id": 1236419
         },
         {
             "name": "Вперёд",
@@ -886,7 +1209,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-36/Vperyod.html",
             "year": "2020",
             "rating":"7.7",
-            "genres": ["Приключения", "Комедия", "Фэнтези"]
+            "tmdb_id": 508439
         },
         {
             "name": "Мадагаскар 3",
@@ -894,7 +1217,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-148/Madagaskar-3.html",
             "year": "2012",
             "rating":"6.6",
-            "genres": ["Семейный", "Приключения", "Комедия"]
+            "tmdb_id": 80321
         },
         {
             "name": "Мадагаскар 2",
@@ -902,7 +1225,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-149/Madagaskar-2.html",
             "year": "2008",
             "rating":"6.5",
-            "genres": ["Семейный", "Приключения", "Комедия"]
+            "tmdb_id": 10527
         },
         {
             "name": "Мадагаскар",
@@ -910,7 +1233,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-02/Madagaskar.html",
             "year": "2005",
             "rating":"6.9",
-            "genres": ["Семейный", "Приключения", "Комедия"]
+            "tmdb_id": 953
         },
         {
             "name": "Пингвины Мадагаскара",
@@ -918,7 +1241,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-37/Pingviny-Madagaskara.html",
             "year": "2014",
             "rating":"6.5",
-            "genres": ["Семейный", "Приключения", "Комедия"]
+            "tmdb_id": 270946
         },
         {
             "name": "Пингвины Мадагаскара",
@@ -926,8 +1249,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-150/Pingviny-Madagaskara2008.html",
             "year": "2008",
             "rating":"7.4",
+            "tmdb_id": 7869,
             "isTV": true,
-            "genres": ["Семейный", "Приключения", "Комедия"]
         },
         {
             "name": "Хранитель Луны",
@@ -935,7 +1258,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-38/Hranitel-Luny.html",
             "year": "2015",
             "rating":"7.3",
-            "genres": ["Семейный", "Приключения", "Фэнтези", "Детский"]
+            "tmdb_id": 323661
         },
         {
             "name": "Гриффины: Там, там, на тёмной стороне",
@@ -943,7 +1266,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-151/Griffiny-Tam-tam-na-temnoj-storone.html",
             "year": "2009",
             "rating":"7.2",
-            "genres": ["Комедия", "Фэнтези", "Фантастика"]
+            "tmdb_id": 625651
         },
         {
             "name": "Гриффины",
@@ -951,8 +1274,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-77/Griffiny.html",
             "year": "1999",
             "rating":"7.4",
+            "tmdb_id": 1434,
             "isTV": true,
-            "genres": ["Мультфильм", "Комедия"]
         },
         {
             "name": "Пришельцы в доме",
@@ -960,7 +1283,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-39/Prishelcy-v-dome.html",
             "year": "2018",
             "rating":"6.4",
-            "genres": ["Семейный"]
+            "tmdb_id": 432383
         },
         {
             "name": "Король Лев 3: Акуна Матата",
@@ -968,7 +1291,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-152/Korol-Lev-3-Akuna-Matata.html",
             "year": "2004",
             "rating":"6.6",
-            "genres": ["Семейный", "Комедия", "Боевик"]
+            "tmdb_id": 11430
         },
         {
             "name": "Король Лев 2: Гордость Симбы",
@@ -976,7 +1299,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-153/Korol-Lev-2-Gordost-Simby.html",
             "year": "1998",
             "rating":"6.9",
-            "genres": ["Семейный", "Приключения", "Боевик"]
+            "tmdb_id": 9732
         },
         {
             "name": "Король Лев",
@@ -984,7 +1307,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-40/Korol-Lev.html",
             "year": "1994",
             "rating":"8.3",
-            "genres": ["Семейный", "Мультфильм", "Драма"]
+            "tmdb_id": 8587
         },
         {
             "name": "Тимон и Пумба",
@@ -992,8 +1315,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-154/Timon-i-Pumba.html",
             "year": "1995",
             "rating":"7.2",
+            "tmdb_id": 4429,
             "isTV": true,
-            "genres": ["Комедия", "Детский", "Семейный"]
         },
         {
             "name": "Кокоша – маленький дракон",
@@ -1001,7 +1324,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-41/Kokosha–malenkij-drakon.html",
             "year": "2014",
             "rating":"5.2",
-            "genres": ["Мультфильм", "Семейный"]
+            "tmdb_id": 308167
         },
         {
             "name": "Риверданс: Волшебное приключение",
@@ -1009,7 +1332,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-42/Riverdans-Volshebnoe-priklyuchenie.html",
             "year": "2021",
             "rating":"6.0",
-            "genres": ["Фэнтези", "Музыка", "Приключения"]
+            "tmdb_id": 756403
         },
         {
             "name": "Тайная жизнь домашних животных 2",
@@ -1017,7 +1340,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-155/Tajnaya-zhizn-domashnih-zhivotnyh-2.html",
             "year": "2019",
             "rating":"7.0",
-            "genres": ["Приключения", "Комедия", "Семейный"]
+            "tmdb_id": 412117
         },
         {
             "name": "Тайная жизнь домашних животных",
@@ -1025,7 +1348,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-43/Tajnaya-zhizn-domashnih-zhivotnyh.html",
             "year": "2016",
             "rating":"6.3",
-            "genres": ["Приключения", "Комедия", "Семейный"]
+            "tmdb_id": 328111
         },
         {
             "name": "Южный Парк: Конец ожирения",
@@ -1033,7 +1356,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-156/Yuzhnyj-Park-Konec-ozhireniya.html",
             "year": "2024",
             "rating":"7.5",
-            "genres": ["Мультфильм", "Комедия"]
+            "tmdb_id": 1290938
         },
         {
             "name": "Южный Парк: Не предназначено для просмотра детьми",
@@ -1041,7 +1364,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-157/Yuzhnyj-Park-Ne-prednaznacheno-dlya-prosmotra-detmi.html",
             "year": "2023",
             "rating":"7.5",
-            "genres": ["Мультфильм", "Комедия"]
+            "tmdb_id": 1219926
         },
         {
             "name": "Южный Парк: Присоединение к Пандервселенной",
@@ -1049,7 +1372,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-158/Yuzhnyj-Park-Prisoedinenie-k-Pandervselennoj.html",
             "year": "2023",
             "rating":"7.7",
-            "genres": ["Мультфильм", "Комедия", "Фантастика"]
+            "tmdb_id": 1190012
         },
         {
             "name": "Южный Парк: Потоковые Войны Часть 2",
@@ -1057,7 +1380,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-159/Yuzhnyj-Park-Potokovye-Vojny-Chast-2.html",
             "year": "2022",
             "rating":"7.1",
-            "genres": ["Мультфильм", "Комедия"]
+            "tmdb_id": 993729
         },
         {
             "name": "Южный Парк: Потоковые Войны",
@@ -1065,7 +1388,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-160/Yuzhnyj-Park-Potokovye-Vojny.html",
             "year": "2022",
             "rating":"7.2",
-            "genres": ["Мультфильм", "Комедия"]
+            "tmdb_id": 974691
         },
         {
             "name": "Южный Парк: пост-ковидный: возвращение ковида",
@@ -1073,7 +1396,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-161/Yuzhnyj-Park-post-kovidnyj-vozvrashenie-kovida.html",
             "year": "2021",
             "rating":"7.4",
-            "genres": ["Мультфильм", "Комедия"]
+            "tmdb_id": 874300
         },
         {
             "name": "Южный Парк: пост-ковидный",
@@ -1081,7 +1404,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-162/Yuzhnyj-Park-post-kovidnyj.html",
             "year": "2021",
             "rating":"7.2",
-            "genres": ["Мультфильм", "Комедия"]
+            "tmdb_id": 874299
         },
         {
             "name": "Южный Парк: Воображляндия",
@@ -1089,7 +1412,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-163/Yuzhnyj-Park-Voobrazhlyandiya.html",
             "year": "2008",
             "rating":"7.9",
-            "genres": ["Комедия", "Фэнтези", "Приключения"]
+            "tmdb_id": 16023
         },
         {
             "name": "Южный Парк: Большой, длинный и необрезанный",
@@ -1097,7 +1420,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-164/Yuzhnyj-Park-Bolshoj-dlinnyj-i-neobrezannyj.html",
             "year": "1999",
             "rating":"7.3",
-            "genres": ["Мультфильм", "Комедия"]
+            "tmdb_id": 9473
         },
         {
             "name": "Южный Парк",
@@ -1105,8 +1428,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-76/Yuzhnyj-Park.html",
             "year": "1997",
             "rating":"8.4",
+            "tmdb_id": 2190,
             "isTV": true,
-            "genres": ["Мультфильм", "Комедия"]
         },
         {
             "name": "Элементарно",
@@ -1114,7 +1437,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-44/Elementarno.html",
             "year": "2023",
             "rating":"7.6",
-            "genres": ["Комедия", "Семейный", "Фэнтези", "Мелодрама"]
+            "tmdb_id": 976573
         },
         {
             "name": "Холодное сердце 2",
@@ -1122,7 +1445,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-165/Holodnoe-serdce-2.html",
             "year": "2019",
             "rating":"7.3",
-            "genres": ["Приключения", "Комедия", "Фэнтези"]
+            "tmdb_id": 330457
         },
         {
             "name": "Холодное сердце",
@@ -1130,7 +1453,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-45/Holodnoe-serdce.html",
             "year": "2013",
             "rating":"7.2",
-            "genres": ["Семейный", "Приключения", "Фэнтези"]
+            "tmdb_id": 109445
         },
         {
             "name": "Тайна Коко",
@@ -1138,7 +1461,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-46/Tajna-Koko.html",
             "year": "2017",
             "rating":"8.2",
-            "genres": ["Семейный", "Музыка", "Приключения"]
+            "tmdb_id": 354912
         },
         {
             "name": "Шрэк Навсегда",
@@ -1146,7 +1469,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-166/Shrek-Navsegda.html",
             "year": "2010",
             "rating":"6.4",
-            "genres": ["Комедия", "Приключения", "Фэнтези"]
+            "tmdb_id": 10192
         },
         {
             "name": "Шрэк 3",
@@ -1154,7 +1477,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-167/Shrek-3.html",
             "year": "2007",
             "rating":"6.3",
-            "genres": ["Семейный", "Приключения", "Комедия"]
+            "tmdb_id": 810
         },
         {
             "name": "Шрэк 2",
@@ -1162,7 +1485,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-168/Shrek-2.html",
             "year": "2004",
             "rating":"7.3",
-            "genres": ["Комедия", "Фэнтези", "Приключения"]
+            "tmdb_id": 809
         },
         {
             "name": "Шрэк",
@@ -1170,7 +1493,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-47/Shrek.html",
             "year": "2001",
             "rating":"7.7",
-            "genres": ["Комедия", "Фэнтези", "Приключения"]
+            "tmdb_id": 808
         },
         {
             "name": "Симпсоны в кино",
@@ -1178,7 +1501,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-169/Simpsony-v-kino.html",
             "year": "2007",
             "rating":"7.0",
-            "genres": ["Мультфильм", "Комедия", "Семейный"]
+            "tmdb_id": 35
         },
         {
             "name": "Симпсоны",
@@ -1186,8 +1509,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-75/Simpsony.html",
             "year": "1989",
             "rating":"8.0",
+            "tmdb_id": 456,
             "isTV": true,
-            "genres": ["Семейный", "Мультфильм", "Комедия"]
         },
         {
             "name": "Райя и последний дракон",
@@ -1195,7 +1518,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-48/Rajya-i-poslednij-drakon.html",
             "year": "2021",
             "rating":"7.8",
-            "genres": ["Фэнтези", "Боевик", "Приключения"]
+            "tmdb_id": 527774
         },
         {
             "name": "Крутые бобры",
@@ -1203,8 +1526,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-49/Krutye-bobry.html",
             "year": "1997",
             "rating":"6.9",
-            "isTV": true,
-            "genres": ["Комедия", "Детский", "Семейный"]
+            "tmdb_id": 3579,
+            "isTV": true
         },
         {
             "name": "Головоломка 2",
@@ -1212,7 +1535,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-170/Golovolomka-2.html",
             "year": "2024",
             "rating":"7.6",
-            "genres": ["Приключения", "Комедия", "Семейный"]
+            "tmdb_id": 1022789
         },
         {
             "name": "Головоломка",
@@ -1220,7 +1543,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-50/Golovolomka.html",
             "year": "2015",
             "rating":"7.9",
-            "genres": ["Приключения", "Драма", "Комедия"]
+            "tmdb_id": 150540
         },
         {
             "name": "Монстры на каникулах: Трансформания",
@@ -1228,7 +1551,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-171/Monstry-na-kanikulah-Transformaniya.html",
             "year": "2022",
             "rating":"7.1",
-            "genres": ["Комедия", "Приключения", "Фэнтези"]
+            "tmdb_id": 585083
         },
         {
             "name": "Монстры на каникулах 3: Море зовёт",
@@ -1236,7 +1559,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-172/Monstry-na-kanikulah-3-More-zovyot.html",
             "year": "2018",
             "rating":"6.9",
-            "genres": ["Комедия", "Семейный", "Фэнтези"]
+            "tmdb_id": 400155
         },
         {
             "name": "Монстры на каникулах 2",
@@ -1244,7 +1567,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-173/Monstry-na-kanikulah-2.html",
             "year": "2015",
             "rating":"6.8",
-            "genres": ["Комедия", "Семейный", "Фэнтези"]
+            "tmdb_id": 159824
         },
         {
             "name": "Монстры на каникулах",
@@ -1252,7 +1575,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-51/Monstry-na-kanikulah.html",
             "year": "2012",
             "rating":"7.0",
-            "genres": ["Комедия", "Семейный", "Фэнтези"]
+            "tmdb_id": 76492
         },
         {
             "name": "Зверопой 2",
@@ -1260,7 +1583,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-174/Zveropoj-2.html",
             "year": "2021",
             "rating":"7.8",
-            "genres": ["Семейный", "Музыка", "Комедия"]
+            "tmdb_id": 438695
         },
         {
             "name": "Зверопой",
@@ -1268,7 +1591,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-175/Zveropoj.html",
             "year": "2016",
             "rating":"7.1",
-            "genres": ["Семейный", "Музыка", "Комедия"]
+            "tmdb_id": 335797
         },
         {
             "name": "Зверополис+",
@@ -1276,8 +1599,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-176/Zveropolis-2022.html",
             "year": "2022",
             "rating":"7.2",
-            "isTV": true,
-            "genres": ["Мультфильм", "Семейный", "Приключения"]
+            "tmdb_id": 114463,
+            "isTV": true
         },
         {
             "name": "Зверополис",
@@ -1285,7 +1608,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-52/Zveropolis.html",
             "year": "2016",
             "rating":"7.7",
-            "genres": ["Приключения", "Семейный", "Комедия"]
+            "tmdb_id": 269149
         },
         {
             "name": "Как приручить бизона",
@@ -1293,7 +1616,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-177/Kak-priruchit-bizona.html",
             "year": "2024",
             "rating":"6.8",
-            "genres": ["Приключения", "Семейный", "Комедия"]
+            "tmdb_id": 1154304
         },
         {
             "name": "Паранорман, или Как приручить зомби",
@@ -1301,7 +1624,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-53/Paranorman,-ili-Kak-priruchit-zombi.html",
             "year": "2012",
             "rating":"7.0",
-            "genres": ["Приключения", "Семейный", "Комедия"]
+            "tmdb_id": 77174
         },
         {
             "name": "Дикий робот",
@@ -1309,7 +1632,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-54/Dikij-robot.html",
             "year": "2024",
             "rating":"8.3",
-            "genres": ["Мультфильм", "Фантастика", "Семейный"]
+            "tmdb_id": 1184918
         },
         {
             "name": "Как приручить дракона 3",
@@ -1317,7 +1640,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-178/Kak-priruchit-drakona-3.html",
             "year": "2019",
             "rating":"7.7",
-            "genres": ["Мультфильм", "Семейный", "Приключения"]
+            "tmdb_id": 166428
         },
         {
             "name": "Как приручить дракона 2",
@@ -1325,7 +1648,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-179/Kak-priruchit-drakona-2.html",
             "year": "2014",
             "rating":"7.7",
-            "genres": ["Мультфильм", "Приключения", "Комедия"]
+            "tmdb_id": 82702
         },
         {
             "name": "Как приручить дракона",
@@ -1333,7 +1656,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-55/Kak-priruchit-drakona.html",
             "year": "2010",
             "rating":"7.8",
-            "genres": ["Фэнтези", "Приключения", "Семейный"]
+            "tmdb_id": 10191
         },
         {
             "name": "Суперсемейка 2",
@@ -1341,7 +1664,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-180/Supersemejka-2.html",
             "year": "2018",
             "rating":"7.5",
-            "genres": ["Боевик", "Приключения", "Семейный"]
+            "tmdb_id": 260513
         },
         {
             "name": "Суперсемейка",
@@ -1349,7 +1672,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-56/Supersemejka.html",
             "year": "2004",
             "rating":"7.7",
-            "genres": ["Боевик", "Приключения", "Семейный"]
+            "tmdb_id": 9806
         },
         {
             "name": "Кот в сапогах 2: Последнее желание",
@@ -1357,7 +1680,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-57/Kot-v-sapogah-2-Poslednee-zhelanie.html",
             "year": "2022",
             "rating":"8.2",
-            "genres": ["Приключения", "Фэнтези", "Комедия"]
+            "tmdb_id": 315162
         },
         {
             "name": "Кот в сапогах",
@@ -1365,7 +1688,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-01/Kot-v-sapogah.html",
             "year": "2011",
             "rating":"6.6",
-            "genres": ["Семейный", "Фэнтези", "Приключения"]
+            "tmdb_id": 417859
         },
         {
             "name": "Удача",
@@ -1373,7 +1696,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-58/Udacha.html",
             "year": "2022",
             "rating":"7.8",
-            "genres": ["Приключения", "Фэнтези", "Комедия"]
+            "tmdb_id": 585511
         },
         {
             "name": "Рик и Морти",
@@ -1381,8 +1704,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-73/Rik-i-Morti.html",
             "year": "2013",
             "rating":"8.7",
-            "isTV": true,
-            "genres": ["Комедия", "Боевик и Приключения"]
+            "tmdb_id": 60625,
+            "isTV": true
         },
         {
             "name": "Моана 2",
@@ -1390,7 +1713,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-181/Moana-2.html",
             "year": "2024",
             "rating":"7.1",
-            "genres": ["Приключения", "Семейный", "Комедия"]
+            "tmdb_id": 1241982
         },
         {
             "name": "Моана",
@@ -1398,7 +1721,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-59/Moana.html",
             "year": "2016",
             "rating":"7.6",
-            "genres": ["Приключения", "Семейный", "Комедия"]
+            "tmdb_id": 277834
         },
         {
             "name": "Человек-паук: Паутина вселенных",
@@ -1406,7 +1729,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-60/Chelovek-pauk-Pautina-vselennyh.html",
             "year": "2023",
             "rating":"8.3",
-            "genres": ["Боевик", "Приключения", "Фантастика"]
+            "tmdb_id": 569094
         },
         {
             "name": "Человек-паук: Через вселенные",
@@ -1414,7 +1737,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-182/Chelovek-pauk-Cherez-vselennye.html",
             "year": "2018",
             "rating":"8.4",
-            "genres": ["Боевик", "Приключения", "Фантастика"]
+            "tmdb_id": 324857
         },
         {
             "name": "Ваш дружелюбный сосед Человек-Паук",
@@ -1422,8 +1745,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-183/Vash-druzhelyubnyj-sosed-Chelovek-Pauk.html",
             "year": "2025",
             "rating":"7.8",
+            "tmdb_id": 138503,
             "isTV": true,
-            "genres": ["Приключения", "НФ и Фэнтези", "Комедия"]
         },
         {
             "name": "Паучок и его удивительные друзья",
@@ -1431,8 +1754,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-184/Pauchok-i-ego-udivitelnye-druzya.html",
             "year": "2021",
             "rating":"7.3",
+            "tmdb_id": 127635,
             "isTV": true,
-            "genres": ["Детский", "Мультфильм", "Комедия"]
         },
         {
             "name": "Человек-паук",
@@ -1440,8 +1763,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-185/Chelovek-pauk-2017.html",
             "year": "2017",
             "rating":"7.5",
+            "tmdb_id": 72705,
             "isTV": true,
-            "genres": ["НФ и Фэнтези", "Комедия", "Семейный"]
         },
         {
             "name": "Великий Человек-паук",
@@ -1449,8 +1772,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-186/Velikij-Chelovek-pauk.html",
             "year": "2012",
             "rating":"7.7",
+            "tmdb_id": 34391,
             "isTV": true,
-            "genres": ["Детский", "Боевик и Приключения", "Комедия"]
         },
         {
             "name": "Грандиозный Человек-паук",
@@ -1458,8 +1781,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-187/Grandioznyj-Chelovek-pauk.html",
             "year": "2008",
             "rating":"8.6",
+            "tmdb_id": 3854,
             "isTV": true,
-            "genres": ["Приключения", "Детский", "Семейный"]
         },
         {
             "name": "Человек-паук",
@@ -1467,8 +1790,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-188/Chelovek-pauk-2003.html",
             "year": "2003",
             "rating":"7.2",
-            "isTV": true,
-            "genres": ["Мультфильм", "Приключения", "НФ и Фэнтези"]
+            "tmdb_id": 1664,
+            "isTV": true
         },
         {
             "name": "Непобедимый Спайдермен",
@@ -1476,8 +1799,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-189/Nepobedimyj-Spajdermen.html",
             "year": "1999",
             "rating":"7.5",
+            "tmdb_id": 10079,
             "isTV": true,
-            "genres": ["Приключения", "НФ и Фэнтези", "Детский"]
         },
         {
             "name": "Человек-паук",
@@ -1485,8 +1808,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-190/Chelovek-pauk-1994.html",
             "year": "1994",
             "rating":"8.3",
-            "isTV": true,
-            "genres": ["Мультфильм", "Боевик и Приключения"]
+            "tmdb_id": 888,
+            "isTV": true
         },
         {
             "name": "Человек-Паук и его удивительные друзья",
@@ -1494,8 +1817,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-191/Chelovek-Pauk-i-ego-udivitelnye-druzya.html",
             "year": "1981",
             "rating":"7.4",
+            "tmdb_id": 1269,
             "isTV": true,
-            "genres": ["Приключения", "Мультфильм", "НФ и Фэнтези"]
         },
         {
             "name": "Человек-паук",
@@ -1503,8 +1826,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-192/Chelovek-pauk-1981.html",
             "year": "1981",
             "rating":"7.2",
-            "isTV": true,
-            "genres": ["Детский", "Приключения", "НФ и Фэнтези"]
+            "tmdb_id": 3973,
+            "isTV": true
         },
         {
             "name": "Настоящий Человек-паук",
@@ -1512,8 +1835,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-193/Nastoyashij-Chelovek-pauk.html",
             "year": "1967",
             "rating":"7.7",
+            "tmdb_id": 1482,
             "isTV": true,
-            "genres": ["Детский", "Мультфильм", "Приключения"]
         },
         {
             "name": "Миньоны: Грювитация",
@@ -1521,7 +1844,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-194/Minony-Gryuvitaciya.html",
             "year": "2022",
             "rating":"7.3",
-            "genres": ["Комедия", "Семейный", "Приключения"]
+            "tmdb_id": 438148
         },
         {
             "name": "Миньоны",
@@ -1529,7 +1852,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-61/Minony.html",
             "year": "2015",
             "rating":"6.4",
-            "genres": ["Мультфильм", "Приключения", "Комедия"]
+            "tmdb_id": 211672
         },
         {
             "name": "Гадкий я 4",
@@ -1537,7 +1860,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-195/Gadkij-ya-4.html",
             "year": "2024",
             "rating":"7.1",
-            "genres": ["Семейный", "Комедия", "Фантастика"]
+            "tmdb_id": 519182
         },
         {
             "name": "Гадкий я 3",
@@ -1545,7 +1868,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-196/Gadkij-ya-3.html",
             "year": "2017",
             "rating":"6.5",
-            "genres": ["Комедия", "Семейный", "Приключения"]
+            "tmdb_id": 324852
         },
         {
             "name": "Гадкий я 2",
@@ -1553,7 +1876,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-197/Gadkij-ya-2.html",
             "year": "2013",
             "rating":"6.9",
-            "genres": ["Мультфильм", "Комедия", "Семейный"]
+            "tmdb_id": 93456
         },
         {
             "name": "Гадкий я",
@@ -1561,7 +1884,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-198/Gadkij-ya.html",
             "year": "2010",
             "rating":"7.2",
-            "genres": ["Мультфильм", "Комедия", "Семейный"]
+            "tmdb_id": 20352
         },
         {
             "name": "Суперпитомцы",
@@ -1569,7 +1892,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-62/Superpitomcy.html",
             "year": "2022",
             "rating":"7.2",
-            "genres": ["Боевик", "Семейный", "Комедия", "Фантастика"]
+            "tmdb_id": 539681
         },
         {
             "name": "Хранители снов",
@@ -1577,7 +1900,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-63/Hraniteli-snov.html",
             "year": "2012",
             "rating":"7.4",
-            "genres": ["Мультфильм", "Семейный", "Фэнтези"]
+            "tmdb_id": 81188
         },
         {
             "name": "Angry Birds: Летнее безумие",
@@ -1585,8 +1908,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-199/Angry-Birds-Letnee-bezumie.html",
             "year": "2022",
             "rating":"7.2",
-            "isTV": true,
-            "genres": ["Приключения", "НФ и Фэнтези", "Комедия"]
+            "tmdb_id": 154647,
+            "isTV": true
         },
         {
             "name": "Angry Birds в кино 2",
@@ -1594,7 +1917,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-64/Angry-Birds-v-kino-2.html",
             "year": "2019",
             "rating":"7.1",
-            "genres": ["Боевик", "Фэнтези", "Приключения", "Комедия"]
+            "tmdb_id": 454640
         },
         {
             "name": "Angry Birds в кино",
@@ -1602,7 +1925,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-200/Angry-Birds-v-kino.html",
             "year": "2016",
             "rating":"6.2",
-            "genres": ["Приключения", "Семейный", "Комедия"]
+            "tmdb_id": 153518
         },
         {
             "name": "Angry Birds. Сердитые птички",
@@ -1610,8 +1933,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-201/Angry-Birds-Serditye-ptichki.html",
             "year": "2013",
             "rating":"6.1",
+            "tmdb_id": 46848,
             "isTV": true,
-            "genres": ["Приключения", "НФ и Фэнтези", "Комедия"]
         },
         {
             "name": "Кунг-фу Панда 4",
@@ -1619,7 +1942,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-65/Kung-fu-Panda-4.html",
             "year": "2024",
             "rating":"7.1",
-            "genres": ["Боевик", "Комедия", "Приключения"]
+            "tmdb_id": 1011985
         },
         {
             "name": "Кунг-фу Панда 3",
@@ -1627,7 +1950,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-202/Kung-fu-Panda-3.html",
             "year": "2016",
             "rating":"6.9",
-            "genres": ["Приключения", "Семейный", "Комедия"]
+            "tmdb_id": 140300
         },
         {
             "name": "Кунг-фу Панда 2",
@@ -1635,7 +1958,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-203/Kung-fu-Panda-2.html",
             "year": "2011",
             "rating":"7.0",
-            "genres": ["Мультфильм", "Семейный", "Комедия"]
+            "tmdb_id": 49444
         },
         {
             "name": "Кунг-фу Панда: Захватывающие легенды",
@@ -1643,8 +1966,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-204/Kung-fu-Panda-Zahvatyvayushie-legendy.html",
             "year": "2011",
             "rating":"7.4",
+            "tmdb_id": 39898,
             "isTV": true,
-            "genres": ["Приключения", "Комедия", "НФ и Фэнтези"]
         },
         {
             "name": "Кунг-фу Панда",
@@ -1652,7 +1975,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-205/Kung-fu-Panda.html",
             "year": "2008",
             "rating":"7.0",
-            "genres": ["Приключения", "Семейный", "Комедия"]
+            "tmdb_id": 9502
         },
         {
             "name": "Душа",
@@ -1660,7 +1983,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-66/Dusha.html",
             "year": "2020",
             "rating":"8.1",
-            "genres": ["Семейный", "Комедия", "Фэнтези"]
+            "tmdb_id": 508442
         },
         {
             "name": "Эверест",
@@ -1668,7 +1991,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-67/Everest.html",
             "year": "2019",
             "rating":"7.5",
-            "genres": ["Мультфильм", "Приключения", "Комедия"]
+            "tmdb_id": 431580
         },
         {
             "name": "Дневник слабака: Рождественская лихорадка",
@@ -1676,7 +1999,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-206/Dnevnik-slabaka-Rozhdestvenskaya-lihoradka.html",
             "year": "2023",
             "rating":"6.6",
-            "genres": ["Мультфильм", "Комедия", "Семейный"]
+            "tmdb_id": 1123093
         },
         {
             "name": "Дневник слабака: Правила Родрика",
@@ -1684,7 +2007,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-207/Dnevnik-slabaka-Pravila-Rodrika.html",
             "year": "2022",
             "rating":"6.8",
-            "genres": ["Мультфильм", "Комедия", "Семейный"]
+            "tmdb_id": 897192
         },
         {
             "name": "Дневник слабака",
@@ -1692,7 +2015,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-68/Dnevnik-slabaka.html",
             "year": "2021",
             "rating":"6.2",
-            "genres": ["Мультфильм", "Комедия", "Семейный"]
+            "tmdb_id": 774741
         },
         {
             "name": "Время приключений: Фионна и Кейк",
@@ -1700,8 +2023,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-208/Vremya-priklyuchenij-Fionna-i-Kejk.html",
             "year": "2023",
             "rating":"8.8",
+            "tmdb_id": 131378,
             "isTV": true,
-            "genres": ["НФ и Фэнтези", "Приключения", "Комедия"]
         },
         {
             "name": "Время приключений: Далёкие земли",
@@ -1709,8 +2032,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-209/Vremya-priklyuchenij-Dalyokie-zemli.html",
             "year": "2020",
             "rating":"8.1",
-            "isTV": true,
-            "genres": ["НФ и Фэнтези", "Приключения", "Комедия"]
+            "tmdb_id": 94810,
+            "isTV": true
         },
         {
             "name": "Время приключений",
@@ -1718,8 +2041,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-74/Vremya-priklyuchenij.html",
             "year": "2010",
             "rating":"8.5",
+            "tmdb_id": 15260,
             "isTV": true,
-            "genres": ["Мультфильм", "Комедия", "НФ и Фэнтези"]
         },
         {
             "name": "Не бей копытом",
@@ -1727,7 +2050,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-69/Ne-bej-kopytom.html",
             "year": "2004",
             "rating":"6.1",
-            "genres": ["Мультфильм", "Семейный"]
+            "tmdb_id": 13700
         },
         {
             "name": "Большое путешествие",
@@ -1735,7 +2058,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-70/Bolshoe-puteshestvie.html",
             "year": "2006",
             "rating":"5.5",
-            "genres": ["Мультфильм", "Семейный"]
+            "tmdb_id": 9904
         },
         {
             "name": "Лерой и Стич",
@@ -1743,7 +2066,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-71/Leroj-i-Stich.html",
             "year": "2006",
             "rating":"6.6",
-            "genres": ["Мультфильм", "Комедия", "Семейный"]
+            "tmdb_id": 21316
         },
         {
             "name": "Лило и Стич 2: Большая Проблема Стича",
@@ -1751,7 +2074,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-210/Lilo-i-Stich-2-Bolshaya-Problema-Sticha.html",
             "year": "2005",
             "rating":"6.7",
-            "genres": ["Семейный", "Комедия", "Фантастика"]
+            "tmdb_id": 20760
         },
         {
             "name": "Новые Приключения Стича",
@@ -1759,7 +2082,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-211/Novye-Priklyucheniya-Sticha.html",
             "year": "2003",
             "rating":"6.4",
-            "genres": ["Приключения", "Мультфильм", "Фантастика"]
+            "tmdb_id": 15567
         },
         {
             "name": "Лило и Стич",
@@ -1767,8 +2090,8 @@ async function generateCards() {
             "link": "/card/cartoons/500-212/Lilo-i-Stich.html",
             "year": "2003",
             "rating":"7.4",
+            "tmdb_id": 2355,
             "isTV": true,
-            "genres": ["Комедия", "Приключения", "НФ и Фэнтези"]
         },
         {
             "name": "Лило и Стич",
@@ -1776,7 +2099,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-213/Lilo-i-Stich-2002.html",
             "year": "2002",
             "rating":"7.5",
-            "genres": ["Мультфильм", "Семейный", "Комедия"]
+            "tmdb_id": 11544
         },
         {
             "name": "Базз Лайтер",
@@ -1784,7 +2107,7 @@ async function generateCards() {
             "link": "/card/cartoons/500-72/Bazz-Lajter.html",
             "year": "2022",
             "rating":"6.9",
-            "genres": ["Фантастика", "Семейный", "Приключения"]
+            "tmdb_id": 718789
         },
         {
             "name": "Приключения Базза Лайтера из Звёздной Команды",
@@ -1792,182 +2115,266 @@ async function generateCards() {
             "link": "/card/cartoons/500-214/Priklyucheniya-Bazza-Lajtera-iz-Zvyozdnoj-Komandy.html",
             "year": "2000",
             "rating":"6.5",
+            "tmdb_id": 16187,
             "isTV": true,
-            "genres": ["Детский", "НФ и Фэнтези", "Комедия"]
+
         },
        
-        
-       
-    
-        // конец
-       
-        
     ];
 
-    var cardContainer = $('#card-container');
-    if (!cardContainer.length) {
-        console.error("#card-container не найден!"); // Оставляем эту полезную ошибку
-        return;
-    }
-    cardContainer.html("");
+    processedLocalCards = await processLocalCardData(localCardData);
 
-    // Извлечение информации о текущем фильме
-    let currentMovieTitle = '';
-    let currentMovieYear = '';
-    let currentMovieGenres = [];
-    let currentBaseTitle = '';
+    const MAX_CARDS = 12;
+    const addedCardsLinks = new Set();
+    let recommendations = [];
 
-    // Ваша логика извлечения данных о текущем фильме
-    if (currentMovieTitleElement) {
-        currentMovieTitle = currentMovieTitleElement.textContent.split('(')[0].trim();
-        currentBaseTitle = getBaseTitle(currentMovieTitle);
-    }
-    if (currentMovieYearElement) {
-        currentMovieYear = currentMovieYearElement.textContent;
-    }
-    if (currentMovieGenresElement) {
-        let fullGenreText = currentMovieGenresElement.textContent;
-        let genreStartIndex = fullGenreText.indexOf('●') + 1;
-        let extractedGenres = fullGenreText.substring(genreStartIndex).trim();
-        currentMovieGenres = extractedGenres.split('|').map(genre => genre.trim());
-    }
-
-    // Вспомогательные функции, основанные на вашем примере
-    const isCurrentMovie = (card) => {
-        // Убедимся, что сравниваем по названию и году, так как ссылка может быть разной
-        return getBaseTitle(card.name) === currentBaseTitle && card.year === currentMovieYear;
+    const addCardToRecommendations = (card) => {
+        if (recommendations.length >= MAX_CARDS) return false;
+        if (addedCardsLinks.has(card.link)) return false;
+        recommendations.push(card);
+        addedCardsLinks.add(card.link);
+        return true;
     };
 
-    const doesTitleMatch = (card) => {
-        const cardBaseTitle = getBaseTitle(card.name);
-        // Используем вашу логику includes для гибкого соответствия франшизам
-        return cardBaseTitle.includes(currentBaseTitle) || currentBaseTitle.includes(cardBaseTitle);
-    };
+    const currentLink = window.location.pathname.includes('card') && window.location.pathname.split('/').some(p => p.endsWith('.html')) ?
+        '/' + window.location.pathname.split('/').slice(window.location.pathname.split('/').indexOf('card')).join('/') :
+        window.location.pathname.split('?')[0].split('#')[0];
 
-    const getMatchingGenresCount = (cardGenres) => {
-        if (!Array.isArray(cardGenres)) return 0;
-        // Убедимся, что currentMovieGenres определён
-        if (!currentMovieGenres || currentMovieGenres.length === 0) return 0;
-        return currentMovieGenres.filter(genre => cardGenres.includes(genre)).length;
-    };
+    let currentMovie = null;
 
-    var cardsToDisplay = [];
-    var addedCards = new Set(); // Используем Set для быстрого поиска уже добавленных карточек
-
-    const MAX_CARDS = 15;
-
-    // --- Этап 0: Добавляем текущий фильм в addedCards, чтобы он не рекомендовался самому себе ---
-    // Это важно сделать в первую очередь, чтобы он не попал ни в одну из следующих категорий.
-    if (currentMovieTitle && currentMovieYear) {
-        addedCards.add(`${currentMovieTitle}-${currentMovieYear}`);
-    }
-
-
-    // --- Этап 1: Карточки со схожим названием (франшизы) ---
-    // Находим все потенциальные франшизные фильмы, исключая текущий и уже добавленные.
-    const matchingTitleCards = shuffleArray(localCardData.filter(card => 
-        !isCurrentMovie(card) && doesTitleMatch(card) && !addedCards.has(`${card.name}-${card.year}`)
-    ));
-    
-    matchingTitleCards.forEach(card => {
-        if (cardsToDisplay.length < MAX_CARDS) {
-            cardsToDisplay.push(card);
-            addedCards.add(`${card.name}-${card.year}`); // Добавляем в Set, чтобы не дублировать
+    let pageTmdbId = null;
+    if (typeof currentFilmData !== 'undefined' && currentFilmData && currentFilmData.id) {
+        pageTmdbId = currentFilmData.id;
+    } else {
+        const movieDataElement = document.getElementById('movie-data');
+        if (movieDataElement && movieDataElement.dataset.tmdbId) {
+            pageTmdbId = parseInt(movieDataElement.dataset.tmdbId);
         }
-    });
+    }
+    
+    if (pageTmdbId) {
+        currentMovie = processedLocalCards.find(c => c.tmdb_id === pageTmdbId);
+    }
 
-    // --- Этап 2: Карточки с похожими жанрами (по убыванию количества совпадений) ---
-    // Этот этап выполняется только если currentMovieGenres определен и есть свободные места.
-    if (currentMovieGenres.length > 0 && cardsToDisplay.length < MAX_CARDS) {
-        const specificGenreWeights = {
-            'ужасы': 5.0,
-            'фэнтези': 4.5,
-            'научная фантастика': 4.2, 
-            'вестерн': 5.0,
-            'мультфильм': 5.0, 
-            'документальный': 5.0, 
-            'мюзикл': 4.0, 
-            'триллер': 2.5,
-            'детектив': 3.8, 
-            'боевик': 1.8, 
-            'комедия': 2.2, 
-            'драма': 0.5,
-            'мелодрама': 5.0, 
-            'приключения': 2.5, 
-            'криминал': 2.0, 
-            'история': 3.5,
-            'романтика': 2.0, 
-            'семейный': 5.0, 
-            'музыка': 4.0, 
-            'военный': 2.8,
-            'Боевик и Приключения': 4.0,
-            'Война и Политика': 4.2,
-            'Детский': 4.5,
-            'фантастика': 4.5
-        };
-        const MIN_GENRE_SCORE_THRESHOLD = 1.0;
-        const NON_MATCHING_GENRE_PENALTY_MULTIPLIER = 0.5;
+    if (!currentMovie) {
+        currentMovie = processedLocalCards.find(c => c.link.toLowerCase() === currentLink.toLowerCase());
+    }
 
-        const genreRelevantCandidates = [];
-        const currentGenresLower = new Set(currentMovieGenres.map(g => g.toLowerCase()));
+    if (!currentMovie) {
+        const pageTitleElement = document.querySelector('.movie-title') || document.querySelector('h1') || document.querySelector('h2');
+        if (pageTitleElement) {
+            const rawPageMovieTitle = pageTitleElement.innerText || pageTitleElement.textContent;
+            const cleanPageMovieTitle = getBaseTitle(rawPageMovieTitle);
+            currentMovie = processedLocalCards.find(c => getBaseTitle(c.name) === cleanPageMovieTitle);
+        }
+    }
 
-        // Проходим по всем карточкам, которые еще не были добавлены
-        const remainingForGenreCheck = localCardData.filter(card => !addedCards.has(`${card.name}-${card.year}`));
+    if (!currentMovie) {
+        const pageTitle = document.title;
+        const cleanPageTitle = getBaseTitle(pageTitle);
+        const pageTitleMatch = pageTitle.match(/\((\d{4})\)/);
+        const pageYear = pageTitleMatch ? parseInt(pageTitleMatch[1]) : null;
 
-        for (const card of remainingForGenreCheck) {
-            let genreMatchScore = 0;
-            let nonMatchingGenrePenalty = 0;
+        currentMovie = processedLocalCards.find(c => {
+            const cBaseTitle = getBaseTitle(c.name);
+            const baseTitleMatches = cBaseTitle === cleanPageTitle;
+            const yearMatches = pageYear ? parseInt(c.year) === pageYear : true;
+            return baseTitleMatches && yearMatches;
+        });
 
-            for (const localGenre of card.genres) {
-                const lowerLocalGenre = localGenre.toLowerCase();
-                if (currentGenresLower.has(lowerLocalGenre)) {
-                    genreMatchScore += (specificGenreWeights[lowerLocalGenre] || 1);
-                } else {
-                    if (specificGenreWeights[lowerLocalGenre] && specificGenreWeights[lowerLocalGenre] > 1.5) {
-                        nonMatchingGenrePenalty += specificGenreWeights[lowerLocalGenre] * NON_MATCHING_GENRE_PENALTY_MULTIPLIER;
+        if (!currentMovie) {
+            currentMovie = processedLocalCards.find(c => getBaseTitle(c.name) === cleanPageTitle);
+        }
+    }
+    
+    if (currentMovie) {
+        // ... (логика для страниц с определенным фильмом - без изменений)
+        const currentMovieCollectionId = currentMovie.collection_id;
+        const currentMovieBaseTitle = getBaseTitle(currentMovie.name);
+
+        const moviesInCurrentFranchise = processedLocalCards.filter(c => {
+            const cBaseTitle = getBaseTitle(c.name);
+            return (c.link !== currentMovie.link) && 
+                   ((c.collection_id && currentMovieCollectionId && c.collection_id === currentMovieCollectionId) ||
+                    (cBaseTitle === currentMovieBaseTitle && cBaseTitle !== '' && cBaseTitle.length > 2));
+        });
+
+        if (moviesInCurrentFranchise.length > 0) {
+            moviesInCurrentFranchise
+                .sort((a, b) => parseInt(a.year) - parseInt(b.year))
+                .forEach(c => addCardToRecommendations(c));
+        }
+
+        const allPotentialCandidates = new Set();
+        
+        if (currentMovie.tmdb_id) {
+            const tmdbRecs = await getTmdbRecommendations(currentMovie.tmdb_id);
+            tmdbRecs.forEach(tmdbCard => {
+                const localCard = processedLocalCards.find(c => c.tmdb_id === tmdbCard.id);
+                if (localCard && localCard.link !== currentMovie.link && !addedCardsLinks.has(localCard.link)) {
+                    allPotentialCandidates.add(localCard);
+                }
+            });
+        }
+
+        processedLocalCards.forEach(card => {
+            if (card.link !== currentMovie.link && !addedCardsLinks.has(card.link)) {
+                allPotentialCandidates.add(card);
+            }
+        });
+
+        const otherGroupedCandidates = new Map();
+        
+        for (const card of allPotentialCandidates) {
+            const cardBaseTitle = getBaseTitle(card.name);
+            const cardCollectionId = card.collection_id;
+            let groupKey = null;
+
+            if (cardCollectionId) {
+                groupKey = `collection-${cardCollectionId}`;
+            } else if (cardBaseTitle && cardBaseTitle.length > 2 &&
+                       [...processedLocalCards].some(c => c.link !== card.link && getBaseTitle(c.name) === cardBaseTitle)) {
+                groupKey = `title-${cardBaseTitle}`;
+            }
+
+            if (groupKey && 
+                ((currentMovieCollectionId && groupKey === `collection-${currentMovieCollectionId}`) ||
+                 (currentMovieBaseTitle && groupKey === `title-${currentMovieBaseTitle}`))) {
+                continue;
+            }
+
+            if (groupKey) {
+                const currentBestInGroup = otherGroupedCandidates.get(groupKey);
+                if (!currentBestInGroup || scoreCard(card, currentMovie) > scoreCard(currentBestInGroup, currentMovie)) {
+                    otherGroupedCandidates.set(groupKey, card);
+                }
+            } else {
+                otherGroupedCandidates.set(`single-${card.link}`, card);
+            }
+        }
+
+        const finalCandidatesForRanking = Array.from(otherGroupedCandidates.values());
+        finalCandidatesForRanking.sort((a, b) => scoreCard(b, currentMovie) - scoreCard(a, currentMovie));
+
+        for (const card of finalCandidatesForRanking) {
+            if (recommendations.length >= MAX_CARDS) break;
+            if (scoreCard(card, currentMovie) <= IRRELEVANT_SCORE) {
+                continue;
+            }
+            addCardToRecommendations(card);
+        }
+
+    } else { // Логика для главной страницы или других страниц без конкретного фильма
+        const uniqueRandomCards = new Set();
+        const availableCards = shuffleArray([...processedLocalCards]); // Создаем копию и перемешиваем
+
+        // Отбираем уникальные фильмы (по одной карточке от франшизы)
+        for (const card of availableCards) {
+            let isFranchiseAdded = false;
+            if (card.collection_id) {
+                // Проверяем, есть ли уже фильм из этой коллекции
+                for (const existingCard of uniqueRandomCards) {
+                    if (existingCard.collection_id === card.collection_id) {
+                        isFranchiseAdded = true;
+                        break;
+                    }
+                }
+            } else {
+                // Для фильмов без collection_id, проверяем по базовому названию
+                const cardBaseTitle = getBaseTitle(card.name);
+                if (cardBaseTitle && cardBaseTitle.length > 2) {
+                    for (const existingCard of uniqueRandomCards) {
+                        if (getBaseTitle(existingCard.name) === cardBaseTitle) {
+                            isFranchiseAdded = true;
+                            break;
+                        }
                     }
                 }
             }
-            
-            genreMatchScore -= nonMatchingGenrePenalty;
 
-            if (genreMatchScore > MIN_GENRE_SCORE_THRESHOLD) {
-                genreRelevantCandidates.push({ card: card, score: genreMatchScore });
+            if (!isFranchiseAdded && addCardToRecommendations(card)) {
+                uniqueRandomCards.add(card);
             }
+            if (recommendations.length >= MAX_CARDS) break;
         }
 
-        shuffleArray(genreRelevantCandidates); // Перемешиваем перед сортировкой
-        genreRelevantCandidates.sort((a, b) => b.score - a.score);
-
-        for (const item of genreRelevantCandidates) {
-            if (cardsToDisplay.length < MAX_CARDS) {
-                cardsToDisplay.push(item.card);
-                addedCards.add(`${item.card.name}-${item.card.year}`);
-            } else {
-                break;
+        // Если не набрали достаточно, добиваем оставшимися уникальными
+        if (recommendations.length < MAX_CARDS) {
+            const remainingUnique = processedLocalCards.filter(c => {
+                let isAlreadyAdded = addedCardsLinks.has(c.link);
+                if (!isAlreadyAdded && c.collection_id) {
+                    for (const existingCard of uniqueRandomCards) {
+                        if (existingCard.collection_id === c.collection_id) {
+                            isAlreadyAdded = true;
+                            break;
+                        }
+                    }
+                } else if (!isAlreadyAdded) {
+                    const cBaseTitle = getBaseTitle(c.name);
+                    if (cBaseTitle && cBaseTitle.length > 2) {
+                        for (const existingCard of uniqueRandomCards) {
+                            if (getBaseTitle(existingCard.name) === cBaseTitle) {
+                                isAlreadyAdded = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+                return !isAlreadyAdded;
+            });
+            shuffleArray(remainingUnique);
+            for (const card of remainingUnique) {
+                if (recommendations.length >= MAX_CARDS) break;
+                addCardToRecommendations(card);
             }
         }
     }
 
-    // --- Этап 3: Добавляем случайные карточки, если не набрали MAX_CARDS ---
-    if (cardsToDisplay.length < MAX_CARDS) {
-        const remainingCards = shuffleArray(localCardData.filter(card => 
-            !addedCards.has(`${card.name}-${card.year}`)
-        ));
-        
-        for (const card of remainingCards) {
-            if (cardsToDisplay.length < MAX_CARDS) {
-                cardsToDisplay.push(card);
-                addedCards.add(`${card.name}-${card.year}`); // Добавляем в Set, чтобы не дублировать
+
+    // --- Финальная сборка и отображение ---
+    const finalDisplayCards = recommendations.slice(0, MAX_CARDS);
+
+    // Логика группировки (без изменений) - теперь она нужна ТОЛЬКО для сортировки внутри уже отобранных фильмов
+    const finalDisplayGrouped = [];
+    const franchiseGroups = new Map();
+
+    finalDisplayCards.forEach(card => {
+        let key = null;
+        if (card.collection_id) {
+            key = `collection-${card.collection_id}`;
+        } else {
+            const potentialGroup = processedLocalCards.filter(pc => getBaseTitle(pc.name) === getBaseTitle(card.name) && getBaseTitle(card.name) !== '');
+            if (potentialGroup.length > 1) {
+                key = `title-${getBaseTitle(card.name)}`;
             } else {
-                break;
+                key = `single-${card.link}`; // Уникальный ключ для одиночных фильмов
             }
         }
+
+        if (!franchiseGroups.has(key)) {
+            franchiseGroups.set(key, []);
+        }
+        franchiseGroups.get(key).push(card);
+    });
+
+    const nonFranchiseCards = [];
+    const sortedFranchiseKeys = Array.from(franchiseGroups.keys()).sort();
+
+    for (const key of sortedFranchiseKeys) {
+        const group = franchiseGroups.get(key);
+        if (key.startsWith('collection-') || key.startsWith('title-')) { // Группы франшиз
+            group.sort((a, b) => parseInt(a.year) - parseInt(b.year));
+            finalDisplayGrouped.push(...group);
+        } else { // Одиночные фильмы
+            nonFranchiseCards.push(...group);
+        }
     }
+    shuffleArray(nonFranchiseCards); // Перемешиваем одиночные фильмы
+    finalDisplayGrouped.push(...nonFranchiseCards);
 
-    displayCards(cardsToDisplay.slice(0, MAX_CARDS), cardContainer);
+    displayCards(finalDisplayGrouped.slice(0, MAX_CARDS), cardContainer);
 
-    // Инициализация Splide
+    // --- Инициализация Splide (без изменений) ---
     var splide = new Splide('#Collections', {
         type: 'loop',
         focus: 'center',
@@ -1994,33 +2401,7 @@ async function generateCards() {
 
     positionCardRatingTrand();
 }
-
-function displayCards(cards, container) {
-    var count = 0;
-    container.empty();
-    cards.forEach(function (val) {
-        if (count >= 15) return;
-        var cardHTML = `
-            <li class="splide__slide">
-                <div class="card card-media" style="width: 12rem" data-rating="${val.rating}">
-                    <a href="${val.link}">
-                        <img src="${val.image}" class="card-img-top img-9x16 mt-2" alt="${val.name}">
-                        <div class="card-rating-trand">
-                            <span class="span-rating">${val.rating}</span>
-                        </div>
-                        ${val.isTV ? '<div class="card-TV card-TV-trends">TV</div>' : ''}
-                        <div class="card-body">
-                            <span class="card-tex">${val.name}<br><span class="year">${val.year}</span></span>
-                        </div>
-                    </a>
-                </div>
-            </li>
-        `;
-        container.append(cardHTML);
-        count++;
-    });
-}
-
+// Функция для позиционирования рейтинга на карточках
 function positionCardRatingTrand() {
     const cards = document.querySelectorAll('.card');
     cards.forEach(card => {
@@ -2030,9 +2411,8 @@ function positionCardRatingTrand() {
             const imageRect = image.getBoundingClientRect();
             const cardRect = card.getBoundingClientRect();
 
-            // Расчет смещения от нижнего правого угла изображения к нижнему правому углу карточки
-            const bottom = cardRect.bottom - imageRect.bottom + 8; // 8px отступ
-            const right = cardRect.right - imageRect.right + 8; // 8px отступ
+            const bottom = cardRect.bottom - imageRect.bottom + 8;
+            const right = cardRect.right - imageRect.right + 8;
 
             rating.style.position = 'absolute';
             rating.style.bottom = bottom + 'px';
