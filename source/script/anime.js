@@ -415,6 +415,69 @@ async function generateCards() {
     // Важно: для сериалов/аниме/мультфильмов укажите "isTV": true
     const localCardData = [
         {
+            "name": "Берсерк",
+            "image": "https://image.tmdb.org/t/p/w500//rPqWt642UhC8UObCtnpRz4iM2DQ.jpg",
+            "link": "/card/anime/100-73/Berserk.html",
+            "year": "2016",
+            "rating": "7.5",
+            "tmdb_id": 66053,
+            "isTV": true
+        },
+        {
+            "name": "Монстр",
+            "image": "https://image.tmdb.org/t/p/w500//sfmpjO9KwgIDcFybwLcN061ZwOb.jpg",
+            "link": "/card/anime/100-74/Monstr.html",
+            "year": "2004",
+            "rating": "8.5",
+            "tmdb_id": 30981,
+            "isTV": true
+        },
+        {
+            "name": "Сага о Винланде",
+            "image": "https://image.tmdb.org/t/p/original/rNVcMGzDZal17mgdPLIu4dcrdi0.jpg",
+            "link": "/card/anime/100-75/Saga-o-Vinlande.html",
+            "year": "2019",
+            "rating": "8.5",
+            "tmdb_id": 88803,
+            "isTV": true
+        },
+        {
+            "name": "Паразит: Учение о жизни",
+            "image": "https://image.tmdb.org/t/p/w500//tKArAWlgpuEl7q8CRmBfSVLnFan.jpg",
+            "link": "/card/anime/100-76/Parazit-Uchenie-o-zhizni.html",
+            "year": "2014",
+            "rating": "8.3",
+            "tmdb_id": 61459,
+            "isTV": true
+        },
+        {
+            "name": "Повелитель",
+            "image": "https://image.tmdb.org/t/p/w500//4VIY97dUAvsNekhRpCTv6d82S8G.jpg",
+            "link": "/card/anime/100-77/Povelitel.html",
+            "year": "2015",
+            "rating": "8.5",
+            "tmdb_id": 64196,
+            "isTV": true
+        },
+        {
+            "name": "Кайдзю № 8",
+            "image": "https://image.tmdb.org/t/p/w500//4HJKaviTLn1incPtSZKAJZ6NJrv.jpg",
+            "link": "/card/anime/100-78/Kajdzyu-8.html",
+            "year": "2024",
+            "rating": "8.6",
+            "tmdb_id": 207468,
+            "isTV": true
+        },
+        {
+            "name": "Моб Психо 100",
+            "image": "https://image.tmdb.org/t/p/w500//4HJKaviTLn1incPtSZKAJZ6NJrv.jpg",
+            "link": "/card/anime/100-79/Mob-Psiho-100.html",
+            "year": "2016",
+            "rating": "8.5",
+            "tmdb_id": 67075,
+            "isTV": true
+        },
+        {
             "name": "Башня Бога",
             "image": "https://image.tmdb.org/t/p/w500//m4FQUNPbxonuv4kcFm1YgyRgl2C.jpg",
             "link": "/card/anime/100-01/Bashnya-Boga.html",
