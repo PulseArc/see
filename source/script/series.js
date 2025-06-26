@@ -3,45 +3,562 @@
 
 // Генерация карточек с случайными рейтингами
 // Сериалы
-document.addEventListener('DOMContentLoaded', function () {
-    generateCards();
-    
+
+document.addEventListener('DOMContentLoaded', async () => {
+    await generateCards();
     setTimeout(positionCardRatingTrand, 200);
 });
 
-
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
+// --- Вспомогательные функции ---
+const shuffleArray = (a) => {
+    for (let i = a.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]]; // Обмен элементов
+        [a[i], a[j]] = [a[j], a[i]];
     }
-    return array;
-}
-
-// Вспомогательная функция для стандартизации названий фильмов (без года)
-const getBaseTitle = (title) => {
-    title = title.toLowerCase();
-    title = title.replace(/\s*\(.*\)\s*$/, '').replace(/\s*\[.*\]\s*$/, '');
-    title = title.replace(/[:–—\-].*$/, '');
-    title = title.replace(/\s+\d{4}$/, '');
-    return title.trim();
+    return a;
 };
 
-async function generateCards() {
-    var currentMovieTitleElement = document.querySelector('title');
-    var currentMovieYearElement = document.getElementById('movie-year');
-    var currentMovieLink = window.location.pathname;
+const getBaseTitle = (t) => {
+    if (!t) return '';
+    let cleaned = t.toLowerCase();
+    cleaned = cleaned.replace(/\s*(?:и|или|of|the|a|an|часть|part|эпизод|[:–—\-]|,\s*\d+\s*|\s+\d+\s*|\s+[ivx]+\s*|film|movie|сезон|season|фильм|фильмов|фильма|сага|история|серия|том|глава|мир|возвращение|восстание|начало|конец|последний|новый|старый|приключение|приключения|хроники|самоубийц|отряд|планета|гнев|месть|эпоха|последний рыцарь|исход|генезис|судный день|смертельная расплата).*$/, '').trim();
+    cleaned = cleaned.replace(/\s*[\(\[].*[\)\]]\s*$/, '').trim();
+    cleaned = cleaned.replace(/\s*\d{4}\s*$/, '').trim();
+    cleaned = cleaned.replace(/смотреть онлайн бесплатно/i, '').trim();
+    cleaned = cleaned.replace(/[^a-z0-9а-яё]+$/, '').trim();
 
+    if (cleaned.length < 3 && t.length > 3) {
+        let lessAggressiveClean = t.toLowerCase();
+        lessAggressiveClean = lessAggressiveClean.replace(/\s*[\(\[].*[\)\]]\s*$/, '').trim();
+        lessAggressiveClean = lessAggressiveClean.replace(/\s*\d{4}\s*$/, '').trim();
+        return lessAggressiveClean.replace(/[^a-z0-9а-яё]+$/, '').trim();
+    }
+    return cleaned.replace(/[\–\—\-]/g, '-').replace(/\s+/g, ' ').trim();
+};
+
+const getRating = (c) => parseFloat(c.rating) || -1;
+
+// --- Константы TMDB API ---
+const TMDB_API_KEY = '3da216c9cc3fe78b5488855d25d26e13';
+const BASE_TMDB_URL = 'https://api.themoviedb.org/3';
+
+// --- Кэширование и получение данных TMDB ---
+let processedLocalCards = [];
+let processingPromise = null;
+
+// Вспомогательная функция для получения сертификации фильмов
+function getMovieCertification(data) {
+    let certification = null;
+    if (data.release_dates && data.release_dates.results) {
+        const ruRelease = data.release_dates.results.find(res => res.iso_3166_1 === 'RU');
+        if (ruRelease && ruRelease.release_dates.length > 0) {
+            certification = ruRelease.release_dates.find(r => r.certification)?.certification;
+        } else {
+            const usRelease = data.release_dates.results.find(res => res.iso_3166_1 === 'US');
+            if (usRelease && usRelease.release_dates.length > 0) {
+                certification = usRelease.release_dates.find(r => r.certification)?.certification;
+            } else if (data.release_dates.results.length > 0) {
+                certification = data.release_dates.results[0].release_dates.find(r => r.certification)?.certification;
+            }
+        }
+    }
+    return certification;
+}
+
+// Вспомогательная функция для получения сертификации сериалов
+function getTVCertification(data) {
+    let certification = null;
+    if (data.content_ratings && data.content_ratings.results) {
+        const ruRating = data.content_ratings.results.find(res => res.iso_3166_1 === 'RU');
+        if (ruRating && ruRating.rating) {
+            certification = ruRating.rating;
+        } else {
+            const usRating = data.content_ratings.results.find(res => res.iso_3166_1 === 'US');
+            if (usRating && usRating.rating) {
+                certification = usRating.rating;
+            } else if (data.content_ratings.results.length > 0) {
+                certification = data.content_ratings.results[0].rating;
+            }
+        }
+    }
+    return certification;
+}
+
+async function fetchTmdbData(id, initialIsTV) { 
+    if (!id) return null;
+
+    let type = initialIsTV ? 'tv' : 'movie';
+    let appendToResponse = initialIsTV ? 'keywords,content_ratings' : 'keywords,release_dates';
+    let url = `${BASE_TMDB_URL}/${type}/${id}?api_key=${TMDB_API_KEY}&append_to_response=${appendToResponse}&language=ru-RU`;
+
+    try {
+        let r = await fetch(url);
+
+        // Если 404, пробуем другой тип (фильм, если изначально был сериал, и наоборот)
+        if (!r.ok && r.status === 404) {
+            console.warn(`TMDB ID ${id} не найден как ${type}, пробуем другой тип...`);
+            type = initialIsTV ? 'movie' : 'tv'; // Меняем тип
+            appendToResponse = type === 'tv' ? 'keywords,content_ratings' : 'keywords,release_dates';
+            url = `${BASE_TMDB_URL}/${type}/${id}?api_key=${TMDB_API_KEY}&append_to_response=${appendToResponse}&language=ru-RU`;
+            r = await fetch(url);
+        }
+
+        if (!r.ok) {
+            console.error(`Не удалось получить данные с TMDb для ID ${id} (${type}). Статус: ${r.status}`);
+            return null;
+        }
+
+        const data = await r.json();
+        let certification = null;
+
+        if (type === 'tv') { 
+            certification = getTVCertification(data);
+        } else {
+            certification = getMovieCertification(data);
+        }
+
+        data.certification = certification;
+        data.isTV = (type === 'tv'); // Обновляем isTV на основе того, что реально нашли
+        return data;
+    } catch (e) {
+        console.error("Ошибка при получении данных с TMDb:", e);
+        return null;
+    }
+}
+
+
+async function processLocalCardData(data) {
+    if (processedLocalCards.length && !processingPromise) return processedLocalCards;
+    if (processingPromise) return await processingPromise;
+
+    processingPromise = Promise.all(data.map(async (c) => {
+        const u = { ...c };
+        if (c.tmdb_id) {
+            // Передаем флаг isTV из локальных данных в новую функцию fetchTmdbData
+            // Если isTV не указан в localCardData, по умолчанию false (т.е. фильм)
+            const m = await fetchTmdbData(c.tmdb_id, c.isTV === true); // Явно передаем true/false
+            if (m) {
+                u.genres = m.genres?.map(g => g.name) || [];
+                u.keywords = m.keywords?.keywords?.map(k => k.name) || m.keywords?.results?.map(k => k.name) || [];
+                u.collection_id = m.belongs_to_collection?.id || null;
+                u.certification = m.certification || c.certification || null;
+                // Обновляем isTV, если TMDb показал другой тип
+                if (m.isTV !== undefined) u.isTV = m.isTV; 
+            } else {
+                u.genres = u.genres || [];
+                u.keywords = u.keywords || [];
+                u.collection_id = null;
+                u.certification = c.certification || null;
+            }
+        } else {
+            u.genres = u.genres || [];
+            u.keywords = u.keywords || [];
+            u.collection_id = null;
+            u.certification = c.certification || null;
+        }
+        // Убедимся, что isTV всегда определен
+        if (u.isTV === undefined) u.isTV = false; // По умолчанию фильм, если не указано
+        return u;
+    })).finally(() => {
+        processingPromise = null;
+    });
     
-    var localCardData = [
+    processedLocalCards = await processingPromise;
+    return processedLocalCards;
+}
+
+
+async function getTmdbRecommendations(id, isTV) { 
+    let m = [];
+    // Тип берется напрямую из переданного isTV
+    const type = isTV ? 'tv' : 'movie'; 
+    for (const e of [`recommendations`, `similar`]) {
+        try {
+            const r = await fetch(`${BASE_TMDB_URL}/${type}/${id}/${e}?api_key=${TMDB_API_KEY}&language=ru-RU&page=1`);
+            if (r.ok) {
+                const d = await r.json();
+                if (d.results?.length) {
+                    m = d.results;
+                    break;
+                }
+            } else {
+                 console.warn(`Не удалось получить ${e} для ID ${id} (${type}). Статус: ${r.status}`);
+            }
+        } catch (e) { 
+            console.error(`Ошибка при получении ${e} с TMDb для ID ${id} (${type}):`, e);
+        }
+    }
+    return m;
+}
+
+// --- Функции отображения UI (без изменений) ---
+function displayCards(cards, container) {
+    container.empty();
+    cards.slice(0, 12).forEach((card) => {
+        container.append(`
+            <li class="splide__slide">
+                <div class="card card-media" style="width: 12rem" data-rating="${card.rating}">
+                    <a href="${card.link}">
+                        <img src="${card.image}" class="card-img-top img-9x16 mt-2" alt="${card.name}" loading="lazy" onerror="this.onerror=null;this.src='/path/to/default-image.jpg';">
+                        <div class="card-rating-trand"><span class="span-rating">${card.rating}</span></div>
+                        ${card.isTV ? '<div class="card-TV card-TV-trends">TV</div>' : ''}
+                        <div class="card-body"><span class="card-tex">${card.name}<br><span class="year">${card.year}</span></span></div>
+                    </a>
+                </div>
+            </li>
+        `);
+    });
+
+    const images = container.find('img.card-img-top');
+    let loadedImages = 0;
+    if (images.length === 0) {
+        positionCardRatingTrand();
+    } else {
+        images.each(function() {
+            if (this.complete) {
+                loadedImages++;
+            } else {
+                this.onload = this.onerror = () => {
+                    loadedImages++;
+                    if (loadedImages === images.length) positionCardRatingTrand();
+                };
+            }
+        });
+        if (loadedImages === images.length) positionCardRatingTrand();
+    }
+}
+
+function positionCardRatingTrand() {
+    $('.card-item, .card-media').each(function() {
+        const $item = $(this);
+        const $img = $item.find('img');
+        const $rating = $item.find('.card-rating-trand');
+        if ($img.length && $rating.length && $img[0].complete) {
+            const iRect = $img[0].getBoundingClientRect();
+            const cRect = $item[0].getBoundingClientRect();
+            $rating.css({
+                'position': 'absolute',
+                'bottom': `${cRect.bottom - iRect.bottom + 8}px`,
+                'right': `${cRect.right - iRect.right + 8}px`,
+                'left': 'auto'
+            });
+        }
+    });
+}
+
+// --- Усиленные константы для жанров ---
+const GENRE_MATCH_BONUS = 150;
+const KEYWORD_MATCH_BONUS = 1000;
+const IRRELEVANT_SCORE = -10000;
+const YEAR_PROXIMITY_BONUS = 50;
+const YEAR_DIFFERENCE_PENALTY_FACTOR = 3;
+
+// --- Абсолютно несовместимые жанры (мгновенный отсев) ---
+const ABSOLUTE_GENRE_CONFLICTS = {
+    "ужасы": ["семейный", "мультфильм", "мюзикл", "спорт", "детский"],
+    "семейный": ["ужасы", "криминал", "нуар", "боевик", "триллер", "детектив", "военный", "эротика"],
+    "мультфильм": ["ужасы", "криминал", "нуар", "боевик", "триллер", "детектив", "военный", "эротика"],
+    "документальный": ["фэнтези", "фантастика", "мультфильм", "мюзикл", "спорт", "детский"],
+    "нуар": ["семейный", "мультфильм", "музыка", "спорт", "мюзикл", "комедия", "детский"],
+    "мюзикл": ["ужасы", "криминал", "военный", "триллер", "нуар", "документальный", "спорт", "детский"],
+    "спорт": ["ужасы", "фэнтези", "фантастика", "нуар", "мюзикл", "детский"],
+    "эротика": ["семейный", "мультфильм", "детский"],
+    "детский": ["ужасы", "криминал", "нуар", "боевик", "триллер", "детектив", "военный", "эротика", "документальный", "история", "биография"],
+};
+
+// --- Веса для штрафов за ОТСУТСТВИЕ жанра у кандидата, если он ЕСТЬ у текущего фильма ---
+const MISSING_REQUIRED_GENRE_PENALTIES = {
+    "ужасы": -1000,
+    "фантастика": -800,
+    "фэнтези": -800,
+    "детектив": -600,
+    "триллер": -600,
+    "боевик": -500,
+    "криминал": -500,
+    "нуар": -900,
+    "вестерн": -700,
+    "документальный": -1200,
+    "мультфильм": -1000,
+    "семейный": -1000,
+    "мюзикл": -800,
+    "история": -400,
+    "военный": -900,
+    "спорт": -400,
+    "музыка": -400,
+    "драма": -150,
+    "комедия": -150,
+    "приключения": -150,
+    "романтика": -100,
+    "биография": -300,
+    "детский": -1200,
+};
+
+// --- Веса для штрафов за ПРИСУТСТВИЕ "нежелательного" жанра у кандидата, если его НЕТ у текущего фильма ---
+const UNWANTED_GENRE_PENALTIES = {
+    "ужасы": -1500,
+    "мультфильм": -1000,
+    "семейный": -1000,
+    "документальный": -1200,
+    "мюзикл": -800,
+    "вестерн": -800,
+    "нуар": -800,
+    "военный": -600,
+    "криминал": -500,
+    "спорт": -500,
+    "музыка": -500,
+    "комедия": -1000,
+    "боевик": -300,
+    "триллер": -300,
+    "фантастика": -900,
+    "фэнтези": -900,
+    "биография": -400,
+    "детский": -1500,
+};
+
+const CERTIFICATION_PENALTIES = {
+    'G': ['R', 'NC-17'],
+    'PG': ['R', 'NC-17'],
+    'PG-13': ['NC-17'],
+    'R': ['G', 'PG'],
+    'NC-17': ['G', 'PG', 'PG-13']
+};
+
+// --- Улучшенная функция скоринга релевантности ---
+const scoreCard = (card, currentMovieRef) => {
+    if (!currentMovieRef) return 0;
+    let score = 0;
+    const cGenres = new Set(card.genres?.map(g => g.toLowerCase()) || []);
+    const currentGenres = new Set(currentMovieRef.genres?.map(g => g.toLowerCase()) || []);
+    const cKeywords = new Set(card.keywords?.map(k => k.toLowerCase()) || []);
+    const currentKeywords = new Set(currentMovieRef.keywords?.map(k => k.toLowerCase()) || []);
+
+    const isSameFranchise = (card.collection_id && currentMovieRef.collection_id && card.collection_id === currentMovieRef.collection_id) ||
+                             (getBaseTitle(card.name) === getBaseTitle(currentMovieRef.name) && getBaseTitle(card.name) !== '' && getBaseTitle(card.name).length > 2);
+
+    if (isSameFranchise) {
+        score += 5000;
+    } else {
+        for (const cG of currentGenres) {
+            const conflicts = ABSOLUTE_GENRE_CONFLICTS[cG];
+            if (conflicts) {
+                for (const conflictGenre of conflicts) {
+                    if (cGenres.has(conflictGenre)) {
+                        return IRRELEVANT_SCORE;
+                    }
+                }
+            }
+        }
+
+        currentGenres.forEach(cG => {
+            if (!cGenres.has(cG) && MISSING_REQUIRED_GENRE_PENALTIES[cG]) {
+                score += MISSING_REQUIRED_GENRE_PENALTIES[cG];
+            }
+        });
+
+        cGenres.forEach(cG => {
+            if (!currentGenres.has(cG) && UNWANTED_GENRE_PENALTIES[cG]) {
+                score += UNWANTED_GENRE_PENALTIES[cG];
+            }
+        });
+
+        if (currentGenres.has('комедия') && !currentGenres.has('семейный') && cGenres.has('семейный') && cGenres.has('комедия')) {
+            score -= 1000;
+        }
+    }
+
+    let matchedGenreCount = 0;
+    currentGenres.forEach(cG => {
+        if (cGenres.has(cG)) {
+            score += GENRE_MATCH_BONUS;
+            matchedGenreCount++;
+        }
+    });
+
+    if (!isSameFranchise && matchedGenreCount === 0 && currentGenres.size > 0) {
+        score += -1500;
+    }
+
+    let matchedKeywordCount = 0;
+    currentKeywords.forEach(k => {
+        if (cKeywords.has(k)) {
+            score += KEYWORD_MATCH_BONUS;
+            matchedKeywordCount++;
+        }
+    });
+
+    if (!isSameFranchise && matchedGenreCount === 0 && matchedKeywordCount === 0 && (currentGenres.size > 0 || currentKeywords.size > 0)) {
+        score += -1000;
+    }
+
+    if (!isSameFranchise && currentMovieRef.certification && card.certification) {
+        const currentCert = currentMovieRef.certification.toUpperCase();
+        const candidateCert = card.certification.toUpperCase();
+
+        if (CERTIFICATION_PENALTIES[currentCert] && CERTIFICATION_PENALTIES[currentCert].includes(candidateCert)) {
+            score -= 600;
+        }
+    }
+
+    score += getRating(card) * 10;
+
+    if (score < IRRELEVANT_SCORE) {
+        return IRRELEVANT_SCORE;
+    }
+    return score;
+};
+
+
+// --- Основная логика генерации рекомендаций ---
+async function generateCards() {
+    const cardContainer = $('#card-container');
+    if (!cardContainer.length) return;
+
+    // Ваши ЛОКАЛЬНЫЕ ДАННЫЕ ДОЛЖНЫ быть полными и актуальными!
+    // Важно: для сериалов/аниме/мультфильмов укажите "isTV": true
+    const localCardData = [
+        {
+            "name": "Гангстерленд",
+            "image": "https://image.tmdb.org/t/p/w500//qSRH45LOLb0BWWiVBHUXGytYFqL.jpg",
+            "link": "/card/series/900-91/Gangsterlend.html",
+            "year": "2025",
+            "rating": "8.5",
+            "tmdb_id": 247718,
+            "isTV": true
+        },
+        {
+            "name": "Алиса в Пограничье",
+            "image": "https://image.tmdb.org/t/p/w500//AhSSceW4LshEU2MKVL3iDHLXZtX.jpg",
+            "link": "/card/series/900-92/Alisa-v-Pograniche.html",
+            "year": "2020",
+            "rating": "8.2",
+            "tmdb_id": 110316,
+            "isTV": true
+        },
+        {
+            "name": "Джинни и Джорджия",
+            "image": "https://image.tmdb.org/t/p/w500//1yGNxmIfzr9UqKGxGoPF4P1AKbH.jpg",
+            "link": "/card/series/900-93/Dzhinni-i-Dzhordzhiya.html",
+            "year": "2021",
+            "rating": "8.1",
+            "tmdb_id": 117581,
+            "isTV": true
+        },
+        {
+            "name": "Герои",
+            "image": "https://image.tmdb.org/t/p/w500//A2VAMFKW5Q4Qgp82XIVIjUhcj9n.jpg",
+            "link": "/card/series/900-94/Geroi.html",
+            "year": "2006",
+            "rating": "7.5",
+            "tmdb_id": 1639,
+            "isTV": true
+        },
+        {
+            "name": "Видеть",
+            "image": "https://image.tmdb.org/t/p/w500//xI8GsMKify2ke4FvcmsoOaOdPIJ.jpg",
+            "link": "/card/series/900-95/Videt.html",
+            "year": "2019",
+            "rating": "8.1",
+            "tmdb_id": 80752,
+            "isTV": true
+        },
+        {
+            "name": "Отдел нераскрытых дел",
+            "image": "https://image.tmdb.org/t/p/w500//jyqEWkBA3bm9YdDwhsM3DbDylfD.jpg",
+            "link": "/card/series/900-96/Otdel-neraskrytyh-del.html",
+            "year": "2025",
+            "rating": "7.9",
+            "tmdb_id": 245703,
+            "isTV": true
+        },
+        {
+            "name": "Остаться в живых",
+            "image": "https://image.tmdb.org/t/p/w500//jR6yfKTUv7HqvyROtoRMuKzlFCb.jpg",
+            "link": "/card/series/900-97/Ostatsya-v-zhivyh.html",
+            "year": "2004",
+            "rating": "7.9",
+            "tmdb_id": 4607,
+            "isTV": true
+        },
+        {
+            "name": "Два с половиной человека",
+            "image": "https://image.tmdb.org/t/p/w500//rfo3OHRPRIDODWWr54sY1bTZLd3.jpg",
+            "link": "/card/series/900-98/Dva-s-polovinoj-cheloveka.html",
+            "year": "2003",
+            "rating": "7.5",
+            "tmdb_id": 2691,
+            "isTV": true
+        },
+        {
+            "name": "Сотня",
+            "image": "https://image.tmdb.org/t/p/w500//tEm3ALRXsoXT9IaCp1dcNFyjtBO.jpg",
+            "link": "/card/series/900-99/Sotnya.html",
+            "year": "2014",
+            "rating": "7.9",
+            "tmdb_id": 48866,
+            "isTV": true
+        },
+        {
+            "name": "Стрела",
+            "image": "https://image.tmdb.org/t/p/w500//8xevzZgfa6ed0vVrZ8kwf71py4w.jpg",
+            "link": "/card/series/900-100/Strela.html",
+            "year": "2012",
+            "rating": "6.8",
+            "tmdb_id": 1412,
+            "isTV": true
+        },
+        {
+            "name": "Тайны Смолвиля",
+            "image": "https://image.tmdb.org/t/p/w500//aRhhgcz1hMHZWp15E8g8oerb8vD.jpg",
+            "link": "/card/series/900-101/Tajny-Smolvilya.html",
+            "year": "2001",
+            "rating": "8.2",
+            "tmdb_id": 4604,
+            "isTV": true
+        },
+        {
+            "name": "Зачарованные",
+            "image": "https://image.tmdb.org/t/p/w500//l66qYuj0h7r6aPfcznkRzVHiFLU.jpg",
+            "link": "/card/series/900-102/Zacharovannye.html",
+            "year": "1998",
+            "rating": "8.2",
+            "tmdb_id": 1981,
+            "isTV": true
+        },
+        {
+            "name": "Детство Шелдона",
+            "image": "https://image.tmdb.org/t/p/w500//9bZR5H7LrEo4i9gYoKvUhvcfr1y.jpg",
+            "link": "/card/series/900-103/Detstvo-Sheldona.html",
+            "year": "2017",
+            "rating": "8.0",
+            "tmdb_id": 71728,
+            "isTV": true
+        },
+        {
+            "name": "Теория большого взрыва",
+            "image": "https://image.tmdb.org/t/p/w500//wgCVpWDwc93wHlck8jEQT08tps0.jpg",
+            "link": "/card/series/900-104/Teoriya-bolshogo-vzryva.html",
+            "year": "2007",
+            "rating": "7.9",
+            "tmdb_id": 1418,
+            "isTV": true
+        },
+        {
+            "name": "Сваты",
+            "image": "https://image.tmdb.org/t/p/w500//7DtVbNXIwMCplhysJFJCANp6pwx.jpg",
+            "link": "/card/series/900-105/Svaty.html",
+            "year": "2008",
+            "rating": "6.2",
+            "tmdb_id": 46014,
+            "isTV": true
+        },
         {
             "name": "911: Служба спасения",
             "image": "https://image.tmdb.org/t/p/w500//9dNWZPjFWdKo5Avr5JEEzLShLMZ.jpg",
             "link": "/card/series/900-01/911-sluzhba-spaseniya.html",
             "year": "2018",
             "rating":"8.2",
-            "isTV": true,
-            "genres": ["Драма", "Криминал", "Боевик и Приключения"]
+            "tmdb_id": 75219,
+            "isTV": true
         },
         {
             "name": "Сверхъестественное",
@@ -49,8 +566,8 @@ async function generateCards() {
             "link": "/card/series/900-03/Sverhestestvennoe.html",
             "year": "2005",
             "rating":"8.3",
-            "isTV": true,
-            "genres": ["Драма", "Детектив", "НФ и Фэнтези"]
+            "tmdb_id": 1622,
+            "isTV": true
         },
         {
             "name": "Корона",
@@ -58,8 +575,8 @@ async function generateCards() {
             "link": "/card/series/900-04/Korona.html",
             "year": "2016",
             "rating":"8.2",
-            "isTV": true,
-            "genres": ["Драма", "История", "Биография"]
+            "tmdb_id": 65494,
+            "isTV": true
         },
         {
             "name": "Острые козырьки",
@@ -67,8 +584,8 @@ async function generateCards() {
             "link": "/card/series/900-05/Ostrye-kozyrki.html",
             "year": "2013",
             "rating":"8.5",
-            "isTV": true,
-            "genres": ["Драма", "Криминал"]
+            "tmdb_id": 60574,
+            "isTV": true
         },
         {
             "name": "Гримм",
@@ -76,8 +593,8 @@ async function generateCards() {
             "link": "/card/series/900-06/Grimm.html",
             "year": "2011",
             "rating":"8.3",
-            "isTV": true,
-            "genres": ["Драма", "Детектив", "НФ и Фэнтези"]
+            "tmdb_id": 39351,
+            "isTV": true
         },
         {
             "name": "Джентльмены",
@@ -85,8 +602,8 @@ async function generateCards() {
             "link": "/card/series/900-07/Dzhentlmeny.html",
             "year": "2024",
             "rating":"7.9",
-            "isTV": true,
-            "genres": ["Комедия", "Драма", "Криминал"]
+            "tmdb_id": 236235,
+            "isTV": true
         },
         {
             "name": "Бриджертоны",
@@ -94,8 +611,8 @@ async function generateCards() {
             "link": "/card/series/900-08/Bridzhertony.html",
             "year": "2020",
             "rating":"8.1",
-            "isTV": true,
-            "genres": ["Драма", "Мелодрама", "История"]
+            "tmdb_id": 91239,
+            "isTV": true
         },
         {
             "name": "Лучше звоните Солу",
@@ -103,8 +620,8 @@ async function generateCards() {
             "link": "/card/series/900-09/Luchshe-zvonite-Solu.html",
             "year": "2015",
             "rating":"8.7",
-            "isTV": true,
-            "genres": ["Драма", "Криминал"]
+            "tmdb_id": 60059,
+            "isTV": true
         },
         {
             "name": "Сто лет одиночества",
@@ -112,8 +629,8 @@ async function generateCards() {
             "link": "/card/series/900-10/Sto-let-odinochestva.html",
             "year": "2024",
             "rating":"8.0",
-            "isTV": true,
-            "genres": ["Драма", "НФ и Фэнтези"]
+            "tmdb_id": 207333,
+            "isTV": true
         },
         {
             "name": "Люцифер",
@@ -121,8 +638,8 @@ async function generateCards() {
             "link": "/card/series/900-11/Lyucifer.html",
             "year": "2016",
             "rating":"8.5",
-            "isTV": true,
-            "genres": ["Криминал", "НФ и Фэнтези"]
+            "tmdb_id": 63174,
+            "isTV": true
         },
         {
             "name": "Декстер: Новая кровь",
@@ -130,8 +647,8 @@ async function generateCards() {
             "link": "/card/series/900-12/Dekster-Novaya-krov.html",
             "year": "2021",
             "rating":"8.0",
-            "isTV": true,
-            "genres": ["Драма", "Криминал"]
+            "tmdb_id": 131927,
+            "isTV": true
         },
         {
             "name": "Дневники вампира",
@@ -139,8 +656,8 @@ async function generateCards() {
             "link": "/card/series/900-13/Dnevniki-vampira.html",
             "year": "2009",
             "rating":"8.3",
-            "isTV": true,
-            "genres": ["Драма", "НФ и Фэнтези"]
+            "tmdb_id": 18165,
+            "isTV": true
         },
         {
             "name": "Шерлок",
@@ -148,8 +665,8 @@ async function generateCards() {
             "link": "/card/series/900-14/Sherlok.html",
             "year": "2010",
             "rating":"8.5",
-            "isTV": true,
-            "genres": ["Криминал", "Драма", "Детектив"]
+            "tmdb_id": 19885,
+            "isTV": true
         },
         {
             "name": "Тьма",
@@ -157,8 +674,8 @@ async function generateCards() {
             "link": "/card/series/900-15/Tma.html",
             "year": "2017",
             "rating":"8.4",
-            "isTV": true,
-            "genres": ["Криминал", "Драма", "НФ и Фэнтези"]
+            "tmdb_id": 70523,
+            "isTV": true
         },
         {
             "name": "Игра в кальмара",
@@ -166,8 +683,8 @@ async function generateCards() {
             "link": "/card/series/900-16/Igra-v-kalmara.html",
             "year": "2021",
             "rating":"7.9",
-            "isTV": true,
-            "genres": ["Боевик и Приключения", "Детектив", "Драма"]
+            "tmdb_id": 93405,
+            "isTV": true
         },
         {
             "name": "Тед Лассо",
@@ -175,8 +692,8 @@ async function generateCards() {
             "link": "/card/series/900-17/Ted-Lasso.html",
             "year": "2020",
             "rating":"8.4",
-            "isTV": true,
-            "genres": ["Комедия", "Драма"]
+            "tmdb_id": 97546,
+            "isTV": true
         },
         {
             "name": "Друзья",
@@ -184,8 +701,8 @@ async function generateCards() {
             "link": "/card/series/900-18/Druzya.html",
             "year": "1994",
             "rating":"8.4",
-            "isTV": true,
-            "genres": ["Комедия", "Мелодрама"]
+            "tmdb_id": 1668,
+            "isTV": true
         },
         {
             "name": "Хороший доктор",
@@ -193,8 +710,8 @@ async function generateCards() {
             "link": "/card/series/900-19/Horoshij-doktor.html",
             "year": "2017",
             "rating":"8.5",
-            "isTV": true,
-            "genres": ["Драма"]
+            "tmdb_id": 71712,
+            "isTV": true
         },
         {
             "name": "Волчонок",
@@ -202,8 +719,8 @@ async function generateCards() {
             "link": "/card/series/900-20/Volchonok.html",
             "year": "2011",
             "rating":"8.5",
-            "isTV": true,
-            "genres": ["НФ и Фэнтези", "Драма", "Комедия"]
+            "tmdb_id": 34524,
+            "isTV": true
         },
         {
             "name": "Мистер Робот",
@@ -211,8 +728,8 @@ async function generateCards() {
             "link": "/card/series/900-22/Mister-Robot.html",
             "year": "2015",
             "rating":"8.2",
-            "isTV": true,
-            "genres": ["Криминал", "Драма"]
+            "tmdb_id": 62560,
+            "isTV": true
         },
         {
             "name": "Мандалорец",
@@ -220,8 +737,8 @@ async function generateCards() {
             "link": "/card/series/900-23/Mandalorec.html",
             "year": "2019",
             "rating":"8.4",
-            "isTV": true,
-            "genres": ["НФ и Фэнтези", "Боевик и Приключения"]
+            "tmdb_id": 82856,
+            "isTV": true
         },
         {
             "name": "Земля без людей",
@@ -229,8 +746,8 @@ async function generateCards() {
             "link": "/card/series/900-24/Zemlya-bez-lyudej.html",
             "year": "2024",
             "rating":"7.2",
-            "isTV": true,
-            "genres": ["НФ и Фэнтези"]
+            "tmdb_id": 250308,
+            "isTV": true
         },
         {
             "name": "Американская история ужасов",
@@ -238,8 +755,8 @@ async function generateCards() {
             "link": "/card/series/900-25/Amerikanskaya-istoriya-uzhasov.html",
             "year": "2011",
             "rating":"8.1",
-            "isTV": true,
-            "genres": ["Драма", "Детектив", "НФ и Фэнтези"]
+            "tmdb_id": 1413,
+            "isTV": true
         },
         {
             "name": "День Шакала",
@@ -247,8 +764,8 @@ async function generateCards() {
             "link": "/card/series/900-26/Den-Shakala.html",
             "year": "2024",
             "rating":"8.3",
-            "isTV": true,
-            "genres": ["Драма", "Боевик и Приключения", "Детектив"]
+            "tmdb_id": 222766,
+            "isTV": true
         },
         {
             "name": "Кросс",
@@ -256,8 +773,8 @@ async function generateCards() {
             "link": "/card/series/900-27/Kross.html",
             "year": "2024",
             "rating":"7.2",
-            "isTV": true,
-            "genres": ["Криминал", "Драма", "Детектив"]
+            "tmdb_id": 213306,
+            "isTV": true
         },
         {
             "name": "Ганнибал",
@@ -265,8 +782,8 @@ async function generateCards() {
             "link": "/card/series/900-28/Gannibal.html",
             "year": "2013",
             "rating":"8.2",
-            "isTV": true,
-            "genres": ["Криминал", "Драма"]
+            "tmdb_id": 40008,
+            "isTV": true
         },
         {
             "name": "Магазин светильников",
@@ -274,8 +791,8 @@ async function generateCards() {
             "link": "/card/series/900-29/Magazin-svetilnikov.html",
             "year": "2024",
             "rating":"8.6",
-            "isTV": true,
-            "genres": ["Драма", "Детектив"]
+            "tmdb_id": 226529,
+            "isTV": true
         },
         {
             "name": "Сексуальное просвещение",
@@ -283,8 +800,8 @@ async function generateCards() {
             "link": "/card/series/900-30/Seksualnoe-prosveshenie.html",
             "year": "2019",
             "rating":"8.2",
-            "isTV": true,
-            "genres": ["Комедия", "Драма"]
+            "tmdb_id": 81356,
+            "isTV": true
         },
         {
             "name": "Ловкий Плут",
@@ -292,8 +809,8 @@ async function generateCards() {
             "link": "/card/series/900-31/Lovki-Plut.html",
             "year": "2023",
             "rating":"8.0",
-            "isTV": true,
-            "genres": ["Драма", "Криминал", "Боевик и Приключения"]
+            "tmdb_id": 202208,
+            "isTV": true
         },
         {
             "name": "Дорогуша",
@@ -301,8 +818,8 @@ async function generateCards() {
             "link": "/card/series/900-32/Dorogusha.html",
             "year": "2024",
             "rating":"7.6",
-            "isTV": true,
-            "genres": ["Комедия", "Драма"]
+            "tmdb_id": 218347,
+            "isTV": true
         },
         {
             "name": "Игра престолов",
@@ -310,8 +827,8 @@ async function generateCards() {
             "link": "/card/series/900-33/Igra-prestolov.html",
             "year": "2011",
             "rating":"8.5",
-            "isTV": true,
-            "genres": ["НФ и Фэнтези", "Драма", "Приключения"]
+            "tmdb_id": 1399,
+            "isTV": true
         },
         {
             "name": "Древние",
@@ -319,8 +836,8 @@ async function generateCards() {
             "link": "/card/series/900-34/Drevnie.html",
             "year": "2013",
             "rating":"8.6",
-            "isTV": true,
-            "genres": ["НФ и Фэнтези", "Драма", "Детектив"]
+            "tmdb_id": 46896,
+            "isTV": true
         },
         {
             "name": "Отбросы",
@@ -328,8 +845,8 @@ async function generateCards() {
             "link": "/card/series/900-35/Otbrosy.html",
             "year": "2009",
             "rating":"7.6",
-            "isTV": true,
-            "genres": ["НФ и Фэнтези", "Драма", "Комедия"]
+            "tmdb_id": 31295,
+            "isTV": true
         },
         {
             "name": "Флэш",
@@ -337,8 +854,8 @@ async function generateCards() {
             "link": "/card/series/900-36/Flesh.html",
             "year": "2014",
             "rating":"7.8",
-            "isTV": true,
-            "genres": ["НФ и Фэнтези", "Драма"]
+            "tmdb_id": 60735,
+            "isTV": true
         },
         {
             "name": "Дом Дракона",
@@ -346,8 +863,8 @@ async function generateCards() {
             "link": "/card/series/900-37/Dom-Drakona.html",
             "year": "2022",
             "rating":"8.4",
-            "isTV": true,
-            "genres": ["НФ и Фэнтези", "Драма", "Приключения"]
+            "tmdb_id": 94997,
+            "isTV": true
         },
         {
             "name": "Презумпция невиновности",
@@ -355,8 +872,8 @@ async function generateCards() {
             "link": "/card/series/900-38/Prezumpciya-nevinovnosti.html",
             "year": "2024",
             "rating":"8.1",
-            "isTV": true,
-            "genres": ["Драма", "Детектив"]
+            "tmdb_id": 156933,
+            "isTV": true
         },
         {
             "name": "Обречённые на славу",
@@ -364,8 +881,8 @@ async function generateCards() {
             "link": "/card/series/900-39/Obrechennye-na-slavu.html",
             "year": "2024",
             "rating":"7.5",
-            "isTV": true,
-            "genres": ["Драма", "История"]
+            "tmdb_id": 218589,
+            "isTV": true
         },
         {
             "name": "Пацаны",
@@ -373,8 +890,8 @@ async function generateCards() {
             "link": "/card/series/900-40/Pacany.html",
             "year": "2019",
             "rating":"8.5",
-            "isTV": true,
-            "genres": ["Боевик и Приключения", "Драма", "Фэнтези"]
+            "tmdb_id": 76479,
+            "isTV": true
         },
         {
             "name": "Очень странные дела",
@@ -382,8 +899,8 @@ async function generateCards() {
             "link": "/card/series/900-41/Ochen-strannye-dela.html",
             "year": "2016",
             "rating":"8.6",
-            "isTV": true,
-            "genres": ["Детектив", "Драма", "НФ и Фэнтези"]
+            "tmdb_id": 66732,
+            "isTV": true
         },
         {
             "name": "Шугар",
@@ -391,8 +908,8 @@ async function generateCards() {
             "link": "/card/series/900-42/Shugar.html",
             "year": "2024",
             "rating":"7.3",
-            "isTV": true,
-            "genres": ["Детектив", "Драма"]
+            "tmdb_id": 203744,
+            "isTV": true
         },
         {
             "name": "Охота за убийцей",
@@ -400,8 +917,8 @@ async function generateCards() {
             "link": "/card/series/900-43/Ohota-za-ubijcej.html",
             "year": "2024",
             "rating":"6.9",
-            "isTV": true,
-            "genres": ["Драма", "Криминал", "История"]
+            "tmdb_id": 155533,
+            "isTV": true
         },
         {
             "name": "Созвездие",
@@ -409,8 +926,8 @@ async function generateCards() {
             "link": "/card/series/900-45/Sozvezdie.html",
             "year": "2024",
             "rating":"7.2",
-            "isTV": true,
-            "genres": ["НФ и Фэнтези", "Детектив", "Драма"]
+            "tmdb_id": 197125,
+            "isTV": true
         },
         {
             "name": "Бригада",
@@ -418,8 +935,8 @@ async function generateCards() {
             "link": "/card/series/900-02/Brigada.html",
             "year": "2002",
             "rating":"7.8",
-            "isTV": true,
-            "genres": ["Боевик и Приключения", "Драма", "Криминал"]
+            "tmdb_id": 30877,
+            "isTV": true
         },
         {
             "name": "Задача трёх тел",
@@ -427,8 +944,8 @@ async function generateCards() {
             "link": "/card/series/900-46/Zadacha-tryoh-tel.html",
             "year": "2024",
             "rating":"7.5",
-            "isTV": true,
-            "genres": ["НФ и Фэнтези", "Детектив", "Драма"]
+            "tmdb_id": 108545,
+            "isTV": true
         },
         {
             "name": "Хало",
@@ -436,8 +953,8 @@ async function generateCards() {
             "link": "/card/series/900-47/Halo.html",
             "year": "2022",
             "rating":"8.3",
-            "isTV": true,
-            "genres": ["НФ и Фэнтези", "Боевик и Приключения"]
+            "tmdb_id": 52814,
+            "isTV": true
         },
         {
             "name": "Властелины воздуха",
@@ -445,8 +962,8 @@ async function generateCards() {
             "link": "/card/series/900-48/Vlasteliny-vozduha.html",
             "year": "2024",
             "rating":"7.8",
-            "isTV": true,
-            "genres": ["Драма", "Война и Политика"]
+            "tmdb_id": 46518,
+            "isTV": true
         },
         {
             "name": "Лунный рыцарь",
@@ -454,8 +971,8 @@ async function generateCards() {
             "link": "/card/series/900-49/Lunnyj-rycar.html",
             "year": "2022",
             "rating":"7.7",
-            "isTV": true,
-            "genres": ["Фэнтези", "Детектив", "Боевик и Приключения"]
+            "tmdb_id": 92749,
+            "isTV": true
         },
         {
             "name": "Извне",
@@ -463,8 +980,8 @@ async function generateCards() {
             "link": "/card/series/900-50/Izvne.html",
             "year": "2022",
             "rating":"8.2",
-            "isTV": true,
-            "genres": ["Детектив", "Драма", "НФ и Фэнтези"]
+            "tmdb_id": 124364,
+            "isTV": true
         },
         {
             "name": "Чернобыль",
@@ -472,8 +989,8 @@ async function generateCards() {
             "link": "/card/series/900-51/Chernobyl.html",
             "year": "2019",
             "rating":"8.7",
-            "isTV": true,
-            "genres": ["Драма", "История"]
+            "tmdb_id": 87108,
+            "isTV": true
         },
         {
             "name": "Ричер",
@@ -481,8 +998,8 @@ async function generateCards() {
             "link": "/card/series/900-52/Dzhek-Richer.html",
             "year": "2022",
             "rating":"8.1",
-            "isTV": true,
-            "genres": ["Боевик и Приключения", "Криминал", "Драма"]
+            "tmdb_id": 108978,
+            "isTV": true
         },
         {
             "name": "Фарго",
@@ -490,8 +1007,8 @@ async function generateCards() {
             "link": "/card/series/900-53/Fargo.html",
             "year": "2014",
             "rating":"8.3",
-            "isTV": true,
-            "genres": ["Драма", "Криминал"]
+            "tmdb_id": 60622,
+            "isTV": true
         },
         {
             "name": "Третий лишний",
@@ -499,8 +1016,8 @@ async function generateCards() {
             "link": "/card/series/900-54/Tretij-lishnij.html",
             "year": "2024",
             "rating":"7.9",
-            "isTV": true,
-            "genres": ["Комедия"]
+            "tmdb_id": 201834,
+            "isTV": true
         },
         {
             "name": "«Монарх»: Наследие монстров",
@@ -508,8 +1025,8 @@ async function generateCards() {
             "link": "/card/series/900-55/Monarh-Nasledie-monstrov.html",
             "year": "2023",
             "rating":"7.8",
-            "isTV": true,
-            "genres": ["Фэнтези", "Драма", "Боевик и Приключения"]
+            "tmdb_id": 202411,
+            "isTV": true
         },
         {
             "name": "Пингвин",
@@ -517,8 +1034,8 @@ async function generateCards() {
             "link": "/card/series/900-56/Pingvin.html",
             "year": "2024",
             "rating":"8.5",
-            "isTV": true,
-            "genres": ["Драма", "Криминал"]
+            "tmdb_id": 194764,
+            "isTV": true
         },
         {
             "name": "Ведьмак",
@@ -526,8 +1043,8 @@ async function generateCards() {
             "link": "/card/series/900-57/Vedmak.html",
             "year": "2019",
             "rating":"8.0",
-            "isTV": true,
-            "genres": ["НФ и Фэнтези", "Драма", "Приключения"]
+            "tmdb_id": 71912,
+            "isTV": true
         },
         {
             "name": "Локи",
@@ -535,8 +1052,8 @@ async function generateCards() {
             "link": "/card/series/900-58/Loki.html",
             "year": "2019",
             "rating":"8.2",
-            "isTV": true,
-            "genres": ["НФ и Фэнтези", "Драма"]
+            "tmdb_id": 84958,
+            "isTV": true
         },
         {
             "name": "Тысяча и одна ночь",
@@ -544,8 +1061,8 @@ async function generateCards() {
             "link": "/card/series/900-59/Tysyacha-i-odna-noch.html",
             "year": "2024",
             "rating":"4.0",
-            "isTV": true,
-            "genres": ["НФ и Фэнтези", "Драма"]
+            "tmdb_id": 246706,
+            "isTV": true
         },
         {
             "name": "Зимний король",
@@ -553,8 +1070,8 @@ async function generateCards() {
             "link": "/card/series/900-61/Zimnij-korol.html",
             "year": "2023",
             "rating":"6.8",
-            "isTV": true,
-            "genres": ["Боевик и Приключения", "Драма"]
+            "tmdb_id": 99737,
+            "isTV": true
         },
         {
             "name": "Поколение «Ви»",
@@ -562,8 +1079,8 @@ async function generateCards() {
             "link": "/card/series/900-62/Pokolenie-Vi.html",
             "year": "2023",
             "rating":"7.9",
-            "isTV": true,
-            "genres": ["Боевик и Приключения", "Драма", "Фэнтези"]
+            "tmdb_id": 205715,
+            "isTV": true
         },
         {
             "name": "Доисторическая планета",
@@ -571,8 +1088,8 @@ async function generateCards() {
             "link": "/card/series/900-63/Doistoricheskaya-planeta.html",
             "year": "2022",
             "rating":"8.3",
-            "isTV": true,
-            "genres": ["Документальный"]
+            "tmdb_id": 95171,
+            "isTV": true
         },
         {
             "name": "Одни из нас",
@@ -580,8 +1097,8 @@ async function generateCards() {
             "link": "/card/series/900-64/Odni-iz-nas.html",
             "year": "2023",
             "rating":"8.6",
-            "isTV": true,
-            "genres": ["Боевик и Приключения", "Драма", "Триллер"]
+            "tmdb_id": 100088,
+            "isTV": true
         },
         {
             "name": "Захваченный рейс",
@@ -589,8 +1106,8 @@ async function generateCards() {
             "link": "/card/series/900-65/Zahvachennyj-rejs.html",
             "year": "2023",
             "rating":"7.8",
-            "isTV": true,
-            "genres": ["Драма", "Триллер"]
+            "tmdb_id": 198102,
+            "isTV": true
         },
         {
             "name": "Скрежет металла",
@@ -598,8 +1115,8 @@ async function generateCards() {
             "link": "/card/series/900-66/Skrezhet-metalla.html",
             "year": "2023",
             "rating":"7.9",
-            "isTV": true,
-            "genres": ["Боевик и Приключения", "Комедия"]
+            "tmdb_id": 133748,
+            "isTV": true
         },
         {
             "name": "Бумажный дом",
@@ -607,17 +1124,17 @@ async function generateCards() {
             "link": "/card/series/900-67/Bumazhnyj-dom.html",
             "year": "2017",
             "rating":"8.2",
-            "isTV": true,
-            "genres": ["Криминал", "Драма"]
+            "tmdb_id": 71446,
+            "isTV": true
         },
         {
-            "name": "Любовь и смерть ",
+            "name": "Любовь и смерть",
             "image": "https://image.tmdb.org/t/p/w500//tMm4sHiTkx8kaI71BcG2ELXRKfR.jpg",
             "link": "/card/series/900-68/Lyubov-i-smert.html",
             "year": "2023",
             "rating":"7.9",
-            "isTV": true,
-            "genres": ["Криминал", "Драма"]
+            "tmdb_id": 124800,
+            "isTV": true
         },
         {
             "name": "Цитадель",
@@ -625,8 +1142,8 @@ async function generateCards() {
             "link": "/card/series/900-69/Citadel.html",
             "year": "2023",
             "rating":"6.9",
-            "isTV": true,
-            "genres": ["Криминал", "Драма", "Боевик и Приключения"]
+            "tmdb_id": 114922,
+            "isTV": true
         },
         {
             "name": "Экстраполяции",
@@ -634,8 +1151,8 @@ async function generateCards() {
             "link": "/card/series/900-70/Ekstrapolyacii.html",
             "year": "2023",
             "rating":"6.0",
-            "isTV": true,
-            "genres": ["Драма", "Детектив", "Комедия"]
+            "tmdb_id": 138169,
+            "isTV": true
         },
         {
             "name": "Фоллаут",
@@ -643,8 +1160,8 @@ async function generateCards() {
             "link": "/card/series/900-71/Fallout.html",
             "year": "2024",
             "rating":"8.3",
-            "isTV": true,
-            "genres": ["НФ и Фэнтези", "Приключения", "Драма"]
+            "tmdb_id": 106379,
+            "isTV": true
         },
         {
             "name": "Связь",
@@ -652,8 +1169,8 @@ async function generateCards() {
             "link": "/card/series/900-72/Svyaz.html",
             "year": "2023",
             "rating":"6.3",
-            "isTV": true,
-            "genres": ["Криминал", "Драма", "Комедия"]
+            "tmdb_id": 128066,
+            "isTV": true
         },
         {
             "name": "Настоящий детектив",
@@ -661,8 +1178,8 @@ async function generateCards() {
             "link": "/card/series/900-73/Nastoyashij-detektiv.html",
             "year": "2014",
             "rating":"8.3",
-            "isTV": true,
-            "genres": ["Драма", "Детектив"]
+            "tmdb_id": 46648,
+            "isTV": true
         },
         {
             "name": "Всевидящее око",
@@ -670,8 +1187,8 @@ async function generateCards() {
             "link": "/card/series/900-74/Vsevidyashee-oko.html",
             "year": "2023",
             "rating":"6.7",
-            "isTV": true,
-            "genres": ["Детектив", "Драма", "Триллер"]
+            "tmdb_id": 205440,
+            "isTV": true
         },
         {
             "name": "Сёгун",
@@ -679,8 +1196,8 @@ async function generateCards() {
             "link": "/card/series/900-75/Syogun.html",
             "year": "2024",
             "rating":"8.5",
-            "isTV": true,
-            "genres": ["Драма", "Война и Политика"]
+            "tmdb_id": 126308,
+            "isTV": true
         },
         {
             "name": "Карнивал Роу",
@@ -688,8 +1205,8 @@ async function generateCards() {
             "link": "/card/series/900-76/Karnival-Rou.html",
             "year": "2019",
             "rating":"7.7",
-            "isTV": true,
-            "genres": ["Криминал", "Драма", "НФ и Фэнтези"]
+            "tmdb_id": 90027,
+            "isTV": true
         },
         {
             "name": "Сквозь снег",
@@ -697,8 +1214,8 @@ async function generateCards() {
             "link": "/card/series/900-77/Skvoz-sneg.html",
             "year": "2020",
             "rating":"7.4",
-            "isTV": true,
-            "genres": ["НФ и Фэнтези", "Драма", "Триллер"]
+            "tmdb_id": 79680,
+            "isTV": true
         },
         {
             "name": "Ты",
@@ -706,8 +1223,8 @@ async function generateCards() {
             "link": "/card/series/900-78/Ty.html",
             "year": "2018",
             "rating":"8.0",
-            "isTV": true,
-            "genres": ["Криминал", "Драма", "Триллер"]
+            "tmdb_id": 78191,
+            "isTV": true
         },
         {
             "name": "Мэйфейрские ведьмы",
@@ -715,8 +1232,8 @@ async function generateCards() {
             "link": "/card/series/900-79/Mejfejrskie-vedmy.html",
             "year": "2023",
             "rating":"7.4",
-            "isTV": true,
-            "genres": ["Драма", "НФ и Фэнтези"]
+            "tmdb_id": 207863,
+            "isTV": true
         },
         {
             "name": "Наклз",
@@ -724,8 +1241,8 @@ async function generateCards() {
             "link": "/card/series/900-80/Naklz.html",
             "year": "2024",
             "rating":"7.4",
-            "isTV": true,
-            "genres": ["Приключения", "Семейный", "Комедия"]
+            "tmdb_id": 158300,
+            "isTV": true
         },
         {
             "name": "1923",
@@ -733,8 +1250,8 @@ async function generateCards() {
             "link": "/card/series/900-81/1923.html",
             "year": "2022",
             "rating":"8.1",
-            "isTV": true,
-            "genres": ["Драма", "Вестерн"]
+            "tmdb_id": 157744,
+            "isTV": true
         },
         {
             "name": "Властелин колец: Кольца власти",
@@ -742,8 +1259,8 @@ async function generateCards() {
             "link": "/card/series/900-82/Vlastelin-kolec-Kolca-vlasti.html",
             "year": "2022",
             "rating":"7.3",
-            "isTV": true,
-            "genres": ["Приключения", "НФ и Фэнтези", "Драма"]
+            "tmdb_id": 84773,
+            "isTV": true
         },
         {
             "name": "Химия смерти",
@@ -751,8 +1268,8 @@ async function generateCards() {
             "link": "/card/series/900-83/Himiya-smerti.html",
             "year": "2023",
             "rating":"6.6",
-            "isTV": true,
-            "genres": ["Криминал"]
+            "tmdb_id": 217180,
+            "isTV": true
         },
         {
             "name": "Викинги: Вальхалла",
@@ -760,8 +1277,8 @@ async function generateCards() {
             "link": "/card/series/900-84/Vikingi-Valhalla.html",
             "year": "2022",
             "rating":"7.7",
-            "isTV": true,
-            "genres": ["Приключения", "Драма", "Война и Политика"]
+            "tmdb_id": 116135,
+            "isTV": true
         },
         {
             "name": "Черное зеркало",
@@ -769,8 +1286,8 @@ async function generateCards() {
             "link": "/card/series/900-85/Chernoe-zerkalo.html",
             "year": "2011",
             "rating":"8.3",
-            "isTV": true,
-            "genres": ["НФ и Фэнтези", "Драма", "Детектив"]
+            "tmdb_id": 42009,
+            "isTV": true
         },
         {
             "name": "Во все тяжкие",
@@ -778,8 +1295,8 @@ async function generateCards() {
             "link": "/card/series/900-86/Vo-vse-tyazhkie.html",
             "year": "2008",
             "rating":"8.9",
-            "isTV": true,
-            "genres": ["Драма", "Криминал"]
+            "tmdb_id": 1396,
+            "isTV": true
         },
         {
             "name": "Ходячие мертвецы: Выжившие",
@@ -787,8 +1304,8 @@ async function generateCards() {
             "link": "/card/series/900-44/Hodyachie-mertvecy-Vyzhivshie.html",
             "year": "2024",
             "rating":"8.0",
-            "isTV": true,
-            "genres": ["Боевик и Приключения", "Приключения", "Драма", "НФ и Фэнтези"]
+            "tmdb_id": 206586,
+            "isTV": true
         },
         {
             "name": "Ходячие мертвецы: Дэрил Диксон",
@@ -796,8 +1313,8 @@ async function generateCards() {
             "link": "/card/series/900-60/Hodyachie-mertvecy-Deril-Dikson.html",
             "year": "2023",
             "rating":"8.1",
-            "isTV": true,
-            "genres": ["Боевик и Приключения", "Приключения", "Драма", "НФ и Фэнтези"]
+            "tmdb_id": 211684,
+            "isTV": true
         },
         {
             "name": "Ходячие мертвецы: Мертвый город",
@@ -805,8 +1322,8 @@ async function generateCards() {
             "link": "/card/series/900-87/Hodyachie-mertvecy-Mertvyj-gorod.html",
             "year": "2023",
             "rating":"8.0",
-            "isTV": true,
-            "genres": ["Боевик и Приключения", "Приключения", "Драма", "НФ и Фэнтези"]
+            "tmdb_id": 194583,
+            "isTV": true
         },
         {
             "name": "Истории ходячих мертвецов",
@@ -814,8 +1331,8 @@ async function generateCards() {
             "link": "/card/series/900-88/Istorii-hodyachih-mertvecov.html",
             "year": "2022",
             "rating":"7.2",
-            "isTV": true,
-            "genres": ["Боевик и Приключения", "Приключения", "Драма", "НФ и Фэнтези"]
+            "tmdb_id": 136248,
+            "isTV": true
         },
         {
             "name": "Ходячие мертвецы: Мир за пределами",
@@ -823,8 +1340,8 @@ async function generateCards() {
             "link": "/card/series/900-89/Hodyachie-mertvecy-Mir-za-predelami.html",
             "year": "2020",
             "rating":"7.4",
-            "isTV": true,
-            "genres": ["Боевик и Приключения", "Приключения", "Драма", "НФ и Фэнтези"]
+            "tmdb_id": 94305,
+            "isTV": true
         },
         {
             "name": "Бойтесь ходячих мертвецов",
@@ -832,8 +1349,8 @@ async function generateCards() {
             "link": "/card/series/900-90/Bojtes-hodyachih-mertvecov.html",
             "year": "2015",
             "rating":"7.7",
-            "isTV": true,
-            "genres": ["Боевик и Приключения", "Приключения", "Драма", "НФ и Фэнтези"]
+            "tmdb_id": 62286,
+            "isTV": true
         },
         {
             "name": "Ходячие мертвецы",
@@ -841,8 +1358,8 @@ async function generateCards() {
             "link": "/card/series/900-21/Hodyachie-mertvecy.html",
             "year": "2010",
             "rating":"8.1",
-            "isTV": true,
-            "genres": ["Боевик и Приключения", "Приключения", "Драма", "НФ и Фэнтези"]
+            "tmdb_id": 1402,
+            "isTV": true
         },
     
         // конец
@@ -850,159 +1367,262 @@ async function generateCards() {
         
     ];
 
-    var cardContainer = $('#card-container');
-    if (!cardContainer.length) {
-        return; // Возвращаемся, если контейнер не найден
+    // processLocalCardData теперь обрабатывает isTV === undefined как false
+    processedLocalCards = await processLocalCardData(localCardData);
+
+    const MAX_CARDS = 12;
+    const addedCardsLinks = new Set();
+    let recommendations = [];
+
+    const addCardToRecommendations = (card) => {
+        if (recommendations.length >= MAX_CARDS) return false;
+        if (addedCardsLinks.has(card.link)) return false;
+        recommendations.push(card);
+        addedCardsLinks.add(card.link);
+        return true;
+    };
+
+    const currentLink = window.location.pathname.includes('card') && window.location.pathname.split('/').some(p => p.endsWith('.html')) ?
+        '/' + window.location.pathname.split('/').slice(window.location.pathname.split('/').indexOf('card')).join('/') :
+        window.location.pathname.split('?')[0].split('#')[0];
+
+    let currentMovie = null;
+
+    // --- Усиленная логика определения currentMovie только по локальным данным ---
+
+    // 1. Поиск по точному совпадению ссылки
+    currentMovie = processedLocalCards.find(c => c.link.toLowerCase() === currentLink.toLowerCase());
+    if (currentMovie) {
+        console.log('Найден текущий фильм/сериал по ссылке:', currentMovie.name);
     }
-    cardContainer.html(""); // Очищаем существующие карточки
 
-    // Нормализация текущей ссылки для поиска в localCardData
-    let normalizedCurrentLink = currentMovieLink;
-    const cardPathIndex = currentMovieLink.toLowerCase().indexOf('/card/');
-    if (cardPathIndex !== -1) {
-        normalizedCurrentLink = currentMovieLink.substring(cardPathIndex);
-        normalizedCurrentLink = decodeURIComponent(normalizedCurrentLink);
+    // 2. Поиск по чистому названию и году, если по ссылке не нашли
+    if (!currentMovie) {
+        const pageTitleElement = document.querySelector('.movie-title') || document.querySelector('h1') || document.querySelector('h2');
+        if (pageTitleElement) {
+            const rawPageMovieTitle = pageTitleElement.innerText || pageTitleElement.textContent;
+            const cleanPageMovieTitle = getBaseTitle(rawPageMovieTitle);
+            const pageTitleMatch = rawPageMovieTitle.match(/\((\d{4})\)/); // Ищем год в скобках в названии
+            const pageYear = pageTitleMatch ? parseInt(pageTitleMatch[1]) : null;
+
+            if (pageYear) {
+                currentMovie = processedLocalCards.find(c => 
+                    getBaseTitle(c.name) === cleanPageMovieTitle && parseInt(c.year) === pageYear
+                );
+                if (currentMovie) {
+                    console.log('Найден текущий фильм/сериал по названию и году:', currentMovie.name);
+                }
+            }
+        }
     }
 
-    if (currentMovieTitleElement && currentMovieYearElement) {
-        let currentMovieRawTitle = currentMovieTitleElement.textContent.split('(')[0].trim();
-        let currentMovieBaseTitle = getBaseTitle(currentMovieRawTitle);
-        let currentMovieYear = currentMovieYearElement.textContent;
+    // 3. Поиск только по чистому названию (самый неточный, но как последний шанс)
+    if (!currentMovie) {
+        const pageTitleElement = document.querySelector('.movie-title') || document.querySelector('h1') || document.querySelector('h2');
+        if (pageTitleElement) {
+            const rawPageMovieTitle = pageTitleElement.innerText || pageTitleElement.textContent;
+            const cleanPageMovieTitle = getBaseTitle(rawPageMovieTitle);
+            currentMovie = processedLocalCards.find(c => getBaseTitle(c.name) === cleanPageMovieTitle);
+            if (currentMovie) {
+                console.log('Найден текущий фильм/сериал только по названию:', currentMovie.name);
+            }
+        }
+    }
 
-        let cardsToDisplay = [];
-        const addedCardsTracker = new Set();
+    // --- Конец логики определения currentMovie ---
 
-        let currentMovieGenres = [];
 
-        // Поиск текущего фильма в локальных данных по нормализованной ссылке
-        const currentLocalCard = localCardData.find(card => card.link === normalizedCurrentLink);
+    if (currentMovie) {
+        // Теперь currentMovie гарантированно содержит tmdb_id и isTV, если они были в localCardData
+        console.log(`Определен текущий контент: "${currentMovie.name}" (TMDB ID: ${currentMovie.tmdb_id}, isTV: ${currentMovie.isTV})`);
 
-        if (currentLocalCard) {
-            const currentCardIdentifier = `${getBaseTitle(currentLocalCard.name)}-${currentLocalCard.year}-${currentLocalCard.link}`;
-            addedCardsTracker.add(currentCardIdentifier);
-            currentMovieGenres = currentLocalCard.genres;
-        } else {
-            addedCardsTracker.add(`${currentMovieBaseTitle}-${currentMovieYear}-N/A`);
+        const currentMovieCollectionId = currentMovie.collection_id;
+        const currentMovieBaseTitle = getBaseTitle(currentMovie.name);
+
+        const moviesInCurrentFranchise = processedLocalCards.filter(c => {
+            const cBaseTitle = getBaseTitle(c.name);
+            return (c.link !== currentMovie.link) && 
+                   ((c.collection_id && currentMovieCollectionId && c.collection_id === currentMovieCollectionId) ||
+                    (cBaseTitle === currentMovieBaseTitle && cBaseTitle !== '' && cBaseTitle.length > 2));
+        });
+
+        if (moviesInCurrentFranchise.length > 0) {
+            moviesInCurrentFranchise
+                .sort((a, b) => parseInt(a.year) - parseInt(b.year))
+                .forEach(c => addCardToRecommendations(c));
         }
 
-        // Определите веса для специфических жанров.
-        const specificGenreWeights = {
-            'ужасы': 5.0,
-            'фэнтези': 4.0,
-            'научная фантастика': 4.2, 
-            'вестерн': 5.0,
-            'мультфильм': 5.0, 
-            'документальный': 5.0, 
-            'мюзикл': 4.0, 
-            'триллер': 3.0,
-            'Война и Политика': 4.2,
-            'детектив': 3.8, 
-            'боевик': 1.8, 
-            'комедия': 4.2, 
-            'драма': 0.5,
-            'мелодрама': 5.0, 
-            'приключения': 3.5, 
-            'криминал': 2.0, 
-            'история': 3.5,
-            'романтика': 2.0, 
-            'семейный': 5.0, 
-            'музыка': 4.0, 
-            'военный': 2.8,
-            'Боевик и Приключения': 4.0,
-            'НФ и Фэнтези': 4.2,
-            'Детский': 5.0,
-            'Биография': 4.0,
-            'фантастика': 4.5
-        };
-
-        const MIN_GENRE_SCORE_THRESHOLD = 1.0;
-        const NON_MATCHING_GENRE_PENALTY_MULTIPLIER = 0.5;
-        const FRANCHISE_BONUS = 3.0;
-
-        // ЭТАП 1: Подбор по жанрам и франшизам из localCardData
-        if (currentMovieGenres.length > 0) {
-            const genreRelevantCandidates = [];
-            const currentGenresLower = new Set(currentMovieGenres.map(g => g.toLowerCase()));
-
-            for (const card of localCardData) {
-                const cardIdentifier = `${getBaseTitle(card.name)}-${card.year}-${card.link}`;
-                if (addedCardsTracker.has(cardIdentifier)) {
-                    continue;
+        const allPotentialCandidates = new Set();
+        
+        // Здесь мы используем currentMovie.tmdb_id и currentMovie.isTV
+        if (currentMovie.tmdb_id) {
+            console.log(`Запрос рекомендаций для TMDB ID: ${currentMovie.tmdb_id}, Тип: ${currentMovie.isTV ? 'Сериал' : 'Фильм'}`);
+            const tmdbRecs = await getTmdbRecommendations(currentMovie.tmdb_id, currentMovie.isTV); 
+            console.log(`Получено ${tmdbRecs.length} рекомендаций от TMDb.`);
+            tmdbRecs.forEach(tmdbCard => {
+                const localCard = processedLocalCards.find(c => c.tmdb_id === tmdbCard.id);
+                if (localCard && localCard.link !== currentMovie.link && !addedCardsLinks.has(localCard.link)) {
+                    allPotentialCandidates.add(localCard);
                 }
+            });
+        } else {
+            console.warn(`У "${currentMovie.name}" нет TMDB ID в localCardData. Рекомендации TMDb не будут запрошены.`);
+        }
 
-                let genreMatchScore = 0;
-                let nonMatchingGenrePenalty = 0;
+        processedLocalCards.forEach(card => {
+            if (card.link !== currentMovie.link && !addedCardsLinks.has(card.link)) {
+                allPotentialCandidates.add(card);
+            }
+        });
 
-                for (const localGenre of card.genres) {
-                    const lowerLocalGenre = localGenre.toLowerCase();
-                    if (currentGenresLower.has(lowerLocalGenre)) {
-                        let scoreToAdd = 1;
-                        if (specificGenreWeights[lowerLocalGenre]) {
-                            scoreToAdd += specificGenreWeights[lowerLocalGenre];
-                        }
-                        genreMatchScore += scoreToAdd;
-                    } else {
-                        if (specificGenreWeights[lowerLocalGenre] && specificGenreWeights[lowerLocalGenre] > 1.5) {
-                            let penaltyAmount = specificGenreWeights[lowerLocalGenre] * NON_MATCHING_GENRE_PENALTY_MULTIPLIER;
-                            nonMatchingGenrePenalty += penaltyAmount;
+        const otherGroupedCandidates = new Map();
+        
+        for (const card of allPotentialCandidates) {
+            const cardBaseTitle = getBaseTitle(card.name);
+            const cardCollectionId = card.collection_id;
+            let groupKey = null;
+
+            if (cardCollectionId) {
+                groupKey = `collection-${cardCollectionId}`;
+            } else if (cardBaseTitle && cardBaseTitle.length > 2 &&
+                        [...processedLocalCards].some(c => c.link !== card.link && getBaseTitle(c.name) === cardBaseTitle)) {
+                groupKey = `title-${cardBaseTitle}`;
+            }
+
+            if (groupKey && 
+                ((currentMovieCollectionId && groupKey === `collection-${currentMovieCollectionId}`) ||
+                 (currentMovieBaseTitle && groupKey === `title-${currentMovieBaseTitle}`))) {
+                continue;
+            }
+
+            if (groupKey) {
+                const currentBestInGroup = otherGroupedCandidates.get(groupKey);
+                if (!currentBestInGroup || scoreCard(card, currentMovie) > scoreCard(currentBestInGroup, currentMovie)) {
+                    otherGroupedCandidates.set(groupKey, card);
+                }
+            } else {
+                otherGroupedCandidates.set(`single-${card.link}`, card);
+            }
+        }
+
+        const finalCandidatesForRanking = Array.from(otherGroupedCandidates.values());
+        finalCandidatesForRanking.sort((a, b) => scoreCard(b, currentMovie) - scoreCard(a, currentMovie));
+
+        for (const card of finalCandidatesForRanking) {
+            if (recommendations.length >= MAX_CARDS) break;
+            if (scoreCard(card, currentMovie) <= IRRELEVANT_SCORE) {
+                continue;
+            }
+            addCardToRecommendations(card);
+        }
+
+    } else { // Логика для главной страницы или других страниц без конкретного фильма
+        console.log('Не удалось определить текущий фильм/сериал по URL или заголовку. Генерируем случайные рекомендации.');
+        const uniqueRandomCards = new Set();
+        const availableCards = shuffleArray([...processedLocalCards]); 
+
+        for (const card of availableCards) {
+            let isFranchiseAdded = false;
+            if (card.collection_id) {
+                for (const existingCard of uniqueRandomCards) {
+                    if (existingCard.collection_id === card.collection_id) {
+                        isFranchiseAdded = true;
+                        break;
+                    }
+                }
+            } else {
+                const cardBaseTitle = getBaseTitle(card.name);
+                if (cardBaseTitle && cardBaseTitle.length > 2) {
+                    for (const existingCard of uniqueRandomCards) {
+                        if (getBaseTitle(existingCard.name) === cardBaseTitle) {
+                            isFranchiseAdded = true;
+                            break;
                         }
                     }
                 }
-
-                const cardBaseTitle = getBaseTitle(card.name);
-                if (currentMovieBaseTitle === cardBaseTitle && card.year !== currentMovieYear) {
-                    genreMatchScore += FRANCHISE_BONUS;
-                }
-
-                genreMatchScore -= nonMatchingGenrePenalty;
-
-                if (genreMatchScore > MIN_GENRE_SCORE_THRESHOLD) {
-                    genreRelevantCandidates.push({ card: card, score: genreMatchScore });
-                }
             }
 
-            shuffleArray(genreRelevantCandidates);
-            genreRelevantCandidates.sort((a, b) => b.score - a.score);
+            if (!isFranchiseAdded && addCardToRecommendations(card)) {
+                uniqueRandomCards.add(card);
+            }
+            if (recommendations.length >= MAX_CARDS) break;
+        }
 
-            for (const item of genreRelevantCandidates) {
-                if (cardsToDisplay.length < 15) {
-                    cardsToDisplay.push(item.card);
-                    addedCardsTracker.add(`${getBaseTitle(item.card.name)}-${item.card.year}-${item.card.link}`);
-                } else {
-                    break;
+        if (recommendations.length < MAX_CARDS) {
+            const remainingUnique = processedLocalCards.filter(c => {
+                let isAlreadyAdded = addedCardsLinks.has(c.link);
+                if (!isAlreadyAdded && c.collection_id) {
+                    for (const existingCard of uniqueRandomCards) {
+                        if (existingCard.collection_id === c.collection_id) {
+                            isAlreadyAdded = true;
+                            break;
+                        }
+                    }
+                } else if (!isAlreadyAdded) {
+                    const cBaseTitle = getBaseTitle(c.name);
+                    if (cBaseTitle && cBaseTitle.length > 2) {
+                        for (const existingCard of uniqueRandomCards) {
+                            if (getBaseTitle(existingCard.name) === cBaseTitle) {
+                                isAlreadyAdded = true;
+                                break;
+                            }
+                        }
+                    }
                 }
+                return !isAlreadyAdded;
+            });
+            shuffleArray(remainingUnique);
+            for (const card of remainingUnique) {
+                if (recommendations.length >= MAX_CARDS) break;
+                addCardToRecommendations(card);
             }
         }
-
-        // ЭТАП 2: Заполняем оставшиеся места случайными картами, если все еще не хватает
-        if (cardsToDisplay.length < 15) {
-            const remainingLocalCards = shuffleArray(localCardData.filter(card =>
-                !addedCardsTracker.has(`${getBaseTitle(card.name)}-${card.year}-${card.link}`)
-            ));
-
-            for (const card of remainingLocalCards) {
-                if (cardsToDisplay.length < 15) {
-                    cardsToDisplay.push(card);
-                    addedCardsTracker.add(`${getBaseTitle(card.name)}-${card.year}-${card.link}`);
-                } else {
-                    break;
-                }
-            }
-        }
-
-        // ЭТАП 3: Финальное перемешивание всего списка для максимального разнообразия
-        if (cardsToDisplay.length > 0) {
-            shuffleArray(cardsToDisplay);
-        }
-
-        displayCards(cardsToDisplay.slice(0, 15), cardContainer);
-
-    } else {
-        const shuffledAllCards = shuffleArray(localCardData);
-        displayCards(shuffledAllCards.slice(0, 15), cardContainer);
     }
 
-    // Инициализация Splide. Убедитесь, что Splide.js подключен.
+
+    // --- Финальная сборка и отображение ---
+    const finalDisplayCards = recommendations.slice(0, MAX_CARDS);
+
+    const finalDisplayGrouped = [];
+    const franchiseGroups = new Map();
+
+    finalDisplayCards.forEach(card => {
+        let key = null;
+        if (card.collection_id) {
+            key = `collection-${card.collection_id}`;
+        } else {
+            const potentialGroup = processedLocalCards.filter(pc => getBaseTitle(pc.name) === getBaseTitle(card.name) && getBaseTitle(card.name) !== '');
+            if (potentialGroup.length > 1) {
+                key = `title-${getBaseTitle(card.name)}`;
+            } else {
+                key = `single-${card.link}`; 
+            }
+        }
+
+        if (!franchiseGroups.has(key)) {
+            franchiseGroups.set(key, []);
+        }
+        franchiseGroups.get(key).push(card);
+    });
+
+    const nonFranchiseCards = [];
+    const sortedFranchiseKeys = Array.from(franchiseGroups.keys()).sort();
+
+    for (const key of sortedFranchiseKeys) {
+        const group = franchiseGroups.get(key);
+        if (key.startsWith('collection-') || key.startsWith('title-')) { 
+            group.sort((a, b) => parseInt(a.year) - parseInt(b.year));
+            finalDisplayGrouped.push(...group);
+        } else { 
+            nonFranchiseCards.push(...group);
+        }
+    }
+    shuffleArray(nonFranchiseCards); 
+    finalDisplayGrouped.push(...nonFranchiseCards);
+
+    displayCards(finalDisplayGrouped.slice(0, MAX_CARDS), cardContainer);
+
+    // --- Инициализация Splide (без изменений) ---
     var splide = new Splide('#Collections', {
         type: 'loop',
         focus: 'center',
@@ -1030,34 +1650,6 @@ async function generateCards() {
     positionCardRatingTrand();
 }
 
-// Вспомогательная функция для отображения карточек в контейнере
-function displayCards(cards, container) {
-    var count = 0;
-    container.empty();
-    cards.forEach(function (val) {
-        if (count >= 15) return; // Ограничиваем до 15 карточек
-        var cardHTML = `
-            <li class="splide__slide">
-                <div class="card card-media" style="width: 12rem" data-rating="${val.rating}">
-                    <a href="${val.link}">
-                        <img src="${val.image}" class="card-img-top img-9x16 mt-2" alt="${val.name}">
-                        <div class="card-rating-trand">
-                            <span class="span-rating">${val.rating}</span>
-                        </div>
-                        ${val.isTV ? '<div class="card-TV card-TV-trends">TV</div>' : ''}
-                        <div class="card-body">
-                            <span class="card-tex">${val.name}<br><span class="year">${val.year}</span></span>
-                        </div>
-                    </a>
-                </div>
-            </li>
-        `;
-        container.append(cardHTML);
-        count++;
-    });
-}
-
-// Функция для позиционирования рейтинга на карточках
 function positionCardRatingTrand() {
     const cards = document.querySelectorAll('.card');
     cards.forEach(card => {
