@@ -1,6 +1,30 @@
 var data = [
     // Фильмы
     {
+        "name": "Ренфилд",
+        "image": "https://image.tmdb.org/t/p/w500//aXUNQ3vVyfA3p1WoFIpjkCwGCAF.jpg",
+        "link": "/card/movies/800-367/Renfild.html",
+        "year": "2023",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Птичий короб",
+        "image": "https://image.tmdb.org/t/p/w500//dWbhNl7ESABUqXfyOKPr5EQaDXP.jpg",
+        "link": "/card/movies/800-368/Ptichij-korob.html",
+        "year": "2018",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Без ответа",
+        "image": "https://image.tmdb.org/t/p/w500//qIR6P3QQJMgzO7ihHkfMGp9WYou.jpg",
+        "link": "/card/movies/800-369/Bez-otveta.html",
+        "year": "2023",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
         "name": "Мама",
         "image": "https://image.tmdb.org/t/p/w500//ahMqF353szhxtdzltopouUJLJhY.jpg",
         "link": "/card/movies/800-343/Mama.html",
@@ -2924,6 +2948,96 @@ var data = [
     },
 
     // Мультфильмы
+    {
+        "name": "Самурай Джек",
+        "image": "https://image.tmdb.org/t/p/original/aBig8NqD8IQrZ1OV258MqHvsAsF.jpg",
+        "link": "/card/cartoons/500-215/Samuraj-Dzhek.html",
+        "year": "2001",
+        "rating": "8.4",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Робоцып",
+        "image": "https://image.tmdb.org/t/p/w500//6LoFwMzLvB0Bzal6dQZuld04JHO.jpg",
+        "link": "/card/cartoons/500-216/Robocyp.html",
+        "year": "2005",
+        "rating": "7.6",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Галактический футбол",
+        "image": "https://image.tmdb.org/t/p/original/voAgLySs7lXCfXEVSxWV40TmYef.jpg",
+        "link": "/card/cartoons/500-217/Galakticheskij-futbol.html",
+        "year": "2006",
+        "rating": "7.7",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Приключения Джеки Чана",
+        "image": "https://image.tmdb.org/t/p/w500//5ZZUtz6cNmRkNVVniVv1feFH90g.jpg",
+        "link": "/card/cartoons/500-218/Priklyucheniya-Dzheki-Chana.html",
+        "year": "2000",
+        "rating": "8.2",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Тотали Спайс!",
+        "image": "https://image.tmdb.org/t/p/w500//zvEit6c2zC2PosXROb85jZwb0gx.jpg",
+        "link": "/card/cartoons/500-219/Totali-Spajs.html",
+        "year": "2002",
+        "rating": "7.3",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Что с Энди?",
+        "image": "https://image.tmdb.org/t/p/w500//zdHT0xD9GVYeBcnPftB3XzKAhdh.jpg",
+        "link": "/card/cartoons/500-220/Chto-s-Endi.html",
+        "year": "2001",
+        "rating": "7.0",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Мультреалити",
+        "image": "https://image.tmdb.org/t/p/original/r905cmZBmAXCpsFVexvRCGfXSkh.jpg",
+        "link": "/card/cartoons/500-221/Multrealiti.html",
+        "year": "2004",
+        "rating": "8.2",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Тутанхамончик",
+        "image": "https://image.tmdb.org/t/p/w500//64mxPXRRQEMnPNJB9VdbbVLATdc.jpg",
+        "link": "/card/cartoons/500-222/Tutanhamonchik.html",
+        "year": "2003",
+        "rating": "6.8",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Любовь. Смерть. Роботы",
+        "image": "https://image.tmdb.org/t/p/w500//iHpKDOHKpN0mjk73BhClMFubw0N.jpg",
+        "link": "/card/cartoons/500-223/Lyubov-Smert-Roboty.html",
+        "year": "2019",
+        "rating": "8.2",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Американский дракон: Джейк Лонг",
+        "image": "https://image.tmdb.org/t/p/w500//ntsNm1IiARWtUgNY9SI7VRCLOVD.jpg",
+        "link": "/card/cartoons/500-224/Amerikanskij-drakon-Dzhejk-Long.html",
+        "year": "2005",
+        "rating": "7.7",
+        "isTV": true,
+        "type": "cartoon"
+    },
     {
         "name": "Союз зверей",
         "image": "https://image.tmdb.org/t/p/w500//cg9KYCRLvRaKRjkuZF41Oef3Rbq.jpg",

@@ -356,6 +356,27 @@ async function generateCards() {
     // YOUR localCardData MUST BE COMPLETE AND UP-TO-DATE!
     const localCardData = [
         {
+            "name": "Ренфилд",
+            "image": "https://image.tmdb.org/t/p/w500//aXUNQ3vVyfA3p1WoFIpjkCwGCAF.jpg",
+            "link": "/card/movies/800-367/Renfild.html",
+            "year": "2023",
+            "rating": "6.5","tmdb_id": 649609
+        },
+        {
+            "name": "Птичий короб",
+            "image": "https://image.tmdb.org/t/p/w500//dWbhNl7ESABUqXfyOKPr5EQaDXP.jpg",
+            "link": "/card/movies/800-368/Ptichij-korob.html",
+            "year": "2018",
+            "rating": "6.8","tmdb_id": 405774
+        },
+        {
+            "name": "Без ответа",
+            "image": "https://image.tmdb.org/t/p/w500//qIR6P3QQJMgzO7ihHkfMGp9WYou.jpg",
+            "link": "/card/movies/800-369/Bez-otveta.html",
+            "year": "2023",
+            "rating":"6.9","tmdb_id": 868759
+        },
+        {
             "name": "Мама",
             "image": "https://image.tmdb.org/t/p/w500//ahMqF353szhxtdzltopouUJLJhY.jpg",
             "link": "/card/movies/800-343/Mama.html",
