@@ -208,11 +208,11 @@ const ABSOLUTE_GENRE_CONFLICTS = {
 
 // --- Веса для штрафов за ОТСУТСТВИЕ жанра у кандидата, если он ЕСТЬ у текущего фильма ---
 const MISSING_REQUIRED_GENRE_PENALTIES = {
-    "ужасы": -1000,
+    "ужасы": -2000,
     "фантастика": -800,
     "фэнтези": -800,
     "детектив": -600,
-    "триллер": -600,
+    "триллер": -900,
     "боевик": -500,
     "криминал": -500,
     "нуар": -900,
@@ -228,6 +228,7 @@ const MISSING_REQUIRED_GENRE_PENALTIES = {
     "драма": -150,
     "комедия": -150,
     "приключения": -150,
+    "мелодрама": -2000,
     "романтика": -100,
     "биография": -300,
     "детский": -1200, // Очень высокий штраф, если ищут детское, а его нет
@@ -252,6 +253,7 @@ const UNWANTED_GENRE_PENALTIES = {
     "фантастика": -900,
     "фэнтези": -900,
     "биография": -400,
+    "мелодрама": -900,
     "детский": -1500, // Очень высокий штраф, если в рекомендациях появляется детский фильм, когда его не ищут
 };
 
@@ -355,6 +357,36 @@ async function generateCards() {
 
     // YOUR localCardData MUST BE COMPLETE AND UP-TO-DATE!
     const localCardData = [
+        {
+            "name": "Фокус",
+            "image": "https://image.tmdb.org/t/p/w500//grzQRCyZEEdJomeq8324AV6AI6W.jpg",
+            "link": "/card/movies/800-386/Fokus.html",
+            "year": "2015",
+            "rating": "6.9","tmdb_id": 256591
+        },
+        {
+            "name": "Искусство по понятиям",
+            "image": "https://image.tmdb.org/t/p/w500//ad2wSQKLohh88LCvUfHjAVfwECE.jpg",
+            "link": "/card/movies/800-387/Iskusstvo-po-ponyatiyam.html",
+            "year": "2023",
+            "rating": "6.0",
+            "type": "movie","tmdb_id": 958006
+        },
+        {
+            "name": "Смотрители",
+            "image": "https://image.tmdb.org/t/p/w500//4qrA6MsOOTiUfXGoM4YUwqtHFjb.jpg",
+            "link": "/card/movies/800-388/Smotriteli.html",
+            "year": "2024",
+            "rating": "6.4",
+            "type": "movie","tmdb_id": 1086747
+        },
+        {
+            "name": "Воображаемые Друзья",
+            "image": "https://image.tmdb.org/t/p/w500//aXUNQ3vVyfA3p1WoFIpjkCwGCAF.jpg",
+            "link": "/card/movies/800-389/Voobrazhaemye-Druzya.html",
+            "year": "2024",
+            "rating": "7.1","tmdb_id": 639720
+        },
         {
             "name": "Ренфилд",
             "image": "https://image.tmdb.org/t/p/w500//aXUNQ3vVyfA3p1WoFIpjkCwGCAF.jpg",

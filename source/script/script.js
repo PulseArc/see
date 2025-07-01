@@ -1,6 +1,38 @@
 var data = [
     // Фильмы
     {
+        "name": "Фокус",
+        "image": "https://image.tmdb.org/t/p/w500//grzQRCyZEEdJomeq8324AV6AI6W.jpg",
+        "link": "/card/movies/800-386/Fokus.html",
+        "year": "2015",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Искусство по понятиям",
+        "image": "https://image.tmdb.org/t/p/w500//ad2wSQKLohh88LCvUfHjAVfwECE.jpg",
+        "link": "/card/movies/800-387/Iskusstvo-po-ponyatiyam.html",
+        "year": "2023",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "Смотрители",
+        "image": "https://image.tmdb.org/t/p/w500//4qrA6MsOOTiUfXGoM4YUwqtHFjb.jpg",
+        "link": "/card/movies/800-388/Smotriteli.html",
+        "year": "2024",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Воображаемые Друзья",
+        "image": "https://image.tmdb.org/t/p/w500//aXUNQ3vVyfA3p1WoFIpjkCwGCAF.jpg",
+        "link": "/card/movies/800-389/Voobrazhaemye-Druzya.html",
+        "year": "2024",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
         "name": "Ренфилд",
         "image": "https://image.tmdb.org/t/p/w500//aXUNQ3vVyfA3p1WoFIpjkCwGCAF.jpg",
         "link": "/card/movies/800-367/Renfild.html",
