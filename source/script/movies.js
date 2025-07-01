@@ -219,7 +219,7 @@ const MISSING_REQUIRED_GENRE_PENALTIES = {
     "вестерн": -700,
     "документальный": -1200,
     "мультфильм": -1000,
-    "семейный": -1000,
+    "семейный": -2000,
     "мюзикл": -800,
     "история": -400,
     "военный": -900,
@@ -246,7 +246,7 @@ const UNWANTED_GENRE_PENALTIES = {
     "криминал": -500,
     "спорт": -500,
     "музыка": -500,
-    "комедия": -1000,
+    "комедия": -1500,
     "боевик": -300,
     "триллер": -300,
     "фантастика": -900,
@@ -694,6 +694,48 @@ async function generateCards() {
             "rating":"7.7","tmdb_id": 9912
         },
         {
+            "name": "Пункт назначения: Узы крови",
+            "image": "https://image.tmdb.org/t/p/w500//A6SyVtXBxU6S5LfDg0tz7lUXhJq.jpg",
+            "link": "/card/movies/800-373/Punkt-naznacheniya-Uzy-krovi.html",
+            "year": "2025",
+            "rating": "7.2","tmdb_id": 574475
+        },
+        {
+            "name": "Пункт назначения 5",
+            "image": "https://image.tmdb.org/t/p/w500//554vHUVuvpQIJMfZHxaZE5x3YUJ.jpg",
+            "link": "/card/movies/800-374/Punkt-naznacheniya-5.html",
+            "year": "2011",
+            "rating": "6.1","tmdb_id": 55779
+        },
+        {
+            "name": "Пункт назначения 4",
+            "image": "https://image.tmdb.org/t/p/w500//2hG60UUGmG8kxRRq04LJAABIL7A.jpg",
+            "link": "/card/movies/800-375/Punkt-naznacheniya-4.html",
+            "year": "2009",
+            "rating": "5.6","tmdb_id": 19912
+        },
+        {
+            "name": "Пункт назначения 3",
+            "image": "https://image.tmdb.org/t/p/w500//hZwGf3IK42LEQ01ZCZZKRAqTpyC.jpg",
+            "link": "/card/movies/800-376/Punkt-naznacheniya-3.html",
+            "year": "2006",
+            "rating": "6.1","tmdb_id": 9286
+        },
+        {
+            "name": "Пункт назначения 2",
+            "image": "https://image.tmdb.org/t/p/w500//r7pvTHVybZL49puwhQwwUU33ob5.jpg",
+            "link": "/card/movies/800-377/Punkt-naznacheniya-2.html",
+            "year": "2003",
+            "rating": "6.3","tmdb_id": 9358
+        },
+        {
+            "name": "Пункт назначения ",
+            "image": "https://image.tmdb.org/t/p/w500//rrXMDkTZYK4MeEqUAu1jqVNLzg3.jpg",
+            "link": "/card/movies/800-378/Punkt-naznacheniya.html",
+            "year": "2000",
+            "rating": "6.6","tmdb_id": 9532
+        },
+        {
             "name": "Сокровище Амазонки",
             "image": "https://image.tmdb.org/t/p/w500//9bKYACG9Uv4TlqKoBdMI8tKNXcl.jpg",
             "link": "/card/movies/800-291/Sokrovishe-Amazonki.html",
@@ -713,6 +755,20 @@ async function generateCards() {
             "link": "/card/movies/800-293/Legenda.html",
             "year": "2015",
             "rating":"7.1","tmdb_id": 276907
+        },
+        {
+            "name": "Дом с паранормальными явлениями 2",
+            "image": "https://image.tmdb.org/t/p/w500//1hWdDGZa58Ulo0uP0mw4EIf85bt.jpg",
+            "link": "/card/movies/800-379/Dom-s-paranormalnymi-yavleniyami-2.html",
+            "year": "2014",
+            "rating": "6.2","tmdb_id": 184345
+        },
+        {
+            "name": "Дом с паранормальными явлениями",
+            "image": "https://image.tmdb.org/t/p/w500//m9jc6WRPhLGoVmF3NBm3olO23iz.jpg",
+            "link": "/card/movies/800-380/Dom-s-paranormalnymi-yavleniyami.html",
+            "year": "2013",
+            "rating": "5.9","tmdb_id": 139038
         },
         {
             "name": "Особняк с привидениями",
@@ -743,6 +799,13 @@ async function generateCards() {
             "rating":"7.9","tmdb_id": 76203
         },
         {
+            "name": "Лило и Стич",
+            "image": "https://image.tmdb.org/t/p/w500//bRB9ApGPhY7NtUQ33yZG828rbus.jpg",
+            "link": "/card/movies/800-382/Lilo-i-Stich2025.html",
+            "year": "2025",
+            "rating": "7.1","tmdb_id": 552524
+        },
+        {
             "name": "Каникулы",
             "image": "https://image.tmdb.org/t/p/w500//7K4pewvTT1yc7cbFNS6GOZYlNtW.jpg",
             "link": "/card/movies/800-298/Kanikuly.html",
@@ -762,6 +825,13 @@ async function generateCards() {
             "link": "/card/movies/800-300/Pervomu-igroku-prigotovitsya.html",
             "year": "2018",
             "rating":"7.6","tmdb_id": 333339
+        },
+        {
+            "name": "Балерина",
+            "image": "https://image.tmdb.org/t/p/w500//oKD6ggXEN1WGPPDiVAuOfdDLBNv.jpg",
+            "link": "/card/movies/800-381/Balerina.html",
+            "year": "2025",
+            "rating": "7.1","tmdb_id": 541671
         },
         {
             "name": "Дракула",
@@ -1282,6 +1352,27 @@ async function generateCards() {
             "rating":"6.9","tmdb_id": 696506
         },
         {
+            "name": "Формула 1",
+            "image": "https://image.tmdb.org/t/p/original/gqBZXkw7VKUmNW5nzyNoRUq1zCq.jpg",
+            "link": "/card/movies/800-370/Formula-1.html",
+            "year": "2025",
+            "rating":"7.6","tmdb_id": 911430
+        },
+        {
+            "name": "Призрачный патруль 2: Восстание проклятых",
+            "image": "https://image.tmdb.org/t/p/w500//d6dheJFYJnfdvPBo4R2jjXX1Tfu.jpg",
+            "link": "/card/movies/800-371/Prizrachnyj-patrul-2.html",
+            "year": "2022",
+            "rating": "5.8","tmdb_id": 1013860
+        },
+        {
+            "name": "Призрачный патруль",
+            "image": "https://image.tmdb.org/t/p/w500//aPqHFuWMiY9yWfUexoIP56cJdVq.jpg",
+            "link": "/card/movies/800-372/Prizrachnyj-patrul.html",
+            "year": "2013",
+            "rating": "5.8","tmdb_id": 49524
+        },
+        {
             "name": "Топ Ган: Мэверик",
             "image": "https://image.tmdb.org/t/p/w500//niNo4qTtIule2vvMFW05amvMtOB.jpg",
             "link": "/card/movies/800-10/Top-Gan-Meverik.html",
@@ -1506,6 +1597,13 @@ async function generateCards() {
             "rating":"6.7","tmdb_id": 10135
         },
         {
+            "name": "Лига теней",
+            "image": "https://image.tmdb.org/t/p/w500//s15EJR0q1MCCokTHiZqBqSvDyOF.jpg",
+            "link": "/card/movies/800-383/Liga-tenej.html",
+            "year": "2025",
+            "rating": "6.2","tmdb_id": 757725
+        },
+        {
             "name": "King’s Man: Начало",
             "image": "https://image.tmdb.org/t/p/w500//9NyzS42sc9mvNLyPJtYqTqpkEoY.jpg",
             "link": "/card/movies/800-170/King’s-Man-Nachalo.html",
@@ -1534,6 +1632,13 @@ async function generateCards() {
             "rating":"8.7","tmdb_id": 278
         },
         {
+            "name": "Как Приручить Дракона",
+            "image": "https://image.tmdb.org/t/p/w500//tLs6YQ6AAFNNRwuJ1USI4KrLJCB.jpg",
+            "link": "/card/movies/800-385/Kak-Priruchit-Drakona2025.html",
+            "year": "2025",
+            "rating": "7.9","tmdb_id": 1087192
+        },
+        {
             "name": "Счастливого нового дня смерти",
             "image": "https://image.tmdb.org/t/p/w500//ZstlucYRCRfkZ74O2LUfbbNbyb.jpg",
             "link": "/card/movies/800-172/Schastlivogo-novogo-dnya-smerti.html",
@@ -1553,6 +1658,13 @@ async function generateCards() {
             "link": "/card/movies/800-36/Geoshtorm.html",
             "year": "2017",
             "rating":"6.1","tmdb_id": 274855
+        },
+        {
+            "name": "Новичок",
+            "image": "https://image.tmdb.org/t/p/w500//kfTQ2AxrKKr1RTW5aQPYHwEHpoj.jpg",
+            "link": "/card/movies/800-384/Novichok.html",
+            "year": "2025",
+            "rating": "7.0","tmdb_id": 1087891
         },
         {
             "name": "Тёмный рыцарь: Возрождение легенды",
