@@ -1174,6 +1174,13 @@ async function generateCards() {
             "rating":"7.0","tmdb_id": 84199
         },
         {
+            "name": "Большая гонка. Ауди против Лянчи",
+            "image": "https://image.tmdb.org/t/p/w500//l7HMoW8P8mMl7OsT0NtAltTD5ke.jpg",
+            "link": "/card/movies/800-390/Bolshaya-gonka-Audi-protiv-Lyanchi.html",
+            "year": "2024",
+            "rating": "6.1","tmdb_id": 972433
+        },
+        {
             "name": "Паразиты",
             "image": "https://image.tmdb.org/t/p/w500//zg3lUyLTnpbS5N29G6B3a63O7uP.jpg",
             "link": "/card/movies/800-06/Parazity.html",
@@ -1385,7 +1392,7 @@ async function generateCards() {
         },
         {
             "name": "Формула 1",
-            "image": "https://image.tmdb.org/t/p/original/gqBZXkw7VKUmNW5nzyNoRUq1zCq.jpg",
+            "image": "https://image.tmdb.org/t/p/original/xAQwKbIK6gfGy1YGLsLoCYaS2fx.jpg",
             "link": "/card/movies/800-370/Formula-1.html",
             "year": "2025",
             "rating":"7.6","tmdb_id": 911430
@@ -2021,6 +2028,13 @@ async function generateCards() {
             "rating":"5.7","tmdb_id": 436830
         },
         {
+            "name": "Гонка",
+            "image": "https://image.tmdb.org/t/p/w500//gcpESEfY64N2BJkLBtTCz8qtila.jpg",
+            "link": "/card/movies/800-391/Gonka.html",
+            "year": "2013",
+            "rating": "7.7","tmdb_id": 96721
+        },
+        {
             "name": "Вуди Вудпекер в летнем лагере",
             "image": "https://image.tmdb.org/t/p/w500//oAF42DFZA430eEzRmEcrpB0D3rp.jpg",
             "link": "/card/movies/800-65/Vudi-Vudpeker-otpravlyaetsya-v-lager.html",
@@ -2397,6 +2411,27 @@ async function generateCards() {
             "link": "/card/movies/800-99/Vyshka.html",
             "year": "2022",
             "rating":"7.1","tmdb_id": 985939
+        },
+        {
+            "name": "Дни грома",
+            "image": "https://image.tmdb.org/t/p/w500//sqBAhF9J7u0lhPXGapfCz5DNaAn.jpg",
+            "link": "/card/movies/800-392/Dni-groma.html",
+            "year": "1990",
+            "rating": "6.4","tmdb_id": 2119
+        },
+        {
+            "name": "Забавные игры",
+            "image": "https://image.tmdb.org/t/p/w500//qGbr0lvyAR5u6k3x5LGG8RIKaO3.jpg",
+            "link": "/card/movies/800-393/Zabavnye-igry.html",
+            "year": "2008",
+            "rating": "6.5","tmdb_id": 8461
+        },
+        {
+            "name": "Забавные игры",
+            "image": "https://image.tmdb.org/t/p/w500//injv28hXPZpV2aVfjCU6xXsesbb.jpg",
+            "link": "/card/movies/800-394/Zabavnye-igry1997.html",
+            "year": "1997",
+            "rating": "7.3","tmdb_id": 10234
         },
         {
             "name": "Пол: Секретный материальчик",
