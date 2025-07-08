@@ -3146,6 +3146,135 @@ var data = [
         "rating": "6.8",
         "type": "movie"
     },
+    {
+        "name": "Тачка №19",
+        "image": "https://image.tmdb.org/t/p/w500//ebWQa3t9JUF5oZrvKexnba5PShJ.jpg",
+        "link": "/card/movies/800-395/Tachka-19.html",
+        "year": "2013",
+        "rating": "5.4",
+        "type": "movie"
+    },
+    {
+        "name": "Форсаж 10",
+        "image": "https://image.tmdb.org/t/p/w500//MSc1kcaHXvvyGgoyjDa60jxdqq.jpg",
+        "link": "/card/movies/800-396/Forsazh-10.html",
+        "year": "2023",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Форсаж 9",
+        "image": "https://image.tmdb.org/t/p/w500//3Abag0sIPHTLFIP2asXcC7E0QxP.jpg",
+        "link": "/card/movies/800-397/Forsazh-9.html",
+        "year": "2021",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Форсаж: Хоббс и Шоу",
+        "image": "https://image.tmdb.org/t/p/w500//uKchEnEOTCvh1iZ7AyOs7p9aoVq.jpg",
+        "link": "/card/movies/800-398/Forsazh-Hobbs-i-Shou.html",
+        "year": "2019",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Форсаж 8",
+        "image": "https://image.tmdb.org/t/p/w500//mMG9uMqEosiIMjliiPHsyycPcIA.jpg",
+        "link": "/card/movies/800-399/Forsazh-8.html",
+        "year": "2017",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Форсаж 7",
+        "image": "https://image.tmdb.org/t/p/w500//i5A0OCxcinzkcxvesvefFu9vX3K.jpg",
+        "link": "/card/movies/800-400/Forsazh-7.html",
+        "year": "2015",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Форсаж 6",
+        "image": "https://image.tmdb.org/t/p/w500//qsWinjrA5wZbFtcU87EIgpCo0Xm.jpg",
+        "link": "/card/movies/800-401/Forsazh-6.html",
+        "year": "2013",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Форсаж 5",
+        "image": "https://image.tmdb.org/t/p/original/NiK8Nqq4c2mNOxj8LgtRPtc1OQ.jpg",
+        "link": "/card/movies/800-402/Forsazh-5.html",
+        "year": "2011",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Форсаж 4",
+        "image": "https://image.tmdb.org/t/p/w500//A0HOGMFp4mphOCqwt5YNWbuSMJe.jpg",
+        "link": "/card/movies/800-403/Forsazh-4.html",
+        "year": "2009",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Тройной форсаж: Токийский Дрифт",
+        "image": "https://image.tmdb.org/t/p/w500//qkCOHIXI2vSXsuA0psYghM9Og2U.jpg",
+        "link": "/card/movies/800-404/Forsazh-3.html",
+        "year": "2006",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Двойной форсаж",
+        "image": "https://image.tmdb.org/t/p/w500//esDPKQNv4GkKwyNVpTpjk2Y5ZhI.jpg",
+        "link": "/card/movies/800-405/Forsazh-2.html",
+        "year": "2003",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Форсаж ",
+        "image": "https://image.tmdb.org/t/p/w500//eGdN1s6G7COuTu2rJmZQl0eU7kg.jpg",
+        "link": "/card/movies/800-406/Forsazh.html",
+        "year": "2001",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Суперфорсаж!",
+        "image": "https://image.tmdb.org/t/p/w500//k8QC40RzpRwhLYKPP2ANiAfQLRt.jpg",
+        "link": "/card/movies/800-408/Superforsazh.html",
+        "year": "2015",
+        "rating": "5.1",
+        "type": "movie"
+    },
+    {
+        "name": "Драйв",
+        "image": "https://image.tmdb.org/t/p/w500//4T9D8MWhZ2CdE0hK5LfOjwYA9XZ.jpg",
+        "link": "/card/movies/800-407/Drajv.html",
+        "year": "2011",
+        "rating": "7.6",
+        "type": "movie"
+    },
+    {
+        "name": "Малыш на драйве",
+        "image": "https://image.tmdb.org/t/p/w500//18ZLWLRx9jPq1rEEzZGbxGyS76a.jpg",
+        "link": "/card/movies/800-409/Malysh-na-drajve.html",
+        "year": "2017",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Время",
+        "image": "https://image.tmdb.org/t/p/w500//ip4GMRyHjDkfSt3PTp6rrTYSClK.jpg",
+        "link": "/card/movies/800-410/Vremya2011.html",
+        "year": "2011",
+        "rating": "7.0",
+        "type": "movie"
+    },
+
 
     // Мультфильмы
     {
