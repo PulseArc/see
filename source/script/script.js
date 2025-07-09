@@ -1,6 +1,38 @@
 var data = [
     // Фильмы
     {
+        "name": "Старикам тут не место",
+        "image": "https://image.tmdb.org/t/p/w500//z8eriOnIRCETerbPPx006Gyd7WM.jpg",
+        "link": "/card/movies/800-411/Starikam-tut-ne-mesto.html",
+        "year": "2007",
+        "rating": "7.9",
+        "type": "movie"
+    },
+    {
+        "name": "Квартирка Джо",
+        "image": "https://image.tmdb.org/t/p/w500//oBfJKfFkwtgDVWEIeNUyioNMDxK.jpg",
+        "link": "/card/movies/800-412/Kvartirka-Dzho.html",
+        "year": "1996",
+        "rating": "5.8",
+        "type": "movie"
+    },
+    {
+        "name": "Замороженный калифорниец",
+        "image": "https://image.tmdb.org/t/p/original/y8HtL6pyjfODdHOFgciFVFmt8Eq.jpg",
+        "link": "/card/movies/800-413/Zamorozhennyj-kaliforniec.html",
+        "year": "1992",
+        "rating": "5.8",
+        "type": "movie"
+    },
+    {
+        "name": "8 миля",
+        "image": "https://image.tmdb.org/t/p/w500//1016JRRJNu6QlOmcnEycOdBREQP.jpg",
+        "link": "/card/movies/800-414/8-milya.html",
+        "year": "2002",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
         "name": "Фокус",
         "image": "https://image.tmdb.org/t/p/w500//grzQRCyZEEdJomeq8324AV6AI6W.jpg",
         "link": "/card/movies/800-386/Fokus.html",
@@ -3272,6 +3304,78 @@ var data = [
         "link": "/card/movies/800-410/Vremya2011.html",
         "year": "2011",
         "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Шаг вперед 6: Год танцев",
+        "image": "https://image.tmdb.org/t/p/w500//6E5U8UZbIkAUplyOLW92K7cGXji.jpg",
+        "link": "/card/movies/800-415/Shag-vpered-6-God-tancev.html",
+        "year": "2019",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Шаг вперёд: Всё или ничего",
+        "image": "https://image.tmdb.org/t/p/w500//14AllogtQ1je9SjsZDKTLOYDCaZ.jpg",
+        "link": "/card/movies/800-416/Shag-vperyod-Vsyo-ili-nichego.html",
+        "year": "2014",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Шаг вперёд 4",
+        "image": "https://image.tmdb.org/t/p/w500//7mxIQJTf3QvzgZFo4imFC3M5p7o.jpg",
+        "link": "/card/movies/800-417/Shag-vperyod-4.html",
+        "year": "2012",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Шаг вперёд 3D",
+        "image": "https://image.tmdb.org/t/p/w500//ev5PLXy4bBEVb4YuJKVd4h10ydv.jpg",
+        "link": "/card/movies/800-418/Shag-vperyod-3D.html",
+        "year": "2010",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Шаг вперёд 2: Улицы",
+        "image": "https://image.tmdb.org/t/p/w500//lpisd1vshoO4Dff9AaVjIXen7JL.jpg",
+        "link": "/card/movies/800-419/Shag-vperyod-2-Ulicy.html",
+        "year": "2008",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Шаг вперёд",
+        "image": "https://image.tmdb.org/t/p/w500//bcIsEvWYgnrM8VJi165EOCcE5vI.jpg",
+        "link": "/card/movies/800-420/Shag-vperyod.html",
+        "year": "2006",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Супер Майк: Последний танец",
+        "image": "https://image.tmdb.org/t/p/w500//xCQRFcrOtssTeMjBxsKyKy5aDB9.jpg",
+        "link": "/card/movies/800-421/Super-Majk-Poslednij-tanec.html",
+        "year": "2023",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Супер Майк XXL",
+        "image": "https://image.tmdb.org/t/p/w500//Uxo9IUE3iosyC31oeQv7MVbT5c.jpg",
+        "link": "/card/movies/800-422/Super-Majk-XXL.html",
+        "year": "2015",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Супер Майк",
+        "image": "https://image.tmdb.org/t/p/w500//mcS4Ce7G9SmVy0qFjKm0zp5FlCq.jpg",
+        "link": "/card/movies/800-423/Super-Majk.html",
+        "year": "2012",
+        "rating": "6.2",
         "type": "movie"
     },
 
