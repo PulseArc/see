@@ -1,6 +1,102 @@
 var data = [
     // Фильмы
     {
+        "name": "Впритык",
+        "image": "https://image.tmdb.org/t/p/w500//zIZC8DYGxFxuQkV6IPGmSAc3mQ.jpg",
+        "link": "/card/movies/800-432/Vprityk.html",
+        "year": "2010",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "21 и больше",
+        "image": "https://image.tmdb.org/t/p/w500//tgfbGIenue8CbB3z1WITZMCvBia.jpg",
+        "link": "/card/movies/800-433/21-i-bolshe.html",
+        "year": "2013",
+        "rating": "5.8",
+        "type": "movie"
+    },
+    {
+        "name": "Мой любимый враг",
+        "image": "https://image.tmdb.org/t/p/w500//tT2tTqktvSzmiqXqHzEjnaNS3Th.jpg",
+        "link": "/card/movies/800-434/Moj-lyubimyj-vrag.html",
+        "year": "2021",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Реинкарнация",
+        "image": "https://image.tmdb.org/t/p/w500//gUsZ6BvPynVQBAxOzW830eE7PeF.jpg",
+        "link": "/card/movies/800-435/Reinkarnaciya.html",
+        "year": "2018",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Кадры",
+        "image": "https://image.tmdb.org/t/p/w500//mlzOgYEBjMEYuFLjxtqB9NsI9bE.jpg",
+        "link": "/card/movies/800-436/Kadry.html",
+        "year": "2013",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Два, три, демон, приди!",
+        "image": "https://image.tmdb.org/t/p/w500//sEBpONjRA2OrEBOJFuWnyl0fZLD.jpg",
+        "link": "/card/movies/800-437/Dva-tri-demon-pridi.html",
+        "year": "2023",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Этот неловкий момент",
+        "image": "https://image.tmdb.org/t/p/w500//tlCd5EU6vss3Okno3CCRh3vY85d.jpg",
+        "link": "/card/movies/800-438/Etot-nelovkij-moment.html",
+        "year": "2014",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Ужас Амитивилля: Пробуждение",
+        "image": "https://image.tmdb.org/t/p/w500//y9MBKfPrWNHL6kWPYFjtToZGtL5.jpg",
+        "link": "/card/movies/800-439/Uzhas-Amitivillya-Probuzhdenie.html",
+        "year": "2017",
+        "rating": "5.3",
+        "type": "movie"
+    },
+    {
+        "name": "Ужас Амитивилля",
+        "image": "https://image.tmdb.org/t/p/original/iAcYZN28eVcLN39HLeThx7A43st.jpg",
+        "link": "/card/movies/800-440/Uzhas-Amitivillya2005.html",
+        "year": "2005",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Шпион",
+        "image": "https://image.tmdb.org/t/p/w500//uZpsfNEKYe4I7OCCbd9wfwSrDO6.jpg",
+        "link": "/card/movies/800-441/Shpion.html",
+        "year": "2015",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Хижина в лесу",
+        "image": "https://image.tmdb.org/t/p/w500//5IeHLy9aaM2srhj90zFhWUu4wXF.jpg",
+        "link": "/card/movies/800-442/Hizhina-v-lesu.html",
+        "year": "2012",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Мотылёк",
+        "image": "https://image.tmdb.org/t/p/w500//5CZjVBHHKvljeVJCSOE4Pje8cbc.jpg",
+        "link": "/card/movies/800-430/Motylyok.html",
+        "year": "2017",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
         "name": "Старикам тут не место",
         "image": "https://image.tmdb.org/t/p/w500//z8eriOnIRCETerbPPx006Gyd7WM.jpg",
         "link": "/card/movies/800-411/Starikam-tut-ne-mesto.html",
@@ -58,7 +154,7 @@ var data = [
     },
     {
         "name": "Воображаемые Друзья",
-        "image": "https://image.tmdb.org/t/p/w500//aXUNQ3vVyfA3p1WoFIpjkCwGCAF.jpg",
+        "image": "https://image.tmdb.org/t/p/original/oJEpa5RRvw9xm7UbDsT9dFUbd3W.jpg",
         "link": "/card/movies/800-389/Voobrazhaemye-Druzya.html",
         "year": "2024",
         "rating": "7.1",
@@ -1866,6 +1962,14 @@ var data = [
         "type": "movie"
     },
     {
+        "name": "Каратэ-пацан: Легенды",
+        "image": "https://image.tmdb.org/t/p/w500//qzJ3iolWhBT7HeFR2nmaeURnROq.jpg",
+        "link": "/card/movies/800-424/Karate-pacan-Legendy.html",
+        "year": "2025",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
         "name": "Ловушка",
         "image": "https://image.tmdb.org/t/p/w500//3VmHv2WVdDFpD8xtoV2wfjtS5rl.jpg",
         "link": "/card/movies/800-106/Lovushka.html",
@@ -1895,6 +1999,14 @@ var data = [
         "link": "/card/movies/800-109/Prostushka.html",
         "year": "2015",
         "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Главы государств",
+        "image": "https://image.tmdb.org/t/p/w500//j2IEKt3uWGFrHxWpPY9mVSL3lHV.jpg",
+        "link": "/card/movies/800-425/Glavy-gosudarstv.htm",
+        "year": "2025",
+        "rating": "7.0",
         "type": "movie"
     },
     {
@@ -2015,6 +2127,14 @@ var data = [
         "link": "/card/movies/800-264/Zvuk-svobody.html",
         "year": "2023",
         "rating": "8.0",
+        "type": "movie"
+    },
+    {
+        "name": "Верни её из мёртвых",
+        "image": "https://image.tmdb.org/t/p/w500//bXUHpvzSevyjjKgyNt7cfdehhrR.jpg",
+        "link": "/card/movies/800-431/Verni-eyo-iz-myortvyh.html",
+        "year": "2025",
+        "rating": "7.4",
         "type": "movie"
     },
     {
@@ -2410,6 +2530,22 @@ var data = [
         "type": "movie"
     },
     {
+        "name": "М3ГАН 2.0",
+        "image": "https://image.tmdb.org/t/p/w500//oL96zIrXoraXrYU1afcB3Tf5lgI.jpg",
+        "link": "/card/movies/800-426/M3GAN-2.0.html",
+        "year": "2025",
+        "rating": "7.7",
+        "type": "movie"
+    },
+    {
+        "name": "М3ГАН",
+        "image": "https://image.tmdb.org/t/p/w500//cIgp2ZLstyKzak6e8zVlJGdBSZZ.jpg",
+        "link": "/card/movies/800-427/M3GAN.html",
+        "year": "2022",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
         "name": "Бойфренд из будущего",
         "image": "https://image.tmdb.org/t/p/w500//xWk8ukJ6dhRvlrboG3qgNWNtLJ1.jpg",
         "link": "/card/movies/800-134/Bojfrend-iz-budushego.html",
@@ -2463,6 +2599,22 @@ var data = [
         "link": "/card/movies/800-136/Rebel-Ridzh.html",
         "year": "2024",
         "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Ледяной драйв: Возмездие",
+        "image": "https://image.tmdb.org/t/p/w500//jVcQchW7EXT8MXk1C4XaUpqHhRC.jpg",
+        "link": "/card/movies/800-428/Ledyanoj-drajv-Vozmezdie.html",
+        "year": "2025",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Ледяной драйв",
+        "image": "https://image.tmdb.org/t/p/original/8Jk5hNRS0gARfgi17u3U4ZEXx0y.jpg",
+        "link": "/card/movies/800-429/Ledyanoj-drajv.html",
+        "year": "2021",
+        "rating": "6.8",
         "type": "movie"
     },
     {

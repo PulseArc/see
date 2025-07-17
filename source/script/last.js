@@ -97,12 +97,29 @@ function generateLastCards() {
             "rating":"8.0"
         },
         {
-            "name": "Прибытие",
-            "image": "https://image.tmdb.org/t/p/w500//3K1byNV0CfChvJFNbe2ZAkiro4U.jpg",
-            "link": "/card/movies/800-04/Pribytie.html",
-            "year": "2016",
-            "rating":"7.6"
-        },
+        "name": "Воображаемые Друзья",
+        "image": "https://image.tmdb.org/t/p/original/oJEpa5RRvw9xm7UbDsT9dFUbd3W.jpg",
+        "link": "/card/movies/800-389/Voobrazhaemye-Druzya.html",
+        "year": "2024",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Всё могу",
+        "image": "https://image.tmdb.org/t/p/w500//gkEDDnkAoD8XbWWel61iTzHYpSa.jpg",
+        "link": "/card/movies/800-350/Vsyo-mogu.html",
+        "year": "2015",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "Соседи: На тропе войны",
+        "image": "https://image.tmdb.org/t/p/w500//jLQxIV4y8GSknnbO9wsT645UaBg.jpg",
+        "link": "/card/movies/800-364/Sosedi-Na-trope-vojny.html",
+        "year": "2014",
+        "rating": "6.2",
+        "type": "movie"
+    },
         {
             "name": "Не звезди!",
             "image": "https://image.tmdb.org/t/p/w500//tAkZCkfPlb1R7ltLODoSZ3ybbXH.jpg",
@@ -127,7 +144,7 @@ function generateLastCards() {
     cardContainer.html("");
 
     // Берём последние 15 карточек
-    var lastCards = cardData.slice(-16);
+    var lastCards = cardData.slice(-18);
 
     // Добавляем карточки в контейнер
     lastCards.forEach(function (val) {
