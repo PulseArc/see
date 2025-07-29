@@ -358,6 +358,27 @@ async function generateCards() {
     // YOUR localCardData MUST BE COMPLETE AND UP-TO-DATE!
     const localCardData = [
         {
+        "name": "Братья из Гримсби",
+        "image": "https://image.tmdb.org/t/p/w500//JwwO5jFNMngh65FnjfBk2GTNCD.jpg",
+        "link": "/card/movies/800-458/Bratya-iz-Grimsbi.html",
+        "year": "2016",
+        "rating": "6.0", "tmdb_id": 267193
+    },
+        {
+        "name": "Оставить мир позади",
+        "image": "https://image.tmdb.org/t/p/w500//4IBihABLdL95TyRe3bG0B9XXNRa.jpg",
+        "link": "/card/movies/800-459/Ostavit-mir-pozadi.html",
+        "year": "2023",
+        "rating": "6.4", "tmdb_id": 726209
+    },
+        {
+        "name": "В духе Рождества",
+        "image": "https://image.tmdb.org/t/p/w500//swA9YPjWGsXBFfctQCpg4dvCvsv.jpg",
+        "link": "/card/movies/800-460/V-duhe-Rozhdestva.html",
+        "year": "2022",
+        "rating": "6.9", "tmdb_id": 632856
+    },
+        {
         "name": "Впритык",
         "image": "https://image.tmdb.org/t/p/w500//zIZC8DYGxFxuQkV6IPGmSAc3mQ.jpg",
         "link": "/card/movies/800-432/Vprityk.html",
@@ -528,6 +549,55 @@ async function generateCards() {
             "rating": "6.3", "tmdb_id": 132232
         },
         {
+            "name": "Мир Юрского периода: Возрождение",
+            "image": "https://image.tmdb.org/t/p/w500//iIk5nWcHuqTMLrz1yrwIWcmwTOM.jpg",
+            "link": "/card/movies/800-451/Mir-Yurskogo-perioda-Vozrozhdenie.html",
+            "year": "2025",
+            "rating": "6.3", "tmdb_id": 1234821
+        },
+        {
+            "name": "Мир Юрского периода: Господство",
+            "image": "https://image.tmdb.org/t/p/w500//6BLMT9T4wRu5QlnqVeQUU5WApLj.jpg",
+            "link": "/card/movies/800-452/Mir-Yurskogo-perioda-Gospodstvo.html",
+            "year": "2022",
+            "rating": "6.6", "tmdb_id": 507086
+        },
+        {
+            "name": "Мир Юрского Периода 2",
+            "image": "https://image.tmdb.org/t/p/w500//4VEkflsi7zQmBN6vNpihNrmnRzj.jpg",
+            "link": "/card/movies/800-453/Mir-Yurskogo-Perioda-2.html",
+            "year": "2018",
+            "rating": "6.5", "tmdb_id": 351286
+        },
+        {
+            "name": "Мир Юрского Периода",
+            "image": "https://image.tmdb.org/t/p/original/zlZCxYnYeeMNhBE9QCyH5PpdKoy.jpg",
+            "link": "/card/movies/800-454/Mir-Yurskogo-Perioda.html",
+            "year": "2015",
+            "rating": "6.7", "tmdb_id": 135397
+        },
+        {
+            "name": "Парк Юрского Периода 3",
+            "image": "https://image.tmdb.org/t/p/original/wQj9VSepvXmqha1XNtfdrgvqHdk.jpg",
+            "link": "/card/movies/800-455/Park-Yurskogo-Perioda-3.html",
+            "year": "2001",
+            "rating": "6.2", "tmdb_id": 331
+        },
+        {
+            "name": "Парк Юрского Периода 2: Затерянный Мир",
+            "image": "https://image.tmdb.org/t/p/original/bMwP9vq7juweGJcgq70CrpO0UHQ.jpg",
+            "link": "/card/movies/800-456/Park-Yurskogo-Perioda-2-Zateryannyj-Mir.html",
+            "year": "1997",
+            "rating": "6.6", "tmdb_id": 330
+        },
+        {
+            "name": "Парк Юрского Периода",
+            "image": "https://image.tmdb.org/t/p/original/8nSi7W1pG1KgqHS9kp3EsGoeKtA.jpg",
+            "link": "/card/movies/800-457/Park-Yurskogo-Perioda.html",
+            "year": "1993",
+            "rating": "8.0", "tmdb_id": 329
+        },
+        {
             "name": "Тихое место 2",
             "image": "https://image.tmdb.org/t/p/w500//9mLRf87tqKKpOjEx8M1yl1jZa1k.jpg",
             "link": "/card/movies/800-344/Tihoe-mesto-2.html",
@@ -689,6 +759,27 @@ async function generateCards() {
             "link": "/card/movies/800-366/Puteshestviya-Gullivera.html",
             "year": "2010",
             "rating": "5.2", "tmdb_id": 38745
+        },
+        {
+            "name": "28 лет спустя",
+            "image": "https://image.tmdb.org/t/p/w500//5mYslz7foRGWeiZbSG1vyXwMzUX.jpg",
+            "link": "/card/movies/800-448/28-let-spustya.html",
+            "year": "2025",
+            "rating": "7.1", "tmdb_id": 1100988
+        },
+        {
+            "name": "28 недель спустя",
+            "image": "https://image.tmdb.org/t/p/original/eBstfERGMJirLAMDbc2np2fK6C4.jpg",
+            "link": "/card/movies/800-449/28-nedel-spustya.html",
+            "year": "2007",
+            "rating": "6.6", "tmdb_id": 1562
+        },
+        {
+            "name": "28 дней спустя",
+            "image": "https://image.tmdb.org/t/p/w500//qwifZxThJncKX4w7YEaGiemZjk3.jpg",
+            "link": "/card/movies/800-450/28-dnej-spustya.html",
+            "year": "2002",
+            "rating": "7.2", "tmdb_id": 170
         },
         {
             "name": "Престиж",
@@ -2756,6 +2847,20 @@ async function generateCards() {
             "rating": "6.3", "tmdb_id": 8960
         },
         {
+            "name": "Счастливчик Гилмор 2",
+            "image": "https://image.tmdb.org/t/p/w500//5ezAkKMAc6CwXiTI7JljyT1Epc6.jpg",
+            "link": "/card/movies/800-443/Schastlivchik-Gilmor-2.html",
+            "year": "2025",
+            "rating": "6.7", "tmdb_id": 1263256
+        },
+        {
+            "name": "Счастливчик Гилмор",
+            "image": "https://image.tmdb.org/t/p/w500//z0FxccTbbe51HbGzteQxtN2yy5l.jpg",
+            "link": "/card/movies/800-444/Schastlivchik-Gilmor.html",
+            "year": "1996",
+            "rating": "6.7", "tmdb_id": 9614
+        },
+        {
             "name": "Спящие псы",
             "image": "https://image.tmdb.org/t/p/w500//7IIWX53p0h54ZtbhFXLobnAOm8s.jpg",
             "link": "/card/movies/800-239/Spyashie-psy.html",
@@ -2840,6 +2945,13 @@ async function generateCards() {
             "rating": "8.5", "tmdb_id": 157336
         },
         {
+            "name": "Шпионская свадьба",
+            "image": "https://image.tmdb.org/t/p/w500//pY61LFEkfLIwTinQVZfpk5N8RTm.jpg",
+            "link": "/card/movies/800-445/Shpionskaya-svadba.html",
+            "year": "2025",
+            "rating": "5.9", "tmdb_id": 1124619
+        },
+        {
             "name": "Артур, ты король",
             "image": "https://image.tmdb.org/t/p/w500//aufA1yiiDpQF8YELXRV16T5aSrG.jpg",
             "link": "/card/movies/800-263/Artur-ty-korol.html",
@@ -2887,6 +2999,20 @@ async function generateCards() {
             "link": "/card/movies/800-212/Bitldzhyus.html",
             "year": "1988",
             "rating": "7.4", "tmdb_id": 4011
+        },
+        {
+            "name": "Бессмертная гвардия 2",
+            "image": "https://image.tmdb.org/t/p/w500//b1F05dWGFA4VlE0DlMg6hhCmOOW.jpg",
+            "link": "/card/movies/800-446/Bessmertnaya-gvardiya-2.html",
+            "year": "2025",
+            "rating": "6.0", "tmdb_id": 846422
+        },
+        {
+            "name": "Бессмертная гвардия",
+            "image": "https://image.tmdb.org/t/p/w500//gtgGa5j3Rine2LBq0N1v9FiR8xz.jpg",
+            "link": "/card/movies/800-447/Bessmertnaya-gvardiya.html",
+            "year": "2020",
+            "rating": "7.1", "tmdb_id": 547016
         },
         {
             "name": "Игра в имитацию",

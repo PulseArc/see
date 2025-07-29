@@ -1,6 +1,29 @@
 var data = [
     // Фильмы
     {
+        "name": "Братья из Гримсби",
+        "image": "https://image.tmdb.org/t/p/w500//JwwO5jFNMngh65FnjfBk2GTNCD.jpg",
+        "link": "/card/movies/800-458/Bratya-iz-Grimsbi.html",
+        "year": "2016",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "Оставить мир позади",
+        "image": "https://image.tmdb.org/t/p/w500//4IBihABLdL95TyRe3bG0B9XXNRa.jpg",
+        "link": "/card/movies/800-459/Ostavit-mir-pozadi.html",
+        "year": "2023",
+        "type": "movie"
+    },
+    {
+        "name": "В духе Рождества",
+        "image": "https://image.tmdb.org/t/p/w500//swA9YPjWGsXBFfctQCpg4dvCvsv.jpg",
+        "link": "/card/movies/800-460/V-duhe-Rozhdestva.html",
+        "year": "2022",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
         "name": "Впритык",
         "image": "https://image.tmdb.org/t/p/w500//zIZC8DYGxFxuQkV6IPGmSAc3mQ.jpg",
         "link": "/card/movies/800-432/Vprityk.html",
@@ -193,6 +216,62 @@ var data = [
         "type": "movie"
     },
     {
+        "name": "Мир Юрского периода: Возрождение",
+        "image": "https://image.tmdb.org/t/p/w500//iIk5nWcHuqTMLrz1yrwIWcmwTOM.jpg",
+        "link": "/card/movies/800-451/Mir-Yurskogo-perioda-Vozrozhdenie.html",
+        "year": "2025",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Мир Юрского периода: Господство",
+        "image": "https://image.tmdb.org/t/p/w500//6BLMT9T4wRu5QlnqVeQUU5WApLj.jpg",
+        "link": "/card/movies/800-452/Mir-Yurskogo-perioda-Gospodstvo.html",
+        "year": "2022",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Мир Юрского Периода 2",
+        "image": "https://image.tmdb.org/t/p/w500//4VEkflsi7zQmBN6vNpihNrmnRzj.jpg",
+        "link": "/card/movies/800-453/Mir-Yurskogo-Perioda-2.html",
+        "year": "2018",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Мир Юрского Периода",
+        "image": "https://image.tmdb.org/t/p/original/zlZCxYnYeeMNhBE9QCyH5PpdKoy.jpg",
+        "link": "/card/movies/800-454/Mir-Yurskogo-Perioda.html",
+        "year": "2015",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Парк Юрского Периода 3",
+        "image": "https://image.tmdb.org/t/p/original/wQj9VSepvXmqha1XNtfdrgvqHdk.jpg",
+        "link": "/card/movies/800-455/Park-Yurskogo-Perioda-3.html",
+        "year": "2001",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Парк Юрского Периода 2: Затерянный Мир",
+        "image": "https://image.tmdb.org/t/p/original/bMwP9vq7juweGJcgq70CrpO0UHQ.jpg",
+        "link": "/card/movies/800-456/Park-Yurskogo-Perioda-2-Zateryannyj-Mir.html",
+        "year": "1997",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Парк Юрского Периода",
+        "image": "https://image.tmdb.org/t/p/original/8nSi7W1pG1KgqHS9kp3EsGoeKtA.jpg",
+        "link": "/card/movies/800-457/Park-Yurskogo-Perioda.html",
+        "year": "1993",
+        "rating": "8.0",
+        "type": "movie"
+    },
+    {
         "name": "Тихое место 2",
         "image": "https://image.tmdb.org/t/p/w500//9mLRf87tqKKpOjEx8M1yl1jZa1k.jpg",
         "link": "/card/movies/800-344/Tihoe-mesto-2.html",
@@ -374,6 +453,30 @@ var data = [
         "link": "/card/movies/800-366/Puteshestviya-Gullivera.html",
         "year": "2010",
         "rating": "5.2",
+        "type": "movie"
+    },
+    {
+        "name": "28 лет спустя",
+        "image": "https://image.tmdb.org/t/p/w500//5mYslz7foRGWeiZbSG1vyXwMzUX.jpg",
+        "link": "/card/movies/800-448/28-let-spustya.html",
+        "year": "2025",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "28 недель спустя",
+        "image": "https://image.tmdb.org/t/p/original/eBstfERGMJirLAMDbc2np2fK6C4.jpg",
+        "link": "/card/movies/800-449/28-nedel-spustya.html",
+        "year": "2007",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "28 дней спустя",
+        "image": "https://image.tmdb.org/t/p/w500//qwifZxThJncKX4w7YEaGiemZjk3.jpg",
+        "link": "/card/movies/800-450/28-dnej-spustya.html",
+        "year": "2002",
+        "rating": "7.2",
         "type": "movie"
     },
     {
@@ -2050,6 +2153,22 @@ var data = [
         "type": "movie"
     },
     {
+        "name": "Счастливчик Гилмор 2",
+        "image": "https://image.tmdb.org/t/p/w500//5ezAkKMAc6CwXiTI7JljyT1Epc6.jpg",
+        "link": "/card/movies/800-443/Schastlivchik-Gilmor-2.html",
+        "year": "2025",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Счастливчик Гилмор",
+        "image": "https://image.tmdb.org/t/p/w500//z0FxccTbbe51HbGzteQxtN2yy5l.jpg",
+        "link": "/card/movies/800-444/Schastlivchik-Gilmor.html",
+        "year": "1996",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
         "name": "Спящие псы",
         "image": "https://image.tmdb.org/t/p/w500//7IIWX53p0h54ZtbhFXLobnAOm8s.jpg",
         "link": "/card/movies/800-239/Spyashie-psy.html",
@@ -2146,6 +2265,14 @@ var data = [
         "type": "movie"
     },
     {
+        "name": "Шпионская свадьба",
+        "image": "https://image.tmdb.org/t/p/w500//pY61LFEkfLIwTinQVZfpk5N8RTm.jpg",
+        "link": "/card/movies/800-445/Shpionskaya-svadba.html",
+        "year": "2025",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
         "name": "Артур, ты король",
         "image": "https://image.tmdb.org/t/p/w500//aufA1yiiDpQF8YELXRV16T5aSrG.jpg",
         "link": "/card/movies/800-263/Artur-ty-korol.html",
@@ -2199,6 +2326,22 @@ var data = [
         "link": "/card/movies/800-212/Bitldzhyus.html",
         "year": "1988",
         "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Бессмертная гвардия 2",
+        "image": "https://image.tmdb.org/t/p/w500//b1F05dWGFA4VlE0DlMg6hhCmOOW.jpg",
+        "link": "/card/movies/800-446/Bessmertnaya-gvardiya-2.html",
+        "year": "2025",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "Бессмертная гвардия",
+        "image": "https://image.tmdb.org/t/p/w500//gtgGa5j3Rine2LBq0N1v9FiR8xz.jpg",
+        "link": "/card/movies/800-447/Bessmertnaya-gvardiya.html",
+        "year": "2020",
+        "rating": "7.1",
         "type": "movie"
     },
     {
