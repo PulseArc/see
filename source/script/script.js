@@ -1,6 +1,78 @@
 var data = [
     // Фильмы
     {
+        "name": "Типа копы",
+        "image": "https://image.tmdb.org/t/p/w500//7BAiNAmablFGjG4KOHda6wfL4dH.jpg",
+        "link": "/card/movies/800-469/Tipa-kopy.html",
+        "year": "2014",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Омерзительная восьмёрка",
+        "image": "https://image.tmdb.org/t/p/w500//oum699CFFl34Z0ZyIUBmkFRVjfT.jpg",
+        "link": "/card/movies/800-461/Omerzitelnaya-vosmyorka.html",
+        "year": "2015",
+        "rating": "7.8",
+        "type": "movie"
+    },
+    {
+        "name": "Восхождение Юпитер",
+        "image": "https://image.tmdb.org/t/p/w500//owEYrXtomE9BJ3jli66QGk5McWv.jpg",
+        "link": "/card/movies/800-462/Voshozhdenie-Yupiter.html",
+        "year": "2015",
+        "rating": "5.5",
+        "type": "movie"
+    },
+    {
+        "name": "Седьмой сын",
+        "image": "https://image.tmdb.org/t/p/original/mlYWIgLvguxXlweYXi9iW4BLkqp.jpg",
+        "link": "/card/movies/800-463/Sedmoj-syn.html",
+        "year": "2014",
+        "rating": "5.5",
+        "type": "movie"
+    },
+    {
+        "name": "Чем дальше в лес",
+        "image": "https://image.tmdb.org/t/p/w500//s4pbFVyEIlpyPjxdbG15JeIET0S.jpg",
+        "link": "/card/movies/800-464/Chem-dalshe-v-les.html",
+        "year": "2014",
+        "rating": "5.8",
+        "type": "movie"
+    },
+    {
+        "name": "Несносные боссы 2",
+        "image": "https://image.tmdb.org/t/p/w500//bnJgRehNamDRMGQHxlgQEtRhqJe.jpg",
+        "link": "/card/movies/800-465/Nesnosnye-bossy-2.html",
+        "year": "2014",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Несносные боссы",
+        "image": "https://image.tmdb.org/t/p/w500//b5JQ3q72bDqPI0nSV0Zl9MtwXbO.jpg",
+        "link": "/card/movies/800-466/Nesnosnye-bossy.html",
+        "year": "2011",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Семь психопатов",
+        "image": "https://image.tmdb.org/t/p/w500//Vs0ZLKWIJChGbNSaNowChablG9.jpg",
+        "link": "/card/movies/800-467/Sem-psihopatov.html",
+        "year": "2012",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Джанго освобождённый",
+        "image": "https://image.tmdb.org/t/p/w500//e4mynoLMT9xSogxVKOgp9hzlM9q.jpg",
+        "link": "/card/movies/800-468/Dzhango-osvobozhdyonnyj.html",
+        "year": "2012",
+        "rating": "8.2",
+        "type": "movie"
+    },
+    {
         "name": "Братья из Гримсби",
         "image": "https://image.tmdb.org/t/p/w500//JwwO5jFNMngh65FnjfBk2GTNCD.jpg",
         "link": "/card/movies/800-458/Bratya-iz-Grimsbi.html",

@@ -358,110 +358,173 @@ async function generateCards() {
     // YOUR localCardData MUST BE COMPLETE AND UP-TO-DATE!
     const localCardData = [
         {
-        "name": "Братья из Гримсби",
-        "image": "https://image.tmdb.org/t/p/w500//JwwO5jFNMngh65FnjfBk2GTNCD.jpg",
-        "link": "/card/movies/800-458/Bratya-iz-Grimsbi.html",
-        "year": "2016",
-        "rating": "6.0", "tmdb_id": 267193
-    },
+            "name": "Типа копы",
+            "image": "https://image.tmdb.org/t/p/w500//7BAiNAmablFGjG4KOHda6wfL4dH.jpg",
+            "link": "/card/movies/800-469/Tipa-kopy.html",
+            "year": "2014",
+            "rating": "6.5", "tmdb_id": 193893
+        },
         {
-        "name": "Оставить мир позади",
-        "image": "https://image.tmdb.org/t/p/w500//4IBihABLdL95TyRe3bG0B9XXNRa.jpg",
-        "link": "/card/movies/800-459/Ostavit-mir-pozadi.html",
-        "year": "2023",
-        "rating": "6.4", "tmdb_id": 726209
-    },
+            "name": "Омерзительная восьмёрка",
+            "image": "https://image.tmdb.org/t/p/w500//oum699CFFl34Z0ZyIUBmkFRVjfT.jpg",
+            "link": "/card/movies/800-461/Omerzitelnaya-vosmyorka.html",
+            "year": "2015",
+            "rating": "7.8", "tmdb_id": 273248
+        },
         {
-        "name": "В духе Рождества",
-        "image": "https://image.tmdb.org/t/p/w500//swA9YPjWGsXBFfctQCpg4dvCvsv.jpg",
-        "link": "/card/movies/800-460/V-duhe-Rozhdestva.html",
-        "year": "2022",
-        "rating": "6.9", "tmdb_id": 632856
-    },
+            "name": "Восхождение Юпитер",
+            "image": "https://image.tmdb.org/t/p/w500//owEYrXtomE9BJ3jli66QGk5McWv.jpg",
+            "link": "/card/movies/800-462/Voshozhdenie-Yupiter.html",
+            "year": "2015",
+            "rating": "5.5", "tmdb_id": 76757
+        },
         {
-        "name": "Впритык",
-        "image": "https://image.tmdb.org/t/p/w500//zIZC8DYGxFxuQkV6IPGmSAc3mQ.jpg",
-        "link": "/card/movies/800-432/Vprityk.html",
-        "year": "2010",
-        "rating": "6.4", "tmdb_id": 41733
-    },
+            "name": "Седьмой сын",
+            "image": "https://image.tmdb.org/t/p/original/mlYWIgLvguxXlweYXi9iW4BLkqp.jpg",
+            "link": "/card/movies/800-463/Sedmoj-syn.html",
+            "year": "2014",
+            "rating": "5.5", "tmdb_id": 68737
+        },
         {
-        "name": "21 и больше",
-        "image": "https://image.tmdb.org/t/p/w500//tgfbGIenue8CbB3z1WITZMCvBia.jpg",
-        "link": "/card/movies/800-433/21-i-bolshe.html",
-        "year": "2013",
-        "rating": "5.8", "tmdb_id": 107811
-    },
+            "name": "Чем дальше в лес",
+            "image": "https://image.tmdb.org/t/p/w500//s4pbFVyEIlpyPjxdbG15JeIET0S.jpg",
+            "link": "/card/movies/800-464/Chem-dalshe-v-les.html",
+            "year": "2014",
+            "rating": "5.8", "tmdb_id": 224141
+        },
         {
-        "name": "Мой любимый враг",
-        "image": "https://image.tmdb.org/t/p/w500//tT2tTqktvSzmiqXqHzEjnaNS3Th.jpg",
-        "link": "/card/movies/800-434/Moj-lyubimyj-vrag.html",
-        "year": "2021",
-        "rating": "7.3", "tmdb_id": 603661
-    },
+            "name": "Несносные боссы 2",
+            "image": "https://image.tmdb.org/t/p/w500//bnJgRehNamDRMGQHxlgQEtRhqJe.jpg",
+            "link": "/card/movies/800-465/Nesnosnye-bossy-2.html",
+            "year": "2014",
+            "rating": "6.2", "tmdb_id": 227159
+        },
         {
-        "name": "Реинкарнация",
-        "image": "https://image.tmdb.org/t/p/w500//gUsZ6BvPynVQBAxOzW830eE7PeF.jpg",
-        "link": "/card/movies/800-435/Reinkarnaciya.html",
-        "year": "2018",
-        "rating": "7.3", "tmdb_id": 493922
-    },
+            "name": "Несносные боссы",
+            "image": "https://image.tmdb.org/t/p/w500//b5JQ3q72bDqPI0nSV0Zl9MtwXbO.jpg",
+            "link": "/card/movies/800-466/Nesnosnye-bossy.html",
+            "year": "2011",
+            "rating": "6.6", "tmdb_id": 51540
+        },
         {
-        "name": "Кадры",
-        "image": "https://image.tmdb.org/t/p/w500//mlzOgYEBjMEYuFLjxtqB9NsI9bE.jpg",
-        "link": "/card/movies/800-436/Kadry.html",
-        "year": "2013",
-        "rating": "6.2", "tmdb_id": 116741
-    },
+            "name": "Семь психопатов",
+            "image": "https://image.tmdb.org/t/p/w500//Vs0ZLKWIJChGbNSaNowChablG9.jpg",
+            "link": "/card/movies/800-467/Sem-psihopatov.html",
+            "year": "2012",
+            "rating": "6.8", "tmdb_id": 86838
+        },
         {
-        "name": "Два, три, демон, приди!",
-        "image": "https://image.tmdb.org/t/p/w500//sEBpONjRA2OrEBOJFuWnyl0fZLD.jpg",
-        "link": "/card/movies/800-437/Dva-tri-demon-pridi.html",
-        "year": "2023",
-        "rating": "7.2", "tmdb_id": 1008042
-    },
+            "name": "Джанго освобождённый",
+            "image": "https://image.tmdb.org/t/p/w500//e4mynoLMT9xSogxVKOgp9hzlM9q.jpg",
+            "link": "/card/movies/800-468/Dzhango-osvobozhdyonnyj.html",
+            "year": "2012",
+            "rating": "8.2", "tmdb_id": 68718
+        },
         {
-        "name": "Этот неловкий момент",
-        "image": "https://image.tmdb.org/t/p/w500//tlCd5EU6vss3Okno3CCRh3vY85d.jpg",
-        "link": "/card/movies/800-438/Etot-nelovkij-moment.html",
-        "year": "2014",
-        "rating": "6.1", "tmdb_id": 225565
-    },
+            "name": "Братья из Гримсби",
+            "image": "https://image.tmdb.org/t/p/w500//JwwO5jFNMngh65FnjfBk2GTNCD.jpg",
+            "link": "/card/movies/800-458/Bratya-iz-Grimsbi.html",
+            "year": "2016",
+            "rating": "6.0", "tmdb_id": 267193
+        },
         {
-        "name": "Ужас Амитивилля: Пробуждение",
-        "image": "https://image.tmdb.org/t/p/w500//y9MBKfPrWNHL6kWPYFjtToZGtL5.jpg",
-        "link": "/card/movies/800-439/Uzhas-Amitivillya-Probuzhdenie.html",
-        "year": "2017",
-        "rating": "5.3", "tmdb_id": 203835
-    },
+            "name": "Оставить мир позади",
+            "image": "https://image.tmdb.org/t/p/w500//4IBihABLdL95TyRe3bG0B9XXNRa.jpg",
+            "link": "/card/movies/800-459/Ostavit-mir-pozadi.html",
+            "year": "2023",
+            "rating": "6.4", "tmdb_id": 726209
+        },
         {
-        "name": "Ужас Амитивилля",
-        "image": "https://image.tmdb.org/t/p/original/iAcYZN28eVcLN39HLeThx7A43st.jpg",
-        "link": "/card/movies/800-440/Uzhas-Amitivillya2005.html",
-        "year": "2005",
-        "rating": "6.1", "tmdb_id": 10065
-    },
+            "name": "В духе Рождества",
+            "image": "https://image.tmdb.org/t/p/w500//swA9YPjWGsXBFfctQCpg4dvCvsv.jpg",
+            "link": "/card/movies/800-460/V-duhe-Rozhdestva.html",
+            "year": "2022",
+            "rating": "6.9", "tmdb_id": 632856
+        },
         {
-        "name": "Шпион",
-        "image": "https://image.tmdb.org/t/p/w500//uZpsfNEKYe4I7OCCbd9wfwSrDO6.jpg",
-        "link": "/card/movies/800-441/Shpion.html",
-        "year": "2015",
-        "rating": "6.8", "tmdb_id": 238713
-    },
+            "name": "Впритык",
+            "image": "https://image.tmdb.org/t/p/w500//zIZC8DYGxFxuQkV6IPGmSAc3mQ.jpg",
+            "link": "/card/movies/800-432/Vprityk.html",
+            "year": "2010",
+            "rating": "6.4", "tmdb_id": 41733
+        },
         {
-        "name": "Хижина в лесу",
-        "image": "https://image.tmdb.org/t/p/w500//5IeHLy9aaM2srhj90zFhWUu4wXF.jpg",
-        "link": "/card/movies/800-442/Hizhina-v-lesu.html",
-        "year": "2012",
-        "rating": "6.6", "tmdb_id": 22970
-    },
+            "name": "21 и больше",
+            "image": "https://image.tmdb.org/t/p/w500//tgfbGIenue8CbB3z1WITZMCvBia.jpg",
+            "link": "/card/movies/800-433/21-i-bolshe.html",
+            "year": "2013",
+            "rating": "5.8", "tmdb_id": 107811
+        },
         {
-        "name": "Мотылёк",
-        "image": "https://image.tmdb.org/t/p/w500//5CZjVBHHKvljeVJCSOE4Pje8cbc.jpg",
-        "link": "/card/movies/800-430/Motylyok.html",
-        "year": "2017",
-        "rating": "7.3", "tmdb_id": 433498
-    },
+            "name": "Мой любимый враг",
+            "image": "https://image.tmdb.org/t/p/w500//tT2tTqktvSzmiqXqHzEjnaNS3Th.jpg",
+            "link": "/card/movies/800-434/Moj-lyubimyj-vrag.html",
+            "year": "2021",
+            "rating": "7.3", "tmdb_id": 603661
+        },
+        {
+            "name": "Реинкарнация",
+            "image": "https://image.tmdb.org/t/p/w500//gUsZ6BvPynVQBAxOzW830eE7PeF.jpg",
+            "link": "/card/movies/800-435/Reinkarnaciya.html",
+            "year": "2018",
+            "rating": "7.3", "tmdb_id": 493922
+        },
+        {
+            "name": "Кадры",
+            "image": "https://image.tmdb.org/t/p/w500//mlzOgYEBjMEYuFLjxtqB9NsI9bE.jpg",
+            "link": "/card/movies/800-436/Kadry.html",
+            "year": "2013",
+            "rating": "6.2", "tmdb_id": 116741
+        },
+        {
+            "name": "Два, три, демон, приди!",
+            "image": "https://image.tmdb.org/t/p/w500//sEBpONjRA2OrEBOJFuWnyl0fZLD.jpg",
+            "link": "/card/movies/800-437/Dva-tri-demon-pridi.html",
+            "year": "2023",
+            "rating": "7.2", "tmdb_id": 1008042
+        },
+        {
+            "name": "Этот неловкий момент",
+            "image": "https://image.tmdb.org/t/p/w500//tlCd5EU6vss3Okno3CCRh3vY85d.jpg",
+            "link": "/card/movies/800-438/Etot-nelovkij-moment.html",
+            "year": "2014",
+            "rating": "6.1", "tmdb_id": 225565
+        },
+        {
+            "name": "Ужас Амитивилля: Пробуждение",
+            "image": "https://image.tmdb.org/t/p/w500//y9MBKfPrWNHL6kWPYFjtToZGtL5.jpg",
+            "link": "/card/movies/800-439/Uzhas-Amitivillya-Probuzhdenie.html",
+            "year": "2017",
+            "rating": "5.3", "tmdb_id": 203835
+        },
+        {
+            "name": "Ужас Амитивилля",
+            "image": "https://image.tmdb.org/t/p/original/iAcYZN28eVcLN39HLeThx7A43st.jpg",
+            "link": "/card/movies/800-440/Uzhas-Amitivillya2005.html",
+            "year": "2005",
+            "rating": "6.1", "tmdb_id": 10065
+        },
+        {
+            "name": "Шпион",
+            "image": "https://image.tmdb.org/t/p/w500//uZpsfNEKYe4I7OCCbd9wfwSrDO6.jpg",
+            "link": "/card/movies/800-441/Shpion.html",
+            "year": "2015",
+            "rating": "6.8", "tmdb_id": 238713
+        },
+        {
+            "name": "Хижина в лесу",
+            "image": "https://image.tmdb.org/t/p/w500//5IeHLy9aaM2srhj90zFhWUu4wXF.jpg",
+            "link": "/card/movies/800-442/Hizhina-v-lesu.html",
+            "year": "2012",
+            "rating": "6.6", "tmdb_id": 22970
+        },
+        {
+            "name": "Мотылёк",
+            "image": "https://image.tmdb.org/t/p/w500//5CZjVBHHKvljeVJCSOE4Pje8cbc.jpg",
+            "link": "/card/movies/800-430/Motylyok.html",
+            "year": "2017",
+            "rating": "7.3", "tmdb_id": 433498
+        },
         {
             "name": "Старикам тут не место",
             "image": "https://image.tmdb.org/t/p/w500//z8eriOnIRCETerbPPx006Gyd7WM.jpg",
@@ -2931,12 +2994,12 @@ async function generateCards() {
             "rating": "8.0", "tmdb_id": 678512
         },
         {
-        "name": "Верни её из мёртвых",
-        "image": "https://image.tmdb.org/t/p/w500//bXUHpvzSevyjjKgyNt7cfdehhrR.jpg",
-        "link": "/card/movies/800-431/Verni-eyo-iz-myortvyh.html",
-        "year": "2025",
-        "rating": "7.4", "tmdb_id": 1151031
-    },
+            "name": "Верни её из мёртвых",
+            "image": "https://image.tmdb.org/t/p/w500//bXUHpvzSevyjjKgyNt7cfdehhrR.jpg",
+            "link": "/card/movies/800-431/Verni-eyo-iz-myortvyh.html",
+            "year": "2025",
+            "rating": "7.4", "tmdb_id": 1151031
+        },
         {
             "name": "Интерстеллар",
             "image": "https://image.tmdb.org/t/p/w500//vReLRjDV9XPhiOSEW7QWow4DXwf.jpg",
@@ -3365,19 +3428,19 @@ async function generateCards() {
             "rating": "7.0", "tmdb_id": 646097
         },
         {
-        "name": "Ледяной драйв: Возмездие",
-        "image": "https://image.tmdb.org/t/p/w500//jVcQchW7EXT8MXk1C4XaUpqHhRC.jpg",
-        "link": "/card/movies/800-428/Ledyanoj-drajv-Vozmezdie.html",
-        "year": "2025",
-        "rating": "7.0", "tmdb_id": 1119878
-    },
-    {
-        "name": "Ледяной драйв",
-        "image": "https://image.tmdb.org/t/p/original/8Jk5hNRS0gARfgi17u3U4ZEXx0y.jpg",
-        "link": "/card/movies/800-429/Ledyanoj-drajv.html",
-        "year": "2021",
-        "rating": "6.8", "tmdb_id": 646207
-    },
+            "name": "Ледяной драйв: Возмездие",
+            "image": "https://image.tmdb.org/t/p/w500//jVcQchW7EXT8MXk1C4XaUpqHhRC.jpg",
+            "link": "/card/movies/800-428/Ledyanoj-drajv-Vozmezdie.html",
+            "year": "2025",
+            "rating": "7.0", "tmdb_id": 1119878
+        },
+        {
+            "name": "Ледяной драйв",
+            "image": "https://image.tmdb.org/t/p/original/8Jk5hNRS0gARfgi17u3U4ZEXx0y.jpg",
+            "link": "/card/movies/800-429/Ledyanoj-drajv.html",
+            "year": "2021",
+            "rating": "6.8", "tmdb_id": 646207
+        },
         {
             "name": "Ты водишь!",
             "image": "https://image.tmdb.org/t/p/w500//4GTpZgK5ijNGzJSB6tXjz8Xz7t2.jpg",
