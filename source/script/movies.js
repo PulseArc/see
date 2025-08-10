@@ -358,6 +358,174 @@ async function generateCards() {
     // YOUR localCardData MUST BE COMPLETE AND UP-TO-DATE!
     const localCardData = [
         {
+            "name": "Фантастическая четвёрка: Первые шаги",
+            "image": "https://image.tmdb.org/t/p/w500//5OImujJnAmhb9KXGsRQ6ThDQ1XM.jpg",
+            "link": "/card/movies/800-470/Fantasticheskaya-chetverka-Pervye-shagi.html",
+            "year": "2025",
+            "rating": "7.3", "tmdb_id": 617126
+        },
+        {
+            "name": "Фантастическая Четвёрка",
+            "image": "https://image.tmdb.org/t/p/w500//vn0OIQIDLVlCSSW3VMURUyQU57x.jpg",
+            "link": "/card/movies/800-471/Fantasticheskaya-chetverka2015.html",
+            "year": "2015",
+            "rating": "4.4", "tmdb_id": 166424
+        },
+        {
+            "name": "Фантастическая Четвёрка: Вторжение Серебряного...",
+            "image": "https://image.tmdb.org/t/p/w500//vYvuKMkUWVW4UuPAE5vSmm5orBB.jpg",
+            "link": "/card/movies/800-472/Fantasticheskaya-Chetvyorka-Vtorzhenie-Serebryanogo-Syorfera.html",
+            "year": "2007",
+            "rating": "5.6", "tmdb_id": 1979
+        },
+        {
+            "name": "Фантастическая Четвёрка",
+            "image": "https://image.tmdb.org/t/p/w500//vRb7EUXQZFIWNye7y661mvTVP6O.jpg",
+            "link": "/card/movies/800-473/Fantasticheskaya-Chetvyorka2005.html",
+            "year": "2005",
+            "rating": "5.8", "tmdb_id": 9738
+        },
+        {
+            "name": "Отряд Самоубийц: Миссия Навылет",
+            "image": "https://image.tmdb.org/t/p/w500//asD8pGLw2uI3HzPtjuX8ls8RNsg.jpg",
+            "link": "/card/movies/800-474/Otryad-Samoubijc-Missiya-Navylet.html",
+            "year": "2021",
+            "rating": "7.5", "tmdb_id": 436969
+        },
+        {
+            "name": "Хищные птицы: Потрясающая история Харли...",
+            "image": "https://image.tmdb.org/t/p/w500//11ZCJWv9OK1ubjiMSqQUtt4reWF.jpg",
+            "link": "/card/movies/800-475/Hishnye-pticy-Potryasayushaya-istoriya-Harli-Kvinn.html",
+            "year": "2016",
+            "rating": "6.9", "tmdb_id": 495764
+        },
+        {
+            "name": "Отряд Самоубийц",
+            "image": "https://image.tmdb.org/t/p/w500//7tJjv7vPBhG2pzcTIMgGBV1mL4w.jpg",
+            "link": "/card/movies/800-476/Otryad-Samoubijc.html",
+            "year": "2016",
+            "rating": "5.9", "tmdb_id": 297761
+        },
+        {
+            "name": "Синий Жук",
+            "image": "https://image.tmdb.org/t/p/w500//aHT0qcPPJGnF5ZhrRAdpfmEnl5Z.jpg",
+            "link": "/card/movies/800-477/Sinij-Zhuk.html",
+            "year": "2023",
+            "rating": "6.7", "tmdb_id": 565770
+        },
+        {
+            "name": "Шазам! Ярость Богов",
+            "image": "https://image.tmdb.org/t/p/w500//t2Wy2p0lLg6BjOk10pYhrIiYWrL.jpg",
+            "link": "/card/movies/800-478/Shazam-Yarost-Bogov.html",
+            "year": "2023",
+            "rating": "6.5", "tmdb_id": 594767
+        },
+        {
+            "name": "Чёрный Адам",
+            "image": "https://image.tmdb.org/t/p/w500//ebtyQ43I2QSeEJiXYNFgSp4yuYT.jpg",
+            "link": "/card/movies/800-479/Chyornyj-Adam.html",
+            "year": "2022",
+            "rating": "6.9", "tmdb_id": 436270
+        },
+        {
+            "name": "Шазам!",
+            "image": "https://image.tmdb.org/t/p/w500//s4byZ8CP7NLfH54FV3QF6l0JLSh.jpg",
+            "link": "/card/movies/800-480/Shazam.html",
+            "year": "2019",
+            "rating": "7.0", "tmdb_id": 287947
+        },
+        {
+            "name": "Бэтмен",
+            "image": "https://image.tmdb.org/t/p/w500//3EXgl14Wmr5NcbYnBy1kavGHnvh.jpg",
+            "link": "/card/movies/800-481/Betmen2022.html",
+            "year": "2022",
+            "rating": "7.7", "tmdb_id": 414906
+        },
+        {
+            "name": "Аквамен и потерянное царство",
+            "image": "https://image.tmdb.org/t/p/w500//vJoMnbQjLo1e7yOtFPW1LyPL6qR.jpg",
+            "link": "/card/movies/800-482/Akvamen-i-poteryannoe-carstvo.html",
+            "year": "2023",
+            "rating": "6.6", "tmdb_id": 572802
+        },
+        {
+            "name": "Аквамен",
+            "image": "https://image.tmdb.org/t/p/w500//hA5rapmD3Lwv4I981yh6Ct8zvIC.jpg",
+            "link": "/card/movies/800-483/Akvamen.html",
+            "year": "2018",
+            "rating": "6.9", "tmdb_id": 297802
+        },
+        {
+            "name": "Чудо-женщина: 1984",
+            "image": "https://image.tmdb.org/t/p/w500//1B2YJCYyRudISmfSWCRfc95gAtq.jpg",
+            "link": "/card/movies/800-484/Chudo-zhenshina-1984.html",
+            "year": "2020",
+            "rating": "6.4", "tmdb_id": 464052
+        },
+        {
+            "name": "Чудо-женщина",
+            "image": "https://image.tmdb.org/t/p/w500//fMnMonAyK3nzp1P1odIFzYoSvYe.jpg",
+            "link": "/card/movies/800-485/Chudo-zhenshina.html",
+            "year": "2017",
+            "rating": "7.2", "tmdb_id": 297762
+        },
+        {
+            "name": "Флэш",
+            "image": "https://image.tmdb.org/t/p/w500//ozBz6PcTfyhcrci6ZygzVJgPHxO.jpg",
+            "link": "/card/movies/800-486/Flesh2023.html",
+            "year": "2023",
+            "rating": "6.6", "tmdb_id": 298618
+        },
+        {
+            "name": "Супермен",
+            "image": "https://image.tmdb.org/t/p/w500//sezEzZZYJeaLjNGjTFHzWJ3yk5E.jpg",
+            "link": "/card/movies/800-487/Supermen2025.html",
+            "year": "2025",
+            "rating": "7.7", "tmdb_id": 1061474
+        },
+        {
+            "name": "Лига справедливости Зака Снайдера",
+            "image": "https://image.tmdb.org/t/p/w500//tpPWUv258JrMSIdkVVV1NDp3aoT.jpg",
+            "link": "/card/movies/800-488/Liga-spravedlivosti-Zaka-Snajdera.html",
+            "year": "2021",
+            "rating": "8.1", "tmdb_id": 791373
+        },
+        {
+            "name": "Лига справедливости",
+            "image": "https://image.tmdb.org/t/p/w500//e2f1GaWLkk5Sj7cZMi38mUPXYdt.jpg",
+            "link": "/card/movies/800-489/Liga-spravedlivosti.html",
+            "year": "2017",
+            "rating": "6.1", "tmdb_id": 141052
+        },
+        {
+            "name": "Бэтмен против Супермена: На заре справедливости",
+            "image": "https://image.tmdb.org/t/p/w500//tAQOcxxcZbpM1jEhz7hJC5nmCDi.jpg",
+            "link": "/card/movies/800-490/Betmen-protiv-Supermena-Na-zare-spravedlivosti.html",
+            "year": "2016",
+            "rating": "6.0", "tmdb_id": 209112
+        },
+        {
+            "name": "Человек из стали",
+            "image": "https://image.tmdb.org/t/p/w500//azlOOwkq3FS0unvTBjtQVsz6YIk.jpg",
+            "link": "/card/movies/800-491/Chelovek-iz-stali.html",
+            "year": "2013",
+            "rating": "6.6", "tmdb_id": 49521
+        },
+        {
+            "name": "Возвращение Супермена",
+            "image": "https://image.tmdb.org/t/p/w500//6C6ku1McHHOdSxWcZi830hoeaoY.jpg",
+            "link": "/card/movies/800-492/Vozvrashenie-Supermena.html",
+            "year": "2006",
+            "rating": "5.8", "tmdb_id": 1452
+        },
+        {
+            "name": "Хранители",
+            "image": "https://image.tmdb.org/t/p/w500//82Jnyq9YFlXo59ArGpuBLyAF4L9.jpg",
+            "link": "/card/movies/800-493/Hraniteli.html",
+            "year": "2009",
+            "rating": "7.3", "tmdb_id": 13183
+        },
+        {
             "name": "Типа копы",
             "image": "https://image.tmdb.org/t/p/w500//7BAiNAmablFGjG4KOHda6wfL4dH.jpg",
             "link": "/card/movies/800-469/Tipa-kopy.html",
