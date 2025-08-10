@@ -417,6 +417,15 @@ async function generateCards() {
     // Важно: для сериалов/аниме/мультфильмов укажите "isTV": true
     const localCardData = [
         {
+            "name": "Уэнздей",
+            "image": "https://image.tmdb.org/t/p/w500//rb2MBiP9gAGwtxObuMP9Qro12W3.jpg",
+            "link": "/card/series/900-106/Uenzdej.html",
+            "year": "2022",
+            "rating": "8.4",
+            "tmdb_id": 119051,
+            "isTV": true
+        },
+        {
             "name": "Гангстерленд",
             "image": "https://image.tmdb.org/t/p/w500//qSRH45LOLb0BWWiVBHUXGytYFqL.jpg",
             "link": "/card/series/900-91/Gangsterlend.html",
