@@ -2372,7 +2372,7 @@ var data = [
     {
         "name": "Главы государств",
         "image": "https://image.tmdb.org/t/p/w500//j2IEKt3uWGFrHxWpPY9mVSL3lHV.jpg",
-        "link": "/card/movies/800-425/Glavy-gosudarstv.htm",
+        "link": "/card/movies/800-425/Glavy-gosudarstv.html",
         "year": "2025",
         "rating": "7.0",
         "type": "movie"

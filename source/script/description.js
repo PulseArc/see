@@ -1,4 +1,3 @@
-
 import { getMovieId, getMovieDetails, getMovieDetailsRu, getProductionCompanies, getKeywords } from './apple.js';
 
 function createKeywordSpans(keywords) {
@@ -20,39 +19,59 @@ function formatDate(dateString) {
 }
 
 async function showMovieDescription() {
-    const movieTitle = document.getElementById('movie-title')?.innerText;
-    const movieYear = document.getElementById('movie-year')?.innerText;
+    let movieId;
+    let movieType;
 
-    if (!movieTitle || !movieYear) {
-        console.error('Не удалось получить данные о названии или году фильма');
-        return;
-    }
+    // 1. Пытаемся получить ID и тип из HTML-элементов.
+    // Например, <span id="movie-id">12345</span> и <span id="movie-type">movie</span>
+    const elementId = document.getElementById('movie-id')?.innerText;
+    const elementType = document.getElementById('movie-type')?.innerText;
 
-    // Логируем данные для отладки
-    console.log('Заголовок фильма:', movieTitle);
-    console.log('Год фильма:', movieYear);
+    if (elementId && elementType) {
+        movieId = elementId;
+        movieType = elementType;
+        console.log(`Ищем по ID: ${movieId} и типу: ${movieType}`);
+    } else {
+        // 2. Если ID не найден, ищем по названию и году.
+        const movieTitle = document.getElementById('movie-title')?.innerText;
+        const movieYear = document.getElementById('movie-year')?.innerText;
 
-    try {
-        // Получаем ID фильма или сериала по названию и году
-        const movieData = await getMovieId(movieTitle, movieYear);
-        console.log('Данные о фильме:', movieData);
-
-        if (!movieData) {
-            console.error('Фильм/сериал не найден');
+        if (!movieTitle || !movieYear) {
+            console.error('Не удалось получить данные о названии, годе или ID фильма');
             return;
         }
 
-        const { id: movieId, type } = movieData;
+        console.log(`Ищем по названию: ${movieTitle} (${movieYear})`);
 
-        // Получаем подробности о фильме или сериале
-        const movieDetails = await getMovieDetails(movieId, type);
+        try {
+            const movieData = await getMovieId(movieTitle, movieYear);
+            console.log('Данные о фильме (поиск по названию):', movieData);
+
+            if (!movieData) {
+                console.error('Фильм/сериал не найден');
+                return;
+            }
+
+            movieId = movieData.id;
+            movieType = movieData.type;
+        } catch (error) {
+            console.error('Произошла ошибка при поиске фильма по названию:', error);
+            return;
+        }
+    }
+
+    try {
+        // Получаем подробности о фильме или сериале, используя найденный ID и тип
+        const movieDetails = await getMovieDetails(movieId, movieType);
+
+        // --- Здесь начинается логика обновления DOM, она остается прежней, но использует новые movieId и movieType ---
 
         // Отображаем описание фильма
         const descriptionContainer = document.getElementById('description-container');
         descriptionContainer.innerHTML = movieDetails.overview ? `<p>${movieDetails.overview}</p>` : '<p style="font-family: sans-serif;color: rgb(218, 215, 215);">Без Описания</p>';
 
         // Получаем и отображаем информацию о производственных компаниях
-        const productionCompanies = await getProductionCompanies(movieId, type);
+        const productionCompanies = await getProductionCompanies(movieId, movieType);
         const productionContainer = document.getElementById('production-container');
         if (productionCompanies.length === 0) {
             productionContainer.innerHTML = '<p style="font-family: sans-serif;color: rgb(218, 215, 215);">Производство не указано</p>';
@@ -61,7 +80,7 @@ async function showMovieDescription() {
         }
 
         // Получаем и отображаем ключевые слова
-        const keywords = await getKeywords(movieId, type);
+        const keywords = await getKeywords(movieId, movieType);
         console.log('Полученные ключевые слова:', keywords);
         const keywordsContainer = document.getElementById('keywords-container');
 
@@ -72,7 +91,7 @@ async function showMovieDescription() {
         }
 
         // Получаем подробную информацию о фильме или сериале на русском языке
-        const movieDetailsRu = await getMovieDetailsRu(movieId, type);
+        const movieDetailsRu = await getMovieDetailsRu(movieId, movieType);
 
         // Отображаем дату релиза
         const releaseDateContainer = document.querySelector('#column div:nth-child(1) p:nth-child(2)');
