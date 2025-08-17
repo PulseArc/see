@@ -576,7 +576,7 @@ async function generateCards() {
         },
         {
             "name": "Смотрители",
-            "image": "https://image.tmdb.org/t/p/original/39VXrbqXGqc4zBvv94GRD6CknV9.jpg",
+            "image": "https://image.tmdb.org/t/p/w500//4qrA6MsOOTiUfXGoM4YUwqtHFjb.jpg",
             "link": "/card/movies/800-388/Smotriteli.html",
             "year": "2024",
             "rating": "6.4",
