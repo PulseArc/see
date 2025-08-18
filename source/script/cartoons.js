@@ -10,212 +10,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.error("Missing required elements: #card-container or #Collections. Recommendations cannot be generated.");
         return;
     }
-    await generateCards();
-    setTimeout(positionCardRatingTrand, 200);
-});
 
-// --- Вспомогательные функции ---
-const shuffleArray = (a) => {
-    for (let i = a.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [a[i], a[j]] = [a[j], a[i]];
-    }
-    return a;
-};
-
-const getBaseTitle = (t) => {
-    if (!t) return '';
-    let cleaned = t.toLowerCase();
-    cleaned = cleaned.split(/[:–—\-]/)[0].trim();
-    cleaned = cleaned.replace(/\s*(?:и|или|of|the|a|an|часть|part|эпизод|\s*\d+\s*|\s+[ivx]+\s*|film|movie|сезон|season|фильм|фильмов|фильма|сага|история|серия|том|глава|мир|возвращение|восстание|начало|конец|последний|новый|старый|приключение|приключения|хроники|самоубийц|отряд|планета|гнев|месть|эпоха|последний рыцарь|исход|генезис|судный день|смертельная расплата|волшебное кольцо|волна|прибытие|путешествие).*$/, '').trim();
-    cleaned = cleaned.replace(/\s*[\(\[].*[\)\]]\s*$/, '').trim();
-    cleaned = cleaned.replace(/\s*\d{4}\s*$/, '').trim();
-    cleaned = cleaned.replace(/смотреть онлайн бесплатно/i, '').trim();
-    cleaned = cleaned.replace(/[^a-z0-9а-яё]+$/, '').trim();
-
-    if (cleaned.length < 3 && t.length > 3) {
-        let lessAggressiveClean = t.toLowerCase();
-        lessAggressiveClean = lessAggressiveClean.split(/[:–—\-]/)[0].trim();
-        lessAggressiveClean = lessAggressiveClean.replace(/\s*[\(\[].*[\)\]]\s*$/, '').trim();
-        lessAggressiveClean = lessAggressiveClean.replace(/\s*\d{4}\s*$/, '').trim();
-        return lessAggressiveClean.replace(/[^a-z0-9а-яё]+$/, '').trim();
-    }
-    return cleaned.replace(/[\–\—\-]/g, '-').replace(/\s+/g, ' ').trim();
-};
-
-const getRating = (c) => parseFloat(c.rating) || 0;
-const delay = ms => new Promise(res => setTimeout(res, ms));
-
-// --- TMDB API и кэширование данных ---
-const TMDB_API_KEY = '3da216c9cc3fe78b5488855d25d26e13';
-const BASE_TMDB_URL = 'https://api.themoviedb.org/3';
-let processedLocalCards = [];
-
-// Новая функция для получения данных как о фильмах, так и о сериалах
-async function fetchTmdbData(id, isTV) {
-    if (!id) return null;
-    let retries = 3;
-    const endpoint = isTV ? 'tv' : 'movie';
-
-    while (retries > 0) {
-        try {
-            const response = await fetch(`${BASE_TMDB_URL}/${endpoint}/${id}?api_key=${TMDB_API_KEY}&append_to_response=keywords,release_dates,credits,genres&language=ru-RU`);
-            if (response.status === 429) {
-                console.warn(`TMDB API rate limit exceeded. Retrying in 1 second...`);
-                await delay(1000);
-                retries--;
-                continue;
-            }
-            if (!response.ok) return null;
-            const data = await response.json();
-            
-            let certification = null;
-            if (data.release_dates?.results || data.content_ratings?.results) {
-                const results = data.release_dates?.results || data.content_ratings?.results;
-                const ruRelease = results.find(res => res.iso_3166_1 === 'RU') ||
-                                results.find(res => res.iso_3166_1 === 'US') ||
-                                results[0];
-                if (ruRelease?.release_dates?.length > 0) {
-                    certification = ruRelease.release_dates.find(r => r.certification)?.certification;
-                } else if (ruRelease?.rating) {
-                    certification = ruRelease.rating;
-                }
-            }
-            data.certification = certification;
-            data.director = data.credits?.crew?.find(m => m.job === 'Director')?.name;
-            data.actors = data.credits?.cast?.slice(0, 5).map(a => a.name) || [];
-            data.genres = data.genres?.map(g => g.name) || [];
-
-            return data;
-        } catch (e) {
-            return null;
-        }
-    }
-    return null;
-}
-
-async function processLocalCardData(data) {
-    if (processedLocalCards.length) return processedLocalCards;
-    
-    const fetchPromises = data.map(async (c) => {
-        const u = { ...c };
-        if (c.tmdb_id) {
-            const m = await fetchTmdbData(c.tmdb_id, c.isTV);
-            if (m) {
-                u.genres = m.genres;
-                u.keywords = m.keywords?.keywords?.map(k => k.name) || [];
-                u.collection_id = m.belongs_to_collection?.id || null;
-                u.certification = m.certification || c.certification || null;
-                u.director = m.director;
-                u.actors = m.actors;
-            }
-        }
-        return u;
-    });
-
-    processedLocalCards = await Promise.all(fetchPromises);
-    return processedLocalCards;
-}
-
-// --- Списки несовместимых возрастных рейтингов ---
-const KIDS_CERTIFICATIONS = new Set(['0+', '6+', 'G', 'TV-G']);
-const TEEN_CERTIFICATIONS = new Set(['12+', 'PG', 'PG-13', 'TV-14']);
-const ADULT_CERTIFICATIONS = new Set(['16+', '18+', 'R', 'NC-17', 'TV-MA', 'UNRATED']);
-
-// Новая функция для получения категории сертификации
-const getCertificationCategory = (certification) => {
-    if (!certification) return 'unknown';
-    const cleanCert = certification.toUpperCase().replace(/\s/g, '');
-    if (KIDS_CERTIFICATIONS.has(cleanCert)) return 'kids';
-    if (TEEN_CERTIFICATIONS.has(cleanCert)) return 'teen';
-    if (ADULT_CERTIFICATIONS.has(cleanCert)) return 'adult';
-    return 'unknown';
-};
-
-// Функция для проверки совместимости рейтингов
-const isCertificationCompatible = (currentMovie, candidate) => {
-    const currentCategory = getCertificationCategory(currentMovie.certification);
-    const candidateCategory = getCertificationCategory(candidate.certification);
-
-    // Если у кандидата неизвестный рейтинг, он совместим только если текущий фильм не детский.
-    if (candidateCategory === 'unknown') {
-        return currentCategory !== 'kids';
-    }
-
-    switch (currentCategory) {
-        case 'kids':
-            return candidateCategory === 'kids';
-        case 'teen':
-            return candidateCategory === 'kids' || candidateCategory === 'teen';
-        case 'adult':
-            return candidateCategory === 'adult';
-        case 'unknown':
-            return true;
-        default:
-            return false;
-    }
-};
-
-
-// --- Улучшенная функция скоринга релевантности ---
-const scoreCard = (card, currentMovieRef) => {
-    if (!currentMovieRef) return 0;
-    let score = 0;
-
-    // Сравнение по ключевым словам (самый высокий приоритет)
-    const currentKeywords = new Set(currentMovieRef.keywords?.map(k => k.toLowerCase()) || []);
-    const cardKeywords = new Set(card.keywords?.map(k => k.toLowerCase()) || []);
-    let keywordMatchCount = 0;
-    for (const k of currentKeywords) {
-        if (cardKeywords.has(k)) {
-            score += 10000;
-            keywordMatchCount++;
-        }
-    }
-    if (keywordMatchCount === 0 && currentKeywords.size > 0) score -= 10000;
-
-
-    // Сравнение по жанрам (дополнительный критерий)
-    const currentMovieGenresLower = new Set(currentMovieRef.genres?.map(g => g.toLowerCase()) || []);
-    const cardGenresLower = new Set(card.genres?.map(g => g.toLowerCase()) || []);
-    let genreMatchCount = 0;
-    for (const g of currentMovieGenresLower) {
-        if (cardGenresLower.has(g)) {
-            score += 5000;
-            genreMatchCount++;
-        }
-    }
-    
-    // Сравнение по режиссёру и актёрам
-    const currentDirector = currentMovieRef.director;
-    const cardDirector = card.director;
-    if (currentDirector && currentDirector === cardDirector) score += 2000;
-
-    const currentActors = new Set(currentMovieRef.actors?.map(a => a.toLowerCase()) || []);
-    const cardActors = new Set(card.actors?.map(a => a.toLowerCase()) || []);
-    const commonActorsCount = [...currentActors].filter(actor => cardActors.has(actor)).length;
-    score += commonActorsCount * 1000;
-
-    // Сравнение по рейтингу
-    score += getRating(card) * 50;
-    
-    // Сравнение по году выпуска
-    if (currentMovieRef.year && card.year) {
-        const yearDiff = Math.abs(parseInt(card.year) - parseInt(currentMovieRef.year));
-        if (yearDiff <= 3) score += 300;
-        else if (yearDiff <= 7) score += 100;
-        else score -= yearDiff * 10;
-    }
-    return score;
-};
-
-
-// --- Основная логика генерации рекомендаций ---
-async function generateCards() {
-    const cardContainer = document.querySelector('#card-container');
-    if (!cardContainer) return;
-
-    // --- ВАШ МАССИВ. ДОБАВЬТЕ СЮДА ВСЕ ВАШИ КАРТОЧКИ ФИЛЬМОВ/СЕРИАЛОВ ---
     const localCardData = [
         {
             "name": "Самурай Джек",
@@ -2077,119 +1872,417 @@ async function generateCards() {
         },
        
    ];
-    
+
     if (!localCardData || localCardData.length === 0) {
         console.error("localCardData is empty. No recommendations can be generated.");
         return;
     }
 
-    processedLocalCards = await processLocalCardData(localCardData);
-    if (!processedLocalCards || processedLocalCards.length === 0) {
-        processedLocalCards = localCardData;
+    await generateCards(localCardData);
+    setTimeout(positionCardRatingTrand, 200);
+});
+
+// --- Константы и глобальные функции ---
+const KIDS_CERTIFICATIONS = new Set(['0+', '6+', 'G', 'TV-G', 'PG', 'PG-13', '12+']);
+const ADULT_CERTIFICATIONS = new Set(['16+', '18+', 'R', 'NC-17', 'TV-MA', 'UNRATED']);
+
+const MIN_GENRE_OVERLAP_RATIO = 0.5;
+const STRONG_KEYWORD_WEIGHT = 200;
+const KEYWORD_WEIGHT = 100;
+const RARE_GENRE_WEIGHT = 140;
+const COMMON_GENRE_WEIGHT = 60;
+const OTHER_GENRE_WEIGHT = 100;
+const ACTOR_WEIGHT = 70;
+const DIRECTOR_WEIGHT = 150;
+const RATING_CLOSE_BONUS = 120;
+const YEAR_CLOSE_BONUS = 140;
+const RELEVANCE_THRESHOLD = 200; // Порог для отсечения нерелевантных фильмов
+const MODERATE_RELEVANCE_THRESHOLD = 100; // Новый, более низкий порог для жанровых совпадений
+const HIGH_RATING_THRESHOLD = 7.0;
+
+const RARE_GENRES = new Set(['horror', 'horrors', 'ужасы', 'fantasy', 'фэнтези', 'фантастика', 'sci-fi', 'sci fi', 'science fiction', 'боевик', 'action', 'thriller', 'thrillers', 'sport', 'спорт', 'war', 'western', 'crime', 'mystery', 'animation', 'documentary', 'biography', 'биография']);
+const GENERIC_GENRES = new Set(['drama', 'драма', 'comedy', 'комедия', 'romance', 'романтика', 'family', 'семейный']);
+const STRONG_KEYWORDS = new Set([
+    'race', 'racing', 'гонки', 'car', 'cars', 'motorsport', 'автогонки',
+    'time travel', 'time-loop', 'время', 'временная петля',
+    'space', 'космос', 'astronaut', 'alien', 'инопланетянин',
+    'zombie', 'зомби', 'apocalypse', 'апокалипсис', 'wizard', 'волшебник', 'magic'
+]);
+
+const shuffleArray = (a) => {
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
     }
+    return a;
+};
+
+const getBaseTitle = (t) => {
+    if (!t) return '';
+    let cleaned = t.toLowerCase();
+    cleaned = cleaned.replace(/\s*(?:of|the|a|an|[:–—\-]|,\s*\d+\s*|\s+\d+\s*|\s+[ivx]+\s*|film|movie|смотреть онлайн бесплатно|в хорошем качестве).*$/, '').trim();
+    cleaned = cleaned.replace(/\s*[\(\[].*[\)\]]\s*$/, '').trim();
+    cleaned = cleaned.replace(/\s*\d{4}\s*$/, '').trim();
+    cleaned = cleaned.replace(/[^a-z0-9а-яё]+$/, '').trim();
+    return cleaned.replace(/[\–\—\-]/g, '-').replace(/\s+/g, ' ').trim();
+};
+
+const getRating = (c) => parseFloat(c.rating) || 0;
+const delay = ms => new Promise(res => setTimeout(ms, ms));
+
+const TMDB_API_KEY = '3da216c9cc3fe78b5488855d25d26e13';
+const BASE_TMDB_URL = 'https://api.themoviedb.org/3';
+const TMDB_CACHE_KEY = 'tmdb_data_cache';
+
+async function fetchTmdbMovieData(id) {
+    if (!id) return null;
+    let retries = 3;
+    while (retries > 0) {
+        try {
+            const response = await fetch(`${BASE_TMDB_URL}/movie/${id}?api_key=${TMDB_API_KEY}&append_to_response=keywords,release_dates,credits,genres,belongs_to_collection&language=ru-RU`);
+            if (response.status === 429) {
+                console.warn(`TMDB API rate limit exceeded. Retrying in 1 second...`);
+                await delay(1000);
+                retries--;
+                continue;
+            }
+            if (!response.ok) return null;
+            const data = await response.json();
+
+            let certification = null;
+            if (data.release_dates?.results) {
+                const ruRelease = data.release_dates.results.find(res => res.iso_3166_1 === 'RU') ||
+                    data.release_dates.results.find(res => res.iso_3166_1 === 'US') ||
+                    data.release_dates.results[0];
+                if (ruRelease?.release_dates?.length > 0) {
+                    certification = ruRelease.release_dates.find(r => r.certification)?.certification;
+                }
+            }
+            data.certification = certification;
+            data.director = data.credits?.crew?.find(m => m.job === 'Director')?.name;
+            data.actors = data.credits?.cast?.slice(0, 5).map(a => a.name) || [];
+            data.genres = data.genres?.map(g => g.name) || [];
+            data.keywords = data.keywords?.keywords?.map(k => k.name) || [];
+            data.collection_id = data.belongs_to_collection?.id || null;
+            data.collection_name = data.belongs_to_collection?.name || null;
+
+            return data;
+        } catch (e) {
+            console.error(`Error fetching TMDB data for ID ${id}:`, e);
+            return null;
+        }
+    }
+    return null;
+}
+
+async function processLocalCardData(data) {
+    let cachedData = null;
+    try {
+        const stored = sessionStorage.getItem(TMDB_CACHE_KEY);
+        if (stored) {
+            cachedData = JSON.parse(stored);
+        }
+    } catch (e) {
+        console.error("Failed to parse cached data from sessionStorage.", e);
+    }
+
+    if (cachedData && cachedData.length === data.length) {
+        console.log("Using cached TMDB data from sessionStorage.");
+        return cachedData;
+    }
+
+    console.log("No valid cached data found. Fetching from TMDB...");
+    const fetchPromises = data.map(async (c) => {
+        const u = { ...c };
+        if (c.tmdb_id) {
+            const m = await fetchTmdbMovieData(c.tmdb_id);
+            if (m) {
+                u.genres = m.genres;
+                u.keywords = m.keywords;
+                u.collection_id = m.collection_id;
+                u.collection_name = m.collection_name;
+                u.certification = m.certification || c.certification || null;
+                u.director = m.director;
+                u.actors = m.actors;
+            }
+        }
+        return u;
+    });
+
+    const processedCards = await Promise.all(fetchPromises);
+
+    try {
+        sessionStorage.setItem(TMDB_CACHE_KEY, JSON.stringify(processedCards));
+        console.log("Successfully cached TMDB data to sessionStorage.");
+    } catch (e) {
+        console.error("Failed to save data to sessionStorage.", e);
+    }
+
+    return processedCards;
+}
+
+function normalizeList(arr) {
+    if (!arr || !arr.length) return [];
+    return arr.map(x => ('' + x).toLowerCase().trim()).filter(Boolean);
+}
+
+function genreOverlapInfo(currentGenres, cardGenres) {
+    if (!currentGenres || currentGenres.length === 0) return { count: 0, ratio: 0, list: [] };
+    const cur = new Set(currentGenres.map(g => g.toLowerCase()));
+    const card = new Set(cardGenres.map(g => g.toLowerCase()));
+    let common = 0;
+    const commonGenresList = [];
+    for (const g of cur) {
+        if (card.has(g)) {
+            common++;
+            commonGenresList.push(g);
+        }
+    }
+    return { count: common, ratio: common / cur.size, list: commonGenresList };
+}
+
+function ageCompatible(currentCert, cardCert) {
+    const cur = currentCert?.toUpperCase().replace(/\s/g, '');
+    const cand = cardCert?.toUpperCase().replace(/\s/g, '');
+    const isCurKids = KIDS_CERTIFICATIONS.has(cur);
+    const isCandKids = KIDS_CERTIFICATIONS.has(cand);
+    const isCurAdult = ADULT_CERTIFICATIONS.has(cur);
+    const isCandAdult = ADULT_CERTIFICATIONS.has(cand);
+    if ((isCurKids && isCandAdult) || (isCurAdult && isCandKids)) return false;
+    if (isCurKids && !cand) return false;
+    return true;
+}
+
+const scoreCard = (card, currentMovieRef) => {
+    if (!currentMovieRef) return { score: -Infinity, reasons: ['No reference movie'], commonGenres: [] };
+    if (!ageCompatible(currentMovieRef.certification, card.certification)) {
+        return { score: -99999, reasons: ['Age incompatibility'], commonGenres: [] };
+    }
+
+    const currGenres = normalizeList(currentMovieRef.genres || []);
+    const cardGenres = normalizeList(card.genres || []);
+    const currKeywords = normalizeList(currentMovieRef.keywords || []);
+    const cardKeywords = normalizeList(card.keywords || []);
+    const genreOverlap = genreOverlapInfo(currGenres, cardGenres);
+
+    let commonKeywordsCount = 0;
+    let strongKeywordMatches = 0;
+    for (const k of currKeywords) {
+        if (cardKeywords.includes(k)) {
+            commonKeywordsCount++;
+            if (STRONG_KEYWORDS.has(k)) strongKeywordMatches++;
+        }
+    }
+
+    const commonActors = [...new Set((currentMovieRef.actors || []).map(a => ('' + a).toLowerCase()))].filter(a => (card.actors || []).map(x => ('' + x).toLowerCase()).includes(a)).length;
+    const sameDirector = currentMovieRef.director && card.director && currentMovieRef.director === card.director;
+
+    if (genreOverlap.count === 0 && commonKeywordsCount === 0 && commonActors === 0 && !sameDirector) {
+        return { score: 0, reasons: ['Failed primary relevance check (no genre/keyword/actor/director match)'], commonGenres: [] };
+    }
+
+    let score = 0;
+    const reasons = [];
+
+    let genreScore = 0;
+    for (const g of genreOverlap.list) {
+        const gl = g.toLowerCase();
+        if (RARE_GENRES.has(gl)) genreScore += RARE_GENRE_WEIGHT;
+        else if (GENERIC_GENRES.has(gl)) genreScore += COMMON_GENRE_WEIGHT;
+        else genreScore += OTHER_GENRE_WEIGHT;
+    }
+    score += genreScore;
+    if (genreScore > 0) reasons.push(`Genres match (${genreOverlap.list.join(', ')}): +${genreScore}`);
+
+    const kwScore = commonKeywordsCount * KEYWORD_WEIGHT + strongKeywordMatches * (STRONG_KEYWORD_WEIGHT - KEYWORD_WEIGHT);
+    score += kwScore;
+    if (kwScore > 0) reasons.push(`Keywords match: +${kwScore}`);
+
+    if (sameDirector) {
+        score += DIRECTOR_WEIGHT;
+        reasons.push(`Same director (${currentMovieRef.director}): +${DIRECTOR_WEIGHT}`);
+    }
+    if (commonActors > 0) {
+        score += commonActors * ACTOR_WEIGHT;
+        reasons.push(`Common actors (${commonActors}): +${commonActors * ACTOR_WEIGHT}`);
+    }
+
+    const rCur = parseFloat(currentMovieRef.rating) || 0;
+    const rCard = parseFloat(card.rating) || 0;
+    const rDiff = Math.abs(rCur - rCard);
+    let ratingBonus = 0;
+    if (rDiff <= 0.3) ratingBonus = RATING_CLOSE_BONUS;
+    else if (rDiff <= 0.7) ratingBonus = Math.round(RATING_CLOSE_BONUS * 0.7);
+    else if (rDiff <= 1.2) ratingBonus = Math.round(RATING_CLOSE_BONUS * 0.4);
+    score += ratingBonus;
+    if (ratingBonus > 0) reasons.push(`Similar rating: +${ratingBonus}`);
+
+    if (currentMovieRef.year && card.year) {
+        const yd = Math.abs((parseInt(card.year) || 0) - (parseInt(currentMovieRef.year) || 0));
+        let yearBonus = 0;
+        if (yd <= 2) yearBonus = YEAR_CLOSE_BONUS;
+        else if (yd <= 5) yearBonus = Math.round(YEAR_CLOSE_BONUS * 0.7);
+        else if (yd <= 10) yearBonus = Math.round(YEAR_CLOSE_BONUS * 0.4);
+        else score -= Math.min(yd * 2, 150);
+        score += yearBonus;
+        if (yearBonus > 0) reasons.push(`Similar year (${yd} years difference): +${yearBonus}`);
+    }
+
+    score += Math.random() * 20;
+
+    return { score, reasons, commonGenres: genreOverlap.list, commonKeywords: commonKeywordsCount };
+};
+
+async function generateCards(localCardData) {
+    const cardContainer = document.querySelector('#card-container');
+    if (!cardContainer) return;
 
     const MAX_CARDS = 12;
     const recommendations = [];
-    const addedFranchises = new Set();
-    const currentLink = window.location.pathname.includes('card') ? window.location.pathname.substring(window.location.pathname.indexOf('/card')) : null;
+    const addedTmdb = new Set();
+    const addedCollections = new Set();
+    const addedBaseTitles = new Set();
+
+    const RECENT_KEY = 'recent_recs_tmdb';
+    let recentShown = [];
+    try {
+        recentShown = JSON.parse(sessionStorage.getItem(RECENT_KEY) || '[]');
+    } catch (e) { recentShown = []; }
+
+    const processedCards = await processLocalCardData(localCardData);
+
     let currentMovie = null;
-    if (currentLink) {
-        currentMovie = processedLocalCards.find(c => c.link === currentLink);
-    }
-    
-    if (!currentMovie) {
-        const pageTmdbId = document.querySelector('#movie-data')?.dataset?.tmdbId;
-        const pageIsTV = document.querySelector('#movie-data')?.dataset?.isTv === 'true';
-        if (pageTmdbId) {
-            currentMovie = processedLocalCards.find(c => c.tmdb_id === parseInt(pageTmdbId) && c.isTV === pageIsTV);
-        }
+    const pageTmdbId = document.querySelector('#movie-data')?.dataset?.tmdbId;
+    if (pageTmdbId) {
+        currentMovie = processedCards.find(c => c.tmdb_id === parseInt(pageTmdbId));
     }
     if (!currentMovie) {
-        const pageTitleElement = document.querySelector('.movie-title') || document.querySelector('h1');
+        const currentLink = window.location.pathname.includes('card') ? window.location.pathname.substring(window.location.pathname.indexOf('/card')) : null;
+        if (currentLink) currentMovie = processedCards.find(c => c.link === currentLink);
+    }
+    if (!currentMovie) {
+        const pageTitleElement = document.querySelector('title');
         if (pageTitleElement) {
-            const cleanPageTitle = getBaseTitle(pageTitleElement.innerText);
-            currentMovie = processedLocalCards.find(c => getBaseTitle(c.name) === cleanPageTitle);
+            const fullTitle = pageTitleElement.innerText;
+            const cleanedTitle = fullTitle.split('—')[0].trim();
+            const baseTitle = getBaseTitle(cleanedTitle);
+            currentMovie = processedCards.find(c => getBaseTitle(c.name) === baseTitle);
         }
     }
 
-    const addCardToRecommendations = (card) => {
-        if (recommendations.length >= MAX_CARDS || (currentMovie && card.link === currentMovie.link)) return false;
-        recommendations.push(card);
-        const franchiseId = card.collection_id || getBaseTitle(card.name);
-        if (franchiseId) {
-            addedFranchises.add(franchiseId);
+    if (!currentMovie) {
+        console.warn("Фильм для рекомендаций не найден. Будут показаны случайные высокорейтинговые фильмы.");
+        const availableCards = shuffleArray([...processedCards].filter(c => getRating(c) >= HIGH_RATING_THRESHOLD)).sort((a, b) => getRating(b) - getRating(a));
+        for (const card of availableCards) {
+            if (recommendations.length >= MAX_CARDS) break;
+            const baseTitle = getBaseTitle(card.name);
+            if (recentShown.includes(card.tmdb_id) || addedTmdb.has(card.tmdb_id) || addedBaseTitles.has(baseTitle)) continue;
+            recommendations.push({ ...card, reason: 'Популярный фильм (нет привязки)' });
+            addedTmdb.add(card.tmdb_id);
+            addedBaseTitles.add(baseTitle);
         }
-        return true;
-    };
+        displayCards(recommendations, cardContainer);
+        return;
+    }
 
+    addedTmdb.add(currentMovie.tmdb_id);
+    addedBaseTitles.add(getBaseTitle(currentMovie.name));
 
-    if (currentMovie) {
-        const currentMovieFranchiseId = currentMovie.collection_id || getBaseTitle(currentMovie.name);
+    if (currentMovie.collection_id) {
+        addedCollections.add(currentMovie.collection_id);
+    }
 
-        // 1. Добавляем все фильмы из франшизы текущего фильма, кроме самого текущего фильма
-        const currentFranchiseCandidates = processedLocalCards.filter(c => 
-            c.link !== currentMovie.link &&
-            ((c.collection_id && c.collection_id === currentMovieFranchiseId) || 
-            (getBaseTitle(c.name) === currentMovieFranchiseId && getBaseTitle(c.name).length > 2))
-        );
-        currentFranchiseCandidates.sort((a, b) => parseInt(a.year) - parseInt(b.year));
-        currentFranchiseCandidates.forEach(addCardToRecommendations);
+    console.groupCollapsed(`### Рекомендации для фильма: ${currentMovie.name} (${currentMovie.year})`);
 
-        // 2. Затем обрабатываем остальные фильмы и выбираем по одному из других франшиз
-        const otherFranchiseMap = new Map();
-        
-        const compatibleCandidates = processedLocalCards.filter(c => 
-            c.link !== currentMovie.link &&
-            !addedFranchises.has(c.collection_id || getBaseTitle(c.name)) && isCertificationCompatible(currentMovie, c)
-        );
+    // 1. Сначала добавляем фильмы из той же франшизы (если есть)
+    const franchiseCards = currentMovie.collection_id
+        ? processedCards.filter(c => c.collection_id === currentMovie.collection_id && c.tmdb_id !== currentMovie.tmdb_id)
+        : [];
+    for (const card of franchiseCards) {
+        if (recommendations.length >= MAX_CARDS) break;
+        if (!addedTmdb.has(card.tmdb_id)) {
+            recommendations.push({ ...card, reason: 'Из той же франшизы' });
+            addedTmdb.add(card.tmdb_id);
+            addedBaseTitles.add(getBaseTitle(card.name));
+        }
+    }
 
-        compatibleCandidates.forEach(c => {
-            const score = scoreCard(c, currentMovie);
-            if (score > 0) {
-                const franchiseId = c.collection_id || getBaseTitle(c.name);
-                if (!otherFranchiseMap.has(franchiseId)) {
-                    otherFranchiseMap.set(franchiseId, c);
-                } else {
-                    const existingCard = otherFranchiseMap.get(franchiseId);
-                    if (score > scoreCard(existingCard, currentMovie)) {
-                        otherFranchiseMap.set(franchiseId, c);
-                    }
-                }
+    // 2. Оцениваем все остальные фильмы, которые не были добавлены, и группируем по франшизе или базовому названию
+    const otherCandidatesByCollection = new Map();
+    processedCards
+        .filter(c => !addedTmdb.has(c.tmdb_id) && !recentShown.includes(c.tmdb_id) && c.collection_id !== currentMovie.collection_id)
+        .forEach(card => {
+            const key = card.collection_id || getBaseTitle(card.name) || card.tmdb_id;
+            if (!otherCandidatesByCollection.has(key)) {
+                otherCandidatesByCollection.set(key, []);
             }
+            otherCandidatesByCollection.get(key).push({
+                ...card,
+                ...scoreCard(card, currentMovie)
+            });
         });
 
-        const finalCandidates = [...Array.from(otherFranchiseMap.values())];
-        finalCandidates.sort((a, b) => scoreCard(b, currentMovie) - scoreCard(a, currentMovie));
-        
-        finalCandidates.forEach(addCardToRecommendations);
-
+    // 3. Выбираем лучший фильм из каждой франшизы/группы
+    const bestCandidates = [];
+    for (const [key, candidates] of otherCandidatesByCollection.entries()) {
+        const best = candidates.sort((a, b) => b.score - a.score)[0];
+        bestCandidates.push(best);
     }
-    
-    // Если рекомендаций по каким-то причинам нет, показываем самые рейтинговые,
-    // но только те, что совместимы по рейтингу.
-    if (recommendations.length === 0) {
-        const uniqueCards = [];
-        const addedFranchisesForFallback = new Set();
-        let availableCards = processedLocalCards;
-        if (currentMovie) {
-            availableCards = processedLocalCards.filter(c => c.link !== currentMovie.link && isCertificationCompatible(currentMovie, c));
-        }
-        availableCards = shuffleArray(availableCards);
-        for (const card of availableCards) {
-            const franchiseId = card.collection_id || getBaseTitle(card.name);
-            if (franchiseId && addedFranchisesForFallback.has(franchiseId)) {
-                 continue;
-            } else if (franchiseId) {
-                 addedFranchisesForFallback.add(franchiseId);
+
+    // 4. Сортируем все лучшие кандидаты по релевантности и добавляем в рекомендации
+    const sortedBestCandidates = bestCandidates.sort((a, b) => b.score - a.score);
+
+    for (const card of sortedBestCandidates) {
+        if (recommendations.length >= MAX_CARDS) break;
+        if (card.score >= MODERATE_RELEVANCE_THRESHOLD) {
+            const baseTitle = getBaseTitle(card.name);
+            if (!addedTmdb.has(card.tmdb_id) && !addedBaseTitles.has(baseTitle)) {
+                recommendations.push({ ...card, reason: `Релевантность (Score: ${card.score.toFixed(0)})` });
+                addedTmdb.add(card.tmdb_id);
+                addedBaseTitles.add(baseTitle);
             }
-
-            uniqueCards.push(card);
-            if (uniqueCards.length >= MAX_CARDS) break;
         }
-        uniqueCards.sort((a, b) => getRating(b) - getRating(a));
-        uniqueCards.forEach(addCardToRecommendations);
     }
-    
+
+    // 5. Если рекомендаций все еще не хватает, заполняем высокорейтинговыми
+    if (recommendations.length < MAX_CARDS) {
+        const highRatedFillers = processedCards
+            .filter(c => !addedTmdb.has(c.tmdb_id) && !recentShown.includes(c.tmdb_id) && c.collection_id !== currentMovie.collection_id && getRating(c) >= HIGH_RATING_THRESHOLD)
+            .sort((a, b) => getRating(b) - getRating(a));
+
+        for (const card of highRatedFillers) {
+            if (recommendations.length >= MAX_CARDS) break;
+            const baseTitle = getBaseTitle(card.name);
+            if (!addedTmdb.has(card.tmdb_id) && !addedBaseTitles.has(baseTitle)) {
+                recommendations.push({ ...card, reason: 'Высокий рейтинг' });
+                addedTmdb.add(card.tmdb_id);
+                addedBaseTitles.add(baseTitle);
+            }
+        }
+    }
+
+    recommendations.forEach((rec, index) => {
+        const debugInfo = {
+            'Место в списке': index + 1,
+            'Название': rec.name,
+            'ID TMDB': rec.tmdb_id,
+            'Рейтинг': rec.rating,
+            'Причина рекомендации': rec.reason,
+        };
+        if (rec.score && rec.score !== Infinity) {
+            debugInfo['Релевантность (Score)'] = rec.score;
+            if (rec.reasons) debugInfo['Подробности Score'] = rec.reasons;
+        }
+        console.log(`%cРекомендация #${index + 1}: ${rec.name}`, 'font-weight: bold; color: #4CAF50;');
+        console.log(debugInfo);
+    });
+    console.groupEnd();
+
+    try {
+        const toStore = [...new Set([...(recentShown || []), ...Array.from(addedTmdb)])].slice(-120);
+        sessionStorage.setItem(RECENT_KEY, JSON.stringify(toStore));
+    } catch (e) { }
+
     displayCards(recommendations.slice(0, MAX_CARDS), cardContainer);
 }
 
@@ -2253,7 +2346,7 @@ function initSplide() {
     const images = document.querySelectorAll('#Collections .card-img-top');
     let loadedImages = 0;
     const positionRating = () => {
-        const cards = document.querySelectorAll('#Collections .card');
+        const cards = document.querySelectorAll('.card');
         cards.forEach(card => {
             const image = card.querySelector('.card-img-top');
             const rating = card.querySelector('.card-rating-trand');

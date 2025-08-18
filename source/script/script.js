@@ -318,6 +318,7 @@ var data = [
         "image": "https://image.tmdb.org/t/p/w500//4IBihABLdL95TyRe3bG0B9XXNRa.jpg",
         "link": "/card/movies/800-459/Ostavit-mir-pozadi.html",
         "year": "2023",
+        "rating": "6.5",
         "type": "movie"
     },
     {
@@ -3428,7 +3429,7 @@ var data = [
     {
         "name": "Джон Уик",
         "image": "https://image.tmdb.org/t/p/w500//2hfeF2566IKZ30c1BAay0N2lxBr.jpg",
-        "link": "/card/card/movies/800-159/Dzhon-Uik.html",
+        "link": "/card/movies/800-159/Dzhon-Uik.html",
         "year": "2014",
         "rating": "7.4",
         "type": "movie"
