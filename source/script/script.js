@@ -2,6 +2,46 @@ var data = [
     // Фильмы
 
     {
+        "name": "Волк с Уолл-стрит",
+        "image": "https://image.tmdb.org/t/p/w500//kRbBfEgHCF1tv8S7QlrtQZ60z8t.jpg",
+        "link": "/card/movies/800-497/Volk-s-Uoll-strit.html",
+        "year": "2013",
+        "rating": "8.0",
+        "type": "movie"
+    },
+    {
+        "name": "Плейбой под прикрытием",
+        "image": "https://image.tmdb.org/t/p/w500//25LEB8zxdz4qdEfKNDa1bxmRpXU.jpg",
+        "link": "/card/movies/800-498/Plejboj-pod-prikrytiem.html",
+        "year": "2019",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Дурные деньги",
+        "image": "https://image.tmdb.org/t/p/w500//xUjWG4JBNVYlsGC3ebaNtC7EY9v.jpg",
+        "link": "/card/movies/800-499/Durnye-dengi.html",
+        "year": "2023",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Мёртвые не умирают",
+        "image": "https://image.tmdb.org/t/p/w500//5WdNwPQQqoS8f0mQFhq6oy3QaTN.jpg",
+        "link": "/card/movies/800-500/Myortvye-ne-umirayut.html",
+        "year": "2019",
+        "rating": "5.4",
+        "type": "movie"
+    },
+    {
+        "name": "Эксперимент «Офис»",
+        "image": "https://image.tmdb.org/t/p/w500//Af4lEwc1ETj8YN8uQoTT2Bh9Lnn.jpg",
+        "link": "/card/movies/800-501/Eksperiment-Ofis.html",
+        "year": "2016",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
         "name": "Фантастическая четвёрка: Первые шаги",
         "image": "https://image.tmdb.org/t/p/w500//5OImujJnAmhb9KXGsRQ6ThDQ1XM.jpg",
         "link": "/card/movies/800-470/Fantasticheskaya-chetverka-Pervye-shagi.html",
@@ -2474,6 +2514,14 @@ var data = [
         "type": "movie"
     },
     {
+        "name": "Мой год в Оксфорде",
+        "image": "https://image.tmdb.org/t/p/w500//wWi50YT94ll7lhZgOgfQ1JBV4P4.jpg",
+        "link": "/card/movies/800-495/Moj-god-v-Oksforde.html",
+        "year": "2025",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
         "name": "Министерство неджентльменских дел",
         "image": "https://image.tmdb.org/t/p/w500//fxLCzo1HzlcvNIXmb1lLTkAJsfV.jpg",
         "link": "/card/movies/800-268/Ministerstvo-nedzhentlmenskih-del.html",
@@ -2503,6 +2551,14 @@ var data = [
         "link": "/card/movies/800-117/Ozero-Kaddo.html",
         "year": "2024",
         "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Эддингтон",
+        "image": "https://image.tmdb.org/t/p/w500//5fi45HlaKOTLmX8q62MiGjmoaXj.jpg",
+        "link": "/card/movies/800-494/Eddington.html",
+        "year": "2025",
+        "rating": "6.6",
         "type": "movie"
     },
     {
@@ -2823,6 +2879,14 @@ var data = [
         "link": "/card/movies/800-128/Persi-Dzhekson-i-pohititel-molnij.html",
         "year": "2010",
         "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Хищник: Миссия «Осирис»",
+        "image": "https://image.tmdb.org/t/p/w500//9zqrNnwP7Zbfpb6RmGq9760IVPi.jpg",
+        "link": "/card/movies/800-502/Hishnik-Missiya-Osiris.html",
+        "year": "2025",
+        "rating": "6.4",
         "type": "movie"
     },
     {
@@ -3215,6 +3279,14 @@ var data = [
         "link": "/card/movies/800-152/Sobachya-zhizn.html",
         "year": "2017",
         "rating": "7.6",
+        "type": "movie"
+    },
+    {
+        "name": "Миссия невыполнима: Финальная...",
+        "image": "https://image.tmdb.org/t/p/w500//n80KsSgHmJg5xrEWlbaWDgMoiU9.jpg",
+        "link": "/card/movies/800-496/Missiya-nevypolnima-Finalnaya-rasplata.html",
+        "year": "2025",
+        "rating": "7.2",
         "type": "movie"
     },
     {

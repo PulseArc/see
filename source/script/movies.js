@@ -196,6 +196,41 @@ async function generateCards() {
     // --- Твой массив, который будет заполняться тобой ---
     const localCardData = [
         {
+            "name": "Волк с Уолл-стрит",
+            "image": "https://image.tmdb.org/t/p/w500//kRbBfEgHCF1tv8S7QlrtQZ60z8t.jpg",
+            "link": "/card/movies/800-497/Volk-s-Uoll-strit.html",
+            "year": "2013",
+            "rating": "8.0", "tmdb_id": 106646
+        },
+        {
+            "name": "Плейбой под прикрытием",
+            "image": "https://image.tmdb.org/t/p/w500//25LEB8zxdz4qdEfKNDa1bxmRpXU.jpg",
+            "link": "/card/movies/800-498/Plejboj-pod-prikrytiem.html",
+            "year": "2019",
+            "rating": "6.5", "tmdb_id": 469274
+        },
+        {
+            "name": "Дурные деньги",
+            "image": "https://image.tmdb.org/t/p/w500//xUjWG4JBNVYlsGC3ebaNtC7EY9v.jpg",
+            "link": "/card/movies/800-499/Durnye-dengi.html",
+            "year": "2023",
+            "rating": "6.7", "tmdb_id": 792293
+        },
+        {
+            "name": "Мёртвые не умирают",
+            "image": "https://image.tmdb.org/t/p/w500//5WdNwPQQqoS8f0mQFhq6oy3QaTN.jpg",
+            "link": "/card/movies/800-500/Myortvye-ne-umirayut.html",
+            "year": "2019",
+            "rating": "5.4", "tmdb_id": 535581
+        },
+        {
+            "name": "Эксперимент «Офис»",
+            "image": "https://image.tmdb.org/t/p/w500//Af4lEwc1ETj8YN8uQoTT2Bh9Lnn.jpg",
+            "link": "/card/movies/800-501/Eksperiment-Ofis.html",
+            "year": "2016",
+            "rating": "6.2", "tmdb_id": 341006
+        },
+        {
             "name": "Фантастическая четвёрка: Первые шаги",
             "image": "https://image.tmdb.org/t/p/w500//5OImujJnAmhb9KXGsRQ6ThDQ1XM.jpg",
             "link": "/card/movies/800-470/Fantasticheskaya-chetverka-Pervye-shagi.html",
@@ -1698,6 +1733,13 @@ async function generateCards() {
             "rating": "7.1", "tmdb_id": 744
         },
         {
+            "name": "Миссия невыполнима: Финальная...",
+            "image": "https://image.tmdb.org/t/p/w500//n80KsSgHmJg5xrEWlbaWDgMoiU9.jpg",
+            "link": "/card/movies/800-496/Missiya-nevypolnima-Finalnaya-rasplata.html",
+            "year": "2025",
+            "rating": "7.2", "tmdb_id": 575265
+        },
+        {
             "name": "Миссия невыполнима: Смертельная...",
             "image": "https://image.tmdb.org/t/p/w500//qncL23TGeAqmqmbBxJl4R6nYToJ.jpg",
             "link": "/card/movies/800-12/Missiya-nevypolnima-Smertelnaya....html",
@@ -2965,6 +3007,13 @@ async function generateCards() {
             "rating": "6.2", "tmdb_id": 46529
         },
         {
+            "name": "Мой год в Оксфорде",
+            "image": "https://image.tmdb.org/t/p/w500//wWi50YT94ll7lhZgOgfQ1JBV4P4.jpg",
+            "link": "/card/movies/800-495/Moj-god-v-Oksforde.html",
+            "year": "2025",
+            "rating": "7.3", "tmdb_id": 1307078
+        },
+        {
             "name": "Министерство неджентльменских дел",
             "image": "https://image.tmdb.org/t/p/w500//fxLCzo1HzlcvNIXmb1lLTkAJsfV.jpg",
             "link": "/card/movies/800-268/Ministerstvo-nedzhentlmenskih-del.html",
@@ -2991,6 +3040,13 @@ async function generateCards() {
             "link": "/card/movies/800-117/Ozero-Kaddo.html",
             "year": "2024",
             "rating": "7.3", "tmdb_id": 863873
+        },
+        {
+            "name": "Эддингтон",
+            "image": "https://image.tmdb.org/t/p/w500//5fi45HlaKOTLmX8q62MiGjmoaXj.jpg",
+            "link": "/card/movies/800-494/Eddington.html",
+            "year": "2025",
+            "rating": "6.6", "tmdb_id": 648878
         },
         {
             "name": "Звук свободы",
@@ -3271,6 +3327,13 @@ async function generateCards() {
             "link": "/card/movies/800-128/Persi-Dzhekson-i-pohititel-molnij.html",
             "year": "2010",
             "rating": "6.2", "tmdb_id": 32657
+        },
+        {
+            "name": "Хищник: Миссия «Осирис»",
+            "image": "https://image.tmdb.org/t/p/w500//9zqrNnwP7Zbfpb6RmGq9760IVPi.jpg",
+            "link": "/card/movies/800-502/Hishnik-Missiya-Osiris.html",
+            "year": "2025",
+            "rating": "6.4", "tmdb_id": 1241470
         },
         {
             "name": "Чужой: Ромул",
