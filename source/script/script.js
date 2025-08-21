@@ -7537,8 +7537,45 @@ var data = [
 
 ];
 
+// Сортируем данные один раз, сразу после их определения
+data.sort((a, b) => parseInt(b.year) - parseInt(a.year));
+
 let typingTimer;
 const typingInterval = 400;
+
+// Функция для нормализации текста
+function normalizeText(text) {
+    return text
+        .toLowerCase()
+        .replace(/ё/g, 'е')
+        .replace(/й/g, 'и')
+        .replace(/z/g, 'з')
+        .replace(/э/g, 'е')
+        .replace(/3/g, 'е')
+        .replace(/s/g, 'c')
+        .replace(/ъ/g, 'ь') // Можно добавить и другие замены
+        .replace(/a/g, 'а')
+        .replace(/e/g, 'е')
+        .replace(/o/g, 'о')
+        .replace(/p/g, 'р')
+        .replace(/c/g, 'с')
+        .replace(/y/g, 'у')
+        .replace(/x/g, 'х')
+        .replace(/k/g, 'к')
+        .replace(/h/g, 'н')
+        .replace(/m/g, 'м')
+        .replace(/t/g, 'т')
+        .replace(/b/g, 'в')
+        .replace(/n/g, 'н')
+        // Цифры
+        .replace(/0/g, 'о')
+        .replace(/3/g, 'з')
+        .replace(/4/g, 'ч')
+        .replace(/6/g, 'б')
+        .replace(/8/g, 'в')
+        // Убираем лишние символы (опционально)
+        .replace(/[^а-яa-z0-9\s]/g, '');
+}
 
 function positionCardRating() {
     const cards = document.querySelectorAll('.card');
@@ -7574,7 +7611,7 @@ function positionCardRating() {
 $('#search').keyup(function () {
     clearTimeout(typingTimer);
 
-    const searchField = $('#search').val().trim().replace(/\s+/g, '').toLowerCase();
+    const searchField = normalizeText($('#search').val().trim().replace(/\s+/g, ''));
 
     const updateContainer = document.getElementById('update');
     if (searchField === "") {
@@ -7595,7 +7632,7 @@ $('#search').keyup(function () {
         let resultCount = 0;
 
         $.each(data, function (key, val) {
-            const nameWithoutSpaces = val.name.replace(/\s+/g, '').toLowerCase();
+            const nameWithoutSpaces = normalizeText(val.name.replace(/\s+/g, ''));
 
             if (nameWithoutSpaces.includes(searchField)) {
                 resultCount++;
