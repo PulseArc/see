@@ -1,6 +1,53 @@
+document.addEventListener('DOMContentLoaded', () => {
 
+    function positionCardRating(card) {
+        const image = card.querySelector('.card-img-top');
+        const rating = card.querySelector('.card-rating') || card.querySelector('.card-rating-trand');
 
+        if (image && rating) {
+            // Проверяем, загружено ли изображение. Если нет, ждём.
+            if (!image.complete) {
+                image.addEventListener('load', () => positionCardRating(card), { once: true });
+                return; 
+            }
 
+            // Используем offsetTop/offsetLeft для позиционирования относительно родителя
+            const imageRect = {
+                width: image.offsetWidth,
+                height: image.offsetHeight,
+                top: image.offsetTop,
+                left: image.offsetLeft
+            };
+
+            const cardRect = {
+                width: card.offsetWidth,
+                height: card.offsetHeight
+            };
+
+            // Вычисляем отступы
+            const bottom = cardRect.height - (imageRect.height + imageRect.top) + 8;
+            const right = cardRect.width - (imageRect.width + imageRect.left) + 8;
+            
+            // Применяем стили
+            rating.style.position = 'absolute';
+            rating.style.bottom = bottom + 'px';
+            rating.style.right = right + 'px';
+        }
+    }
+
+    function positionAllRatings() {
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            positionCardRating(card);
+        });
+    }
+
+    // Запускаем позиционирование сразу после загрузки DOM
+    positionAllRatings();
+
+    // Перепозиционирование при изменении размера окна
+    window.addEventListener('resize', positionAllRatings);
+});
 
 
 // Находим элементы
@@ -159,194 +206,41 @@ window.addEventListener('scroll', function() {
 });
 
 // рейтинг и кнопка ещё
-function positionCardRating() {
-  const cards = document.querySelectorAll('.card');
-  cards.forEach(card => {
-    const image = card.querySelector('.card-img-top');
-    const rating = card.querySelector('.card-rating');
-    const ratingTrand = card.querySelector('.card-rating-trand');
-
-    if (image) {
-      const imageRect = {
-        width: image.offsetWidth,
-        height: image.offsetHeight,
-        top: image.offsetTop,
-        left: image.offsetLeft
-      };
-
-      const cardRect = {
-        width: card.offsetWidth,
-        height: card.offsetHeight,
-        top: card.offsetTop,
-        left: card.offsetLeft
-      };
-
-      const bottom = cardRect.height - imageRect.height - imageRect.top + 8;
-      const right = cardRect.width - imageRect.width - imageRect.left + 8;
-
-      if (rating) {
-        rating.style.position = 'absolute';
-        rating.style.bottom = bottom + 'px';
-        rating.style.right = right + 'px';
-      }
-
-      if (ratingTrand) {
-        ratingTrand.style.position = 'absolute';
-        ratingTrand.style.bottom = bottom + 'px';
-        ratingTrand.style.right = (right + 10) + 'px';
-      }
-    }
-  });
-}
-
-// Функция для обработки клика на кнопку "Ещё" или "Скрыть"
-const globalResizeObserver = new ResizeObserver(entries => {
-  positionCardRating();
-});
-
-function handleShowMoreClick(buttonId, cardContainerClass) {
-  const button = document.getElementById(buttonId);
-  const batchSize = 24;
-  let shownCards = [];
-  let lastClickedButton = null;
-  let firstBatchShown = false; // Флаг, чтобы отслеживать, была ли показана первая партия
-
-  button.addEventListener("click", function() {
-    const allCards = document.querySelectorAll(`.${cardContainerClass}`);
-
-    if (button.textContent === "Ещё") {
-      const hiddenCards = Array.from(allCards).filter(card => card.classList.contains("hidden"));
-      const toShow = hiddenCards.slice(0, batchSize);
-
-      toShow.forEach((card, index) => {
-        card.classList.add("fade-in");
-        card.classList.remove("hidden");
-
-        setTimeout(() => {
-          card.classList.add("visible");
-        }, 10);
-
-        shownCards.push(card);
-
-        // Добавляем класс "first-batch-visible" только к первой партии показанных карточек
-        if (!firstBatchShown && index < toShow.length) {
-          card.classList.add("first-batch-visible");
-        }
-
-        // Получаем изображение и начинаем его отслеживать
-        const image = card.querySelector('.card-img-top');
-        if (image) {
-          globalResizeObserver.observe(image);
-        }
-      });
-
-      // Устанавливаем флаг после показа первой партии
-      if (!firstBatchShown && toShow.length > 0) {
-        firstBatchShown = true;
-      }
-
-      if (document.querySelectorAll(`.${cardContainerClass}.hidden`).length === 0) {
-        button.textContent = "Скрыть";
-        button.classList.add("red");
-      }
-
-      lastClickedButton = button;
-
-    } else {
-      shownCards.forEach(card => {
-        card.classList.remove("visible");
-        card.classList.add("hidden");
-        card.classList.remove("fade-in");
-        card.classList.remove("first-batch-visible"); // Удаляем класс при скрытии
-      });
-      shownCards = [];
-      firstBatchShown = false; // Сбрасываем флаг при скрытии
-
-      button.textContent = "Ещё";
-      button.classList.remove("red");
-
-      if (lastClickedButton) {
-        const lastButtonRect = lastClickedButton.getBoundingClientRect();
-        const lastButtonOffsetTop = lastButtonRect.top + window.scrollY;
-        window.scrollTo({
-          top: lastButtonOffsetTop,
-          behavior: 'auto'
-        });
-      }
-    }
-
-    positionCardRating(); // Вызываем после показа/скрытия
-  });
-}
-
-// Запуск функций
-document.addEventListener("DOMContentLoaded", () => {
-  setTimeout(positionCardRating, 100);
-
-  handleShowMoreClick("show-more-btn", "card-container");
-  handleShowMoreClick("show-more-btn1", "card-container1");
-  handleShowMoreClick("show-more-btn2", "card-container2");
-  handleShowMoreClick("show-more-btn3", "card-container3");
-
-  // Добавим класс "hidden" ко всем карточкам изначально, кроме первых 24 (если они есть)
-  document.querySelectorAll(".card-container, .card-container1, .card-container2, .card-container3").forEach(container => {
-    const cards = container.querySelectorAll(".card");
-    if (cards.length > 24) {
-      cards.forEach((card, index) => {
-        if (index >= 24) {
-          card.classList.add("hidden");
-        }
-      });
-    } else {
-      cards.forEach(card => card.classList.remove("hidden"));
-    }
-  });
-
-  // Начинаем наблюдение за всеми изображениями при загрузке страницы
-  document.querySelectorAll('.card-img-top').forEach(image => {
-    globalResizeObserver.observe(image);
-  });
-});
-// ссылки и блоб на фильмы
-
-      document.addEventListener("DOMContentLoaded", function() {
-      const videos = document.querySelectorAll('.hls-video');
-      
-      videos.forEach(video => {
-        video.addEventListener('click', function initializeVideo() {
-          const src = video.getAttribute('data-src');
-          
-          if (src) {
-            fetch(src)
-              .then(response => response.blob())
-              .then(blob => {
-                const blobUrl = URL.createObjectURL(blob); // Создаем Blob URL
-
-                if (Hls.isSupported()) {
-                  const hls = new Hls();
-                  hls.loadSource(blobUrl); // Загружаем Blob-URL как источник HLS
-                  hls.attachMedia(video);
-                } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-                  video.src = blobUrl;
-                }
-
-                video.removeEventListener('click', initializeVideo);
-              })
-              .catch(error => console.error('Ошибка при загрузке видео:', error));
-          }
-        });
-      });
-    });
-    
-// конец
-
-
-
-
 
 
 // Конец
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Находим каждую кнопку по её уникальному ID
+    const movieBtn = document.getElementById('show-more-btn');
+    const cartoonBtn = document.getElementById('show-more-btn1');
+    const seriesBtn = document.getElementById('show-more-btn2');
+    const animeBtn = document.getElementById('show-more-btn3');
 
+    // 2. Добавляем слушатели событий 'click' для каждой кнопки
+    if (movieBtn) {
+        movieBtn.addEventListener('click', () => {
+            window.location.href = 'movies.html';
+        });
+    }
+
+    if (cartoonBtn) {
+        cartoonBtn.addEventListener('click', () => {
+            window.location.href = 'cartoons.html';
+        });
+    }
+
+    if (seriesBtn) {
+        seriesBtn.addEventListener('click', () => {
+            window.location.href = 'series.html';
+        });
+    }
+
+    if (animeBtn) {
+        animeBtn.addEventListener('click', () => {
+            window.location.href = 'anime.html';
+        });
+    }
+});
 
 
 // Широкие Картинки Слайдер
@@ -648,6 +542,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }).mount();
 });
+
+
 
 
 

@@ -4947,7 +4947,7 @@ var data = [
     },
     {
         "name": "Шаг за шагом",
-        "image": "https://image.tmdb.org/t/p/w200//9xSjP8B0iZHRzvrtKcYDkaalomS.jpg",
+        "image": "https://image.tmdb.org/t/p/original/fmOPcP8WRvm8cok4Hz3REwD7rlJ.jpg",
         "link": "/card/cartoons/500-35/Shag-za-shagom.html",
         "year": "2024",
         "rating": "7.5",
@@ -6879,7 +6879,7 @@ var data = [
     },
     {
         "name": "Кайдзю № 8",
-        "image": "https://image.tmdb.org/t/p/w500//4HJKaviTLn1incPtSZKAJZ6NJrv.jpg",
+        "image": "http://image.tmdb.org/t/p/w500//8b9u8Sg00QgnpIu0g5EenPswL6t.jpg",
         "link": "/card/anime/100-78/Kajdzyu-8.html",
         "year": "2024",
         "rating": "8.6",
@@ -7553,6 +7553,7 @@ function normalizeText(text) {
         .replace(/э/g, 'е')
         .replace(/3/g, 'е')
         .replace(/s/g, 'c')
+        .replace(/ш/g, 'щ')
         .replace(/ъ/g, 'ь') // Можно добавить и другие замены
         .replace(/a/g, 'а')
         .replace(/e/g, 'е')
