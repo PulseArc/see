@@ -1,6 +1,45 @@
 var data = [
     // Фильмы
-
+    {
+        "name": "Оливер Твист",
+        "image": "https://image.tmdb.org/t/p/w500//w4sfU0FreScYitjX9l5Zpp2X8o0.jpg",
+        "link": "/card/movies/800-520/Oliver-Tvist.html",
+        "year": "2005",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Мой друг мистер Персиваль",
+        "image": "https://image.tmdb.org/t/p/w500//bXNnzlel69zZcoVcqU4JUcQpSQj.jpg",
+        "link": "/card/movies/800-519/Moj-drug-mister-Persival.html",
+        "year": "2019",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Милые кости",
+        "image": "https://image.tmdb.org/t/p/w500//wLr0YZTAcKRAY5bw1drq2hBnYmp.jpg",
+        "link": "/card/movies/800-518/Milye-kosti.html",
+        "year": "2009",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Форма воды",
+        "image": "https://image.tmdb.org/t/p/w500//1I3ayHlmm6U1DoSy9WW2ATOG7Xk.jpg",
+        "link": "/card/movies/800-517/Forma-vody.html",
+        "year": "2017",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Манчестер у моря",
+        "image": "https://image.tmdb.org/t/p/w500//9h22dvN7LYIud5oUAurXXrfGHUS.jpg",
+        "link": "/card/movies/800-516/Manchester-u-morya.html",
+        "year": "2016",
+        "rating": "7.5",
+        "type": "movie"
+    },
     {
         "name": "Волк с Уолл-стрит",
         "image": "https://image.tmdb.org/t/p/w500//kRbBfEgHCF1tv8S7QlrtQZ60z8t.jpg",
@@ -39,6 +78,38 @@ var data = [
         "link": "/card/movies/800-501/Eksperiment-Ofis.html",
         "year": "2016",
         "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Голый пистолет",
+        "image": "https://image.tmdb.org/t/p/w500//wDxvNtnu5hpb9ixQWAkrJJmMzat.jpg",
+        "link": "/card/movies/800-507/Golyj-pistolet-2025.html",
+        "year": "2025",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Голый пистолет 33⅓: Последний выпад",
+        "image": "https://image.tmdb.org/t/p/w500//nRsOUWC911QlNkiMOaI2PZqAzSl.jpg",
+        "link": "/card/movies/800-508/Golyj-pistolet-1994.html",
+        "year": "1994",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Голый пистолет 2½: Запах страха",
+        "image": "https://image.tmdb.org/t/p/w500//cNlIpjxAdkxY1XyLDVOO9oQlpYh.jpg",
+        "link": "/card/movies/800-509/Golyj-pistolet-1991.html",
+        "year": "1991",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Голый пистолет: Из полицейских архивов",
+        "image": "https://image.tmdb.org/t/p/w500//859a7FpBURG5czrYyI0k8y3zRBF.jpg",
+        "link": "/card/movies/800-510/Golyj-pistolet-1988.html",
+        "year": "1988",
+        "rating": "6.8",
         "type": "movie"
     },
     {
@@ -226,11 +297,51 @@ var data = [
         "type": "movie"
     },
     {
+        "name": "Зелёный Фонарь",
+        "image": "https://image.tmdb.org/t/p/w500//b45kSKCLaGKol4cn3bXpOMFqUE8.jpg",
+        "link": "/card/movies/800-515/Zelyonyj-Fonar.html",
+        "year": "2011",
+        "rating": "5.2",
+        "type": "movie"
+    },
+    {
+        "name": "Джона Хекс",
+        "image": "https://image.tmdb.org/t/p/w500//zJADKfxCUM20W2KlHI3Vj4eAHKH.jpg",
+        "link": "/card/movies/800-514/Dzhona-Heks.html",
+        "year": "2010",
+        "rating": "5.0",
+        "type": "movie"
+    },
+    {
         "name": "Хранители",
         "image": "https://image.tmdb.org/t/p/w500//82Jnyq9YFlXo59ArGpuBLyAF4L9.jpg",
         "link": "/card/movies/800-493/Hraniteli.html",
         "year": "2009",
         "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "«V» значит Вендетта",
+        "image": "https://image.tmdb.org/t/p/w500//2KWF4ch7z78Is0pCXK6BzvJgFDN.jpg",
+        "link": "/card/movies/800-511/V-znachit-Vendetta.html",
+        "year": "2006",
+        "rating": "7.9",
+        "type": "movie"
+    },
+    {
+        "name": "Константин: Повелитель тьмы",
+        "image": "https://image.tmdb.org/t/p/w500//j8gHObFvjqgE7XVgO9bFphZIEAq.jpg",
+        "link": "/card/movies/800-512/Konstantin-Povelitel-tmy.html",
+        "year": "2005",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Женщина-кошка",
+        "image": "https://image.tmdb.org/t/p/w500//95BUj0dXqR8VsFeA7c3BweTLokg.jpg",
+        "link": "/card/movies/800-513/Zhenshina-koshka.html",
+        "year": "2004",
+        "rating": "4.6",
         "type": "movie"
     },
     {
@@ -1146,6 +1257,14 @@ var data = [
         "type": "movie"
     },
     {
+        "name": "Я знаю, что вы сделали прошлым летом",
+        "image": "https://image.tmdb.org/t/p/w500//cpJBgkmsUVKsbkJYsJ1gkhqH4WV.jpg",
+        "link": "/card/movies/800-503/Ya-znayu-chto-vy-sdelali-proshlym-letom.html",
+        "year": "2025",
+        "rating": "5.8",
+        "type": "movie"
+    },
+    {
         "name": "Король Ричард",
         "image": "https://image.tmdb.org/t/p/w500//JHb7M3mwxWGLHHtfTu08Ys6aVz.jpg",
         "link": "/card/movies/800-305/Korol-Richard.html",
@@ -1167,6 +1286,22 @@ var data = [
         "link": "/card/movies/800-307/Bogi-Egipta.html",
         "year": "2016",
         "rating": "5.7",
+        "type": "movie"
+    },
+    {
+        "name": "Никто 2",
+        "image": "https://image.tmdb.org/t/p/w500//744AMzuqzCxVWhjQEZVHxUIhzd.jpg",
+        "link": "/card/movies/800-504/Nikto-2.html",
+        "year": "2025",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Никто",
+        "image": "https://image.tmdb.org/t/p/w500//h3zs8tu6OG37xqo8QlcgwgjLE0y.jpg",
+        "link": "/card/movies/800-505/Nikto.html",
+        "year": "2021",
+        "rating": "7.9",
         "type": "movie"
     },
     {
@@ -3128,6 +3263,14 @@ var data = [
         "link": "/card/movies/800-27/Bratya-Grimm.html",
         "year": "2005",
         "rating": "5.8",
+        "type": "movie"
+    },
+    {
+        "name": "Клуб убийств по четвергам",
+        "image": "https://image.tmdb.org/t/p/original/jbnazCHr8S2l2glyvjPTpa4NbEw.jpg",
+        "link": "/card/movies/800-506/Klub-ubijstv-po-chetvergam.html",
+        "year": "2025",
+        "rating": "6.7",
         "type": "movie"
     },
     {
@@ -5873,6 +6016,24 @@ var data = [
     // конец
 
     // Сериалы
+    {
+        "name": "Годы",
+        "image": "https://image.tmdb.org/t/p/w500//7cZRJfSvgSh1PJATnInCYIz2025.jpg",
+        "link": "/card/series/900-108/Gody.html",
+        "year": "2019",
+        "rating": "7.6",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Сосны",
+        "image": "https://image.tmdb.org/t/p/original/9QFFSWcAZ4NZ4Qb6I8aJ72LKUOY.jpg",
+        "link": "/card/series/900-107/Sosny.html",
+        "year": "2015",
+        "rating": "6.9",
+        "isTV": true,
+        "type": "series"
+    },
     {
         "name": "Уэнздей",
         "image": "https://image.tmdb.org/t/p/w500//rb2MBiP9gAGwtxObuMP9Qro12W3.jpg",
