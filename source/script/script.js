@@ -1881,6 +1881,14 @@ var data = [
         "type": "movie"
     },
     {
+        "name": "Говард-утка",
+        "image": "https://image.tmdb.org/t/p/w500//eU0dWo8PJgsSAZFbcyHiUpuLSyW.jpg",
+        "link": "/card/movies/800-521/Govard-utka.html",
+        "year": "1986",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
         "name": "Золото джунглей",
         "image": "https://image.tmdb.org/t/p/w500//1HuoF1IYoixGXhYznep4kBtijLZ.jpg",
         "link": "/card/movies/800-236/Zoloto-dzhunglej.html",
