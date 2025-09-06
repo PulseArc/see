@@ -50,7 +50,7 @@ window.anime = [
         },
         {
             "name": "Кайдзю № 8",
-            "image": "http://image.tmdb.org/t/p/w500//8b9u8Sg00QgnpIu0g5EenPswL6t.jpg",
+            "image": "https://image.tmdb.org/t/p/w500//8b9u8Sg00QgnpIu0g5EenPswL6t.jpg",
             "link": "/card/anime/100-78/Kajdzyu-8.html",
             "year": "2024",
             "rating": "8.6",
