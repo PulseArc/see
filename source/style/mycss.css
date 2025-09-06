@@ -1341,10 +1341,8 @@ footer {
 @media (min-width: 1279px) and (max-width: 1521px) {
 
 
-    .search-icon .navbar-img {
-        width: 20px !important;
-        /* Фиксированный размер */
-        height: 19px !important;
+    .search-icon  {
+        font-size: 18px;
         
     }
 }
@@ -1475,7 +1473,7 @@ footer {
     }
 
     .search-wrapper:hover .search-container {
-        width: 400px !important;
+        width: 350px !important;
         /* Расширение контейнера влево */
     }
 
@@ -1694,7 +1692,7 @@ footer {
     }
 
     .search-icon .navbar-img {
-        margin-left: 0.15em;
+         margin-left: 3.3px;
         width: 28px !important;
         height: 28px !important;
     }
@@ -1959,9 +1957,9 @@ footer {
     }
 
     .search-icon .navbar-img {
-        margin-left: 0.1em;
-        width: 25px !important;
-        height: 25px !important;
+        margin-left: 3.5px;
+        width: 23px !important;
+        height: 23px !important;
         padding: 0;
     }
 
@@ -3080,14 +3078,14 @@ footer {
     }
 
     .search-wrapper:hover .search-container {
-        width: 285px !important;
+        width: 265px !important;
         /* Расширение контейнера влево */
     }
 
     .search-icon .navbar-img {
-        margin-left: 0.09em;
-        width: 22px !important;
-        height: 22px !important;
+        margin-left: 1px;
+        width: 23px !important;
+        height: 23px !important;
     }
 
     .clear-icon {
@@ -3328,14 +3326,14 @@ footer {
     }
 
     .search-wrapper:hover .search-container {
-        width: 255px !important;
+        width: 200px !important;
         /* Расширение контейнера влево */
     }
 
     .search-icon .navbar-img {
-        margin-left: 0.05em;
-        width: 21px !important;
-        height: 21px !important;
+        margin-left: 0px;
+        width: 22px !important;
+        height: 22px !important;
     }
 
     .clear-icon {
@@ -3582,7 +3580,7 @@ footer {
     }
 
     .search-wrapper:hover .search-container {
-        width: 255px !important;
+        width: 200px !important;
         /* Расширение контейнера влево */
     }
 
