@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", async function() {
         return;
     }
 
-    await generateCards(localCardData);
-    setTimeout(positionCardRatingTrand, 200);
+await generateCards(localCardData);
+    setTimeout(positionCardRatingTrand, 100);
 });
 
 // --- Константы и глобальные функции ---

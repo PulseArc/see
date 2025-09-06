@@ -1,6 +1,30 @@
 var data = [
     // Фильмы
     {
+        "name": "Почти семнадцать",
+        "image": "https://image.tmdb.org/t/p/w500//vRh1Wb9CZmm4dbb341skxnhzM72.jpg",
+        "link": "/card/movies/800-524/Pochti-semnadcat.html",
+        "year": "2016",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "2012",
+        "image": "https://image.tmdb.org/t/p/w500//akAYvqKGukyqkjUp17lJArycjlm.jpg",
+        "link": "/card/movies/800-523/2012.html",
+        "year": "2009",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "Ла-Ла Ленд",
+        "image": "https://image.tmdb.org/t/p/w500//g7f8GdnJKS0Z3QJ5G6P9BZrqs36.jpg",
+        "link": "/card/movies/800-522/La-La-Lend.html",
+        "year": "2016",
+        "rating": "7.9",
+        "type": "movie"
+    },
+    {
         "name": "Оливер Твист",
         "image": "https://image.tmdb.org/t/p/w500//w4sfU0FreScYitjX9l5Zpp2X8o0.jpg",
         "link": "/card/movies/800-520/Oliver-Tvist.html",
