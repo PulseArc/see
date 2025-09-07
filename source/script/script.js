@@ -1,6 +1,78 @@
 var data = [
     // Фильмы
     {
+        "name": "Миллионер из трущоб",
+        "image": "https://image.tmdb.org/t/p/w500//oShPzAshoE2wFgzAr6n26Q4veSk.jpg",
+        "link": "/card/movies/800-539/Millioner-iz-trushob.html",
+        "year": "2008",
+        "rating": "7.7",
+        "type": "movie"
+    },
+    {
+        "name": "1408",
+        "image": "https://image.tmdb.org/t/p/w500//yE9MCW7ZNxSw5SC1TMqm51pMBIV.jpg",
+        "link": "/card/movies/800-538/1408.html",
+        "year": "2007",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Пастырь",
+        "image": "https://image.tmdb.org/t/p/w500//6168i8yQu04azUPYzJccJq9W7sL.jpg",
+        "link": "/card/movies/800-537/Pastyr.html",
+        "year": "2011",
+        "rating": "5.8",
+        "type": "movie"
+    },
+    {
+        "name": "Тело Дженнифер",
+        "image": "https://image.tmdb.org/t/p/w500//2oyxrtjWbgEuWY3sQrxgneREVcb.jpg",
+        "link": "/card/movies/800-536/Telo-Dzhennifer.html",
+        "year": "2009",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "Жизнь Пи",
+        "image": "https://image.tmdb.org/t/p/w500//sKfOdwKRDoVROHg9B7suyKM82I9.jpg",
+        "link": "/card/movies/800-535/Zhizn-Pi.html",
+        "year": "2012",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Легион",
+        "image": "https://image.tmdb.org/t/p/w500//wIBxqUdkMbNAB5q98ml6XfsvZlp.jpg",
+        "link": "/card/movies/800-534/Legion.html",
+        "year": "2010",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "Секс по дружбе",
+        "image": "https://image.tmdb.org/t/p/w500//cXY9Ae1ivoaAYvgrzewSMIr0NTQ.jpg",
+        "link": "/card/movies/800-533/Seks-po-druzhbe.html",
+        "year": "2011",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Охотники на гангстеров",
+        "image": "https://image.tmdb.org/t/p/w500//9E5epinLoC1Z4t9utSeSPjhhX1Q.jpg",
+        "link": "/card/movies/800-532/Ohotniki-na-gangsterov.html",
+        "year": "2013",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Тепло наших тел",
+        "image": "https://image.tmdb.org/t/p/w500//t9Y49pYbXBAv2jQQQGpzKGZZt6Q.jpg",
+        "link": "/card/movies/800-531/Teplo-nashih-tel.html",
+        "year": "2013",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
         "name": "Почти семнадцать",
         "image": "https://image.tmdb.org/t/p/w500//vRh1Wb9CZmm4dbb341skxnhzM72.jpg",
         "link": "/card/movies/800-524/Pochti-semnadcat.html",
@@ -1905,6 +1977,30 @@ var data = [
         "type": "movie"
     },
     {
+        "name": "Блэйд: Троица",
+        "image": "https://image.tmdb.org/t/p/w500//wyKM5XyxHpYp3yFXSyINpIRqqTf.jpg",
+        "link": "/card/movies/800-530/Blejd-Troica.html",
+        "year": "2004",
+        "rating": "5.9",
+        "type": "movie"
+    },
+     {
+        "name": "Блэйд 2",
+        "image": "https://image.tmdb.org/t/p/w500//ufC7xPjnyvkFpRxKzWjkcgqnR5A.jpg",
+        "link": "/card/movies/800-529/Blejd-2.html",
+        "year": "2002",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Блэйд",
+        "image": "https://image.tmdb.org/t/p/w500//sSIeD1KmkgBTPMGdLkMwWuuTaBG.jpg",
+        "link": "/card/movies/800-528/Blejd.html",
+        "year": "1998",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
         "name": "Говард-утка",
         "image": "https://image.tmdb.org/t/p/w500//eU0dWo8PJgsSAZFbcyHiUpuLSyW.jpg",
         "link": "/card/movies/800-521/Govard-utka.html",
@@ -2903,6 +2999,30 @@ var data = [
         "link": "/card/movies/800-129/Moj-pingvin.html",
         "year": "2024",
         "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Фантастические твари: Тайны Дамблдора",
+        "image": "https://image.tmdb.org/t/p/w500//8LIpVm3uvoGrHYrtmIzxlRt31zn.jpg",
+        "link": "/card/movies/800-525/Fantasticheskie-tvari-Tajny-Dambldora.html",
+        "year": "2022",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Фантастические твари: Преступления Грин-де-Вальда",
+        "image": "https://image.tmdb.org/t/p/w500//st03eTWNNcVTX5je7mRxjbgEDAq.jpg",
+        "link": "/card/movies/800-526/Fantasticheskie-tvari-Prestupleniya-Grin-de-Valda.html",
+        "year": "2018",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Фантастические твари и где они обитают",
+        "image": "https://image.tmdb.org/t/p/w500//hqpnhHmr9L63d9Hh2Js2xLBeLer.jpg",
+        "link": "/card/movies/800-527/Fantasticheskie-tvari-i-gde-oni-obitayut.html",
+        "year": "2016",
+        "rating": "7.3",
         "type": "movie"
     },
     {
