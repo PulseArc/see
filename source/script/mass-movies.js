@@ -2200,7 +2200,7 @@ window.movies = [
     },
     {
         "name": "Аватар",
-        "image": "https://image.tmdb.org/t/p/w200//lUKcrcO3wEPhNnzGq06JIX7GIEb.jpg",
+        "image": "https://image.tmdb.org/t/p/original/znsmyBwJXVcJw8IeJfiYYqIySjY.jpg",
         "link": "/card/movies/800-56/Avatar.html",
         "year": "2009",
         "rating": "7.6", "tmdb_id": 19995
