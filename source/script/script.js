@@ -1977,6 +1977,30 @@ var data = [
         "type": "movie"
     },
     {
+        "name": "Невероятный Халк",
+        "image": "https://image.tmdb.org/t/p/w500//gSpDY5e5VCohH0PaSEWEI0FdEzC.jpg",
+        "link": "/card/movies/800-542/Neveroyatnyj-Halk.html",
+        "year": "2008",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Халк",
+        "image": "https://image.tmdb.org/t/p/w500//vezFYjkl6PdKSZKkurCfN33ycbU.jpg",
+        "link": "/card/movies/800-541/Halk.html",
+        "year": "2003",
+        "rating": "5.6",
+        "type": "movie"
+    },
+     {
+        "name": "Сорвиголова",
+        "image": "https://image.tmdb.org/t/p/original/1K8nGZ70ppyQLRSeOQZ2XOsycrG.jpg",
+        "link": "/card/movies/800-540/Sorvigolova.html",
+        "year": "2003",
+        "rating": "5.3",
+        "type": "movie"
+    },
+    {
         "name": "Блэйд: Троица",
         "image": "https://image.tmdb.org/t/p/w500//wyKM5XyxHpYp3yFXSyINpIRqqTf.jpg",
         "link": "/card/movies/800-530/Blejd-Troica.html",
