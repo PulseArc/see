@@ -2353,6 +2353,27 @@ window.movies = [
         "rating": "6.1", "tmdb_id": 822119
     },
     {
+        "name": "Электра",
+        "image": "https://image.tmdb.org/t/p/w500//2eMjxHp3Hl0bGUqAiCX5SuuV0Ku.jpg",
+        "link": "/card/movies/800-545/Elektra.html",
+        "year": "2005",
+        "rating": "5.0", "tmdb_id": 9947
+    },
+    {
+        "name": "Каратель: Территория Войны",
+        "image": "https://image.tmdb.org/t/p/w500//xjRvgKzjPQ5dGqQkDVT3qUsNElt.jpg",
+        "link": "/card/movies/800-544/Karatel-Territoriya-Vojny.html",
+        "year": "2008",
+        "rating": "5.8", "tmdb_id": 13056
+    },
+    {
+        "name": "Каратель",
+        "image": "https://image.tmdb.org/t/p/w500//17mIwqY9CPLxJsDZEgrw6v19cJ.jpg",
+        "link": "/card/movies/800-543/Karatel.html",
+        "year": "2004",
+        "rating": "6.4", "tmdb_id": 7220
+    },
+    {
         "name": "Невероятный Халк",
         "image": "https://image.tmdb.org/t/p/w500//gSpDY5e5VCohH0PaSEWEI0FdEzC.jpg",
         "link": "/card/movies/800-542/Neveroyatnyj-Halk.html",
