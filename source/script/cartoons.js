@@ -32,8 +32,8 @@ const MIN_GENRE_OVERLAP_RATIO = 0.5;
 const STRONG_KEYWORD_WEIGHT = 160;
 const KEYWORD_WEIGHT = 80;
 const TAGLINE_WEIGHT = 250;
-const RARE_GENRE_WEIGHT = 130;
-const COMMON_GENRE_WEIGHT = 130;
+const RARE_GENRE_WEIGHT = 140;
+const COMMON_GENRE_WEIGHT = 120;
 const OTHER_GENRE_WEIGHT = 200;
 const ACTOR_WEIGHT = 50;
 const DIRECTOR_WEIGHT = 100;
@@ -73,22 +73,7 @@ const getBaseTitle = (t) => {
     let cleaned = t.toLowerCase();
     cleaned = cleaned.replace(/\s*\(\d{4}\s*\)\s*$/, '').replace(/\s*\d{4}\s*$/, '').trim();
     cleaned = cleaned.replace(/\s*(?:смотреть онлайн бесплатно|в хорошем качестве).*$/, '').trim();
-    
-    // Удаление подзаголовков после двоеточий, тире и т.д.
-    cleaned = cleaned.split(/\s*[:!—\–-].*/)[0].trim();
-    
-    // Более агрессивное удаление общих слов в подзаголовках, которые не содержат разделителей
-    const commonSequelWords = [
-        'часть', 'серия', 'том', 'сезон', 'эпизод', 'возвращение', 'приключение', 'история', 'начало', 
-        'гигантское', 'бравые', 'ковбои', 'мотор', 'правила', 'рождественская', 'лихорадка'
-    ];
-    for (const word of commonSequelWords) {
-        const regex = new RegExp(`\\s+${word}(\\s|$)`, 'i');
-        cleaned = cleaned.replace(regex, ' ').trim();
-    }
-    
     cleaned = cleaned.replace(/[^a-z0-9а-яё\s]+/g, ' ').replace(/\s+/g, ' ').trim();
-    
     return cleaned;
 };
 
@@ -289,7 +274,7 @@ const scoreCard = (card, currentMovieRef) => {
     const commonActors = [...new Set((currentMovieRef.actors || []).map(a => ('' + a).toLowerCase()))].filter(a => (card.actors || []).map(x => ('' + x).toLowerCase()).includes(a)).length;
     const sameDirector = currentMovieRef.director && card.director && currentMovieRef.director === card.director;
 
-    if (genreOverlap.count === 0 && commonKeywordsCount === 0 && commonActors === 0 && !(currentMovieRef.tagline && card.tagline)) {
+    if (genreOverlap.count === 0 && commonKeywordsCount === 0 && commonActors === 0 && !sameDirector && !(currentMovieRef.tagline && card.tagline)) {
         return {
             score: 0,
             reasons: ['Failed primary relevance check (no genre/keyword/actor/director/tagline match)'],
@@ -388,7 +373,6 @@ async function generateAndDisplayRecommendations(localCardData) {
     const MAX_CARDS = 12;
     const recommendations = [];
     const addedTmdb = new Set();
-    const addedFranchiseKeys = new Set();
     const addedBaseTitles = new Set();
     const RECENT_KEY = 'recent_recs_tmdb';
     const LAST_UPDATE_KEY = 'last_update_ts';
@@ -417,6 +401,7 @@ async function generateAndDisplayRecommendations(localCardData) {
     const pageTitleElement = document.querySelector('title');
     const fullPageTitle = pageTitleElement ? getExactTitle(pageTitleElement.innerText) : '';
     
+    // Шаг 1: Поиск по ID и типу из скрытого элемента (Теперь это первый приоритет)
     const movieIdElement = document.getElementById('movie-id');
     const movieTypeElement = document.getElementById('movie-type');
     const movieId = movieIdElement ? parseInt(movieIdElement.innerText.trim(), 10) : null;
@@ -424,12 +409,20 @@ async function generateAndDisplayRecommendations(localCardData) {
     
     if (movieId && (movieType === 'movie' || movieType === 'tv')) {
         currentMovie = processedCards.find(c => c.tmdb_id === movieId && (c.isTV ? movieType === 'tv' : movieType === 'movie'));
+        if (currentMovie) {
+            console.log(`✅ Фильм найден по ID из скрытого элемента: ${currentMovie.name}`);
+        }
     }
 
+    // Шаг 2: Если по ID не нашли, ищем по полному названию и году
     if (!currentMovie && fullPageTitle && movieYear) {
         currentMovie = processedCards.find(card => getExactTitle(card.name) === fullPageTitle && card.year === movieYear);
+        if (currentMovie) {
+            console.log(`✅ Фильм найден по полному названию и году: ${currentMovie.name} (${currentMovie.year})`);
+        }
     }
     
+    // Шаг 3: Если по точному названию не нашли, ищем по базовому названию и году
     if (!currentMovie && fullPageTitle && movieYear) {
         const pageTitleText = getBaseTitle(fullPageTitle);
         let bestMatch = null;
@@ -443,6 +436,9 @@ async function generateAndDisplayRecommendations(localCardData) {
             }
         }
         currentMovie = bestMatch;
+        if (currentMovie) {
+            console.log(`✅ Фильм найден по наиболее точному совпадению базового названия и года: ${currentMovie.name} (${currentMovie.year})`);
+        }
     }
 
     if (!currentMovie) {
@@ -451,16 +447,14 @@ async function generateAndDisplayRecommendations(localCardData) {
         return;
     }
     
-    console.log(`✅ Фильм найден: ${currentMovie.name} (${currentMovie.year})`);
-
     addedTmdb.add(currentMovie.tmdb_id);
-    const currentFranchiseKey = getFranchiseKey(currentMovie);
-    addedFranchiseKeys.add(currentFranchiseKey);
     addedBaseTitles.add(getBaseTitle(currentMovie.name));
 
     console.groupCollapsed(`### Рекомендации для фильма: ${currentMovie.name} (${currentMovie.year})`);
 
-    // 1. Добавляем всю франшизу, если она есть
+    const currentFranchiseKey = getFranchiseKey(currentMovie);
+
+    // 1. Add all content from the main franchise first
     const mainFranchiseCandidates = processedCards.filter(c => 
         !addedTmdb.has(c.tmdb_id) && getFranchiseKey(c) === currentFranchiseKey
     );
@@ -468,20 +462,22 @@ async function generateAndDisplayRecommendations(localCardData) {
     mainFranchiseCandidates.sort((a, b) => (parseInt(b.year) || 0) - (parseInt(a.year) || 0));
     for (const card of mainFranchiseCandidates) {
         if (recommendations.length >= MAX_CARDS) break;
-        recommendations.push({ ...card, reason: 'Из основной франшизы' });
-        addedTmdb.add(card.tmdb_id);
-        addedFranchiseKeys.add(getFranchiseKey(card));
-        addedBaseTitles.add(getBaseTitle(card.name));
+        const baseTitle = getBaseTitle(card.name);
+        if (!addedBaseTitles.has(baseTitle)) {
+            recommendations.push({ ...card, reason: 'Из основной франшизы' });
+            addedTmdb.add(card.tmdb_id);
+            addedBaseTitles.add(baseTitle);
+        }
     }
     
-    // 2. Группируем и оцениваем оставшиеся фильмы по франшизам
+    // Фильтруем оставшиеся фильмы, исключая те, что уже добавлены или недавно показывались
     const remainingCandidates = processedCards.filter(c => 
         !addedTmdb.has(c.tmdb_id) && 
         !recentShown.includes(c.tmdb_id) &&
-        !addedFranchiseKeys.has(getFranchiseKey(c)) &&
         !addedBaseTitles.has(getBaseTitle(c.name))
     );
 
+    // Группируем и оцениваем оставшиеся фильмы
     const otherCandidatesByGroup = new Map();
     remainingCandidates.forEach(card => {
         const key = getFranchiseKey(card);
@@ -494,7 +490,7 @@ async function generateAndDisplayRecommendations(localCardData) {
         });
     });
 
-    // 3. Выбираем лучший фильм из каждой группы и добавляем в список
+    // Выбираем лучший фильм из каждой группы и добавляем в список
     const bestCandidates = [];
     for (const [key, candidates] of otherCandidatesByGroup.entries()) {
         const best = candidates.sort((a, b) => b.score - a.score)[0];
@@ -507,37 +503,43 @@ async function generateAndDisplayRecommendations(localCardData) {
 
     for (const card of sortedBestCandidates) {
         if (recommendations.length >= MAX_CARDS) break;
-        recommendations.push({ ...card, reason: `Релевантность (Score: ${card.score.toFixed(0)})` });
-        addedTmdb.add(card.tmdb_id);
-        addedFranchiseKeys.add(getFranchiseKey(card));
-        addedBaseTitles.add(getBaseTitle(card.name));
+        const baseTitle = getBaseTitle(card.name);
+        if (!addedBaseTitles.has(baseTitle)) {
+            recommendations.push({ ...card, reason: `Релевантность (Score: ${card.score.toFixed(0)})` });
+            addedTmdb.add(card.tmdb_id);
+            addedBaseTitles.add(baseTitle);
+        }
     }
 
-    // 4. Заполняем оставшиеся места высокорейтинговыми фильмами
+    // 5. Fill with high-rated films if needed
     if (recommendations.length < MAX_CARDS) {
         const highRatedFillers = processedCards
-            .filter(c => !addedTmdb.has(c.tmdb_id) && !recentShown.includes(c.tmdb_id) && getRating(c) >= HIGH_RATING_THRESHOLD && !addedFranchiseKeys.has(getFranchiseKey(c)) && !addedBaseTitles.has(getBaseTitle(c.name)))
+            .filter(c => !addedTmdb.has(c.tmdb_id) && !recentShown.includes(c.tmdb_id) && getRating(c) >= HIGH_RATING_THRESHOLD && !addedBaseTitles.has(getBaseTitle(c.name)))
             .sort((a, b) => getRating(b) - getRating(a));
 
         for (const card of highRatedFillers) {
             if (recommendations.length >= MAX_CARDS) break;
-            recommendations.push({ ...card, reason: 'Высокий рейтинг' });
-            addedTmdb.add(card.tmdb_id);
-            addedFranchiseKeys.add(getFranchiseKey(card));
-            addedBaseTitles.add(getBaseTitle(card.name));
+            const baseTitle = getBaseTitle(card.name);
+            if (!addedBaseTitles.has(baseTitle)) {
+                recommendations.push({ ...card, reason: 'Высокий рейтинг' });
+                addedTmdb.add(card.tmdb_id);
+                addedBaseTitles.add(baseTitle);
+            }
         }
     }
     
-    // 5. Финальное заполнение любыми оставшимися фильмами
+    // 6. Final fill with any remaining films
     if (recommendations.length < MAX_CARDS) {
       console.warn("Недостаточно рекомендаций. Добавляем фильмы, игнорируя кэш 'недавно показанных'.");
-      const remainingFillers = shuffleArray(processedCards.filter(c => !addedTmdb.has(c.tmdb_id) && !addedFranchiseKeys.has(getFranchiseKey(c)) && !addedBaseTitles.has(getBaseTitle(c.name))));
+      const remainingFillers = shuffleArray(processedCards.filter(c => !addedTmdb.has(c.tmdb_id) && !addedBaseTitles.has(getBaseTitle(c.name))));
       for (const card of remainingFillers) {
         if (recommendations.length >= MAX_CARDS) break;
-        recommendations.push({ ...card, reason: 'Запасной вариант (не хватает новых)' });
-        addedTmdb.add(card.tmdb_id);
-        addedFranchiseKeys.add(getFranchiseKey(card));
-        addedBaseTitles.add(getBaseTitle(card.name));
+        const baseTitle = getBaseTitle(card.name);
+        if (!addedBaseTitles.has(baseTitle)) {
+            recommendations.push({ ...card, reason: 'Запасной вариант (не хватает новых)' });
+            addedTmdb.add(card.tmdb_id);
+            addedBaseTitles.add(baseTitle);
+        }
       }
     }
 
@@ -577,15 +579,12 @@ function displayFallbackCards(cards, container) {
     const highRatedCards = sortedCards.filter(c => getRating(c) >= HIGH_RATING_THRESHOLD);
     const shuffledHighRated = shuffleArray(highRatedCards);
 
-    const addedFranchiseKeys = new Set();
     const addedBaseTitles = new Set();
     for (const card of shuffledHighRated) {
         if (recommendations.length >= MAX_CARDS) break;
-        const franchiseKey = getFranchiseKey(card);
         const baseTitle = getBaseTitle(card.name);
-        if (!addedFranchiseKeys.has(franchiseKey) && !addedBaseTitles.has(baseTitle)) {
+        if (!addedBaseTitles.has(baseTitle)) {
             recommendations.push(card);
-            addedFranchiseKeys.add(franchiseKey);
             addedBaseTitles.add(baseTitle);
         }
     }
@@ -594,12 +593,10 @@ function displayFallbackCards(cards, container) {
       const remainingFillers = shuffleArray(sortedCards.filter(c => !recommendations.includes(c)));
       for (const card of remainingFillers) {
         if (recommendations.length >= MAX_CARDS) break;
-        const franchiseKey = getFranchiseKey(card);
         const baseTitle = getBaseTitle(card.name);
-        if (!addedFranchiseKeys.has(franchiseKey) && !addedBaseTitles.has(baseTitle)) {
-          recommendations.push(card);
-          addedFranchiseKeys.add(franchiseKey);
-          addedBaseTitles.add(baseTitle);
+        if (!addedBaseTitles.has(baseTitle)) {
+            recommendations.push(card);
+            addedBaseTitles.add(baseTitle);
         }
       }
     }
