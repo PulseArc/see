@@ -1,6 +1,14 @@
 var data = [
     // Фильмы
     {
+        "name": "По соображениям совести",
+        "image": "https://image.tmdb.org/t/p/w500//A4Q3CdaQzbPwDI1gnE7WX5585rJ.jpg",
+        "link": "/card/movies/800-546/Po-soobrazheniyam-sovesti.html",
+        "year": "2016",
+        "rating": "8.2",
+        "type": "movie"
+    },
+    {
         "name": "Миллионер из трущоб",
         "image": "https://image.tmdb.org/t/p/w500//oShPzAshoE2wFgzAr6n26Q4veSk.jpg",
         "link": "/card/movies/800-539/Millioner-iz-trushob.html",
@@ -14,6 +22,14 @@ var data = [
         "link": "/card/movies/800-538/1408.html",
         "year": "2007",
         "rating": "6.7",
+        "type": "movie"
+    },
+     {
+        "name": "Чудо на Гудзоне",
+        "image": "https://image.tmdb.org/t/p/w500//qwG7SP5KV8fSxpLkB31Ta4dCYlR.jpg",
+        "link": "/card/movies/800-547/Chudo-na-Gudzone.html",
+        "year": "2016",
+        "rating": "7.2",
         "type": "movie"
     },
     {
