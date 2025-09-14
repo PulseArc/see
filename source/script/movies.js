@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.error("localCardData is empty. No recommendations can be generated.");
         return;
     }
-    
+
     await generateAndDisplayRecommendations(localCardData);
 });
 
@@ -139,48 +139,47 @@ async function processLocalCardData(data) {
 
     if (cachedData && cachedData.length === data.length) {
         console.log("Using cached TMDB data from sessionStorage.");
+        return cachedData;
     } else {
         console.log("Cache is invalid or missing. Fetching from TMDB...");
-        cachedData = [];
     }
 
-    const fetchPromises = data.map(async (c, index) => {
-        const u = { ...c };
+    const processedCards = [];
+    const BATCH_SIZE = 5; // Размер пачки запросов
+    const DELAY_MS = 1000; // Задержка между пачками
 
-        if (!Object.prototype.hasOwnProperty.call(u, 'isTV')) {
-            u.isTV = false;
-        }
-
-        if (u.tmdb_id && (!cachedData[index] || !cachedData[index].genres)) {
-            const mediaType = u.isTV ? 'tv' : 'movie';
-            const m = await fetchTmdbData(u.tmdb_id, mediaType);
-            if (m) {
-                u.genres = m.genres;
-                u.keywords = m.keywords;
-                u.collection_id = m.collection_id;
-                u.collection_name = m.collection_name;
-                u.certification = m.certification || u.certification || null;
-                u.director = m.director;
-                u.actors = m.actors;
-                u.name = m.title || m.name || u.name;
-                u.tagline = m.tagline;
+    for (let i = 0; i < data.length; i += BATCH_SIZE) {
+        const batch = data.slice(i, i + BATCH_SIZE);
+        const fetchPromises = batch.map(async (c) => {
+            const u = { ...c };
+            if (!Object.prototype.hasOwnProperty.call(u, 'isTV')) {
+                u.isTV = false;
             }
-        } else if (cachedData[index]) {
-            const cachedCard = cachedData[index];
-            u.genres = cachedCard.genres;
-            u.keywords = cachedCard.keywords;
-            u.collection_id = cachedCard.collection_id;
-            u.collection_name = cachedCard.collection_name;
-            u.certification = cachedCard.certification;
-            u.director = cachedCard.director;
-            u.actors = cachedCard.actors;
-            u.tagline = cachedCard.tagline;
+            if (u.tmdb_id) {
+                const mediaType = u.isTV ? 'tv' : 'movie';
+                const m = await fetchTmdbData(u.tmdb_id, mediaType);
+                if (m) {
+                    u.genres = m.genres;
+                    u.keywords = m.keywords;
+                    u.collection_id = m.collection_id;
+                    u.collection_name = m.collection_name;
+                    u.certification = m.certification || u.certification || null;
+                    u.director = m.director;
+                    u.actors = m.actors;
+                    u.name = m.title || m.name || u.name;
+                    u.tagline = m.tagline;
+                }
+            }
+            return u;
+        });
+
+        const results = await Promise.all(fetchPromises);
+        processedCards.push(...results);
+
+        if (i + BATCH_SIZE < data.length) {
+            await delay(DELAY_MS); // Делаем паузу между пачками, чтобы не превысить лимит
         }
-
-        return u;
-    });
-
-    const processedCards = await Promise.all(fetchPromises);
+    }
 
     try {
         sessionStorage.setItem(TMDB_CACHE_KEY, JSON.stringify(processedCards));
@@ -221,25 +220,25 @@ function genreOverlapInfo(currentGenres, cardGenres) {
 }
 
 function ageCompatible(currentCert, cardCert) {
-  const curCertNormalized = (currentCert || '').toUpperCase().replace(/\s/g, '');
-  const cardCertNormalized = (cardCert || '').toUpperCase().replace(/\s/g, '');
+    const curCertNormalized = (currentCert || '').toUpperCase().replace(/\s/g, '');
+    const cardCertNormalized = (cardCert || '').toUpperCase().replace(/\s/g, '');
 
-  const curRating = CERTIFICATION_MAP[curCertNormalized];
-  const cardRating = CERTIFICATION_MAP[cardCertNormalized];
+    const curRating = CERTIFICATION_MAP[curCertNormalized];
+    const cardRating = CERTIFICATION_MAP[cardCertNormalized];
 
-  if (curRating === undefined) {
-    return true;
-  }
-  
-  if (cardRating === undefined) {
-    return false;
-  }
+    if (curRating === undefined) {
+        return true;
+    }
 
-  if (curRating >= 16) {
-    return cardRating >= curRating;
-  }
+    if (cardRating === undefined) {
+        return false;
+    }
 
-  return cardRating < 16;
+    if (curRating >= 16) {
+        return cardRating >= curRating;
+    }
+
+    return cardRating < 16;
 }
 
 const scoreCard = (card, currentMovieRef) => {
@@ -401,13 +400,13 @@ async function generateAndDisplayRecommendations(localCardData) {
     const movieYear = yearElement ? yearElement.innerText.trim() : null;
     const pageTitleElement = document.querySelector('title');
     const fullPageTitle = pageTitleElement ? getExactTitle(pageTitleElement.innerText) : '';
-    
-    // Шаг 1: Поиск по ID и типу из скрытого элемента (Теперь это первый приоритет)
+
+    // Шаг 1: Поиск по ID и типу из скрытого элемента
     const movieIdElement = document.getElementById('movie-id');
     const movieTypeElement = document.getElementById('movie-type');
     const movieId = movieIdElement ? parseInt(movieIdElement.innerText.trim(), 10) : null;
     const movieType = movieTypeElement ? movieTypeElement.innerText.trim() : null;
-    
+
     if (movieId && (movieType === 'movie' || movieType === 'tv')) {
         currentMovie = processedCards.find(c => c.tmdb_id === movieId && (c.isTV ? movieType === 'tv' : movieType === 'movie'));
         if (currentMovie) {
@@ -422,7 +421,7 @@ async function generateAndDisplayRecommendations(localCardData) {
             console.log(`✅ Фильм найден по полному названию и году: ${currentMovie.name} (${currentMovie.year})`);
         }
     }
-    
+
     // Шаг 3: Если по точному названию не нашли, ищем по базовому названию и году
     if (!currentMovie && fullPageTitle && movieYear) {
         const pageTitleText = getBaseTitle(fullPageTitle);
@@ -447,7 +446,7 @@ async function generateAndDisplayRecommendations(localCardData) {
         displayFallbackCards(processedCards, cardContainer);
         return;
     }
-    
+
     addedTmdb.add(currentMovie.tmdb_id);
     addedBaseTitles.add(getBaseTitle(currentMovie.name));
 
@@ -456,7 +455,7 @@ async function generateAndDisplayRecommendations(localCardData) {
     const currentFranchiseKey = getFranchiseKey(currentMovie);
 
     // 1. Add all content from the main franchise first
-    const mainFranchiseCandidates = processedCards.filter(c => 
+    const mainFranchiseCandidates = processedCards.filter(c =>
         c.tmdb_id !== currentMovie.tmdb_id && getFranchiseKey(c) === currentFranchiseKey
     );
 
@@ -470,10 +469,10 @@ async function generateAndDisplayRecommendations(localCardData) {
             addedBaseTitles.add(getBaseTitle(card.name));
         }
     }
-    
+
     // Фильтруем оставшиеся фильмы, исключая те, что уже добавлены или недавно показывались
-    const remainingCandidates = processedCards.filter(c => 
-        !addedTmdb.has(c.tmdb_id) && 
+    const remainingCandidates = processedCards.filter(c =>
+        !addedTmdb.has(c.tmdb_id) &&
         !recentShown.includes(c.tmdb_id) &&
         !addedFranchiseKeys.has(getFranchiseKey(c)) &&
         !addedBaseTitles.has(getBaseTitle(c.name))
@@ -500,7 +499,7 @@ async function generateAndDisplayRecommendations(localCardData) {
             bestCandidates.push(best);
         }
     }
-    
+
     const sortedBestCandidates = bestCandidates.sort((a, b) => b.score - a.score);
 
     for (const card of sortedBestCandidates) {
@@ -525,18 +524,18 @@ async function generateAndDisplayRecommendations(localCardData) {
             addedBaseTitles.add(getBaseTitle(card.name));
         }
     }
-    
+
     // 6. Final fill with any remaining films
     if (recommendations.length < MAX_CARDS) {
-      console.warn("Недостаточно рекомендаций. Добавляем фильмы, игнорируя кэш 'недавно показанных'.");
-      const remainingFillers = shuffleArray(processedCards.filter(c => !addedTmdb.has(c.tmdb_id) && !addedFranchiseKeys.has(getFranchiseKey(c)) && !addedBaseTitles.has(getBaseTitle(c.name))));
-      for (const card of remainingFillers) {
-        if (recommendations.length >= MAX_CARDS) break;
-        recommendations.push({ ...card, reason: 'Запасной вариант (не хватает новых)' });
-        addedTmdb.add(card.tmdb_id);
-        addedFranchiseKeys.add(getFranchiseKey(card));
-        addedBaseTitles.add(getBaseTitle(card.name));
-      }
+        console.warn("Недостаточно рекомендаций. Добавляем фильмы, игнорируя кэш 'недавно показанных'.");
+        const remainingFillers = shuffleArray(processedCards.filter(c => !addedTmdb.has(c.tmdb_id) && !addedFranchiseKeys.has(getFranchiseKey(c)) && !addedBaseTitles.has(getBaseTitle(c.name))));
+        for (const card of remainingFillers) {
+            if (recommendations.length >= MAX_CARDS) break;
+            recommendations.push({ ...card, reason: 'Запасной вариант (не хватает новых)' });
+            addedTmdb.add(card.tmdb_id);
+            addedFranchiseKeys.add(getFranchiseKey(card));
+            addedBaseTitles.add(getBaseTitle(card.name));
+        }
     }
 
     recommendations.forEach((rec, index) => {
@@ -571,7 +570,7 @@ function displayFallbackCards(cards, container) {
     const MAX_CARDS = 12;
 
     const sortedCards = cards.sort((a, b) => getRating(b) - getRating(a));
-    
+
     const highRatedCards = sortedCards.filter(c => getRating(c) >= HIGH_RATING_THRESHOLD);
     const shuffledHighRated = shuffleArray(highRatedCards);
 
@@ -583,16 +582,16 @@ function displayFallbackCards(cards, container) {
             addedBaseTitles.add(getBaseTitle(card.name));
         }
     }
-    
+
     if (recommendations.length < MAX_CARDS) {
-      const remainingFillers = shuffleArray(sortedCards.filter(c => !recommendations.includes(c)));
-      for (const card of remainingFillers) {
-        if (recommendations.length >= MAX_CARDS) break;
-        if (!addedBaseTitles.has(getBaseTitle(card.name))) {
-            recommendations.push(card);
-            addedBaseTitles.add(getBaseTitle(card.name));
+        const remainingFillers = shuffleArray(sortedCards.filter(c => !recommendations.includes(c)));
+        for (const card of remainingFillers) {
+            if (recommendations.length >= MAX_CARDS) break;
+            if (!addedBaseTitles.has(getBaseTitle(card.name))) {
+                recommendations.push(card);
+                addedBaseTitles.add(getBaseTitle(card.name));
+            }
         }
-      }
     }
 
     displayCards(recommendations, container);
@@ -679,7 +678,7 @@ function initSplide() {
             }
         }
     });
-    
+
     splide.on('mounted', () => {
         positionCardRatingTrand();
     });
