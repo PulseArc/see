@@ -299,7 +299,6 @@ document.addEventListener('DOMContentLoaded', () => {
     iframe.setAttribute('src', src + '?autoplay=1');
   });
 });
-
     
 // конец
 
