@@ -4,6 +4,41 @@
 // Аниме массив
 window.movies = [
     {
+        "name": "Главный герой",
+        "image": "https://image.tmdb.org/t/p/w500//qJZ3UeKAOgz2kFVJPZZFzLtn1Qk.jpg",
+        "link": "/card/movies/800-552/Glavnyj-geroj.html",
+        "year": "2021",
+        "rating": "7.5", "tmdb_id": 550988
+    },
+    {
+        "name": "Дом Gucci",
+        "image": "https://image.tmdb.org/t/p/w500//lMuc6dmVoEAoOTIJp4AnPwmEZ2T.jpg",
+        "link": "/card/movies/800-551/Dom-Gucci.html",
+        "year": "2021",
+        "rating": "6.6", "tmdb_id": 644495
+    },
+    {
+        "name": "Гори, гори ясно",
+        "image": "https://image.tmdb.org/t/p/w500//qOxcqExDuHAgGSFnAv54gTqosoS.jpg",
+        "link": "/card/movies/800-550/Gori-gori-yasno.html",
+        "year": "2019",
+        "rating": "6.1", "tmdb_id": 531309
+    },
+     {
+        "name": "Покемон: Детектив Пикачу",
+        "image": "https://image.tmdb.org/t/p/w500//t9FIOdeU9PU49ieVzG2JsutNy3H.jpg",
+        "link": "/card/movies/800-549/Pokemon-Detektiv-Pikachu.html",
+        "year": "2019",
+        "rating": "6.9", "tmdb_id": 447404
+    },
+     {
+        "name": "Агенты А.Н.К.Л.",
+        "image": "https://image.tmdb.org/t/p/w500//8J7kXEWk2dLttjx1iblx3nSoY1O.jpg",
+        "link": "/card/movies/800-548/Agenty-A.N.K.L.html",
+        "year": "2015",
+        "rating": "7.1", "tmdb_id": 203801
+    },
+    {
         "name": "По соображениям совести",
         "image": "https://image.tmdb.org/t/p/w500//A4Q3CdaQzbPwDI1gnE7WX5585rJ.jpg",
         "link": "/card/movies/800-546/Po-soobrazheniyam-sovesti.html",
