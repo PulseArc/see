@@ -821,7 +821,7 @@ window.cartoons = [
         },
         {
             "name": "Футурама: Большой куш Бендера",
-            "image": "https://image.tmdb.org/t/p/w500//3pJdmpC5KvOnOYYWSnLrgbTP5jE.jpg",
+            "image": "https://image.tmdb.org/t/p/original/3pJdmpC5KvOnOYYWSnLrgbTP5jE.jpg",
             "link": "/card/cartoons/500-137/Futurama-Bolshoj-kush-Bendera.html",
             "year": "2007",
             "rating":"7.4",
