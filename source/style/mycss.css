@@ -3,6 +3,9 @@
 body::-webkit-scrollbar {
     display: none; /* Убираем скроллбар */
 }
+body, html {
+  overscroll-behavior-y: contain;
+}
 .loading-bar-container {
     width: 40%;
     height: 3px; /* Толщина полосы */
@@ -19,22 +22,22 @@ body::-webkit-scrollbar {
     animation: loading 0.4s linear infinite;
 }
 /* Начальное состояние карточек */
-.full-card.card-hidden {
-    opacity: 0; /* Невидимые */
-    transform: translateY(20px); /* Смещаем вниз для эффекта "выплывания" */
-}
 
-/* Конечное состояние - видимые карточки */
-.full-card.card-visible {
-    opacity: 1; /* Полностью видимые */
-    transform: translateY(0); /* Возвращаем на место */
-    transition: transform 0.2s ease-out, opacity 0.4s ease-out; /* Плавный переход */
-}
 /* Анимация для движения полосы */
 @keyframes loading {
     0% { width: 0; }
     100% { width: 100%; }
 }
+/* Базовые стили для скелета */
+/* Базовые стили для контейнера карточки */
+.card.full-card {
+    position: relative;
+    /* 
+    height: 100%;  */ 
+    /* высота влияет на поиск  */
+}
+
+
 
 .mx-4-5 {
     margin-left: 2.490rem;
@@ -115,7 +118,10 @@ body::-webkit-scrollbar {
 .row>* {
     flex-shrink: 1;
 }
-
+.card-rating-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
 .hidden {
     display: none;
 }
