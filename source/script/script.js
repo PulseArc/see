@@ -1,5 +1,21 @@
 var data = [
     // Фильмы
+     {
+        "name": "Суррогаты",
+        "image": "https://image.tmdb.org/t/p/w500//53P4Jv165JZug5OeREhVTGjVWoi.jpg",
+        "link": "/card/movies/800-558/Surrogaty.html",
+        "year": "2009",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Живая сталь",
+        "image": "https://image.tmdb.org/t/p/w500//3y9qKKMO8wJuw1UHnIgWm7LVr4p.jpg",
+        "link": "/card/movies/800-557/Zhivaya-stal.html",
+        "year": "2011",
+        "rating": "7.1",
+        "type": "movie"
+    },
     {
         "name": "Тринадцать привидений",
         "image": "https://image.tmdb.org/t/p/w500//6wG56CiElQ8Gg4oNBSxYVJHkZMA.jpg",
@@ -2266,6 +2282,14 @@ var data = [
         "type": "movie"
     },
     {
+        "name": "Дракула",
+        "image": "https://image.tmdb.org/t/p/w500//fsntw7K5mRVHWf90SjGvFAxICbB.jpg",
+        "link": "/card/movies/800-556/Drakula-2025.html",
+        "year": "2025",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
         "name": "Подземелья и драконы: Честь среди воров",
         "image": "https://image.tmdb.org/t/p/w500//nAbRIxxRJfCP2U9tpVJU1zWb6Ni.jpg",
         "link": "/card/movies/800-76/Podzemelya-i-drakony-Chest-sredi-vorov.html",
@@ -2287,6 +2311,14 @@ var data = [
         "link": "/card/movies/800-78/Vygon.html",
         "year": "2024",
         "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Гризли",
+        "image": "https://image.tmdb.org/t/p/w500//g79mFGdIsLX7WaPiKnBE87U5a6m.jpg",
+        "link": "/card/movies/800-555/Grizli.html",
+        "year": "2025",
+        "rating": "4.5",
         "type": "movie"
     },
     {

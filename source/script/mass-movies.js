@@ -4,6 +4,20 @@
 // Аниме массив
 window.movies = [
     {
+        "name": "Суррогаты",
+        "image": "https://image.tmdb.org/t/p/w500//53P4Jv165JZug5OeREhVTGjVWoi.jpg",
+        "link": "/card/movies/800-558/Surrogaty.html",
+        "year": "2009",
+        "rating": "6.1", "tmdb_id": 19959
+    },
+    {
+        "name": "Живая сталь",
+        "image": "https://image.tmdb.org/t/p/w500//3y9qKKMO8wJuw1UHnIgWm7LVr4p.jpg",
+        "link": "/card/movies/800-557/Zhivaya-stal.html",
+        "year": "2011",
+        "rating": "7.1", "tmdb_id": 39254
+    },
+    {
         "name": "Тринадцать привидений",
         "image": "https://image.tmdb.org/t/p/w500//6wG56CiElQ8Gg4oNBSxYVJHkZMA.jpg",
         "link": "/card/movies/800-554/Trinadcat-prividenij.html",
@@ -2605,6 +2619,13 @@ window.movies = [
         "rating": "6.5", "tmdb_id": 928480
     },
     {
+        "name": "Дракула",
+        "image": "https://image.tmdb.org/t/p/w500//fsntw7K5mRVHWf90SjGvFAxICbB.jpg",
+        "link": "/card/movies/800-556/Drakula-2025.html",
+        "year": "2025",
+        "rating": "6.6", "tmdb_id": 1246049
+    },
+    {
         "name": "Подземелья и драконы: Честь среди воров",
         "image": "https://image.tmdb.org/t/p/w500//nAbRIxxRJfCP2U9tpVJU1zWb6Ni.jpg",
         "link": "/card/movies/800-76/Podzemelya-i-drakony-Chest-sredi-vorov.html",
@@ -2624,6 +2645,13 @@ window.movies = [
         "link": "/card/movies/800-78/Vygon.html",
         "year": "2024",
         "rating": "6.8", "tmdb_id": 785542
+    },
+    {
+        "name": "Гризли",
+        "image": "https://image.tmdb.org/t/p/w500//g79mFGdIsLX7WaPiKnBE87U5a6m.jpg",
+        "link": "/card/movies/800-555/Grizli.html",
+        "year": "2025",
+        "rating": "4.5", "tmdb_id": 1376237
     },
     {
         "name": "Элиас",
