@@ -1,6 +1,14 @@
 var data = [
     // Фильмы
     {
+        "name": "Тринадцать привидений",
+        "image": "https://image.tmdb.org/t/p/w500//6wG56CiElQ8Gg4oNBSxYVJHkZMA.jpg",
+        "link": "/card/movies/800-554/Trinadcat-prividenij.html",
+        "year": "2001",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
         "name": "Главный герой",
         "image": "https://image.tmdb.org/t/p/w500//qJZ3UeKAOgz2kFVJPZZFzLtn1Qk.jpg",
         "link": "/card/movies/800-552/Glavnyj-geroj.html",
