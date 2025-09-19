@@ -2451,13 +2451,6 @@ window.movies = [
         "rating": "7.7", "tmdb_id": 1726
     },
     {
-        "name": "Железный человек",
-        "image": "https://image.tmdb.org/t/p/w500//wAKZudQn0HEXqLvaGN6BEripHbv.jpg",
-        "link": "/card/movies/800-559/Zheleznyj-chelovek.html",
-        "year": "2008",
-        "rating": "7.7", "tmdb_id": 1726
-    },
-    {
         "name": "Электра",
         "image": "https://image.tmdb.org/t/p/w500//2eMjxHp3Hl0bGUqAiCX5SuuV0Ku.jpg",
         "link": "/card/movies/800-545/Elektra.html",
