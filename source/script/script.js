@@ -7249,6 +7249,60 @@ var data = [
 
 
     // Аниме
+     {
+        "name": "Ветролом",
+        "image": "https://image.tmdb.org/t/p/w500//nvvvXGdVaSeYeWSFBkpa1HKIfay.jpg",
+        "link": "/card/anime/100-85/Vetrolom.html",
+        "year": "2024",
+        "rating": "8.1",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Тёмный демон",
+        "image": "https://image.tmdb.org/t/p/w500//elzm2YILMHwh8WKfphhmnewwoiJ.jpg",
+        "link": "/card/anime/100-84/Tyomnyj-demon.html",
+        "year": "2025",
+        "rating": "8.3",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Повелитель Тайн",
+        "image": "https://image.tmdb.org/t/p/w500//kBRyCCZWipMO5Gu9Y02nE3iMgr0.jpg",
+        "link": "/card/anime/100-83/Povelitel-Tajn.html",
+        "year": "2025",
+        "rating": "8.9",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Охотник x Охотник",
+        "image": "https://image.tmdb.org/t/p/w500//hAoNFUYu3tOrEDgwx7OcSVMLseP.jpg",
+        "link": "/card/anime/100-82/Ohotnik-x-Ohotnik.html",
+        "year": "2011",
+        "rating": "8.7",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Подземелье вкусностей",
+        "image": "https://image.tmdb.org/t/p/w500//zJOoyPtDy5FSMdbKXUXAMaPz1Ud.jpg",
+        "link": "/card/anime/100-81/Gorod-v-kotorom-menya-net.html",
+        "year": "2016",
+        "rating": "8.5",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Подземелье вкусностей",
+        "image": "https://image.tmdb.org/t/p/w500//lqvcusvxvLIeJf94Pv3pxyoCEfH.jpg",
+        "link": "/card/anime/100-80/Podzemele-vkusnostej.html",
+        "year": "2024",
+        "rating": "8.5",
+        "isTV": true,
+        "type": "anime"
+    },
     {
         "name": "Берсерк",
         "image": "https://image.tmdb.org/t/p/w500//rPqWt642UhC8UObCtnpRz4iM2DQ.jpg",
