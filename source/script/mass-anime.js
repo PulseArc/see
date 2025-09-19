@@ -40,7 +40,7 @@ window.anime = [
         "isTV": true
     },
     {
-        "name": "Подземелье вкусностей",
+        "name": "Город, в котором меня нет",
         "image": "https://image.tmdb.org/t/p/w500//zJOoyPtDy5FSMdbKXUXAMaPz1Ud.jpg",
         "link": "/card/anime/100-81/Gorod-v-kotorom-menya-net.html",
         "year": "2016",
