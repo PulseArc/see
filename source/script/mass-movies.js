@@ -1611,6 +1611,13 @@ window.movies = [
         "rating": "7.5", "tmdb_id": 281957
     },
     {
+        "name": "Орудия",
+        "image": "https://image.tmdb.org/t/p/w500//iIUK6jA6ZmJ4mxZsolYFsWONd2A.jpg",
+        "link": "/card/movies/800-553/Orudiya.html",
+        "year": "2025",
+        "rating": "7.4", "tmdb_id": 1078605
+    },
+    {
         "name": "Гнев человеческий",
         "image": "https://image.tmdb.org/t/p/w500//nRE9zOfzdp4uQMeDOgCvMf6izNh.jpg",
         "link": "/card/movies/800-21/Gnev-chelovecheskij.html",

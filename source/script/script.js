@@ -1832,6 +1832,14 @@ var data = [
         "rating": "7.5",
         "type": "movie"
     },
+     {
+        "name": "Орудия",
+        "image": "https://image.tmdb.org/t/p/w500//iIUK6jA6ZmJ4mxZsolYFsWONd2A.jpg",
+        "link": "/card/movies/800-553/Orudiya.html",
+        "year": "2025",
+        "rating": "7.4",
+        "type": "movie"
+    },
     {
         "name": "Гнев человеческий",
         "image": "https://image.tmdb.org/t/p/w500//nRE9zOfzdp4uQMeDOgCvMf6izNh.jpg",
