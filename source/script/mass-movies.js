@@ -45,14 +45,14 @@ window.movies = [
         "year": "2019",
         "rating": "6.1", "tmdb_id": 531309
     },
-     {
+    {
         "name": "Покемон: Детектив Пикачу",
         "image": "https://image.tmdb.org/t/p/w500//t9FIOdeU9PU49ieVzG2JsutNy3H.jpg",
         "link": "/card/movies/800-549/Pokemon-Detektiv-Pikachu.html",
         "year": "2019",
         "rating": "6.9", "tmdb_id": 447404
     },
-     {
+    {
         "name": "Агенты А.Н.К.Л.",
         "image": "https://image.tmdb.org/t/p/w500//8J7kXEWk2dLttjx1iblx3nSoY1O.jpg",
         "link": "/card/movies/800-548/Agenty-A.N.K.L.html",
@@ -136,14 +136,14 @@ window.movies = [
         "year": "2013",
         "rating": "6.5", "tmdb_id": 82654
     },
-     {
+    {
         "name": "Почти семнадцать",
         "image": "https://image.tmdb.org/t/p/w500//vRh1Wb9CZmm4dbb341skxnhzM72.jpg",
         "link": "/card/movies/800-524/Pochti-semnadcat.html",
         "year": "2016",
         "rating": "7.2", "tmdb_id": 376660
     },
-     {
+    {
         "name": "2012",
         "image": "https://image.tmdb.org/t/p/w500//akAYvqKGukyqkjUp17lJArycjlm.jpg",
         "link": "/card/movies/800-523/2012.html",
@@ -2428,6 +2428,34 @@ window.movies = [
         "link": "/card/movies/800-250/Kapitan-Amerika-Novyj-Mir.html",
         "year": "2025",
         "rating": "6.1", "tmdb_id": 822119
+    },
+    {
+        "name": "Железный человек 3",
+        "image": "https://image.tmdb.org/t/p/w500//4AZco6uSdog5NbvJ6ILqnCveV8I.jpg",
+        "link": "/card/movies/800-561/Zheleznyj-chelovek-3.html",
+        "year": "2013",
+        "rating": "6.9", "tmdb_id": 68721
+    },
+    {
+        "name": "Железный человек 2",
+        "image": "https://image.tmdb.org/t/p/w500//rT3JszXFT2C3iYJtXSSL4R0DkU7.jpg",
+        "link": "/card/movies/800-560/Zheleznyj-chelovek-2.html",
+        "year": "2010",
+        "rating": "6.8", "tmdb_id": 10138
+    },
+    {
+        "name": "Железный человек",
+        "image": "https://image.tmdb.org/t/p/w500//wAKZudQn0HEXqLvaGN6BEripHbv.jpg",
+        "link": "/card/movies/800-559/Zheleznyj-chelovek.html",
+        "year": "2008",
+        "rating": "7.7", "tmdb_id": 1726
+    },
+    {
+        "name": "Железный человек",
+        "image": "https://image.tmdb.org/t/p/w500//wAKZudQn0HEXqLvaGN6BEripHbv.jpg",
+        "link": "/card/movies/800-559/Zheleznyj-chelovek.html",
+        "year": "2008",
+        "rating": "7.7", "tmdb_id": 1726
     },
     {
         "name": "Электра",

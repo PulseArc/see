@@ -1,6 +1,6 @@
 var data = [
     // Фильмы
-     {
+    {
         "name": "Суррогаты",
         "image": "https://image.tmdb.org/t/p/w500//53P4Jv165JZug5OeREhVTGjVWoi.jpg",
         "link": "/card/movies/800-558/Surrogaty.html",
@@ -32,7 +32,7 @@ var data = [
         "rating": "7.5",
         "type": "movie"
     },
-     {
+    {
         "name": "Дом Gucci",
         "image": "https://image.tmdb.org/t/p/w500//lMuc6dmVoEAoOTIJp4AnPwmEZ2T.jpg",
         "link": "/card/movies/800-551/Dom-Gucci.html",
@@ -88,7 +88,7 @@ var data = [
         "rating": "6.7",
         "type": "movie"
     },
-     {
+    {
         "name": "Чудо на Гудзоне",
         "image": "https://image.tmdb.org/t/p/w500//qwG7SP5KV8fSxpLkB31Ta4dCYlR.jpg",
         "link": "/card/movies/800-547/Chudo-na-Gudzone.html",
@@ -1856,7 +1856,7 @@ var data = [
         "rating": "7.5",
         "type": "movie"
     },
-     {
+    {
         "name": "Орудия",
         "image": "https://image.tmdb.org/t/p/w500//iIUK6jA6ZmJ4mxZsolYFsWONd2A.jpg",
         "link": "/card/movies/800-553/Orudiya.html",
@@ -2065,6 +2065,30 @@ var data = [
         "type": "movie"
     },
     {
+        "name": "Железный человек 3",
+        "image": "https://image.tmdb.org/t/p/w500//4AZco6uSdog5NbvJ6ILqnCveV8I.jpg",
+        "link": "/card/movies/800-561/Zheleznyj-chelovek-3.html",
+        "year": "2013",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Железный человек 2",
+        "image": "https://image.tmdb.org/t/p/w500//rT3JszXFT2C3iYJtXSSL4R0DkU7.jpg",
+        "link": "/card/movies/800-560/Zheleznyj-chelovek-2.html",
+        "year": "2010",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Железный человек",
+        "image": "https://image.tmdb.org/t/p/w500//wAKZudQn0HEXqLvaGN6BEripHbv.jpg",
+        "link": "/card/movies/800-559/Zheleznyj-chelovek.html",
+        "year": "2008",
+        "rating": "7.7",
+        "type": "movie"
+    },
+    {
         "name": "Электра",
         "image": "https://image.tmdb.org/t/p/w500//2eMjxHp3Hl0bGUqAiCX5SuuV0Ku.jpg",
         "link": "/card/movies/800-545/Elektra.html",
@@ -2104,7 +2128,7 @@ var data = [
         "rating": "5.6",
         "type": "movie"
     },
-     {
+    {
         "name": "Сорвиголова",
         "image": "https://image.tmdb.org/t/p/original/1K8nGZ70ppyQLRSeOQZ2XOsycrG.jpg",
         "link": "/card/movies/800-540/Sorvigolova.html",
@@ -2120,7 +2144,7 @@ var data = [
         "rating": "5.9",
         "type": "movie"
     },
-     {
+    {
         "name": "Блэйд 2",
         "image": "https://image.tmdb.org/t/p/w500//ufC7xPjnyvkFpRxKzWjkcgqnR5A.jpg",
         "link": "/card/movies/800-529/Blejd-2.html",
@@ -7297,7 +7321,7 @@ var data = [
 
 
     // Аниме
-     {
+    {
         "name": "Ветролом",
         "image": "https://image.tmdb.org/t/p/w500//nvvvXGdVaSeYeWSFBkpa1HKIfay.jpg",
         "link": "/card/anime/100-85/Vetrolom.html",
