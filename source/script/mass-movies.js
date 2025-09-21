@@ -4,6 +4,20 @@
 // Аниме массив
 window.movies = [
     {
+        "name": "Убийцы цветочной луны",
+        "image": "https://image.tmdb.org/t/p/w500//dc06PiS7uRAonQwrxKAnDvORZgC.jpg",
+        "link": "/card/movies/800-571/Ubijcy-cvetochnoj-luny.html",
+        "year": "2023",
+        "rating": "7.4", "tmdb_id": 466420
+    },
+    {
+        "name": "Анчартед: На картах не значится",
+        "image": "https://image.tmdb.org/t/p/w500//gCeTyPG6g03DGsSvNOjEIAjmC9j.jpg",
+        "link": "/card/movies/800-570/Ancharted-Na-kartah-ne-znachitsya.html",
+        "year": "2022",
+        "rating": "6.9", "tmdb_id": 335787
+    },
+    {
         "name": "Суррогаты",
         "image": "https://image.tmdb.org/t/p/w500//53P4Jv165JZug5OeREhVTGjVWoi.jpg",
         "link": "/card/movies/800-558/Surrogaty.html",
@@ -16,6 +30,13 @@ window.movies = [
         "link": "/card/movies/800-557/Zhivaya-stal.html",
         "year": "2011",
         "rating": "7.1", "tmdb_id": 39254
+    },
+    {
+        "name": "Барби",
+        "image": "https://image.tmdb.org/t/p/w500//kau707eF6UBvrHX3v5BSYckqSXm.jpg",
+        "link": "/card/movies/800-572/Barbi.html",
+        "year": "2023",
+        "rating": "7.0", "tmdb_id": 346698
     },
     {
         "name": "Тринадцать привидений",
@@ -2470,6 +2491,62 @@ window.movies = [
         "link": "/card/movies/800-543/Karatel.html",
         "year": "2004",
         "rating": "6.4", "tmdb_id": 7220
+    },
+    {
+        "name": "Человек-паук: Нет пути домой",
+        "image": "https://image.tmdb.org/t/p/w500//3hLU5V1XDF0oHT9YUHvYC4j0Ix5.jpg",
+        "link": "/card/movies/800-569/Chelovek-pauk-Net-puti-domoj.html",
+        "year": "2021",
+        "rating": "7.9", "tmdb_id": 634649
+    },
+    {
+        "name": "Человек-паук: Вдали от дома",
+        "image": "https://image.tmdb.org/t/p/w500//wL1S9750WaxxvbbuUBfkbAskDd8.jpg",
+        "link": "/card/movies/800-568/Chelovek-pauk-Vdali-ot-doma.html",
+        "year": "2019",
+        "rating": "7.4", "tmdb_id": 429617
+    },
+    {
+        "name": "Человек-паук: Возвращение домой",
+        "image": "https://image.tmdb.org/t/p/w500//nfJ28YpTXuerXToj52d3maPOMnM.jpg",
+        "link": "/card/movies/800-567/Chelovek-pauk-Vozvrashenie-domoj.html",
+        "year": "2017",
+        "rating": "7.3", "tmdb_id": 315635
+    },
+    {
+        "name": "Новый Человек-паук: Высокое напряжение",
+        "image": "https://image.tmdb.org/t/p/w500//1uxtVgcQHUgD3vBOC56hioofnmU.jpg",
+        "link": "/card/movies/800-566/Novyj-Chelovek-pauk-Vysokoe-napryazhenie.html",
+        "year": "2014",
+        "rating": "6.5", "tmdb_id": 102382
+    },
+    {
+        "name": "Новый Человек-паук",
+        "image": "https://image.tmdb.org/t/p/w500//kby3x8wic9Lx4qEfstLu2vFHTVj.jpg",
+        "link": "/card/movies/800-565/Novyj-Chelovek-pauk.html",
+        "year": "2012",
+        "rating": "6.7", "tmdb_id": 1930
+    },
+    {
+        "name": "Человек-паук 3: Враг в отражении",
+        "image": "https://image.tmdb.org/t/p/w500//ngNCHBZgNdbGisLbi1hImGh2SHl.jpg",
+        "link": "/card/movies/800-564/Chelovek-pauk-3.html",
+        "year": "2007",
+        "rating": "6.4", "tmdb_id": 559
+    },
+    {
+        "name": "Человек-паук 2",
+        "image": "https://image.tmdb.org/t/p/w500//u5Bubt34sFD67YZPlD593yGvqmp.jpg",
+        "link": "/card/movies/800-563/Chelovek-pauk-2.html",
+        "year": "2004",
+        "rating": "7.3", "tmdb_id": 558
+    },
+    {
+        "name": "Человек-паук",
+        "image": "https://image.tmdb.org/t/p/w500//tCZrHq6CMgtiMbelgnroyVWF5uV.jpg",
+        "link": "/card/movies/800-562/Chelovek-pauk.html",
+        "year": "2002",
+        "rating": "7.2", "tmdb_id": 557
     },
     {
         "name": "Невероятный Халк",
