@@ -2080,11 +2080,267 @@ var data = [
         "type": "movie"
     },
     {
+        "name": "Крэйвен-охотник",
+        "image": "https://image.tmdb.org/t/p/w500//Z5PxAP12g2X14YpZA9TlvggF2R.jpg",
+        "link": "/card/movies/800-601/Krejven-ohotnik.html",
+        "year": "2024",
+        "rating": "6.5",
+        "type": "movie"
+    },
+     {
+        "name": "Мадам Паутина",
+        "image": "https://image.tmdb.org/t/p/w500//8eyCtvA0hqoagcfjsieTrBecQbq.jpg",
+        "link": "/card/movies/800-600/Madam-Pautina.html",
+        "year": "2024",
+        "rating": "5.3",
+        "type": "movie"
+    },
+    {
+        "name": "Морбиус",
+        "image": "https://image.tmdb.org/t/p/w500//887tIQVg619TdJVnlQfqPmk8Na6.jpg",
+        "link": "/card/movies/800-599/Morbius.html",
+        "year": "2022",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "Шан-Чи и Легенда Десяти Колец",
+        "image": "https://image.tmdb.org/t/p/w500//rXvU6SZOGyUzy9ZHJNlVMw0OeUR.jpg",
+        "link": "/card/movies/800-598/Shan-Chi-i-Legenda-Desyati-Kolec.html",
+        "year": "2021",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Чёрная вдова",
+        "image": "https://image.tmdb.org/t/p/w500//mbtN6V6y5kdawvAkzqN4ohi576a.jpg",
+        "link": "/card/movies/800-597/Chyornaya-vdova.html",
+        "year": "2021",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Вечные",
+        "image": "https://image.tmdb.org/t/p/w500//r174t1SLtGamhPx3Wwj6f6YSyAi.jpg",
+        "link": "/card/movies/800-596/Vechnye.html",
+        "year": "2021",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Веном: Последний танец",
+        "image": "https://image.tmdb.org/t/p/w500//YFcQ65dRrLpUpMiMFrrRV6rkEs.jpg",
+        "link": "/card/movies/800-595/Venom-Poslednij-tanec.html",
+        "year": "2024",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Веном 2",
+        "image": "https://image.tmdb.org/t/p/w500//pZe4xYwDkmxhf3oA8DNEihOW4pW.jpg",
+        "link": "/card/movies/800-594/Venom-2.html",
+        "year": "2021",
+        "rating": "6.8",
+        "type": "movie"
+    },
+     {
+        "name": "Веном",
+        "image": "https://image.tmdb.org/t/p/w500//8Gyl0fknqiZeCLm9XitxCXQmEL9.jpg",
+        "link": "/card/movies/800-593/Venom.html",
+        "year": "2018",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Капитан Марвел 2",
+        "image": "https://image.tmdb.org/t/p/w500//kcLRcsEX3GEDZb8kelhwdSYB3Yj.jpg",
+        "link": "/card/movies/800-592/Kapitan-Marvel-2.html",
+        "year": "2023",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "Капитан Марвел",
+        "image": "https://image.tmdb.org/t/p/w500//khIspz4hW7RyEJag16UKYxI9fuP.jpg",
+        "link": "/card/movies/800-591/Kapitan-Marvel.html",
+        "year": "2019",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Черная пантера: Ваканда навеки",
+        "image": "https://image.tmdb.org/t/p/w500//i27h6Xru52Piif1V5ZZA0ZXlck1.jpg",
+        "link": "/card/movies/800-590/Chernaya-pantera-Vakanda-naveki.html",
+        "year": "2022",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Чёрная Пантера",
+        "image": "https://image.tmdb.org/t/p/w500//ndpwgAANbZSMwgTcxmQ7o4SKDsd.jpg",
+        "link": "/card/movies/800-589/Chyornaya-Pantera.html",
+        "year": "2018",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Доктор Стрэндж: В мультивселенной безумия",
+        "image": "https://image.tmdb.org/t/p/w500//sfeDNbQgEgzgM81cbPnRss6Acs4.jpg",
+        "link": "/card/movies/800-588/Doktor-Strendzh-V-multivselennoj-bezumiya.html",
+        "year": "2022",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Доктор Стрэндж",
+        "image": "https://image.tmdb.org/t/p/w500//fR4oifDjoGFAyhWyPUl3h9H1xpQ.jpg",
+        "link": "/card/movies/800-587/Doktor-Strendzh.html",
+        "year": "2016",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Человек-муравей и Оса: Квантомания",
+        "image": "https://image.tmdb.org/t/p/w500//8BoKsen8orEAiFWCmQkwmONjuTX.jpg",
+        "link": "/card/movies/800-586/Chelovek-muravej-i-Osa-Kvantomaniya.html",
+        "year": "2023",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Человек-муравей и Оса",
+        "image": "https://image.tmdb.org/t/p/w500//5r85N1iOnHFoWkyC0EeOw9aEqOW.jpg",
+        "link": "/card/movies/800-585/Chelovek-muravej-i-Osa.html",
+        "year": "2018",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Человек-муравей ",
+        "image": "https://image.tmdb.org/t/p/w500//9cMJSp2LVSzmPzMWPHIHpeBfECr.jpg",
+        "link": "/card/movies/800-584/Chelovek-muravej.html",
+        "year": "2015",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Стражи Галактики. Часть 3",
+        "image": "https://image.tmdb.org/t/p/w500//5rHLzqZvw85tnhy8qpnAsN8Q7xO.jpg",
+        "link": "/card/movies/800-153/Strazhi-Galaktiki-Chast-3.html",
+        "year": "2023",
+        "rating": "7.9",
+        "type": "movie"
+    },
+    {
+        "name": "Стражи Галактики. Часть 2",
+        "image": "https://image.tmdb.org/t/p/w500//miAFwzWPkv7l8VPwgH2sV5oQQKx.jpg",
+        "link": "/card/movies/800-154/Strazhi-Galaktiki-Chast-2.html",
+        "year": "2017",
+        "rating": "7.6",
+        "type": "movie"
+    },
+    {
+        "name": "Стражи Галактики",
+        "image": "https://image.tmdb.org/t/p/w500//s8jpilArz8J5X07O4IB7ahMwgQP.jpg",
+        "link": "/card/movies/800-14/Strazhi-Galaktiki.html",
+        "year": "2014",
+        "rating": "7.9",
+        "type": "movie"
+    },
+    {
+        "name": "Мстители: Финал",
+        "image": "https://image.tmdb.org/t/p/w500//dzAtuccZlvtcussbdZxpF4dkrB5.jpg",
+        "link": "/card/movies/800-583/Mstiteli-Final.html",
+        "year": "2019",
+        "rating": "8.2",
+        "type": "movie"
+    },
+    {
+        "name": "Мстители: Война бесконечности",
+        "image": "https://image.tmdb.org/t/p/w500//c6RSGB6O0RaaHG3JGLq8lnUJSBC.jpg",
+        "link": "/card/movies/800-582/Mstiteli-Vojna-beskonechnosti.html",
+        "year": "2018",
+        "rating": "8.2",
+        "type": "movie"
+    },
+    {
+        "name": "Мстители: Эра Альтрона",
+        "image": "https://image.tmdb.org/t/p/w500//6rANrpZe3g2PPeF1m3lQUK1ovpW.jpg",
+        "link": "/card/movies/800-581/Mstiteli-Era-Altrona.html",
+        "year": "2015",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Мстители",
+        "image": "https://image.tmdb.org/t/p/w500//7SCa2Uw4sdTkn7mGMAhq0AkSC6Y.jpg",
+        "link": "/card/movies/800-580/Mstiteli.html",
+        "year": "2012",
+        "rating": "7.8",
+        "type": "movie"
+    },
+    {
+        "name": "Тор: Любовь и гром",
+        "image": "https://image.tmdb.org/t/p/w500//xWA0Av3mO7uH2bqGU7QMfckY9si.jpg",
+        "link": "/card/movies/800-579/Tor-Lyubov-i-grom.html",
+        "year": "2022",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Тор: Рагнарёк",
+        "image": "https://image.tmdb.org/t/p/w500//7pzUsnFD4T8Syeqaojcb9zheR3H.jpg",
+        "link": "/card/movies/800-578/Tor-Ragnaryok.html",
+        "year": "2017",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Тор 2: Царство тьмы",
+        "image": "https://image.tmdb.org/t/p/w500//rmII9fsUpfRmuNBhzHtarBOtHnQ.jpg",
+        "link": "/card/movies/800-577/Tor-2-Carstvo-tmy.html",
+        "year": "2013",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Тор",
+        "image": "https://image.tmdb.org/t/p/w500//i27DaxmuTzKZ8jgs7eoKQ8E03ny.jpg",
+        "link": "/card/movies/800-576/Tor.html",
+        "year": "2011",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
         "name": "Капитан Америка: Новый Мир",
         "image": "https://image.tmdb.org/t/p/w500//bljRQO5fTGen0qRV7KuPRXIdRGx.jpg",
         "link": "/card/movies/800-250/Kapitan-Amerika-Novyj-Mir.html",
         "year": "2025",
         "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Первый мститель: Противостояние",
+        "image": "https://image.tmdb.org/t/p/w500//7TWq9G7zU0lLG7WpMK6f5EQwwf2.jpg",
+        "link": "/card/movies/800-575/Pervyj-mstitel-Protivostoyanie.html",
+        "year": "2016",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Первый мститель: Другая война",
+        "image": "https://image.tmdb.org/t/p/w500//oOmp3YMBnJMa0yDHCbhTcWG4iTm.jpg",
+        "link": "/card/movies/800-574/Pervyj-mstitel-Drugaya-vojna.html",
+        "year": "2014",
+        "rating": "7.7",
+        "type": "movie"
+    },
+    {
+        "name": "Первый мститель",
+        "image": "https://image.tmdb.org/t/p/w500//slr5pTsDIJS9oCfBEBTCYNiq6xs.jpg",
+        "link": "/card/movies/800-573/Pervyj-mstitel.html",
+        "year": "2011",
+        "rating": "7.0",
         "type": "movie"
     },
     {
@@ -2161,7 +2417,7 @@ var data = [
     },
     {
         "name": "Новый Человек-паук: Высокое напряжение",
-        "image": "https://image.tmdb.org/t/p/w500//1uxtVgcQHUgD3vBOC56hioofnmU.jpg",
+        "image": "https://image.tmdb.org/t/p/original/ga2TLjl45vSSBr3Sky0HANmbHkJ.jpg",
         "link": "/card/movies/800-566/Novyj-Chelovek-pauk-Vysokoe-napryazhenie.html",
         "year": "2014",
         "rating": "6.5",
@@ -3902,30 +4158,6 @@ var data = [
         "link": "/card/movies/800-150/Missiya-nevypolnima.html",
         "year": "1996",
         "rating": "7.0",
-        "type": "movie"
-    },
-    {
-        "name": "Стражи Галактики. Часть 3",
-        "image": "https://image.tmdb.org/t/p/w500//5rHLzqZvw85tnhy8qpnAsN8Q7xO.jpg",
-        "link": "/card/movies/800-153/Strazhi-Galaktiki-Chast-3.html",
-        "year": "2023",
-        "rating": "7.9",
-        "type": "movie"
-    },
-    {
-        "name": "Стражи Галактики. Часть 2",
-        "image": "https://image.tmdb.org/t/p/w500//miAFwzWPkv7l8VPwgH2sV5oQQKx.jpg",
-        "link": "/card/movies/800-154/Strazhi-Galaktiki-Chast-2.html",
-        "year": "2017",
-        "rating": "7.6",
-        "type": "movie"
-    },
-    {
-        "name": "Стражи Галактики",
-        "image": "https://image.tmdb.org/t/p/w500//s8jpilArz8J5X07O4IB7ahMwgQP.jpg",
-        "link": "/card/movies/800-14/Strazhi-Galaktiki.html",
-        "year": "2014",
-        "rating": "7.9",
         "type": "movie"
     },
     {
