@@ -4,6 +4,83 @@
 // Аниме массив
 window.movies = [
     {
+        "name": "Парни со стволами",
+        "image": "https://image.tmdb.org/t/p/w500//oQx4coN5PS145NgGPtvNSHCO6TF.jpg",
+        "link": "/card/movies/800-625/Parni-so-stvolami.html",
+        "year": "2016",
+        "rating": "6.9", "tmdb_id": 308266
+    },
+    {
+        "name": "Телепорт",
+        "image": "https://image.tmdb.org/t/p/w500//uCuhUKLF7K9uk6ItSxX2YsR8Ohp.jpg",
+        "link": "/card/movies/800-624/Teleport.html",
+        "year": "2008",
+        "rating": "6.2", "tmdb_id": 8247
+    },
+    {
+        "name": "Мидуэй",
+        "image": "https://image.tmdb.org/t/p/w500//fH81XyGK9fNrsqBxkPPPkpGafX1.jpg",
+        "link": "/card/movies/800-623/Miduej.html",
+        "year": "2019",
+        "rating": "7.1", "tmdb_id": 522162
+    },
+    {
+        "name": "Интервью",
+        "image": "https://image.tmdb.org/t/p/original/tIDC4xT65l7a8qbgg8GvwD5g8c5.jpg",
+        "link": "/card/movies/800-622/Intervyu.html",
+        "year": "2014",
+        "rating": "6.2", "tmdb_id": 228967
+    },
+    {
+        "name": "Рождённый стать королём",
+        "image": "https://image.tmdb.org/t/p/w500//cCNwz7xH5V4cDZsMa9DikucrjZ9.jpg",
+        "link": "/card/movies/800-621/Rozhdyonnyj-stat-korolyom.html",
+        "year": "2019",
+        "rating": "6.2", "tmdb_id": 454294
+    },
+    {
+        "name": "Грязь",
+        "image": "https://image.tmdb.org/t/p/w500//hikJQzjhgcQpGIQ18c0AXjDEdF4.jpg",
+        "link": "/card/movies/800-620/Gryaz.html",
+        "year": "2013",
+        "rating": "6.8", "tmdb_id": 85889
+    },
+    {
+        "name": "Война миров",
+        "image": "https://image.tmdb.org/t/p/w500//4qWDN2ZjegcLF4I04GVvkNuN33H.jpg",
+        "link": "/card/movies/800-619/Vojna-mirov.html",
+        "year": "2005",
+        "rating": "6.5", "tmdb_id": 74
+    },
+    {
+        "name": "Отчаянные мстители",
+        "image": "https://image.tmdb.org/t/p/w500//3E2RnWFNDbAeYuy4D9Yf6pxLiR.jpg",
+        "link": "/card/movies/800-618/Otchayannye-mstiteli.html",
+        "year": "2021",
+        "rating": "7.3", "tmdb_id": 571468
+    },
+    {
+        "name": "Послезавтра",
+        "image": "https://image.tmdb.org/t/p/w500//kJoflQrJ6KdMZ8B1Rw1uCDkHmE3.jpg",
+        "link": "/card/movies/800-617/Poslezavtra.html",
+        "year": "2004",
+        "rating": "6.5", "tmdb_id": 435
+    },
+    {
+        "name": "Особо опасен",
+        "image": "https://image.tmdb.org/t/p/w500//vfajgD7PNcVwksoG6vItv4qIPDS.jpg",
+        "link": "/card/movies/800-616/Osobo-opasen.html",
+        "year": "2008",
+        "rating": "6.5", "tmdb_id": 307081
+    },
+    {
+        "name": "Левша",
+        "image": "https://image.tmdb.org/t/p/original/apbHyCSH0BMEfsebCbaqVWVcfFj.jpg",
+        "link": "/card/movies/800-615/Levsha.html",
+        "year": "2015",
+        "rating": "7.4", "tmdb_id": 307081
+    },
+    {
         "name": "Убийцы цветочной луны",
         "image": "https://image.tmdb.org/t/p/w500//dc06PiS7uRAonQwrxKAnDvORZgC.jpg",
         "link": "/card/movies/800-571/Ubijcy-cvetochnoj-luny.html",
@@ -1456,6 +1533,34 @@ window.movies = [
         "year": "2022",
         "rating": "5.0", "tmdb_id": 829165
     },
+      {
+        "name": "Плохие парни до Конца",
+        "image": "https://image.tmdb.org/t/p/w500//1d44Y7WsS6WTzVDmS0sJyzJNb2N.jpg",
+        "link": "/card/movies/800-614/Plohie-parni-do-Konca.html",
+        "year": "2024",
+        "rating": "7.4", "tmdb_id": 573435
+    },
+     {
+        "name": "Плохие парни навсегда",
+        "image": "https://image.tmdb.org/t/p/w500//7vyOB2wWvyild4ETMrW7EZOaWZx.jpg",
+        "link": "/card/movies/800-613/Plohie-parni-navsegda.html",
+        "year": "2020",
+        "rating": "7.1", "tmdb_id": 38700
+    },
+    {
+        "name": "Плохие парни 2",
+        "image": "https://image.tmdb.org/t/p/w500//ibecBkmYHk2ygVkSJjGPsTeBrak.jpg",
+        "link": "/card/movies/800-612/Plohie-parni-2.html",
+        "year": "2003",
+        "rating": "6.7", "tmdb_id": 8961
+    },
+    {
+        "name": "Плохие парни",
+        "image": "https://image.tmdb.org/t/p/w500//5tQUDEku5vY1aB6jFaOsAwjkzUL.jpg",
+        "link": "/card/movies/800-611/Plohie-parni.html",
+        "year": "1995",
+        "rating": "6.8", "tmdb_id": 9737
+    },
     {
         "name": "Диктатор",
         "image": "https://image.tmdb.org/t/p/w500//zfBGrRcTIocjWXrwdUfWmfCAeez.jpg",
@@ -1490,6 +1595,69 @@ window.movies = [
         "link": "/card/movies/800-331/Vojna-tokov.html",
         "year": "2018",
         "rating": "6.7", "tmdb_id": 418879
+    },
+    {
+        "name": "007: Не время умирать",
+        "image": "https://image.tmdb.org/t/p/w500//9tVXdsT12YhwOPpmrIYzU9m1dQ6.jpg",
+        "link": "/card/movies/800-610/007-Ne-vremya-umirat.html",
+        "year": "2021",
+        "rating": "7.4", "tmdb_id": 370172
+    },
+    {
+        "name": "007: Спектр",
+        "image": "https://image.tmdb.org/t/p/w500//kNwjQ4slojsrgkA84PtlRnz6u9j.jpg",
+        "link": "/card/movies/800-609/007-Spektr.html",
+        "year": "2015",
+        "rating": "6.6", "tmdb_id": 206647
+    },
+     {
+        "name": "007: Координаты «Скайфолл»",
+        "image": "https://image.tmdb.org/t/p/w500//3okWlsWLJyftpaTEzPFO015aBl.jpg",
+        "link": "/card/movies/800-608/007-Koordinaty-Skajfoll.html",
+        "year": "2012",
+        "rating": "7.3", "tmdb_id": 37724
+    },
+     {
+        "name": "007: Квант милосердия",
+        "image": "https://image.tmdb.org/t/p/w500//noZH5UK5Kv884iGXRGpXlNXjxQh.jpg",
+        "link": "/card/movies/800-607/007-Kvant-miloserdiya.html",
+        "year": "2008",
+        "rating": "6.3", "tmdb_id": 10764
+    },
+        {
+        "name": "007: Казино Рояль",
+        "image": "https://image.tmdb.org/t/p/w500//kGLOLum7xU95spakBEfxCjEfNn0.jpg",
+        "link": "/card/movies/800-606/007-Kazino-Royal.html",
+        "year": "2006",
+        "rating": "7.6", "tmdb_id": 36557
+    },
+        {
+        "name": "007: Умри, но не сейчас",
+        "image": "https://image.tmdb.org/t/p/w500//hG4ecMxOkM9UTx6GC9HjPvBlNF2.jpg",
+        "link": "/card/movies/800-605/007-Umri-no-ne-sejchas.html",
+        "year": "2002",
+        "rating": "6.0", "tmdb_id": 36669
+    },
+        {
+        "name": "007: И целого мира мало",
+        "image": "https://image.tmdb.org/t/p/w500//8jzAtsouYXTopHYl3MvOy6fKF8R.jpg",
+        "link": "/card/movies/800-604/007-I-celogo-mira-malo.html",
+        "year": "1999",
+        "rating": "6.3", "tmdb_id": 36643
+    },
+      {
+        "name": "007: Завтра не умрёт никогда",
+        "image": "https://image.tmdb.org/t/p/w500//rg3RCK6xWnBwYAjPS89PjWcMpQq.jpg",
+        "link": "/card/movies/800-603/007-Zavtra-ne-umryot-nikogda.html",
+        "year": "1997",
+        "rating": "6.4", "tmdb_id": 714
+    },
+    {
+        "name": "007: Золотой Глаз",
+        "image": "https://image.tmdb.org/t/p/w500//h5FGvFKwr3Za2T5CkVgeUbiVejh.jpg",
+        "link": "/card/movies/800-602/007-Zolotoj-Glaz.html",
+        "year": "1995",
+        "rating": "6.9", "tmdb_id": 710
     },
     {
         "name": "Отец-молодец",

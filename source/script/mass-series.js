@@ -4,6 +4,15 @@
 // Аниме массив
 window.series = [
     {
+        "name": "007: Дорога к миллиону",
+        "image": "https://image.tmdb.org/t/p/w500//1BLcU0pKEIqObovHwcuOVEUoYS3.jpg",
+        "link": "/card/series/900-109/007-Doroga-k-millionu.html",
+        "year": "2023",
+        "rating": "7.2",
+        "tmdb_id": 234455,
+        "isTV": true
+    },
+    {
         "name": "Годы",
         "image": "https://image.tmdb.org/t/p/w500//7cZRJfSvgSh1PJATnInCYIz2025.jpg",
         "link": "/card/series/900-108/Gody.html",
