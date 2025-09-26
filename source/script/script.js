@@ -2,7 +2,7 @@ var data = [
     // Фильмы
     {
         "name": "Гемини",
-        "image": "https://image.tmdb.org/t/p/w500//675Byk1w1KV0k0G0Vg57iM2T1ya.jpg",
+        "image": "https://image.tmdb.org/t/p/original/jd8miNNIhandkdOYk5CuuXxDcBD.jpg",
         "link": "/card/movies/800-628/Gemini.html",
         "year": "2019",
         "rating": "6.3",
