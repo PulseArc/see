@@ -4,6 +4,13 @@
 // Аниме массив
 window.movies = [
     {
+        "name": "Гемини",
+        "image": "https://image.tmdb.org/t/p/w500//675Byk1w1KV0k0G0Vg57iM2T1ya.jpg",
+        "link": "/card/movies/800-628/Gemini.html",
+        "year": "2019",
+        "rating": "6.3", "tmdb_id": 453405
+    },
+    {
         "name": "Парни со стволами",
         "image": "https://image.tmdb.org/t/p/w500//oQx4coN5PS145NgGPtvNSHCO6TF.jpg",
         "link": "/card/movies/800-625/Parni-so-stvolami.html",
@@ -1065,6 +1072,27 @@ window.movies = [
         "rating": "6.9", "tmdb_id": 1299537
     },
     {
+        "name": "Соник 3 в Кино",
+        "image": "https://image.tmdb.org/t/p/w500//sj8AqCcpfdILdP5fhFVJLdx2NfF.jpg",
+        "link": "/card/movies/800-631/Sonik-3-v-Kino.html",
+        "year": "2024",
+        "rating": "7.7", "tmdb_id": 939243
+    },
+    {
+        "name": "Соник 2 в Кино",
+        "image": "https://image.tmdb.org/t/p/w500//6gi3bF0Qymv6Ja4FYIInLxa4xDU.jpg",
+        "link": "/card/movies/800-630/Sonik-2-v-Kino.html",
+        "year": "2022",
+        "rating": "7.5", "tmdb_id": 675353
+    },
+    {
+        "name": "Соник в Кино",
+        "image": "https://image.tmdb.org/t/p/w500//5VkEgD5YIJye87E1xX6NQ5BVaTc.jpg",
+        "link": "/card/movies/800-629/Sonik-v-Kino.html",
+        "year": "2020",
+        "rating": "7.3", "tmdb_id": 454626
+    },
+    {
         "name": "Великая стена",
         "image": "https://image.tmdb.org/t/p/w500//cMFaJHTdwkaZebGeLoIQxKFR5KN.jpg",
         "link": "/card/movies/800-273/Velikaya-stena.html",
@@ -1406,6 +1434,27 @@ window.movies = [
         "link": "/card/movies/800-308/Otel-Grand-Budapesht.html",
         "year": "2014",
         "rating": "8.0", "tmdb_id": 120467
+    },
+    {
+        "name": "Космический Джем: Новое Поколение",
+        "image": "https://image.tmdb.org/t/p/w500//jp03RHaZqd264DZBqLfooPDnlBE.jpg",
+        "link": "/card/movies/800-633/Kosmicheskij-Dzhem-Novoe-Pokolenie.html",
+        "year": "2021",
+        "rating": "6.7", "tmdb_id":379686
+    },
+    {
+        "name": "Луни Тюнз: Снова в Деле",
+        "image": "https://image.tmdb.org/t/p/w500//8lW0PYX6XL4GMgLHNHvcBhsY1ga.jpg",
+        "link": "/card/movies/800-634/Luni-Tyunz-Snova-v-Dele.html",
+        "year": "2003",
+        "rating": "6.3", "tmdb_id": 10715
+    },
+    {
+        "name": "Космический Джем",
+        "image": "https://image.tmdb.org/t/p/w500//u9m8iPeXPaGzpLBJU9rJh6uYkHz.jpg",
+        "link": "/card/movies/800-632/Kosmicheskij-Dzhem.html",
+        "year": "1996",
+        "rating": "6.8", "tmdb_id": 2300
     },
     {
         "name": "Шафер напрокат",
@@ -2339,6 +2388,13 @@ window.movies = [
         "rating": "6.1", "tmdb_id": 115782
     },
     {
+        "name": "Военнопленный",
+        "image": "https://image.tmdb.org/t/p/w500//qwxU3i186IwqIMJdI7gXl6eknkK.jpg",
+        "link": "/card/movies/800-627/Voennoplennyj.html",
+        "year": "2025",
+        "rating": "6.5", "tmdb_id": 1328803
+    },
+    {
         "name": "Скотт Пилигрим против всех",
         "image": "https://image.tmdb.org/t/p/w500//bLJEFAh6tILVS1PS5mCRlA9HVsR.jpg",
         "link": "/card/movies/800-44/Skott-Piligrim-protiv-vseh.html",
@@ -2365,6 +2421,13 @@ window.movies = [
         "link": "/card/movies/800-48/Spisok-Shindlera.html",
         "year": "1993",
         "rating": "8.6", "tmdb_id": 424
+    },
+    {
+        "name": "Мир в огне",
+        "image": "https://image.tmdb.org/t/p/w500//xBWKgEDlXGrFAvjVzCUcPmw8kHk.jpg",
+        "link": "/card/movies/800-626/Mir-v-ogne.html",
+        "year": "2025",
+        "rating": "4.6", "tmdb_id": 507244
     },
     {
         "name": "5-я волна",
