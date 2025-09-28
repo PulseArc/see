@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 const KIDS_CERTIFICATIONS = new Set(['0+', '6+', 'G', 'TV-G', 'PG', 'PG-13', '12+']);
 const ADULT_CERTIFICATIONS = new Set(['16+', '18+', 'R', 'NC-17', 'TV-MA', 'UNRATED']);
 const HIGH_RATING_THRESHOLD = 7.0;
-const FAST_CANDIDATE_LIMIT = 500; 
+const FAST_CANDIDATE_LIMIT = 500; // ОГРАНИЧЕНИЕ: Обрабатываем не более 500 кандидатов
 
 const CERTIFICATION_MAP = {
     '0+': 0, 'G': 0, 'TV-G': 0,
@@ -546,6 +546,12 @@ async function generateCards(localCardData) {
         displayFallbackCards(localCardData, cardContainer);
         return;
     }
+
+    // 🎯 НОВЫЕ КЛЮЧИ: Определяем все ключи франшизы до обогащения
+    // 1. Ключ Base Title (всегда используется как запасной)
+    const originalBaseTitleKey = getFranchiseKey({ name: currentMovie.name, collection_id: null }); 
+    // 2. Ключ Collection ID (если он есть в исходных данных)
+    const originalCollectionKey = currentMovie.collection_id ? getFranchiseKey(currentMovie) : null;
     
     // --- 4. Быстрая фильтрация для создания подмножества кандидатов (моментально) ---
     const HIGH_PRIORITY_CANDIDATES_LIMIT = FAST_CANDIDATE_LIMIT;
@@ -557,9 +563,13 @@ async function generateCards(localCardData) {
     processedCandidates.add(currentMovie.tmdb_id);
 
     // B. Фильмы той же франшизы
-    const originalFranchiseKey = getFranchiseKey(currentMovie); 
+    // Используем оба ключа для максимально широкого охвата
     const franchiseCandidates = localCardData.filter(c => 
-        getFranchiseKey(c) === originalFranchiseKey && c.tmdb_id !== currentMovie.tmdb_id
+        c.tmdb_id !== currentMovie.tmdb_id && 
+        (
+            getFranchiseKey(c) === originalBaseTitleKey || // Совпадение по Base Title (запасной вариант)
+            (originalCollectionKey && getFranchiseKey(c) === originalCollectionKey) // Совпадение по Collection ID (если есть)
+        )
     );
     
     franchiseCandidates.slice(0, 200).forEach(c => { 
@@ -574,8 +584,8 @@ async function generateCards(localCardData) {
     const highRatedCandidates = localCardData.filter(c => 
         !processedCandidates.has(c.tmdb_id) && 
         getRating(c) >= HIGH_RATING_THRESHOLD && 
-        getFranchiseKey(c) !== originalFranchiseKey 
-    ).sort((a, b) => getRating(b) - getRating(a));
+        (originalCollectionKey ? getFranchiseKey(c) !== originalCollectionKey : getFranchiseKey(c) !== originalBaseTitleKey)
+    ); 
 
     highRatedCandidates.slice(0, neededHighRated).forEach(c => {
         if (!processedCandidates.has(c.tmdb_id)) {
@@ -585,7 +595,7 @@ async function generateCards(localCardData) {
     });
 
     // D. Случайная выборка
-    const neededRandom = HIGH_PRIORITY_CANDIDATES_LIMIT - candidateSubset.length;
+    const neededRandom = HIGH_PRIORITY_CANDIDATES_LIMIT - candidateSubset.length; 
     if (neededRandom > 0) {
         const remainingCards = shuffleArray(localCardData.filter(c => !processedCandidates.has(c.tmdb_id)));
         remainingCards.slice(0, neededRandom).forEach(c => {
@@ -603,7 +613,7 @@ async function generateCards(localCardData) {
 
     // 6. Обновляем текущий фильм обогащенными данными (если есть в кэше)
     currentMovie = cachedSubset.find(c => c.tmdb_id === currentMovie.tmdb_id) || currentMovie;
-    
+    // Получаем ключ на основе обогащенного фильма (вероятно collection_ID)
     const enrichedFranchiseKey = getFranchiseKey(currentMovie); 
     
     // --- 7. Генерация рекомендаций с использованием только КЭШИРОВАННОГО подмножества ---
@@ -632,9 +642,15 @@ async function generateCards(localCardData) {
     addedTmdb.add(currentMovie.tmdb_id);
     
     // 1. Добавляем весь контент из основной франшизы
-    const mainFranchiseCandidates = cachedSubset.filter(c =>
-        c.tmdb_id !== currentMovie.tmdb_id && getFranchiseKey(c) === enrichedFranchiseKey
-    );
+    const mainFranchiseCandidates = cachedSubset.filter(c => {
+        if (c.tmdb_id === currentMovie.tmdb_id) return false;
+        const candidateKey = getFranchiseKey(c);
+        
+        // 🎯 ИСПРАВЛЕНИЕ #2: Проверяем по всем возможным ключам франшизы текущего фильма
+        return candidateKey === originalBaseTitleKey ||
+               (enrichedFranchiseKey && candidateKey === enrichedFranchiseKey) ||
+               (originalCollectionKey && candidateKey === originalCollectionKey);
+    });
 
     mainFranchiseCandidates.sort((a, b) => (parseInt(b.year) || 0) - (parseInt(a.year) || 0));
     for (const card of mainFranchiseCandidates) {
@@ -645,6 +661,13 @@ async function generateCards(localCardData) {
         }
     }
     
+    // Добавляем все три ключа в список исключений для Шага 2
+    if (originalBaseTitleKey) {
+        addedFranchiseKeys.add(originalBaseTitleKey);
+    }
+    if (originalCollectionKey) {
+        addedFranchiseKeys.add(originalCollectionKey);
+    }
     if (enrichedFranchiseKey) {
         addedFranchiseKeys.add(enrichedFranchiseKey);
     }
@@ -655,6 +678,7 @@ async function generateCards(localCardData) {
         .filter(c => !addedTmdb.has(c.tmdb_id) && !recentShown.includes(c.tmdb_id))
         .forEach(card => {
             const key = getFranchiseKey(card);
+            // Пропускаем фильмы, принадлежащие к основной франшизе, используя все ее ключи
             if (addedFranchiseKeys.has(key)) return; 
 
             if (!otherCandidatesByGroup.has(key)) {
@@ -686,13 +710,15 @@ async function generateCards(localCardData) {
         }
     }
 
-    // 5. Заполняем высокорейтинговыми фильмами
+    // 5. Заполняем СЛУЧАЙНЫМИ высокорейтинговыми фильмами
     if (recommendations.length < MAX_CARDS) {
         const highRatedFillers = cachedSubset
-            .filter(c => !addedTmdb.has(c.tmdb_id) && !recentShown.includes(c.tmdb_id) && !addedFranchiseKeys.has(getFranchiseKey(c)) && getRating(c) >= HIGH_RATING_THRESHOLD)
-            .sort((a, b) => getRating(b) - getRating(a));
+            .filter(c => !addedTmdb.has(c.tmdb_id) && !recentShown.includes(c.tmdb_id) && !addedFranchiseKeys.has(getFranchiseKey(c)) && getRating(c) >= HIGH_RATING_THRESHOLD);
+            
+        // Перемешиваем список для случайного выбора
+        const shuffledHighRatedFillers = shuffleArray(highRatedFillers); 
 
-        for (const card of highRatedFillers) {
+        for (const card of shuffledHighRatedFillers) {
             if (recommendations.length >= MAX_CARDS) break;
             recommendations.push({ ...card, reason: 'Высокий рейтинг' });
             addedTmdb.add(card.tmdb_id);
