@@ -26,7 +26,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 const KIDS_CERTIFICATIONS = new Set(['0+', '6+', 'G', 'TV-G', 'PG', 'PG-13', '12+']);
 const ADULT_CERTIFICATIONS = new Set(['16+', '18+', 'R', 'NC-17', 'TV-MA', 'UNRATED']);
 const HIGH_RATING_THRESHOLD = 7.0;
-const FAST_CANDIDATE_LIMIT = 500; // ОГРАНИЧЕНИЕ: Обрабатываем не более 500 кандидатов
+// 💥 Увеличиваем лимит для большей вероятности захвата старых/нерелевантных частей франшизы.
+const FAST_CANDIDATE_LIMIT = 700; 
 
 const CERTIFICATION_MAP = {
     '0+': 0, 'G': 0, 'TV-G': 0,
@@ -37,13 +38,14 @@ const CERTIFICATION_MAP = {
 };
 
 const MIN_GENRE_OVERLAP_RATIO = 0.5;
-const STRONG_KEYWORD_WEIGHT = 160;
-const KEYWORD_WEIGHT = 80;
+// Увеличены веса для агрессивного скоринга киновселенных
+const STRONG_KEYWORD_WEIGHT = 200; 
+const KEYWORD_WEIGHT = 120;        
 const TAGLINE_WEIGHT = 250;
 const RARE_GENRE_WEIGHT = 140;
 const COMMON_GENRE_WEIGHT = 120;
 const OTHER_GENRE_WEIGHT = 200;
-const ACTOR_WEIGHT = 50;
+const ACTOR_WEIGHT = 70;           
 const DIRECTOR_WEIGHT = 100;
 const RATING_CLOSE_BONUS = 50;
 const YEAR_CLOSE_BONUS = 140;
@@ -52,8 +54,10 @@ const MODERATE_RELEVANCE_THRESHOLD = 50;
 
 
 const RARE_GENRES = new Set(['horror', 'horrors', 'ужасы', 'fantasy', 'фэнтези', 'sci-fi', 'sci fi', 'science fiction', 'боевик', 'action', 'thriller', 'thrillers', 'sport', 'спорт', 'war', 'western', 'crime', 'mystery', 'animation', 'documentary', 'biography', 'биография', 'мультфильм']);
-const GENERIC_GENRES = new Set(['drama', 'драма', 'comedy', 'комедия', 'romance', 'романтика', 'family', 'семейный', 'фантастика']);
+const GENERIC_GENRES = new Set(['drama', 'драма', 'комедия', 'romance', 'романтика', 'family', 'семейный', 'фантастика']);
 const STRONG_KEYWORDS = new Set([
+    'marvel cinematic universe', 
+    'dc extended universe',
     'race', 'racing', 'гонки', 'car', 'cars', 'motorsport', 'автогонки',
     'time travel', 'time-loop', 'время', 'временная петля',
     'space', 'космос', 'astronaut', 'alien', 'инопланетянин',
@@ -228,14 +232,14 @@ function saveCacheMap(cacheMap) {
 }
 
 /**
- * Обогащает подмножество данных, используя кэш и Throttler (только для сетевых запросов).
+ * Обогащает подмножество данных, используя кэш и Throttler.
  * @param {Array<object>} dataSubset Данные для обогащения.
  * @param {boolean} onlyCache Если true, не делает сетевых запросов.
  * @param {Map<number, object>} initialCacheMap Текущая карта кэша.
  */
 async function enrichCardDataSubset(dataSubset, onlyCache = false, initialCacheMap = new Map()) {
     let cachedDataMap = new Map(initialCacheMap);
-    tmdbRequestsMade = 0; // Сброс счетчика перед началом
+    tmdbRequestsMade = 0; 
 
     const fetchPromises = dataSubset.map(async (c) => {
         const u = { ...c };
@@ -244,7 +248,7 @@ async function enrichCardDataSubset(dataSubset, onlyCache = false, initialCacheM
             u.isTV = false;
         }
 
-        // 1. Проверяем кэш по TMDB ID (быстрый синхронный шаг)
+        // 1. Проверяем кэш по TMDB ID
         const cachedCard = cachedDataMap.get(u.tmdb_id);
         if (cachedCard && cachedCard.genres) { 
             // Обогащаем текущий объект данными из кэша
@@ -267,7 +271,6 @@ async function enrichCardDataSubset(dataSubset, onlyCache = false, initialCacheM
             let fetchedData = null;
             const mediaType = u.isTV ? 'tv' : 'movie'; 
             
-            // Оборачиваем fetchTmdbData в throttler (блокирует только сам сетевой запрос)
             await throttler(async () => {
                 fetchedData = await fetchTmdbData(u.tmdb_id, mediaType);
             });
@@ -292,7 +295,6 @@ async function enrichCardDataSubset(dataSubset, onlyCache = false, initialCacheM
         return u;
     });
     
-    // Ждём, пока все запросы завершатся (моментально, если onlyCache=true)
     const processedCards = await Promise.all(fetchPromises);
 
     console.log(`TMDB requests made in this session: ${tmdbRequestsMade}`);
@@ -370,7 +372,8 @@ const scoreCard = (card, currentMovieRef) => {
         reasons: ['No reference movie'],
         commonGenres: []
     };
-    if (card.tmdb_id === currentMovieRef.tmdb_id) {
+    // ГАРАНТИРУЕМ ИСКЛЮЧЕНИЕ ТЕКУЩЕГО ФИЛЬМА
+    if (card.tmdb_id === currentMovieRef.tmdb_id) { 
         return { score: -Infinity, reasons: ['Self-reference'], commonGenres: [] };
     }
     if (!ageCompatible(currentMovieRef.certification, card.certification)) {
@@ -439,6 +442,7 @@ const scoreCard = (card, currentMovieRef) => {
     score += genreScore;
     if (genreScore > 0) reasons.push(`Genres match (${genreOverlap.list.join(', ')}): +${genreScore}`);
 
+    // Использование увеличенных весов
     const kwScore = commonKeywordsCount * KEYWORD_WEIGHT + strongKeywordMatches * (STRONG_KEYWORD_WEIGHT - KEYWORD_WEIGHT);
     score += kwScore;
     if (kwScore > 0) reasons.push(`Keywords match: +${kwScore}`);
@@ -447,6 +451,7 @@ const scoreCard = (card, currentMovieRef) => {
         score += DIRECTOR_WEIGHT;
         reasons.push(`Same director (${currentMovieRef.director}): +${DIRECTOR_WEIGHT}`);
     }
+    // Использование увеличенного веса актеров
     if (commonActors > 0) {
         score += commonActors * ACTOR_WEIGHT;
         reasons.push(`Common actors (${commonActors}): +${commonActors * ACTOR_WEIGHT}`);
@@ -548,13 +553,11 @@ async function generateCards(localCardData) {
     }
 
     // 🎯 НОВЫЕ КЛЮЧИ: Определяем все ключи франшизы до обогащения
-    // 1. Ключ Base Title (всегда используется как запасной)
     const originalBaseTitleKey = getFranchiseKey({ name: currentMovie.name, collection_id: null }); 
-    // 2. Ключ Collection ID (если он есть в исходных данных)
     const originalCollectionKey = currentMovie.collection_id ? getFranchiseKey(currentMovie) : null;
     
     // --- 4. Быстрая фильтрация для создания подмножества кандидатов (моментально) ---
-    const HIGH_PRIORITY_CANDIDATES_LIMIT = FAST_CANDIDATE_LIMIT;
+    const HIGH_PRIORITY_CANDIDATES_LIMIT = FAST_CANDIDATE_LIMIT; 
     const processedCandidates = new Set();
     const candidateSubset = [];
 
@@ -563,16 +566,17 @@ async function generateCards(localCardData) {
     processedCandidates.add(currentMovie.tmdb_id);
 
     // B. Фильмы той же франшизы
-    // Используем оба ключа для максимально широкого охвата
     const franchiseCandidates = localCardData.filter(c => 
         c.tmdb_id !== currentMovie.tmdb_id && 
         (
-            getFranchiseKey(c) === originalBaseTitleKey || // Совпадение по Base Title (запасной вариант)
-            (originalCollectionKey && getFranchiseKey(c) === originalCollectionKey) // Совпадение по Collection ID (если есть)
+            // 💥 ИЗМЕНЕНИЕ: Если есть Collection ID, полагаемся только на него, чтобы не отсечь фильмы по Base Title.
+            // Если Collection ID нет, используем Base Title как запасной вариант.
+            (originalCollectionKey && getFranchiseKey(c) === originalCollectionKey) || 
+            (!originalCollectionKey && getFranchiseKey(c) === originalBaseTitleKey)
         )
     );
     
-    franchiseCandidates.slice(0, 200).forEach(c => { 
+    franchiseCandidates.forEach(c => { 
         if (!processedCandidates.has(c.tmdb_id)) { 
             candidateSubset.push(c);
             processedCandidates.add(c.tmdb_id);
@@ -594,7 +598,7 @@ async function generateCards(localCardData) {
         }
     });
 
-    // D. Случайная выборка
+    // D. Случайная выборка (Увеличена за счет FAST_CANDIDATE_LIMIT = 700)
     const neededRandom = HIGH_PRIORITY_CANDIDATES_LIMIT - candidateSubset.length; 
     if (neededRandom > 0) {
         const remainingCards = shuffleArray(localCardData.filter(c => !processedCandidates.has(c.tmdb_id)));
@@ -608,12 +612,11 @@ async function generateCards(localCardData) {
     
     // --- 5. Обогащение только подмножества с помощью КЭША (МОМЕНТАЛЬНЫЙ ШАГ) ---
     const initialCacheMap = loadCacheMap();
-    // onlyCache = true: исключает любые сетевые запросы TMDB
     const cachedSubset = await enrichCardDataSubset(candidateSubset, true, initialCacheMap); 
 
-    // 6. Обновляем текущий фильм обогащенными данными (если есть в кэше)
+    // 6. Обновляем текущий фильм обогащенными данными
     currentMovie = cachedSubset.find(c => c.tmdb_id === currentMovie.tmdb_id) || currentMovie;
-    // Получаем ключ на основе обогащенного фильма (вероятно collection_ID)
+    // 💥 ВАЖНО: Получаем ключ франшизы ЕЩЕ РАЗ, теперь с потенциально обогащенным collection_id
     const enrichedFranchiseKey = getFranchiseKey(currentMovie); 
     
     // --- 7. Генерация рекомендаций с использованием только КЭШИРОВАННОГО подмножества ---
@@ -639,14 +642,19 @@ async function generateCards(localCardData) {
         recentShown = [];
     }
 
+    // Исключаем ID текущего фильма из рекомендаций
     addedTmdb.add(currentMovie.tmdb_id);
     
     // 1. Добавляем весь контент из основной франшизы
+    // Используем все 3 ключа для максимального совпадения
     const mainFranchiseCandidates = cachedSubset.filter(c => {
-        if (c.tmdb_id === currentMovie.tmdb_id) return false;
+        // Условие исключения текущего фильма
+        if (c.tmdb_id === currentMovie.tmdb_id) return false; 
+        
         const candidateKey = getFranchiseKey(c);
         
-        // 🎯 ИСПРАВЛЕНИЕ #2: Проверяем по всем возможным ключам франшизы текущего фильма
+        // Проверяем по всем возможным ключам франшизы текущего фильма
+        // (Оригинальный Base Title, Оригинальный Collection ID, Обогащенный Collection ID)
         return candidateKey === originalBaseTitleKey ||
                (enrichedFranchiseKey && candidateKey === enrichedFranchiseKey) ||
                (originalCollectionKey && candidateKey === originalCollectionKey);
@@ -654,7 +662,6 @@ async function generateCards(localCardData) {
 
     mainFranchiseCandidates.sort((a, b) => (parseInt(b.year) || 0) - (parseInt(a.year) || 0));
     for (const card of mainFranchiseCandidates) {
-        if (recommendations.length >= MAX_CARDS) break;
         if (!addedTmdb.has(card.tmdb_id)) {
             recommendations.push({ ...card, reason: 'Из основной франшизы' }); 
             addedTmdb.add(card.tmdb_id);
@@ -675,16 +682,17 @@ async function generateCards(localCardData) {
     // 2. Группируем весь остальной контент по франшизам и скорим
     const otherCandidatesByGroup = new Map();
     cachedSubset
-        .filter(c => !addedTmdb.has(c.tmdb_id) && !recentShown.includes(c.tmdb_id))
+        // Исключаем текущий и недавно показанные
+        .filter(c => !addedTmdb.has(c.tmdb_id) && !recentShown.includes(c.tmdb_id)) 
         .forEach(card => {
             const key = getFranchiseKey(card);
-            // Пропускаем фильмы, принадлежащие к основной франшизе, используя все ее ключи
+            // Пропускаем фильмы, принадлежащие к основной франшизе
             if (addedFranchiseKeys.has(key)) return; 
 
             if (!otherCandidatesByGroup.has(key)) {
                 otherCandidatesByGroup.set(key, []);
             }
-            // Скоринг работает с кэшированными данными и не блокирует
+            // Скор здесь будет выше за счет увеличенных весов KEYWORD_WEIGHT и ACTOR_WEIGHT
             const scoredCard = { ...card, ...scoreCard(card, currentMovie) };
             otherCandidatesByGroup.get(key).push(scoredCard);
         });
@@ -746,7 +754,6 @@ async function generateCards(localCardData) {
     // --- ФОНОВОЕ ОБНОВЛЕНИЕ КЭША (НЕ БЛОКИРУЕТ UI) ---
     setTimeout(async () => {
         console.log("Starting background TMDB enrichment to update cache...");
-        // onlyCache = false: делает сетевые запросы только для тех, кого нет в кэше
         await enrichCardDataSubset(candidateSubset, false, initialCacheMap);
     }, 50); 
     
