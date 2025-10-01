@@ -4,6 +4,24 @@
 // Аниме массив
 window.series = [
     {
+        "name": "Бункер для богачей",
+        "image": "https://image.tmdb.org/t/p/w500//cc60XSIrEdaDyyTQNUXsgowQXmO.jpg",
+        "link": "/card/series/900-111/Bunker-dlya-bogachej.html",
+        "year": "2025",
+        "rating": "6.4",
+        "tmdb_id": 245648,
+        "isTV": true
+    },
+    {
+        "name": "Однажды в сказке",
+        "image": "https://image.tmdb.org/t/p/w500//hePYKJfIIWjnn8vItaoAmVtsFtp.jpg",
+        "link": "/card/series/900-110/Odnazhdy-v-skazke.html",
+        "year": "2011",
+        "rating": "7.4",
+        "tmdb_id": 39272,
+        "isTV": true
+    },
+    {
         "name": "007: Дорога к миллиону",
         "image": "https://image.tmdb.org/t/p/w500//1BLcU0pKEIqObovHwcuOVEUoYS3.jpg",
         "link": "/card/series/900-109/007-Doroga-k-millionu.html",

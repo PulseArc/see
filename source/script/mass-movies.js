@@ -4,6 +4,20 @@
 // Аниме массив
 window.movies = [
     {
+        "name": "Капитан Филлипс",
+        "image": "https://image.tmdb.org/t/p/w500//kdisFecD6pjMgZ9q0A6cDQfXzHx.jpg",
+        "link": "/card/movies/800-647/Kapitan-Fillips.html",
+        "year": "2013",
+        "rating": "7.5", "tmdb_id": 109424
+    },
+    {
+        "name": "Проклятие Бридж-Холлоу",
+        "image": "https://image.tmdb.org/t/p/w500//zuYbJ6BYADDcuD5RuJyrp2vEpI7.jpg",
+        "link": "/card/movies/800-646/Proklyatie-Bridzh-Hollou.html",
+        "year": "2022",
+        "rating": "6.5", "tmdb_id": 864959
+    },
+    {
         "name": "Гемини",
         "image": "https://image.tmdb.org/t/p/original/jd8miNNIhandkdOYk5CuuXxDcBD.jpg",
         "link": "/card/movies/800-628/Gemini.html",
@@ -1063,6 +1077,13 @@ window.movies = [
         "link": "/card/movies/800-271/Inferno-Gabrielya.html",
         "year": "2020",
         "rating": "8.4", "tmdb_id": 696374
+    },
+    {
+        "name": "Токсичный мститель",
+        "image": "https://image.tmdb.org/t/p/w500//9h9w7mU5f89ueP5TD8z7F4spNf.jpg",
+        "link": "/card/movies/800-635/Toksichnyj-mstitel.html",
+        "year": "2025",
+        "rating": "5.9", "tmdb_id": 338969
     },
     {
         "name": "Миллиардер из трущоб",
@@ -2519,6 +2540,76 @@ window.movies = [
         "link": "/card/movies/800-01/21-Most.html",
         "year": "2019",
         "rating": "6.8", "tmdb_id": 535292
+    },
+    {
+        "name": "Заклятие 4: Последние обряды",
+        "image": "https://image.tmdb.org/t/p/w500//iQQj4WakMzwtLBFuB7fE8wfHLuv.jpg",
+        "link": "/card/movies/800-645/Zaklyatie-4-Poslednie-obryady.html",
+        "year": "2025",
+        "rating": "6.5", "tmdb_id": 1038392
+    },
+    {
+        "name": "Проклятие монахини 2",
+        "image": "https://image.tmdb.org/t/p/w500//rhB3QB2dOG11LyeFXV2WtVBJFPz.jpg",
+        "link": "/card/movies/800-644/Proklyatie-monahini-2.html",
+        "year": "2023",
+        "rating": "6.7", "tmdb_id": 968051
+    },
+    {
+        "name": "Заклятие 3: По воле дьявола",
+        "image": "https://image.tmdb.org/t/p/w500//XKVcCa1rh9Lk3EM1MuiGrb036x.jpg",
+        "link": "/card/movies/800-643/Zaklyatie-3-Po-vole-dyavola.html",
+        "year": "2021",
+        "rating": "7.4", "tmdb_id": 423108
+    },
+    {
+        "name": "Проклятие Аннабель 3",
+        "image": "https://image.tmdb.org/t/p/w500//jLqJCkyepldyxQhp28Kr6zsKcF3.jpg",
+        "link": "/card/movies/800-642/Proklyatie-Annabel-3.html",
+        "year": "2019",
+        "rating": "6.4", "tmdb_id": 521029
+    },
+    {
+        "name": "Проклятие плачущей",
+        "image": "https://image.tmdb.org/t/p/w500//4PAoKDQAKMO94HxjWsonsEPk45Y.jpg",
+        "link": "/card/movies/800-641/Proklyatie-plachushej.html",
+        "year": "2019",
+        "rating": "5.7", "tmdb_id": 480414
+    },
+    {
+        "name": "Проклятие монахини",
+        "image": "https://image.tmdb.org/t/p/w500//rheiph1J5YIAKhXaShVRYZGII8y.jpg",
+        "link": "/card/movies/800-640/Proklyatie-monahini.html",
+        "year": "2018",
+        "rating": "5.9", "tmdb_id": 439079
+    },
+    {
+        "name": "Проклятие Аннабель: Зарождение зла",
+        "image": "https://image.tmdb.org/t/p/w500//5Omlys7hQXOKFDdueBq63roIhVE.jpg",
+        "link": "/card/movies/800-639/Proklyatie-Annabel-Zarozhdenie-zla.html",
+        "year": "2017",
+        "rating": "6.6", "tmdb_id": 396422
+    },
+    {
+        "name": "Заклятие 2",
+        "image": "https://image.tmdb.org/t/p/w500//11CKlGZOnlK1b6afFf1cOcTPmnJ.jpg",
+        "link": "/card/movies/800-638/Zaklyatie-2.html",
+        "year": "2016",
+        "rating": "7.3", "tmdb_id": 259693
+    },
+    {
+        "name": "Проклятие Аннабель",
+        "image": "https://image.tmdb.org/t/p/w500//i12HsW8jXnCoy5IieQEpFLush7O.jpg",
+        "link": "/card/movies/800-637/Proklyatie-Annabel.html",
+        "year": "2014",
+        "rating": "5.8", "tmdb_id": 250546
+    },
+    {
+        "name": "Заклятие",
+        "image": "https://image.tmdb.org/t/p/w500//hAUwLUNfSpeP9bMfznXKm4q4Z3Q.jpg",
+        "link": "/card/movies/800-636/Zaklyatie.html",
+        "year": "2013",
+        "rating": "7.5", "tmdb_id": 138843
     },
     {
         "name": "Эмилия Перес",
