@@ -4,6 +4,20 @@
 // Аниме массив
 window.movies = [
     {
+        "name": "Интервью с Богом",
+        "image": "https://image.tmdb.org/t/p/w500//mjEWYQ1WwxxD6jWOgniGT6Glqeo.jpg",
+        "link": "/card/movies/800-660/Intervyu-s-Bogom.html",
+        "year": "2018",
+        "rating": "7.0", "tmdb_id": 534338
+    },
+    {
+        "name": "#живой",
+        "image": "https://image.tmdb.org/t/p/w500//gYARM0Uh2Ed0awrNigVQVqbBPrz.jpg",
+        "link": "/card/movies/800-659/zhivoj.html",
+        "year": "2020",
+        "rating": "7.2", "tmdb_id": 614696
+    },
+    {
         "name": "Капитан Филлипс",
         "image": "https://image.tmdb.org/t/p/w500//kdisFecD6pjMgZ9q0A6cDQfXzHx.jpg",
         "link": "/card/movies/800-647/Kapitan-Fillips.html",
@@ -4466,6 +4480,83 @@ window.movies = [
         "year": "2011",
         "rating": "7.0", "tmdb_id": 49530
     },
+    {
+        "name": "Хан Соло: Звёздные войны. Истории",
+        "image": "https://image.tmdb.org/t/p/w500//syDObMIKfE6MI5w9DAlofSr0QQl.jpg",
+        "link": "/card/movies/800-658/Han-Solo-Zvyozdnye-vojny-Istorii.html",
+        "year": "2018",
+        "rating": "6.6", "tmdb_id": 348350
+    },
+    {
+        "name": "Изгой-один: Звёздные войны. Истории",
+        "image": "https://image.tmdb.org/t/p/w500//agKGn83Y380RKlakyVEIpTuMoA1.jpg",
+        "link": "/card/movies/800-657/Izgoj-odin-Zvyozdnye-vojny-Istorii.html",
+        "year": "2016",
+        "rating": "7.5", "tmdb_id": 330459
+    },
+    {
+        "name": "Звёздные войны: Эпизод 9 - Скайуокер. Восход",
+        "image": "https://image.tmdb.org/t/p/w500//mCD1ugUVWwa1pOmOACQY8sV7eu9.jpg",
+        "link": "/card/movies/800-656/Zvyozdnye-vojny-Epizod-9-Skajuoker-Voshod.html",
+        "year": "2019",
+        "rating": "6.3", "tmdb_id": 181812
+    },
+    {
+        "name": "Звёздные войны: Эпизод 8 - Последние джедаи",
+        "image": "https://image.tmdb.org/t/p/w500//1vwfcOhwZGLfQXVRLfC3jOnU9jq.jpg",
+        "link": "/card/movies/800-655/Zvyozdnye-vojny-Epizod-8-Poslednie-dzhedai.html",
+        "year": "2017",
+        "rating": "6.8", "tmdb_id": 181808
+    },
+    {
+        "name": "Звёздные войны: Эпизод 7 - Пробуждение силы",
+        "image": "https://image.tmdb.org/t/p/w500//5ltRJxurOTIaMQwcOwSau7l3GME.jpg",
+        "link": "/card/movies/800-654/Zvyozdnye-vojny-Epizod-7-Probuzhdenie-sily.html",
+        "year": "2015",
+        "rating": "7.3", "tmdb_id": 140607
+    },
+    {
+        "name": "Звёздные войны: Эпизод 3 - Месть Ситхов",
+        "image": "https://image.tmdb.org/t/p/w500//lzwn2MMlUybAoV5G2tbjJo6dGeg.jpg",
+        "link": "/card/movies/800-653/Zvyozdnye-vojny-Epizod-3-Mest-Sithov.html",
+        "year": "2005",
+        "rating": "7.5", "tmdb_id": 1895
+    },
+    {
+        "name": "Звёздные войны: Эпизод 2 - Атака клонов",
+        "image": "https://image.tmdb.org/t/p/w500//jGiIdLMD5Y16snttJwUcQSDBXUv.jpg",
+        "link": "/card/movies/800-652/Zvyozdnye-vojny-Epizod-2-Ataka-klonov.html",
+        "year": "2002",
+        "rating": "6.6", "tmdb_id": 1894
+    },
+    {
+        "name": "Звёздные войны: Эпизод 1 - Скрытая угроза",
+        "image": "https://image.tmdb.org/t/p/w500//l1LyrhQwDGur18rxRXKQJQhvx7Y.jpg",
+        "link": "/card/movies/800-651/Zvyozdnye-vojny-Epizod-1-Skrytaya-ugroza.html",
+        "year": "1999",
+        "rating": "6.6", "tmdb_id": 1893
+    }, 
+    {
+        "name": "Звёздные войны: Эпизод 6 - Возвращение Джедая",
+        "image": "https://image.tmdb.org/t/p/w500//91bG08Mpa4T7YWFMjsiNi2Fh6jc.jpg",
+        "link": "/card/movies/800-650/Zvyozdnye-vojny-Epizod-6-Vozvrashenie-Dzhedaya.html",
+        "year": "1983",
+        "rating": "7.9", "tmdb_id": 1892
+    }, 
+    {
+        "name": "Звёздные войны: Эпизод 5 - Империя наносит ответный удар",
+        "image": "https://image.tmdb.org/t/p/w500//nLxzQWcIJAqfOKemHYks1aQKAe8.jpg",
+        "link": "/card/movies/800-649/Zvyozdnye-vojny-Epizod-5-Imperiya-nanosit-otvetnyj-udar.html",
+        "year": "1980",
+        "rating": "8.4", "tmdb_id": 1891
+    }, 
+    {
+        "name": "Звёздные войны: Эпизод 4 - Новая надежда",
+        "image": "https://image.tmdb.org/t/p/w500//wPlD3Z5x0O92rsB44XKHKQijROM.jpg",
+        "link": "/card/movies/800-648/Zvyozdnye-vojny-Epizod-4-Novaya-nadezhda.html",
+        "year": "1977",
+        "rating": "8.2", "tmdb_id": 11
+    }, 
     {
         "name": "Шаг вперед 6: Год танцев",
         "image": "https://image.tmdb.org/t/p/w500//6E5U8UZbIkAUplyOLW92K7cGXji.jpg",
