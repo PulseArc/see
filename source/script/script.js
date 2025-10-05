@@ -1,6 +1,54 @@
 var data = [
     // Фильмы
     {
+        "name": "Мрачные тени",
+        "image": "https://image.tmdb.org/t/p/w500//peMQNapB0pVkO6v7Kx0lJ3z405Z.jpg",
+        "link": "/card/movies/800-682/Mrachnye-teni.html",
+        "year": "2012",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Вне игры",
+        "image": "https://image.tmdb.org/t/p/w500//keZOzvHjf9wrH7JnyUs8ZlCsH7m.jpg",
+        "link": "/card/movies/800-681/Vne-igry.html",
+        "year": "2020",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Конец света 2013: Апокалипсис по-голливудски",
+        "image": "https://image.tmdb.org/t/p/w500//tTFLZsjS6I2V4EVSxF2kVmNCFP1.jpg",
+        "link": "/card/movies/800-680/Apokalipsis-po-gollivudski.html",
+        "year": "2013",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Джентльмены",
+        "image": "https://image.tmdb.org/t/p/w500//vWxVVECgYDPSg5o0Rhw5u7KFa7X.jpg",
+        "link": "/card/movies/800-679/Dzhentlmeny.html",
+        "year": "2018",
+        "rating": "7.7",
+        "type": "movie"
+    },
+    {
+        "name": "Рэмпейдж",
+        "image": "https://image.tmdb.org/t/p/w500//tZays7crj8VTskXUMwE6N7jeulx.jpg",
+        "link": "/card/movies/800-678/Rempejdzh.html",
+        "year": "2018",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Пенелопа",
+        "image": "https://image.tmdb.org/t/p/w500//s1WDTy3RA0Cs9D0NsImkq4BLEki.jpg",
+        "link": "/card/movies/800-677/Penelopa.html",
+        "year": "2006",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
         "name": "Интервью с Богом",
         "image": "https://image.tmdb.org/t/p/w500//mjEWYQ1WwxxD6jWOgniGT6Glqeo.jpg",
         "link": "/card/movies/800-660/Intervyu-s-Bogom.html",
@@ -1289,6 +1337,14 @@ var data = [
         "type": "movie"
     },
     {
+        "name": "Я герой",
+        "image": "https://image.tmdb.org/t/p/w500//fro3ipm2FVUmbedORv0aDTfSt6A.jpg",
+        "link": "/card/movies/800-676/Ya-geroj.html",
+        "year": "2016",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
         "name": "Каратэ-пацан",
         "image": "https://image.tmdb.org/t/p/w500//jZs6kX6JCzjJBkTUoMPdaQSFjFa.jpg",
         "link": "/card/movies/800-274/Karate-pacan.html",
@@ -1902,6 +1958,22 @@ var data = [
         "link": "/card/movies/800-330/Lyusi.html",
         "year": "2014",
         "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Операция «Мёртвый снег» 2",
+        "image": "https://image.tmdb.org/t/p/w500//AujbcgNGMUqwuUHlrgtrYelIKd6.jpg",
+        "link": "/card/movies/800-675/Operaciya-Myortvyj-sneg-2.html",
+        "year": "2014",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Операция «Мёртвый снег»",
+        "image": "https://image.tmdb.org/t/p/w500//s5sT5NniUBZrA9tOFsuxBzIiEh3.jpg",
+        "link": "/card/movies/800-674/Operaciya-Myortvyj-sneg.html",
+        "year": "2009",
+        "rating": "6.0",
         "type": "movie"
     },
     {
@@ -5273,6 +5345,111 @@ var data = [
         "rating": "6.2",
         "type": "movie"
     },
+    {
+        "name": "Стартрек: Бесконечность",
+        "image": "https://image.tmdb.org/t/p/w500//mkcP3g7XwmXT3fznyBfvGDcPgjA.jpg",
+        "link": "/card/movies/800-673/Startrek-Beskonechnost.html",
+        "year": "2016",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Стартрек: Возмездие",
+        "image": "https://image.tmdb.org/t/p/w500//afDcDs9nZhL871BID8X0BhyePrQ.jpg",
+        "link": "/card/movies/800-672/Startrek-Vozmezdie.html",
+        "year": "2013",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Звёздный путь",
+        "image": "https://image.tmdb.org/t/p/w500//9j0bQ4zDzrXerLP0TkUMKNT6AFy.jpg",
+        "link": "/card/movies/800-671/Zvyozdnyj-put.html",
+        "year": "2009",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Звёздный путь: Возмездие",
+        "image": "https://image.tmdb.org/t/p/w500//47I0uG2Acdv0oh16FzHeNONtDFd.jpg",
+        "link": "/card/movies/800-670/Zvyozdnyj-put-Vozmezdie.html",
+        "year": "2002",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Звёздный путь 9: Восстание",
+        "image": "https://image.tmdb.org/t/p/w500//pnlsGWuUk08PLQGVJaaTlXEyd5q.jpg",
+        "link": "/card/movies/800-669/Zvyozdnyj-put-9-Vosstanie.html",
+        "year": "1998",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Звёздный путь: Первый контакт",
+        "image": "https://image.tmdb.org/t/p/w500//w52RBsd4dS3NAkt0lE8xIjiecoQ.jpg",
+        "link": "/card/movies/800-668/Zvyozdnyj-put-Pervyj-kontakt.html",
+        "year": "1996",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Звёздный путь 7: Поколения",
+        "image": "https://image.tmdb.org/t/p/w500//kZiy2JlUPpkzinNUptwIkPDRRl6.jpg",
+        "link": "/card/movies/800-667/Zvyozdnyj-put-7-Pokoleniya.html",
+        "year": "1994",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Звёздный путь 6: Неоткрытая страна",
+        "image": "https://image.tmdb.org/t/p/w500//xmHaeSkXvHIJikHs7Gvlf304I5y.jpg",
+        "link": "/card/movies/800-666/Zvyozdnyj-put-6-Neotkrytaya-strana.html",
+        "year": "1991",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Звёздный путь 5: Последний рубеж",
+        "image": "https://image.tmdb.org/t/p/w500//aSSbdOgcph2Lqu19wgKPdhTFUKz.jpg",
+        "link": "/card/movies/800-665/Zvyozdnyj-put-5-Poslednij-rubezh.html",
+        "year": "1989",
+        "rating": "5.7",
+        "type": "movie"
+    },
+    {
+        "name": "Звёздный путь 4: Дорога Домой",
+        "image": "https://image.tmdb.org/t/p/w500//59LMSj51NKCB7uYi64CuPHi1306.jpg",
+        "link": "/card/movies/800-664/Zvyozdnyj-put-4-Doroga-Domoj.html",
+        "year": "1986",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Звёздный путь 3: В поисках Спока",
+        "image": "https://image.tmdb.org/t/p/w500//tYLxjJqQOkDREOF2dqxvsSS4P79.jpg",
+        "link": "/card/movies/800-663/Zvyozdnyj-put-3-V-poiskah-Spoka.html",
+        "year": "1984",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Звёздный путь 2: Гнев Хана",
+        "image": "https://image.tmdb.org/t/p/w500//jKKrJUyCevxC25eRGGj0vqbkuNe.jpg",
+        "link": "/card/movies/800-662/Zvyozdnyj-put-2-Gnev-Hana.html",
+        "year": "1982",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Звёздный путь: Фильм",
+        "image": "https://image.tmdb.org/t/p/w500//8AZqD3pQcnCPDtefJMNnJuZNVB8.jpg",
+        "link": "/card/movies/800-661/Zvyozdnyj-put-Film-1979.html",
+        "year": "1979",
+        "rating": "6.5",
+        "type": "movie"
+    },
+
 
 
     // Мультфильмы
