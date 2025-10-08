@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <span class="span-rating">${movie.rating}</span>
                         </div>
                         <div class="card-body">
-                            <span class="card-tex">${movie.name} <br>
+                            <span class="card-tex">${movie.name}</span> 
                                 <span class="year">${movie.year}</span>
                             </span>
                         </div>

@@ -833,7 +833,7 @@ function displayCards(cards, container) {
                     <img src="${card.image}" class="card-img-top img-9x16 mt-2" alt="${card.name}" loading="lazy" onerror="this.onerror=null;this.src='/path/to/default-image.jpg';">
                     <div class="card-rating-trand"><span class="span-rating">${card.rating}</span></div>
                     ${card.isTV ? '<div class="card-TV card-TV-trends">TV</div>' : ''}
-                    <div class="card-body"><span class="card-tex">${card.name}<br><span class="year">${card.year}</span></span></div>
+                    <div class="card-body"><span class="card-tex">${card.name}</span><span class="year">${card.year}</span></span></div>
                 </a>
             </div>
         `;

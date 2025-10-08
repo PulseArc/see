@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                         ${tvBadge}
                         <div class="card-body">
-                            <span class="card-tex">${movie.name} <br>
+                            <span class="card-tex">${movie.name}</span>
                                 <span class="year">${movie.year}</span>
                             </span>
                         </div>

@@ -513,7 +513,7 @@ var data = [
         "type": "movie"
     },
     {
-        "name": "Фантастическая Четвёрка: Вторжение Серебряного...",
+        "name": "Фантастическая четвёрка: Вторжение Серебряного сёрфера",
         "image": "https://image.tmdb.org/t/p/w500//vYvuKMkUWVW4UuPAE5vSmm5orBB.jpg",
         "link": "/card/movies/800-472/Fantasticheskaya-Chetvyorka-Vtorzhenie-Serebryanogo-Syorfera.html",
         "year": "2007",
@@ -537,7 +537,7 @@ var data = [
         "type": "movie"
     },
     {
-        "name": "Хищные птицы: Потрясающая история Харли...",
+        "name": "Хищные птицы: Потрясающая история Харли Квинн",
         "image": "https://image.tmdb.org/t/p/w500//11ZCJWv9OK1ubjiMSqQUtt4reWF.jpg",
         "link": "/card/movies/800-475/Hishnye-pticy-Potryasayushaya-istoriya-Harli-Kvinn.html",
         "year": "2016",
@@ -3378,6 +3378,38 @@ var data = [
         "type": "movie"
     },
     {
+        "name": "Индиана Джонс и последний крестовый поход",
+        "image": "https://image.tmdb.org/t/p/w500//fLheKUAE4UleGv0bhl4jn0OFiPL.jpg",
+        "link": "/card/movies/800-692/Indiana-Dzhons-2008.html",
+        "year": "2008",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "Индиана Джонс и последний крестовый поход",
+        "image": "https://image.tmdb.org/t/p/w500//lguKOHHEVXCjUNyqvqqcszFiiR6.jpg",
+        "link": "/card/movies/800-691/Indiana-Dzhons-1989.html",
+        "year": "1989",
+        "rating": "7.8",
+        "type": "movie"
+    },
+    {
+        "name": "Индиана Джонс и Храм Судьбы",
+        "image": "https://image.tmdb.org/t/p/w500//az7v4UfTazPSeiLT1TrMNLdk6YX.jpg",
+        "link": "/card/movies/800-690/Indiana-Dzhons-i-Hram-Sudby.html",
+        "year": "1984",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Индиана Джонс: В поисках утраченного ковчега",
+        "image": "https://image.tmdb.org/t/p/w500//d361eZAD4twogn7xlQxn2yOlJSu.jpg",
+        "link": "/card/movies/800-689/Indiana-Dzhons-1981.html",
+        "year": "1981",
+        "rating": "7.9",
+        "type": "movie"
+    },
+    {
         "name": "Один дома",
         "image": "https://image.tmdb.org/t/p/w500//nkXZwR8k46VDdjdcOctVgZC3MJ5.jpg",
         "link": "/card/movies/800-197/Odin-doma2021.html",
@@ -4490,7 +4522,7 @@ var data = [
         "type": "movie"
     },
     {
-        "name": "Миссия невыполнима: Финальная...",
+        "name": "Миссия невыполнима: Финальная расплата",
         "image": "https://image.tmdb.org/t/p/w500//n80KsSgHmJg5xrEWlbaWDgMoiU9.jpg",
         "link": "/card/movies/800-496/Missiya-nevypolnima-Finalnaya-rasplata.html",
         "year": "2025",
@@ -4498,7 +4530,7 @@ var data = [
         "type": "movie"
     },
     {
-        "name": "Миссия невыполнима: Смертельная...",
+        "name": "Миссия невыполнима: Смертельная расплата. Часть первая",
         "image": "https://image.tmdb.org/t/p/w500//qncL23TGeAqmqmbBxJl4R6nYToJ.jpg",
         "link": "/card/movies/800-12/Missiya-nevypolnima-Smertelnaya....html",
         "year": "2023",
@@ -9234,7 +9266,7 @@ $('#search').keyup(function () {
                                 <div class="card-rating"><span class="span-rating">${val.rating}</span></div>
                                 ${val.isTV ? '<div class="card-TV" bis_skin_checked="1">TV</div>' : ''}
                                 <div class="card-body">
-                                    <span class="card-tex">${val.name}<br><span class="year">${val.year}</span></span>
+                                    <span class="card-tex">${val.name}</span><span class="year">${val.year}</span></span>
                                 </div>
                             </a>
                         </div>

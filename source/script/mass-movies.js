@@ -452,7 +452,7 @@ window.movies = [
         "rating": "4.4", "tmdb_id": 166424
     },
     {
-        "name": "Фантастическая Четвёрка: Вторжение Серебряного...",
+        "name": "Фантастическая четвёрка: Вторжение Серебряного сёрфера",
         "image": "https://image.tmdb.org/t/p/w500//vYvuKMkUWVW4UuPAE5vSmm5orBB.jpg",
         "link": "/card/movies/800-472/Fantasticheskaya-Chetvyorka-Vtorzhenie-Serebryanogo-Syorfera.html",
         "year": "2007",
@@ -473,7 +473,7 @@ window.movies = [
         "rating": "7.5", "tmdb_id": 436969
     },
     {
-        "name": "Хищные птицы: Потрясающая история Харли...",
+        "name": "Хищные птицы: Потрясающая история Харли Квинн",
         "image": "https://image.tmdb.org/t/p/w500//11ZCJWv9OK1ubjiMSqQUtt4reWF.jpg",
         "link": "/card/movies/800-475/Hishnye-pticy-Potryasayushaya-istoriya-Harli-Kvinn.html",
         "year": "2016",
@@ -2192,14 +2192,14 @@ window.movies = [
         "rating": "7.1", "tmdb_id": 744
     },
     {
-        "name": "Миссия невыполнима: Финальная...",
+        "name": "Миссия невыполнима: Финальная расплата",
         "image": "https://image.tmdb.org/t/p/w500//n80KsSgHmJg5xrEWlbaWDgMoiU9.jpg",
         "link": "/card/movies/800-496/Missiya-nevypolnima-Finalnaya-rasplata.html",
         "year": "2025",
         "rating": "7.2", "tmdb_id": 575265
     },
     {
-        "name": "Миссия невыполнима: Смертельная...",
+        "name": "Миссия невыполнима: Смертельная расплата. Часть первая",
         "image": "https://image.tmdb.org/t/p/w500//qncL23TGeAqmqmbBxJl4R6nYToJ.jpg",
         "link": "/card/movies/800-12/Missiya-nevypolnima-Smertelnaya....html",
         "year": "2023",
@@ -3674,6 +3674,34 @@ window.movies = [
         "link": "/card/movies/800-100/Pol-Sekretnyj-materialchik.html",
         "year": "2011",
         "rating": "6.7", "tmdb_id": 39513
+    },
+    {
+        "name": "Индиана Джонс и последний крестовый поход",
+        "image": "https://image.tmdb.org/t/p/w500//fLheKUAE4UleGv0bhl4jn0OFiPL.jpg",
+        "link": "/card/movies/800-692/Indiana-Dzhons-2008.html",
+        "year": "2008",
+        "rating": "6.0", "tmdb_id": 217
+    },
+    {
+        "name": "Индиана Джонс и последний крестовый поход",
+        "image": "https://image.tmdb.org/t/p/w500//lguKOHHEVXCjUNyqvqqcszFiiR6.jpg",
+        "link": "/card/movies/800-691/Indiana-Dzhons-1989.html",
+        "year": "1989",
+        "rating": "7.8", "tmdb_id": 89
+    },
+    {
+        "name": "Индиана Джонс и Храм Судьбы",
+        "image": "https://image.tmdb.org/t/p/w500//az7v4UfTazPSeiLT1TrMNLdk6YX.jpg",
+        "link": "/card/movies/800-690/Indiana-Dzhons-i-Hram-Sudby.html",
+        "year": "1984",
+        "rating": "7.3", "tmdb_id": 87
+    },
+    {
+        "name": "Индиана Джонс: В поисках утраченного ковчега",
+        "image": "https://image.tmdb.org/t/p/w500//d361eZAD4twogn7xlQxn2yOlJSu.jpg",
+        "link": "/card/movies/800-689/Indiana-Dzhons-1981.html",
+        "year": "1981",
+        "rating": "7.9", "tmdb_id": 85
     },
     {
         "name": "Один дома",
