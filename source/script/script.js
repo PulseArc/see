@@ -1,6 +1,62 @@
 var data = [
     // Фильмы
     {
+        "name": "Одинокий рейнджер",
+        "image": "https://image.tmdb.org/t/p/w500//4W9ersKupsJJedtar1Yv4rImxyT.jpg",
+        "link": "/card/movies/800-700/Odinokij-rejndzher.html",
+        "year": "2013",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Начало",
+        "image": "https://image.tmdb.org/t/p/w500//ubj7fEmtNqxwtZtMk6wAIc0SCFJ.jpg",
+        "link": "/card/movies/800-699/Nachalo.html",
+        "year": "2010",
+        "rating": "8.4",
+        "type": "movie"
+    },
+    {
+        "name": "Оборотень: Фильм",
+        "image": "https://image.tmdb.org/t/p/w500//jcROb8QBEiO7SfwgfoHJUCMh5cQ.jpg",
+        "link": "/card/movies/800-698/Oboroten-Film.html",
+        "year": "2023",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Мы - Миллеры",
+        "image": "https://image.tmdb.org/t/p/w500//bid3LmB5Jg6h6RXDz1W83DcaIBU.jpg",
+        "link": "/card/movies/800-697/My-Millery.html",
+        "year": "2013",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Большой куш",
+        "image": "https://image.tmdb.org/t/p/w500//5O4Plo1z21mycLfLyQ2AtPhbmhW.jpg",
+        "link": "/card/movies/800-696/Bolshoj-kush.html",
+        "year": "2000",
+        "rating": "7.8",
+        "type": "movie"
+    },
+    {
+        "name": "Аэронавты",
+        "image": "https://image.tmdb.org/t/p/w500//5vPZ6TYl3aakBvzQYGv2STI9g61.jpg",
+        "link": "/card/movies/800-695/Aeronavty.html",
+        "year": "2019",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Отвязные дворняги",
+        "image": "https://image.tmdb.org/t/p/w500//wT2c2EaFpmBlubZvYFoWLg44nGT.jpg",
+        "link": "/card/movies/800-694/Otvyaznye-dvornyagi.html",
+        "year": "2023",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
         "name": "Понибой",
         "image": "https://image.tmdb.org/t/p/w500//abTQZvDcbpOcYgwNg7pNm8oOqVY.jpg",
         "link": "/card/movies/800-688/Poniboj.html",
@@ -3375,6 +3431,14 @@ var data = [
         "link": "/card/movies/800-100/Pol-Sekretnyj-materialchik.html",
         "year": "2011",
         "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Индиана Джонс и Колесо Судьбы",
+        "image": "https://image.tmdb.org/t/p/w500//gJrPOlwwTTWSPuFAVcY8CZasZ8w.jpg",
+        "link": "/card/movies/800-693/Indiana-Dzhons-i-Koleso-Sudby.html",
+        "year": "2023",
+        "rating": "6.5",
         "type": "movie"
     },
     {
