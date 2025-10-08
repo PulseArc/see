@@ -4,6 +4,13 @@
 // Аниме массив
 window.movies = [
     {
+        "name": "Понибой",
+        "image": "https://image.tmdb.org/t/p/w500//abTQZvDcbpOcYgwNg7pNm8oOqVY.jpg",
+        "link": "/card/movies/800-688/Poniboj.html",
+        "year": "2024",
+        "rating": "5.8", "tmdb_id": 1052155
+    },
+    {
         "name": "Мрачные тени",
         "image": "https://image.tmdb.org/t/p/w500//peMQNapB0pVkO6v7Kx0lJ3z405Z.jpg",
         "link": "/card/movies/800-682/Mrachnye-teni.html",
@@ -2094,11 +2101,25 @@ window.movies = [
         "rating": "7.7", "tmdb_id": 286217
     },
     {
+        "name": "Похищенная",
+        "image": "https://image.tmdb.org/t/p/w500//fZlNXEHZsBp7unqw009MeBbMv87.jpg",
+        "link": "/card/movies/800-686/Pohishennaya.html",
+        "year": "2025",
+        "rating": "6.5", "tmdb_id": 1280450
+    },
+    {
         "name": "Наполеон",
         "image": "https://image.tmdb.org/t/p/w500//z7E0ZtNnRheOZThX2QtSu3RmtXP.jpg",
         "link": "/card/movies/800-89/Napoleon.html",
         "year": "2023",
         "rating": "6.4", "tmdb_id": 753342
+    },
+    {
+        "name": "Школьный автобус",
+        "image": "https://image.tmdb.org/t/p/w500//rT33WiN5ZNiWxvtqnM7qri9xD9G.jpg",
+        "link": "/card/movies/800-685/Shkolnyj-avtobus.html",
+        "year": "2025",
+        "rating": "7.0", "tmdb_id": 1236470
     },
     {
         "name": "Другой человек",
@@ -2148,6 +2169,13 @@ window.movies = [
         "link": "/card/movies/800-372/Prizrachnyj-patrul.html",
         "year": "2013",
         "rating": "5.8", "tmdb_id": 49524
+    },
+    {
+        "name": "Стив",
+        "image": "https://image.tmdb.org/t/p/w500//t9XZ40AJivb9SGuyhBtq5rHJLuk.jpg",
+        "link": "/card/movies/800-684/Stiv.html",
+        "year": "2025",
+        "rating": "6.7", "tmdb_id": 1242404
     },
     {
         "name": "Топ Ган: Мэверик",
@@ -2234,6 +2262,13 @@ window.movies = [
         "rating": "7.8", "tmdb_id": 546554
     },
     {
+        "name": "Грязная игра",
+        "image": "https://image.tmdb.org/t/p/w500//2qYYoTNas3WCgxXsTF2xYtJ04yr.jpg",
+        "link": "/card/movies/800-683/Gryaznaya-igra.html",
+        "year": "2025",
+        "rating": "6.6", "tmdb_id": 941109
+    },
+    {
         "name": "Бегущий по лезвию 2049",
         "image": "https://image.tmdb.org/t/p/w500//kAq1RFHqtZrBvKve7GOGdgUU399.jpg",
         "link": "/card/movies/800-16/Begushij-po-lezviyu-2049.html",
@@ -2274,6 +2309,13 @@ window.movies = [
         "link": "/card/movies/800-159/Dzhon-Uik.html",
         "year": "2014",
         "rating": "7.4", "tmdb_id": 245891
+    },
+    {
+        "name": "Сверху вниз",
+        "image": "https://image.tmdb.org/t/p/w500//d4Kbt9I5RxV5WtunAhQtLzlqkGt.jpg",
+        "link": "/card/movies/800-687/Sverhu-vniz.html",
+        "year": "2025",
+        "rating": "5.7", "tmdb_id": 1242434
     },
     {
         "name": "Новые мутанты",
