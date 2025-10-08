@@ -901,6 +901,9 @@ h4 {
 .year {
     font-size: 0.9em !important;
     font-weight: 400;
+    margin-left: -0.3em;
+    font-family: Helvetica;
+     transition: color 0.5s;
 }
 
 .card-tex {
@@ -974,13 +977,20 @@ h4 {
 }
 
 .card-tex {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; /* максимум 3 строки */
+  overflow: hidden;
 
-    display: block;
-    width: 100%;
-    white-space: normal;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+  /* важно! отключаем троеточие */
+  text-overflow: clip;
+
+  /* для совместимости */
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
+
 
 .card-TV{
     background: #ff4242;
@@ -1728,9 +1738,7 @@ footer {
     .cards-from-search .card-tex{
       width: 100% !important;
     }
-    .card-tex{
-        width: 150% !important;
-    }
+
     
     .card-media3 {
        
@@ -1773,7 +1781,8 @@ footer {
     }
 
     .year {
-        font-size: 90% !important;
+        font-size: 105% !important;
+        margin-left: -0.1em;
     }
 
     .btn-show-all {
@@ -2025,7 +2034,8 @@ footer {
         width: 145% !important;
     }
     .year {
-        font-size: 85% !important;
+        font-size: 100% !important;
+        margin-left: -0.1em;
     }
     .card-TV{ 
         left: -9px !important; 
@@ -3185,7 +3195,7 @@ footer {
 }
 
 .year {
-    font-size: 85% !important;
+    font-size: 100% !important;
 }
 
 .btn-show-all {
@@ -3454,7 +3464,7 @@ footer {
 }
 
     .year {
-        font-size: 85% !important;
+        font-size: 100% !important;
     }
 
     .btn-show-all {
@@ -4223,6 +4233,7 @@ footer {
         white-space: normal;
         word-wrap: break-word;
         overflow-wrap: break-word;
+        display: -webkit-box;
     }
 
 
