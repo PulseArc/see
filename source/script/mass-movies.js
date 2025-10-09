@@ -4,6 +4,13 @@
 // Аниме массив
 window.movies = [
     {
+        "name": "Евротур",
+        "image": "https://image.tmdb.org/t/p/w500//MDt6uQzoOqE1hCCoIu3B97Pxqf.jpg",
+        "link": "/card/movies/800-701/Evrotur.html",
+        "year": "2004",
+        "rating": "6.6", "tmdb_id": 9352
+    },
+    {
         "name": "Одинокий рейнджер",
         "image": "https://image.tmdb.org/t/p/w500//4W9ersKupsJJedtar1Yv4rImxyT.jpg",
         "link": "/card/movies/800-700/Odinokij-rejndzher.html",

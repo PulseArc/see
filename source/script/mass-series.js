@@ -4,6 +4,33 @@
 // Аниме массив
 window.series = [
     {
+        "name": "Сопрано",
+        "image": "https://image.tmdb.org/t/p/w500//ilcNSuJriOY2TyaNmaeGAFv8zSo.jpg",
+        "link": "/card/series/900-114/Soprano.html",
+        "year": "1999",
+        "rating": "8.6",
+        "tmdb_id": 1398,
+        "isTV": true
+    },
+    {
+        "name": "Монстр: История Эда Гина",
+        "image": "https://image.tmdb.org/t/p/w500//pDugsRV2BFi8H8NAG62LNZFlztE.jpg",
+        "link": "/card/series/900-113/Monstr-Istoriya-Eda-Gina.html",
+        "year": "2025",
+        "rating": "7.5",
+        "tmdb_id": 286801,
+        "isTV": true
+    },
+    {
+        "name": "Миротворец",
+        "image": "https://image.tmdb.org/t/p/w500//ugd5WLjBd8mBaucMONEyEN3GPZA.jpg",
+        "link": "/card/series/900-112/Mirotvorec.html",
+        "year": "2022",
+        "rating": "8.2",
+        "tmdb_id": 110492,
+        "isTV": true
+    },
+    {
         "name": "Бункер для богачей",
         "image": "https://image.tmdb.org/t/p/w500//cc60XSIrEdaDyyTQNUXsgowQXmO.jpg",
         "link": "/card/series/900-111/Bunker-dlya-bogachej.html",

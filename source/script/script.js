@@ -1,6 +1,14 @@
 var data = [
     // Фильмы
     {
+        "name": "Евротур",
+        "image": "https://image.tmdb.org/t/p/w500//MDt6uQzoOqE1hCCoIu3B97Pxqf.jpg",
+        "link": "/card/movies/800-701/Evrotur.html",
+        "year": "2004",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
         "name": "Одинокий рейнджер",
         "image": "https://image.tmdb.org/t/p/w500//4W9ersKupsJJedtar1Yv4rImxyT.jpg",
         "link": "/card/movies/800-700/Odinokij-rejndzher.html",
@@ -7456,6 +7464,33 @@ var data = [
     // конец
 
     // Сериалы
+    {
+        "name": "Сопрано",
+        "image": "https://image.tmdb.org/t/p/w500//ilcNSuJriOY2TyaNmaeGAFv8zSo.jpg",
+        "link": "/card/series/900-114/Soprano.html",
+        "year": "1999",
+        "rating": "8.6",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Монстр: История Эда Гина",
+        "image": "https://image.tmdb.org/t/p/w500//pDugsRV2BFi8H8NAG62LNZFlztE.jpg",
+        "link": "/card/series/900-113/Monstr-Istoriya-Eda-Gina.html",
+        "year": "2025",
+        "rating": "7.5",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Миротворец",
+        "image": "https://image.tmdb.org/t/p/w500//ugd5WLjBd8mBaucMONEyEN3GPZA.jpg",
+        "link": "/card/series/900-112/Mirotvorec.html",
+        "year": "2022",
+        "rating": "8.2",
+        "isTV": true,
+        "type": "series"
+    },
     {
         "name": "Бункер для богачей",
         "image": "https://image.tmdb.org/t/p/w500//cc60XSIrEdaDyyTQNUXsgowQXmO.jpg",
