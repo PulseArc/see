@@ -13,7 +13,7 @@ window.series = [
         "isTV": true
     },
     {
-        "name": "Монстр: История Эда Гина",
+        "name": "Монстр",
         "image": "https://image.tmdb.org/t/p/w500//pDugsRV2BFi8H8NAG62LNZFlztE.jpg",
         "link": "/card/series/900-113/Monstr-Istoriya-Eda-Gina.html",
         "year": "2025",
