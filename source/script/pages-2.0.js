@@ -1,10 +1,91 @@
+// Импортируй или подключи placeholder-16x9.js, чтобы был доступен PLACEHOLDER_BASE16X9
 
+// Глобальное хранилище загруженных изображений
+const loadedImages = new Map();
 
+document.addEventListener("DOMContentLoaded", () => {
+  console.log('=== НАЧАЛО ИНИЦИАЛИЗАЦИИ LAZY LOAD ===');
+  
+  // СНАЧАЛА сохраняем все оригинальные src в data-атрибуты ДО инициализации Splide
+  const images = document.querySelectorAll(".sirials-watch-img");
+  console.log('Найдено изображений:', images.length);
+  
+  images.forEach((img, index) => {
+    console.log(`Изображение ${index}:`);
+    console.log('  - Оригинальный src:', img.src);
+    
+    // Сохраняем оригинальный src в data-атрибут
+    if (!img.dataset.originalSrc) {
+      img.dataset.originalSrc = img.src;
+      console.log('  - Сохранён в data-original-src:', img.dataset.originalSrc);
+    }
+    // Ставим placeholder
+    img.src = PLACEHOLDER_BASE16X9;
+    console.log('  - Установлен placeholder');
+  });
 
+  // Функция загрузки изображения
+  function loadImage(img) {
+    const originalSrc = img.dataset.originalSrc;
+    
+    if (!originalSrc) {
+      console.error('❌ Нет data-original-src для изображения');
+      return;
+    }
 
+    console.log('🔍 loadImage для:', originalSrc);
 
+    // Если изображение уже загружено в глобальное хранилище
+    if (loadedImages.has(originalSrc)) {
+      console.log('✅ Изображение уже в кэше, устанавливаем сразу');
+      img.src = originalSrc;
+      img.classList.add("loaded");
+      return;
+    }
 
+    // Если уже идёт загрузка этого URL
+    if (img.dataset.loading === 'true') {
+      console.log('⚠️ Уже идёт загрузка, пропускаем');
+      return;
+    }
 
+    console.log('🔄 Начинаем загрузку:', originalSrc);
+    img.dataset.loading = 'true';
+
+    const realImage = new Image();
+    realImage.src = originalSrc;
+
+    realImage.onload = () => {
+      console.log('✅ Изображение загружено:', originalSrc);
+      
+      // Сохраняем в глобальный кэш
+      loadedImages.set(originalSrc, true);
+      
+      // Обновляем ВСЕ изображения с таким же src (включая клоны)
+      document.querySelectorAll('.sirials-watch-img').forEach(element => {
+        if (element.dataset.originalSrc === originalSrc) {
+          console.log('  ↳ Обновляем элемент');
+          element.src = originalSrc;
+          element.classList.add("loaded");
+          element.dataset.loaded = 'true';
+          element.dataset.loading = 'false';
+        }
+      });
+    };
+
+    realImage.onerror = () => {
+      console.error('❌ Ошибка загрузки:', originalSrc);
+      img.dataset.loading = 'false';
+    };
+  }
+
+  // Загружаем видимые изображения
+  console.log('=== ЗАГРУЗКА ОРИГИНАЛЬНЫХ ИЗОБРАЖЕНИЙ ===');
+  images.forEach((img, index) => {
+    console.log(`Загружаем изображение ${index}`);
+    loadImage(img);
+  });
+});
 
 // Находим элементы
 document.addEventListener('DOMContentLoaded', function () {
@@ -16,168 +97,129 @@ document.addEventListener('DOMContentLoaded', function () {
   const homeBackgroundImage = document.querySelector('.Home-background-image');
 
   // Бургер
-if (menuToggle && searchWrapper) {
-  menuToggle.addEventListener('change', () => {
+  if (menuToggle && searchWrapper) {
+    menuToggle.addEventListener('change', () => {
       if (menuToggle.checked) {
-          // Меню открыто
-          searchWrapper.classList.add('hidden-by-menu'); // <--- ВОТ ЭТА СТРОКА
-          searchWrapper.classList.remove('active'); // Сворачиваем поиск визуально
-
-          
+        searchWrapper.classList.add('hidden-by-menu');
+        searchWrapper.classList.remove('active');
       } else {
-          // Меню закрыто
-          searchWrapper.classList.remove('hidden-by-menu'); // <--- И ВОТ ЭТА СТРОКА
-          searchInput.removeAttribute('disabled'); // Разрешаем ввод
-          updateSearchInputState(); // Обновляем состояние на основе mouseover/mouseout
+        searchWrapper.classList.remove('hidden-by-menu');
+        searchInput.removeAttribute('disabled');
+        updateSearchInputState();
       }
-  });
-}
-// конец
-
-  // Функция для обновления состояния поля ввода
-  function updateSearchInputState() {
-      if (searchWrapper.classList.contains('active')) {
-          searchInput.removeAttribute('disabled'); // Разрешить ввод
-      } else {
-          searchInput.setAttribute('disabled', 'disabled'); // Запретить ввод
-      }
+    });
   }
 
-  // Изначальная проверка состояния
+  function updateSearchInputState() {
+    if (searchWrapper.classList.contains('active')) {
+      searchInput.removeAttribute('disabled');
+    } else {
+      searchInput.setAttribute('disabled', 'disabled');
+    }
+  }
+
   updateSearchInputState();
 
-  // Обработчик события наведения мыши (для разворачивания поля)
   searchWrapper.addEventListener('mouseover', () => {
-      searchWrapper.classList.add('active');
-      updateSearchInputState();
+    searchWrapper.classList.add('active');
+    updateSearchInputState();
   });
 
-  // Обработчик события ухода мыши (для сворачивания поля)
   searchWrapper.addEventListener('mouseout', () => {
-      searchWrapper.classList.remove('active');
-      updateSearchInputState();
+    searchWrapper.classList.remove('active');
+    updateSearchInputState();
   });
 
-  // Обработчик события изменения состояния меню (если это влияет на поиск)
   if (menuToggle && searchWrapper) {
-      menuToggle.addEventListener('change', () => {
-          // Здесь может быть ваша логика, определяющая, когда поиск активен/неактивен
-          // Например, если при открытом меню поиск должен быть неактивен:
-          if (menuToggle.checked) {
-              searchWrapper.classList.remove('active'); // Сворачиваем поиск
-          } else {
-              // searchWrapper.classList.add('active'); // Разворачиваем поиск (опционально)
-          }
-          updateSearchInputState();
-      });
+    menuToggle.addEventListener('change', () => {
+      if (menuToggle.checked) {
+        searchWrapper.classList.remove('active');
+      }
+      updateSearchInputState();
+    });
   }
 
-  // Проверяем, существуют ли элементы перед тем, как с ними работать
   if (!searchInput || !resultsContainer || !clearIcon) return;
 
   searchInput.addEventListener('input', () => {
-      if (searchInput.disabled) { // Проверяем, заблокировано ли поле
-          return; // Ничего не делаем, если поиск неактивен
-      }
-      const query = searchInput.value.trim(); // Получаем текст из поля поиска
+    if (searchInput.disabled) {
+      return;
+    }
+    const query = searchInput.value.trim();
 
-      if (query.length > 0) {
-          // Показываем контейнер с результатами, если есть текст
-          resultsContainer.style.display = 'block';
-          clearIcon.style.display = 'inline'; // Показываем крестик
+    if (query.length > 0) {
+      resultsContainer.style.display = 'block';
+      clearIcon.style.display = 'inline';
 
-          // Логика обновления содержимого результатов
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
 
-          // Прокрутка страницы вверх
-          window.scrollTo({
-              top: 0, // Начало страницы
-              behavior: 'smooth' // Плавная прокрутка
-          });
-
-          // Устанавливаем marginTop, если есть результат
-          if (homeBackgroundImage) {
-              homeBackgroundImage.style.marginTop = '4em';
-          }
-      } else {
-          // Скрываем контейнер, если поле ввода пустое
-          resultsContainer.style.display = 'none';
-          clearIcon.style.display = 'none'; // Прячем крестик
-
-          // Плавно убираем marginTop, если поиск сброшен
-          if (homeBackgroundImage) {
-              homeBackgroundImage.style.marginTop = '';
-          }
-      }
-  });
-
-  // Событие клика по крестику
-  clearIcon.addEventListener('click', () => {
-      if (searchInput.disabled) { // Проверяем, заблокировано ли поле
-          return; // Ничего не делаем, если поиск неактивен
-      }
-      searchInput.value = ''; // Очищаем поле ввода
-      resultsContainer.style.display = 'none'; // Скрываем контейнер с результатами
-      clearIcon.style.display = 'none'; // Скрываем крестик
-      searchInput.blur(); // Убираем фокус, скрывая клавиатуру
-
-      // Плавно возвращаем marginTop, если результаты скрыты
       if (homeBackgroundImage) {
-          homeBackgroundImage.style.marginTop = '';
+        homeBackgroundImage.style.marginTop = '4em';
       }
+    } else {
+      resultsContainer.style.display = 'none';
+      clearIcon.style.display = 'none';
+
+      if (homeBackgroundImage) {
+        homeBackgroundImage.style.marginTop = '';
+      }
+    }
   });
 
-  // Скрывает клавиатуру поиска
+  clearIcon.addEventListener('click', () => {
+    if (searchInput.disabled) {
+      return;
+    }
+    searchInput.value = '';
+    resultsContainer.style.display = 'none';
+    clearIcon.style.display = 'none';
+    searchInput.blur();
+
+    if (homeBackgroundImage) {
+      homeBackgroundImage.style.marginTop = '';
+    }
+  });
+
   document.addEventListener('touchend', function(event) {
     if (searchInput === document.activeElement && !searchInput.contains(event.target)) {
-        searchInput.blur();
+      searchInput.blur();
     }
-});
-// Конец
+  });
 
-  // Скрытие клавиатуры при нажатии Enter
   searchInput.addEventListener('keypress', (event) => {
-      if (searchInput.disabled) { // Проверяем, заблокировано ли поле
-          event.preventDefault(); // Предотвращаем ввод, если поиск неактивен
-          return;
-      }
-      if (event.key === 'Enter') {
-          event.preventDefault(); // Предотвращаем стандартное поведение формы
-          searchInput.blur(); // Убираем фокус с поля, скрывая клавиатуру
-      }
+    if (searchInput.disabled) {
+      event.preventDefault();
+      return;
+    }
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      searchInput.blur();
+    }
   });
 });
 
 window.addEventListener('scroll', function() {
   const navbar = document.querySelector('.navbar');
   if (window.innerWidth > 1100) {
-      if (window.scrollY > 50) {
-          navbar.classList.add('scrolled');
-      } else {
-          navbar.classList.remove('scrolled');
-      }
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
   } else {
-      navbar.classList.remove('scrolled'); // Убираем класс, если ширина меньше 1100px
+    navbar.classList.remove('scrolled');
   }
 });
 
-
-
-
-
-
-   
-
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', function () {
-  new Splide('#image-slider', {
+  const splide = new Splide('#image-slider', {
     type: 'loop',
     focus: 'center',
     autoWidth: true, 
-    gap: '40px', // По умолчанию 40px
+    gap: '40px',
     pauseOnHover: true,
     pauseOnFocus: true,
     arrows: true,
@@ -187,39 +229,54 @@ document.addEventListener('DOMContentLoaded', function () {
     autoplay: false,
     breakpoints: {
       5000: {
-        gap: '280px', // При ширине экрана до 1200px
+        gap: '280px',
         perPage: 3,
       },
       2299.5: {
-        gap: '198px', // При ширине экрана до 1200px
+        gap: '198px',
         perPage: 3,
       },
       2018.5: {
-        gap: '180px', // При ширине экрана до 1200px
+        gap: '180px',
         perPage: 3,
       },
       1899.5: {
-        gap: '180px', // При ширине экрана до 1200px
+        gap: '180px',
         perPage: 3,
       },
       1704.5: {
-        gap: '100px', // При ширине экрана до 1200px
+        gap: '100px',
         perPage: 3,
       },
       1520.5: {
-        gap: '100px', // При ширине экрана до 1200px
+        gap: '100px',
         perPage: 3,
       },
       1320.5: {
-        gap: '93px', // При ширине экрана до 768px
-        perPage: 3, // Можно уменьшить количество слайдов на маленьких экранах
+        gap: '93px',
+        perPage: 3,
       }
     }
-  }).mount();
+  });
+
+  // КРИТИЧНО: Обработка клонов после монтирования Splide
+  splide.on('mounted', function() {
+    console.log('🎠 Splide смонтирован, обновляем клоны');
+    
+    // Небольшая задержка для гарантии создания клонов
+    setTimeout(() => {
+      document.querySelectorAll('.sirials-watch-img').forEach(img => {
+        const originalSrc = img.dataset.originalSrc;
+        
+        // Если изображение уже загружено в кэш - устанавливаем сразу
+        if (originalSrc && loadedImages.has(originalSrc)) {
+          console.log('✅ Клон: устанавливаем из кэша', originalSrc);
+          img.src = originalSrc;
+          img.classList.add('loaded');
+        }
+      });
+    }, 50);
+  });
+
+  splide.mount();
 });
-
-
-
-
-
- 

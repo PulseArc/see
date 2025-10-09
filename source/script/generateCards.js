@@ -1,14 +1,43 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-    // The data arrays are now available globally thanks to the script tags.
-    // We can directly access them using `window.`
-
     // Call the function for each array.
     generateMovieCards(window.movies, '#movie-cards-container', 0);
     generateMovieCards(window.cartoons, '#cartoon-cards-container', 0);
     generateMovieCards(window.series, '#series-cards-container', 0);
     generateMovieCards(window.anime, '#anime-cards-container', 0);
+    
+    // Запускаем ленивую загрузку изображений
+    lazyLoadImages();
 });
+
+// Функция для ленивой загрузки изображений
+function lazyLoadImages() {
+    const images = document.querySelectorAll('img[data-src]');
+    
+    images.forEach(img => {
+        const actualSrc = img.getAttribute('data-src');
+        
+        // Создаем новый объект Image для предзагрузки
+        const tempImg = new Image();
+        
+        tempImg.onload = function() {
+            // Когда изображение загрузилось, заменяем заглушку
+            img.src = actualSrc;
+            img.removeAttribute('data-src');
+            
+            // Добавляем класс для плавного появления (опционально)
+            img.classList.add('loaded');
+        };
+        
+        tempImg.onerror = function() {
+            // Если изображение не загрузилось, можно оставить заглушку
+            // или установить изображение-ошибку
+            console.error('Ошибка загрузки изображения:', actualSrc);
+        };
+        
+        // Запускаем загрузку
+        tempImg.src = actualSrc;
+    });
+}
 
 // The updated generateMovieCards function
 function generateMovieCards(cardData, containerSelector, startIndexForContent = 0) {
@@ -29,7 +58,6 @@ function generateMovieCards(cardData, containerSelector, startIndexForContent = 
 
     let cardsHtml = '';
     cardsToGenerate.forEach(movie => {
-        // Мы используем "movie" вместо "item" для каждой карточки в цикле
         const tvHtml = movie.isTV ? `<div class="card-TV">TV</div>` : '';
 
         cardsHtml += `
@@ -37,7 +65,7 @@ function generateMovieCards(cardData, containerSelector, startIndexForContent = 
                 <div class="card full-card">
                     <a href="${movie.link}">
                         <div class="all-flim-img-wrapper">
-                            <img src="${movie.image}" class="card-img-top all-flim-img" alt="${movie.name}">
+                           <img src="${PLACEHOLDER_BASE64}" data-src="${movie.image}" class="card-img-top all-flim-img" alt="${movie.name}">
                         </div>
                         <div class="card-rating">
                             <span class="span-rating">${movie.rating}</span>

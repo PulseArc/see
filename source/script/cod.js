@@ -1,3 +1,174 @@
+// 16X9
+const loadedImages = new Map();
+
+document.addEventListener("DOMContentLoaded", () => {
+  
+  // СНАЧАЛА сохраняем все оригинальные src в data-атрибуты ДО инициализации Splide
+  const images = document.querySelectorAll(".sirials-watch-img");
+  
+  images.forEach((img, index) => {
+    
+    // Сохраняем оригинальный src в data-атрибут
+    if (!img.dataset.originalSrc) {
+      img.dataset.originalSrc = img.src;
+      
+    }
+    // Ставим placeholder
+    img.src = PLACEHOLDER_BASE16X9;
+    
+  });
+
+  // Функция загрузки изображения
+  function loadImage(img) {
+    const originalSrc = img.dataset.originalSrc;
+    
+    if (!originalSrc) {
+      console.error('❌ Нет data-original-src для изображения');
+      return;
+    }
+
+    // Если изображение уже загружено в глобальное хранилище
+    if (loadedImages.has(originalSrc)) {
+      
+      img.src = originalSrc;
+      img.classList.add("loaded");
+      return;
+    }
+
+    // Если уже идёт загрузка этого URL
+    if (img.dataset.loading === 'true') {
+      
+      return;
+    }
+
+    
+    img.dataset.loading = 'true';
+
+    const realImage = new Image();
+    realImage.src = originalSrc;
+
+    realImage.onload = () => {
+      
+      
+      // Сохраняем в глобальный кэш
+      loadedImages.set(originalSrc, true);
+      
+      // Обновляем ВСЕ изображения с таким же src (включая клоны)
+      document.querySelectorAll('.sirials-watch-img').forEach(element => {
+        if (element.dataset.originalSrc === originalSrc) {
+          
+          element.src = originalSrc;
+          element.classList.add("loaded");
+          element.dataset.loaded = 'true';
+          element.dataset.loading = 'false';
+        }
+      });
+    };
+
+    realImage.onerror = () => {
+      console.error('❌ Ошибка загрузки:', originalSrc);
+      img.dataset.loading = 'false';
+    };
+  }
+
+  // Загружаем видимые изображения
+  
+  images.forEach((img, index) => {
+    
+    loadImage(img);
+  });
+});
+// Конец
+
+
+// 9X16
+const loadedImages9x16 = new Map();
+
+document.addEventListener("DOMContentLoaded", () => {
+  
+  // СНАЧАЛА сохраняем все оригинальные src в data-атрибуты ДО инициализации Splide
+  const images = document.querySelectorAll(".img-9x16");
+  
+  
+  images.forEach((img, index) => {
+    
+    
+    
+    // Сохраняем оригинальный src в data-атрибут
+    if (!img.dataset.originalSrc) {
+      img.dataset.originalSrc = img.src;
+      
+    }
+    // Ставим placeholder
+    img.src = PLACEHOLDER_BASE64;
+    
+  });
+
+  // Функция загрузки изображения
+  function loadImage(img) {
+    const originalSrc = img.dataset.originalSrc;
+    
+    if (!originalSrc) {
+      console.error('❌ Нет data-original-src для изображения');
+      return;
+    }
+
+    
+
+    // Если изображение уже загружено в глобальное хранилище
+    if (loadedImages.has(originalSrc)) {
+      
+      img.src = originalSrc;
+      img.classList.add("loaded");
+      return;
+    }
+
+    // Если уже идёт загрузка этого URL
+    if (img.dataset.loading === 'true') {
+      
+      return;
+    }
+
+    
+    img.dataset.loading = 'true';
+
+    const realImage = new Image();
+    realImage.src = originalSrc;
+
+    realImage.onload = () => {
+      
+      
+      // Сохраняем в глобальный кэш
+      loadedImages.set(originalSrc, true);
+      
+      // Обновляем ВСЕ изображения с таким же src (включая клоны)
+      document.querySelectorAll('.img-9x16').forEach(element => {
+        if (element.dataset.originalSrc === originalSrc) {
+          
+          element.src = originalSrc;
+          element.classList.add("loaded");
+          element.dataset.loaded = 'true';
+          element.dataset.loading = 'false';
+        }
+      });
+    };
+
+    realImage.onerror = () => {
+      console.error('❌ Ошибка загрузки:', originalSrc);
+      img.dataset.loading = 'false';
+    };
+  }
+
+  // Загружаем видимые изображения
+  
+  images.forEach((img, index) => {
+    
+    loadImage(img);
+  });
+});
+// Конец
+
+
 document.addEventListener('DOMContentLoaded', () => {
 
     function positionCardRating(card) {
@@ -542,13 +713,3 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }).mount();
 });
-
-
-
-
-
-
-
-
-
-
