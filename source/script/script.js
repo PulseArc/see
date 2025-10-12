@@ -1,6 +1,30 @@
 var data = [
     // Фильмы
     {
+        "name": "Санктум",
+        "image": "https://image.tmdb.org/t/p/w500//UKzddr7vWdZGmekSc7UcNaF71A.jpg",
+        "link": "/card/movies/800-704/Sanktum.html",
+        "year": "2011",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "Телекинез",
+        "image": "https://image.tmdb.org/t/p/w500//vmVDaf9H93IrXWkW8KaT2WTZNoY.jpg",
+        "link": "/card/movies/800-703/Telekinez.html",
+        "year": "2013",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "Демон внутри",
+        "image": "https://image.tmdb.org/t/p/w500//3xOfFiGZ8PK8PxRvVc7kjqyMqZU.jpg",
+        "link": "/card/movies/800-702/Demon-vnutri.html",
+        "year": "2016",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
         "name": "Евротур",
         "image": "https://image.tmdb.org/t/p/w500//MDt6uQzoOqE1hCCoIu3B97Pxqf.jpg",
         "link": "/card/movies/800-701/Evrotur.html",
@@ -7474,7 +7498,7 @@ var data = [
         "type": "series"
     },
     {
-        "name": "Монстр: История Эда Гина",
+        "name": "Монстр",
         "image": "https://image.tmdb.org/t/p/w500//pDugsRV2BFi8H8NAG62LNZFlztE.jpg",
         "link": "/card/series/900-113/Monstr-Istoriya-Eda-Gina.html",
         "year": "2025",

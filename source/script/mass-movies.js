@@ -4,6 +4,27 @@
 // Аниме массив
 window.movies = [
     {
+        "name": "Санктум",
+        "image": "https://image.tmdb.org/t/p/w500//UKzddr7vWdZGmekSc7UcNaF71A.jpg",
+        "link": "/card/movies/800-704/Sanktum.html",
+        "year": "2011",
+        "rating": "6.0", "tmdb_id": 48340
+    },
+    {
+        "name": "Телекинез",
+        "image": "https://image.tmdb.org/t/p/w500//vmVDaf9H93IrXWkW8KaT2WTZNoY.jpg",
+        "link": "/card/movies/800-703/Telekinez.html",
+        "year": "2013",
+        "rating": "6.0", "tmdb_id": 133805
+    },
+    {
+        "name": "Демон внутри",
+        "image": "https://image.tmdb.org/t/p/w500//3xOfFiGZ8PK8PxRvVc7kjqyMqZU.jpg",
+        "link": "/card/movies/800-702/Demon-vnutri.html",
+        "year": "2016",
+        "rating": "6.8", "tmdb_id": 397243
+    },
+    {
         "name": "Евротур",
         "image": "https://image.tmdb.org/t/p/w500//MDt6uQzoOqE1hCCoIu3B97Pxqf.jpg",
         "link": "/card/movies/800-701/Evrotur.html",
