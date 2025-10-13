@@ -4,6 +4,42 @@
 // Аниме массив
 window.series = [
     {
+        "name": "Как я встретил вашу маму",
+        "image": "https://image.tmdb.org/t/p/w500//bcd5s6VHINRMEnnt4zXtd3m1GCO.jpg",
+        "link": "/card/series/900-121/Kak-ya-vstretil-vashu-mamu.html",
+        "year": "2005",
+        "rating": "8.1",
+        "tmdb_id": 1100,
+        "isTV": true
+    },
+    {
+        "name": "Твин Пикс",
+        "image": "https://image.tmdb.org/t/p/w500//tx5JCh2lv1QISBbVYe22cpUm5ss.jpg",
+        "link": "/card/series/900-120/Tvin-Piks.html",
+        "year": "1990",
+        "rating": "8.3",
+        "tmdb_id": 1920,
+        "isTV": true
+    },
+    {
+        "name": "Прослушка",
+        "image": "https://image.tmdb.org/t/p/w500//aoy6XphJtLvCfVmLFqBLaR56BAW.jpg",
+        "link": "/card/series/900-119/Proslushka.html",
+        "year": "2002",
+        "rating": "8.6",
+        "tmdb_id": 1438,
+        "isTV": true
+    },
+    {
+        "name": "Доктор Хаус",
+        "image": "https://image.tmdb.org/t/p/original/vyIB8z2NouGmi8kg5d07han259K.jpg",
+        "link": "/card/series/900-118/Doktor-Haus.html",
+        "year": "2004",
+        "rating": "8.6",
+        "tmdb_id": 1408,
+        "isTV": true
+    },
+    {
         "name": "Сопрано",
         "image": "https://image.tmdb.org/t/p/w500//ilcNSuJriOY2TyaNmaeGAFv8zSo.jpg",
         "link": "/card/series/900-114/Soprano.html",
@@ -310,12 +346,30 @@ window.series = [
         "isTV": true
     },
     {
+        "name": "Декстер: Воскрешение",
+        "image": "https://image.tmdb.org/t/p/w500//yFQFozGDLl7RFzupKuilh66OFuW.jpg",
+        "link": "/card/series/900-117/Dekster-Voskreshenie.html",
+        "year": "2025",
+        "rating": "8.5",
+        "tmdb_id": 259909,
+        "isTV": true
+    },
+    {
         "name": "Декстер: Новая кровь",
         "image": "https://image.tmdb.org/t/p/w500//6Dlx8ck7zRKIxnFNJ1G1tXZ6p9D.jpg",
         "link": "/card/series/900-12/Dekster-Novaya-krov.html",
         "year": "2021",
         "rating": "8.0",
         "tmdb_id": 131927,
+        "isTV": true
+    },
+    {
+        "name": "Декстер",
+        "image": "https://image.tmdb.org/t/p/w500//h59kGpnh7czSkVkND55Cp91UL32.jpg",
+        "link": "/card/series/900-116/Dekster.html",
+        "year": "2006",
+        "rating": "8.2",
+        "tmdb_id": 1405,
         "isTV": true
     },
     {
@@ -442,6 +496,15 @@ window.series = [
         "year": "2024",
         "rating": "7.2",
         "tmdb_id": 213306,
+        "isTV": true
+    },
+    {
+        "name": "Полицейский с Рублёвки",
+        "image": "https://image.tmdb.org/t/p/w500//3la60SBas5hWMP2C5mzb6WXL89S.jpg",
+        "link": "/card/series/900-115/Policejskij-s-Rublyovki.html",
+        "year": "2016",
+        "rating": "7.8",
+        "tmdb_id": 65953,
         "isTV": true
     },
     {

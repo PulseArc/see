@@ -1,6 +1,38 @@
 var data = [
     // Фильмы
     {
+        "name": "Призраки войны",
+        "image": "https://image.tmdb.org/t/p/w500//iY1YX4XiyB9jhrZHBCGofCKJIQS.jpg",
+        "link": "/card/movies/800-720/Prizraki-vojny.html",
+        "year": "2020",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Ярость",
+        "image": "https://image.tmdb.org/t/p/w500//hNB22rB2am3kJLwPLOr2RzI4dNi.jpg",
+        "link": "/card/movies/800-719/Yarost.html",
+        "year": "2014",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Я, робот",
+        "image": "https://image.tmdb.org/t/p/w500//isTzczJHRMXdxVVr81BfKaQnHt5.jpg",
+        "link": "/card/movies/800-718/Ya-robot.html",
+        "year": "2004",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Воины света",
+        "image": "https://image.tmdb.org/t/p/w500//szIPHv2Dh6NSgerANLCk9u5HARA.jpg",
+        "link": "/card/movies/800-717/Voiny-sveta.html",
+        "year": "2009",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
         "name": "Санктум",
         "image": "https://image.tmdb.org/t/p/w500//UKzddr7vWdZGmekSc7UcNaF71A.jpg",
         "link": "/card/movies/800-704/Sanktum.html",
@@ -5697,7 +5729,30 @@ var data = [
         "rating": "6.3",
         "type": "movie"
     },
-
+    {
+        "name": "Мальчишник: Часть III",
+        "image": "https://image.tmdb.org/t/p/w500//tKKCvtupZ9QNF9CjnIQ4kLA2Frf.jpg",
+        "link": "/card/movies/800-716/Malchishnik-v-Vegase-3.html",
+        "year": "2013",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Мальчишник 2: Из Вегаса в Бангкок",
+        "image": "https://image.tmdb.org/t/p/w500//zDJYcvMxqIFVXpbs4US4YF5eskU.jpg",
+        "link": "/card/movies/800-715/Malchishnik-v-Vegase-2.html",
+        "year": "2011",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Мальчишник в Вегасе",
+        "image": "https://image.tmdb.org/t/p/w500//rRKFBbfh8P8TswvSA6UGhEUVzfN.jpg",
+        "link": "/card/movies/800-714/Malchishnik-v-Vegase.html",
+        "year": "2009",
+        "rating": "7.3",
+        "type": "movie"
+    },
 
 
     // Мультфильмы
@@ -7561,6 +7616,42 @@ var data = [
 
     // Сериалы
     {
+        "name": "Как я встретил вашу маму",
+        "image": "https://image.tmdb.org/t/p/w500//bcd5s6VHINRMEnnt4zXtd3m1GCO.jpg",
+        "link": "/card/series/900-121/Kak-ya-vstretil-vashu-mamu.html",
+        "year": "2005",
+        "rating": "8.1",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Твин Пикс",
+        "image": "https://image.tmdb.org/t/p/w500//tx5JCh2lv1QISBbVYe22cpUm5ss.jpg",
+        "link": "/card/series/900-120/Tvin-Piks.html",
+        "year": "1990",
+        "rating": "8.3",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Прослушка",
+        "image": "https://image.tmdb.org/t/p/w500//aoy6XphJtLvCfVmLFqBLaR56BAW.jpg",
+        "link": "/card/series/900-119/Proslushka.html",
+        "year": "2002",
+        "rating": "8.6",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Доктор Хаус",
+        "image": "https://image.tmdb.org/t/p/original/vyIB8z2NouGmi8kg5d07han259K.jpg",
+        "link": "/card/series/900-118/Doktor-Haus.html",
+        "year": "2004",
+        "rating": "8.6",
+        "isTV": true,
+        "type": "series"
+    },
+    {
         "name": "Сопрано",
         "image": "https://image.tmdb.org/t/p/w500//ilcNSuJriOY2TyaNmaeGAFv8zSo.jpg",
         "link": "/card/series/900-114/Soprano.html",
@@ -8290,11 +8381,29 @@ var data = [
         "type": "series"
     },
     {
+        "name": "Декстер: Воскрешение",
+        "image": "https://image.tmdb.org/t/p/w500//yFQFozGDLl7RFzupKuilh66OFuW.jpg",
+        "link": "/card/series/900-117/Dekster-Voskreshenie.html",
+        "year": "2025",
+        "rating": "8.5",
+        "isTV": true,
+        "type": "series"
+    },
+    {
         "name": "Декстер: Новая кровь",
         "image": "https://image.tmdb.org/t/p/w500//6Dlx8ck7zRKIxnFNJ1G1tXZ6p9D.jpg",
         "link": "/card/series/900-12/Dekster-Novaya-krov.html",
         "year": "2021",
         "rating": "8.0",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Декстер",
+        "image": "https://image.tmdb.org/t/p/w500//h59kGpnh7czSkVkND55Cp91UL32.jpg",
+        "link": "/card/series/900-116/Dekster.html",
+        "year": "2006",
+        "rating": "8.2",
         "isTV": true,
         "type": "series"
     },
@@ -8423,6 +8532,15 @@ var data = [
         "rating": "7.2",
         "isTV": true,
         "type": "series"
+    },
+    {
+        "name": "Полицейский с Рублёвки",
+        "image": "https://image.tmdb.org/t/p/w500//3la60SBas5hWMP2C5mzb6WXL89S.jpg",
+        "link": "/card/series/900-115/Policejskij-s-Rublyovki.html",
+        "year": "2016",
+        "rating": "7.8",
+        "tmdb_id": 65953,
+        "isTV": true
     },
     {
         "name": "Ганнибал",

@@ -4,6 +4,34 @@
 // Аниме массив
 window.movies = [
     {
+        "name": "Призраки войны",
+        "image": "https://image.tmdb.org/t/p/w500//iY1YX4XiyB9jhrZHBCGofCKJIQS.jpg",
+        "link": "/card/movies/800-720/Prizraki-vojny.html",
+        "year": "2020",
+        "rating": "6.3", "tmdb_id":608195
+    },
+    {
+        "name": "Ярость",
+        "image": "https://image.tmdb.org/t/p/w500//hNB22rB2am3kJLwPLOr2RzI4dNi.jpg",
+        "link": "/card/movies/800-719/Yarost.html",
+        "year": "2014",
+        "rating": "7.5", "tmdb_id":228150
+    },
+    {
+        "name": "Я, робот",
+        "image": "https://image.tmdb.org/t/p/w500//isTzczJHRMXdxVVr81BfKaQnHt5.jpg",
+        "link": "/card/movies/800-718/Ya-robot.html",
+        "year": "2004",
+        "rating": "7.0", "tmdb_id": 2048
+    },
+    {
+        "name": "Воины света",
+        "image": "https://image.tmdb.org/t/p/w500//szIPHv2Dh6NSgerANLCk9u5HARA.jpg",
+        "link": "/card/movies/800-717/Voiny-sveta.html",
+        "year": "2009",
+        "rating": "6.3", "tmdb_id": 19901
+    },
+    {
         "name": "Санктум",
         "image": "https://image.tmdb.org/t/p/w500//UKzddr7vWdZGmekSc7UcNaF71A.jpg",
         "link": "/card/movies/800-704/Sanktum.html",
@@ -4991,7 +5019,27 @@ window.movies = [
         "year": "2008",
         "rating": "6.3", "tmdb_id": 8966
     },
-
+    {
+        "name": "Мальчишник: Часть III",
+        "image": "https://image.tmdb.org/t/p/w500//tKKCvtupZ9QNF9CjnIQ4kLA2Frf.jpg",
+        "link": "/card/movies/800-716/Malchishnik-v-Vegase-3.html",
+        "year": "2013",
+        "rating": "6.2", "tmdb_id": 109439
+    },
+    {
+        "name": "Мальчишник 2: Из Вегаса в Бангкок",
+        "image": "https://image.tmdb.org/t/p/w500//zDJYcvMxqIFVXpbs4US4YF5eskU.jpg",
+        "link": "/card/movies/800-715/Malchishnik-v-Vegase-2.html",
+        "year": "2011",
+        "rating": "6.5", "tmdb_id": 45243
+    },
+    {
+        "name": "Мальчишник в Вегасе",
+        "image": "https://image.tmdb.org/t/p/w500//rRKFBbfh8P8TswvSA6UGhEUVzfN.jpg",
+        "link": "/card/movies/800-714/Malchishnik-v-Vegase.html",
+        "year": "2009",
+        "rating": "7.3", "tmdb_id": 18785
+    },
 
     // конец
 
