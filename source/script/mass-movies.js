@@ -1989,6 +1989,13 @@ window.movies = [
         "rating": "6.1", "tmdb_id": 972433
     },
     {
+        "name": "Девушка из каюты № 10",
+        "image": "https://image.tmdb.org/t/p/w500//xDTsg6Kbf5xDOglcOgxBeUs0lWU.jpg",
+        "link": "/card/movies/800-706/Devushka-iz-kayuty-N10.html",
+        "year": "2025",
+        "rating": "6.2", "tmdb_id": 1290879
+    },
+    {
         "name": "Паразиты",
         "image": "https://image.tmdb.org/t/p/w500//zg3lUyLTnpbS5N29G6B3a63O7uP.jpg",
         "link": "/card/movies/800-06/Parazity.html",
@@ -2001,6 +2008,13 @@ window.movies = [
         "link": "/card/movies/800-07/Idealnye-neznakomcy.html",
         "year": "2016",
         "rating": "7.9", "tmdb_id": 381341
+    },
+    {
+        "name": "Долгая прогулка",
+        "image": "https://image.tmdb.org/t/p/original/7jCCkUFKwuLwfmHDba3oXsKQuMA.jpg",
+        "link": "/card/movies/800-705/Dolgaya-progulka.html",
+        "year": "2025",
+        "rating": "7.0", "tmdb_id": 604079
     },
     {
         "name": "Остров проклятых",
@@ -2246,6 +2260,20 @@ window.movies = [
         "link": "/card/movies/800-372/Prizrachnyj-patrul.html",
         "year": "2013",
         "rating": "5.8", "tmdb_id": 49524
+    },
+    {
+        "name": "Трон: Наследие",
+        "image": "https://image.tmdb.org/t/p/w500//1d8y5H0UTTZLxqkfrfaouWQ2bF8.jpg",
+        "link": "/card/movies/800-708/Tron-Nasledie.html",
+        "year": "2010",
+        "rating": "6.5", "tmdb_id": 20526
+    },
+    {
+        "name": "Трон",
+        "image": "https://image.tmdb.org/t/p/w500//aREUVaR73YcxqgCdsU8hzdqvniL.jpg",
+        "link": "/card/movies/800-707/Tron.html",
+        "year": "1982",
+        "rating": "6.7", "tmdb_id": 97
     },
     {
         "name": "Стив",
@@ -4928,7 +4956,41 @@ window.movies = [
         "year": "1979",
         "rating": "6.5", "tmdb_id": 152
     },
-
+    {
+        "name": "Сумерки. Сага: Рассвет — Часть 2",
+        "image": "https://image.tmdb.org/t/p/w500//fgVXAUj9w6OrVlhQ0YPiZhO46j5.jpg",
+        "link": "/card/movies/800-713/Sumerki-Saga-Rassvet-Chast-2.html",
+        "year": "2012",
+        "rating": "6.5", "tmdb_id": 50620
+    },
+    {
+        "name": "Сумерки. Сага: Рассвет — Часть 1",
+        "image": "https://image.tmdb.org/t/p/w500//hnJ5U57LWu6xHp8w0z3o0ZdgFTf.jpg",
+        "link": "/card/movies/800-712/Sumerki-Saga-Rassvet-Chast-1.html",
+        "year": "2011",
+        "rating": "6.2", "tmdb_id": 50619
+    },
+    {
+        "name": "Сумерки. Сага: Затмение",
+        "image": "https://image.tmdb.org/t/p/w500//dK4Gi1UdMiHzHc7r7CZQG4IQ9Sr.jpg",
+        "link": "/card/movies/800-711/Sumerki-Saga-Zatmenie.html",
+        "year": "2010",
+        "rating": "6.2", "tmdb_id": 24021
+    },
+    {
+        "name": "Сумерки. Сага: Новолуние",
+        "image": "https://image.tmdb.org/t/p/w500//skucxWub4EZh1spfrgVFOlHwYCU.jpg",
+        "link": "/card/movies/800-710/Sumerki-Saga-Novolunie.html",
+        "year": "2009",
+        "rating": "6.0", "tmdb_id": 18239
+    },
+    {
+        "name": "Сумерки",
+        "image": "https://image.tmdb.org/t/p/w500//pWI6GBi4eMQttMtKSWbxIFO2HqC.jpg",
+        "link": "/card/movies/800-709/Sumerki.html",
+        "year": "2008",
+        "rating": "6.3", "tmdb_id": 8966
+    },
 
 
     // конец
