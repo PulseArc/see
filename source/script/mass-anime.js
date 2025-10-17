@@ -4,6 +4,15 @@
 // Аниме массив
 window.anime = [
     {
+        "name": "Гачиакута",
+        "image": "https://image.tmdb.org/t/p/w500//qU5hJXaY6IjDqBrlDaAhlbPvXVU.jpg",
+        "link": "/card/anime/100-86/Gachiakuta.html",
+        "year": "2025",
+        "rating": "8.9",
+        "tmdb_id": 256721,
+        "isTV": true
+    },
+    {
         "name": "Ветролом",
         "image": "https://image.tmdb.org/t/p/w500//nvvvXGdVaSeYeWSFBkpa1HKIfay.jpg",
         "link": "/card/anime/100-85/Vetrolom.html",
@@ -29,6 +38,14 @@ window.anime = [
         "rating": "8.9",
         "tmdb_id": 232230,
         "isTV": true
+    },
+    {
+        "name": "Меч чужака",
+        "image": "https://image.tmdb.org/t/p/w500//f3llQzjODixVakVWsK4YpXFjRUE.jpg",
+        "link": "/card/anime/100-87/Mech-chuzhaka.html",
+        "year": "2007",
+        "rating": "7.6",
+        "tmdb_id": 13980
     },
     {
         "name": "Охотник x Охотник",

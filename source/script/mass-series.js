@@ -4,6 +4,15 @@
 // Аниме массив
 window.series = [
     {
+        "name": "Йеллоустоун",
+        "image": "https://image.tmdb.org/t/p/w500//muLDL6UrK6Rh47OwgbNZbNcwUc.jpg",
+        "link": "/card/series/900-122/Jelloustoun.html",
+        "year": "2018",
+        "rating": "8.3",
+        "tmdb_id": 73586,
+        "isTV": true
+    },
+    {
         "name": "Как я встретил вашу маму",
         "image": "https://image.tmdb.org/t/p/w500//bcd5s6VHINRMEnnt4zXtd3m1GCO.jpg",
         "link": "/card/series/900-121/Kak-ya-vstretil-vashu-mamu.html",

@@ -4,6 +4,90 @@
 // Аниме массив
 window.movies = [
     {
+        "name": "Из глубины",
+        "image": "https://image.tmdb.org/t/p/original/1xyWbfT3LzpBqsxSssX6RW5O8pU.jpg",
+        "link": "/card/movies/800-732/Iz-glubiny.html",
+        "year": "2024",
+        "rating": "6.3", "tmdb_id":1096197
+    },
+    {
+        "name": "Запретная торговля",
+        "image": "https://image.tmdb.org/t/p/w500//i073PASJ7aVC554GUI7cpyw04W0.jpg",
+        "link": "/card/movies/800-731/Zapretnaya-torgovlya.html",
+        "year": "2023",
+        "rating": "5.9", "tmdb_id":1117379
+    },
+    {
+        "name": "Обрушение",
+        "image": "https://image.tmdb.org/t/p/w500//4Ah3vI04Brifob7qsacnTFYO2pF.jpg",
+        "link": "/card/movies/800-730/Obrushenie.html",
+        "year": "2021",
+        "rating": "6.9", "tmdb_id":623135
+    },
+    {
+        "name": "Тройная граница",
+        "image": "https://image.tmdb.org/t/p/w500//vNVgXfR60u09o6eCDLMVCogKOel.jpg",
+        "link": "/card/movies/800-729/Trojnaya-granica.html",
+        "year": "2019",
+        "rating": "6.3", "tmdb_id":399361
+    },
+    {
+        "name": "Союз",
+        "image": "https://image.tmdb.org/t/p/w500//isb7oQmlumbSwmDq7HyWIo39Fyo.jpg",
+        "link": "/card/movies/800-728/Soyuz.html",
+        "year": "2024",
+        "rating": "6.1", "tmdb_id":704239
+    },
+    {
+        "name": "Под водой",
+        "image": "https://image.tmdb.org/t/p/w500//qK8vBhQMzrreTNQcMYRRgRsvh23.jpg",
+        "link": "/card/movies/800-727/Pod-vodoj.html",
+        "year": "2020",
+        "rating": "6.3", "tmdb_id":443791
+    },
+    {
+        "name": "В поисках зверя",
+        "image": "https://image.tmdb.org/t/p/w500//hlkhr46OKRLP1utw3Ip1IkcDevE.jpg",
+        "link": "/card/movies/800-726/V-poiskah-zverya.html",
+        "year": "2023",
+        "rating": "5.9", "tmdb_id":843846
+    },
+    {
+        "name": "Век Адалин",
+        "image": "https://image.tmdb.org/t/p/w500//eOWf8GmxjDX5vpPWHnrbQSXmv03.jpg",
+        "link": "/card/movies/800-725/Vek-Adalin.html",
+        "year": "2015",
+        "rating": "7.5", "tmdb_id":293863
+    },
+    {
+        "name": "Ханна. В игре",
+        "image": "https://image.tmdb.org/t/p/w500//80hgsCQDPI1UmkeVVKebxjIfBDc.jpg",
+        "link": "/card/movies/800-724/Hanna-V-igre.html",
+        "year": "2024",
+        "rating": "5.6", "tmdb_id":1042657
+    },
+    {
+        "name": "Смертельная Зона",
+        "image": "https://image.tmdb.org/t/p/w500//mnrbB7tQcAqjs8aYG4BYV98cpb4.jpg",
+        "link": "/card/movies/800-723/Smertelnaya-Zona.html",
+        "year": "2021",
+        "rating": "6.3", "tmdb_id":775996
+    },
+    {
+        "name": "Список подозреваемых",
+        "image": "https://image.tmdb.org/t/p/w500//fSakYFaIrCEjsCHs629qMVqTc26.jpg",
+        "link": "/card/movies/800-722/Spisok-podozrevaemyh.html",
+        "year": "2024",
+        "rating": "5.5", "tmdb_id":1114738
+    },
+    {
+        "name": "Любовь и монстры",
+        "image": "https://image.tmdb.org/t/p/w500//pVfv1gjcTUxkdAZVrI6z3kySknq.jpg",
+        "link": "/card/movies/800-721/Lyubov-i-monstry.html",
+        "year": "2020",
+        "rating": "7.3", "tmdb_id":590223
+    },
+    {
         "name": "Призраки войны",
         "image": "https://image.tmdb.org/t/p/w500//iY1YX4XiyB9jhrZHBCGofCKJIQS.jpg",
         "link": "/card/movies/800-720/Prizraki-vojny.html",

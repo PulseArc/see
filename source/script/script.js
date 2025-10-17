@@ -1,5 +1,101 @@
 var data = [
     // Фильмы
+     {
+        "name": "Из глубины",
+        "image": "https://image.tmdb.org/t/p/original/1xyWbfT3LzpBqsxSssX6RW5O8pU.jpg",
+        "link": "/card/movies/800-732/Iz-glubiny.html",
+        "year": "2024",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Запретная торговля",
+        "image": "https://image.tmdb.org/t/p/w500//i073PASJ7aVC554GUI7cpyw04W0.jpg",
+        "link": "/card/movies/800-731/Zapretnaya-torgovlya.html",
+        "year": "2023",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "Обрушение",
+        "image": "https://image.tmdb.org/t/p/w500//4Ah3vI04Brifob7qsacnTFYO2pF.jpg",
+        "link": "/card/movies/800-730/Obrushenie.html",
+        "year": "2021",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Тройная граница",
+        "image": "https://image.tmdb.org/t/p/w500//vNVgXfR60u09o6eCDLMVCogKOel.jpg",
+        "link": "/card/movies/800-729/Trojnaya-granica.html",
+        "year": "2019",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Союз",
+        "image": "https://image.tmdb.org/t/p/w500//isb7oQmlumbSwmDq7HyWIo39Fyo.jpg",
+        "link": "/card/movies/800-728/Soyuz.html",
+        "year": "2024",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Под водой",
+        "image": "https://image.tmdb.org/t/p/w500//qK8vBhQMzrreTNQcMYRRgRsvh23.jpg",
+        "link": "/card/movies/800-727/Pod-vodoj.html",
+        "year": "2020",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "В поисках зверя",
+        "image": "https://image.tmdb.org/t/p/w500//hlkhr46OKRLP1utw3Ip1IkcDevE.jpg",
+        "link": "/card/movies/800-726/V-poiskah-zverya.html",
+        "year": "2023",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "Век Адалин",
+        "image": "https://image.tmdb.org/t/p/w500//eOWf8GmxjDX5vpPWHnrbQSXmv03.jpg",
+        "link": "/card/movies/800-725/Vek-Adalin.html",
+        "year": "2015",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Ханна. В игре",
+        "image": "https://image.tmdb.org/t/p/w500//80hgsCQDPI1UmkeVVKebxjIfBDc.jpg",
+        "link": "/card/movies/800-724/Hanna-V-igre.html",
+        "year": "2024",
+        "rating": "5.6",
+        "type": "movie"
+    },
+    {
+        "name": "Смертельная Зона",
+        "image": "https://image.tmdb.org/t/p/w500//mnrbB7tQcAqjs8aYG4BYV98cpb4.jpg",
+        "link": "/card/movies/800-723/Smertelnaya-Zona.html",
+        "year": "2021",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Список подозреваемых",
+        "image": "https://image.tmdb.org/t/p/w500//fSakYFaIrCEjsCHs629qMVqTc26.jpg",
+        "link": "/card/movies/800-722/Spisok-podozrevaemyh.html",
+        "year": "2024",
+        "rating": "5.5",
+        "type": "movie"
+    },
+    {
+        "name": "Любовь и монстры",
+        "image": "https://image.tmdb.org/t/p/w500//pVfv1gjcTUxkdAZVrI6z3kySknq.jpg",
+        "link": "/card/movies/800-721/Lyubov-i-monstry.html",
+        "year": "2020",
+        "rating": "7.3",
+        "type": "movie"
+    },
     {
         "name": "Призраки войны",
         "image": "https://image.tmdb.org/t/p/w500//iY1YX4XiyB9jhrZHBCGofCKJIQS.jpg",
@@ -7616,6 +7712,16 @@ var data = [
 
     // Сериалы
     {
+        "name": "Йеллоустоун",
+        "image": "https://image.tmdb.org/t/p/w500//muLDL6UrK6Rh47OwgbNZbNcwUc.jpg",
+        "link": "/card/series/900-122/Jelloustoun.html",
+        "year": "2018",
+        "rating": "8.3",
+        "tmdb_id": 73586,
+        "isTV": true,
+        "type": "series"
+    },
+    {
         "name": "Как я встретил вашу маму",
         "image": "https://image.tmdb.org/t/p/w500//bcd5s6VHINRMEnnt4zXtd3m1GCO.jpg",
         "link": "/card/series/900-121/Kak-ya-vstretil-vashu-mamu.html",
@@ -8710,6 +8816,15 @@ var data = [
 
     // Аниме
     {
+        "name": "Гачиакута",
+        "image": "https://image.tmdb.org/t/p/w500//qU5hJXaY6IjDqBrlDaAhlbPvXVU.jpg",
+        "link": "/card/anime/100-86/Gachiakuta.html",
+        "year": "2025",
+        "rating": "8.9",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
         "name": "Ветролом",
         "image": "https://image.tmdb.org/t/p/w500//nvvvXGdVaSeYeWSFBkpa1HKIfay.jpg",
         "link": "/card/anime/100-85/Vetrolom.html",
@@ -8734,6 +8849,15 @@ var data = [
         "year": "2025",
         "rating": "8.9",
         "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Меч чужака",
+        "image": "https://image.tmdb.org/t/p/w500//f3llQzjODixVakVWsK4YpXFjRUE.jpg",
+        "link": "/card/anime/100-87/Mech-chuzhaka.html",
+        "year": "2007",
+        "rating": "7.6",
+        "tmdb_id": 13980,
         "type": "anime"
     },
     {
