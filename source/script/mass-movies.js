@@ -4,6 +4,27 @@
 // Аниме массив
 window.movies = [
     {
+        "name": "Аллея кошмаров",
+        "image": "https://image.tmdb.org/t/p/w500//bFmc6gjBK0UFD4y5kbS4QNJZBhm.jpg",
+        "link": "/card/movies/800-737/Alleya-koshmarov.html",
+        "year": "2021",
+        "rating": "7.0", "tmdb_id":597208
+    },
+    {
+        "name": "Папе снова 17",
+        "image": "https://image.tmdb.org/t/p/w500//aUmtg6A6yEntiI7gqNfBDSE7nh8.jpg",
+        "link": "/card/movies/800-736/Pape-snova-17.html",
+        "year": "2009",
+        "rating": "6.3", "tmdb_id":16996
+    },
+    {
+        "name": "Взаперти",
+        "image": "https://image.tmdb.org/t/p/w500//awmaQuMN0NE52au6cJQLN69qH1A.jpg",
+        "link": "/card/movies/800-35/Vzaperti.html",
+        "year": "2022",
+        "rating": "6.8", "tmdb_id":629015
+    },
+    {
         "name": "Из глубины",
         "image": "https://image.tmdb.org/t/p/original/1xyWbfT3LzpBqsxSssX6RW5O8pU.jpg",
         "link": "/card/movies/800-732/Iz-glubiny.html",
@@ -1061,6 +1082,13 @@ window.movies = [
         "link": "/card/movies/800-367/Renfild.html",
         "year": "2023",
         "rating": "6.5", "tmdb_id": 649609
+    },
+    {
+        "name": "Чёрный телефон",
+        "image": "https://image.tmdb.org/t/p/w500//fWGd2NCgrwsammIxBJ2AhoffVkS.jpg",
+        "link": "/card/movies/800-735/Chyornyj-telefon.html",
+        "year": "2022",
+        "rating": "7.6", "tmdb_id":756999
     },
     {
         "name": "Птичий короб",
@@ -5123,6 +5151,20 @@ window.movies = [
         "link": "/card/movies/800-714/Malchishnik-v-Vegase.html",
         "year": "2009",
         "rating": "7.3", "tmdb_id": 18785
+    },
+        {
+        "name": "Три метра над уровнем неба: Я тебя хочу",
+        "image": "https://image.tmdb.org/t/p/w500//zvsCvPtXjs7Vh1wfcmmRTAn7Y0F.jpg",
+        "link": "/card/movies/800-734/Tri-metra-nad-urovnem-neba-Ya-tebya-hochu.html",
+        "year": "2012",
+        "rating": "7.5", "tmdb_id": 109689
+    },
+    {
+        "name": "Три метра над уровнем неба",
+        "image": "https://image.tmdb.org/t/p/w500//hs8U2paOu0siXWy4MngMJKMbZSw.jpg",
+        "link": "/card/movies/800-733/Tri-metra-nad-urovnem-neba.html",
+        "year": "2010",
+        "rating": "7.7", "tmdb_id": 61979
     },
 
     // конец

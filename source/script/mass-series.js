@@ -4,6 +4,60 @@
 // Аниме массив
 window.series = [
     {
+        "name": "Мир Дикого Запада",
+        "image": "https://image.tmdb.org/t/p/w500//j6fldQaouy30RJRfKbp4GRCQfle.jpg",
+        "link": "/card/series/900-128/Mir-Dikogo-Zapada.html",
+        "year": "2016",
+        "rating": "8.0",
+        "tmdb_id": 63247,
+        "isTV": true
+    },
+    {
+        "name": "Секретные материалы",
+        "image": "https://image.tmdb.org/t/p/w500//nMKS5l1lEmZQVZxCnbKs44mOfxc.jpg",
+        "link": "/card/series/900-127/Sekretnye-materialy.html",
+        "year": "1993",
+        "rating": "8.4",
+        "tmdb_id": 4087,
+        "isTV": true
+    },
+    {
+        "name": "Викинги",
+        "image": "https://image.tmdb.org/t/p/w500//1de3R902B5EEMmohBQsExd5V87Y.jpg",
+        "link": "/card/series/900-126/Vikingi.html",
+        "year": "2013",
+        "rating": "8.1",
+        "tmdb_id": 44217,
+        "isTV": true
+    },
+    {
+        "name": "Оставленные",
+        "image": "https://image.tmdb.org/t/p/w500//lHElXdWScZqEeUBvvyaD2fRGOzm.jpg",
+        "link": "/card/series/900-125/Ostavlennye.html",
+        "year": "2014",
+        "rating": "7.6",
+        "tmdb_id": 54344,
+        "isTV": true
+    },
+    {
+        "name": "Безумцы",
+        "image": "https://image.tmdb.org/t/p/w500//caYFrMMhiUaRFT8ATiydsBURasN.jpg",
+        "link": "/card/series/900-124/Bezumcy.html",
+        "year": "2007",
+        "rating": "8.1",
+        "tmdb_id": 1104,
+        "isTV": true
+    },
+    {
+        "name": "Клиника",
+        "image": "https://image.tmdb.org/t/p/w500//6kn6qST5VfdqZT97Uahn67ayaFm.jpg",
+        "link": "/card/series/900-123/Klinika.html",
+        "year": "2001",
+        "rating": "8.0",
+        "tmdb_id": 4556,
+        "isTV": true
+    },
+    {
         "name": "Йеллоустоун",
         "image": "https://image.tmdb.org/t/p/w500//muLDL6UrK6Rh47OwgbNZbNcwUc.jpg",
         "link": "/card/series/900-122/Jelloustoun.html",

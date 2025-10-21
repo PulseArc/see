@@ -1,6 +1,30 @@
 var data = [
     // Фильмы
-     {
+    {
+        "name": "Аллея кошмаров",
+        "image": "https://image.tmdb.org/t/p/w500//bFmc6gjBK0UFD4y5kbS4QNJZBhm.jpg",
+        "link": "/card/movies/800-737/Alleya-koshmarov.html",
+        "year": "2021",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Папе снова 17",
+        "image": "https://image.tmdb.org/t/p/w500//aUmtg6A6yEntiI7gqNfBDSE7nh8.jpg",
+        "link": "/card/movies/800-736/Pape-snova-17.html",
+        "year": "2009",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Взаперти",
+        "image": "https://image.tmdb.org/t/p/w500//awmaQuMN0NE52au6cJQLN69qH1A.jpg",
+        "link": "/card/movies/800-35/Vzaperti.html",
+        "year": "2022",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
         "name": "Из глубины",
         "image": "https://image.tmdb.org/t/p/original/1xyWbfT3LzpBqsxSssX6RW5O8pU.jpg",
         "link": "/card/movies/800-732/Iz-glubiny.html",
@@ -384,7 +408,7 @@ var data = [
         "rating": "6.5",
         "type": "movie"
     },
-     {
+    {
         "name": "Особо опасен",
         "image": "https://image.tmdb.org/t/p/w500//vfajgD7PNcVwksoG6vItv4qIPDS.jpg",
         "link": "/card/movies/800-616/Osobo-opasen.html",
@@ -1209,6 +1233,14 @@ var data = [
         "type": "movie"
     },
     {
+        "name": "Чёрный телефон",
+        "image": "https://image.tmdb.org/t/p/w500//fWGd2NCgrwsammIxBJ2AhoffVkS.jpg",
+        "link": "/card/movies/800-735/Chyornyj-telefon.html",
+        "year": "2022",
+        "rating": "7.6",
+        "type": "movie"
+    },
+    {
         "name": "Птичий короб",
         "image": "https://image.tmdb.org/t/p/w500//dWbhNl7ESABUqXfyOKPr5EQaDXP.jpg",
         "link": "/card/movies/800-368/Ptichij-korob.html",
@@ -1960,7 +1992,7 @@ var data = [
         "rating": "6.7",
         "type": "movie"
     },
-        {
+    {
         "name": "Луни Тюнз: Снова в Деле",
         "image": "https://image.tmdb.org/t/p/w500//8lW0PYX6XL4GMgLHNHvcBhsY1ga.jpg",
         "link": "/card/movies/800-634/Luni-Tyunz-Snova-v-Dele.html",
@@ -2120,7 +2152,7 @@ var data = [
         "rating": "5.0",
         "type": "movie"
     },
-     {
+    {
         "name": "Плохие парни до Конца",
         "image": "https://image.tmdb.org/t/p/w500//1d44Y7WsS6WTzVDmS0sJyzJNb2N.jpg",
         "link": "/card/movies/800-614/Plohie-parni-do-Konca.html",
@@ -2224,7 +2256,7 @@ var data = [
         "rating": "6.6",
         "type": "movie"
     },
-     {
+    {
         "name": "007: Координаты «Скайфолл»",
         "image": "https://image.tmdb.org/t/p/w500//3okWlsWLJyftpaTEzPFO015aBl.jpg",
         "link": "/card/movies/800-608/007-Koordinaty-Skajfoll.html",
@@ -2240,7 +2272,7 @@ var data = [
         "rating": "6.3",
         "type": "movie"
     },
-      {
+    {
         "name": "007: Казино Рояль",
         "image": "https://image.tmdb.org/t/p/w500//kGLOLum7xU95spakBEfxCjEfNn0.jpg",
         "link": "/card/movies/800-606/007-Kazino-Royal.html",
@@ -2248,7 +2280,7 @@ var data = [
         "rating": "7.6",
         "type": "movie"
     },
-        {
+    {
         "name": "007: Умри, но не сейчас",
         "image": "https://image.tmdb.org/t/p/w500//hG4ecMxOkM9UTx6GC9HjPvBlNF2.jpg",
         "link": "/card/movies/800-605/007-Umri-no-ne-sejchas.html",
@@ -2256,7 +2288,7 @@ var data = [
         "rating": "6.0",
         "type": "movie"
     },
-      {
+    {
         "name": "007: И целого мира мало",
         "image": "https://image.tmdb.org/t/p/w500//8jzAtsouYXTopHYl3MvOy6fKF8R.jpg",
         "link": "/card/movies/800-604/007-I-celogo-mira-malo.html",
@@ -2264,7 +2296,7 @@ var data = [
         "rating": "6.3",
         "type": "movie"
     },
-     {
+    {
         "name": "007: Завтра не умрёт никогда",
         "image": "https://image.tmdb.org/t/p/w500//rg3RCK6xWnBwYAjPS89PjWcMpQq.jpg",
         "link": "/card/movies/800-603/007-Zavtra-ne-umryot-nikogda.html",
@@ -2272,7 +2304,7 @@ var data = [
         "rating": "6.4",
         "type": "movie"
     },
-     {
+    {
         "name": "007: Золотой Глаз",
         "image": "https://image.tmdb.org/t/p/w500//h5FGvFKwr3Za2T5CkVgeUbiVejh.jpg",
         "link": "/card/movies/800-602/007-Zolotoj-Glaz.html",
@@ -2688,7 +2720,7 @@ var data = [
         "rating": "6.5",
         "type": "movie"
     },
-     {
+    {
         "name": "Мадам Паутина",
         "image": "https://image.tmdb.org/t/p/w500//8eyCtvA0hqoagcfjsieTrBecQbq.jpg",
         "link": "/card/movies/800-600/Madam-Pautina.html",
@@ -2744,7 +2776,7 @@ var data = [
         "rating": "6.8",
         "type": "movie"
     },
-     {
+    {
         "name": "Веном",
         "image": "https://image.tmdb.org/t/p/w500//8Gyl0fknqiZeCLm9XitxCXQmEL9.jpg",
         "link": "/card/movies/800-593/Venom.html",
@@ -5161,7 +5193,7 @@ var data = [
         "rating": "6.1",
         "type": "movie"
     },
-      {
+    {
         "name": "Военнопленный",
         "image": "https://image.tmdb.org/t/p/w500//qwxU3i186IwqIMJdI7gXl6eknkK.jpg",
         "link": "/card/movies/800-627/Voennoplennyj.html",
@@ -5201,7 +5233,7 @@ var data = [
         "rating": "8.6",
         "type": "movie"
     },
-        {
+    {
         "name": "Мир в огне",
         "image": "https://image.tmdb.org/t/p/w500//xBWKgEDlXGrFAvjVzCUcPmw8kHk.jpg",
         "link": "/card/movies/800-626/Mir-v-ogne.html",
@@ -5584,7 +5616,7 @@ var data = [
         "year": "1999",
         "rating": "6.6",
         "type": "movie"
-    }, 
+    },
     {
         "name": "Звёздные войны: Эпизод 6 - Возвращение Джедая",
         "image": "https://image.tmdb.org/t/p/w500//91bG08Mpa4T7YWFMjsiNi2Fh6jc.jpg",
@@ -5600,7 +5632,7 @@ var data = [
         "year": "1980",
         "rating": "8.4",
         "type": "movie"
-    }, 
+    },
     {
         "name": "Звёздные войны: Эпизод 4 - Новая надежда",
         "image": "https://image.tmdb.org/t/p/w500//wPlD3Z5x0O92rsB44XKHKQijROM.jpg",
@@ -5608,7 +5640,7 @@ var data = [
         "year": "1977",
         "rating": "8.2",
         "type": "movie"
-    }, 
+    },
     {
         "name": "Шаг вперед 6: Год танцев",
         "image": "https://image.tmdb.org/t/p/w500//6E5U8UZbIkAUplyOLW92K7cGXji.jpg",
@@ -5849,9 +5881,52 @@ var data = [
         "rating": "7.3",
         "type": "movie"
     },
+    {
+        "name": "Три метра над уровнем неба: Я тебя хочу",
+        "image": "https://image.tmdb.org/t/p/w500//zvsCvPtXjs7Vh1wfcmmRTAn7Y0F.jpg",
+        "link": "/card/movies/800-734/Tri-metra-nad-urovnem-neba-Ya-tebya-hochu.html",
+        "year": "2012",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Три метра над уровнем неба",
+        "image": "https://image.tmdb.org/t/p/w500//hs8U2paOu0siXWy4MngMJKMbZSw.jpg",
+        "link": "/card/movies/800-733/Tri-metra-nad-urovnem-neba.html",
+        "year": "2010",
+        "rating": "7.7",
+        "type": "movie"
+    },
 
 
     // Мультфильмы
+    {
+        "name": "Чудеса на виражах",
+        "image": "https://image.tmdb.org/t/p/w500//5YrzivFh1mKtUlje1ZHZvFxJRgL.jpg",
+        "link": "/card/cartoons/500-230/Chudesa-na-virazhah.html",
+        "year": "1990",
+        "rating": "7.4",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Ким Пять-с-плюсом",
+        "image": "https://image.tmdb.org/t/p/w500//mZklBKwqv1vsgkPJaFZU2tqc59.jpg",
+        "link": "/card/cartoons/500-229/Kim-Pyat-s-plyusom.html",
+        "year": "2002",
+        "rating": "7.6",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Кураж – трусливый пёс",
+        "image": "https://image.tmdb.org/t/p/w500//dzD8EWDvtg7rBCINu0RCH5EUejh.jpg",
+        "link": "/card/cartoons/500-228/Kurazh-truslivyj-pyos.html",
+        "year": "1999",
+        "rating": "8.2",
+        "isTV": true,
+        "type": "cartoon"
+    },
     {
         "name": "Самурай Джек",
         "image": "https://image.tmdb.org/t/p/original/aBig8NqD8IQrZ1OV258MqHvsAsF.jpg",
@@ -7681,6 +7756,32 @@ var data = [
         "type": "cartoon"
     },
     {
+        "name": "Чип и Дейл",
+        "image": "https://image.tmdb.org/t/p/w500//3JPFgEWoiV6RAzD5o5why4xISDw.jpg",
+        "link": "/card/cartoons/500-227/Chip-i-Dejl.html",
+        "year": "2021",
+        "rating": "6.4",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Чип и Дейл: Дерево неприятностей",
+        "image": "https://image.tmdb.org/t/p/w500//eaO8Zgcfr4cPSRRwVMQT6rtct7u.jpg",
+        "link": "/card/cartoons/500-226/Chip-i-Dejl-Derevo-nepriyatnostej.html",
+        "year": "2005",
+        "rating": "7.6",
+        "type": "cartoon"
+    },
+    {
+        "name": "Чип и Дейл спешат на помощь",
+        "image": "https://image.tmdb.org/t/p/w500//cVa6j0tiZ4y68Rm5RnDIvxEXzSR.jpg",
+        "link": "/card/cartoons/500-225/Chip-i-Dejl-speshat-na-pomosh.html",
+        "year": "1989",
+        "rating": "7.6",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
         "name": "Рик и Морти",
         "image": "https://image.tmdb.org/t/p/w500//wdzk1wPGOnO8dCnaQozSpe1oH9l.jpg",
         "link": "/card/cartoons/500-73/Rik-i-Morti.html",
@@ -7712,12 +7813,65 @@ var data = [
 
     // Сериалы
     {
+        "name": "Мир Дикого Запада",
+        "image": "https://image.tmdb.org/t/p/w500//j6fldQaouy30RJRfKbp4GRCQfle.jpg",
+        "link": "/card/series/900-128/Mir-Dikogo-Zapada.html",
+        "year": "2016",
+        "rating": "8.0",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Секретные материалы",
+        "image": "https://image.tmdb.org/t/p/w500//nMKS5l1lEmZQVZxCnbKs44mOfxc.jpg",
+        "link": "/card/series/900-127/Sekretnye-materialy.html",
+        "year": "1993",
+        "rating": "8.4",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Викинги",
+        "image": "https://image.tmdb.org/t/p/w500//1de3R902B5EEMmohBQsExd5V87Y.jpg",
+        "link": "/card/series/900-126/Vikingi.html",
+        "year": "2013",
+        "rating": "8.1",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Оставленные",
+        "image": "https://image.tmdb.org/t/p/w500//lHElXdWScZqEeUBvvyaD2fRGOzm.jpg",
+        "link": "/card/series/900-125/Ostavlennye.html",
+        "year": "2014",
+        "rating": "7.6",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Безумцы",
+        "image": "https://image.tmdb.org/t/p/w500//caYFrMMhiUaRFT8ATiydsBURasN.jpg",
+        "link": "/card/series/900-124/Bezumcy.html",
+        "year": "2007",
+        "rating": "8.1",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Клиника",
+        "image": "https://image.tmdb.org/t/p/w500//6kn6qST5VfdqZT97Uahn67ayaFm.jpg",
+        "link": "/card/series/900-123/Klinika.html",
+        "year": "2001",
+        "rating": "8.0",
+        "isTV": true,
+        "type": "series"
+    },
+    {
         "name": "Йеллоустоун",
         "image": "https://image.tmdb.org/t/p/w500//muLDL6UrK6Rh47OwgbNZbNcwUc.jpg",
         "link": "/card/series/900-122/Jelloustoun.html",
         "year": "2018",
         "rating": "8.3",
-        "tmdb_id": 73586,
         "isTV": true,
         "type": "series"
     },
