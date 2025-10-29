@@ -4,6 +4,48 @@
 // Аниме массив
 window.movies = [
     {
+        "name": "Солнцестояние",
+        "image": "https://image.tmdb.org/t/p/w500//nCZDd6sJ7OdonxiDUNgncrKusQn.jpg",
+        "link": "/card/movies/800-744/Solncestoyanie.html",
+        "year": "2019",
+        "rating": "7.2", "tmdb_id":530385
+    },
+    {
+        "name": "Красный воробей",
+        "image": "https://image.tmdb.org/t/p/w500//rkMuZ4c4OdElYL1M8cyttRHKV1J.jpg",
+        "link": "/card/movies/800-743/Krasnyj-vorobej.html",
+        "year": "2018",
+        "rating": "6.5", "tmdb_id":401981
+    },
+    {
+        "name": "Антебеллум",
+        "image": "https://image.tmdb.org/t/p/w500//7VLlc53ReBe6iZWY9NX8UBcwWSe.jpg",
+        "link": "/card/movies/800-742/Antebellum.html",
+        "year": "2020",
+        "rating": "6.2", "tmdb_id":627290
+    },
+    {
+        "name": "Довод",
+        "image": "https://image.tmdb.org/t/p/w500//1jU80STrosbPsiNe3oPpwyS5cXg.jpg",
+        "link": "/card/movies/800-741/Dovod.html",
+        "year": "2020",
+        "rating": "7.2", "tmdb_id":577922
+    },
+    {
+        "name": "Призрачная красота",
+        "image": "https://image.tmdb.org/t/p/w500//jg4jZrbGCve8qfPbZYITADwRfbU.jpg",
+        "link": "/card/movies/800-740/Prizrachnaya-krasota.html",
+        "year": "2016",
+        "rating": "7.2", "tmdb_id":345920
+    },
+    {
+        "name": "Пять ночей с Фредди",
+        "image": "https://image.tmdb.org/t/p/w500//uS00Ja9JFAi9HfpJLquPyQTvTjy.jpg",
+        "link": "/card/movies/800-739/Pyat-nochej-s-Freddi.html",
+        "year": "2023",
+        "rating": "7.4", "tmdb_id":507089
+    },
+    {
         "name": "Аллея кошмаров",
         "image": "https://image.tmdb.org/t/p/w500//bFmc6gjBK0UFD4y5kbS4QNJZBhm.jpg",
         "link": "/card/movies/800-737/Alleya-koshmarov.html",
@@ -2400,6 +2442,13 @@ window.movies = [
         "link": "/card/movies/800-372/Prizrachnyj-patrul.html",
         "year": "2013",
         "rating": "5.8", "tmdb_id": 49524
+    },
+    {
+        "name": "Трон: Арес",
+        "image": "https://image.tmdb.org/t/p/w500//3YMaZ7A8wKs0gngDdexs0pLkAnR.jpg",
+        "link": "/card/movies/800-738/Tron-Ares.html",
+        "year": "2025",
+        "rating": "6.4", "tmdb_id": 533533
     },
     {
         "name": "Трон: Наследие",
