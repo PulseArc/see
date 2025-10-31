@@ -4,6 +4,13 @@
 // Аниме массив
 window.movies = [
     {
+        "name": "Тайна дома с часами",
+        "image": "https://image.tmdb.org/t/p/w500//nglzWuHwc8pjqRe53beVmjigZW7.jpg",
+        "link": "/card/movies/800-745/Tajna-doma-s-chasami.html",
+        "year": "2018",
+        "rating": "6.3", "tmdb_id":463821
+    },
+    {
         "name": "Солнцестояние",
         "image": "https://image.tmdb.org/t/p/w500//nCZDd6sJ7OdonxiDUNgncrKusQn.jpg",
         "link": "/card/movies/800-744/Solncestoyanie.html",
