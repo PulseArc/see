@@ -4,6 +4,15 @@
 // Аниме массив
 window.series = [
     {
+        "name": "Оно: Добро пожаловать в Дерри",
+        "image": "https://image.tmdb.org/t/p/w500//omSIgPmFZx557xYo1PvQVUebaGe.jpg",
+        "link": "/card/series/900-129/Ono-Dobro-pozhalovat-v-Derri.html",
+        "year": "2025",
+        "rating": "7.9",
+        "tmdb_id": 200875,
+        "isTV": true
+    },
+    {
         "name": "Мир Дикого Запада",
         "image": "https://image.tmdb.org/t/p/w500//j6fldQaouy30RJRfKbp4GRCQfle.jpg",
         "link": "/card/series/900-128/Mir-Dikogo-Zapada.html",

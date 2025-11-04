@@ -4,6 +4,55 @@
 // Аниме массив
 window.movies = [
     {
+        "name": "Жена смотрителя зоопарка",
+        "image": "https://image.tmdb.org/t/p/w500//1wv2hWqV2xpetHb9GbqoLMiqjsN.jpg",
+        "link": "/card/movies/800-752/Zhena-smotritelya-zooparka.html",
+        "year": "2017",
+        "rating": "7.3", "tmdb_id":289222
+    },
+    {
+        "name": "Скрытые фигуры",
+        "image": "https://image.tmdb.org/t/p/w500//ihlAEiK8RQLvGIBwxwRHdGcDeRA.jpg",
+        "link": "/card/movies/800-751/Skrytye-figury.html",
+        "year": "2016",
+        "rating": "8.1", "tmdb_id":381284
+    },
+    {
+        "name": "13 жизней",
+        "image": "https://image.tmdb.org/t/p/w500//oPu1mqZwWrpLFetSEj8NOWFrrSt.jpg",
+        "link": "/card/movies/800-750/13-zhiznej.html",
+        "year": "2022",
+        "rating": "7.9", "tmdb_id":698948
+    },
+    {
+        "name": "Основатель",
+        "image": "https://image.tmdb.org/t/p/w500//ru0cmaiUSnlKkqLSg4ugV0iu9nN.jpg",
+        "link": "/card/movies/800-749/Osnovatel.html",
+        "year": "2016",
+        "rating": "7.1", "tmdb_id":310307
+    },
+    {
+        "name": "Лев",
+        "image": "https://image.tmdb.org/t/p/w500//8P1khU09jQ1EeLCJhppN9wYA6ug.jpg",
+        "link": "/card/movies/800-748/Lev.html",
+        "year": "2016",
+        "rating": "8.0", "tmdb_id":334543
+    },
+    {
+        "name": "Багровая мята",
+        "image": "https://image.tmdb.org/t/p/w500//pxBglFbQ2zBNvW49z5mxfMFtiVz.jpg",
+        "link": "/card/movies/800-747/Bagrovaya-myata.html",
+        "year": "2018",
+        "rating": "6.7", "tmdb_id":458594
+    },
+    {
+        "name": "Анемона",
+        "image": "https://image.tmdb.org/t/p/w500//7MKZE0t9vEVZDP9WjoYB5eaoB1b.jpg",
+        "link": "/card/movies/800-746/Anemona.html",
+        "year": "2025",
+        "rating": "5.9", "tmdb_id":1364608
+    },
+    {
         "name": "Тайна дома с часами",
         "image": "https://image.tmdb.org/t/p/w500//nglzWuHwc8pjqRe53beVmjigZW7.jpg",
         "link": "/card/movies/800-745/Tajna-doma-s-chasami.html",

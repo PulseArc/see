@@ -1,6 +1,62 @@
 var data = [
     // Фильмы
     {
+        "name": "Жена смотрителя зоопарка",
+        "image": "https://image.tmdb.org/t/p/w500//1wv2hWqV2xpetHb9GbqoLMiqjsN.jpg",
+        "link": "/card/movies/800-752/Zhena-smotritelya-zooparka.html",
+        "year": "2017",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Скрытые фигуры",
+        "image": "https://image.tmdb.org/t/p/w500//ihlAEiK8RQLvGIBwxwRHdGcDeRA.jpg",
+        "link": "/card/movies/800-751/Skrytye-figury.html",
+        "year": "2016",
+        "rating": "8.1",
+        "type": "movie"
+    },
+    {
+        "name": "13 жизней",
+        "image": "https://image.tmdb.org/t/p/w500//oPu1mqZwWrpLFetSEj8NOWFrrSt.jpg",
+        "link": "/card/movies/800-750/13-zhiznej.html",
+        "year": "2022",
+        "rating": "7.9",
+        "type": "movie"
+    },
+    {
+        "name": "Основатель",
+        "image": "https://image.tmdb.org/t/p/w500//ru0cmaiUSnlKkqLSg4ugV0iu9nN.jpg",
+        "link": "/card/movies/800-749/Osnovatel.html",
+        "year": "2016",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Лев",
+        "image": "https://image.tmdb.org/t/p/w500//8P1khU09jQ1EeLCJhppN9wYA6ug.jpg",
+        "link": "/card/movies/800-748/Lev.html",
+        "year": "2016",
+        "rating": "8.0",
+        "type": "movie"
+    },
+    {
+        "name": "Багровая мята",
+        "image": "https://image.tmdb.org/t/p/w500//pxBglFbQ2zBNvW49z5mxfMFtiVz.jpg",
+        "link": "/card/movies/800-747/Bagrovaya-myata.html",
+        "year": "2018",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Анемона",
+        "image": "https://image.tmdb.org/t/p/w500//7MKZE0t9vEVZDP9WjoYB5eaoB1b.jpg",
+        "link": "/card/movies/800-746/Anemona.html",
+        "year": "2025",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
         "name": "Тайна дома с часами",
         "image": "https://image.tmdb.org/t/p/w500//nglzWuHwc8pjqRe53beVmjigZW7.jpg",
         "link": "/card/movies/800-745/Tajna-doma-s-chasami.html",
@@ -7876,6 +7932,15 @@ var data = [
     // конец
 
     // Сериалы
+    {
+        "name": "Оно: Добро пожаловать в Дерри",
+        "image": "https://image.tmdb.org/t/p/w500//omSIgPmFZx557xYo1PvQVUebaGe.jpg",
+        "link": "/card/series/900-129/Ono-Dobro-pozhalovat-v-Derri.html",
+        "year": "2025",
+        "rating": "7.9",
+        "isTV": true,
+        "type": "series"
+    },
     {
         "name": "Мир Дикого Запада",
         "image": "https://image.tmdb.org/t/p/w500//j6fldQaouy30RJRfKbp4GRCQfle.jpg",
