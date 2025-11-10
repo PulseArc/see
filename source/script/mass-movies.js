@@ -4,6 +4,41 @@
 // Аниме массив
 window.movies = [
     {
+        "name": "Славные парни",
+        "image": "https://image.tmdb.org/t/p/w500//4U7u3htE1CxoRYboQVQYfxr0ZoG.jpg",
+        "link": "/card/movies/800-760/Slavnye-parni.html",
+        "year": "2016",
+        "rating": "7.1", "tmdb_id":290250
+    },
+    {
+        "name": "Вне/себя",
+        "image": "https://image.tmdb.org/t/p/original/sXzfZ3zHQXSJFgeUZjqemn75uWy.jpg",
+        "link": "/card/movies/800-759/Vne-sebya.html",
+        "year": "2015",
+        "rating": "6.4", "tmdb_id":238615
+    },
+    {
+        "name": "Петля времени",
+        "image": "https://image.tmdb.org/t/p/w500//moFUn35rGpj99XasdywgzjgL6Uw.jpg",
+        "link": "/card/movies/800-758/Petlya-vremeni.html",
+        "year": "2012",
+        "rating": "6.9", "tmdb_id":59967
+    },
+    {
+        "name": "К звёздам",
+        "image": "https://image.tmdb.org/t/p/w500//5XUhgB6j13XGo7CflM6YLovJ28R.jpg",
+        "link": "/card/movies/800-757/K-zvyozdam.html",
+        "year": "2019",
+        "rating": "6.1", "tmdb_id":419704
+    },
+    {
+        "name": "По следу тени",
+        "image": "https://image.tmdb.org/t/p/w500//xkWdX07HcpbKnMBfLHriBYwFRU0.jpg",
+        "link": "/card/movies/800-756/Po-sledu-teni.html",
+        "year": "2024",
+        "rating": "5.8", "tmdb_id":1025527
+    },
+    {
         "name": "Жена смотрителя зоопарка",
         "image": "https://image.tmdb.org/t/p/w500//1wv2hWqV2xpetHb9GbqoLMiqjsN.jpg",
         "link": "/card/movies/800-752/Zhena-smotritelya-zooparka.html",
@@ -1131,6 +1166,13 @@ window.movies = [
         "rating": "5.8", "tmdb_id": 11962
     },
     {
+        "name": "Франкенштейн",
+        "image": "https://image.tmdb.org/t/p/w500//oCxLbnBBEmUCeRcmsBrmF9jEcHd.jpg",
+        "link": "/card/movies/800-755/Frankenshtejn.html",
+        "year": "2025",
+        "rating": "8.0", "tmdb_id": 1062722
+    },
+    {
         "name": "Замороженный калифорниец",
         "image": "https://image.tmdb.org/t/p/original/y8HtL6pyjfODdHOFgciFVFmt8Eq.jpg",
         "link": "/card/movies/800-413/Zamorozhennyj-kaliforniec.html",
@@ -1160,6 +1202,14 @@ window.movies = [
         "type": "movie", "tmdb_id": 958006
     },
     {
+        "name": "Хороший мальчик",
+        "image": "https://image.tmdb.org/t/p/w500//qMdhukDFuX6wzJbmTdyr8VMSrQ6.jpg",
+        "link": "/card/movies/800-754/Horoshij-malchik.html",
+        "year": "2025",
+        "rating": "6.8",
+        "type": "movie", "tmdb_id": 1422096
+    },
+    {
         "name": "Смотрители",
         "image": "https://image.tmdb.org/t/p/w500//4qrA6MsOOTiUfXGoM4YUwqtHFjb.jpg",
         "link": "/card/movies/800-388/Smotriteli.html",
@@ -1180,6 +1230,13 @@ window.movies = [
         "link": "/card/movies/800-367/Renfild.html",
         "year": "2023",
         "rating": "6.5", "tmdb_id": 649609
+    },
+    {
+        "name": "Чёрный телефон 2",
+        "image": "https://image.tmdb.org/t/p/w500//pG3yo4PtkUku7qQTmEIM6OiV9zK.jpg",
+        "link": "/card/movies/800-753/Chyornyj-telefon-2.html",
+        "year": "2025",
+        "rating": "7.2", "tmdb_id":1197137
     },
     {
         "name": "Чёрный телефон",
