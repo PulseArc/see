@@ -4,6 +4,55 @@
 // Аниме массив
 window.movies = [
     {
+        "name": "Грейхаунд",
+        "image": "https://image.tmdb.org/t/p/w500//nZ680Zng9AruelWFVNQtLcBXVez.jpg",
+        "link": "/card/movies/800-768/Grejhaund.html",
+        "year": "2020",
+        "rating": "7.4", "tmdb_id":516486
+    },
+    {
+        "name": "Королевский прилив",
+        "image": "https://image.tmdb.org/t/p/w500//xZclo4edwhiDMVw88yDKuuwWxHf.jpg",
+        "link": "/card/movies/800-767/Korolevskij-priliv.html",
+        "year": "2024",
+        "rating": "6.8", "tmdb_id":1159477
+    },
+    {
+        "name": "Мастер тай-цзи",
+        "image": "https://image.tmdb.org/t/p/w500//6EIA90KTehP5ARifC4uMwLJAh1T.jpg",
+        "link": "/card/movies/800-766/Master-taj-czi.html",
+        "year": "2013",
+        "rating": "6.1", "tmdb_id":76544
+    },
+    {
+        "name": "Трафик",
+        "image": "https://image.tmdb.org/t/p/w500//iXEDOyvKTftRA8phD1IRjrt8OpE.jpg",
+        "link": "/card/movies/800-765/Trafik.html",
+        "year": "2021",
+        "rating": "6.3", "tmdb_id":580532
+    },
+    {
+        "name": "Договор молчания",
+        "image": "https://image.tmdb.org/t/p/w500//uQ0EWzcFRBE9RGqeeeOnyUXPved.jpg",
+        "link": "/card/movies/800-764/Dogovor-molchaniya.html",
+        "year": "2020",
+        "rating": "6.4", "tmdb_id":603119
+    },
+    {
+        "name": "Снеговик",
+        "image": "https://image.tmdb.org/t/p/w500//gB82zmhFiz8zJXlvMcSE2vFmi5k.jpg",
+        "link": "/card/movies/800-763/Snegovik.html",
+        "year": "2017",
+        "rating": "5.2", "tmdb_id":372343
+    },
+    {
+        "name": "Подводный капкан",
+        "image": "https://image.tmdb.org/t/p/w500//e7YRieMBz5DTLyDIgf5TaXKcBRy.jpg",
+        "link": "/card/movies/800-762/Podvodnyj-kapkan.html",
+        "year": "2023",
+        "rating": "6.3", "tmdb_id":1109534
+    },
+    {
         "name": "Мальчик по имени Рождество",
         "image": "https://image.tmdb.org/t/p/w500//pWJGYDmPzrGXZFnCw5OX59JEP8C.jpg",
         "link": "/card/movies/800-761/Malchik-po-imeni-Rozhdestvo.html",
