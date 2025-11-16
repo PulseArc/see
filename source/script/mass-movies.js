@@ -4,6 +4,13 @@
 // Аниме массив
 window.movies = [
     {
+        "name": "Мальчик по имени Рождество",
+        "image": "https://image.tmdb.org/t/p/w500//pWJGYDmPzrGXZFnCw5OX59JEP8C.jpg",
+        "link": "/card/movies/800-761/Malchik-po-imeni-Rozhdestvo.html",
+        "year": "2021",
+        "rating": "7.3", "tmdb_id":615666
+    },
+    {
         "name": "Славные парни",
         "image": "https://image.tmdb.org/t/p/w500//4U7u3htE1CxoRYboQVQYfxr0ZoG.jpg",
         "link": "/card/movies/800-760/Slavnye-parni.html",
