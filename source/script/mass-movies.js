@@ -4293,6 +4293,13 @@ window.movies = [
         "rating": "6.3", "tmdb_id": 420634
     },
     {
+        "name": "Битва за битвой",
+        "image": "https://image.tmdb.org/t/p/w500//qcSFcQwcuzyWQ4UGsIa1y2WMozB.jpg",
+        "link": "/card/movies/800-769/Bitva-za-bitvoj.html",
+        "year": "2025",
+        "rating": "7.6", "tmdb_id": 1054867
+    },
+    {
         "name": "Полтора шпиона",
         "image": "https://image.tmdb.org/t/p/w500//z0myyIDZRsGiksfS8hlN3p3NNwc.jpg",
         "link": "/card/movies/800-105/Poltora-shpiona.html",
@@ -4312,6 +4319,13 @@ window.movies = [
         "link": "/card/movies/800-106/Lovushka.html",
         "year": "2024",
         "rating": "6.3", "tmdb_id": 1032823
+    },
+    {
+        "name": "Край тени",
+        "image": "https://image.tmdb.org/t/p/w500//uBRMTcpUd55pstCVTEn49uRuevX.jpg",
+        "link": "/card/movies/800-770/Kraj-teni.html",
+        "year": "2025",
+        "rating": "7.3", "tmdb_id": 1419406
     },
     {
         "name": "Робот по имени Чаппи",
