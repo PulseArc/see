@@ -1,6 +1,46 @@
 var data = [
     // Фильмы
     {
+        "name": "Жестокая Ночь",
+        "image": "https://image.tmdb.org/t/p/w500//pC4u3JoBu6sMvo86HmFFhyZ6xFo.jpg",
+        "link": "/card/movies/800-781/Zhestokaya-Noch.html",
+        "year": "2022",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Дьявол в деталях",
+        "image": "https://image.tmdb.org/t/p/w500//sdjeUisE7waxhvGiaQGcNONMGqi.jpg",
+        "link": "/card/movies/800-780/Dyavol-v-detalyah.html",
+        "year": "2021",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Амстердам",
+        "image": "https://image.tmdb.org/t/p/w500//gsDTxHc2CJ84ekd3evA1yTQcklL.jpg",
+        "link": "/card/movies/800-779/Amsterdam.html",
+        "year": "2022",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Дьявол",
+        "image": "https://image.tmdb.org/t/p/w500//rPbn3kyV4RvZxJpcXt05PwkrAuw.jpg",
+        "link": "/card/movies/800-778/Dyavol.html",
+        "year": "2010",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Взломщик",
+        "image": "https://image.tmdb.org/t/p/w500//l2w9R3cplDrqNnjly43thioC8KJ.jpg",
+        "link": "/card/movies/800-777/Vzlomshik.html",
+        "year": "2023",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
         "name": "Бёрдмэн",
         "image": "https://image.tmdb.org/t/p/w500//2jcHzgQX2kO6XWC3eLBgrESFqaO.jpg",
         "link": "/card/movies/800-776/Byordmen.html",
