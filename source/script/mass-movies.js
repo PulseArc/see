@@ -4,6 +4,27 @@
 // Аниме массив
 window.movies = [
     {
+        "name": "Бёрдмэн",
+        "image": "https://image.tmdb.org/t/p/w500//2jcHzgQX2kO6XWC3eLBgrESFqaO.jpg",
+        "link": "/card/movies/800-776/Byordmen.html",
+        "year": "2014",
+        "rating": "7.5", "tmdb_id":194662
+    },
+    {
+        "name": "Чрезвычайная ситуация",
+        "image": "https://image.tmdb.org/t/p/w500//btv8j133RuVhiFYbhwy1MkkTXQV.jpg",
+        "link": "/card/movies/800-775/Chrezvychajnaya-situaciya.html",
+        "year": "2022",
+        "rating": "7.5", "tmdb_id":626872
+    },
+    {
+        "name": "Операция Валькирия",
+        "image": "https://image.tmdb.org/t/p/w500//rVl3whPmGk3tJLHHI3PG5XZKBoE.jpg",
+        "link": "/card/movies/800-771/Operaciya-Valkiriya.html",
+        "year": "2008",
+        "rating": "6.9", "tmdb_id":2253
+    },
+    {
         "name": "Грейхаунд",
         "image": "https://image.tmdb.org/t/p/w500//nZ680Zng9AruelWFVNQtLcBXVez.jpg",
         "link": "/card/movies/800-768/Grejhaund.html",
@@ -4322,7 +4343,7 @@ window.movies = [
     },
     {
         "name": "Край тени",
-        "image": "https://image.tmdb.org/t/p/w500//uBRMTcpUd55pstCVTEn49uRuevX.jpg",
+        "image": "https://image.tmdb.org/t/p/original/6YBP0sraDKu2ooa73FGoqxsNkWB.jpg",
         "link": "/card/movies/800-770/Kraj-teni.html",
         "year": "2025",
         "rating": "7.3", "tmdb_id": 1419406
@@ -4377,6 +4398,13 @@ window.movies = [
         "rating": "6.9", "tmdb_id": 64688
     },
     {
+        "name": "Выход 8",
+        "image": "https://image.tmdb.org/t/p/w500//afORML1iggGkWf8M0Jsf2PPpIHv.jpg",
+        "link": "/card/movies/800-772/Vyhod-8.html",
+        "year": "2025",
+        "rating": "6.1", "tmdb_id": 1408208
+    },
+    {
         "name": "Одинокие волки",
         "image": "https://image.tmdb.org/t/p/w500//54U26SA33pxxJ2lf5mRxWeqRTLu.jpg",
         "link": "/card/movies/800-112/Odinokie-volki.html",
@@ -4405,6 +4433,13 @@ window.movies = [
         "rating": "6.7", "tmdb_id": 9614
     },
     {
+        "name": "Везунчики",
+        "image": "https://image.tmdb.org/t/p/w500//smgLN6330v7F1spPzAHd789yiZh.jpg",
+        "link": "/card/movies/800-773/Vezunchiki.html",
+        "year": "2025",
+        "rating": "7.2", "tmdb_id": 1114967
+    },
+    {
         "name": "Спящие псы",
         "image": "https://image.tmdb.org/t/p/w500//7IIWX53p0h54ZtbhFXLobnAOm8s.jpg",
         "link": "/card/movies/800-239/Spyashie-psy.html",
@@ -4424,6 +4459,13 @@ window.movies = [
         "link": "/card/movies/800-114/Podaj-znak.html",
         "year": "2024",
         "rating": "6.7", "tmdb_id": 840705
+    },
+    {
+        "name": "Альтер",
+        "image": "https://image.tmdb.org/t/p/w500//antXvx4ULV8OmRIMPy9UkxfU2xZ.jpg",
+        "link": "/card/movies/800-774/Alter.html",
+        "year": "2025",
+        "rating": "7.0", "tmdb_id": 1309012
     },
     {
         "name": "Гран Туризмо",
