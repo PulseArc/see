@@ -1,6 +1,14 @@
 var data = [
     // Фильмы
     {
+        "name": "До встречи с тобой",
+        "image": "https://image.tmdb.org/t/p/w500//30xQ7FYFBrIXK5Y63jq1ilMD1Xk.jpg",
+        "link": "/card/movies/800-782/Do-vstrechi-s-toboj.html",
+        "year": "2016",
+        "rating": "7.9",
+        "type": "movie"
+    },
+    {
         "name": "Жестокая Ночь",
         "image": "https://image.tmdb.org/t/p/w500//pC4u3JoBu6sMvo86HmFFhyZ6xFo.jpg",
         "link": "/card/movies/800-781/Zhestokaya-Noch.html",
