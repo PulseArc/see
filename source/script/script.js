@@ -1,6 +1,62 @@
 var data = [
     // Фильмы
     {
+        "name": "Убойное Рождество Гарольда и Кумара",
+        "image": "https://image.tmdb.org/t/p/w500//esbRx4Xx4ZSK4dfm1UA6mUF0LWo.jpg",
+        "link": "/card/movies/800-795/Ubojnoe-Rozhdestvo-Garolda-i-Kumara.html",
+        "year": "2011",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "Недруги",
+        "image": "https://image.tmdb.org/t/p/w500//fmrPwIpwUoODw2CM9PVd1HcSfIw.jpg",
+        "link": "/card/movies/800-794/Nedrugi.html",
+        "year": "2017",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Палмер",
+        "image": "https://image.tmdb.org/t/p/w500//gqdE35MzZHLZYBGlwUc3D6gSCNh.jpg",
+        "link": "/card/movies/800-793/Palmer.html",
+        "year": "2019",
+        "rating": "8.1",
+        "type": "movie"
+    },
+    {
+        "name": "Однажды в… Голливуде",
+        "image": "https://image.tmdb.org/t/p/w500//muqDW2S3rkZKAVLv4TE47IYg3O6.jpg",
+        "link": "/card/movies/800-792/Odnazhdy-v-Gollivude.html",
+        "year": "2019",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Дамбо",
+        "image": "https://image.tmdb.org/t/p/w500//pGOvXYyCLAaRjxUbMoc2M0XZwHj.jpg",
+        "link": "/card/movies/800-791/Dambo.html",
+        "year": "2019",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Дело Ричарда Джуэлла",
+        "image": "https://image.tmdb.org/t/p/w500//xGvizXUXeTE1NS3HQbfrgD0vyDQ.jpg",
+        "link": "/card/movies/800-790/Delo-Richarda-Dzhuella.html",
+        "year": "2019",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Обливион",
+        "image": "https://image.tmdb.org/t/p/w500//56xLv14jx6qvKWMCrF6C96Hs0cl.jpg",
+        "link": "/card/movies/800-788/Oblivion.html",
+        "year": "2013",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
         "name": "До встречи с тобой",
         "image": "https://image.tmdb.org/t/p/w500//30xQ7FYFBrIXK5Y63jq1ilMD1Xk.jpg",
         "link": "/card/movies/800-782/Do-vstrechi-s-toboj.html",
@@ -3906,6 +3962,22 @@ var data = [
         "type": "movie"
     },
     {
+        "name": "Семейный план 2",
+        "image": "https://image.tmdb.org/t/p/w500//plx93SM6CvgcbLKIBzfqaLBQiRA.jpg",
+        "link": "/card/movies/800-784/Semejnyj-plan-2.html",
+        "year": "2025",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Семейный план",
+        "image": "https://image.tmdb.org/t/p/w500//A7hPzNi5zceYNYtRh0z8pIqy2E0.jpg",
+        "link": "/card/movies/800-783/Semejnyj-plan.html",
+        "year": "2023",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
         "name": "Мой сосед - монстр",
         "image": "https://image.tmdb.org/t/p/w500//ipj9b6KZMr6yFidQBf7xxuWnKQi.jpg",
         "link": "/card/movies/800-98/Moj-sosed-monstr.html",
@@ -4135,6 +4207,30 @@ var data = [
         "link": "/card/movies/800-769/Bitva-za-bitvoj.html",
         "year": "2025",
         "rating": "7.6",
+        "type": "movie"
+    },
+    {
+        "name": "Иллюзия обмана 3",
+        "image": "https://image.tmdb.org/t/p/w500//mLc5TztpCN7SRD9jloCqvj1ucKl.jpg",
+        "link": "/card/movies/800-785/Illyuziya-obmana-3.html",
+        "year": "2025",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Иллюзия обмана 2",
+        "image": "https://image.tmdb.org/t/p/w500//jzm3Pmp1uaFCDo0NrA0Tn98Ddda.jpg",
+        "link": "/card/movies/800-786/Illyuziya-obmana-2.html",
+        "year": "2016",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Иллюзия обмана",
+        "image": "https://image.tmdb.org/t/p/w500//theB79zav0sACXPxMFgKI3nQIr8.jpg",
+        "link": "/card/movies/800-787/Illyuziya-obmana.html",
+        "year": "2013",
+        "rating": "6.8",
         "type": "movie"
     },
     {
@@ -4711,6 +4807,14 @@ var data = [
         "link": "/card/movies/800-128/Persi-Dzhekson-i-pohititel-molnij.html",
         "year": "2010",
         "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Хищник: Планета смерти",
+        "image": "https://image.tmdb.org/t/p/w500//pu5Aj7nyx9ISKMcmWvUjZv68GLs.jpg",
+        "link": "/card/movies/800-789/Hishnik-Planeta-smerti.html",
+        "year": "2025",
+        "rating": "7.4",
         "type": "movie"
     },
     {

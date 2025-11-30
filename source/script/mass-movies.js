@@ -4,6 +4,48 @@
 // Аниме массив
 window.movies = [
     {
+        "name": "Убойное Рождество Гарольда и Кумара",
+        "image": "https://image.tmdb.org/t/p/w500//esbRx4Xx4ZSK4dfm1UA6mUF0LWo.jpg",
+        "link": "/card/movies/800-795/Ubojnoe-Rozhdestvo-Garolda-i-Kumara.html",
+        "year": "2011",
+        "rating": "6.0", "tmdb_id":55465
+    },
+    {
+        "name": "Недруги",
+        "image": "https://image.tmdb.org/t/p/w500//fmrPwIpwUoODw2CM9PVd1HcSfIw.jpg",
+        "link": "/card/movies/800-794/Nedrugi.html",
+        "year": "2017",
+        "rating": "6.9", "tmdb_id":384680
+    },
+    {
+        "name": "Однажды в… Голливуде",
+        "image": "https://image.tmdb.org/t/p/w500//muqDW2S3rkZKAVLv4TE47IYg3O6.jpg",
+        "link": "/card/movies/800-792/Odnazhdy-v-Gollivude.html",
+        "year": "2019",
+        "rating": "7.4", "tmdb_id":466272
+    },
+    {
+        "name": "Дамбо",
+        "image": "https://image.tmdb.org/t/p/w500//pGOvXYyCLAaRjxUbMoc2M0XZwHj.jpg",
+        "link": "/card/movies/800-791/Dambo.html",
+        "year": "2019",
+        "rating": "6.6", "tmdb_id":329996
+    },
+    {
+        "name": "Дело Ричарда Джуэлла",
+        "image": "https://image.tmdb.org/t/p/w500//xGvizXUXeTE1NS3HQbfrgD0vyDQ.jpg",
+        "link": "/card/movies/800-790/Delo-Richarda-Dzhuella.html",
+        "year": "2019",
+        "rating": "7.4", "tmdb_id":292011
+    },
+    {
+        "name": "Обливион",
+        "image": "https://image.tmdb.org/t/p/w500//56xLv14jx6qvKWMCrF6C96Hs0cl.jpg",
+        "link": "/card/movies/800-788/Oblivion.html",
+        "year": "2013",
+        "rating": "6.7", "tmdb_id":75612
+    },
+    {
         "name": "До встречи с тобой",
         "image": "https://image.tmdb.org/t/p/w500//30xQ7FYFBrIXK5Y63jq1ilMD1Xk.jpg",
         "link": "/card/movies/800-782/Do-vstrechi-s-toboj.html",
@@ -4160,6 +4202,20 @@ window.movies = [
         "rating": "7.6", "tmdb_id": 137113
     },
     {
+        "name": "Семейный план 2",
+        "image": "https://image.tmdb.org/t/p/w500//plx93SM6CvgcbLKIBzfqaLBQiRA.jpg",
+        "link": "/card/movies/800-784/Semejnyj-plan-2.html",
+        "year": "2025",
+        "rating": "6.8", "tmdb_id": 1363123
+    },
+    {
+        "name": "Семейный план",
+        "image": "https://image.tmdb.org/t/p/w500//A7hPzNi5zceYNYtRh0z8pIqy2E0.jpg",
+        "link": "/card/movies/800-783/Semejnyj-plan.html",
+        "year": "2023",
+        "rating": "6.3", "tmdb_id": 1029575
+    },
+    {
         "name": "Мой сосед - монстр",
         "image": "https://image.tmdb.org/t/p/w500//ipj9b6KZMr6yFidQBf7xxuWnKQi.jpg",
         "link": "/card/movies/800-98/Moj-sosed-monstr.html",
@@ -4361,6 +4417,27 @@ window.movies = [
         "link": "/card/movies/800-769/Bitva-za-bitvoj.html",
         "year": "2025",
         "rating": "7.6", "tmdb_id": 1054867
+    },
+    {
+        "name": "Иллюзия обмана 3",
+        "image": "https://image.tmdb.org/t/p/w500//mLc5TztpCN7SRD9jloCqvj1ucKl.jpg",
+        "link": "/card/movies/800-785/Illyuziya-obmana-3.html",
+        "year": "2025",
+        "rating": "6.3", "tmdb_id": 425274
+    },
+    {
+        "name": "Иллюзия обмана 2",
+        "image": "https://image.tmdb.org/t/p/w500//jzm3Pmp1uaFCDo0NrA0Tn98Ddda.jpg",
+        "link": "/card/movies/800-786/Illyuziya-obmana-2.html",
+        "year": "2016",
+        "rating": "6.8", "tmdb_id": 291805
+    },
+    {
+        "name": "Иллюзия обмана",
+        "image": "https://image.tmdb.org/t/p/w500//theB79zav0sACXPxMFgKI3nQIr8.jpg",
+        "link": "/card/movies/800-787/Illyuziya-obmana.html",
+        "year": "2013",
+        "rating": "6.8", "tmdb_id": 75656
     },
     {
         "name": "Полтора шпиона",
@@ -4865,6 +4942,13 @@ window.movies = [
         "link": "/card/movies/800-128/Persi-Dzhekson-i-pohititel-molnij.html",
         "year": "2010",
         "rating": "6.2", "tmdb_id": 32657
+    },
+    {
+        "name": "Хищник: Планета смерти",
+        "image": "https://image.tmdb.org/t/p/w500//pu5Aj7nyx9ISKMcmWvUjZv68GLs.jpg",
+        "link": "/card/movies/800-789/Hishnik-Planeta-smerti.html",
+        "year": "2025",
+        "rating": "7.4", "tmdb_id": 1242898
     },
     {
         "name": "Хищник: Миссия «Осирис»",
