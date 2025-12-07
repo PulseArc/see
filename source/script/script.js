@@ -1,6 +1,62 @@
 var data = [
     // Фильмы
     {
+        "name": "Отверженные",
+        "image": "https://image.tmdb.org/t/p/w500//zJ0s8wmpHZDuOjgkgFuifZAoBVG.jpg",
+        "link": "/card/movies/800-805/Otverzhennye.html",
+        "year": "2012",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Вселенная Стивена Хокинга",
+        "image": "https://image.tmdb.org/t/p/w500//ocIrARiY6ZbEWsYJZmk6avPEc3k.jpg",
+        "link": "/card/movies/800-804/Vselennaya-Stivena-Hokinga.html",
+        "year": "2014",
+        "rating": "7.8",
+        "type": "movie"
+    },
+    {
+        "name": "Дальний космос",
+        "image": "https://image.tmdb.org/t/p/w500//6KgD4bKN22zVzCIxF7PLT4fzit9.jpg",
+        "link": "/card/movies/800-803/Dalnij-kosmos.html",
+        "year": "2021",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "Три тысячи лет желаний",
+        "image": "https://image.tmdb.org/t/p/w500//tb3967BJu5QbZgiIh715pAigywF.jpg",
+        "link": "/card/movies/800-802/Tri-tysyachi-let-zhelanij.html",
+        "year": "2022",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Быстрее пули",
+        "image": "https://image.tmdb.org/t/p/w500//oK3e4nDFB8lsT8H1D7bMHXoXsRH.jpg",
+        "link": "/card/movies/800-801/Bystree-puli.html",
+        "year": "2022",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Наёмник",
+        "image": "https://image.tmdb.org/t/p/w500//fTC8l44g1khRzHuKNRDl9Nnwo5f.jpg",
+        "link": "/card/movies/800-800/Nayomnik.html",
+        "year": "2017",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Новости со всех концов света",
+        "image": "https://image.tmdb.org/t/p/w500//q7h2jqHMug8APfMef0g0co9qTGQ.jpg",
+        "link": "/card/movies/800-799/Novosti-so-vseh-koncov-sveta.html",
+        "year": "2020",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
         "name": "Убойное Рождество Гарольда и Кумара",
         "image": "https://image.tmdb.org/t/p/w500//esbRx4Xx4ZSK4dfm1UA6mUF0LWo.jpg",
         "link": "/card/movies/800-795/Ubojnoe-Rozhdestvo-Garolda-i-Kumara.html",
@@ -3521,6 +3577,14 @@ var data = [
         "type": "movie"
     },
     {
+        "name": "Сезон охоты",
+        "image": "https://image.tmdb.org/t/p/w500//wCH7syT6cUU8qkEGFTuDY7b2NZh.jpg",
+        "link": "/card/movies/800-796/Sezon-ohoty.html",
+        "year": "2026",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
         "name": "Гонка",
         "image": "https://image.tmdb.org/t/p/w500//gcpESEfY64N2BJkLBtTCz8qtila.jpg",
         "link": "/card/movies/800-391/Gonka.html",
@@ -3560,7 +3624,22 @@ var data = [
         "rating": "7.0",
         "type": "movie"
     },
-
+    {
+        "name": "Тролль 2",
+        "image": "https://image.tmdb.org/t/p/w500//4HvHMNA9piiRDaWVViPNRvrMoEU.jpg",
+        "link": "/card/movies/800-797/Troll-2.html",
+        "year": "2025",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Тролль",
+        "image": "https://image.tmdb.org/t/p/w500//3uwGdyJyOvM520tjH8pMrhX7YxK.jpg",
+        "link": "/card/movies/800-798/Troll.html",
+        "year": "2022",
+        "rating": "6.6",
+        "type": "movie"
+    },
     {
         "name": "След киллера",
         "image": "https://image.tmdb.org/t/p/original/uGTulIuR0NlI2CQzTRHHEuJJejp.jpg",
@@ -8276,6 +8355,15 @@ var data = [
     // конец
 
     // Сериалы
+    {
+        "name": "Икусагами: Последний самурай",
+        "image": "https://image.tmdb.org/t/p/w500//i4kneKaznGjRktvUILJybB7uHlU.jpg",
+        "link": "/card/series/900-130/Ikusagami-Poslednij-samuraj.html",
+        "year": "2025",
+        "rating": "7.9",
+        "isTV": true,
+        "type": "series"
+    },
     {
         "name": "Оно: Добро пожаловать в Дерри",
         "image": "https://image.tmdb.org/t/p/w500//omSIgPmFZx557xYo1PvQVUebaGe.jpg",
