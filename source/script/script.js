@@ -4985,6 +4985,14 @@ var data = [
         "type": "movie"
     },
     {
+        "name": "Умри, моя любовь",
+        "image": "https://image.tmdb.org/t/p/w500//61qjG6UQwBynB1e4pFNs9DKi1HN.jpg",
+        "link": "/card/movies/800-806/Umri-moya-lyubov.html",
+        "year": "2025",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
         "name": "128 ударов сердца в минуту",
         "image": "https://image.tmdb.org/t/p/w500//jdKfkrUTl2JknNAeTOnz8We15bX.jpg",
         "link": "/card/movies/800-132/128-udarov-serdca-v-minutu.html",
