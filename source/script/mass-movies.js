@@ -2865,6 +2865,13 @@ window.movies = [
         "rating": "7.0", "tmdb_id": 954
     },
     {
+        "name": "Достать ножи: Воскрешение покойника",
+        "image": "https://image.tmdb.org/t/p/w500//sPHInA04JUQsv3wXW23fHPdvVC0.jpg",
+        "link": "/card/movies/800-807/Dostat-nozhi-Voskreshenie-pokojnika.html",
+        "year": "2025",
+        "rating": "7.6", "tmdb_id": 812583
+    },
+    {
         "name": "Достать ножи: Стеклянная луковица",
         "image": "https://image.tmdb.org/t/p/w500//14PudL6hCEhqwPDbxoBt2RHK5cC.jpg",
         "link": "/card/movies/800-155/Dostat-nozhi-Steklyannaya-lukovica.html",
