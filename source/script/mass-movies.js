@@ -4,6 +4,62 @@
 // Аниме массив
 window.movies = [
     {
+        "name": "Дыши во мгле",
+        "image": "https://image.tmdb.org/t/p/w500//m5vuPpluubpQ7DjLDxer8kepvgX.jpg",
+        "link": "/card/movies/800-815/Dyshi-vo-mgle.html",
+        "year": "2018",
+        "rating": "6.3", "tmdb_id":477489
+    },
+    {
+        "name": "Рубеж выживания",
+        "image": "https://image.tmdb.org/t/p/w500//wHcZHO9QLI3lOWeIEIGSB4EDbux.jpg",
+        "link": "/card/movies/800-814/Rubezh-vyzhivaniya.html",
+        "year": "2023",
+        "rating": "5.4", "tmdb_id":516806
+    },
+    {
+        "name": "Виновный",
+        "image": "https://image.tmdb.org/t/p/w500//szSt5wkQ7wUSmpDE0SaSeeLtPQk.jpg",
+        "link": "/card/movies/800-813/Vinovnyj.html",
+        "year": "2021",
+        "rating": "6.4", "tmdb_id":567748
+    },
+    {
+        "name": "Колония",
+        "image": "https://image.tmdb.org/t/p/w500//oab6NRUZeM0MA1cQb1U6WuNHYYW.jpg",
+        "link": "/card/movies/800-812/Koloniya.html",
+        "year": "2013",
+        "rating": "5.5", "tmdb_id":178809
+    },
+    {
+        "name": "Va-банк",
+        "image": "https://image.tmdb.org/t/p/w500//zKCa1wTTzf7oGzhMw0VIEMSaqV4.jpg",
+        "link": "/card/movies/800-811/Va-bank.html",
+        "year": "2013",
+        "rating": "5.6", "tmdb_id":146238
+    },
+    {
+        "name": "День, когда Земля остановилась",
+        "image": "https://image.tmdb.org/t/p/w500//Ak4b323IiaboF9V2JmtoDZJVlfP.jpg",
+        "link": "/card/movies/800-810/Den-kogda-Zemlya-ostanovilas.html",
+        "year": "2008",
+        "rating": "5.7", "tmdb_id":10200
+    },
+    {
+        "name": "Решение уйти",
+        "image": "https://image.tmdb.org/t/p/w500//5CmVlH9kWAwuaeMtnZphujX55Fl.jpg",
+        "link": "/card/movies/800-809/Reshenie-ujti.html",
+        "year": "2022",
+        "rating": "7.3", "tmdb_id":705996
+    },
+    {
+        "name": "Тёмные воды",
+        "image": "https://image.tmdb.org/t/p/w500//rAOLCr5JqP6qfpi6g5cCWM2LNv.jpg",
+        "link": "/card/movies/800-808/Tyomnye-vody.html",
+        "year": "2019",
+        "rating": "7.5", "tmdb_id":552178
+    },
+    {
         "name": "Отверженные",
         "image": "https://image.tmdb.org/t/p/w500//zJ0s8wmpHZDuOjgkgFuifZAoBVG.jpg",
         "link": "/card/movies/800-805/Otverzhennye.html",
