@@ -4,6 +4,34 @@
 // Аниме массив
 window.movies = [
     {
+        "name": "Узники страны призраков",
+        "image": "https://image.tmdb.org/t/p/w500//czRGpr33RRkz7IZEdVCOrHlXdrV.jpg",
+        "link": "/card/movies/800-823/Uzniki-strany-prizrakov.html",
+        "year": "2021",
+        "rating": "5.0", "tmdb_id":523638
+    },
+    {
+        "name": "В сердце моря",
+        "image": "https://image.tmdb.org/t/p/original/e9JXJ5WTy1JBxepuzO9MNFoKL7Q.jpg",
+        "link": "/card/movies/800-822/V-serdce-morya.html",
+        "year": "2015",
+        "rating": "6.8", "tmdb_id":205775
+    },
+    {
+        "name": "Носители",
+        "image": "https://image.tmdb.org/t/p/w500//6L7GjRyujgT4nw6QbDZSA2QGfXd.jpg",
+        "link": "/card/movies/800-821/Nositeli.html",
+        "year": "2009",
+        "rating": "6.1", "tmdb_id":25769
+    },
+    {
+        "name": "47 ронинов",
+        "image": "https://image.tmdb.org/t/p/w500//uIgbLfi76KtVWrnFfQP3sZKCZC.jpg",
+        "link": "/card/movies/800-820/47-roninov.html",
+        "year": "2013",
+        "rating": "6.2", "tmdb_id":64686
+    },
+    {
         "name": "Дыши во мгле",
         "image": "https://image.tmdb.org/t/p/w500//m5vuPpluubpQ7DjLDxer8kepvgX.jpg",
         "link": "/card/movies/800-815/Dyshi-vo-mgle.html",
@@ -830,6 +858,20 @@ window.movies = [
         "rating": "6.6", "tmdb_id": 644495
     },
     {
+        "name": "Бессмертный 2: Дорога мести",
+        "image": "https://image.tmdb.org/t/p/w500//lk48GLdtqFNuNpqQkJT5uiFDyn4.jpg",
+        "link": "/card/movies/800-817/Bessmertnyj-2.html",
+        "year": "2025",
+        "rating": "7.7", "tmdb_id": 1223601
+    },
+    {
+        "name": "Бессмертный",
+        "image": "https://image.tmdb.org/t/p/w500//xSagGdKkQtQxUvJnSWstAjLlykE.jpg",
+        "link": "/card/movies/800-816/Bessmertnyj.html",
+        "year": "2022",
+        "rating": "7.4", "tmdb_id": 840326
+    },
+    {
         "name": "Гори, гори ясно",
         "image": "https://image.tmdb.org/t/p/w500//qOxcqExDuHAgGSFnAv54gTqosoS.jpg",
         "link": "/card/movies/800-550/Gori-gori-yasno.html",
@@ -1264,6 +1306,13 @@ window.movies = [
         "rating": "7.8", "tmdb_id": 273248
     },
     {
+        "name": "Сущность",
+        "image": "https://image.tmdb.org/t/p/w500//uAs0VN7VtdDL0VZ80hIu5qa9Ydf.jpg",
+        "link": "/card/movies/800-819/Sushnost.html",
+        "year": "2025",
+        "rating": "7.2", "tmdb_id": 1127628
+    },
+    {
         "name": "Восхождение Юпитер",
         "image": "https://image.tmdb.org/t/p/w500//owEYrXtomE9BJ3jli66QGk5McWv.jpg",
         "link": "/card/movies/800-462/Voshozhdenie-Yupiter.html",
@@ -1276,6 +1325,13 @@ window.movies = [
         "link": "/card/movies/800-463/Sedmoj-syn.html",
         "year": "2014",
         "rating": "5.5", "tmdb_id": 68737
+    },
+    {
+        "name": "Бегущий человек",
+        "image": "https://image.tmdb.org/t/p/w500//40Mxw7P1l9KwkQipHgzVNHFMfVC.jpg",
+        "link": "/card/movies/800-818/Begushij-chelovek.html",
+        "year": "2025",
+        "rating": "6.9", "tmdb_id": 798645
     },
     {
         "name": "Чем дальше в лес",
