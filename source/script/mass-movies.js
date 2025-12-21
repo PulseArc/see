@@ -4,6 +4,55 @@
 // Аниме массив
 window.movies = [
     {
+        "name": "Гретель и Гензель",
+        "image": "https://image.tmdb.org/t/p/w500//t2BrNHjmBwtmnzt0o1oSDNXCMuV.jpg",
+        "link": "/card/movies/800-831/Gretel-i-Genzel.html",
+        "year": "2020",
+        "rating": "6.0", "tmdb_id":542224
+    },
+    {
+        "name": "Охота на воров",
+        "image": "https://image.tmdb.org/t/p/w500//hnoIPzcxfPjVQ12F0nupAY9Ukol.jpg",
+        "link": "/card/movies/800-829/Ohota-na-vorov.html",
+        "year": "2018",
+        "rating": "7.0", "tmdb_id":449443
+    },
+    {
+        "name": "Угроза",
+        "image": "https://image.tmdb.org/t/p/w500//iAU9QZGUBZ7SVBETwSsy7VFKoUQ.jpg",
+        "link": "/card/movies/800-828/Ugroza.html",
+        "year": "2023",
+        "rating": "6.4", "tmdb_id":1053592
+    },
+    {
+        "name": "Призрачная шестёрка",
+        "image": "https://image.tmdb.org/t/p/w500//ssRq3MvPhARJq4Lnqk1J9eE0TQ8.jpg",
+        "link": "/card/movies/800-827/Prizrachnaya-shestyorka.html",
+        "year": "2019",
+        "rating": "6.3", "tmdb_id":509967
+    },
+    {
+        "name": "Дочь Бога",
+        "image": "https://image.tmdb.org/t/p/w500//xlcJ4PjFFvXDo7jOss4wg6JiEze.jpg",
+        "link": "/card/movies/800-825/Doch-Boga.html",
+        "year": "2016",
+        "rating": "4.9", "tmdb_id":331962
+    },
+    {
+        "name": "Пророк",
+        "image": "https://image.tmdb.org/t/p/w500//ltFhhcsOXPDZcFt8zcaAFmg4DcI.jpg",
+        "link": "/card/movies/800-826/Prorok.html",
+        "year": "2007",
+        "rating": "6.1", "tmdb_id":1738
+    },
+    {
+        "name": "Снайпер",
+        "image": "https://image.tmdb.org/t/p/w500//lRIAndAZFBL2KLsx0tB5D3x0hqF.jpg",
+        "link": "/card/movies/800-824/Snajper.html",
+        "year": "2014",
+        "rating": "7.4", "tmdb_id":190859
+    },
+    {
         "name": "Узники страны призраков",
         "image": "https://image.tmdb.org/t/p/w500//czRGpr33RRkz7IZEdVCOrHlXdrV.jpg",
         "link": "/card/movies/800-823/Uzniki-strany-prizrakov.html",
@@ -3486,6 +3535,13 @@ window.movies = [
         "link": "/card/movies/800-57/Spusk-v-bezdnu.html",
         "year": "2023",
         "rating": "5.7", "tmdb_id": 976830
+    },
+    {
+        "name": "Охота на воров 2: Пантера",
+        "image": "https://image.tmdb.org/t/p/w500//5AwHpKJ2tFyx3VglG1NFlEEmGFW.jpg",
+        "link": "/card/movies/800-830/Ohota-na-vorov-2-Pantera.html",
+        "year": "2025",
+        "rating": "6.6", "tmdb_id": 604685
     },
     {
         "name": "Город тайн: Исчезнувшая",
