@@ -3426,6 +3426,13 @@ window.movies = [
     },
     {
         "name": "Аватар: Путь воды",
+        "image": "https://image.tmdb.org/t/p/w500//4Em1KBxw9pWhgQqGREJLdTvseJO.jpg",
+        "link": "/card/movies/800-832/Avatar-Plamya-i-pepel.html",
+        "year": "2025",
+        "rating": "7.3", "tmdb_id": 83533
+    },
+    {
+        "name": "Аватар: Путь воды",
         "image": "https://image.tmdb.org/t/p/w500//yFNn7uWudLLWDJqfj3fwh5CcUdR.jpg",
         "link": "/card/movies/800-180/Avatar-Put-vody.html",
         "year": "2022",

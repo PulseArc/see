@@ -1,6 +1,14 @@
 var data = [
     // Фильмы
     {
+        "name": "Гретель и Гензель",
+        "image": "https://image.tmdb.org/t/p/w500//t2BrNHjmBwtmnzt0o1oSDNXCMuV.jpg",
+        "link": "/card/movies/800-831/Gretel-i-Genzel.html",
+        "year": "2020",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
         "name": "Охота на воров",
         "image": "https://image.tmdb.org/t/p/w500//hnoIPzcxfPjVQ12F0nupAY9Ukol.jpg",
         "link": "/card/movies/800-829/Ohota-na-vorov.html",
@@ -6061,6 +6069,14 @@ var data = [
         "link": "/card/movies/800-55/Pochemu-on.html",
         "year": "2016",
         "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Аватар: Путь воды",
+        "image": "https://image.tmdb.org/t/p/w500//4Em1KBxw9pWhgQqGREJLdTvseJO.jpg",
+        "link": "/card/movies/800-832/Avatar-Plamya-i-pepel.html",
+        "year": "2025",
+        "rating": "7.3",
         "type": "movie"
     },
     {
