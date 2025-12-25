@@ -4,6 +4,41 @@
 // Аниме массив
 window.movies = [
     {
+        "name": "Подлинная история банды Келли",
+        "image": "https://image.tmdb.org/t/p/w500//qTxxptM3qBVaJlLJnYfswuP7xCT.jpg",
+        "link": "/card/movies/800-838/Podlinnaya-istoriya-bandy-Kelli.html",
+        "year": "2019",
+        "rating": "5.9", "tmdb_id":501395
+    },
+    {
+        "name": "Живое",
+        "image": "https://image.tmdb.org/t/p/w500//6Tt1avaIPZCaEhGmiZuhdQJ2up6.jpg",
+        "link": "/card/movies/800-835/Zhivoe.html",
+        "year": "2017",
+        "rating": "6.4", "tmdb_id":395992
+    },
+    {
+        "name": "13 грехов",
+        "image": "https://image.tmdb.org/t/p/w500//6N0vEwysQEia6STcMhrCOn5Gs6n.jpg",
+        "link": "/card/movies/800-834/13-grehov.html",
+        "year": "2014",
+        "rating": "6.3", "tmdb_id":155084
+    },
+    {
+        "name": "Пиноккио",
+        "image": "https://image.tmdb.org/t/p/w500//fXz6npxFZ84VRU4kBSuCC73QOew.jpg",
+        "link": "/card/movies/800-833/Pinokkio.html",
+        "year": "2022",
+        "rating": "6.3", "tmdb_id":532639
+    },
+    {
+        "name": "Призрак в доспехах",
+        "image": "https://image.tmdb.org/t/p/w500//39mzdx7kENZ4yGammJCMY2ZvOYp.jpg",
+        "link": "/card/movies/800-836/Prizrak-v-dospehah.html",
+        "year": "2017",
+        "rating": "6.1", "tmdb_id":315837
+    },
+    {
         "name": "Гретель и Гензель",
         "image": "https://image.tmdb.org/t/p/w500//t2BrNHjmBwtmnzt0o1oSDNXCMuV.jpg",
         "link": "/card/movies/800-831/Gretel-i-Genzel.html",
@@ -16,6 +51,13 @@ window.movies = [
         "link": "/card/movies/800-829/Ohota-na-vorov.html",
         "year": "2018",
         "rating": "7.0", "tmdb_id":449443
+    },
+    {
+        "name": "Затерянный город Z",
+        "image": "https://image.tmdb.org/t/p/w500//EjkNCuTBj5XjU896FzcMfi9a51.jpg",
+        "link": "/card/movies/800-837/Zateryannyj-gorod-Z.html",
+        "year": "2017",
+        "rating": "6.4", "tmdb_id":314095
     },
     {
         "name": "Угроза",

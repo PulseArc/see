@@ -1,6 +1,46 @@
 var data = [
     // Фильмы
     {
+        "name": "Подлинная история банды Келли",
+        "image": "https://image.tmdb.org/t/p/w500//qTxxptM3qBVaJlLJnYfswuP7xCT.jpg",
+        "link": "/card/movies/800-838/Podlinnaya-istoriya-bandy-Kelli.html",
+        "year": "2019",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "Живое",
+        "image": "https://image.tmdb.org/t/p/w500//6Tt1avaIPZCaEhGmiZuhdQJ2up6.jpg",
+        "link": "/card/movies/800-835/Zhivoe.html",
+        "year": "2017",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "13 грехов",
+        "image": "https://image.tmdb.org/t/p/w500//6N0vEwysQEia6STcMhrCOn5Gs6n.jpg",
+        "link": "/card/movies/800-834/13-grehov.html",
+        "year": "2014",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Пиноккио",
+        "image": "https://image.tmdb.org/t/p/w500//fXz6npxFZ84VRU4kBSuCC73QOew.jpg",
+        "link": "/card/movies/800-832/Pinokkio.html",
+        "year": "2022",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Призрак в доспехах",
+        "image": "https://image.tmdb.org/t/p/w500//39mzdx7kENZ4yGammJCMY2ZvOYp.jpg",
+        "link": "/card/movies/800-836/Prizrak-v-dospehah.html",
+        "year": "2017",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
         "name": "Гретель и Гензель",
         "image": "https://image.tmdb.org/t/p/w500//t2BrNHjmBwtmnzt0o1oSDNXCMuV.jpg",
         "link": "/card/movies/800-831/Gretel-i-Genzel.html",
@@ -14,6 +54,14 @@ var data = [
         "link": "/card/movies/800-829/Ohota-na-vorov.html",
         "year": "2018",
         "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Затерянный город Z",
+        "image": "https://image.tmdb.org/t/p/w500//EjkNCuTBj5XjU896FzcMfi9a51.jpg",
+        "link": "/card/movies/800-837/Zateryannyj-gorod-Z.html",
+        "year": "2017",
+        "rating": "6.4",
         "type": "movie"
     },
     {
@@ -7995,6 +8043,14 @@ var data = [
         "link": "/card/cartoons/500-175/Zveropoj.html",
         "year": "2016",
         "rating": "7.1",
+        "type": "cartoon"
+    },
+    {
+        "name": "Зверополис 2",
+        "image": "https://image.tmdb.org/t/p/w500//j29hoRvpGshWDaOBVIogkRpi6JS.jpg",
+        "link": "/card/cartoons/500-231/Zveropolis-2.html",
+        "year": "2025",
+        "rating": "7.7",
         "type": "cartoon"
     },
     {

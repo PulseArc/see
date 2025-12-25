@@ -1359,6 +1359,14 @@ window.cartoons = [
         "tmdb_id": 335797
     },
     {
+        "name": "Зверополис 2",
+        "image": "https://image.tmdb.org/t/p/w500//j29hoRvpGshWDaOBVIogkRpi6JS.jpg",
+        "link": "/card/cartoons/500-231/Zveropolis-2.html",
+        "year": "2025",
+        "rating": "7.7",
+        "tmdb_id": 1084242
+    },
+    {
         "name": "Зверополис+",
         "image": "https://image.tmdb.org/t/p/w500//inzPPPr2BsE92m4rHhQn3sf2yPk.jpg",
         "link": "/card/cartoons/500-176/Zveropolis-2022.html",
