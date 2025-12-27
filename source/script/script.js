@@ -27,7 +27,7 @@ var data = [
     {
         "name": "Пиноккио",
         "image": "https://image.tmdb.org/t/p/w500//fXz6npxFZ84VRU4kBSuCC73QOew.jpg",
-        "link": "/card/movies/800-832/Pinokkio.html",
+        "link": "/card/movies/800-833/Pinokkio.html",
         "year": "2022",
         "rating": "6.3",
         "type": "movie"
