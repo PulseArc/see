@@ -4,6 +4,13 @@
 // Аниме массив
 window.movies = [
     {
+        "name": "Достать Санту",
+        "image": "https://image.tmdb.org/t/p/w500//gW4FX4DFRnKlGINzB4UdZJnSdgE.jpg",
+        "link": "/card/movies/800-839/Dostat-Santu.html",
+        "year": "2014",
+        "rating": "6.0", "tmdb_id":250535
+    },
+    {
         "name": "Подлинная история банды Келли",
         "image": "https://image.tmdb.org/t/p/w500//qTxxptM3qBVaJlLJnYfswuP7xCT.jpg",
         "link": "/card/movies/800-838/Podlinnaya-istoriya-bandy-Kelli.html",
