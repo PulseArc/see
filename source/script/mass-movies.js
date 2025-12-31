@@ -4,6 +4,55 @@
 // Аниме массив
 window.movies = [
     {
+        "name": "Самаритянин",
+        "image": "https://image.tmdb.org/t/p/w500//wqguiuVYAOk2UZyRaKp7dCpnkLT.jpg",
+        "link": "/card/movies/800-846/Samarityanin.html",
+        "year": "2022",
+        "rating": "6.7", "tmdb_id":629176
+    },
+    {
+        "name": "Удивительное Путешествие Доктора Дулиттла",
+        "image": "https://image.tmdb.org/t/p/w500//AwsewPKXebJvtl4EU5Dx5uBCW6G.jpg",
+        "link": "/card/movies/800-845/Udivitelnoe-Puteshestvie-Doktora-Dulittla.html",
+        "year": "2020",
+        "rating": "6.6", "tmdb_id":448119
+    },
+    {
+        "name": "Бладшот",
+        "image": "https://image.tmdb.org/t/p/w500//cCm0H9R61kKtN2f4OJ7uES4nmp4.jpg",
+        "link": "/card/movies/800-844/Bladshot.html",
+        "year": "2020",
+        "rating": "6.7", "tmdb_id":338762
+    },
+    {
+        "name": "Война под землей",
+        "image": "https://image.tmdb.org/t/p/w500//ur4hPDm6JKSuuQYquwHBOZNoJak.jpg",
+        "link": "/card/movies/800-843/Vojna-pod-zemlej.html",
+        "year": "2021",
+        "rating": "6.6", "tmdb_id":810413
+    },
+    {
+        "name": "На краю",
+        "image": "https://image.tmdb.org/t/p/w500//7S0UK6rSh2mvmS2vVR63FdE0w6R.jpg",
+        "link": "/card/movies/800-842/Na-krayu.html",
+        "year": "2022",
+        "rating": "6.6", "tmdb_id":924482
+    },
+    {
+        "name": "Глубоководный горизонт",
+        "image": "https://image.tmdb.org/t/p/w500//sfl3diq7G4OfFhWT3oACX0AsFSK.jpg",
+        "link": "/card/movies/800-841/Glubokovodnyj-gorizont.html",
+        "year": "2016",
+        "rating": "7.1", "tmdb_id":296524
+    },
+    {
+        "name": "Сноуден",
+        "image": "https://image.tmdb.org/t/p/w500//lZmcl9RT3EphrvR0AdQ06sGL7mL.jpg",
+        "link": "/card/movies/800-840/Snouden.html",
+        "year": "2016",
+        "rating": "7.3", "tmdb_id":302401
+    },
+    {
         "name": "Достать Санту",
         "image": "https://image.tmdb.org/t/p/w500//gW4FX4DFRnKlGINzB4UdZJnSdgE.jpg",
         "link": "/card/movies/800-839/Dostat-Santu.html",
