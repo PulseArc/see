@@ -1,8 +1,50 @@
 
 
 
-// Аниме массив
+//  массив
 window.movies = [
+    {
+        "name": "Герой наших снов",
+        "image": "https://imagetmdb.com/t/p/w500/7Nwir15KlhlRXI2nta0cEAbfze3.jpg",
+        "link": "/card/movies/800-853/Geroj-nashih-snov.html",
+        "year": "2023",
+        "rating": "6.7", "tmdb_id":823482
+    },
+    {
+        "name": "Создатель",
+        "image": "https://imagetmdb.com/t/p/w500/oMFQ6UXerYyre6iGFThN66A24pQ.jpg",
+        "link": "/card/movies/800-852/Sozdatel.html",
+        "year": "2023",
+        "rating": "7.0", "tmdb_id":670292
+    },
+    {
+        "name": "Убийца",
+        "image": "https://imagetmdb.com/t/p/w500/qGdKveyiqPPa9cOwVyoWRBQ9GwC.jpg",
+        "link": "/card/movies/800-851/Ubijca.html",
+        "year": "2023",
+        "rating": "6.6", "tmdb_id":800158
+    },
+    {
+        "name": "Опасные воды",
+        "image": "https://imagetmdb.com/t/p/w500/xSfQGknUnqbkm7GJ8CPnEeIWkim.jpg",
+        "link": "/card/movies/800-850/Opasnye-vody.html",
+        "year": "2024",
+        "rating": "6.0", "tmdb_id":1241674
+    },
+    {
+        "name": "Дело храбрых",
+        "image": "https://imagetmdb.com/t/p/w500/x4qmM1h0VNxkB5zBLkeqzEZ76l.jpg",
+        "link": "/card/movies/800-849/Delo-hrabryh.html",
+        "year": "2017",
+        "rating": "7.5", "tmdb_id":395991
+    },
+    {
+        "name": "Змеиная топь",
+        "image": "https://imagetmdb.com/t/p/w500/aVGxt5HUTuSme3p18AAG6hS8MHt.jpg",
+        "link": "/card/movies/800-847/Zmeinaya-top.html",
+        "year": "2023",
+        "rating": "6.3", "tmdb_id":954388
+    },
     {
         "name": "Самаритянин",
         "image": "https://image.tmdb.org/t/p/w500//wqguiuVYAOk2UZyRaKp7dCpnkLT.jpg",
@@ -2737,6 +2779,13 @@ window.movies = [
         "link": "/card/movies/800-341/Bogemskaya-rapsodiya.html",
         "year": "2018",
         "rating": "8.0", "tmdb_id": 424694
+    },
+    {
+        "name": "Мистер К.",
+        "image": "https://imagetmdb.com/t/p/w500/lRpGcAYC7cm1QnInz8P3xHvm7cV.jpg",
+        "link": "/card/movies/800-848/Mister-K.html",
+        "year": "2025",
+        "rating": "6.3", "tmdb_id": 1242669
     },
     {
         "name": "В первый раз",
