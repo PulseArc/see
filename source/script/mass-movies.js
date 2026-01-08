@@ -1,8 +1,47 @@
-
-
-
 //  массив
 window.movies = [
+    {
+        "name": "Джунгли",
+        "image": "https://image.tmdb.org/t/p/w500//T64ASk9e12Y1OEAtLiz8C8BFiX.jpg",
+        "link": "/card/movies/800-860/Dzhungli.html",
+        "year": "2017",
+        "rating": "6.6", "tmdb_id":390062
+    },
+    {
+        "name": "Вавилон",
+        "image": "https://image.tmdb.org/t/p/w500//u8Hj5v5x0R4DJFW0yUX4iGTWtDT.jpg",
+        "link": "/card/movies/800-859/Vavilon.html",
+        "year": "2022",
+        "rating": "7.4", "tmdb_id":615777
+    },
+    {
+        "name": "Сделано в Америке",
+        "image": "https://image.tmdb.org/t/p/w500//el84QAeuq3wJJCsje0tBy4LejL3.jpg",
+        "link": "/card/movies/800-857/Sdelano-v-Amerike.html",
+        "year": "2017",
+        "rating": "6.9", "tmdb_id":337170
+    },
+    {
+        "name": "Хищные земли",
+        "image": "https://image.tmdb.org/t/p/w500//dO5O0FAgxL3KLz7QigeI5268YoQ.jpg",
+        "link": "/card/movies/800-856/Hishnye-zemli.html",
+        "year": "2024",
+        "rating": "6.5", "tmdb_id":1035048
+    },
+    {
+        "name": "Сильнее",
+        "image": "https://image.tmdb.org/t/p/w500//zpr48i625ddB1c9sfxEQsMXPFuW.jpg",
+        "link": "/card/movies/800-858/Silnee.html",
+        "year": "2017",
+        "rating": "7.0", "tmdb_id":395993
+    },
+    {
+        "name": "В плену стихии",
+        "image": "https://image.tmdb.org/t/p/w500//4QHKxf23OIgzHTsHu5OR1Mn6SRb.jpg",
+        "link": "/card/movies/800-855/V-plenu-stihii.html",
+        "year": "2024",
+        "rating": "7.1", "tmdb_id":1197619
+    },
     {
         "name": "Герой наших снов",
         "image": "https://imagetmdb.com/t/p/w500/7Nwir15KlhlRXI2nta0cEAbfze3.jpg",
@@ -1033,6 +1072,13 @@ window.movies = [
         "rating": "6.3", "tmdb_id": 9378
     },
     {
+        "name": "Вундеркинд",
+        "image": "https://image.tmdb.org/t/p/w500//cZhZ574UhzztxFzRi7aljhooUZ1.jpg",
+        "link": "/card/movies/800-861/Vunderkind.html",
+        "year": "2025",
+        "rating": "6.6", "tmdb_id": 1306284
+    },
+    {
         "name": "Главный герой",
         "image": "https://image.tmdb.org/t/p/w500//qJZ3UeKAOgz2kFVJPZZFzLtn1Qk.jpg",
         "link": "/card/movies/800-552/Glavnyj-geroj.html",
@@ -1241,6 +1287,13 @@ window.movies = [
         "link": "/card/movies/800-500/Myortvye-ne-umirayut.html",
         "year": "2019",
         "rating": "5.4", "tmdb_id": 535581
+    },
+    {
+        "name": "Танк",
+        "image": "https://image.tmdb.org/t/p/w500//1Om47hEDo4EAVTLVs8xLOiYn5ne.jpg",
+        "link": "/card/movies/800-854/Tank.html",
+        "year": "2025",
+        "rating": "7.2", "tmdb_id": 1252037
     },
     {
         "name": "Эксперимент «Офис»",

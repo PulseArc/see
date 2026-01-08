@@ -1,6 +1,54 @@
 var data = [
     // Фильмы
     {
+        "name": "Джунгли",
+        "image": "https://image.tmdb.org/t/p/w500//T64ASk9e12Y1OEAtLiz8C8BFiX.jpg",
+        "link": "/card/movies/800-860/Dzhungli.html",
+        "year": "2017",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Вавилон",
+        "image": "https://image.tmdb.org/t/p/w500//u8Hj5v5x0R4DJFW0yUX4iGTWtDT.jpg",
+        "link": "/card/movies/800-859/Vavilon.html",
+        "year": "2022",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Сделано в Америке",
+        "image": "https://image.tmdb.org/t/p/w500//el84QAeuq3wJJCsje0tBy4LejL3.jpg",
+        "link": "/card/movies/800-857/Sdelano-v-Amerike.html",
+        "year": "2017",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Хищные земли",
+        "image": "https://image.tmdb.org/t/p/w500//dO5O0FAgxL3KLz7QigeI5268YoQ.jpg",
+        "link": "/card/movies/800-856/Hishnye-zemli.html",
+        "year": "2024",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Сильнее",
+        "image": "https://image.tmdb.org/t/p/w500//zpr48i625ddB1c9sfxEQsMXPFuW.jpg",
+        "link": "/card/movies/800-858/Silnee.html",
+        "year": "2017",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "В плену стихии",
+        "image": "https://image.tmdb.org/t/p/w500//4QHKxf23OIgzHTsHu5OR1Mn6SRb.jpg",
+        "link": "/card/movies/800-855/V-plenu-stihii.html",
+        "year": "2024",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
         "name": "Герой наших снов",
         "image": "https://imagetmdb.com/t/p/w500/7Nwir15KlhlRXI2nta0cEAbfze3.jpg",
         "link": "/card/movies/800-853/Geroj-nashih-snov.html",
@@ -1185,6 +1233,14 @@ var data = [
         "type": "movie"
     },
     {
+        "name": "Вундеркинд",
+        "image": "https://image.tmdb.org/t/p/w500//cZhZ574UhzztxFzRi7aljhooUZ1.jpg",
+        "link": "/card/movies/800-861/Vunderkind.html",
+        "year": "2025",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
         "name": "Главный герой",
         "image": "https://image.tmdb.org/t/p/w500//qJZ3UeKAOgz2kFVJPZZFzLtn1Qk.jpg",
         "link": "/card/movies/800-552/Glavnyj-geroj.html",
@@ -1421,6 +1477,14 @@ var data = [
         "link": "/card/movies/800-500/Myortvye-ne-umirayut.html",
         "year": "2019",
         "rating": "5.4",
+        "type": "movie"
+    },
+    {
+        "name": "Танк",
+        "image": "https://image.tmdb.org/t/p/w500//1Om47hEDo4EAVTLVs8xLOiYn5ne.jpg",
+        "link": "/card/movies/800-854/Tank.html",
+        "year": "2025",
+        "rating": "7.2",
         "type": "movie"
     },
     {
