@@ -1,5 +1,54 @@
 //  массив
-window.movies = [
+window.movies = [  
+    {
+        "name": "Кроваво-красное небо",
+        "image": "https://image.tmdb.org/t/p/w500//nFShEVgkflSGqFikMkJRjoTwvwa.jpg",
+        "link": "/card/movies/800-868/Krovavo-krasnoe-nebo.html",
+        "year": "2021",
+        "rating": "6.8", "tmdb_id":760883
+    }, 
+    {
+        "name": "Лулу и Бриггс",
+        "image": "https://image.tmdb.org/t/p/w500//9FkX7hq6r1EhONzTUJHZPwY0qi5.jpg",
+        "link": "/card/movies/800-867/Lulu-i-Briggs.html",
+        "year": "2022",
+        "rating": "7.3", "tmdb_id":626735
+    }, 
+    {
+        "name": "Проект «Адам»",
+        "image": "https://image.tmdb.org/t/p/w500//2we1SegemOvGnJ27bhspny4kX04.jpg",
+        "link": "/card/movies/800-866/Proekt-Adam.html",
+        "year": "2022",
+        "rating": "6.7", "tmdb_id":696806
+    },  
+    {
+        "name": "Air: Большой прыжок",
+        "image": "https://image.tmdb.org/t/p/w500//yPtqBdEGzcFsSuTvzCIoSUtQe6N.jpg",
+        "link": "/card/movies/800-865/Air-Bolshoj-pryzhok.html",
+        "year": "2023",
+        "rating": "7.4", "tmdb_id":964980
+    },  
+    {
+        "name": "Гипнотик",
+        "image": "https://image.tmdb.org/t/p/w500//tAJ88h7eGXiWKKRs0q05I0vjeV2.jpg",
+        "link": "/card/movies/800-864/Gipnotik.html",
+        "year": "2023",
+        "rating": "6.2", "tmdb_id":536437
+    }, 
+    {
+        "name": "Переводчик",
+        "image": "https://image.tmdb.org/t/p/w500//Acxw9ik5MIodpsmLKTC2t8x5TtC.jpg",
+        "link": "/card/movies/800-863/Perevodchik.html",
+        "year": "2023",
+        "rating": "6.4", "tmdb_id":882569
+    }, 
+    {
+        "name": "Ты умрёшь через 6 часов",
+        "image": "https://image.tmdb.org/t/p/w500//2ynnTfGyFqzXB8WyoQei4xgCDNK.jpg.jpg",
+        "link": "/card/movies/800-862/Ty-umryosh-cherez-6-chasov.html",
+        "year": "2024",
+        "rating": "6.4", "tmdb_id":1147266
+    },
     {
         "name": "Джунгли",
         "image": "https://image.tmdb.org/t/p/w500//T64ASk9e12Y1OEAtLiz8C8BFiX.jpg",
