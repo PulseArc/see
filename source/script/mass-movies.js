@@ -1,6 +1,55 @@
 //  массив
 window.movies = [  
     {
+        "name": "Иные",
+        "image": "https://image.tmdb.org/t/p/w500//ht3KhTLL7Zps1XGbPxmcKMeMMAy.jpg",
+        "link": "/card/movies/800-874/Inye.html",
+        "year": "2019",
+        "rating": "6.8", "tmdb_id":539892
+    },
+    {
+        "name": "Правосудие Спенсера",
+        "image": "https://image.tmdb.org/t/p/w500//mTCDs4yjWG4xbxCA742MIWj3rZQ.jpg",
+        "link": "/card/movies/800-875/Pravosudie-Spensera.html",
+        "year": "2020",
+        "rating": "6.5", "tmdb_id":581600
+    },
+    {
+        "name": "Ирландец",
+        "image": "https://image.tmdb.org/t/p/w500//4ZXfScDPpnTvPTHPT05ulDWqOfk.jpg",
+        "link": "/card/movies/800-873/Irlandec.html",
+        "year": "2019",
+        "rating": "7.6", "tmdb_id":398978
+    },
+    {
+        "name": "Аферист из Tinder",
+        "image": "https://image.tmdb.org/t/p/w500//sxdOybTzavbNAorG9nYBSX3FUAf.jpg",
+        "link": "/card/movies/800-872/Aferist-iz-Tinder.html",
+        "year": "2022",
+        "rating": "7.0", "tmdb_id":923632
+    },
+    {
+        "name": "Номер 44",
+        "image": "https://image.tmdb.org/t/p/w500//tc3u9yDWIvzVpVMdgndbururCd1.jpg",
+        "link": "/card/movies/800-870/Nomer-44.html",
+        "year": "2015",
+        "rating": "6.3", "tmdb_id":181283
+    },
+    {
+        "name": "Не смотрите наверх",
+        "image": "https://image.tmdb.org/t/p/w500//nLWRxZYkUVM3gQNyF70jFMvImG3.jpg",
+        "link": "/card/movies/800-871/Ne-smotrite-naverh.html",
+        "year": "2021",
+        "rating": "7.1", "tmdb_id":646380
+    }, 
+    {
+        "name": "Самый пьяный округ в мире",
+        "image": "https://image.tmdb.org/t/p/w500//cMMu2ddW3EOrfuq5D9bzB6naYGB.jpg",
+        "link": "/card/movies/800-869/Samyj-pyanyj-okrug-v-mire.html",
+        "year": "2012",
+        "rating": "7.1", "tmdb_id":82633
+    }, 
+    {
         "name": "Кроваво-красное небо",
         "image": "https://image.tmdb.org/t/p/w500//nFShEVgkflSGqFikMkJRjoTwvwa.jpg",
         "link": "/card/movies/800-868/Krovavo-krasnoe-nebo.html",
@@ -2239,6 +2288,13 @@ window.movies = [
         "rating": "7.3", "tmdb_id": 50646
     },
     {
+        "name": "Семья в аренду",
+        "image": "https://image.tmdb.org/t/p/w500//hq8e5reqojApR2rNH8OPmp1xCvw.jpg",
+        "link": "/card/movies/800-877/Semya-v-arendu.html",
+        "year": "2025",
+        "rating": "7.7", "tmdb_id": 1208348
+    },
+    {
         "name": "Предел риска",
         "image": "https://image.tmdb.org/t/p/w500//jQpZcCkvf93pBaymalTmW6IPIXf.jpg",
         "link": "/card/movies/800-283/Predel-riska.html",
@@ -2251,6 +2307,13 @@ window.movies = [
         "link": "/card/movies/800-284/Beglec.html",
         "year": "2023",
         "rating": "6.8", "tmdb_id": 717930
+    },
+    {
+        "name": "Лакомый Кусок",
+        "image": "https://image.tmdb.org/t/p/w500//eUaFpRe8B8J2YjmTaBqzPOlSb5Z.jpg",
+        "link": "/card/movies/800-876/Lakomyj-Kusok.html",
+        "year": "2026",
+        "rating": "7.1", "tmdb_id": 1306368
     },
     {
         "name": "Гренландия",
