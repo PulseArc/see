@@ -1,5 +1,96 @@
 //  массив
-window.movies = [  
+window.movies = [ 
+    {
+        "name": "Страшные сказки",
+        "image": "https://image.tmdb.org/t/p/w500//eaEWYrXeTUM6kWp87lhyqGe1szT.jpg",
+        "link": "/card/movies/800-890/Strashnye-skazki.html",
+        "year": "2015",
+        "rating": "6.4", "tmdb_id":314405
+    }, 
+    {
+        "name": "Облачный атлас",
+        "image": "https://image.tmdb.org/t/p/w500//4XwJAaallBSwQjWmY8XJMVSkRxT.jpg",
+        "link": "/card/movies/800-889/Oblachnyj-atlas.html",
+        "year": "2012",
+        "rating": "6.9", "tmdb_id":83542
+    }, 
+    {
+        "name": "Ведьмы",
+        "image": "https://image.tmdb.org/t/p/w500//r9VdNiTthYxjB5ClRzf4CcnZ1Av.jpg",
+        "link": "/card/movies/800-888/Vedmy.html",
+        "year": "2020",
+        "rating": "6.3", "tmdb_id":531219
+    }, 
+    {
+        "name": "Королевство зверей",
+        "image": "https://image.tmdb.org/t/p/w500//z2hsxMfcbQ8ndIh7q8XyAb3H0yZ.jpg",
+        "link": "/card/movies/800-887/Korolevstvo-zverej.html",
+        "year": "2023",
+        "rating": "7.0", "tmdb_id":943134
+    }, 
+    {
+        "name": "Любой ценой",
+        "image": "https://image.tmdb.org/t/p/original/cnzvfbi8hjhZOCexVhqv2C5LJFi.jpg",
+        "link": "/card/movies/800-886/Lyuboj-cenoj.html",
+        "year": "2016",
+        "rating": "7.3", "tmdb_id":338766
+    }, 
+    {
+        "name": "Стрингер",
+        "image": "https://image.tmdb.org/t/p/original/csRUDODWPAra4JqiJwgvv9PSKq5.jpg",
+        "link": "/card/movies/800-885/Stringer.html",
+        "year": "2014",
+        "rating": "7.7", "tmdb_id":242582
+    }, 
+    {
+        "name": "Дорогая, я уменьшаюсь",
+        "image": "https://image.tmdb.org/t/p/w500//qfvYXzN2QOFkdR4GTUxEOH4Otx.jpg",
+        "link": "/card/movies/800-884/Dorogaya-ya-umenshayus.html",
+        "year": "2025",
+        "rating": "6.0", "tmdb_id":1233506
+    }, 
+    {
+        "name": "Великолепная семерка",
+        "image": "https://image.tmdb.org/t/p/w500//jo9nMGCOjbn0pNPWIo6EzBT9Rt5.jpg",
+        "link": "/card/movies/800-883/Velikolepnaya-semerka.html",
+        "year": "2016",
+        "rating": "6.5", "tmdb_id":3333484
+    },
+    {
+        "name": "Под покровом ночи",
+        "image": "https://image.tmdb.org/t/p/w500//JkCOy4GTr0Zjg5rffDRBWquClr.jpg",
+        "link": "/card/movies/800-882/Pod-pokrovom-nochi.html",
+        "year": "2016",
+        "rating": "7.4", "tmdb_id":340666
+    },
+    {
+        "name": "Мокрячок Попай",
+        "image": "https://image.tmdb.org/t/p/original/yqN1dlwragk4Lk0ssRAZWeYwLBL.jpg",
+        "link": "/card/movies/800-881/Mokryachok-Popaj.html",
+        "year": "2025",
+        "rating": "5.7", "tmdb_id":1388366
+    },
+    {
+        "name": "Истории призраков",
+        "image": "https://image.tmdb.org/t/p/w500//cl6WsNuJ5JAZj0cNGv0yDcjtF4Q.jpg",
+        "link": "/card/movies/800-880/Istorii-prizrakov.html",
+        "year": "2018",
+        "rating": "6.5", "tmdb_id":429417
+    },
+    {
+        "name": "Враг",
+        "image": "https://image.tmdb.org/t/p/w500//zNgKPHlFAcDhrTY7uAKfpNJlFmh.jpg",
+        "link": "/card/movies/800-879/Vrag.html",
+        "year": "2014",
+        "rating": "6.8", "tmdb_id":181886
+    },
+    {
+        "name": "Ной",
+        "image": "https://image.tmdb.org/t/p/original/9ftKmR9dXmI4aSJJikXNWHNSDq3.jpg",
+        "link": "/card/movies/800-878/Noj.html",
+        "year": "2014",
+        "rating": "5.7", "tmdb_id":86834
+    },
     {
         "name": "Иные",
         "image": "https://image.tmdb.org/t/p/w500//ht3KhTLL7Zps1XGbPxmcKMeMMAy.jpg",
@@ -2260,6 +2351,13 @@ window.movies = [
         "rating": "7.0", "tmdb_id": 420821
     },
     {
+        "name": "Анаконда ",
+        "image": "https://image.tmdb.org/t/p/w500//47C0Mb4RkDQ3sQM0f6w7REQYDHJ.jpg",
+        "link": "/card/movies/800-893/Anakonda.html",
+        "year": "2025",
+        "rating": "6.0", "tmdb_id": 1234731
+    },
+    {
         "name": "Области тьмы",
         "image": "https://image.tmdb.org/t/p/w500//tpvt8Le1Pyd3d7lnp9GTW2uD7hj.jpg",
         "link": "/card/movies/800-279/Oblasti-tmy.html",
@@ -2279,6 +2377,13 @@ window.movies = [
         "link": "/card/movies/800-281/Ubojnye-kanikuly.html",
         "year": "2010",
         "rating": "7.4", "tmdb_id": 46838
+    },
+    {
+        "name": "Команда разрушителей",
+        "image": "https://image.tmdb.org/t/p/w500//m7aUThrG0Ir3F6tOyukYChXHMmx.jpg",
+        "link": "/card/movies/800-892/Komanda-razrushitelej.html",
+        "year": "2026",
+        "rating": "6.2", "tmdb_id": 1168190
     },
     {
         "name": "Эта дурацкая любовь",
@@ -2314,6 +2419,13 @@ window.movies = [
         "link": "/card/movies/800-876/Lakomyj-Kusok.html",
         "year": "2026",
         "rating": "7.1", "tmdb_id": 1306368
+    },
+    {
+        "name": "Гренландия 2: Миграция",
+        "image": "https://image.tmdb.org/t/p/w500//uhV90l00klYLwCFo96JAVFGVU8v.jpg",
+        "link": "/card/movies/800-891/Grenlandiya2.html",
+        "year": "2026",
+        "rating": "6.7", "tmdb_id": 840464
     },
     {
         "name": "Гренландия",
