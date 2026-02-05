@@ -1,6 +1,62 @@
 //  массив
 window.movies = [ 
     {
+        "name": "Финч",
+        "image": "https://image.tmdb.org/t/p/w500//6u5Yx85VCh4KEU1RjjPPF00qsxa.jpg",
+        "link": "/card/movies/800-901/Finch.html",
+        "year": "2021",
+        "rating": "7.8", "tmdb_id":522402
+    },
+    {
+        "name": "Серый человек",
+        "image": "https://image.tmdb.org/t/p/w500//28qaUGkPKDPRlGwHVuy88cu8QgY.jpg",
+        "link": "/card/movies/800-899/Seryj-chelovek.html",
+        "year": "2022",
+        "rating": "6.9", "tmdb_id":725201
+    },
+    {
+        "name": "Крушение",
+        "image": "https://image.tmdb.org/t/p/w500//jtwo108fEn5h35jcNLEa2SolqBa.jpg",
+        "link": "/card/movies/800-898/Krushenie.html",
+        "year": "2023",
+        "rating": "6.9", "tmdb_id":646389
+    },
+    {
+        "name": "Страна снов",
+        "image": "https://image.tmdb.org/t/p/w500//oGb29lvsY2oCvHLsI0i7dp9XdDv.jpg",
+        "link": "/card/movies/800-897/Strana-snov.html",
+        "year": "2022",
+        "rating": "7.3", "tmdb_id":668461
+    },
+    {
+        "name": "Путь домой",
+        "image": "https://image.tmdb.org/t/p/w500//wfjdcFlAOFU4LU8ElGakc7QTUUE.jpg",
+        "link": "/card/movies/800-896/Put-domoj.html",
+        "year": "2019",
+        "rating": "7.4", "tmdb_id":508763
+    },
+    {
+        "name": "Человек из Торонто",
+        "image": "https://image.tmdb.org/t/p/w500//6c0JydeLpeJdoFjJs3isHMRrXFR.jpg",
+        "link": "/card/movies/800-900/Chelovek-iz-Toronto.html",
+        "year": "2022",
+        "rating": "6.4", "tmdb_id":667739
+    },
+    {
+        "name": "Бедные-несчастные",
+        "image": "https://image.tmdb.org/t/p/w500//uE2QMiofUiPUyBAPagx35jpw9aF.jpg",
+        "link": "/card/movies/800-895/Bednye-neschastnye.html",
+        "year": "2023",
+        "rating": "7.7", "tmdb_id":792307
+    },
+    {
+        "name": "Ламборгини: человек-легенда",
+        "image": "https://image.tmdb.org/t/p/w500//2JUr98U3W2TLWEPnve2NkARJ2Y8.jpg",
+        "link": "/card/movies/800-894/Lamborgini-chelovek-legenda.html",
+        "year": "2022",
+        "rating": "6.4", "tmdb_id":457232
+    },
+    {
         "name": "Страшные сказки",
         "image": "https://image.tmdb.org/t/p/w500//eaEWYrXeTUM6kWp87lhyqGe1szT.jpg",
         "link": "/card/movies/800-890/Strashnye-skazki.html",
