@@ -1,6 +1,118 @@
 var data = [
     // Фильмы
     {
+        "name": "Чёрный ящик",
+        "image": "https://image.tmdb.org/t/p/w500//h7kgLr1wmg5PfvfrLpNa5OabPkg.jpg",
+        "link": "/card/movies/800-915/Chyornyj-yashik.html",
+        "year": "2021",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Паркер",
+        "image": "https://image.tmdb.org/t/p/w500//bruKbJgkIscpKqD1DC4l37O5IyZ.jpg",
+        "link": "/card/movies/800-913/Parker.html",
+        "year": "2013",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Без жалости",
+        "image": "https://image.tmdb.org/t/p/w500//aKpxpF7VhFf2tEffWV7h9LPhV9d.jpg",
+        "link": "/card/movies/800-911/Bez-zhalosti.html",
+        "year": "2021",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Возвращение героя",
+        "image": "https://image.tmdb.org/t/p/w500//3b18bwznHHXNcJd46IvBPbZjQWL.jpg",
+        "link": "/card/movies/800-912/Vozvrashenie-geroya.html",
+        "year": "2013",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Мортал Комбат",
+        "image": "https://image.tmdb.org/t/p/w500//pMIixvHwsD5RZxbvgsDSNkpKy0R.jpg",
+        "link": "/card/movies/800-910/Mortal-Kombat.html",
+        "year": "2021",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Последний рубеж",
+        "image": "https://image.tmdb.org/t/p/w500//o3RKWpo1gHTyLj5ppOdPpDuOUfd.jpg",
+        "link": "/card/movies/800-914/Poslednij-rubezh.html",
+        "year": "2013",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Игры шпионов",
+        "image": "https://image.tmdb.org/t/p/w500//bkDVAb8QLFHI05Ps9V2CFFWXVty.jpg",
+        "link": "/card/movies/800-909/Igry-shpionov.html",
+        "year": "2020",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Заступник",
+        "image": "https://image.tmdb.org/t/p/w500//qXsIUt3dlJ6eGmIJWs3OP9Y5x61.jpg",
+        "link": "/card/movies/800-908/Zastupnik.html",
+        "year": "2021",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Дева и дракон",
+        "image": "https://image.tmdb.org/t/p/w500//qzuYZvqGDJKH34mDf1yoJisqVSA.jpg",
+        "link": "/card/movies/800-907/Deva-i-drakon.html",
+        "year": "2024",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Телохранитель на фрилансе",
+        "image": "https://image.tmdb.org/t/p/w500//fyewEgpqWOo27li94GGLNpVCs6i.jpg",
+        "link": "/card/movies/800-906/Telohranitel-na-frilanse.html",
+        "year": "2023",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Воздушное ограбление",
+        "image": "https://image.tmdb.org/t/p/w500//uusIJJfWdjfJuTxGMfStZthXmtF.jpg",
+        "link": "/card/movies/800-905/Vozdushnoe-ograblenie.html",
+        "year": "2024",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Человек на Луне",
+        "image": "https://image.tmdb.org/t/p/w500//rmoOzsN98EM1JFtQkzjZA19y4ou.jpg",
+        "link": "/card/movies/800-904/Chelovek-na-Lune.html",
+        "year": "2018",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Фаворитка",
+        "image": "https://image.tmdb.org/t/p/w500//RNl2FJ9e9wxFrMSQ9YdfHRGIzJ.jpg",
+        "link": "/card/movies/800-903/Favoritka.html",
+        "year": "2018",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Убийство священного оленя",
+        "image": "https://image.tmdb.org/t/p/w500//rilpu7kiie63HwbRyvRbP5F2JvQ.jpg",
+        "link": "/card/movies/800-902/Ubijstvo-svyashennogo-olenya.html",
+        "year": "2017",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
         "name": "Финч",
         "image": "https://image.tmdb.org/t/p/w500//6u5Yx85VCh4KEU1RjjPPF00qsxa.jpg",
         "link": "/card/movies/800-901/Finch.html",
@@ -67,7 +179,7 @@ var data = [
     {
         "name": "Страшные сказки",
         "image": "https://image.tmdb.org/t/p/w500//eaEWYrXeTUM6kWp87lhyqGe1szT.jpg",
-        "link": "/card/movies/800-889/Strashnye-skazki.html",
+        "link": "/card/movies/800-890/Strashnye-skazki.html",
         "year": "2015",
         "rating": "6.4",
         "type": "movie"
@@ -3501,6 +3613,14 @@ var data = [
         "link": "/card/movies/800-335/Lyubov-i-drugie-lekarstva.html",
         "year": "2010",
         "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Метод исключения",
+        "image": "https://image.tmdb.org/t/p/w500//wJw2YFDNv4UcygxZevDz5snPvTw.jpg",
+        "link": "/card/movies/800-916/Metod-isklyucheniya.html",
+        "year": "2025",
+        "rating": "7.6",
         "type": "movie"
     },
     {
