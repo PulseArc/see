@@ -1,6 +1,76 @@
 //  массив
 window.movies = [ 
     {
+        "name": "Безупречность",
+        "image": "https://image.tmdb.org/t/p/w500//asbgb04QKqGzaIcVnQ8vnS3D2QU.jpg",
+        "link": "/card/movies/800-928/Bezuprechnost.html",
+        "year": "2018",
+        "rating": "6.5", "tmdb_id":529962
+    },
+    {
+        "name": "Да здравствует Цезарь!",
+        "image": "https://image.tmdb.org/t/p/w500//v35JSMNPMtJbSK31c5d8EbmAW3X.jpg",
+        "link": "/card/movies/800-927/Da-zdravstvuet-Cezar.html",
+        "year": "2016",
+        "rating": "5.9", "tmdb_id":270487
+    },
+    {
+        "name": "Она",
+        "image": "https://image.tmdb.org/t/p/w500//3Pnkt6NcB7Xc6cDftTBAF6gIzC6.jpg",
+        "link": "/card/movies/800-924/Ona.html",
+        "year": "2013",
+        "rating": "7.8", "tmdb_id":152601
+    },
+    {
+        "name": "Континуум",
+        "image": "https://image.tmdb.org/t/p/w500//kbtBjGcLYir2J5viTNRgH7JRdyQ.jpg",
+        "link": "/card/movies/800-923/Kontinuum.html",
+        "year": "2015",
+        "rating": "6.8", "tmdb_id":227719
+    },
+    {
+        "name": "Далласский клуб покупателей",
+        "image": "https://image.tmdb.org/t/p/w500//6QQQzXosnQvcmGRc5mAmN0HAS9c.jpg",
+        "link": "/card/movies/800-925/Dallasskij-klub-pokupatelej.html",
+        "year": "2013",
+        "rating": "7.9", "tmdb_id":152532
+    },
+    {
+        "name": "Битва титанов",
+        "image": "https://image.tmdb.org/t/p/w500//43f3EqCTpw1hrvzhmOSSIQGMD0N.jpg",
+        "link": "/card/movies/800-921/Bitva-titanov.html",
+        "year": "2010",
+        "rating": "5.9", "tmdb_id":18823
+    },
+    {
+        "name": "Прорваться в НБА",
+        "image": "https://image.tmdb.org/t/p/original/jZqud9ka8s1sbXUy97neGaSG8G1.jpg",
+        "link": "/card/movies/800-920/Prorvatsya-v-NBA.html",
+        "year": "2022",
+        "rating": "7.7", "tmdb_id":705861
+    },
+    {
+        "name": "Страсти Дон Жуана",
+        "image": "https://image.tmdb.org/t/p/w500//buugbXhbNSqwcc8ny6Ik1pNmkRC.jpg",
+        "link": "/card/movies/800-926/Strasti-Don-Zhuana.html",
+        "year": "2013",
+        "rating": "6.0", "tmdb_id":138697
+    },
+    {
+        "name": "Джон Картер",
+        "image": "https://image.tmdb.org/t/p/w500//h0NtgPWpRH36M9BAk3bKozd7fDo.jpg",
+        "link": "/card/movies/800-922/Dzhon-Karter.html",
+        "year": "2012",
+        "rating": "6.4", "tmdb_id":49529
+    },
+    {
+        "name": "Спайдерхед",
+        "image": "https://image.tmdb.org/t/p/w500//9eIUPOKrqtPtcUzdYzBIBAv0BSM.jpg",
+        "link": "/card/movies/800-919/Spajderhed.html",
+        "year": "2022",
+        "rating": "5.8", "tmdb_id":615469
+    },
+    {
         "name": "Чёрный ящик",
         "image": "https://image.tmdb.org/t/p/w500//h7kgLr1wmg5PfvfrLpNa5OabPkg.jpg",
         "link": "/card/movies/800-915/Chyornyj-yashik.html",
@@ -2386,6 +2456,13 @@ window.movies = [
         "rating": "5.2", "tmdb_id": 38745
     },
     {
+        "name": "28 лет спустя: Храм костей",
+        "image": "https://image.tmdb.org/t/p/w500//lCel0uHnVgCGihg4xrWSPzOMnV4.jpg",
+        "link": "/card/movies/800-918/28-let-spustya-Hram-kostej.html",
+        "year": "2026",
+        "rating": "7.2", "tmdb_id": 1272837
+    },
+    {
         "name": "28 лет спустя",
         "image": "https://image.tmdb.org/t/p/w500//5mYslz7foRGWeiZbSG1vyXwMzUX.jpg",
         "link": "/card/movies/800-448/28-let-spustya.html",
@@ -3021,6 +3098,13 @@ window.movies = [
         "link": "/card/movies/800-327/Diktator.html",
         "year": "2012",
         "rating": "6.2", "tmdb_id": 76493
+    },
+    {
+        "name": "Милосердие",
+        "image": "https://image.tmdb.org/t/p/w500//kRnAyc7cGQQBnPrKlLvGefnv1yh.jpg",
+        "link": "/card/movies/800-917/Miloserdie.html",
+        "year": "2026",
+        "rating": "6.2", "tmdb_id": 1236153
     },
     {
         "name": "Прочь",
