@@ -1,6 +1,54 @@
 var data = [
     // Фильмы
     {
+        "name": "Освобождение",
+        "image": "https://image.tmdb.org/t/p/w500//uMov95Z6VybXLctmjmvf08C1Sew.jpg",
+        "link": "/card/movies/800-934/Osvobozhdenie.html",
+        "year": "2022",
+        "rating": "7.8",
+        "type": "movie"
+    },
+    {
+        "name": "Капкан",
+        "image": "https://image.tmdb.org/t/p/w500//5JeV4OKJOonPOm35IJkUDsGK4pC.jpg",
+        "link": "/card/movies/800-932/Kapkan.html",
+        "year": "2019",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Остров фантазий",
+        "image": "https://image.tmdb.org/t/p/w500//4H0LQF5uxXU5wn3nsiDBrDB5QPz.jpg",
+        "link": "/card/movies/800-931/Ostrov-fantazij.html",
+        "year": "2020",
+        "rating": "5.8",
+        "type": "movie"
+    },
+    {
+        "name": "Правда или действие",
+        "image": "https://image.tmdb.org/t/p/w500//po4JZAYWs6VIejlSOxOehnUNRaI.jpg",
+        "link": "/card/movies/800-930/Pravda-ili-dejstvie.html",
+        "year": "2018",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "Али, рули!",
+        "image": "https://image.tmdb.org/t/p/w500//7CGiceakchGZkh5365mwNGZIugQ.jpg",
+        "link": "/card/movies/800-933/Ali-ruli.html",
+        "year": "2019",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Невозможное",
+        "image": "https://image.tmdb.org/t/p/w500//gfTF3DpPwr9HEwjd4NG4SZAPAeI.jpg",
+        "link": "/card/movies/800-929/Nevozmozhnoe.html",
+        "year": "2012",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
         "name": "Безупречность",
         "image": "https://image.tmdb.org/t/p/w500//asbgb04QKqGzaIcVnQ8vnS3D2QU.jpg",
         "link": "/card/movies/800-928/Bezuprechnost.html",
@@ -5965,6 +6013,14 @@ var data = [
         "link": "/card/movies/800-132/128-udarov-serdca-v-minutu.html",
         "year": "2015",
         "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Убежище",
+        "image": "https://image.tmdb.org/t/p/w500//yHwVIhzBYWzUpwOmOTT3ijWj1kS.jpg",
+        "link": "/card/movies/800-935/Ubezhishe.html",
+        "year": "2026",
+        "rating": "7.1",
         "type": "movie"
     },
     {
