@@ -1,0 +1,11612 @@
+var data = [
+    // Фильмы
+    {
+        "name": "Арахисовый Сокол",
+        "image": "https://image.tmdb.org/t/p/w500//tMB9auXwFlgQ0BQTUk1pF2ZXBVE.jpg",
+        "link": "/card/movies/800-943/Arahisovyj-Sokol.html",
+        "year": "2019",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Экипаж",
+        "image": "https://image.tmdb.org/t/p/w500//qFvgOwHoxXVW5XTvVpxx55JxBxp.jpg",
+        "link": "/card/movies/800-942/Ekipazh.html",
+        "year": "2012",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Джой",
+        "image": "https://image.tmdb.org/t/p/w500//5oCuWnS1rTlPahiUrNRw19HCb2s.jpg",
+        "link": "/card/movies/800-941/Dzhoj.html",
+        "year": "2015",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Падение Луны",
+        "image": "https://image.tmdb.org/t/p/w500//1ISchVuArjUHuP51pTwHPnsYfxF.jpg",
+        "link": "/card/movies/800-940/Padenie-Luny.html",
+        "year": "2022",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Ничего хорошего в отеле «Эль рояль»",
+        "image": "https://image.tmdb.org/t/p/w500//bGK0zxn63zxUNXE5y8c571xTAb7.jpg",
+        "link": "/card/movies/800-939/Nichego-horoshego-v-otele-El-royal.html",
+        "year": "2018",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Тройная граница",
+        "image": "https://image.tmdb.org/t/p/w500//vNVgXfR60u09o6eCDLMVCogKOel.jpg",
+        "link": "/card/movies/800-937/Trojnaya-granica.html",
+        "year": "2019",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Фотограф из Маутхаузена",
+        "image": "https://image.tmdb.org/t/p/w500//1GzwDodNHSQM7Wu8VIbvTmYXJQB.jpg",
+        "link": "/card/movies/800-938/Fotograf-iz-Mauthauzena.html",
+        "year": "2018",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Мы",
+        "image": "https://image.tmdb.org/t/p/w500//n1SuhGckPF3KDeZF1xx8QZ0CG2L.jpg",
+        "link": "/card/movies/800-936/My.html",
+        "year": "2019",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Освобождение",
+        "image": "https://image.tmdb.org/t/p/w500//uMov95Z6VybXLctmjmvf08C1Sew.jpg",
+        "link": "/card/movies/800-934/Osvobozhdenie.html",
+        "year": "2022",
+        "rating": "7.8",
+        "type": "movie"
+    },
+    {
+        "name": "Капкан",
+        "image": "https://image.tmdb.org/t/p/w500//5JeV4OKJOonPOm35IJkUDsGK4pC.jpg",
+        "link": "/card/movies/800-932/Kapkan.html",
+        "year": "2019",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Остров фантазий",
+        "image": "https://image.tmdb.org/t/p/w500//4H0LQF5uxXU5wn3nsiDBrDB5QPz.jpg",
+        "link": "/card/movies/800-931/Ostrov-fantazij.html",
+        "year": "2020",
+        "rating": "5.8",
+        "type": "movie"
+    },
+    {
+        "name": "Правда или действие",
+        "image": "https://image.tmdb.org/t/p/w500//po4JZAYWs6VIejlSOxOehnUNRaI.jpg",
+        "link": "/card/movies/800-930/Pravda-ili-dejstvie.html",
+        "year": "2018",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "Али, рули!",
+        "image": "https://image.tmdb.org/t/p/w500//7CGiceakchGZkh5365mwNGZIugQ.jpg",
+        "link": "/card/movies/800-933/Ali-ruli.html",
+        "year": "2019",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Невозможное",
+        "image": "https://image.tmdb.org/t/p/w500//gfTF3DpPwr9HEwjd4NG4SZAPAeI.jpg",
+        "link": "/card/movies/800-929/Nevozmozhnoe.html",
+        "year": "2012",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Безупречность",
+        "image": "https://image.tmdb.org/t/p/w500//asbgb04QKqGzaIcVnQ8vnS3D2QU.jpg",
+        "link": "/card/movies/800-928/Bezuprechnost.html",
+        "year": "2018",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Да здравствует Цезарь!",
+        "image": "https://image.tmdb.org/t/p/w500//v35JSMNPMtJbSK31c5d8EbmAW3X.jpg",
+        "link": "/card/movies/800-927/Da-zdravstvuet-Cezar.html",
+        "year": "2016",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "Она",
+        "image": "https://image.tmdb.org/t/p/w500//3Pnkt6NcB7Xc6cDftTBAF6gIzC6.jpg",
+        "link": "/card/movies/800-924/Ona.html",
+        "year": "2013",
+        "rating": "7.8",
+        "type": "movie"
+    },
+    {
+        "name": "Континуум",
+        "image": "https://image.tmdb.org/t/p/w500//kbtBjGcLYir2J5viTNRgH7JRdyQ.jpg",
+        "link": "/card/movies/800-923/Kontinuum.html",
+        "year": "2015",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Далласский клуб покупателей",
+        "image": "https://image.tmdb.org/t/p/w500//6QQQzXosnQvcmGRc5mAmN0HAS9c.jpg",
+        "link": "/card/movies/800-925/Dallasskij-klub-pokupatelej.html",
+        "year": "2013",
+        "rating": "7.9",
+        "type": "movie"
+    },
+    {
+        "name": "Битва титанов",
+        "image": "https://image.tmdb.org/t/p/w500//43f3EqCTpw1hrvzhmOSSIQGMD0N.jpg",
+        "link": "/card/movies/800-921/Bitva-titanov.html",
+        "year": "2010",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "Прорваться в НБА",
+        "image": "https://image.tmdb.org/t/p/original/jZqud9ka8s1sbXUy97neGaSG8G1.jpg",
+        "link": "/card/movies/800-920/Prorvatsya-v-NBA.html",
+        "year": "2022",
+        "rating": "7.7",
+        "type": "movie"
+    },
+        {
+        "name": "Страсти Дон Жуана",
+        "image": "https://image.tmdb.org/t/p/w500//buugbXhbNSqwcc8ny6Ik1pNmkRC.jpg",
+        "link": "/card/movies/800-926/Strasti-Don-Zhuana.html",
+        "year": "2013",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "Джон Картер",
+        "image": "https://image.tmdb.org/t/p/w500//h0NtgPWpRH36M9BAk3bKozd7fDo.jpg",
+        "link": "/card/movies/800-922/Dzhon-Karter.html",
+        "year": "2012",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Спайдерхед",
+        "image": "https://image.tmdb.org/t/p/w500//9eIUPOKrqtPtcUzdYzBIBAv0BSM.jpg",
+        "link": "/card/movies/800-919/Spajderhed.html",
+        "year": "2022",
+        "rating": "5.8",
+        "type": "movie"
+    },
+    {
+        "name": "Чёрный ящик",
+        "image": "https://image.tmdb.org/t/p/w500//h7kgLr1wmg5PfvfrLpNa5OabPkg.jpg",
+        "link": "/card/movies/800-915/Chyornyj-yashik.html",
+        "year": "2021",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Паркер",
+        "image": "https://image.tmdb.org/t/p/w500//bruKbJgkIscpKqD1DC4l37O5IyZ.jpg",
+        "link": "/card/movies/800-913/Parker.html",
+        "year": "2013",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Без жалости",
+        "image": "https://image.tmdb.org/t/p/w500//aKpxpF7VhFf2tEffWV7h9LPhV9d.jpg",
+        "link": "/card/movies/800-911/Bez-zhalosti.html",
+        "year": "2021",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Возвращение героя",
+        "image": "https://image.tmdb.org/t/p/w500//3b18bwznHHXNcJd46IvBPbZjQWL.jpg",
+        "link": "/card/movies/800-912/Vozvrashenie-geroya.html",
+        "year": "2013",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Мортал Комбат",
+        "image": "https://image.tmdb.org/t/p/w500//pMIixvHwsD5RZxbvgsDSNkpKy0R.jpg",
+        "link": "/card/movies/800-910/Mortal-Kombat.html",
+        "year": "2021",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Последний рубеж",
+        "image": "https://image.tmdb.org/t/p/w500//o3RKWpo1gHTyLj5ppOdPpDuOUfd.jpg",
+        "link": "/card/movies/800-914/Poslednij-rubezh.html",
+        "year": "2013",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Игры шпионов",
+        "image": "https://image.tmdb.org/t/p/w500//bkDVAb8QLFHI05Ps9V2CFFWXVty.jpg",
+        "link": "/card/movies/800-909/Igry-shpionov.html",
+        "year": "2020",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Заступник",
+        "image": "https://image.tmdb.org/t/p/w500//qXsIUt3dlJ6eGmIJWs3OP9Y5x61.jpg",
+        "link": "/card/movies/800-908/Zastupnik.html",
+        "year": "2021",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Дева и дракон",
+        "image": "https://image.tmdb.org/t/p/w500//qzuYZvqGDJKH34mDf1yoJisqVSA.jpg",
+        "link": "/card/movies/800-907/Deva-i-drakon.html",
+        "year": "2024",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Телохранитель на фрилансе",
+        "image": "https://image.tmdb.org/t/p/w500//fyewEgpqWOo27li94GGLNpVCs6i.jpg",
+        "link": "/card/movies/800-906/Telohranitel-na-frilanse.html",
+        "year": "2023",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Воздушное ограбление",
+        "image": "https://image.tmdb.org/t/p/w500//uusIJJfWdjfJuTxGMfStZthXmtF.jpg",
+        "link": "/card/movies/800-905/Vozdushnoe-ograblenie.html",
+        "year": "2024",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Человек на Луне",
+        "image": "https://image.tmdb.org/t/p/w500//rmoOzsN98EM1JFtQkzjZA19y4ou.jpg",
+        "link": "/card/movies/800-904/Chelovek-na-Lune.html",
+        "year": "2018",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Фаворитка",
+        "image": "https://image.tmdb.org/t/p/w500//RNl2FJ9e9wxFrMSQ9YdfHRGIzJ.jpg",
+        "link": "/card/movies/800-903/Favoritka.html",
+        "year": "2018",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Убийство священного оленя",
+        "image": "https://image.tmdb.org/t/p/w500//rilpu7kiie63HwbRyvRbP5F2JvQ.jpg",
+        "link": "/card/movies/800-902/Ubijstvo-svyashennogo-olenya.html",
+        "year": "2017",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Финч",
+        "image": "https://image.tmdb.org/t/p/w500//6u5Yx85VCh4KEU1RjjPPF00qsxa.jpg",
+        "link": "/card/movies/800-901/Finch.html",
+        "year": "2021",
+        "rating": "7.8",
+        "type": "movie"
+    },
+    {
+        "name": "Серый человек",
+        "image": "https://image.tmdb.org/t/p/w500//28qaUGkPKDPRlGwHVuy88cu8QgY.jpg",
+        "link": "/card/movies/800-899/Seryj-chelovek.html",
+        "year": "2022",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Крушение",
+        "image": "https://image.tmdb.org/t/p/w500//jtwo108fEn5h35jcNLEa2SolqBa.jpg",
+        "link": "/card/movies/800-898/Krushenie.html",
+        "year": "2023",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Страна снов",
+        "image": "https://image.tmdb.org/t/p/w500//oGb29lvsY2oCvHLsI0i7dp9XdDv.jpg",
+        "link": "/card/movies/800-897/Strana-snov.html",
+        "year": "2022",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Путь домой",
+        "image": "https://image.tmdb.org/t/p/w500//wfjdcFlAOFU4LU8ElGakc7QTUUE.jpg",
+        "link": "/card/movies/800-896/Put-domoj.html",
+        "year": "2019",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Человек из Торонто",
+        "image": "https://image.tmdb.org/t/p/w500//6c0JydeLpeJdoFjJs3isHMRrXFR.jpg",
+        "link": "/card/movies/800-900/Chelovek-iz-Toronto.html",
+        "year": "2022",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Бедные-несчастные",
+        "image": "https://image.tmdb.org/t/p/w500//uE2QMiofUiPUyBAPagx35jpw9aF.jpg",
+        "link": "/card/movies/800-895/Bednye-neschastnye.html",
+        "year": "2023",
+        "rating": "7.7",
+        "type": "movie"
+    },
+    {
+        "name": "Ламборгини: человек-легенда",
+        "image": "https://image.tmdb.org/t/p/w500//2JUr98U3W2TLWEPnve2NkARJ2Y8.jpg",
+        "link": "/card/movies/800-894/Lamborgini-chelovek-legenda.html",
+        "year": "2022",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Страшные сказки",
+        "image": "https://image.tmdb.org/t/p/w500//eaEWYrXeTUM6kWp87lhyqGe1szT.jpg",
+        "link": "/card/movies/800-890/Strashnye-skazki.html",
+        "year": "2015",
+        "rating": "6.4",
+        "type": "movie"
+    }, 
+    {
+        "name": "Облачный атлас",
+        "image": "https://image.tmdb.org/t/p/w500//4XwJAaallBSwQjWmY8XJMVSkRxT.jpg",
+        "link": "/card/movies/800-889/Oblachnyj-atlas.html",
+        "year": "2012",
+        "rating": "6.9",
+        "type": "movie"
+    }, 
+    {
+        "name": "Ведьмы",
+        "image": "https://image.tmdb.org/t/p/w500//r9VdNiTthYxjB5ClRzf4CcnZ1Av.jpg",
+        "link": "/card/movies/800-888/Vedmy.html",
+        "year": "2020",
+        "rating": "6.3",
+        "type": "movie"
+    }, 
+    {
+        "name": "Королевство зверей",
+        "image": "https://image.tmdb.org/t/p/w500//z2hsxMfcbQ8ndIh7q8XyAb3H0yZ.jpg",
+        "link": "/card/movies/800-887/Korolevstvo-zverej.html",
+        "year": "2023",
+        "rating": "7.0",
+        "type": "movie"
+    }, 
+    {
+        "name": "Любой ценой",
+        "image": "https://image.tmdb.org/t/p/original/cnzvfbi8hjhZOCexVhqv2C5LJFi.jpg",
+        "link": "/card/movies/800-886/Lyuboj-cenoj.html",
+        "year": "2016",
+        "rating": "7.3",
+        "type": "movie"
+    }, 
+    {
+        "name": "Стрингер",
+        "image": "https://image.tmdb.org/t/p/original/csRUDODWPAra4JqiJwgvv9PSKq5.jpg",
+        "link": "/card/movies/800-885/Stringer.html",
+        "year": "2014",
+        "rating": "7.7",
+        "type": "movie"
+    }, 
+    {
+        "name": "Дорогая, я уменьшаюсь",
+        "image": "https://image.tmdb.org/t/p/w500//qfvYXzN2QOFkdR4GTUxEOH4Otx.jpg",
+        "link": "/card/movies/800-884/Dorogaya-ya-umenshayus.html",
+        "year": "2025",
+        "rating": "6.0",
+        "type": "movie"
+    }, 
+    {
+        "name": "Великолепная семерка",
+        "image": "https://image.tmdb.org/t/p/w500//jo9nMGCOjbn0pNPWIo6EzBT9Rt5.jpg",
+        "link": "/card/movies/800-883/Velikolepnaya-semerka.html",
+        "year": "2016",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Под покровом ночи",
+        "image": "https://image.tmdb.org/t/p/w500//JkCOy4GTr0Zjg5rffDRBWquClr.jpg",
+        "link": "/card/movies/800-882/Pod-pokrovom-nochi.html",
+        "year": "2016",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Мокрячок Попай",
+        "image": "https://image.tmdb.org/t/p/original/yqN1dlwragk4Lk0ssRAZWeYwLBL.jpg",
+        "link": "/card/movies/800-881/Mokryachok-Popaj.html",
+        "year": "2025",
+        "rating": "5.7",
+        "type": "movie"
+    },
+    {
+        "name": "Истории призраков",
+        "image": "https://image.tmdb.org/t/p/w500//cl6WsNuJ5JAZj0cNGv0yDcjtF4Q.jpg",
+        "link": "/card/movies/800-880/Istorii-prizrakov.html",
+        "year": "2018",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Враг",
+        "image": "https://image.tmdb.org/t/p/w500//zNgKPHlFAcDhrTY7uAKfpNJlFmh.jpg",
+        "link": "/card/movies/800-879/Vrag.html",
+        "year": "2014",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Ной",
+        "image": "https://image.tmdb.org/t/p/original/9ftKmR9dXmI4aSJJikXNWHNSDq3.jpg",
+        "link": "/card/movies/800-878/Noj.html",
+        "year": "2014",
+        "rating": "5.7",
+        "type": "movie"
+    },
+    {
+        "name": "Иные",
+        "image": "https://image.tmdb.org/t/p/w500//ht3KhTLL7Zps1XGbPxmcKMeMMAy.jpg",
+        "link": "/card/movies/800-874/Inye.html",
+        "year": "2019",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Правосудие Спенсера",
+        "image": "https://image.tmdb.org/t/p/w500//mTCDs4yjWG4xbxCA742MIWj3rZQ.jpg",
+        "link": "/card/movies/800-875/Pravosudie-Spensera.html",
+        "year": "2020",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Ирландец",
+        "image": "https://image.tmdb.org/t/p/w500//4ZXfScDPpnTvPTHPT05ulDWqOfk.jpg",
+        "link": "/card/movies/800-873/Irlandec.html",
+        "year": "2019",
+        "rating": "7.6",
+        "type": "movie"
+    },
+    {
+        "name": "Аферист из Tinder",
+        "image": "https://image.tmdb.org/t/p/w500//sxdOybTzavbNAorG9nYBSX3FUAf.jpg",
+        "link": "/card/movies/800-872/Aferist-iz-Tinder.html",
+        "year": "2022",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Номер 44",
+        "image": "https://image.tmdb.org/t/p/w500//tc3u9yDWIvzVpVMdgndbururCd1.jpg",
+        "link": "/card/movies/800-870/Nomer-44.html",
+        "year": "2015",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Не смотрите наверх",
+        "image": "https://image.tmdb.org/t/p/w500//nLWRxZYkUVM3gQNyF70jFMvImG3.jpg",
+        "link": "/card/movies/800-871/Ne-smotrite-naverh.html",
+        "year": "2021",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Самый пьяный округ в мире",
+        "image": "https://image.tmdb.org/t/p/w500//cMMu2ddW3EOrfuq5D9bzB6naYGB.jpg",
+        "link": "/card/movies/800-869/Samyj-pyanyj-okrug-v-mire.html",
+        "year": "2012",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Кроваво-красное небо",
+        "image": "https://image.tmdb.org/t/p/w500//nFShEVgkflSGqFikMkJRjoTwvwa.jpg",
+        "link": "/card/movies/800-868/Krovavo-krasnoe-nebo.html",
+        "year": "2021",
+        "rating": "6.8",
+        "type": "movie"
+    }, 
+    {
+        "name": "Лулу и Бриггс",
+        "image": "https://image.tmdb.org/t/p/w500//9FkX7hq6r1EhONzTUJHZPwY0qi5.jpg",
+        "link": "/card/movies/800-867/Lulu-i-Briggs.html",
+        "year": "2022",
+        "rating": "7.3",
+        "type": "movie"
+    }, 
+    {
+        "name": "Проект «Адам»",
+        "image": "https://image.tmdb.org/t/p/w500//2we1SegemOvGnJ27bhspny4kX04.jpg",
+        "link": "/card/movies/800-866/Proekt-Adam.html",
+        "year": "2022",
+        "rating": "6.7",
+        "type": "movie"
+    }, 
+    {
+        "name": "Air: Большой прыжок",
+        "image": "https://image.tmdb.org/t/p/w500//yPtqBdEGzcFsSuTvzCIoSUtQe6N.jpg",
+        "link": "/card/movies/800-865/Air-Bolshoj-pryzhok.html",
+        "year": "2023",
+        "rating": "7.4",
+        "type": "movie"
+    },  
+    {
+        "name": "Гипнотик",
+        "image": "https://image.tmdb.org/t/p/w500//tAJ88h7eGXiWKKRs0q05I0vjeV2.jpg",
+        "link": "/card/movies/800-864/Gipnotik.html",
+        "year": "2023",
+        "rating": "6.2",
+        "type": "movie"
+    }, 
+    {
+        "name": "Переводчик",
+        "image": "https://image.tmdb.org/t/p/w500//Acxw9ik5MIodpsmLKTC2t8x5TtC.jpg",
+        "link": "/card/movies/800-863/Perevodchik.html",
+        "year": "2023",
+        "rating": "6.4",
+        "type": "movie"
+    }, 
+    {
+        "name": "Переводчик",
+        "image": "https://image.tmdb.org/t/p/w500//Acxw9ik5MIodpsmLKTC2t8x5TtC.jpg",
+        "link": "/card/movies/800-863/Perevodchik.html",
+        "year": "2023",
+        "rating": "6.4",
+        "type": "movie"
+    }, 
+    {
+        "name": "Ты умрёшь через 6 часов",
+        "image": "https://image.tmdb.org/t/p/w500//2ynnTfGyFqzXB8WyoQei4xgCDNK.jpg.jpg",
+        "link": "/card/movies/800-862/Ty-umryosh-cherez-6-chasov.html",
+        "year": "2024",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Джунгли",
+        "image": "https://image.tmdb.org/t/p/w500//T64ASk9e12Y1OEAtLiz8C8BFiX.jpg",
+        "link": "/card/movies/800-860/Dzhungli.html",
+        "year": "2017",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Вавилон",
+        "image": "https://image.tmdb.org/t/p/w500//u8Hj5v5x0R4DJFW0yUX4iGTWtDT.jpg",
+        "link": "/card/movies/800-859/Vavilon.html",
+        "year": "2022",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Сделано в Америке",
+        "image": "https://image.tmdb.org/t/p/w500//el84QAeuq3wJJCsje0tBy4LejL3.jpg",
+        "link": "/card/movies/800-857/Sdelano-v-Amerike.html",
+        "year": "2017",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Хищные земли",
+        "image": "https://image.tmdb.org/t/p/w500//dO5O0FAgxL3KLz7QigeI5268YoQ.jpg",
+        "link": "/card/movies/800-856/Hishnye-zemli.html",
+        "year": "2024",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Сильнее",
+        "image": "https://image.tmdb.org/t/p/w500//zpr48i625ddB1c9sfxEQsMXPFuW.jpg",
+        "link": "/card/movies/800-858/Silnee.html",
+        "year": "2017",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "В плену стихии",
+        "image": "https://image.tmdb.org/t/p/w500//4QHKxf23OIgzHTsHu5OR1Mn6SRb.jpg",
+        "link": "/card/movies/800-855/V-plenu-stihii.html",
+        "year": "2024",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Герой наших снов",
+        "image": "https://imagetmdb.com/t/p/w500/7Nwir15KlhlRXI2nta0cEAbfze3.jpg",
+        "link": "/card/movies/800-853/Geroj-nashih-snov.html",
+        "year": "2023",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Создатель",
+        "image": "https://imagetmdb.com/t/p/w500/oMFQ6UXerYyre6iGFThN66A24pQ.jpg",
+        "link": "/card/movies/800-852/Sozdatel.html",
+        "year": "2023",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Убийца",
+        "image": "https://imagetmdb.com/t/p/w500/qGdKveyiqPPa9cOwVyoWRBQ9GwC.jpg",
+        "link": "/card/movies/800-851/Ubijca.html",
+        "year": "2023",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Опасные воды",
+        "image": "https://imagetmdb.com/t/p/w500/xSfQGknUnqbkm7GJ8CPnEeIWkim.jpg",
+        "link": "/card/movies/800-850/Opasnye-vody.html",
+        "year": "2024",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "Дело храбрых",
+        "image": "https://imagetmdb.com/t/p/w500/x4qmM1h0VNxkB5zBLkeqzEZ76l.jpg",
+        "link": "/card/movies/800-849/Delo-hrabryh.html",
+        "year": "2017",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Змеиная топь",
+        "image": "https://imagetmdb.com/t/p/w500/aVGxt5HUTuSme3p18AAG6hS8MHt.jpg",
+        "link": "/card/movies/800-847/Zmeinaya-top.html",
+        "year": "2023",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Самаритянин",
+        "image": "https://image.tmdb.org/t/p/w500//wqguiuVYAOk2UZyRaKp7dCpnkLT.jpg",
+        "link": "/card/movies/800-846/Samarityanin.html",
+        "year": "2022",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Удивительное Путешествие Доктора Дулиттла",
+        "image": "https://image.tmdb.org/t/p/w500//AwsewPKXebJvtl4EU5Dx5uBCW6G.jpg",
+        "link": "/card/movies/800-845/Udivitelnoe-Puteshestvie-Doktora-Dulittla.html",
+        "year": "2020",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Бладшот",
+        "image": "https://image.tmdb.org/t/p/w500//cCm0H9R61kKtN2f4OJ7uES4nmp4.jpg",
+        "link": "/card/movies/800-844/Bladshot.html",
+        "year": "2020",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Война под землей",
+        "image": "https://image.tmdb.org/t/p/w500//ur4hPDm6JKSuuQYquwHBOZNoJak.jpg",
+        "link": "/card/movies/800-843/Vojna-pod-zemlej.html",
+        "year": "2021",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "На краю",
+        "image": "https://image.tmdb.org/t/p/w500//7S0UK6rSh2mvmS2vVR63FdE0w6R.jpg",
+        "link": "/card/movies/800-842/Na-krayu.html",
+        "year": "2022",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Глубоководный горизонт",
+        "image": "https://image.tmdb.org/t/p/w500//sfl3diq7G4OfFhWT3oACX0AsFSK.jpg",
+        "link": "/card/movies/800-841/Glubokovodnyj-gorizont.html",
+        "year": "2016",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Сноуден",
+        "image": "https://image.tmdb.org/t/p/w500//lZmcl9RT3EphrvR0AdQ06sGL7mL.jpg",
+        "link": "/card/movies/800-840/Snouden.html",
+        "year": "2016",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Достать Санту",
+        "image": "https://image.tmdb.org/t/p/w500//gW4FX4DFRnKlGINzB4UdZJnSdgE.jpg",
+        "link": "/card/movies/800-839/Dostat-Santu.html",
+        "year": "2014",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "Подлинная история банды Келли",
+        "image": "https://image.tmdb.org/t/p/w500//qTxxptM3qBVaJlLJnYfswuP7xCT.jpg",
+        "link": "/card/movies/800-838/Podlinnaya-istoriya-bandy-Kelli.html",
+        "year": "2019",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "Живое",
+        "image": "https://image.tmdb.org/t/p/w500//6Tt1avaIPZCaEhGmiZuhdQJ2up6.jpg",
+        "link": "/card/movies/800-835/Zhivoe.html",
+        "year": "2017",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "13 грехов",
+        "image": "https://image.tmdb.org/t/p/w500//6N0vEwysQEia6STcMhrCOn5Gs6n.jpg",
+        "link": "/card/movies/800-834/13-grehov.html",
+        "year": "2014",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Пиноккио",
+        "image": "https://image.tmdb.org/t/p/w500//fXz6npxFZ84VRU4kBSuCC73QOew.jpg",
+        "link": "/card/movies/800-833/Pinokkio.html",
+        "year": "2022",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Призрак в доспехах",
+        "image": "https://image.tmdb.org/t/p/w500//39mzdx7kENZ4yGammJCMY2ZvOYp.jpg",
+        "link": "/card/movies/800-836/Prizrak-v-dospehah.html",
+        "year": "2017",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Гретель и Гензель",
+        "image": "https://image.tmdb.org/t/p/w500//t2BrNHjmBwtmnzt0o1oSDNXCMuV.jpg",
+        "link": "/card/movies/800-831/Gretel-i-Genzel.html",
+        "year": "2020",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "Охота на воров",
+        "image": "https://image.tmdb.org/t/p/w500//hnoIPzcxfPjVQ12F0nupAY9Ukol.jpg",
+        "link": "/card/movies/800-829/Ohota-na-vorov.html",
+        "year": "2018",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Затерянный город Z",
+        "image": "https://image.tmdb.org/t/p/w500//EjkNCuTBj5XjU896FzcMfi9a51.jpg",
+        "link": "/card/movies/800-837/Zateryannyj-gorod-Z.html",
+        "year": "2017",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Угроза",
+        "image": "https://image.tmdb.org/t/p/w500//iAU9QZGUBZ7SVBETwSsy7VFKoUQ.jpg",
+        "link": "/card/movies/800-828/Ugroza.html",
+        "year": "2023",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Призрачная шестёрка",
+        "image": "https://image.tmdb.org/t/p/w500//ssRq3MvPhARJq4Lnqk1J9eE0TQ8.jpg",
+        "link": "/card/movies/800-827/Prizrachnaya-shestyorka.html",
+        "year": "2019",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Дочь Бога",
+        "image": "https://image.tmdb.org/t/p/w500//xlcJ4PjFFvXDo7jOss4wg6JiEze.jpg",
+        "link": "/card/movies/800-825/Doch-Boga.html",
+        "year": "2016",
+        "rating": "4.9",
+        "type": "movie"
+    },
+    {
+        "name": "Пророк",
+        "image": "https://image.tmdb.org/t/p/w500//ltFhhcsOXPDZcFt8zcaAFmg4DcI.jpg",
+        "link": "/card/movies/800-826/Prorok.html",
+        "year": "2007",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Снайпер",
+        "image": "https://image.tmdb.org/t/p/w500//lRIAndAZFBL2KLsx0tB5D3x0hqF.jpg",
+        "link": "/card/movies/800-824/Snajper.html",
+        "year": "2014",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Узники страны призраков",
+        "image": "https://image.tmdb.org/t/p/w500//czRGpr33RRkz7IZEdVCOrHlXdrV.jpg",
+        "link": "/card/movies/800-823/Uzniki-strany-prizrakov.html",
+        "year": "2021",
+        "rating": "5.0",
+        "type": "movie"
+    },
+    {
+        "name": "В сердце моря ",
+        "image": "https://image.tmdb.org/t/p/original/e9JXJ5WTy1JBxepuzO9MNFoKL7Q.jpg",
+        "link": "/card/movies/800-822/V-serdce-morya.html",
+        "year": "2015",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Носители",
+        "image": "https://image.tmdb.org/t/p/w500//6L7GjRyujgT4nw6QbDZSA2QGfXd.jpg",
+        "link": "/card/movies/800-821/Nositeli.html",
+        "year": "2009",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "47 ронинов",
+        "image": "https://image.tmdb.org/t/p/w500//uIgbLfi76KtVWrnFfQP3sZKCZC.jpg",
+        "link": "/card/movies/800-820/47-roninov.html",
+        "year": "2013",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Дыши во мгле",
+        "image": "https://image.tmdb.org/t/p/w500//m5vuPpluubpQ7DjLDxer8kepvgX.jpg",
+        "link": "/card/movies/800-815/Dyshi-vo-mgle.html",
+        "year": "2018",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Рубеж выживания",
+        "image": "https://image.tmdb.org/t/p/w500//wHcZHO9QLI3lOWeIEIGSB4EDbux.jpg",
+        "link": "/card/movies/800-814/Rubezh-vyzhivaniya.html",
+        "year": "2023",
+        "rating": "5.4",
+        "type": "movie"
+    },
+    {
+        "name": "Виновный",
+        "image": "https://image.tmdb.org/t/p/w500//szSt5wkQ7wUSmpDE0SaSeeLtPQk.jpg",
+        "link": "/card/movies/800-813/Vinovnyj.html",
+        "year": "2021",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Колония",
+        "image": "https://image.tmdb.org/t/p/w500//oab6NRUZeM0MA1cQb1U6WuNHYYW.jpg",
+        "link": "/card/movies/800-812/Koloniya.html",
+        "year": "2013",
+        "rating": "5.5",
+        "type": "movie"
+    },
+    {
+        "name": "Va-банк",
+        "image": "https://image.tmdb.org/t/p/w500//zKCa1wTTzf7oGzhMw0VIEMSaqV4.jpg",
+        "link": "/card/movies/800-811/Va-bank.html",
+        "year": "2013",
+        "rating": "5.6",
+        "type": "movie"
+    },
+    {
+        "name": "День, когда Земля остановилась",
+        "image": "https://image.tmdb.org/t/p/w500//Ak4b323IiaboF9V2JmtoDZJVlfP.jpg",
+        "link": "/card/movies/800-810/Den-kogda-Zemlya-ostanovilas.html",
+        "year": "2008",
+        "rating": "5.7",
+        "type": "movie"
+    },
+    {
+        "name": "Решение уйти",
+        "image": "https://image.tmdb.org/t/p/w500//5CmVlH9kWAwuaeMtnZphujX55Fl.jpg",
+        "link": "/card/movies/800-809/Reshenie-ujti.html",
+        "year": "2022",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Тёмные воды",
+        "image": "https://image.tmdb.org/t/p/w500//rAOLCr5JqP6qfpi6g5cCWM2LNv.jpg",
+        "link": "/card/movies/800-808/Tyomnye-vody.html",
+        "year": "2019",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Отверженные",
+        "image": "https://image.tmdb.org/t/p/w500//zJ0s8wmpHZDuOjgkgFuifZAoBVG.jpg",
+        "link": "/card/movies/800-805/Otverzhennye.html",
+        "year": "2012",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Вселенная Стивена Хокинга",
+        "image": "https://image.tmdb.org/t/p/w500//ocIrARiY6ZbEWsYJZmk6avPEc3k.jpg",
+        "link": "/card/movies/800-804/Vselennaya-Stivena-Hokinga.html",
+        "year": "2014",
+        "rating": "7.8",
+        "type": "movie"
+    },
+    {
+        "name": "Дальний космос",
+        "image": "https://image.tmdb.org/t/p/w500//6KgD4bKN22zVzCIxF7PLT4fzit9.jpg",
+        "link": "/card/movies/800-803/Dalnij-kosmos.html",
+        "year": "2021",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "Три тысячи лет желаний",
+        "image": "https://image.tmdb.org/t/p/w500//tb3967BJu5QbZgiIh715pAigywF.jpg",
+        "link": "/card/movies/800-802/Tri-tysyachi-let-zhelanij.html",
+        "year": "2022",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Быстрее пули",
+        "image": "https://image.tmdb.org/t/p/w500//oK3e4nDFB8lsT8H1D7bMHXoXsRH.jpg",
+        "link": "/card/movies/800-801/Bystree-puli.html",
+        "year": "2022",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Наёмник",
+        "image": "https://image.tmdb.org/t/p/w500//fTC8l44g1khRzHuKNRDl9Nnwo5f.jpg",
+        "link": "/card/movies/800-800/Nayomnik.html",
+        "year": "2017",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Новости со всех концов света",
+        "image": "https://image.tmdb.org/t/p/w500//q7h2jqHMug8APfMef0g0co9qTGQ.jpg",
+        "link": "/card/movies/800-799/Novosti-so-vseh-koncov-sveta.html",
+        "year": "2020",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Убойное Рождество Гарольда и Кумара",
+        "image": "https://image.tmdb.org/t/p/w500//esbRx4Xx4ZSK4dfm1UA6mUF0LWo.jpg",
+        "link": "/card/movies/800-795/Ubojnoe-Rozhdestvo-Garolda-i-Kumara.html",
+        "year": "2011",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "Недруги",
+        "image": "https://image.tmdb.org/t/p/w500//fmrPwIpwUoODw2CM9PVd1HcSfIw.jpg",
+        "link": "/card/movies/800-794/Nedrugi.html",
+        "year": "2017",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Палмер",
+        "image": "https://image.tmdb.org/t/p/w500//gqdE35MzZHLZYBGlwUc3D6gSCNh.jpg",
+        "link": "/card/movies/800-793/Palmer.html",
+        "year": "2019",
+        "rating": "8.1",
+        "type": "movie"
+    },
+    {
+        "name": "Однажды в… Голливуде",
+        "image": "https://image.tmdb.org/t/p/w500//muqDW2S3rkZKAVLv4TE47IYg3O6.jpg",
+        "link": "/card/movies/800-792/Odnazhdy-v-Gollivude.html",
+        "year": "2019",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Дамбо",
+        "image": "https://image.tmdb.org/t/p/w500//pGOvXYyCLAaRjxUbMoc2M0XZwHj.jpg",
+        "link": "/card/movies/800-791/Dambo.html",
+        "year": "2019",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Дело Ричарда Джуэлла",
+        "image": "https://image.tmdb.org/t/p/w500//xGvizXUXeTE1NS3HQbfrgD0vyDQ.jpg",
+        "link": "/card/movies/800-790/Delo-Richarda-Dzhuella.html",
+        "year": "2019",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Обливион",
+        "image": "https://image.tmdb.org/t/p/w500//56xLv14jx6qvKWMCrF6C96Hs0cl.jpg",
+        "link": "/card/movies/800-788/Oblivion.html",
+        "year": "2013",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "До встречи с тобой",
+        "image": "https://image.tmdb.org/t/p/w500//30xQ7FYFBrIXK5Y63jq1ilMD1Xk.jpg",
+        "link": "/card/movies/800-782/Do-vstrechi-s-toboj.html",
+        "year": "2016",
+        "rating": "7.9",
+        "type": "movie"
+    },
+    {
+        "name": "Жестокая Ночь",
+        "image": "https://image.tmdb.org/t/p/w500//pC4u3JoBu6sMvo86HmFFhyZ6xFo.jpg",
+        "link": "/card/movies/800-781/Zhestokaya-Noch.html",
+        "year": "2022",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Дьявол в деталях",
+        "image": "https://image.tmdb.org/t/p/w500//sdjeUisE7waxhvGiaQGcNONMGqi.jpg",
+        "link": "/card/movies/800-780/Dyavol-v-detalyah.html",
+        "year": "2021",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Амстердам",
+        "image": "https://image.tmdb.org/t/p/w500//gsDTxHc2CJ84ekd3evA1yTQcklL.jpg",
+        "link": "/card/movies/800-779/Amsterdam.html",
+        "year": "2022",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Дьявол",
+        "image": "https://image.tmdb.org/t/p/w500//rPbn3kyV4RvZxJpcXt05PwkrAuw.jpg",
+        "link": "/card/movies/800-778/Dyavol.html",
+        "year": "2010",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Взломщик",
+        "image": "https://image.tmdb.org/t/p/w500//l2w9R3cplDrqNnjly43thioC8KJ.jpg",
+        "link": "/card/movies/800-777/Vzlomshik.html",
+        "year": "2023",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "Бёрдмэн",
+        "image": "https://image.tmdb.org/t/p/w500//2jcHzgQX2kO6XWC3eLBgrESFqaO.jpg",
+        "link": "/card/movies/800-776/Byordmen.html",
+        "year": "2014",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Чрезвычайная ситуация",
+        "image": "https://image.tmdb.org/t/p/w500//btv8j133RuVhiFYbhwy1MkkTXQV.jpg",
+        "link": "/card/movies/800-775/Chrezvychajnaya-situaciya.html",
+        "year": "2022",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Операция Валькирия",
+        "image": "https://image.tmdb.org/t/p/w500//rVl3whPmGk3tJLHHI3PG5XZKBoE.jpg",
+        "link": "/card/movies/800-771/Operaciya-Valkiriya.html",
+        "year": "2008",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Грейхаунд",
+        "image": "https://image.tmdb.org/t/p/w500//nZ680Zng9AruelWFVNQtLcBXVez.jpg",
+        "link": "/card/movies/800-768/Grejhaund.html",
+        "year": "2020",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Королевский прилив",
+        "image": "https://image.tmdb.org/t/p/w500//xZclo4edwhiDMVw88yDKuuwWxHf.jpg",
+        "link": "/card/movies/800-767/Korolevskij-priliv.html",
+        "year": "2024",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Мастер тай-цзи",
+        "image": "https://image.tmdb.org/t/p/w500//6EIA90KTehP5ARifC4uMwLJAh1T.jpg",
+        "link": "/card/movies/800-766/Master-taj-czi.html",
+        "year": "2013",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Трафик",
+        "image": "https://image.tmdb.org/t/p/w500//iXEDOyvKTftRA8phD1IRjrt8OpE.jpg",
+        "link": "/card/movies/800-765/Trafik.html",
+        "year": "2021",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Договор молчания",
+        "image": "https://image.tmdb.org/t/p/w500//uQ0EWzcFRBE9RGqeeeOnyUXPved.jpg",
+        "link": "/card/movies/800-764/Dogovor-molchaniya.html",
+        "year": "2020",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Снеговик",
+        "image": "https://image.tmdb.org/t/p/w500//gB82zmhFiz8zJXlvMcSE2vFmi5k.jpg",
+        "link": "/card/movies/800-763/Snegovik.html",
+        "year": "2017",
+        "rating": "5.2",
+        "type": "movie"
+    },
+    {
+        "name": "Подводный капкан",
+        "image": "https://image.tmdb.org/t/p/w500//e7YRieMBz5DTLyDIgf5TaXKcBRy.jpg",
+        "link": "/card/movies/800-762/Podvodnyj-kapkan.html",
+        "year": "2023",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Мальчик по имени Рождество",
+        "image": "https://image.tmdb.org/t/p/w500//pWJGYDmPzrGXZFnCw5OX59JEP8C.jpg",
+        "link": "/card/movies/800-761/Malchik-po-imeni-Rozhdestvo.html",
+        "year": "2021",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Славные парни",
+        "image": "https://image.tmdb.org/t/p/w500//4U7u3htE1CxoRYboQVQYfxr0ZoG.jpg",
+        "link": "/card/movies/800-760/Slavnye-parni.html",
+        "year": "2016",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Вне/себя",
+        "image": "https://image.tmdb.org/t/p/original/sXzfZ3zHQXSJFgeUZjqemn75uWy.jpg",
+        "link": "/card/movies/800-759/Vne-sebya.html",
+        "year": "2015",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Петля времени",
+        "image": "https://image.tmdb.org/t/p/w500//moFUn35rGpj99XasdywgzjgL6Uw.jpg",
+        "link": "/card/movies/800-758/Petlya-vremeni.html",
+        "year": "2012",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "К звёздам",
+        "image": "https://image.tmdb.org/t/p/w500//5XUhgB6j13XGo7CflM6YLovJ28R.jpg",
+        "link": "/card/movies/800-757/K-zvyozdam.html",
+        "year": "2019",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "По следу тени",
+        "image": "https://image.tmdb.org/t/p/w500//xkWdX07HcpbKnMBfLHriBYwFRU0.jpg",
+        "link": "/card/movies/800-756/Po-sledu-teni.html",
+        "year": "2024",
+        "rating": "5.8",
+        "type": "movie"
+    },
+    {
+        "name": "Жена смотрителя зоопарка",
+        "image": "https://image.tmdb.org/t/p/w500//1wv2hWqV2xpetHb9GbqoLMiqjsN.jpg",
+        "link": "/card/movies/800-752/Zhena-smotritelya-zooparka.html",
+        "year": "2017",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Скрытые фигуры",
+        "image": "https://image.tmdb.org/t/p/w500//ihlAEiK8RQLvGIBwxwRHdGcDeRA.jpg",
+        "link": "/card/movies/800-751/Skrytye-figury.html",
+        "year": "2016",
+        "rating": "8.1",
+        "type": "movie"
+    },
+    {
+        "name": "13 жизней",
+        "image": "https://image.tmdb.org/t/p/w500//oPu1mqZwWrpLFetSEj8NOWFrrSt.jpg",
+        "link": "/card/movies/800-750/13-zhiznej.html",
+        "year": "2022",
+        "rating": "7.9",
+        "type": "movie"
+    },
+    {
+        "name": "Основатель",
+        "image": "https://image.tmdb.org/t/p/w500//ru0cmaiUSnlKkqLSg4ugV0iu9nN.jpg",
+        "link": "/card/movies/800-749/Osnovatel.html",
+        "year": "2016",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Лев",
+        "image": "https://image.tmdb.org/t/p/w500//8P1khU09jQ1EeLCJhppN9wYA6ug.jpg",
+        "link": "/card/movies/800-748/Lev.html",
+        "year": "2016",
+        "rating": "8.0",
+        "type": "movie"
+    },
+    {
+        "name": "Багровая мята",
+        "image": "https://image.tmdb.org/t/p/w500//pxBglFbQ2zBNvW49z5mxfMFtiVz.jpg",
+        "link": "/card/movies/800-747/Bagrovaya-myata.html",
+        "year": "2018",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Анемона",
+        "image": "https://image.tmdb.org/t/p/w500//7MKZE0t9vEVZDP9WjoYB5eaoB1b.jpg",
+        "link": "/card/movies/800-746/Anemona.html",
+        "year": "2025",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "Тайна дома с часами",
+        "image": "https://image.tmdb.org/t/p/w500//nglzWuHwc8pjqRe53beVmjigZW7.jpg",
+        "link": "/card/movies/800-745/Tajna-doma-s-chasami.html",
+        "year": "2018",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Солнцестояние",
+        "image": "https://image.tmdb.org/t/p/w500//nCZDd6sJ7OdonxiDUNgncrKusQn.jpg",
+        "link": "/card/movies/800-744/Solncestoyanie.html",
+        "year": "2019",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Красный воробей",
+        "image": "https://image.tmdb.org/t/p/w500//rkMuZ4c4OdElYL1M8cyttRHKV1J.jpg",
+        "link": "/card/movies/800-743/Krasnyj-vorobej.html",
+        "year": "2018",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Антебеллум",
+        "image": "https://image.tmdb.org/t/p/w500//7VLlc53ReBe6iZWY9NX8UBcwWSe.jpg",
+        "link": "/card/movies/800-742/Antebellum.html",
+        "year": "2020",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Довод",
+        "image": "https://image.tmdb.org/t/p/w500//1jU80STrosbPsiNe3oPpwyS5cXg.jpg",
+        "link": "/card/movies/800-741/Dovod.html",
+        "year": "2020",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Призрачная красота",
+        "image": "https://image.tmdb.org/t/p/w500//jg4jZrbGCve8qfPbZYITADwRfbU.jpg",
+        "link": "/card/movies/800-740/Prizrachnaya-krasota.html",
+        "year": "2016",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Пять ночей с Фредди",
+        "image": "https://image.tmdb.org/t/p/w500//uS00Ja9JFAi9HfpJLquPyQTvTjy.jpg",
+        "link": "/card/movies/800-739/Pyat-nochej-s-Freddi.html",
+        "year": "2023",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Аллея кошмаров",
+        "image": "https://image.tmdb.org/t/p/w500//bFmc6gjBK0UFD4y5kbS4QNJZBhm.jpg",
+        "link": "/card/movies/800-737/Alleya-koshmarov.html",
+        "year": "2021",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Папе снова 17",
+        "image": "https://image.tmdb.org/t/p/w500//aUmtg6A6yEntiI7gqNfBDSE7nh8.jpg",
+        "link": "/card/movies/800-736/Pape-snova-17.html",
+        "year": "2009",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Взаперти",
+        "image": "https://image.tmdb.org/t/p/w500//awmaQuMN0NE52au6cJQLN69qH1A.jpg",
+        "link": "/card/movies/800-35/Vzaperti.html",
+        "year": "2022",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Из глубины",
+        "image": "https://image.tmdb.org/t/p/original/1xyWbfT3LzpBqsxSssX6RW5O8pU.jpg",
+        "link": "/card/movies/800-732/Iz-glubiny.html",
+        "year": "2024",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Запретная торговля",
+        "image": "https://image.tmdb.org/t/p/w500//i073PASJ7aVC554GUI7cpyw04W0.jpg",
+        "link": "/card/movies/800-731/Zapretnaya-torgovlya.html",
+        "year": "2023",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "Обрушение",
+        "image": "https://image.tmdb.org/t/p/w500//4Ah3vI04Brifob7qsacnTFYO2pF.jpg",
+        "link": "/card/movies/800-730/Obrushenie.html",
+        "year": "2021",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Тройная граница",
+        "image": "https://image.tmdb.org/t/p/w500//vNVgXfR60u09o6eCDLMVCogKOel.jpg",
+        "link": "/card/movies/800-729/Trojnaya-granica.html",
+        "year": "2019",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Союз",
+        "image": "https://image.tmdb.org/t/p/w500//isb7oQmlumbSwmDq7HyWIo39Fyo.jpg",
+        "link": "/card/movies/800-728/Soyuz.html",
+        "year": "2024",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Под водой",
+        "image": "https://image.tmdb.org/t/p/w500//qK8vBhQMzrreTNQcMYRRgRsvh23.jpg",
+        "link": "/card/movies/800-727/Pod-vodoj.html",
+        "year": "2020",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "В поисках зверя",
+        "image": "https://image.tmdb.org/t/p/w500//hlkhr46OKRLP1utw3Ip1IkcDevE.jpg",
+        "link": "/card/movies/800-726/V-poiskah-zverya.html",
+        "year": "2023",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "Век Адалин",
+        "image": "https://image.tmdb.org/t/p/w500//eOWf8GmxjDX5vpPWHnrbQSXmv03.jpg",
+        "link": "/card/movies/800-725/Vek-Adalin.html",
+        "year": "2015",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Ханна. В игре",
+        "image": "https://image.tmdb.org/t/p/w500//80hgsCQDPI1UmkeVVKebxjIfBDc.jpg",
+        "link": "/card/movies/800-724/Hanna-V-igre.html",
+        "year": "2024",
+        "rating": "5.6",
+        "type": "movie"
+    },
+    {
+        "name": "Смертельная Зона",
+        "image": "https://image.tmdb.org/t/p/w500//mnrbB7tQcAqjs8aYG4BYV98cpb4.jpg",
+        "link": "/card/movies/800-723/Smertelnaya-Zona.html",
+        "year": "2021",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Список подозреваемых",
+        "image": "https://image.tmdb.org/t/p/w500//fSakYFaIrCEjsCHs629qMVqTc26.jpg",
+        "link": "/card/movies/800-722/Spisok-podozrevaemyh.html",
+        "year": "2024",
+        "rating": "5.5",
+        "type": "movie"
+    },
+    {
+        "name": "Любовь и монстры",
+        "image": "https://image.tmdb.org/t/p/w500//pVfv1gjcTUxkdAZVrI6z3kySknq.jpg",
+        "link": "/card/movies/800-721/Lyubov-i-monstry.html",
+        "year": "2020",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Призраки войны",
+        "image": "https://image.tmdb.org/t/p/w500//iY1YX4XiyB9jhrZHBCGofCKJIQS.jpg",
+        "link": "/card/movies/800-720/Prizraki-vojny.html",
+        "year": "2020",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Ярость",
+        "image": "https://image.tmdb.org/t/p/w500//hNB22rB2am3kJLwPLOr2RzI4dNi.jpg",
+        "link": "/card/movies/800-719/Yarost.html",
+        "year": "2014",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Я, робот",
+        "image": "https://image.tmdb.org/t/p/w500//isTzczJHRMXdxVVr81BfKaQnHt5.jpg",
+        "link": "/card/movies/800-718/Ya-robot.html",
+        "year": "2004",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Воины света",
+        "image": "https://image.tmdb.org/t/p/w500//szIPHv2Dh6NSgerANLCk9u5HARA.jpg",
+        "link": "/card/movies/800-717/Voiny-sveta.html",
+        "year": "2009",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Санктум",
+        "image": "https://image.tmdb.org/t/p/w500//UKzddr7vWdZGmekSc7UcNaF71A.jpg",
+        "link": "/card/movies/800-704/Sanktum.html",
+        "year": "2011",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "Телекинез",
+        "image": "https://image.tmdb.org/t/p/w500//vmVDaf9H93IrXWkW8KaT2WTZNoY.jpg",
+        "link": "/card/movies/800-703/Telekinez.html",
+        "year": "2013",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "Демон внутри",
+        "image": "https://image.tmdb.org/t/p/w500//3xOfFiGZ8PK8PxRvVc7kjqyMqZU.jpg",
+        "link": "/card/movies/800-702/Demon-vnutri.html",
+        "year": "2016",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Евротур",
+        "image": "https://image.tmdb.org/t/p/w500//MDt6uQzoOqE1hCCoIu3B97Pxqf.jpg",
+        "link": "/card/movies/800-701/Evrotur.html",
+        "year": "2004",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Одинокий рейнджер",
+        "image": "https://image.tmdb.org/t/p/w500//4W9ersKupsJJedtar1Yv4rImxyT.jpg",
+        "link": "/card/movies/800-700/Odinokij-rejndzher.html",
+        "year": "2013",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Начало",
+        "image": "https://image.tmdb.org/t/p/w500//ubj7fEmtNqxwtZtMk6wAIc0SCFJ.jpg",
+        "link": "/card/movies/800-699/Nachalo.html",
+        "year": "2010",
+        "rating": "8.4",
+        "type": "movie"
+    },
+    {
+        "name": "Оборотень: Фильм",
+        "image": "https://image.tmdb.org/t/p/w500//jcROb8QBEiO7SfwgfoHJUCMh5cQ.jpg",
+        "link": "/card/movies/800-698/Oboroten-Film.html",
+        "year": "2023",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Мы - Миллеры",
+        "image": "https://image.tmdb.org/t/p/w500//bid3LmB5Jg6h6RXDz1W83DcaIBU.jpg",
+        "link": "/card/movies/800-697/My-Millery.html",
+        "year": "2013",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Большой куш",
+        "image": "https://image.tmdb.org/t/p/w500//5O4Plo1z21mycLfLyQ2AtPhbmhW.jpg",
+        "link": "/card/movies/800-696/Bolshoj-kush.html",
+        "year": "2000",
+        "rating": "7.8",
+        "type": "movie"
+    },
+    {
+        "name": "Аэронавты",
+        "image": "https://image.tmdb.org/t/p/w500//5vPZ6TYl3aakBvzQYGv2STI9g61.jpg",
+        "link": "/card/movies/800-695/Aeronavty.html",
+        "year": "2019",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Отвязные дворняги",
+        "image": "https://image.tmdb.org/t/p/w500//wT2c2EaFpmBlubZvYFoWLg44nGT.jpg",
+        "link": "/card/movies/800-694/Otvyaznye-dvornyagi.html",
+        "year": "2023",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Понибой",
+        "image": "https://image.tmdb.org/t/p/w500//abTQZvDcbpOcYgwNg7pNm8oOqVY.jpg",
+        "link": "/card/movies/800-688/Poniboj.html",
+        "year": "2024",
+        "rating": "5.8",
+        "type": "movie"
+    },
+    {
+        "name": "Мрачные тени",
+        "image": "https://image.tmdb.org/t/p/w500//peMQNapB0pVkO6v7Kx0lJ3z405Z.jpg",
+        "link": "/card/movies/800-682/Mrachnye-teni.html",
+        "year": "2012",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Вне игры",
+        "image": "https://image.tmdb.org/t/p/w500//keZOzvHjf9wrH7JnyUs8ZlCsH7m.jpg",
+        "link": "/card/movies/800-681/Vne-igry.html",
+        "year": "2020",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Конец света 2013: Апокалипсис по-голливудски",
+        "image": "https://image.tmdb.org/t/p/w500//tTFLZsjS6I2V4EVSxF2kVmNCFP1.jpg",
+        "link": "/card/movies/800-680/Apokalipsis-po-gollivudski.html",
+        "year": "2013",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Джентльмены",
+        "image": "https://image.tmdb.org/t/p/w500//vWxVVECgYDPSg5o0Rhw5u7KFa7X.jpg",
+        "link": "/card/movies/800-679/Dzhentlmeny.html",
+        "year": "2018",
+        "rating": "7.7",
+        "type": "movie"
+    },
+    {
+        "name": "Рэмпейдж",
+        "image": "https://image.tmdb.org/t/p/w500//tZays7crj8VTskXUMwE6N7jeulx.jpg",
+        "link": "/card/movies/800-678/Rempejdzh.html",
+        "year": "2018",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Пенелопа",
+        "image": "https://image.tmdb.org/t/p/w500//s1WDTy3RA0Cs9D0NsImkq4BLEki.jpg",
+        "link": "/card/movies/800-677/Penelopa.html",
+        "year": "2006",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Интервью с Богом",
+        "image": "https://image.tmdb.org/t/p/w500//mjEWYQ1WwxxD6jWOgniGT6Glqeo.jpg",
+        "link": "/card/movies/800-660/Intervyu-s-Bogom.html",
+        "year": "2018",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "#живой",
+        "image": "https://image.tmdb.org/t/p/w500//gYARM0Uh2Ed0awrNigVQVqbBPrz.jpg",
+        "link": "/card/movies/800-659/zhivoj.html",
+        "year": "2020",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Капитан Филлипс",
+        "image": "https://image.tmdb.org/t/p/w500//kdisFecD6pjMgZ9q0A6cDQfXzHx.jpg",
+        "link": "/card/movies/800-647/Kapitan-Fillips.html",
+        "year": "2013",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Проклятие Бридж-Холлоу",
+        "image": "https://image.tmdb.org/t/p/w500//zuYbJ6BYADDcuD5RuJyrp2vEpI7.jpg",
+        "link": "/card/movies/800-646/Proklyatie-Bridzh-Hollou.html",
+        "year": "2022",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Гемини",
+        "image": "https://image.tmdb.org/t/p/original/jd8miNNIhandkdOYk5CuuXxDcBD.jpg",
+        "link": "/card/movies/800-628/Gemini.html",
+        "year": "2019",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Парни со стволами",
+        "image": "https://image.tmdb.org/t/p/w500//oQx4coN5PS145NgGPtvNSHCO6TF.jpg",
+        "link": "/card/movies/800-625/Parni-so-stvolami.html",
+        "year": "2016",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Телепорт",
+        "image": "https://image.tmdb.org/t/p/w500//uCuhUKLF7K9uk6ItSxX2YsR8Ohp.jpg",
+        "link": "/card/movies/800-624/Teleport.html",
+        "year": "2008",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Мидуэй",
+        "image": "https://image.tmdb.org/t/p/w500//fH81XyGK9fNrsqBxkPPPkpGafX1.jpg",
+        "link": "/card/movies/800-623/Miduej.html",
+        "year": "2019",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Интервью",
+        "image": "https://image.tmdb.org/t/p/original/tIDC4xT65l7a8qbgg8GvwD5g8c5.jpg",
+        "link": "/card/movies/800-622/Intervyu.html",
+        "year": "2014",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Рождённый стать королём",
+        "image": "https://image.tmdb.org/t/p/w500//cCNwz7xH5V4cDZsMa9DikucrjZ9.jpg",
+        "link": "/card/movies/800-621/Rozhdyonnyj-stat-korolyom.html",
+        "year": "2019",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Грязь",
+        "image": "https://image.tmdb.org/t/p/w500//hikJQzjhgcQpGIQ18c0AXjDEdF4.jpg",
+        "link": "/card/movies/800-620/Gryaz.html",
+        "year": "2013",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Война миров",
+        "image": "https://image.tmdb.org/t/p/w500//4qWDN2ZjegcLF4I04GVvkNuN33H.jpg",
+        "link": "/card/movies/800-619/Vojna-mirov.html",
+        "year": "2005",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Отчаянные мстители",
+        "image": "https://image.tmdb.org/t/p/w500//3E2RnWFNDbAeYuy4D9Yf6pxLiR.jpg",
+        "link": "/card/movies/800-618/Otchayannye-mstiteli.html",
+        "year": "2021",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Послезавтра",
+        "image": "https://image.tmdb.org/t/p/w500//kJoflQrJ6KdMZ8B1Rw1uCDkHmE3.jpg",
+        "link": "/card/movies/800-617/Poslezavtra.html",
+        "year": "2004",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Особо опасен",
+        "image": "https://image.tmdb.org/t/p/w500//vfajgD7PNcVwksoG6vItv4qIPDS.jpg",
+        "link": "/card/movies/800-616/Osobo-opasen.html",
+        "year": "2008",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Левша",
+        "image": "https://image.tmdb.org/t/p/original/apbHyCSH0BMEfsebCbaqVWVcfFj.jpg",
+        "link": "/card/movies/800-615/Levsha.html",
+        "year": "2015",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Убийцы цветочной луны",
+        "image": "https://image.tmdb.org/t/p/w500//dc06PiS7uRAonQwrxKAnDvORZgC.jpg",
+        "link": "/card/movies/800-571/Ubijcy-cvetochnoj-luny.html",
+        "year": "2023",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Анчартед: На картах не значится",
+        "image": "https://image.tmdb.org/t/p/w500//gCeTyPG6g03DGsSvNOjEIAjmC9j.jpg",
+        "link": "/card/movies/800-570/Ancharted-Na-kartah-ne-znachitsya.html",
+        "year": "2022",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Суррогаты",
+        "image": "https://image.tmdb.org/t/p/w500//53P4Jv165JZug5OeREhVTGjVWoi.jpg",
+        "link": "/card/movies/800-558/Surrogaty.html",
+        "year": "2009",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Живая сталь",
+        "image": "https://image.tmdb.org/t/p/w500//3y9qKKMO8wJuw1UHnIgWm7LVr4p.jpg",
+        "link": "/card/movies/800-557/Zhivaya-stal.html",
+        "year": "2011",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Барби",
+        "image": "https://image.tmdb.org/t/p/w500//kau707eF6UBvrHX3v5BSYckqSXm.jpg",
+        "link": "/card/movies/800-572/Barbi.html",
+        "year": "2023",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Тринадцать привидений",
+        "image": "https://image.tmdb.org/t/p/w500//6wG56CiElQ8Gg4oNBSxYVJHkZMA.jpg",
+        "link": "/card/movies/800-554/Trinadcat-prividenij.html",
+        "year": "2001",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Вундеркинд",
+        "image": "https://image.tmdb.org/t/p/w500//cZhZ574UhzztxFzRi7aljhooUZ1.jpg",
+        "link": "/card/movies/800-861/Vunderkind.html",
+        "year": "2025",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Главный герой",
+        "image": "https://image.tmdb.org/t/p/w500//qJZ3UeKAOgz2kFVJPZZFzLtn1Qk.jpg",
+        "link": "/card/movies/800-552/Glavnyj-geroj.html",
+        "year": "2021",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Дом Gucci",
+        "image": "https://image.tmdb.org/t/p/w500//lMuc6dmVoEAoOTIJp4AnPwmEZ2T.jpg",
+        "link": "/card/movies/800-551/Dom-Gucci.html",
+        "year": "2021",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Бессмертный 2: Дорога мести",
+        "image": "https://image.tmdb.org/t/p/w500//lk48GLdtqFNuNpqQkJT5uiFDyn4.jpg",
+        "link": "/card/movies/800-817/Bessmertnyj-2.html",
+        "year": "2025",
+        "rating": "7.7", "tmdb_id": 1223601
+    },
+    {
+        "name": "Бессмертный",
+        "image": "https://image.tmdb.org/t/p/w500//xSagGdKkQtQxUvJnSWstAjLlykE.jpg",
+        "link": "/card/movies/800-816/Bessmertnyj.html",
+        "year": "2022",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Гори, гори ясно",
+        "image": "https://image.tmdb.org/t/p/w500//qOxcqExDuHAgGSFnAv54gTqosoS.jpg",
+        "link": "/card/movies/800-550/Gori-gori-yasno.html",
+        "year": "2019",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Покемон: Детектив Пикачу",
+        "image": "https://image.tmdb.org/t/p/w500//t9FIOdeU9PU49ieVzG2JsutNy3H.jpg",
+        "link": "/card/movies/800-549/Pokemon-Detektiv-Pikachu.html",
+        "year": "2019",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Агенты А.Н.К.Л.",
+        "image": "https://image.tmdb.org/t/p/w500//8J7kXEWk2dLttjx1iblx3nSoY1O.jpg",
+        "link": "/card/movies/800-548/Agenty-A.N.K.L.html",
+        "year": "2015",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "По соображениям совести",
+        "image": "https://image.tmdb.org/t/p/w500//A4Q3CdaQzbPwDI1gnE7WX5585rJ.jpg",
+        "link": "/card/movies/800-546/Po-soobrazheniyam-sovesti.html",
+        "year": "2016",
+        "rating": "8.2",
+        "type": "movie"
+    },
+    {
+        "name": "Миллионер из трущоб",
+        "image": "https://image.tmdb.org/t/p/w500//oShPzAshoE2wFgzAr6n26Q4veSk.jpg",
+        "link": "/card/movies/800-539/Millioner-iz-trushob.html",
+        "year": "2008",
+        "rating": "7.7",
+        "type": "movie"
+    },
+    {
+        "name": "1408",
+        "image": "https://image.tmdb.org/t/p/w500//yE9MCW7ZNxSw5SC1TMqm51pMBIV.jpg",
+        "link": "/card/movies/800-538/1408.html",
+        "year": "2007",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Чудо на Гудзоне",
+        "image": "https://image.tmdb.org/t/p/w500//qwG7SP5KV8fSxpLkB31Ta4dCYlR.jpg",
+        "link": "/card/movies/800-547/Chudo-na-Gudzone.html",
+        "year": "2016",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Пастырь",
+        "image": "https://image.tmdb.org/t/p/w500//6168i8yQu04azUPYzJccJq9W7sL.jpg",
+        "link": "/card/movies/800-537/Pastyr.html",
+        "year": "2011",
+        "rating": "5.8",
+        "type": "movie"
+    },
+    {
+        "name": "Тело Дженнифер",
+        "image": "https://image.tmdb.org/t/p/w500//2oyxrtjWbgEuWY3sQrxgneREVcb.jpg",
+        "link": "/card/movies/800-536/Telo-Dzhennifer.html",
+        "year": "2009",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "Жизнь Пи",
+        "image": "https://image.tmdb.org/t/p/w500//sKfOdwKRDoVROHg9B7suyKM82I9.jpg",
+        "link": "/card/movies/800-535/Zhizn-Pi.html",
+        "year": "2012",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Легион",
+        "image": "https://image.tmdb.org/t/p/w500//wIBxqUdkMbNAB5q98ml6XfsvZlp.jpg",
+        "link": "/card/movies/800-534/Legion.html",
+        "year": "2010",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "Секс по дружбе",
+        "image": "https://image.tmdb.org/t/p/w500//cXY9Ae1ivoaAYvgrzewSMIr0NTQ.jpg",
+        "link": "/card/movies/800-533/Seks-po-druzhbe.html",
+        "year": "2011",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Охотники на гангстеров",
+        "image": "https://image.tmdb.org/t/p/w500//9E5epinLoC1Z4t9utSeSPjhhX1Q.jpg",
+        "link": "/card/movies/800-532/Ohotniki-na-gangsterov.html",
+        "year": "2013",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Тепло наших тел",
+        "image": "https://image.tmdb.org/t/p/w500//t9Y49pYbXBAv2jQQQGpzKGZZt6Q.jpg",
+        "link": "/card/movies/800-531/Teplo-nashih-tel.html",
+        "year": "2013",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Почти семнадцать",
+        "image": "https://image.tmdb.org/t/p/w500//vRh1Wb9CZmm4dbb341skxnhzM72.jpg",
+        "link": "/card/movies/800-524/Pochti-semnadcat.html",
+        "year": "2016",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "2012",
+        "image": "https://image.tmdb.org/t/p/w500//akAYvqKGukyqkjUp17lJArycjlm.jpg",
+        "link": "/card/movies/800-523/2012.html",
+        "year": "2009",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "Ла-Ла Ленд",
+        "image": "https://image.tmdb.org/t/p/w500//g7f8GdnJKS0Z3QJ5G6P9BZrqs36.jpg",
+        "link": "/card/movies/800-522/La-La-Lend.html",
+        "year": "2016",
+        "rating": "7.9",
+        "type": "movie"
+    },
+    {
+        "name": "Оливер Твист",
+        "image": "https://image.tmdb.org/t/p/w500//w4sfU0FreScYitjX9l5Zpp2X8o0.jpg",
+        "link": "/card/movies/800-520/Oliver-Tvist.html",
+        "year": "2005",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Мой друг мистер Персиваль",
+        "image": "https://image.tmdb.org/t/p/w500//bXNnzlel69zZcoVcqU4JUcQpSQj.jpg",
+        "link": "/card/movies/800-519/Moj-drug-mister-Persival.html",
+        "year": "2019",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Милые кости",
+        "image": "https://image.tmdb.org/t/p/w500//wLr0YZTAcKRAY5bw1drq2hBnYmp.jpg",
+        "link": "/card/movies/800-518/Milye-kosti.html",
+        "year": "2009",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Форма воды",
+        "image": "https://image.tmdb.org/t/p/w500//1I3ayHlmm6U1DoSy9WW2ATOG7Xk.jpg",
+        "link": "/card/movies/800-517/Forma-vody.html",
+        "year": "2017",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Манчестер у моря",
+        "image": "https://image.tmdb.org/t/p/w500//9h22dvN7LYIud5oUAurXXrfGHUS.jpg",
+        "link": "/card/movies/800-516/Manchester-u-morya.html",
+        "year": "2016",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Волк с Уолл-стрит",
+        "image": "https://image.tmdb.org/t/p/w500//kRbBfEgHCF1tv8S7QlrtQZ60z8t.jpg",
+        "link": "/card/movies/800-497/Volk-s-Uoll-strit.html",
+        "year": "2013",
+        "rating": "8.0",
+        "type": "movie"
+    },
+    {
+        "name": "Плейбой под прикрытием",
+        "image": "https://image.tmdb.org/t/p/w500//25LEB8zxdz4qdEfKNDa1bxmRpXU.jpg",
+        "link": "/card/movies/800-498/Plejboj-pod-prikrytiem.html",
+        "year": "2019",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Дурные деньги",
+        "image": "https://image.tmdb.org/t/p/w500//xUjWG4JBNVYlsGC3ebaNtC7EY9v.jpg",
+        "link": "/card/movies/800-499/Durnye-dengi.html",
+        "year": "2023",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Мёртвые не умирают",
+        "image": "https://image.tmdb.org/t/p/w500//5WdNwPQQqoS8f0mQFhq6oy3QaTN.jpg",
+        "link": "/card/movies/800-500/Myortvye-ne-umirayut.html",
+        "year": "2019",
+        "rating": "5.4",
+        "type": "movie"
+    },
+    {
+        "name": "Танк",
+        "image": "https://image.tmdb.org/t/p/w500//1Om47hEDo4EAVTLVs8xLOiYn5ne.jpg",
+        "link": "/card/movies/800-854/Tank.html",
+        "year": "2025",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Эксперимент «Офис»",
+        "image": "https://image.tmdb.org/t/p/w500//Af4lEwc1ETj8YN8uQoTT2Bh9Lnn.jpg",
+        "link": "/card/movies/800-501/Eksperiment-Ofis.html",
+        "year": "2016",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Голый пистолет",
+        "image": "https://image.tmdb.org/t/p/w500//wDxvNtnu5hpb9ixQWAkrJJmMzat.jpg",
+        "link": "/card/movies/800-507/Golyj-pistolet-2025.html",
+        "year": "2025",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Голый пистолет 33⅓: Последний выпад",
+        "image": "https://image.tmdb.org/t/p/w500//nRsOUWC911QlNkiMOaI2PZqAzSl.jpg",
+        "link": "/card/movies/800-508/Golyj-pistolet-1994.html",
+        "year": "1994",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Голый пистолет 2½: Запах страха",
+        "image": "https://image.tmdb.org/t/p/w500//cNlIpjxAdkxY1XyLDVOO9oQlpYh.jpg",
+        "link": "/card/movies/800-509/Golyj-pistolet-1991.html",
+        "year": "1991",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Голый пистолет: Из полицейских архивов",
+        "image": "https://image.tmdb.org/t/p/w500//859a7FpBURG5czrYyI0k8y3zRBF.jpg",
+        "link": "/card/movies/800-510/Golyj-pistolet-1988.html",
+        "year": "1988",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Фантастическая четвёрка: Первые шаги",
+        "image": "https://image.tmdb.org/t/p/w500//5OImujJnAmhb9KXGsRQ6ThDQ1XM.jpg",
+        "link": "/card/movies/800-470/Fantasticheskaya-chetverka-Pervye-shagi.html",
+        "year": "2025",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Фантастическая Четвёрка",
+        "image": "https://image.tmdb.org/t/p/w500//vn0OIQIDLVlCSSW3VMURUyQU57x.jpg",
+        "link": "/card/movies/800-471/Fantasticheskaya-chetverka2015.html",
+        "year": "2015",
+        "rating": "4.4",
+        "type": "movie"
+    },
+    {
+        "name": "Фантастическая четвёрка: Вторжение Серебряного сёрфера",
+        "image": "https://image.tmdb.org/t/p/w500//vYvuKMkUWVW4UuPAE5vSmm5orBB.jpg",
+        "link": "/card/movies/800-472/Fantasticheskaya-Chetvyorka-Vtorzhenie-Serebryanogo-Syorfera.html",
+        "year": "2007",
+        "rating": "5.6",
+        "type": "movie"
+    },
+    {
+        "name": "Фантастическая Четвёрка",
+        "image": "https://image.tmdb.org/t/p/w500//vRb7EUXQZFIWNye7y661mvTVP6O.jpg",
+        "link": "/card/movies/800-473/Fantasticheskaya-Chetvyorka2005.html",
+        "year": "2005",
+        "rating": "5.8",
+        "type": "movie"
+    },
+    {
+        "name": "Отряд Самоубийц: Миссия Навылет",
+        "image": "https://image.tmdb.org/t/p/w500//asD8pGLw2uI3HzPtjuX8ls8RNsg.jpg",
+        "link": "/card/movies/800-474/Otryad-Samoubijc-Missiya-Navylet.html",
+        "year": "2021",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Хищные птицы: Потрясающая история Харли Квинн",
+        "image": "https://image.tmdb.org/t/p/w500//11ZCJWv9OK1ubjiMSqQUtt4reWF.jpg",
+        "link": "/card/movies/800-475/Hishnye-pticy-Potryasayushaya-istoriya-Harli-Kvinn.html",
+        "year": "2016",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Отряд Самоубийц",
+        "image": "https://image.tmdb.org/t/p/w500//7tJjv7vPBhG2pzcTIMgGBV1mL4w.jpg",
+        "link": "/card/movies/800-476/Otryad-Samoubijc.html",
+        "year": "2016",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "Синий Жук",
+        "image": "https://image.tmdb.org/t/p/w500//aHT0qcPPJGnF5ZhrRAdpfmEnl5Z.jpg",
+        "link": "/card/movies/800-477/Sinij-Zhuk.html",
+        "year": "2023",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Шазам! Ярость Богов",
+        "image": "https://image.tmdb.org/t/p/w500//t2Wy2p0lLg6BjOk10pYhrIiYWrL.jpg",
+        "link": "/card/movies/800-478/Shazam-Yarost-Bogov.html",
+        "year": "2023",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Чёрный Адам",
+        "image": "https://image.tmdb.org/t/p/w500//ebtyQ43I2QSeEJiXYNFgSp4yuYT.jpg",
+        "link": "/card/movies/800-479/Chyornyj-Adam.html",
+        "year": "2022",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Шазам!",
+        "image": "https://image.tmdb.org/t/p/w500//s4byZ8CP7NLfH54FV3QF6l0JLSh.jpg",
+        "link": "/card/movies/800-480/Shazam.html",
+        "year": "2019",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Бэтмен",
+        "image": "https://image.tmdb.org/t/p/w500//3EXgl14Wmr5NcbYnBy1kavGHnvh.jpg",
+        "link": "/card/movies/800-481/Betmen2022.html",
+        "year": "2022",
+        "rating": "7.7",
+        "type": "movie"
+    },
+    {
+        "name": "Аквамен и потерянное царство",
+        "image": "https://image.tmdb.org/t/p/w500//vJoMnbQjLo1e7yOtFPW1LyPL6qR.jpg",
+        "link": "/card/movies/800-482/Akvamen-i-poteryannoe-carstvo.html",
+        "year": "2023",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Аквамен",
+        "image": "https://image.tmdb.org/t/p/w500//hA5rapmD3Lwv4I981yh6Ct8zvIC.jpg",
+        "link": "/card/movies/800-483/Akvamen.html",
+        "year": "2018",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Чудо-женщина: 1984",
+        "image": "https://image.tmdb.org/t/p/w500//1B2YJCYyRudISmfSWCRfc95gAtq.jpg",
+        "link": "/card/movies/800-484/Chudo-zhenshina-1984.html",
+        "year": "2020",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Чудо-женщина",
+        "image": "https://image.tmdb.org/t/p/w500//fMnMonAyK3nzp1P1odIFzYoSvYe.jpg",
+        "link": "/card/movies/800-485/Chudo-zhenshina.html",
+        "year": "2017",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Флэш",
+        "image": "https://image.tmdb.org/t/p/w500//ozBz6PcTfyhcrci6ZygzVJgPHxO.jpg",
+        "link": "/card/movies/800-486/Flesh2023.html",
+        "year": "2023",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Супермен",
+        "image": "https://image.tmdb.org/t/p/w500//sezEzZZYJeaLjNGjTFHzWJ3yk5E.jpg",
+        "link": "/card/movies/800-487/Supermen2025.html",
+        "year": "2025",
+        "rating": "7.7",
+        "type": "movie"
+    },
+    {
+        "name": "Лига справедливости Зака Снайдера",
+        "image": "https://image.tmdb.org/t/p/w500//tpPWUv258JrMSIdkVVV1NDp3aoT.jpg",
+        "link": "/card/movies/800-488/Liga-spravedlivosti-Zaka-Snajdera.html",
+        "year": "2021",
+        "rating": "8.1",
+        "type": "movie"
+    },
+    {
+        "name": "Лига справедливости",
+        "image": "https://image.tmdb.org/t/p/w500//e2f1GaWLkk5Sj7cZMi38mUPXYdt.jpg",
+        "link": "/card/movies/800-489/Liga-spravedlivosti.html",
+        "year": "2017",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Бэтмен против Супермена: На заре справедливости",
+        "image": "https://image.tmdb.org/t/p/w500//tAQOcxxcZbpM1jEhz7hJC5nmCDi.jpg",
+        "link": "/card/movies/800-490/Betmen-protiv-Supermena-Na-zare-spravedlivosti.html",
+        "year": "2016",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "Человек из стали",
+        "image": "https://image.tmdb.org/t/p/w500//azlOOwkq3FS0unvTBjtQVsz6YIk.jpg",
+        "link": "/card/movies/800-491/Chelovek-iz-stali.html",
+        "year": "2013",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Возвращение Супермена",
+        "image": "https://image.tmdb.org/t/p/w500//6C6ku1McHHOdSxWcZi830hoeaoY.jpg",
+        "link": "/card/movies/800-492/Vozvrashenie-Supermena.html",
+        "year": "2006",
+        "rating": "5.8",
+        "type": "movie"
+    },
+    {
+        "name": "Зелёный Фонарь",
+        "image": "https://image.tmdb.org/t/p/w500//b45kSKCLaGKol4cn3bXpOMFqUE8.jpg",
+        "link": "/card/movies/800-515/Zelyonyj-Fonar.html",
+        "year": "2011",
+        "rating": "5.2",
+        "type": "movie"
+    },
+    {
+        "name": "Джона Хекс",
+        "image": "https://image.tmdb.org/t/p/w500//zJADKfxCUM20W2KlHI3Vj4eAHKH.jpg",
+        "link": "/card/movies/800-514/Dzhona-Heks.html",
+        "year": "2010",
+        "rating": "5.0",
+        "type": "movie"
+    },
+    {
+        "name": "Хранители",
+        "image": "https://image.tmdb.org/t/p/w500//82Jnyq9YFlXo59ArGpuBLyAF4L9.jpg",
+        "link": "/card/movies/800-493/Hraniteli.html",
+        "year": "2009",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "«V» значит Вендетта",
+        "image": "https://image.tmdb.org/t/p/w500//2KWF4ch7z78Is0pCXK6BzvJgFDN.jpg",
+        "link": "/card/movies/800-511/V-znachit-Vendetta.html",
+        "year": "2006",
+        "rating": "7.9",
+        "type": "movie"
+    },
+    {
+        "name": "Константин: Повелитель тьмы",
+        "image": "https://image.tmdb.org/t/p/w500//j8gHObFvjqgE7XVgO9bFphZIEAq.jpg",
+        "link": "/card/movies/800-512/Konstantin-Povelitel-tmy.html",
+        "year": "2005",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Женщина-кошка",
+        "image": "https://image.tmdb.org/t/p/w500//95BUj0dXqR8VsFeA7c3BweTLokg.jpg",
+        "link": "/card/movies/800-513/Zhenshina-koshka.html",
+        "year": "2004",
+        "rating": "4.6",
+        "type": "movie"
+    },
+    {
+        "name": "Типа копы",
+        "image": "https://image.tmdb.org/t/p/w500//7BAiNAmablFGjG4KOHda6wfL4dH.jpg",
+        "link": "/card/movies/800-469/Tipa-kopy.html",
+        "year": "2014",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Омерзительная восьмёрка",
+        "image": "https://image.tmdb.org/t/p/w500//oum699CFFl34Z0ZyIUBmkFRVjfT.jpg",
+        "link": "/card/movies/800-461/Omerzitelnaya-vosmyorka.html",
+        "year": "2015",
+        "rating": "7.8",
+        "type": "movie"
+    },
+    {
+        "name": "Сущность",
+        "image": "https://image.tmdb.org/t/p/w500//uAs0VN7VtdDL0VZ80hIu5qa9Ydf.jpg",
+        "link": "/card/movies/800-819/Sushnost.html",
+        "year": "2025",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Восхождение Юпитер",
+        "image": "https://image.tmdb.org/t/p/w500//owEYrXtomE9BJ3jli66QGk5McWv.jpg",
+        "link": "/card/movies/800-462/Voshozhdenie-Yupiter.html",
+        "year": "2015",
+        "rating": "5.5",
+        "type": "movie"
+    },
+    {
+        "name": "Седьмой сын",
+        "image": "https://image.tmdb.org/t/p/original/mlYWIgLvguxXlweYXi9iW4BLkqp.jpg",
+        "link": "/card/movies/800-463/Sedmoj-syn.html",
+        "year": "2014",
+        "rating": "5.5",
+        "type": "movie"
+    },
+    {
+        "name": "Бегущий человек",
+        "image": "https://image.tmdb.org/t/p/w500//40Mxw7P1l9KwkQipHgzVNHFMfVC.jpg",
+        "link": "/card/movies/800-818/Begushij-chelovek.html",
+        "year": "2025",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Чем дальше в лес",
+        "image": "https://image.tmdb.org/t/p/w500//s4pbFVyEIlpyPjxdbG15JeIET0S.jpg",
+        "link": "/card/movies/800-464/Chem-dalshe-v-les.html",
+        "year": "2014",
+        "rating": "5.8",
+        "type": "movie"
+    },
+    {
+        "name": "Несносные боссы 2",
+        "image": "https://image.tmdb.org/t/p/w500//bnJgRehNamDRMGQHxlgQEtRhqJe.jpg",
+        "link": "/card/movies/800-465/Nesnosnye-bossy-2.html",
+        "year": "2014",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Несносные боссы",
+        "image": "https://image.tmdb.org/t/p/w500//b5JQ3q72bDqPI0nSV0Zl9MtwXbO.jpg",
+        "link": "/card/movies/800-466/Nesnosnye-bossy.html",
+        "year": "2011",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Семь психопатов",
+        "image": "https://image.tmdb.org/t/p/w500//Vs0ZLKWIJChGbNSaNowChablG9.jpg",
+        "link": "/card/movies/800-467/Sem-psihopatov.html",
+        "year": "2012",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Джанго освобождённый",
+        "image": "https://image.tmdb.org/t/p/w500//e4mynoLMT9xSogxVKOgp9hzlM9q.jpg",
+        "link": "/card/movies/800-468/Dzhango-osvobozhdyonnyj.html",
+        "year": "2012",
+        "rating": "8.2",
+        "type": "movie"
+    },
+    {
+        "name": "Братья из Гримсби",
+        "image": "https://image.tmdb.org/t/p/w500//JwwO5jFNMngh65FnjfBk2GTNCD.jpg",
+        "link": "/card/movies/800-458/Bratya-iz-Grimsbi.html",
+        "year": "2016",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "Оставить мир позади",
+        "image": "https://image.tmdb.org/t/p/w500//4IBihABLdL95TyRe3bG0B9XXNRa.jpg",
+        "link": "/card/movies/800-459/Ostavit-mir-pozadi.html",
+        "year": "2023",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "В духе Рождества",
+        "image": "https://image.tmdb.org/t/p/w500//swA9YPjWGsXBFfctQCpg4dvCvsv.jpg",
+        "link": "/card/movies/800-460/V-duhe-Rozhdestva.html",
+        "year": "2022",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Впритык",
+        "image": "https://image.tmdb.org/t/p/w500//zIZC8DYGxFxuQkV6IPGmSAc3mQ.jpg",
+        "link": "/card/movies/800-432/Vprityk.html",
+        "year": "2010",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "21 и больше",
+        "image": "https://image.tmdb.org/t/p/w500//tgfbGIenue8CbB3z1WITZMCvBia.jpg",
+        "link": "/card/movies/800-433/21-i-bolshe.html",
+        "year": "2013",
+        "rating": "5.8",
+        "type": "movie"
+    },
+    {
+        "name": "Мой любимый враг",
+        "image": "https://image.tmdb.org/t/p/w500//tT2tTqktvSzmiqXqHzEjnaNS3Th.jpg",
+        "link": "/card/movies/800-434/Moj-lyubimyj-vrag.html",
+        "year": "2021",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Реинкарнация",
+        "image": "https://image.tmdb.org/t/p/w500//gUsZ6BvPynVQBAxOzW830eE7PeF.jpg",
+        "link": "/card/movies/800-435/Reinkarnaciya.html",
+        "year": "2018",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Кадры",
+        "image": "https://image.tmdb.org/t/p/w500//mlzOgYEBjMEYuFLjxtqB9NsI9bE.jpg",
+        "link": "/card/movies/800-436/Kadry.html",
+        "year": "2013",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Два, три, демон, приди!",
+        "image": "https://image.tmdb.org/t/p/w500//sEBpONjRA2OrEBOJFuWnyl0fZLD.jpg",
+        "link": "/card/movies/800-437/Dva-tri-demon-pridi.html",
+        "year": "2023",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Этот неловкий момент",
+        "image": "https://image.tmdb.org/t/p/w500//tlCd5EU6vss3Okno3CCRh3vY85d.jpg",
+        "link": "/card/movies/800-438/Etot-nelovkij-moment.html",
+        "year": "2014",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Ужас Амитивилля: Пробуждение",
+        "image": "https://image.tmdb.org/t/p/w500//y9MBKfPrWNHL6kWPYFjtToZGtL5.jpg",
+        "link": "/card/movies/800-439/Uzhas-Amitivillya-Probuzhdenie.html",
+        "year": "2017",
+        "rating": "5.3",
+        "type": "movie"
+    },
+    {
+        "name": "Ужас Амитивилля",
+        "image": "https://image.tmdb.org/t/p/original/iAcYZN28eVcLN39HLeThx7A43st.jpg",
+        "link": "/card/movies/800-440/Uzhas-Amitivillya2005.html",
+        "year": "2005",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Шпион",
+        "image": "https://image.tmdb.org/t/p/w500//uZpsfNEKYe4I7OCCbd9wfwSrDO6.jpg",
+        "link": "/card/movies/800-441/Shpion.html",
+        "year": "2015",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Хижина в лесу",
+        "image": "https://image.tmdb.org/t/p/w500//5IeHLy9aaM2srhj90zFhWUu4wXF.jpg",
+        "link": "/card/movies/800-442/Hizhina-v-lesu.html",
+        "year": "2012",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Мотылёк",
+        "image": "https://image.tmdb.org/t/p/w500//5CZjVBHHKvljeVJCSOE4Pje8cbc.jpg",
+        "link": "/card/movies/800-430/Motylyok.html",
+        "year": "2017",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Старикам тут не место",
+        "image": "https://image.tmdb.org/t/p/w500//z8eriOnIRCETerbPPx006Gyd7WM.jpg",
+        "link": "/card/movies/800-411/Starikam-tut-ne-mesto.html",
+        "year": "2007",
+        "rating": "7.9",
+        "type": "movie"
+    },
+    {
+        "name": "Квартирка Джо",
+        "image": "https://image.tmdb.org/t/p/w500//oBfJKfFkwtgDVWEIeNUyioNMDxK.jpg",
+        "link": "/card/movies/800-412/Kvartirka-Dzho.html",
+        "year": "1996",
+        "rating": "5.8",
+        "type": "movie"
+    },
+    {
+        "name": "Франкенштейн",
+        "image": "https://image.tmdb.org/t/p/w500//oCxLbnBBEmUCeRcmsBrmF9jEcHd.jpg",
+        "link": "/card/movies/800-755/Frankenshtejn.html",
+        "year": "2025",
+        "rating": "8.0",
+        "type": "movie"
+    },
+    {
+        "name": "Замороженный калифорниец",
+        "image": "https://image.tmdb.org/t/p/original/y8HtL6pyjfODdHOFgciFVFmt8Eq.jpg",
+        "link": "/card/movies/800-413/Zamorozhennyj-kaliforniec.html",
+        "year": "1992",
+        "rating": "5.8",
+        "type": "movie"
+    },
+    {
+        "name": "8 миля",
+        "image": "https://image.tmdb.org/t/p/w500//1016JRRJNu6QlOmcnEycOdBREQP.jpg",
+        "link": "/card/movies/800-414/8-milya.html",
+        "year": "2002",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Фокус",
+        "image": "https://image.tmdb.org/t/p/w500//grzQRCyZEEdJomeq8324AV6AI6W.jpg",
+        "link": "/card/movies/800-386/Fokus.html",
+        "year": "2015",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Искусство по понятиям",
+        "image": "https://image.tmdb.org/t/p/w500//ad2wSQKLohh88LCvUfHjAVfwECE.jpg",
+        "link": "/card/movies/800-387/Iskusstvo-po-ponyatiyam.html",
+        "year": "2023",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "Хороший мальчик",
+        "image": "https://image.tmdb.org/t/p/w500//qMdhukDFuX6wzJbmTdyr8VMSrQ6.jpg",
+        "link": "/card/movies/800-754/Horoshij-malchik.html",
+        "year": "2025",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Смотрители",
+        "image": "https://image.tmdb.org/t/p/w500//4qrA6MsOOTiUfXGoM4YUwqtHFjb.jpg",
+        "link": "/card/movies/800-388/Smotriteli.html",
+        "year": "2024",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Воображаемые Друзья",
+        "image": "https://image.tmdb.org/t/p/original/oJEpa5RRvw9xm7UbDsT9dFUbd3W.jpg",
+        "link": "/card/movies/800-389/Voobrazhaemye-Druzya.html",
+        "year": "2024",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Ренфилд",
+        "image": "https://image.tmdb.org/t/p/w500//aXUNQ3vVyfA3p1WoFIpjkCwGCAF.jpg",
+        "link": "/card/movies/800-367/Renfild.html",
+        "year": "2023",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Чёрный телефон 2",
+        "image": "https://image.tmdb.org/t/p/w500//pG3yo4PtkUku7qQTmEIM6OiV9zK.jpg",
+        "link": "/card/movies/800-753/Chyornyj-telefon-2.html",
+        "year": "2025",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Чёрный телефон",
+        "image": "https://image.tmdb.org/t/p/w500//fWGd2NCgrwsammIxBJ2AhoffVkS.jpg",
+        "link": "/card/movies/800-735/Chyornyj-telefon.html",
+        "year": "2022",
+        "rating": "7.6",
+        "type": "movie"
+    },
+    {
+        "name": "Птичий короб",
+        "image": "https://image.tmdb.org/t/p/w500//dWbhNl7ESABUqXfyOKPr5EQaDXP.jpg",
+        "link": "/card/movies/800-368/Ptichij-korob.html",
+        "year": "2018",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Без ответа",
+        "image": "https://image.tmdb.org/t/p/w500//qIR6P3QQJMgzO7ihHkfMGp9WYou.jpg",
+        "link": "/card/movies/800-369/Bez-otveta.html",
+        "year": "2023",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Мама",
+        "image": "https://image.tmdb.org/t/p/w500//ahMqF353szhxtdzltopouUJLJhY.jpg",
+        "link": "/card/movies/800-343/Mama.html",
+        "year": "2013",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Мир Юрского периода: Возрождение",
+        "image": "https://image.tmdb.org/t/p/w500//iIk5nWcHuqTMLrz1yrwIWcmwTOM.jpg",
+        "link": "/card/movies/800-451/Mir-Yurskogo-perioda-Vozrozhdenie.html",
+        "year": "2025",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Мир Юрского периода: Господство",
+        "image": "https://image.tmdb.org/t/p/w500//6BLMT9T4wRu5QlnqVeQUU5WApLj.jpg",
+        "link": "/card/movies/800-452/Mir-Yurskogo-perioda-Gospodstvo.html",
+        "year": "2022",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Мир Юрского Периода 2",
+        "image": "https://image.tmdb.org/t/p/w500//4VEkflsi7zQmBN6vNpihNrmnRzj.jpg",
+        "link": "/card/movies/800-453/Mir-Yurskogo-Perioda-2.html",
+        "year": "2018",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Мир Юрского Периода",
+        "image": "https://image.tmdb.org/t/p/original/zlZCxYnYeeMNhBE9QCyH5PpdKoy.jpg",
+        "link": "/card/movies/800-454/Mir-Yurskogo-Perioda.html",
+        "year": "2015",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Парк Юрского Периода 3",
+        "image": "https://image.tmdb.org/t/p/original/wQj9VSepvXmqha1XNtfdrgvqHdk.jpg",
+        "link": "/card/movies/800-455/Park-Yurskogo-Perioda-3.html",
+        "year": "2001",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Парк Юрского Периода 2: Затерянный Мир",
+        "image": "https://image.tmdb.org/t/p/original/bMwP9vq7juweGJcgq70CrpO0UHQ.jpg",
+        "link": "/card/movies/800-456/Park-Yurskogo-Perioda-2-Zateryannyj-Mir.html",
+        "year": "1997",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Парк Юрского Периода",
+        "image": "https://image.tmdb.org/t/p/original/8nSi7W1pG1KgqHS9kp3EsGoeKtA.jpg",
+        "link": "/card/movies/800-457/Park-Yurskogo-Perioda.html",
+        "year": "1993",
+        "rating": "8.0",
+        "type": "movie"
+    },
+    {
+        "name": "Тихое место 2",
+        "image": "https://image.tmdb.org/t/p/w500//9mLRf87tqKKpOjEx8M1yl1jZa1k.jpg",
+        "link": "/card/movies/800-344/Tihoe-mesto-2.html",
+        "year": "2021",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Тихое место",
+        "image": "https://image.tmdb.org/t/p/w500//b6MMVZWO7LPITq9XS5a4R22CZjG.jpg",
+        "link": "/card/movies/800-345/Tihoe-mesto.html",
+        "year": "2018",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Обезьяна",
+        "image": "https://image.tmdb.org/t/p/w500//ehrnPGBOA7EDYDYijNQxcEWLW9F.jpg",
+        "link": "/card/movies/800-346/Obezyana.html",
+        "year": "2025",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "Под Сильвер-Лэйк",
+        "image": "https://image.tmdb.org/t/p/w500//tDV86snXPfKknIo8nurftjOS6Sg.jpg",
+        "link": "/card/movies/800-347/Pod-Silver-Lejk.html",
+        "year": "2018",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Ветреная река",
+        "image": "https://image.tmdb.org/t/p/w500//jl2w7A4dVbQvCUXvNnduPWrNHZT.jpg",
+        "link": "/card/movies/800-348/Vetrenaya-reka.html",
+        "year": "2017",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Ночные игры",
+        "image": "https://image.tmdb.org/t/p/w500//bUXx4kR3SsOxMpqpcy8z0rar028.jpg",
+        "link": "/card/movies/800-349/Nochnye-igry.html",
+        "year": "2018",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Всё могу",
+        "image": "https://image.tmdb.org/t/p/w500//gkEDDnkAoD8XbWWel61iTzHYpSa.jpg",
+        "link": "/card/movies/800-350/Vsyo-mogu.html",
+        "year": "2015",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "Как быть мужиком",
+        "image": "https://image.tmdb.org/t/p/w500//9X9wf40QWAc7K6VDAGv49ifk4uh.jpg",
+        "link": "/card/movies/800-351/Kak-byt-muzhikom.html",
+        "year": "2013",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Самый удачливый человек в Америке",
+        "image": "https://image.tmdb.org/t/p/w500//d5X7zcYvQRCMeDOMmRwh8EEtavE.jpg",
+        "link": "/card/movies/800-352/Samyj-udachlivyj-chelovek-v-Amerike.html",
+        "year": "2025",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Охота на дикарей",
+        "image": "https://image.tmdb.org/t/p/w500//2MK52LiSL8ERDSkapfSZeyNEBHE.jpg",
+        "link": "/card/movies/800-353/Ohota-na-dikarej.html",
+        "year": "2016",
+        "rating": "7.6",
+        "type": "movie"
+    },
+    {
+        "name": "Машина времени в джакузи 2",
+        "image": "https://image.tmdb.org/t/p/w500//pvVkNrm2q3LXxYPhmn7aqZfnkHN.jpg",
+        "link": "/card/movies/800-354/Mashina-vremeni-v-dzhakuzi-2.html",
+        "year": "2015",
+        "rating": "5.2",
+        "type": "movie"
+    },
+    {
+        "name": "Машина времени в джакузи",
+        "image": "https://image.tmdb.org/t/p/w500//rWGA9tP2iIIHa5XTr7TFAi8ef16.jpg",
+        "link": "/card/movies/800-355/Mashina-vremeni-v-dzhakuzi.html",
+        "year": "2010",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "Патерсон",
+        "image": "https://image.tmdb.org/t/p/w500//pGM4NX8F9hqDmxsc9xFuVHqxE6X.jpg",
+        "link": "/card/movies/800-356/Paterson.html",
+        "year": "2016",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Маяк",
+        "image": "https://image.tmdb.org/t/p/w500//70wtLK20nQAg5TrT7e6eMJtaHPW.jpg",
+        "link": "/card/movies/800-357/Mayak.html",
+        "year": "2019",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Из машины",
+        "image": "https://image.tmdb.org/t/p/original/ofDay63FNRFW8T92NurTj7IOJAh.jpg",
+        "link": "/card/movies/800-358/Iz-mashiny.html",
+        "year": "2015",
+        "rating": "7.6",
+        "type": "movie"
+    },
+    {
+        "name": "Мина",
+        "image": "https://image.tmdb.org/t/p/w500//aA2s6vZPgBGMHSoSpvjSPRP9u1D.jpg",
+        "link": "/card/movies/800-359/Mina.html",
+        "year": "2016",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Лок",
+        "image": "https://image.tmdb.org/t/p/w500//n3bGK6pMgQG1tVDhYA5VYORlBmx.jpg",
+        "link": "/card/movies/800-360/Lok.html",
+        "year": "2014",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Враг общества",
+        "image": "https://image.tmdb.org/t/p/w500//qoy7q0ZYCvQcjZNlw23ur7Piy30.jpg",
+        "link": "/card/movies/800-361/Vrag-obshestva.html",
+        "year": "2009",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Проект X: Дорвались",
+        "image": "https://image.tmdb.org/t/p/w500//tYk4TGtQqtXDrxVDshmLzkNHMkR.jpg",
+        "link": "/card/movies/800-362/Proekt-X-Dorvalis.html",
+        "year": "2012",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Соседи: На тропе войны 2",
+        "image": "https://image.tmdb.org/t/p/w500//rWWp4mH8vGUxhQCEffUFaw2yhDi.jpg",
+        "link": "/card/movies/800-363/Sosedi-Na-trope-vojny-2.html",
+        "year": "2016",
+        "rating": "5.8",
+        "type": "movie"
+    },
+    {
+        "name": "Соседи: На тропе войны",
+        "image": "https://image.tmdb.org/t/p/w500//jLQxIV4y8GSknnbO9wsT645UaBg.jpg",
+        "link": "/card/movies/800-364/Sosedi-Na-trope-vojny.html",
+        "year": "2014",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Моя девушка – монстр",
+        "image": "https://image.tmdb.org/t/p/w500//6x8QfyCKKjsqxsw7Zqx0sQ6Ogc7.jpg",
+        "link": "/card/movies/800-365/Moya-devushka-monstr.html",
+        "year": "2017",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Путешествия Гулливера",
+        "image": "https://image.tmdb.org/t/p/w500//oj165IiIp469ysflTjE62BAIzNr.jpg",
+        "link": "/card/movies/800-366/Puteshestviya-Gullivera.html",
+        "year": "2010",
+        "rating": "5.2",
+        "type": "movie"
+    },
+    {
+        "name": "28 лет спустя: Храм костей",
+        "image": "https://image.tmdb.org/t/p/w500//lCel0uHnVgCGihg4xrWSPzOMnV4.jpg",
+        "link": "/card/movies/800-918/28-let-spustya-Hram-kostej.html",
+        "year": "2026",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "28 лет спустя",
+        "image": "https://image.tmdb.org/t/p/w500//5mYslz7foRGWeiZbSG1vyXwMzUX.jpg",
+        "link": "/card/movies/800-448/28-let-spustya.html",
+        "year": "2025",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "28 недель спустя",
+        "image": "https://image.tmdb.org/t/p/original/eBstfERGMJirLAMDbc2np2fK6C4.jpg",
+        "link": "/card/movies/800-449/28-nedel-spustya.html",
+        "year": "2007",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "28 дней спустя",
+        "image": "https://image.tmdb.org/t/p/w500//qwifZxThJncKX4w7YEaGiemZjk3.jpg",
+        "link": "/card/movies/800-450/28-dnej-spustya.html",
+        "year": "2002",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Престиж",
+        "image": "https://image.tmdb.org/t/p/w500//9jMvxh1Ib6BPnE0pprRcaNibKDO.jpg",
+        "link": "/card/movies/800-270/Prestizh.html",
+        "year": "2006",
+        "rating": "8.2",
+        "type": "movie"
+    },
+    {
+        "name": "Инферно Габриэля",
+        "image": "https://image.tmdb.org/t/p/w500//db3t8EdVco9uWGjffTABpa16MIn.jpg",
+        "link": "/card/movies/800-271/Inferno-Gabrielya.html",
+        "year": "2020",
+        "rating": "8.4",
+        "type": "movie"
+    },
+    {
+        "name": "Токсичный мститель",
+        "image": "https://image.tmdb.org/t/p/w500//9h9w7mU5f89ueP5TD8z7F4spNf.jpg",
+        "link": "/card/movies/800-635/Toksichnyj-mstitel.html",
+        "year": "2025",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "Миллиардер из трущоб",
+        "image": "https://image.tmdb.org/t/p/w500//dFNJOjtKD9ypSHciXY6JRgK24Pw.jpg",
+        "link": "/card/movies/800-272/Milliarder-iz-trushob.html",
+        "year": "2024",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Соник 3 в Кино",
+        "image": "https://image.tmdb.org/t/p/w500//sj8AqCcpfdILdP5fhFVJLdx2NfF.jpg",
+        "link": "/card/movies/800-631/Sonik-3-v-Kino.html",
+        "year": "2024",
+        "rating": "7.7",
+        "type": "movie"
+    },
+    {
+        "name": "Соник 2 в Кино",
+        "image": "https://image.tmdb.org/t/p/w500//6gi3bF0Qymv6Ja4FYIInLxa4xDU.jpg",
+        "link": "/card/movies/800-630/Sonik-2-v-Kino.html",
+        "year": "2022",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Соник в Кино",
+        "image": "https://image.tmdb.org/t/p/w500//5VkEgD5YIJye87E1xX6NQ5BVaTc.jpg",
+        "link": "/card/movies/800-629/Sonik-v-Kino.html",
+        "year": "2020",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Великая стена",
+        "image": "https://image.tmdb.org/t/p/w500//cMFaJHTdwkaZebGeLoIQxKFR5KN.jpg",
+        "link": "/card/movies/800-273/Velikaya-stena.html",
+        "year": "2016",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "Я герой",
+        "image": "https://image.tmdb.org/t/p/w500//fro3ipm2FVUmbedORv0aDTfSt6A.jpg",
+        "link": "/card/movies/800-676/Ya-geroj.html",
+        "year": "2016",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Каратэ-пацан",
+        "image": "https://image.tmdb.org/t/p/w500//jZs6kX6JCzjJBkTUoMPdaQSFjFa.jpg",
+        "link": "/card/movies/800-274/Karate-pacan.html",
+        "year": "2010",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Хроники хищных городов",
+        "image": "https://image.tmdb.org/t/p/w500//6GOzuWuwcEmys4Vs4U699YiqXE3.jpg",
+        "link": "/card/movies/800-275/Hroniki-hishnyh-gorodov.html",
+        "year": "2018",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Загадочная история Бенджамина Баттона",
+        "image": "https://image.tmdb.org/t/p/w500//wmVLPh1WFUe8CglklJYpXFMQqiG.jpg",
+        "link": "/card/movies/800-276/Zagadochnaya-istoriya-Bendzhamina-Battona.html",
+        "year": "2008",
+        "rating": "7.6",
+        "type": "movie"
+    },
+    {
+        "name": "Обитель теней",
+        "image": "https://image.tmdb.org/t/p/w500//kEeY9gD33yOE1kZ2bv83OvHVeui.jpg",
+        "link": "/card/movies/800-277/Obitel-tenej.html",
+        "year": "2017",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Чип и Дейл спешат на помощь",
+        "image": "https://image.tmdb.org/t/p/w500//iFqRKD0epiGXygjsRgnxpTemiO3.jpg",
+        "link": "/card/movies/800-278/Chip-i-Dejl-speshat-na-pomosh.html",
+        "year": "2022",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Анаконда ",
+        "image": "https://image.tmdb.org/t/p/w500//47C0Mb4RkDQ3sQM0f6w7REQYDHJ.jpg",
+        "link": "/card/movies/800-893/Anakonda.html",
+        "year": "2025",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "Области тьмы",
+        "image": "https://image.tmdb.org/t/p/w500//tpvt8Le1Pyd3d7lnp9GTW2uD7hj.jpg",
+        "link": "/card/movies/800-279/Oblasti-tmy.html",
+        "year": "2011",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Мальчик в полосатой пижаме",
+        "image": "https://image.tmdb.org/t/p/w500//ceMjx4DarStARA96uNvQ7CkwK5c.jpg",
+        "link": "/card/movies/800-280/Malchik-v-polosatoj-pizhame.html",
+        "year": "2008",
+        "rating": "7.8",
+        "type": "movie"
+    },
+    {
+        "name": "Убойные каникулы",
+        "image": "https://image.tmdb.org/t/p/w500//oId9WDFgTJGLrXz7RAvnjSrn5PX.jpg",
+        "link": "/card/movies/800-281/Ubojnye-kanikuly.html",
+        "year": "2010",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Команда разрушителей",
+        "image": "https://image.tmdb.org/t/p/w500//m7aUThrG0Ir3F6tOyukYChXHMmx.jpg",
+        "link": "/card/movies/800-892/Komanda-razrushitelej.html",
+        "year": "2026",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Эта дурацкая любовь",
+        "image": "https://image.tmdb.org/t/p/w500//ho2mxV5t3ZxsgSNP1JMHfxdxpkW.jpg",
+        "link": "/card/movies/800-282/Eta-durackaya-lyubov.html",
+        "year": "2011",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Семья в аренду",
+        "image": "https://image.tmdb.org/t/p/w500//hq8e5reqojApR2rNH8OPmp1xCvw.jpg",
+        "link": "/card/movies/800-877/Semya-v-arendu.html",
+        "year": "2025",
+        "rating": "7.7",
+        "type": "movie"
+    },
+    {
+        "name": "Предел риска",
+        "image": "https://image.tmdb.org/t/p/w500//jQpZcCkvf93pBaymalTmW6IPIXf.jpg",
+        "link": "/card/movies/800-283/Predel-riska.html",
+        "year": "2011",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Беглец",
+        "image": "https://image.tmdb.org/t/p/w500//ezNxCR9fju6gnTnJ4W6KgcZhD4.jpg",
+        "link": "/card/movies/800-284/Beglec.html",
+        "year": "2023",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Лакомый Кусок",
+        "image": "https://image.tmdb.org/t/p/w500//eUaFpRe8B8J2YjmTaBqzPOlSb5Z.jpg",
+        "link": "/card/movies/800-876/Lakomyj-Kusok.html",
+        "year": "2026",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Гренландия 2: Миграция",
+        "image": "https://image.tmdb.org/t/p/w500//uhV90l00klYLwCFo96JAVFGVU8v.jpg",
+        "link": "/card/movies/800-891/Grenlandiya2.html",
+        "year": "2026",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Гренландия",
+        "image": "https://image.tmdb.org/t/p/w500//5Ko11P6zf8Wfe9IMFJEOAyNf0FK.jpg",
+        "link": "/card/movies/800-285/Grenlandiya.html",
+        "year": "2020",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Последний день Земли",
+        "image": "https://image.tmdb.org/t/p/w500//fH1O6CAhZYtSJtQhM0ezUDwYAJJ.jpg",
+        "link": "/card/movies/800-286/Poslednij-den-Zemli.html",
+        "year": "2024",
+        "rating": "5.8",
+        "type": "movie"
+    },
+    {
+        "name": "Солт",
+        "image": "https://image.tmdb.org/t/p/w500//gd7oyofwqEgBhur6XLiGoqMQm2e.jpg",
+        "link": "/card/movies/800-287/Solt.html",
+        "year": "2010",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Земля будущего",
+        "image": "https://image.tmdb.org/t/p/w500//d0FN6g1xOevTnq6OYDUg0vURIbJ.jpg",
+        "link": "/card/movies/800-288/Zemlya-budushego.html",
+        "year": "2015",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Красное уведомление",
+        "image": "https://image.tmdb.org/t/p/w500//u6m4JTp9ZEAF25mSo0xfStmXSHh.jpg",
+        "link": "/card/movies/800-289/Krasnoe-uvedomlenie.html",
+        "year": "2021",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Самый быстрый Indian",
+        "image": "https://image.tmdb.org/t/p/w500//oBFzq9Fdb8GIg8Pc2oFVTvkUmDZ.jpg",
+        "link": "/card/movies/800-290/Samyj-bystryj-Indian.html",
+        "year": "2005",
+        "rating": "7.7",
+        "type": "movie"
+    },
+    {
+        "name": "Пункт назначения: Узы крови",
+        "image": "https://image.tmdb.org/t/p/w500//A6SyVtXBxU6S5LfDg0tz7lUXhJq.jpg",
+        "link": "/card/movies/800-373/Punkt-naznacheniya-Uzy-krovi.html",
+        "year": "2025",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Пункт назначения 5",
+        "image": "https://image.tmdb.org/t/p/w500//554vHUVuvpQIJMfZHxaZE5x3YUJ.jpg",
+        "link": "/card/movies/800-374/Punkt-naznacheniya-5.html",
+        "year": "2011",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Пункт назначения 4",
+        "image": "https://image.tmdb.org/t/p/w500//2hG60UUGmG8kxRRq04LJAABIL7A.jpg",
+        "link": "/card/movies/800-375/Punkt-naznacheniya-4.html",
+        "year": "2009",
+        "rating": "5.6",
+        "type": "movie"
+    },
+    {
+        "name": "Пункт назначения 3",
+        "image": "https://image.tmdb.org/t/p/w500//hZwGf3IK42LEQ01ZCZZKRAqTpyC.jpg",
+        "link": "/card/movies/800-376/Punkt-naznacheniya-3.html",
+        "year": "2006",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Пункт назначения 2",
+        "image": "https://image.tmdb.org/t/p/w500//r7pvTHVybZL49puwhQwwUU33ob5.jpg",
+        "link": "/card/movies/800-377/Punkt-naznacheniya-2.html",
+        "year": "2003",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Пункт назначения ",
+        "image": "https://image.tmdb.org/t/p/w500//rrXMDkTZYK4MeEqUAu1jqVNLzg3.jpg",
+        "link": "/card/movies/800-378/Punkt-naznacheniya.html",
+        "year": "2000",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Сокровище Амазонки",
+        "image": "https://image.tmdb.org/t/p/w500//9bKYACG9Uv4TlqKoBdMI8tKNXcl.jpg",
+        "link": "/card/movies/800-291/Sokrovishe-Amazonki.html",
+        "year": "2003",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Человек, который изменил всё",
+        "image": "https://image.tmdb.org/t/p/w500//sVTliDUi3ehhRKxHwGC4LxdXg85.jpg",
+        "link": "/card/movies/800-292/Chelovek-kotoryj-izmenil-vsyo.html",
+        "year": "2011",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Легенда",
+        "image": "https://image.tmdb.org/t/p/w500//vkjHGlBxNgeLQDA8XpxpJDy0iij.jpg",
+        "link": "/card/movies/800-293/Legenda.html",
+        "year": "2015",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Дом с паранормальными явлениями 2",
+        "image": "https://image.tmdb.org/t/p/w500//1hWdDGZa58Ulo0uP0mw4EIf85bt.jpg",
+        "link": "/card/movies/800-379/Dom-s-paranormalnymi-yavleniyami-2.html",
+        "year": "2014",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Дом с паранормальными явлениями",
+        "image": "https://image.tmdb.org/t/p/w500//m9jc6WRPhLGoVmF3NBm3olO23iz.jpg",
+        "link": "/card/movies/800-380/Dom-s-paranormalnymi-yavleniyami.html",
+        "year": "2013",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "Особняк с привидениями",
+        "image": "https://image.tmdb.org/t/p/w500//pE0LqHpxaQvKZCuNR2EikRNO39e.jpg",
+        "link": "/card/movies/800-294/Osobnyak-s-privideniyami.html",
+        "year": "2023",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Особняк с привидениями",
+        "image": "https://image.tmdb.org/t/p/w500//l5Z7r1VZfHBE0FlanKrC95EQDw5.jpg",
+        "link": "/card/movies/800-295/Osobnyak-s-privideniyami2003.html",
+        "year": "2003",
+        "rating": "5.7",
+        "type": "movie"
+    },
+    {
+        "name": "Гравитация",
+        "image": "https://image.tmdb.org/t/p/w500//u8cZd9KAS0LvLTf2Z4cPflAf0Wz.jpg",
+        "link": "/card/movies/800-296/Gravitaciya.html",
+        "year": "2013",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "12 лет рабства",
+        "image": "https://image.tmdb.org/t/p/w500//qBY5A6iX3BtTEBIYGUdKm373pxH.jpg",
+        "link": "/card/movies/800-297/12-let-rabstva.html",
+        "year": "2013",
+        "rating": "7.9",
+        "type": "movie"
+    },
+    {
+        "name": "Лило и Стич",
+        "image": "https://image.tmdb.org/t/p/w500//bRB9ApGPhY7NtUQ33yZG828rbus.jpg",
+        "link": "/card/movies/800-382/Lilo-i-Stich2025.html",
+        "year": "2025",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Каникулы",
+        "image": "https://image.tmdb.org/t/p/w500//7K4pewvTT1yc7cbFNS6GOZYlNtW.jpg",
+        "link": "/card/movies/800-298/Kanikuly.html",
+        "year": "2015",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Лунный свет",
+        "image": "https://image.tmdb.org/t/p/w500//8DD8b6jcAAWLFM55vM51UhYT42h.jpg",
+        "link": "/card/movies/800-299/Lunnyj-svet.html",
+        "year": "2016",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Первому игроку приготовиться",
+        "image": "https://image.tmdb.org/t/p/w500//eVvMjpcw2lkS1A7hTeOzZDk0Ocf.jpg",
+        "link": "/card/movies/800-300/Pervomu-igroku-prigotovitsya.html",
+        "year": "2018",
+        "rating": "7.6",
+        "type": "movie"
+    },
+    {
+        "name": "Балерина",
+        "image": "https://image.tmdb.org/t/p/w500//oKD6ggXEN1WGPPDiVAuOfdDLBNv.jpg",
+        "link": "/card/movies/800-381/Balerina.html",
+        "year": "2025",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Дракула",
+        "image": "https://image.tmdb.org/t/p/original/yw5K6HeWPE2zicm1PcewSkNdJ0v.jpg",
+        "link": "/card/movies/800-301/Drakula.html",
+        "year": "2014",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Пиксели",
+        "image": "https://image.tmdb.org/t/p/w500//hpZKgjYqY9Fy0glIvQrddvgz9Ov.jpg",
+        "link": "/card/movies/800-302/Pikseli.html",
+        "year": "2015",
+        "rating": "5.7",
+        "type": "movie"
+    },
+    {
+        "name": "Всё везде и сразу",
+        "image": "https://image.tmdb.org/t/p/w500//oFiudghfudYUtW3yHgvv82xgoXP.jpg",
+        "link": "/card/movies/800-303/Vsyo-vezde-i-srazu.html",
+        "year": "2022",
+        "rating": "7.8",
+        "type": "movie"
+    },
+    {
+        "name": "Миа и белый лев",
+        "image": "https://image.tmdb.org/t/p/w500//yaFw0YbkGuWeTiidqSNQo4jjxRc.jpg",
+        "link": "/card/movies/800-304/Mia-i-belyj-lev.html",
+        "year": "2018",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Я знаю, что вы сделали прошлым летом",
+        "image": "https://image.tmdb.org/t/p/w500//cpJBgkmsUVKsbkJYsJ1gkhqH4WV.jpg",
+        "link": "/card/movies/800-503/Ya-znayu-chto-vy-sdelali-proshlym-letom.html",
+        "year": "2025",
+        "rating": "5.8",
+        "type": "movie"
+    },
+    {
+        "name": "Король Ричард",
+        "image": "https://image.tmdb.org/t/p/w500//JHb7M3mwxWGLHHtfTu08Ys6aVz.jpg",
+        "link": "/card/movies/800-305/Korol-Richard.html",
+        "year": "2021",
+        "rating": "7.6",
+        "type": "movie"
+    },
+    {
+        "name": "Источник вечной молодости",
+        "image": "https://image.tmdb.org/t/p/w500//sxsoSQP16e0Jt8E9Hc8NvwByu8T.jpg",
+        "link": "/card/movies/800-306/Istochnik-vechnoj-molodosti.html",
+        "year": "2025",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Боги Египта",
+        "image": "https://image.tmdb.org/t/p/w500//aAMAc3eIQRkEXXwkreZwpJkNJdG.jpg",
+        "link": "/card/movies/800-307/Bogi-Egipta.html",
+        "year": "2016",
+        "rating": "5.7",
+        "type": "movie"
+    },
+    {
+        "name": "Никто 2",
+        "image": "https://image.tmdb.org/t/p/w500//744AMzuqzCxVWhjQEZVHxUIhzd.jpg",
+        "link": "/card/movies/800-504/Nikto-2.html",
+        "year": "2025",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Никто",
+        "image": "https://image.tmdb.org/t/p/w500//h3zs8tu6OG37xqo8QlcgwgjLE0y.jpg",
+        "link": "/card/movies/800-505/Nikto.html",
+        "year": "2021",
+        "rating": "7.9",
+        "type": "movie"
+    },
+    {
+        "name": "Отель «Гранд Будапешт»",
+        "image": "https://image.tmdb.org/t/p/w500//5qFxj03eBrkI0bUiGIonb4e0AI4.jpg",
+        "link": "/card/movies/800-308/Otel-Grand-Budapesht.html",
+        "year": "2014",
+        "rating": "8.0",
+        "type": "movie"
+    },
+    {
+        "name": "Космический Джем: Новое Поколение",
+        "image": "https://image.tmdb.org/t/p/w500//jp03RHaZqd264DZBqLfooPDnlBE.jpg",
+        "link": "/card/movies/800-633/Kosmicheskij-Dzhem-Novoe-Pokolenie.html",
+        "year": "2021",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Луни Тюнз: Снова в Деле",
+        "image": "https://image.tmdb.org/t/p/w500//8lW0PYX6XL4GMgLHNHvcBhsY1ga.jpg",
+        "link": "/card/movies/800-634/Luni-Tyunz-Snova-v-Dele.html",
+        "year": "2003",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Космический Джем",
+        "image": "https://image.tmdb.org/t/p/w500//u9m8iPeXPaGzpLBJU9rJh6uYkHz.jpg",
+        "link": "/card/movies/800-632/Kosmicheskij-Dzhem.html",
+        "year": "1996",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Шафер напрокат",
+        "image": "https://image.tmdb.org/t/p/w500//1rjskQMrE3QrKry64jLsz8GjEbr.jpg",
+        "link": "/card/movies/800-309/Shafer-naprokat.html",
+        "year": "2015",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Прогулка",
+        "image": "https://image.tmdb.org/t/p/w500//uosoDdJkXtLdXT9Vc9kGDpWaQFK.jpg",
+        "link": "/card/movies/800-310/Progulka.html",
+        "year": "2015",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Эверест",
+        "image": "https://image.tmdb.org/t/p/w500//zIuSZWPQ51PNXD1HnwjkJ3sm9w8.jpg",
+        "link": "/card/movies/800-311/Everest.html",
+        "year": "2015",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Исчезнувшая",
+        "image": "https://image.tmdb.org/t/p/w500//dBFu1XPsa8NptOJnGiKUJKMVe3C.jpg",
+        "link": "/card/movies/800-312/Ischeznuvshaya.html",
+        "year": "2014",
+        "rating": "7.9",
+        "type": "movie"
+    },
+    {
+        "name": "Дожить до Рассвета",
+        "image": "https://image.tmdb.org/t/p/w500//s00A7xz0CtnRO7jAXQxCKnVt3XB.jpg",
+        "link": "/card/movies/800-313/Dozhit-do-Rassveta.html",
+        "year": "2025",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Спасатели Малибу",
+        "image": "https://image.tmdb.org/t/p/w500//s4T3R588ESvNTEuIizFyftzz8Kt.jpg",
+        "link": "/card/movies/800-314/Spasateli-Malibu.html",
+        "year": "2017",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Призраки в Венеции",
+        "image": "https://image.tmdb.org/t/p/w500//jtKew4ZqdFi8l6lfmEPGnU87T2J.jpg",
+        "link": "/card/movies/800-315/Prizraki-v-Venecii.html",
+        "year": "2023",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Смерть на Ниле",
+        "image": "https://image.tmdb.org/t/p/w500//iFseuSAGkldPtMbvpap2VM0xqnc.jpg",
+        "link": "/card/movies/800-316/Smert-na-Nile.html",
+        "year": "2022",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Убийство в «Восточном экспрессе»",
+        "image": "https://image.tmdb.org/t/p/w500//c0EHJ8sOgghjgEXw2PCE3j3qV0A.jpg",
+        "link": "/card/movies/800-317/Ubijstvo-v-Vostochnom-ekspresse.html",
+        "year": "2017",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Философы: Урок выживания",
+        "image": "https://image.tmdb.org/t/p/w500//qB0xYHut6aMDnJamTlRk84tPHBp.jpg",
+        "link": "/card/movies/800-318/Filosofy-Urok-vyzhivaniya.html",
+        "year": "2013",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "История дельфина 2",
+        "image": "https://image.tmdb.org/t/p/w500//3r7rpXgCRSeHxjqX7XygIiNZSFy.jpg",
+        "link": "/card/movies/800-319/Istoriya-delfina-2.html",
+        "year": "2014",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "История дельфина",
+        "image": "https://image.tmdb.org/t/p/w500//9WWuPFkYOUHmi2lW4Fcc1G9pRUe.jpg",
+        "link": "/card/movies/800-320/Istoriya-delfina.html",
+        "year": "2011",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Комната",
+        "image": "https://image.tmdb.org/t/p/w500//t8ee0FShxIeijkg84wFZdc62ivX.jpg",
+        "link": "/card/movies/800-321/Komnata.html",
+        "year": "2015",
+        "rating": "8.0",
+        "type": "movie"
+    },
+    {
+        "name": "Как заработать на убийстве",
+        "image": "https://image.tmdb.org/t/p/w500//wRynb0YJqH8gw5TctwDQUIbpFaQ.jpg",
+        "link": "/card/movies/800-322/Kak-zarabotat-na-ubijstve.html",
+        "year": "2025",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Дюнкерк",
+        "image": "https://image.tmdb.org/t/p/w500//m3xR365ajZrTN5vm2xf91L1zplv.jpg",
+        "link": "/card/movies/800-323/Dyunkerk.html",
+        "year": "2017",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Меню",
+        "image": "https://image.tmdb.org/t/p/w500//84khkKvBldEp3h1PQUe6v8ItpR7.jpg",
+        "link": "/card/movies/800-324/Menyu.html",
+        "year": "2022",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Лекарство от здоровья",
+        "image": "https://image.tmdb.org/t/p/w500//qN67d5SCiilDe8caBHi4GH6Ih8o.jpg",
+        "link": "/card/movies/800-325/Lekarstvo-ot-zdorovya.html",
+        "year": "2017",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Не звезди!",
+        "image": "https://image.tmdb.org/t/p/w500//tAkZCkfPlb1R7ltLODoSZ3ybbXH.jpg",
+        "link": "/card/movies/800-326/Ne-zvezdi.html",
+        "year": "2022",
+        "rating": "5.0",
+        "type": "movie"
+    },
+    {
+        "name": "Плохие парни до Конца",
+        "image": "https://image.tmdb.org/t/p/w500//1d44Y7WsS6WTzVDmS0sJyzJNb2N.jpg",
+        "link": "/card/movies/800-614/Plohie-parni-do-Konca.html",
+        "year": "2024",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Плохие парни навсегда",
+        "image": "https://image.tmdb.org/t/p/w500//7vyOB2wWvyild4ETMrW7EZOaWZx.jpg",
+        "link": "/card/movies/800-613/Plohie-parni-navsegda.html",
+        "year": "2020",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Плохие парни 2",
+        "image": "https://image.tmdb.org/t/p/w500//ibecBkmYHk2ygVkSJjGPsTeBrak.jpg",
+        "link": "/card/movies/800-612/Plohie-parni-2.html",
+        "year": "2003",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Плохие парни",
+        "image": "https://image.tmdb.org/t/p/w500//5tQUDEku5vY1aB6jFaOsAwjkzUL.jpg",
+        "link": "/card/movies/800-611/Plohie-parni.html",
+        "year": "1995",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Диктатор",
+        "image": "https://image.tmdb.org/t/p/w500//zfBGrRcTIocjWXrwdUfWmfCAeez.jpg",
+        "link": "/card/movies/800-327/Diktator.html",
+        "year": "2012",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Милосердие",
+        "image": "https://image.tmdb.org/t/p/w500//kRnAyc7cGQQBnPrKlLvGefnv1yh.jpg",
+        "link": "/card/movies/800-917/Miloserdie.html",
+        "year": "2026",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Прочь",
+        "image": "https://image.tmdb.org/t/p/w500//hkchWNmGfcgow2Jivyxv83JqHCy.jpg",
+        "link": "/card/movies/800-328/Proch.html",
+        "year": "2017",
+        "rating": "7.6",
+        "type": "movie"
+    },
+    {
+        "name": "Аладдин",
+        "image": "https://image.tmdb.org/t/p/w500//t7D1Q4qQ4LjlaUXUqB7ny3xdIAy.jpg",
+        "link": "/card/movies/800-329/Aladdin2019.html",
+        "year": "2019",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Люси",
+        "image": "https://image.tmdb.org/t/p/w500//et3oLVuK8AfAikDot01X68PbMmK.jpg",
+        "link": "/card/movies/800-330/Lyusi.html",
+        "year": "2014",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Операция «Мёртвый снег» 2",
+        "image": "https://image.tmdb.org/t/p/w500//AujbcgNGMUqwuUHlrgtrYelIKd6.jpg",
+        "link": "/card/movies/800-675/Operaciya-Myortvyj-sneg-2.html",
+        "year": "2014",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Операция «Мёртвый снег»",
+        "image": "https://image.tmdb.org/t/p/w500//s5sT5NniUBZrA9tOFsuxBzIiEh3.jpg",
+        "link": "/card/movies/800-674/Operaciya-Myortvyj-sneg.html",
+        "year": "2009",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "Война токов",
+        "image": "https://image.tmdb.org/t/p/w500//oD5vaUElVgwwfF2k5aI7pSOVNdJ.jpg",
+        "link": "/card/movies/800-331/Vojna-tokov.html",
+        "year": "2018",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "007: Не время умирать",
+        "image": "https://image.tmdb.org/t/p/w500//9tVXdsT12YhwOPpmrIYzU9m1dQ6.jpg",
+        "link": "/card/movies/800-610/007-Ne-vremya-umirat.html",
+        "year": "2021",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "007: Спектр",
+        "image": "https://image.tmdb.org/t/p/w500//kNwjQ4slojsrgkA84PtlRnz6u9j.jpg",
+        "link": "/card/movies/800-609/007-Spektr.html",
+        "year": "2015",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "007: Координаты «Скайфолл»",
+        "image": "https://image.tmdb.org/t/p/w500//3okWlsWLJyftpaTEzPFO015aBl.jpg",
+        "link": "/card/movies/800-608/007-Koordinaty-Skajfoll.html",
+        "year": "2012",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "007: Квант милосердия",
+        "image": "https://image.tmdb.org/t/p/w500//noZH5UK5Kv884iGXRGpXlNXjxQh.jpg",
+        "link": "/card/movies/800-607/007-Kvant-miloserdiya.html",
+        "year": "2008",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "007: Казино Рояль",
+        "image": "https://image.tmdb.org/t/p/w500//kGLOLum7xU95spakBEfxCjEfNn0.jpg",
+        "link": "/card/movies/800-606/007-Kazino-Royal.html",
+        "year": "2006",
+        "rating": "7.6",
+        "type": "movie"
+    },
+    {
+        "name": "007: Умри, но не сейчас",
+        "image": "https://image.tmdb.org/t/p/w500//hG4ecMxOkM9UTx6GC9HjPvBlNF2.jpg",
+        "link": "/card/movies/800-605/007-Umri-no-ne-sejchas.html",
+        "year": "2002",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "007: И целого мира мало",
+        "image": "https://image.tmdb.org/t/p/w500//8jzAtsouYXTopHYl3MvOy6fKF8R.jpg",
+        "link": "/card/movies/800-604/007-I-celogo-mira-malo.html",
+        "year": "1999",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "007: Завтра не умрёт никогда",
+        "image": "https://image.tmdb.org/t/p/w500//rg3RCK6xWnBwYAjPS89PjWcMpQq.jpg",
+        "link": "/card/movies/800-603/007-Zavtra-ne-umryot-nikogda.html",
+        "year": "1997",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "007: Золотой Глаз",
+        "image": "https://image.tmdb.org/t/p/w500//h5FGvFKwr3Za2T5CkVgeUbiVejh.jpg",
+        "link": "/card/movies/800-602/007-Zolotoj-Glaz.html",
+        "year": "1995",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Отец-молодец",
+        "image": "https://image.tmdb.org/t/p/w500//rcXVtyWQNDSJaQY2LciQ2xVU7cs.jpg",
+        "link": "/card/movies/800-332/Otec-molodec.html",
+        "year": "2013",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Игра на понижение",
+        "image": "https://image.tmdb.org/t/p/w500//i46ouFO2WBqJ1xIoTQgrD8Criol.jpg",
+        "link": "/card/movies/800-333/Igra-na-ponizhenie.html",
+        "year": "2015",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Крепись!",
+        "image": "https://image.tmdb.org/t/p/w500//8v1u1kU50wvqtZhV6WQMD1lVFZY.jpg",
+        "link": "/card/movies/800-334/Krepis.html",
+        "year": "2015",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "Любовь и другие лекарства",
+        "image": "https://image.tmdb.org/t/p/w500//zys6uLVuwh2o7epNMYj45cylDxl.jpg",
+        "link": "/card/movies/800-335/Lyubov-i-drugie-lekarstva.html",
+        "year": "2010",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Метод исключения",
+        "image": "https://image.tmdb.org/t/p/w500//wJw2YFDNv4UcygxZevDz5snPvTw.jpg",
+        "link": "/card/movies/800-916/Metod-isklyucheniya.html",
+        "year": "2025",
+        "rating": "7.6",
+        "type": "movie"
+    },
+    {
+        "name": "Быть лучше: История Робби Уильямса",
+        "image": "https://image.tmdb.org/t/p/w500//4nUN5BtOyHKi0bWmin8ZEgdTzve.jpg",
+        "link": "/card/movies/800-336/Byt-luchshe-Istoriya-Robbi-Uilyamsa.html",
+        "year": "2024",
+        "rating": "7.8",
+        "type": "movie"
+    },
+    {
+        "name": "Хочу как ты",
+        "image": "https://image.tmdb.org/t/p/w500//b2OQYDWZJGUrfSP6dOSyXJ3xq2r.jpg",
+        "link": "/card/movies/800-337/Hochu-kak-ty.html",
+        "year": "2011",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Бабули",
+        "image": "https://image.tmdb.org/t/p/w500//7yGSVs3N0USyU2N2z1NC4H6AY03.jpg",
+        "link": "/card/movies/800-342/Babuli.html",
+        "year": "2025",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Я иду искать",
+        "image": "https://image.tmdb.org/t/p/w500//jPGy3buduikigoc7UJFPRbWhL1b.jpg",
+        "link": "/card/movies/800-338/Ya-idu-iskat.html",
+        "year": "2019",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Одарённая",
+        "image": "https://image.tmdb.org/t/p/w500//z6wow2HLj15W3xGJeToIm45647e.jpg",
+        "link": "/card/movies/800-339/Odaryonnaya.html",
+        "year": "2017",
+        "rating": "8.0",
+        "type": "movie"
+    },
+    {
+        "name": "Тетрадь смерти",
+        "image": "https://image.tmdb.org/t/p/w500//AkU1W85hrAYABv0oTDMrYaX8T8F.jpg",
+        "link": "/card/movies/800-340/Tetrad-smerti.html",
+        "year": "2017",
+        "rating": "4.3",
+        "type": "movie"
+    },
+    {
+        "name": "Прибытие",
+        "image": "https://image.tmdb.org/t/p/w500//3K1byNV0CfChvJFNbe2ZAkiro4U.jpg",
+        "link": "/card/movies/800-04/Pribytie.html",
+        "year": "2016",
+        "rating": "7.6",
+        "type": "movie"
+    },
+    {
+        "name": "Богемская рапсодия",
+        "image": "https://image.tmdb.org/t/p/w500//fXGXv5myFWcQjrVol546Fa9lmo6.jpg",
+        "link": "/card/movies/800-341/Bogemskaya-rapsodiya.html",
+        "year": "2018",
+        "rating": "8.0",
+        "type": "movie"
+    },
+    {
+        "name": "Мистер К.",
+        "image": "https://imagetmdb.com/t/p/w500/lRpGcAYC7cm1QnInz8P3xHvm7cV.jpg",
+        "link": "/card/movies/800-848/Mister-K.html",
+        "year": "2025",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "В первый раз",
+        "image": "https://image.tmdb.org/t/p/w500//cnbNuaNbwblc0K6OC0h2nrVdqbi.jpg",
+        "link": "/card/movies/800-05/V-pervyj-raz.html",
+        "year": "2012",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Большая гонка. Ауди против Лянчи",
+        "image": "https://image.tmdb.org/t/p/w500//l7HMoW8P8mMl7OsT0NtAltTD5ke.jpg",
+        "link": "/card/movies/800-390/Bolshaya-gonka-Audi-protiv-Lyanchi.html",
+        "year": "2024",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Девушка из каюты № 10",
+        "image": "https://image.tmdb.org/t/p/w500//xDTsg6Kbf5xDOglcOgxBeUs0lWU.jpg",
+        "link": "/card/movies/800-706/Devushka-iz-kayuty-N10.html",
+        "year": "2025",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Паразиты",
+        "image": "https://image.tmdb.org/t/p/w500//zg3lUyLTnpbS5N29G6B3a63O7uP.jpg",
+        "link": "/card/movies/800-06/Parazity.html",
+        "year": "2019",
+        "rating": "8.5",
+        "type": "movie"
+    },
+    {
+        "name": "Идеальные незнакомцы",
+        "image": "https://image.tmdb.org/t/p/w500//x6KjNrGkNUkhHcmml1vHR0989a9.jpg",
+        "link": "/card/movies/800-07/Idealnye-neznakomcy.html",
+        "year": "2016",
+        "rating": "7.9",
+        "type": "movie"
+    },
+    {
+        "name": "Долгая прогулка",
+        "image": "https://image.tmdb.org/t/p/original/7jCCkUFKwuLwfmHDba3oXsKQuMA.jpg",
+        "link": "/card/movies/800-705/Dolgaya-progulka.html",
+        "year": "2025",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Остров проклятых",
+        "image": "https://image.tmdb.org/t/p/w500//3UVMyefkUBiktshtKIEnNXvOFKH.jpg",
+        "link": "/card/movies/800-08/Ostrov-proklyatyh.html",
+        "year": "2010",
+        "rating": "8.2",
+        "type": "movie"
+    },
+    {
+        "name": "Логан",
+        "image": "https://image.tmdb.org/t/p/w500//6FSoZ8mtEwPAO3k670G3yRaBpTK.jpg",
+        "link": "/card/movies/800-09/Logan.html",
+        "year": "2017",
+        "rating": "7.8",
+        "type": "movie"
+    },
+    {
+        "name": "Кит",
+        "image": "https://image.tmdb.org/t/p/w500//bUA6X03vffX3qCy3diF91PFo428.jpg",
+        "link": "/card/movies/800-11/Kit.html",
+        "year": "2022",
+        "rating": "7.8",
+        "type": "movie"
+    },
+    {
+        "name": "Кто там?",
+        "image": "https://image.tmdb.org/t/p/original/awc6lTA5fYlkNsAAAZYZrGZ5yoq.jpg",
+        "link": "/card/movies/800-13/Kto-tam.html",
+        "year": "2015",
+        "rating": "5.4",
+        "type": "movie"
+    },
+    {
+        "name": "Круэлла",
+        "image": "https://image.tmdb.org/t/p/w500//hUfyYGP9Xf6cHF9y44JXJV3NxZM.jpg",
+        "link": "/card/movies/800-15/Kruella.html",
+        "year": "2021",
+        "rating": "8.0",
+        "type": "movie"
+    },
+    {
+        "name": "Зомби по имени Шон",
+        "image": "https://image.tmdb.org/t/p/w500//hACq0LdC5WNjPb1jzTZzuj1R4qx.jpg",
+        "link": "/card/movies/800-18/Zombi-po-imeni-Shon.html",
+        "year": "2004",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Выживший",
+        "image": "https://image.tmdb.org/t/p/w500//gvWniVnehAkIAfy40VlcFy3vOef.jpg",
+        "link": "/card/movies/800-19/Vyzhivshij.html",
+        "year": "2015",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Орудия",
+        "image": "https://image.tmdb.org/t/p/w500//iIUK6jA6ZmJ4mxZsolYFsWONd2A.jpg",
+        "link": "/card/movies/800-553/Orudiya.html",
+        "year": "2025",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Гнев человеческий",
+        "image": "https://image.tmdb.org/t/p/w500//nRE9zOfzdp4uQMeDOgCvMf6izNh.jpg",
+        "link": "/card/movies/800-21/Gnev-chelovecheskij.html",
+        "year": "2021",
+        "rating": "7.6",
+        "type": "movie"
+    },
+    {
+        "name": "Одержимость",
+        "image": "https://image.tmdb.org/t/p/w500//nq3mYsTXx6086nFXxzDReQI0J1S.jpg",
+        "link": "/card/movies/800-23/Oderzhimost.html",
+        "year": "2014",
+        "rating": "8.4",
+        "type": "movie"
+    },
+    {
+        "name": "Зелёная книга",
+        "image": "https://image.tmdb.org/t/p/w500//aEeTnDzcnGRD5IjSFwVXjusKpu0.jpg",
+        "link": "/card/movies/800-24/Zelyonaya-kniga.html",
+        "year": "2018",
+        "rating": "8.2",
+        "type": "movie"
+    },
+    {
+        "name": "Последний охотник на демонов",
+        "image": "https://image.tmdb.org/t/p/w500//t1U8Rvxb2uimjlH5J45kGg2AHYS.jpg",
+        "link": "/card/movies/800-243/Poslednij-ohotnik-na-demonov.html",
+        "year": "2025",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Ford против Ferrari",
+        "image": "https://image.tmdb.org/t/p/w500//579BjDiFrK9VK8EnKZzYwtGGXCg.jpg",
+        "link": "/card/movies/800-25/Ford-protiv-Ferrari.html",
+        "year": "2019",
+        "rating": "8.0",
+        "type": "movie"
+    },
+    {
+        "name": "Эмилия Перес",
+        "image": "https://image.tmdb.org/t/p/w500//6KvGEOCUBsgTUPkl1oWhH0Y3ePy.jpg",
+        "link": "/card/movies/800-03/Emilia-Perez.html",
+        "year": "2024",
+        "rating": "7.8",
+        "type": "movie"
+    },
+    {
+        "name": "Грешники",
+        "image": "https://image.tmdb.org/t/p/w500//atPV0sdDhFrs4irt1Hw5Fq4aO4V.jpg",
+        "link": "/card/movies/800-237/Greshniki.html",
+        "year": "2025",
+        "rating": "7.6",
+        "type": "movie"
+    },
+    {
+        "name": "Спуск в бездну",
+        "image": "https://image.tmdb.org/t/p/w500//bSb3ynYHWJbXSSMRhblzrsgt1lO.jpg",
+        "link": "/card/movies/800-57/Spusk-v-bezdnu.html",
+        "year": "2023",
+        "rating": "5.7",
+        "type": "movie"
+    },
+    {
+        "name": "Охота на воров 2: Пантера",
+        "image": "https://image.tmdb.org/t/p/w500//5AwHpKJ2tFyx3VglG1NFlEEmGFW.jpg",
+        "link": "/card/movies/800-830/Ohota-na-vorov-2-Pantera.html",
+        "year": "2025",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Город тайн: Исчезнувшая",
+        "image": "https://image.tmdb.org/t/p/w500//ez9LtVmvfbWjX9Spx4DrNEFVErx.jpg",
+        "link": "/card/movies/800-58/Gorod-tajn-Ischeznuvshaya.html",
+        "year": "2024",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Город тайн",
+        "image": "https://image.tmdb.org/t/p/w500//phG9MqZdBuzyB2G8wTgGKEQZgNH.jpg",
+        "link": "/card/movies/800-181/Gorod-tajn.html",
+        "year": "2021",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Хитмен. Последнее дело",
+        "image": "https://image.tmdb.org/t/p/w500//3TM9MzC1f6F3BwpPJhdv3hXWQRX.jpg",
+        "link": "/card/movies/800-59/Hitmen-Poslednee-delo.html",
+        "year": "2024",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Хитмэн: Агент 47",
+        "image": "https://image.tmdb.org/t/p/original/AsLFRe7eORaNBO5yEVjLGYt4nxj.jpg",
+        "link": "/card/movies/800-182/Hitmen-Agent-47.html",
+        "year": "2015",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "Хитмэн",
+        "image": "https://image.tmdb.org/t/p/original/iHSpeT9cXOFDzXCWtkxxo8ZzREE.jpg",
+        "link": "/card/movies/800-183/Hitmen.html",
+        "year": "2007",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Непробиваемые",
+        "image": "https://image.tmdb.org/t/p/w500//z497zVpHuGDQT4lBcHZcYdf6eDT.jpg",
+        "link": "/card/movies/800-60/Neprobivaemye.html",
+        "year": "2024",
+        "rating": "5.6",
+        "type": "movie"
+    },
+    {
+        "name": "Западня",
+        "image": "https://image.tmdb.org/t/p/w500//zHCLkP6xYYPFYlM9U6DA0FaZAvZ.jpg",
+        "link": "/card/movies/800-242/Zapadnya.html",
+        "year": "2025",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Однажды в Ла-Рое",
+        "image": "https://image.tmdb.org/t/p/w500//8VQr2REac6qlshcQGBsmq5s4SiU.jpg",
+        "link": "/card/movies/800-61/Odnazhdy-v-La-Roe.html",
+        "year": "2024",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Охотники за привидениями: Леденящий ужас",
+        "image": "https://image.tmdb.org/t/p/w500//ltG6ypHUyPv3y4e4ZOxRumYwikV.jpg",
+        "link": "/card/movies/800-62/Ohotniki-za-privideniyami-Ledenyashij-uzhas.html",
+        "year": "2024",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Охотники за привидениями: Наследники",
+        "image": "https://image.tmdb.org/t/p/w500//wqXTMwkoBVrQ94FSBDAIwhK2ONa.jpg",
+        "link": "/card/movies/800-184/Ohotniki-za-privideniyami-Nasledniki.html",
+        "year": "2021",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Охотники за привидениями",
+        "image": "https://image.tmdb.org/t/p/w500//xXcZFa1vXZ7JJAdFmmDL3IAURBS.jpg",
+        "link": "/card/movies/800-185/Ohotniki-za-privideniyami2016.html",
+        "year": "2016",
+        "rating": "5.3",
+        "type": "movie"
+    },
+    {
+        "name": "Охотники за привидениями 2",
+        "image": "https://image.tmdb.org/t/p/w500//sNVd1heRFJFlwgOZEvQpLOsNusG.jpg",
+        "link": "/card/movies/800-186/Ohotniki-za-privideniyami-2.html",
+        "year": "1989",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Охотники за привидениями",
+        "image": "https://image.tmdb.org/t/p/w500//4T0fzZK0hQkEkM0FIVTkgMRYzBn.jpg",
+        "link": "/card/movies/800-187/Ohotniki-za-privideniyami1984.html",
+        "year": "1984",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Дюна: Часть вторая",
+        "image": "https://image.tmdb.org/t/p/w500//3aLghRkuJc9cs770fxo4a6YWht3.jpg",
+        "link": "/card/movies/800-20/Dyuna-Chast-vtoraya.html",
+        "year": "2024",
+        "rating": "8.1",
+        "type": "movie"
+    },
+    {
+        "name": "Дюна",
+        "image": "https://image.tmdb.org/t/p/w500//3hbXNclcHaj5KiF6kK41GBMjyFr.jpg",
+        "link": "/card/movies/800-63/Dyuna.html",
+        "year": "2021",
+        "rating": "7.8",
+        "type": "movie"
+    },
+    {
+        "name": "Громовержцы*",
+        "image": "https://image.tmdb.org/t/p/w500//l4UtldCA7OgORWY9UcyWBqaHWHF.jpg",
+        "link": "/card/movies/800-241/Gromoverzhcy.html",
+        "year": "2025",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Крэйвен-охотник",
+        "image": "https://image.tmdb.org/t/p/w500//Z5PxAP12g2X14YpZA9TlvggF2R.jpg",
+        "link": "/card/movies/800-601/Krejven-ohotnik.html",
+        "year": "2024",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Мадам Паутина",
+        "image": "https://image.tmdb.org/t/p/w500//8eyCtvA0hqoagcfjsieTrBecQbq.jpg",
+        "link": "/card/movies/800-600/Madam-Pautina.html",
+        "year": "2024",
+        "rating": "5.3",
+        "type": "movie"
+    },
+    {
+        "name": "Морбиус",
+        "image": "https://image.tmdb.org/t/p/w500//887tIQVg619TdJVnlQfqPmk8Na6.jpg",
+        "link": "/card/movies/800-599/Morbius.html",
+        "year": "2022",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "Шан-Чи и Легенда Десяти Колец",
+        "image": "https://image.tmdb.org/t/p/w500//rXvU6SZOGyUzy9ZHJNlVMw0OeUR.jpg",
+        "link": "/card/movies/800-598/Shan-Chi-i-Legenda-Desyati-Kolec.html",
+        "year": "2021",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Чёрная вдова",
+        "image": "https://image.tmdb.org/t/p/w500//mbtN6V6y5kdawvAkzqN4ohi576a.jpg",
+        "link": "/card/movies/800-597/Chyornaya-vdova.html",
+        "year": "2021",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Вечные",
+        "image": "https://image.tmdb.org/t/p/w500//r174t1SLtGamhPx3Wwj6f6YSyAi.jpg",
+        "link": "/card/movies/800-596/Vechnye.html",
+        "year": "2021",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Веном: Последний танец",
+        "image": "https://image.tmdb.org/t/p/w500//YFcQ65dRrLpUpMiMFrrRV6rkEs.jpg",
+        "link": "/card/movies/800-595/Venom-Poslednij-tanec.html",
+        "year": "2024",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Веном 2",
+        "image": "https://image.tmdb.org/t/p/w500//pZe4xYwDkmxhf3oA8DNEihOW4pW.jpg",
+        "link": "/card/movies/800-594/Venom-2.html",
+        "year": "2021",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Веном",
+        "image": "https://image.tmdb.org/t/p/w500//8Gyl0fknqiZeCLm9XitxCXQmEL9.jpg",
+        "link": "/card/movies/800-593/Venom.html",
+        "year": "2018",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Капитан Марвел 2",
+        "image": "https://image.tmdb.org/t/p/w500//kcLRcsEX3GEDZb8kelhwdSYB3Yj.jpg",
+        "link": "/card/movies/800-592/Kapitan-Marvel-2.html",
+        "year": "2023",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "Капитан Марвел",
+        "image": "https://image.tmdb.org/t/p/w500//khIspz4hW7RyEJag16UKYxI9fuP.jpg",
+        "link": "/card/movies/800-591/Kapitan-Marvel.html",
+        "year": "2019",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Черная пантера: Ваканда навеки",
+        "image": "https://image.tmdb.org/t/p/w500//i27h6Xru52Piif1V5ZZA0ZXlck1.jpg",
+        "link": "/card/movies/800-590/Chernaya-pantera-Vakanda-naveki.html",
+        "year": "2022",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Чёрная Пантера",
+        "image": "https://image.tmdb.org/t/p/w500//ndpwgAANbZSMwgTcxmQ7o4SKDsd.jpg",
+        "link": "/card/movies/800-589/Chyornaya-Pantera.html",
+        "year": "2018",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Доктор Стрэндж: В мультивселенной безумия",
+        "image": "https://image.tmdb.org/t/p/w500//sfeDNbQgEgzgM81cbPnRss6Acs4.jpg",
+        "link": "/card/movies/800-588/Doktor-Strendzh-V-multivselennoj-bezumiya.html",
+        "year": "2022",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Доктор Стрэндж",
+        "image": "https://image.tmdb.org/t/p/w500//fR4oifDjoGFAyhWyPUl3h9H1xpQ.jpg",
+        "link": "/card/movies/800-587/Doktor-Strendzh.html",
+        "year": "2016",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Человек-муравей и Оса: Квантомания",
+        "image": "https://image.tmdb.org/t/p/w500//8BoKsen8orEAiFWCmQkwmONjuTX.jpg",
+        "link": "/card/movies/800-586/Chelovek-muravej-i-Osa-Kvantomaniya.html",
+        "year": "2023",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Человек-муравей и Оса",
+        "image": "https://image.tmdb.org/t/p/w500//5r85N1iOnHFoWkyC0EeOw9aEqOW.jpg",
+        "link": "/card/movies/800-585/Chelovek-muravej-i-Osa.html",
+        "year": "2018",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Человек-муравей ",
+        "image": "https://image.tmdb.org/t/p/w500//9cMJSp2LVSzmPzMWPHIHpeBfECr.jpg",
+        "link": "/card/movies/800-584/Chelovek-muravej.html",
+        "year": "2015",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Стражи Галактики. Часть 3",
+        "image": "https://image.tmdb.org/t/p/w500//5rHLzqZvw85tnhy8qpnAsN8Q7xO.jpg",
+        "link": "/card/movies/800-153/Strazhi-Galaktiki-Chast-3.html",
+        "year": "2023",
+        "rating": "7.9",
+        "type": "movie"
+    },
+    {
+        "name": "Стражи Галактики. Часть 2",
+        "image": "https://image.tmdb.org/t/p/w500//miAFwzWPkv7l8VPwgH2sV5oQQKx.jpg",
+        "link": "/card/movies/800-154/Strazhi-Galaktiki-Chast-2.html",
+        "year": "2017",
+        "rating": "7.6",
+        "type": "movie"
+    },
+    {
+        "name": "Стражи Галактики",
+        "image": "https://image.tmdb.org/t/p/w500//s8jpilArz8J5X07O4IB7ahMwgQP.jpg",
+        "link": "/card/movies/800-14/Strazhi-Galaktiki.html",
+        "year": "2014",
+        "rating": "7.9",
+        "type": "movie"
+    },
+    {
+        "name": "Мстители: Финал",
+        "image": "https://image.tmdb.org/t/p/w500//dzAtuccZlvtcussbdZxpF4dkrB5.jpg",
+        "link": "/card/movies/800-583/Mstiteli-Final.html",
+        "year": "2019",
+        "rating": "8.2",
+        "type": "movie"
+    },
+    {
+        "name": "Мстители: Война бесконечности",
+        "image": "https://image.tmdb.org/t/p/w500//c6RSGB6O0RaaHG3JGLq8lnUJSBC.jpg",
+        "link": "/card/movies/800-582/Mstiteli-Vojna-beskonechnosti.html",
+        "year": "2018",
+        "rating": "8.2",
+        "type": "movie"
+    },
+    {
+        "name": "Мстители: Эра Альтрона",
+        "image": "https://image.tmdb.org/t/p/w500//6rANrpZe3g2PPeF1m3lQUK1ovpW.jpg",
+        "link": "/card/movies/800-581/Mstiteli-Era-Altrona.html",
+        "year": "2015",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Мстители",
+        "image": "https://image.tmdb.org/t/p/w500//7SCa2Uw4sdTkn7mGMAhq0AkSC6Y.jpg",
+        "link": "/card/movies/800-580/Mstiteli.html",
+        "year": "2012",
+        "rating": "7.8",
+        "type": "movie"
+    },
+    {
+        "name": "Тор: Любовь и гром",
+        "image": "https://image.tmdb.org/t/p/w500//xWA0Av3mO7uH2bqGU7QMfckY9si.jpg",
+        "link": "/card/movies/800-579/Tor-Lyubov-i-grom.html",
+        "year": "2022",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Тор: Рагнарёк",
+        "image": "https://image.tmdb.org/t/p/w500//7pzUsnFD4T8Syeqaojcb9zheR3H.jpg",
+        "link": "/card/movies/800-578/Tor-Ragnaryok.html",
+        "year": "2017",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Тор 2: Царство тьмы",
+        "image": "https://image.tmdb.org/t/p/w500//rmII9fsUpfRmuNBhzHtarBOtHnQ.jpg",
+        "link": "/card/movies/800-577/Tor-2-Carstvo-tmy.html",
+        "year": "2013",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Тор",
+        "image": "https://image.tmdb.org/t/p/w500//i27DaxmuTzKZ8jgs7eoKQ8E03ny.jpg",
+        "link": "/card/movies/800-576/Tor.html",
+        "year": "2011",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Капитан Америка: Новый Мир",
+        "image": "https://image.tmdb.org/t/p/w500//bljRQO5fTGen0qRV7KuPRXIdRGx.jpg",
+        "link": "/card/movies/800-250/Kapitan-Amerika-Novyj-Mir.html",
+        "year": "2025",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Первый мститель: Противостояние",
+        "image": "https://image.tmdb.org/t/p/w500//7TWq9G7zU0lLG7WpMK6f5EQwwf2.jpg",
+        "link": "/card/movies/800-575/Pervyj-mstitel-Protivostoyanie.html",
+        "year": "2016",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Первый мститель: Другая война",
+        "image": "https://image.tmdb.org/t/p/w500//oOmp3YMBnJMa0yDHCbhTcWG4iTm.jpg",
+        "link": "/card/movies/800-574/Pervyj-mstitel-Drugaya-vojna.html",
+        "year": "2014",
+        "rating": "7.7",
+        "type": "movie"
+    },
+    {
+        "name": "Первый мститель",
+        "image": "https://image.tmdb.org/t/p/w500//slr5pTsDIJS9oCfBEBTCYNiq6xs.jpg",
+        "link": "/card/movies/800-573/Pervyj-mstitel.html",
+        "year": "2011",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Железный человек 3",
+        "image": "https://image.tmdb.org/t/p/w500//4AZco6uSdog5NbvJ6ILqnCveV8I.jpg",
+        "link": "/card/movies/800-561/Zheleznyj-chelovek-3.html",
+        "year": "2013",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Железный человек 2",
+        "image": "https://image.tmdb.org/t/p/w500//rT3JszXFT2C3iYJtXSSL4R0DkU7.jpg",
+        "link": "/card/movies/800-560/Zheleznyj-chelovek-2.html",
+        "year": "2010",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Железный человек",
+        "image": "https://image.tmdb.org/t/p/w500//wAKZudQn0HEXqLvaGN6BEripHbv.jpg",
+        "link": "/card/movies/800-559/Zheleznyj-chelovek.html",
+        "year": "2008",
+        "rating": "7.7",
+        "type": "movie"
+    },
+    {
+        "name": "Электра",
+        "image": "https://image.tmdb.org/t/p/w500//2eMjxHp3Hl0bGUqAiCX5SuuV0Ku.jpg",
+        "link": "/card/movies/800-545/Elektra.html",
+        "year": "2005",
+        "rating": "5.0",
+        "type": "movie"
+    },
+    {
+        "name": "Каратель: Территория Войны",
+        "image": "https://image.tmdb.org/t/p/w500//xjRvgKzjPQ5dGqQkDVT3qUsNElt.jpg",
+        "link": "/card/movies/800-544/Karatel-Territoriya-Vojny.html",
+        "year": "2008",
+        "rating": "5.8",
+        "type": "movie"
+    },
+    {
+        "name": "Каратель",
+        "image": "https://image.tmdb.org/t/p/w500//17mIwqY9CPLxJsDZEgrw6v19cJ.jpg",
+        "link": "/card/movies/800-543/Karatel.html",
+        "year": "2004",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Человек-паук: Нет пути домой",
+        "image": "https://image.tmdb.org/t/p/w500//3hLU5V1XDF0oHT9YUHvYC4j0Ix5.jpg",
+        "link": "/card/movies/800-569/Chelovek-pauk-Net-puti-domoj.html",
+        "year": "2021",
+        "rating": "7.9",
+        "type": "movie"
+    },
+    {
+        "name": "Человек-паук: Вдали от дома",
+        "image": "https://image.tmdb.org/t/p/w500//wL1S9750WaxxvbbuUBfkbAskDd8.jpg",
+        "link": "/card/movies/800-568/Chelovek-pauk-Vdali-ot-doma.html",
+        "year": "2019",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Человек-паук: Возвращение домой",
+        "image": "https://image.tmdb.org/t/p/w500//nfJ28YpTXuerXToj52d3maPOMnM.jpg",
+        "link": "/card/movies/800-567/Chelovek-pauk-Vozvrashenie-domoj.html",
+        "year": "2017",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Новый Человек-паук: Высокое напряжение",
+        "image": "https://image.tmdb.org/t/p/original/ga2TLjl45vSSBr3Sky0HANmbHkJ.jpg",
+        "link": "/card/movies/800-566/Novyj-Chelovek-pauk-Vysokoe-napryazhenie.html",
+        "year": "2014",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Новый Человек-паук",
+        "image": "https://image.tmdb.org/t/p/w500//kby3x8wic9Lx4qEfstLu2vFHTVj.jpg",
+        "link": "/card/movies/800-565/Novyj-Chelovek-pauk.html",
+        "year": "2012",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Человек-паук 3: Враг в отражении",
+        "image": "https://image.tmdb.org/t/p/w500//ngNCHBZgNdbGisLbi1hImGh2SHl.jpg",
+        "link": "/card/movies/800-564/Chelovek-pauk-3.html",
+        "year": "2007",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Человек-паук 2",
+        "image": "https://image.tmdb.org/t/p/w500//u5Bubt34sFD67YZPlD593yGvqmp.jpg",
+        "link": "/card/movies/800-563/Chelovek-pauk-2.html",
+        "year": "2004",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Человек-паук",
+        "image": "https://image.tmdb.org/t/p/w500//tCZrHq6CMgtiMbelgnroyVWF5uV.jpg",
+        "link": "/card/movies/800-562/Chelovek-pauk.html",
+        "year": "2002",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Невероятный Халк",
+        "image": "https://image.tmdb.org/t/p/w500//gSpDY5e5VCohH0PaSEWEI0FdEzC.jpg",
+        "link": "/card/movies/800-542/Neveroyatnyj-Halk.html",
+        "year": "2008",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Халк",
+        "image": "https://image.tmdb.org/t/p/w500//vezFYjkl6PdKSZKkurCfN33ycbU.jpg",
+        "link": "/card/movies/800-541/Halk.html",
+        "year": "2003",
+        "rating": "5.6",
+        "type": "movie"
+    },
+    {
+        "name": "Сорвиголова",
+        "image": "https://image.tmdb.org/t/p/original/1K8nGZ70ppyQLRSeOQZ2XOsycrG.jpg",
+        "link": "/card/movies/800-540/Sorvigolova.html",
+        "year": "2003",
+        "rating": "5.3",
+        "type": "movie"
+    },
+    {
+        "name": "Блэйд: Троица",
+        "image": "https://image.tmdb.org/t/p/w500//wyKM5XyxHpYp3yFXSyINpIRqqTf.jpg",
+        "link": "/card/movies/800-530/Blejd-Troica.html",
+        "year": "2004",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "Блэйд 2",
+        "image": "https://image.tmdb.org/t/p/w500//ufC7xPjnyvkFpRxKzWjkcgqnR5A.jpg",
+        "link": "/card/movies/800-529/Blejd-2.html",
+        "year": "2002",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Блэйд",
+        "image": "https://image.tmdb.org/t/p/w500//sSIeD1KmkgBTPMGdLkMwWuuTaBG.jpg",
+        "link": "/card/movies/800-528/Blejd.html",
+        "year": "1998",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Говард-утка",
+        "image": "https://image.tmdb.org/t/p/w500//eU0dWo8PJgsSAZFbcyHiUpuLSyW.jpg",
+        "link": "/card/movies/800-521/Govard-utka.html",
+        "year": "1986",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Золото джунглей",
+        "image": "https://image.tmdb.org/t/p/w500//1HuoF1IYoixGXhYznep4kBtijLZ.jpg",
+        "link": "/card/movies/800-236/Zoloto-dzhunglej.html",
+        "year": "2017",
+        "rating": "5.7",
+        "type": "movie"
+    },
+    {
+        "name": "Сезон охоты",
+        "image": "https://image.tmdb.org/t/p/w500//wCH7syT6cUU8qkEGFTuDY7b2NZh.jpg",
+        "link": "/card/movies/800-796/Sezon-ohoty.html",
+        "year": "2026",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Гонка",
+        "image": "https://image.tmdb.org/t/p/w500//gcpESEfY64N2BJkLBtTCz8qtila.jpg",
+        "link": "/card/movies/800-391/Gonka.html",
+        "year": "2013",
+        "rating": "7.7",
+        "type": "movie"
+    },
+    {
+        "name": "Вуди Вудпекер в летнем лагере",
+        "image": "https://image.tmdb.org/t/p/w500//oAF42DFZA430eEzRmEcrpB0D3rp.jpg",
+        "link": "/card/movies/800-65/Vudi-Vudpeker-otpravlyaetsya-v-lager.html",
+        "year": "2024",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Вуди Вудпекер",
+        "image": "https://image.tmdb.org/t/p/w500//9F4ccwQlDToaG83IMlxb4w6ftN0.jpg",
+        "link": "/card/movies/800-188/Vudi-Vudpeker.html",
+        "year": "2017",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Minecraft в Кино",
+        "image": "https://image.tmdb.org/t/p/w500//3txl2FUNZCQUnHQPzkuNc17yLIs.jpg",
+        "link": "/card/movies/800-240/Minecraft-v-Kino.html",
+        "year": "2025",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Возвращение грозной семейки",
+        "image": "https://image.tmdb.org/t/p/w500//o1SGF0txwzZxBJbOsvIgbBtRk3A.jpg",
+        "link": "/card/movies/800-66/Vozvrashenie-grozno-semejki.html",
+        "year": "2024",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Тролль 2",
+        "image": "https://image.tmdb.org/t/p/w500//4HvHMNA9piiRDaWVViPNRvrMoEU.jpg",
+        "link": "/card/movies/800-797/Troll-2.html",
+        "year": "2025",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Тролль",
+        "image": "https://image.tmdb.org/t/p/w500//3uwGdyJyOvM520tjH8pMrhX7YxK.jpg",
+        "link": "/card/movies/800-798/Troll.html",
+        "year": "2022",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "След киллера",
+        "image": "https://image.tmdb.org/t/p/original/uGTulIuR0NlI2CQzTRHHEuJJejp.jpg",
+        "link": "/card/movies/800-67/Sled-killera.html",
+        "year": "2024",
+        "rating": "5.7",
+        "type": "movie"
+    },
+    {
+        "name": "Боб Марли: Одна любовь",
+        "image": "https://image.tmdb.org/t/p/w500//79G6T8JSmUrIsypQVzsa5VjfOXU.jpg",
+        "link": "/card/movies/800-68/Bob-Marli-Odna-lyubov.html",
+        "year": "2024",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Джокер: Безумие на двоих",
+        "image": "https://image.tmdb.org/t/p/w500//sqHQhhjsfZ0UAu67RiIaUkabZZD.jpg",
+        "link": "/card/movies/800-69/Dzhoker-Bezumie-na-dvoih.html",
+        "year": "2024",
+        "rating": "5.5",
+        "type": "movie"
+    },
+    {
+        "name": "Джокер",
+        "image": "https://image.tmdb.org/t/p/w500//5itx9nz3gXWgoD2I1UdaqOrphYm.jpg",
+        "link": "/card/movies/800-189/Dzhoker.html",
+        "year": "2019",
+        "rating": "8.1",
+        "type": "movie"
+    },
+    {
+        "name": "Очи",
+        "image": "https://image.tmdb.org/t/p/w500//tKIRObB9Gwq0fnCDjapdz9zAmJz.jpg",
+        "link": "/card/movies/800-238/Ochi.html",
+        "year": "2025",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "Дыши!",
+        "image": "https://image.tmdb.org/t/p/w500//4pRonl4LTHFw567HyX0iYolyaWS.jpg",
+        "link": "/card/movies/800-70/Dyshi!.html",
+        "year": "2024",
+        "rating": "5.4",
+        "type": "movie"
+    },
+    {
+        "name": "Жуть",
+        "image": "https://image.tmdb.org/t/p/w500//krCt93RSbZMmiPIw2k1r9zzfzTb.jpg",
+        "link": "/card/movies/800-71/Zhut.html",
+        "year": "2024",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Чёрный чай",
+        "image": "https://image.tmdb.org/t/p/w500//v6HmHzoOJVwFmdKDKpdfnnsRk39.jpg",
+        "link": "/card/movies/800-72/Chyornyj-chaj.html",
+        "year": "2024",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "Ученик. Восхождение Трампа",
+        "image": "https://image.tmdb.org/t/p/w500//1rXbP2AdiJzbqL6CKxdZMeFuE4O.jpg",
+        "link": "/card/movies/800-73/Uchenik-Voshozhdenie-Trampa.html",
+        "year": "2024",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Профессионал",
+        "image": "https://image.tmdb.org/t/p/w500//uBAgrWuglga1Vo7oUlFL0KFORcN.jpg",
+        "link": "/card/movies/800-74/Professional.html",
+        "year": "2024",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "Кошмарные каникулы",
+        "image": "https://image.tmdb.org/t/p/w500//ud6dvc0s6YapooFkUNQPuZ4eg5u.jpg",
+        "link": "/card/movies/800-75/Koshmarnye-kanikuly.html",
+        "year": "2024",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Дракула",
+        "image": "https://image.tmdb.org/t/p/w500//fsntw7K5mRVHWf90SjGvFAxICbB.jpg",
+        "link": "/card/movies/800-556/Drakula-2025.html",
+        "year": "2025",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Подземелья и драконы: Честь среди воров",
+        "image": "https://image.tmdb.org/t/p/w500//nAbRIxxRJfCP2U9tpVJU1zWb6Ni.jpg",
+        "link": "/card/movies/800-76/Podzemelya-i-drakony-Chest-sredi-vorov.html",
+        "year": "2023",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Мегалополис",
+        "image": "https://image.tmdb.org/t/p/w500//epglGr4yDHGaZVf8faMm7ilcHDu.jpg",
+        "link": "/card/movies/800-77/Megalopolis.html",
+        "year": "2024",
+        "rating": "5.3",
+        "type": "movie"
+    },
+    {
+        "name": "Выгон",
+        "image": "https://image.tmdb.org/t/p/w500//z9GAjN21PQPDp0eRB4Ct6vIZaPF.jpg",
+        "link": "/card/movies/800-78/Vygon.html",
+        "year": "2024",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Гризли",
+        "image": "https://image.tmdb.org/t/p/w500//g79mFGdIsLX7WaPiKnBE87U5a6m.jpg",
+        "link": "/card/movies/800-555/Grizli.html",
+        "year": "2025",
+        "rating": "4.5",
+        "type": "movie"
+    },
+    {
+        "name": "Элиас",
+        "image": "https://image.tmdb.org/t/p/w500//saPG6ZSORtOdCbl7S4dinNkpmA6.jpg",
+        "link": "/card/movies/800-79/Elias.html",
+        "year": "2024",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Граф Монте-Кристо",
+        "image": "https://image.tmdb.org/t/p/w500//bv7XaMz155UTyQSOy2CHllMrAf9.jpg",
+        "link": "/card/movies/800-80/Graf-Monte-Kristo.html",
+        "year": "2024",
+        "rating": "7.7",
+        "type": "movie"
+    },
+    {
+        "name": "Граф Монте-Кристо",
+        "image": "https://image.tmdb.org/t/p/original/7O2N253Np012Fm8NGQTe5alTiwy.jpg",
+        "link": "/card/movies/800-190/Graf-Monte-Kristo2002.html",
+        "year": "2002",
+        "rating": "7.7",
+        "type": "movie"
+    },
+    {
+        "name": "Мастер",
+        "image": "https://image.tmdb.org/t/p/w500//zmcXyVExW9vVIKOgzeDpPTWJySF.jpg",
+        "link": "/card/movies/800-249/Master.html",
+        "year": "2025",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Уровни",
+        "image": "https://image.tmdb.org/t/p/w500//yq39ChrCDlqrurYuaC8WM0vC1cx.jpg",
+        "link": "/card/movies/800-81/Urovni.html",
+        "year": "2024",
+        "rating": "5.7",
+        "type": "movie"
+    },
+    {
+        "name": "Второй акт",
+        "image": "https://image.tmdb.org/t/p/w500//8pAaShqpLUYTeik67jjN2IPaz3O.jpg",
+        "link": "/card/movies/800-82/Vtoroj-akt.html",
+        "year": "2024",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "В потерянных землях",
+        "image": "https://image.tmdb.org/t/p/w500//hoMFjgg9uwhkOjXsw1tmyNM9vsV.jpg",
+        "link": "/card/movies/800-248/V-poteryannyh-zemlyah.html",
+        "year": "2025",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Оппенгеймер",
+        "image": "https://image.tmdb.org/t/p/w500//8OQzw8keE6sDNH25sOqPRTxhFTO.jpg",
+        "link": "/card/movies/800-83/Oppengejmer.html",
+        "year": "2023",
+        "rating": "8.1",
+        "type": "movie"
+    },
+    {
+        "name": "Ковбои против пришельцев",
+        "image": "https://image.tmdb.org/t/p/w500//iRzfV0jFnUqOjJNIvRu9M3G8Rxv.jpg",
+        "link": "/card/movies/800-84/Kovboi-protiv-prishelcev.html",
+        "year": "2011",
+        "rating": "5.6",
+        "type": "movie"
+    },
+    {
+        "name": "Стрим",
+        "image": "https://image.tmdb.org/t/p/w500//7GVqDiiTUBzyJ2wYpPIO2tWpsYx.jpg",
+        "link": "/card/movies/800-85/Strim.html",
+        "year": "2024",
+        "rating": "5.5",
+        "type": "movie"
+    },
+    {
+        "name": "Дурное влияние",
+        "image": "https://image.tmdb.org/t/p/w500//oogmlZekRCHP0JDhHKDZIyDIfpP.jpg",
+        "link": "/card/movies/800-253/Durnoe-vliyanie.html",
+        "year": "2025",
+        "rating": "5.7",
+        "type": "movie"
+    },
+    {
+        "name": "Меган: К вашим услугам ",
+        "image": "https://image.tmdb.org/t/p/w200//oGoQ5W5Zxo55hbqCu1PsqEmQJIX.jpg",
+        "link": "/card/movies/800-86/Megan-K-vashim-uslugam.html",
+        "year": "2024",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Особо опасный пассажир ",
+        "image": "https://image.tmdb.org/t/p/w500//oifl3tfR9c4GhWwhJ8m0d6ummZH.jpg",
+        "link": "/card/movies/800-260/Osobo-opasnyj-passazhir.html",
+        "year": "2025",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Псы войны",
+        "image": "https://image.tmdb.org/t/p/w500//yhGps0BKzV9AiD2u03Iwc52BW4p.jpg",
+        "link": "/card/movies/800-87/Psy-vojny.html",
+        "year": "2024",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Багровая отмель",
+        "image": "https://image.tmdb.org/t/p/original/v2sF5vnXSo6R6YWrkzTGKzROkGI.jpg",
+        "link": "/card/movies/800-259/Bagrovaya-otmel.html",
+        "year": "2025",
+        "rating": "5.5",
+        "type": "movie"
+    },
+    {
+        "name": "Призрачный гонщик 2",
+        "image": "https://image.tmdb.org/t/p/w500//pmjeSQ4NocblwnqFDxk7zXggSQ7.jpg",
+        "link": "/card/movies/800-88/Prizrachnyj-gonshik-2.html",
+        "year": "2012",
+        "rating": "5.0",
+        "type": "movie"
+    },
+    {
+        "name": "Призрачный гонщик",
+        "image": "https://image.tmdb.org/t/p/w500//4ULbCH7RO1bkCCsBEI9gAOm9cWp.jpg",
+        "link": "/card/movies/800-191/Prizrachnyj-gonshik.html",
+        "year": "2007",
+        "rating": "5.6",
+        "type": "movie"
+    },
+    {
+        "name": "Мудрые парни",
+        "image": "https://image.tmdb.org/t/p/w500//dOFv3tCliqlTgeBOFRdQFcuhgGK.jpg",
+        "link": "/card/movies/800-258/Mudrye-parni.html",
+        "year": "2025",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Время",
+        "image": "https://image.tmdb.org/t/p/w500//m0rqyzs7IbNaXuJvLTubCG40F92.jpg",
+        "link": "/card/movies/800-90/Vremya.html",
+        "year": "2021",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Электрический штат",
+        "image": "https://image.tmdb.org/t/p/w500//yoxaghGvZ0L0zJi2UdgJfb8zqTr.jpg",
+        "link": "/card/movies/800-257/Elektricheskij-shtat.html",
+        "year": "2025",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Стекло",
+        "image": "https://image.tmdb.org/t/p/w500//vICN2wjUMQrrpChnPCzJ1W2LPa1.jpg",
+        "link": "/card/movies/800-192/Steklo.html",
+        "year": "2019",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Сплит",
+        "image": "https://image.tmdb.org/t/p/w500//xrVZF8DJNTPiILFygj8sg4tmauV.jpg",
+        "link": "/card/movies/800-91/Split.html",
+        "year": "2017",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Неуязвимый",
+        "image": "https://image.tmdb.org/t/p/w500//jz968bMurZtNJr1kGNdnqVgqmrJ.jpg",
+        "link": "/card/movies/800-193/Neuyazvimyj.html",
+        "year": "2000",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Время жить",
+        "image": "https://image.tmdb.org/t/p/w500//3PeStsMSHG3sNPpJ9NT1ZGMsi3P.jpg",
+        "link": "/card/movies/800-93/Vremya-zhit.html",
+        "year": "2024",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Дыхание шторма",
+        "image": "https://image.tmdb.org/t/p/w500//k6QMEYGNjszAupPJRPa3c3F7KXy.jpg",
+        "link": "/card/movies/800-256/Dyhanie-shtorma.html",
+        "year": "2025",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Оно 2",
+        "image": "https://image.tmdb.org/t/p/w500//rjM13nwgzt80xAUKXVp9mzRYyHp.jpg",
+        "link": "/card/movies/800-194/Ono-2.html",
+        "year": "2019",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Оно",
+        "image": "https://image.tmdb.org/t/p/w500//wEHpeWhH3zGYJbqz3OtUJ4tMMM6.jpg",
+        "link": "/card/movies/800-94/Ono.html",
+        "year": "2017",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Новокаин",
+        "image": "https://image.tmdb.org/t/p/w500//sPHcPY7eKqw2FHTMkpwMr1CRQB1.jpg",
+        "link": "/card/movies/800-255/Novokain.html",
+        "year": "2025",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Образцовый самец 2",
+        "image": "https://image.tmdb.org/t/p/w500//hSAbrO3FYcvzyBiUHXLflIbSIGZ.jpg",
+        "link": "/card/movies/800-95/Obrazcovyj-samec-2.html",
+        "year": "2016",
+        "rating": "4.9",
+        "type": "movie"
+    },
+    {
+        "name": "Образцовый самец",
+        "image": "https://image.tmdb.org/t/p/w500//7PPWHLcJF7pjuYjorUX8HzmsESu.jpg",
+        "link": "/card/movies/800-195/Obrazcovyj-samec.html",
+        "year": "2001",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Улыбка 2",
+        "image": "https://image.tmdb.org/t/p/w500//xceYC3jmhyZVzBpZVaiJWIoVWa2.jpg",
+        "link": "/card/movies/800-96/Ulybka-2.html",
+        "year": "2024",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Улыбка",
+        "image": "https://image.tmdb.org/t/p/w500//fiBVwImRr5MerRBfyFHeyOHKtCH.jpg",
+        "link": "/card/movies/800-196/Ulybka.html",
+        "year": "2022",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Компаньон",
+        "image": "https://image.tmdb.org/t/p/w500//wxFGXmNmFf9Y38XQVsMIrqIom8f.jpg",
+        "link": "/card/movies/800-254/Kompanon.html",
+        "year": "2025",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Грань будущего",
+        "image": "https://image.tmdb.org/t/p/w500//98Ll6igWXdjHiKuZtCacTzRGyNX.jpg",
+        "link": "/card/movies/800-97/Gran-budushego.html",
+        "year": "2014",
+        "rating": "7.6",
+        "type": "movie"
+    },
+    {
+        "name": "Семейный план 2",
+        "image": "https://image.tmdb.org/t/p/w500//plx93SM6CvgcbLKIBzfqaLBQiRA.jpg",
+        "link": "/card/movies/800-784/Semejnyj-plan-2.html",
+        "year": "2025",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Семейный план",
+        "image": "https://image.tmdb.org/t/p/w500//A7hPzNi5zceYNYtRh0z8pIqy2E0.jpg",
+        "link": "/card/movies/800-783/Semejnyj-plan.html",
+        "year": "2023",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Мой сосед - монстр",
+        "image": "https://image.tmdb.org/t/p/w500//ipj9b6KZMr6yFidQBf7xxuWnKQi.jpg",
+        "link": "/card/movies/800-98/Moj-sosed-monstr.html",
+        "year": "2024",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Вышка",
+        "image": "https://image.tmdb.org/t/p/w500//8xukbVG9JJfnpcdIEYPijVVOfhH.jpg",
+        "link": "/card/movies/800-99/Vyshka.html",
+        "year": "2022",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Дни грома",
+        "image": "https://image.tmdb.org/t/p/w500//sqBAhF9J7u0lhPXGapfCz5DNaAn.jpg",
+        "link": "/card/movies/800-392/Dni-groma.html",
+        "year": "1990",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Забавные игры",
+        "image": "https://image.tmdb.org/t/p/w500//qGbr0lvyAR5u6k3x5LGG8RIKaO3.jpg",
+        "link": "/card/movies/800-393/Zabavnye-igry.html",
+        "year": "2008",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Забавные игры",
+        "image": "https://image.tmdb.org/t/p/w500//injv28hXPZpV2aVfjCU6xXsesbb.jpg",
+        "link": "/card/movies/800-394/Zabavnye-igry1997.html",
+        "year": "1997",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Пол: Секретный материальчик",
+        "image": "https://image.tmdb.org/t/p/w500//h5JcoPVADhTh5jSn4QKjvM4tKlK.jpg",
+        "link": "/card/movies/800-100/Pol-Sekretnyj-materialchik.html",
+        "year": "2011",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Индиана Джонс и Колесо Судьбы",
+        "image": "https://image.tmdb.org/t/p/w500//gJrPOlwwTTWSPuFAVcY8CZasZ8w.jpg",
+        "link": "/card/movies/800-693/Indiana-Dzhons-i-Koleso-Sudby.html",
+        "year": "2023",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Индиана Джонс и последний крестовый поход",
+        "image": "https://image.tmdb.org/t/p/w500//fLheKUAE4UleGv0bhl4jn0OFiPL.jpg",
+        "link": "/card/movies/800-692/Indiana-Dzhons-2008.html",
+        "year": "2008",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "Индиана Джонс и последний крестовый поход",
+        "image": "https://image.tmdb.org/t/p/w500//lguKOHHEVXCjUNyqvqqcszFiiR6.jpg",
+        "link": "/card/movies/800-691/Indiana-Dzhons-1989.html",
+        "year": "1989",
+        "rating": "7.8",
+        "type": "movie"
+    },
+    {
+        "name": "Индиана Джонс и Храм Судьбы",
+        "image": "https://image.tmdb.org/t/p/w500//az7v4UfTazPSeiLT1TrMNLdk6YX.jpg",
+        "link": "/card/movies/800-690/Indiana-Dzhons-i-Hram-Sudby.html",
+        "year": "1984",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Индиана Джонс: В поисках утраченного ковчега",
+        "image": "https://image.tmdb.org/t/p/w500//d361eZAD4twogn7xlQxn2yOlJSu.jpg",
+        "link": "/card/movies/800-689/Indiana-Dzhons-1981.html",
+        "year": "1981",
+        "rating": "7.9",
+        "type": "movie"
+    },
+    {
+        "name": "Один дома",
+        "image": "https://image.tmdb.org/t/p/w500//nkXZwR8k46VDdjdcOctVgZC3MJ5.jpg",
+        "link": "/card/movies/800-197/Odin-doma2021.html",
+        "year": "2021",
+        "rating": "4.9",
+        "type": "movie"
+    },
+    {
+        "name": "Один дома 5: Праздничное ограбление",
+        "image": "https://image.tmdb.org/t/p/w500//6bZdqzK3le84IVUIJCppYMG7UeA.jpg",
+        "link": "/card/movies/800-198/Odin-doma-5-Prazdnichnoe-ograblenie.html",
+        "year": "2012",
+        "rating": "5.2",
+        "type": "movie"
+    },
+    {
+        "name": "Один дома 4",
+        "image": "https://image.tmdb.org/t/p/w500//t5qYSUiF0mlRc7LXBNbCoY7lsJO.jpg",
+        "link": "/card/movies/800-199/Odin-doma-4.html",
+        "year": "2002",
+        "rating": "4.5",
+        "type": "movie"
+    },
+    {
+        "name": "Один дома 3",
+        "image": "https://image.tmdb.org/t/p/w500//pkejadStkq8fMaZtKb3EqBWOJz.jpg",
+        "link": "/card/movies/800-200/Odin-doma-3.html",
+        "year": "1997",
+        "rating": "5.3",
+        "type": "movie"
+    },
+    {
+        "name": "Один дома 2: Затерянный в Нью-Йорке",
+        "image": "https://image.tmdb.org/t/p/w500//tOpSeLYsZLL4h1N9tHcqRm1Y5t2.jpg",
+        "link": "/card/movies/800-201/Odin-doma-2-Zateryannyj-v-Nyu-Jorke.html",
+        "year": "1992",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Один дома",
+        "image": "https://image.tmdb.org/t/p/w500//yeS4fjFnTm6jBRiU6zSzFZ8t9W5.jpg",
+        "link": "/card/movies/800-101/Odin-doma.html",
+        "year": "1990",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Проводник смерти",
+        "image": "https://image.tmdb.org/t/p/w500//yn1aTogxzXyHIXs0ZvUAmalujLo.jpg",
+        "link": "/card/movies/800-102/Provodnik-smerti.html",
+        "year": "2024",
+        "rating": "5.5",
+        "type": "movie"
+    },
+    {
+        "name": "Паранормальное явление: Ближайшая родня",
+        "image": "https://image.tmdb.org/t/p/original/bXAVveHiLotZbWdg3PKGhAzxYKP.jpg",
+        "link": "/card/movies/800-202/Paranormalnoe-yavlenie-Blizhajshaya-rodnya.html",
+        "year": "2021",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Паранормальное явление 5: Призраки в 3D",
+        "image": "https://image.tmdb.org/t/p/w500//ozKoD30eG6kacH5SjcRD1wLnBOj.jpg",
+        "link": "/card/movies/800-203/Paranormalnoe-yavlenie-5-Prizraki-v-3D.html",
+        "year": "2015",
+        "rating": "5.3",
+        "type": "movie"
+    },
+    {
+        "name": "Паранормальное явление: Метка Дьявола",
+        "image": "https://image.tmdb.org/t/p/w500//1rrHvalz3i96FfmHTcIMcwZ6qGC.jpg",
+        "link": "/card/movies/800-103/Paranormalnoe-yavlenie-Metka-Dyavola.html",
+        "year": "2014",
+        "rating": "5.4",
+        "type": "movie"
+    },
+    {
+        "name": "Паранормальное явление 4",
+        "image": "https://image.tmdb.org/t/p/w500//xQukmfHfOZCuG0pxHARMk1xJZMs.jpg",
+        "link": "/card/movies/800-204/Paranormalnoe-yavlenie-4.html",
+        "year": "2012",
+        "rating": "5.4",
+        "type": "movie"
+    },
+    {
+        "name": "Паранормальное явление 3",
+        "image": "https://image.tmdb.org/t/p/w500//nbOOPSsezzvHWuWSEw1j3Ypa67e.jpg",
+        "link": "/card/movies/800-205/Paranormalnoe-yavlenie-3.html",
+        "year": "2011",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "Паранормальное явление 2",
+        "image": "https://image.tmdb.org/t/p/w500//cq35G7cR4NAn9nAndBBbHlKNexE.jpg",
+        "link": "/card/movies/800-206/Paranormalnoe-yavlenie-2.html",
+        "year": "2010",
+        "rating": "5.8",
+        "type": "movie"
+    },
+    {
+        "name": "Паранормальное явление",
+        "image": "https://image.tmdb.org/t/p/w500//4PpnPcmAGqpZWpFX5imX0WmWTfZ.jpg",
+        "link": "/card/movies/800-207/Paranormalnoe-yavlenie.html",
+        "year": "2007",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "Ужасающий 3",
+        "image": "https://image.tmdb.org/t/p/w500//5jbCnDREJeciL3KR7ZWdSotEgzG.jpg",
+        "link": "/card/movies/800-104/Uzhasayushij-3.html",
+        "year": "2024",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Ужасающий 2",
+        "image": "https://image.tmdb.org/t/p/w500//huYBDlUpa2IwZW8MOceKN9j3Auk.jpg",
+        "link": "/card/movies/800-208/Uzhasayushij-2.html",
+        "year": "2022",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Ужасающий",
+        "image": "https://image.tmdb.org/t/p/w500//knJUVRPou9y254Oa9ckdzK6XPpC.jpg",
+        "link": "/card/movies/800-209/Uzhasayushij.html",
+        "year": "2018",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Битва за битвой",
+        "image": "https://image.tmdb.org/t/p/w500//qcSFcQwcuzyWQ4UGsIa1y2WMozB.jpg",
+        "link": "/card/movies/800-769/Bitva-za-bitvoj.html",
+        "year": "2025",
+        "rating": "7.6",
+        "type": "movie"
+    },
+    {
+        "name": "Иллюзия обмана 3",
+        "image": "https://image.tmdb.org/t/p/w500//mLc5TztpCN7SRD9jloCqvj1ucKl.jpg",
+        "link": "/card/movies/800-785/Illyuziya-obmana-3.html",
+        "year": "2025",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Иллюзия обмана 2",
+        "image": "https://image.tmdb.org/t/p/w500//jzm3Pmp1uaFCDo0NrA0Tn98Ddda.jpg",
+        "link": "/card/movies/800-786/Illyuziya-obmana-2.html",
+        "year": "2016",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Иллюзия обмана",
+        "image": "https://image.tmdb.org/t/p/w500//theB79zav0sACXPxMFgKI3nQIr8.jpg",
+        "link": "/card/movies/800-787/Illyuziya-obmana.html",
+        "year": "2013",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Полтора шпиона",
+        "image": "https://image.tmdb.org/t/p/w500//z0myyIDZRsGiksfS8hlN3p3NNwc.jpg",
+        "link": "/card/movies/800-105/Poltora-shpiona.html",
+        "year": "2016",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Каратэ-пацан: Легенды",
+        "image": "https://image.tmdb.org/t/p/w500//qzJ3iolWhBT7HeFR2nmaeURnROq.jpg",
+        "link": "/card/movies/800-424/Karate-pacan-Legendy.html",
+        "year": "2025",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Ловушка",
+        "image": "https://image.tmdb.org/t/p/w500//3VmHv2WVdDFpD8xtoV2wfjtS5rl.jpg",
+        "link": "/card/movies/800-106/Lovushka.html",
+        "year": "2024",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Край тени",
+        "image": "https://image.tmdb.org/t/p/original/6YBP0sraDKu2ooa73FGoqxsNkWB.jpg",
+        "link": "/card/movies/800-770/Kraj-teni.html",
+        "year": "2025",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Робот по имени Чаппи",
+        "image": "https://image.tmdb.org/t/p/w500//gEYz6t7RqsseZrJgjD0wR77p3T7.jpg",
+        "link": "/card/movies/800-107/Robot-po-imeni-Chappi.html",
+        "year": "2015",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Субстанция",
+        "image": "https://image.tmdb.org/t/p/w500//x3yhBGbTqlAjxM450BANUNCHpOO.jpg",
+        "link": "/card/movies/800-108/Substanciya.html",
+        "year": "2024",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Простушка",
+        "image": "https://image.tmdb.org/t/p/w500//tTBQSoiv9w9M5mf9qVGfkFDaSF5.jpg",
+        "link": "/card/movies/800-109/Prostushka.html",
+        "year": "2015",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Главы государств",
+        "image": "https://image.tmdb.org/t/p/w500//j2IEKt3uWGFrHxWpPY9mVSL3lHV.jpg",
+        "link": "/card/movies/800-425/Glavy-gosudarstv.html",
+        "year": "2025",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Затерянное место",
+        "image": "https://image.tmdb.org/t/p/w500//qVukhgesgdhVIlRZpsTO6wLVcWI.jpg",
+        "link": "/card/movies/800-110/Zateryannoe-mesto.html",
+        "year": "2024",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Мачо и ботан 2",
+        "image": "https://image.tmdb.org/t/p/w500//iwtNmSFyePLX9CdZ4iXy5kw6wCq.jpg",
+        "link": "/card/movies/800-210/Macho-i-botan-2.html",
+        "year": "2014",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Мачо и ботан",
+        "image": "https://image.tmdb.org/t/p/w500//xjNJi44FDx0xSmUPxpmKIXa8zoY.jpg",
+        "link": "/card/movies/800-111/Macho-i-botan.html",
+        "year": "2012",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Выход 8",
+        "image": "https://image.tmdb.org/t/p/w500//afORML1iggGkWf8M0Jsf2PPpIHv.jpg",
+        "link": "/card/movies/800-772/Vyhod-8.html",
+        "year": "2025",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Одинокие волки",
+        "image": "https://image.tmdb.org/t/p/w500//54U26SA33pxxJ2lf5mRxWeqRTLu.jpg",
+        "link": "/card/movies/800-112/Odinokie-volki.html",
+        "year": "2024",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Хэнкок",
+        "image": "https://image.tmdb.org/t/p/w500//zH9RhVlpMBzGp9VM7jVmlnZpRuR.jpg",
+        "link": "/card/movies/800-113/Henkok.html",
+        "year": "2008",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Счастливчик Гилмор 2",
+        "image": "https://image.tmdb.org/t/p/w500//5ezAkKMAc6CwXiTI7JljyT1Epc6.jpg",
+        "link": "/card/movies/800-443/Schastlivchik-Gilmor-2.html",
+        "year": "2025",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Счастливчик Гилмор",
+        "image": "https://image.tmdb.org/t/p/w500//z0FxccTbbe51HbGzteQxtN2yy5l.jpg",
+        "link": "/card/movies/800-444/Schastlivchik-Gilmor.html",
+        "year": "1996",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Везунчики",
+        "image": "https://image.tmdb.org/t/p/w500//smgLN6330v7F1spPzAHd789yiZh.jpg",
+        "link": "/card/movies/800-773/Vezunchiki.html",
+        "year": "2025",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Спящие псы",
+        "image": "https://image.tmdb.org/t/p/w500//7IIWX53p0h54ZtbhFXLobnAOm8s.jpg",
+        "link": "/card/movies/800-239/Spyashie-psy.html",
+        "year": "2024",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Пчеловод",
+        "image": "https://image.tmdb.org/t/p/w500//1mbla3dGMbzyAz1PgpMcy4Yjtir.jpg",
+        "link": "/card/movies/800-261/Pchelovod.html",
+        "year": "2024",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Подай знак",
+        "image": "https://image.tmdb.org/t/p/w500//7bIXHZLZoBvo5EbeIdAnL2wCCla.jpg",
+        "link": "/card/movies/800-114/Podaj-znak.html",
+        "year": "2024",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Альтер",
+        "image": "https://image.tmdb.org/t/p/w500//antXvx4ULV8OmRIMPy9UkxfU2xZ.jpg",
+        "link": "/card/movies/800-774/Alter.html",
+        "year": "2025",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Гран Туризмо",
+        "image": "https://image.tmdb.org/t/p/w500//zS3cofAvqaKAvdXCPrZjToI3N6H.jpg",
+        "link": "/card/movies/800-269/Gran-Turizmo.html",
+        "year": "2023",
+        "rating": "7.8",
+        "type": "movie"
+    },
+    {
+        "name": "Я – Четвертый",
+        "image": "https://image.tmdb.org/t/p/w500//iCTi4zBFmqKQb0Q8D8FZ3i5hFyx.jpg",
+        "link": "/card/movies/800-115/Ya–Chetvertyj.html",
+        "year": "2011",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Мой год в Оксфорде",
+        "image": "https://image.tmdb.org/t/p/w500//wWi50YT94ll7lhZgOgfQ1JBV4P4.jpg",
+        "link": "/card/movies/800-495/Moj-god-v-Oksforde.html",
+        "year": "2025",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Министерство неджентльменских дел",
+        "image": "https://image.tmdb.org/t/p/w500//fxLCzo1HzlcvNIXmb1lLTkAJsfV.jpg",
+        "link": "/card/movies/800-268/Ministerstvo-nedzhentlmenskih-del.html",
+        "year": "2024",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Миллион способов потерять голову",
+        "image": "https://image.tmdb.org/t/p/w500//oza59UpAODrr1xSvtoNudWShuut.jpg",
+        "link": "/card/movies/800-116/Million-sposobov-poteryat-golovu.html",
+        "year": "2014",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "Атлас",
+        "image": "https://image.tmdb.org/t/p/w500//6z8NNTDR6NMVAWkCOdyprHeS49p.jpg",
+        "link": "/card/movies/800-262/Atlas.html",
+        "year": "2024",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Озеро Каддо",
+        "image": "https://image.tmdb.org/t/p/w500//tk7g8DWPfak1MNtwX5RY7rcbpO1.jpg",
+        "link": "/card/movies/800-117/Ozero-Kaddo.html",
+        "year": "2024",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Эддингтон",
+        "image": "https://image.tmdb.org/t/p/w500//5fi45HlaKOTLmX8q62MiGjmoaXj.jpg",
+        "link": "/card/movies/800-494/Eddington.html",
+        "year": "2025",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Звук свободы",
+        "image": "https://image.tmdb.org/t/p/w500//r5VQb0LDEZ0r5OHmAQirhOsWrru.jpg",
+        "link": "/card/movies/800-264/Zvuk-svobody.html",
+        "year": "2023",
+        "rating": "8.0",
+        "type": "movie"
+    },
+    {
+        "name": "Верни её из мёртвых",
+        "image": "https://image.tmdb.org/t/p/w500//bXUHpvzSevyjjKgyNt7cfdehhrR.jpg",
+        "link": "/card/movies/800-431/Verni-eyo-iz-myortvyh.html",
+        "year": "2025",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Интерстеллар",
+        "image": "https://image.tmdb.org/t/p/w500//vReLRjDV9XPhiOSEW7QWow4DXwf.jpg",
+        "link": "/card/movies/800-118/Interstellar.html",
+        "year": "2014",
+        "rating": "8.5",
+        "type": "movie"
+    },
+    {
+        "name": "Шпионская свадьба",
+        "image": "https://image.tmdb.org/t/p/w500//pY61LFEkfLIwTinQVZfpk5N8RTm.jpg",
+        "link": "/card/movies/800-445/Shpionskaya-svadba.html",
+        "year": "2025",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "Артур, ты король",
+        "image": "https://image.tmdb.org/t/p/w500//aufA1yiiDpQF8YELXRV16T5aSrG.jpg",
+        "link": "/card/movies/800-263/Artur-ty-korol.html",
+        "year": "2024",
+        "rating": "7.6",
+        "type": "movie"
+    },
+    {
+        "name": "За гранью З/Л/А",
+        "image": "https://image.tmdb.org/t/p/w500//jaxQj8lnTMuPkVB2Rp7pkr0M1Ki.jpg",
+        "link": "/card/movies/800-119/Za-granyu-ZLA.html",
+        "year": "2024",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Каскадёры",
+        "image": "https://image.tmdb.org/t/p/w500//hegoKiLI9FxPXfqn3rMsnRC0RPY.jpg",
+        "link": "/card/movies/800-265/Kaskadyory.html",
+        "year": "2024",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Zомбилэнд: Контрольный выстрел",
+        "image": "https://image.tmdb.org/t/p/w500//ociepR7KE1ixlSps5LZb51rkZwa.jpg",
+        "link": "/card/movies/800-211/Zombilend-Kontrolnyj-vystrel.html",
+        "year": "2019",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Добро пожаловать в Zомбилэнд",
+        "image": "https://image.tmdb.org/t/p/w500//kKImcJWO19FWRwcVf1jJMJ7Q72S.jpg",
+        "link": "/card/movies/800-120/Dobro-pozhalovat-v-Zombilend.html",
+        "year": "2009",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Битлджус Битлджус",
+        "image": "https://image.tmdb.org/t/p/w500//cC27Z2eQJXjII2Bw7D4BDCsTCr1.jpg",
+        "link": "/card/movies/800-122/Bitldzhus-Bitldzhus.html",
+        "year": "2024",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Битлджюс",
+        "image": "https://image.tmdb.org/t/p/w500//vV40BJbN1NVYkOXVdkQt4qi1PmQ.jpg",
+        "link": "/card/movies/800-212/Bitldzhyus.html",
+        "year": "1988",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Бессмертная гвардия 2",
+        "image": "https://image.tmdb.org/t/p/w500//b1F05dWGFA4VlE0DlMg6hhCmOOW.jpg",
+        "link": "/card/movies/800-446/Bessmertnaya-gvardiya-2.html",
+        "year": "2025",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "Бессмертная гвардия",
+        "image": "https://image.tmdb.org/t/p/w500//gtgGa5j3Rine2LBq0N1v9FiR8xz.jpg",
+        "link": "/card/movies/800-447/Bessmertnaya-gvardiya.html",
+        "year": "2020",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Игра в имитацию",
+        "image": "https://image.tmdb.org/t/p/w500//iM1C3NYISOzLbWEo8HcUDBASprh.jpg",
+        "link": "/card/movies/800-123/Igra-v-imitaciyu.html",
+        "year": "2014",
+        "rating": "8.0",
+        "type": "movie"
+    },
+    {
+        "name": "Догмен",
+        "image": "https://image.tmdb.org/t/p/w500//rhvNgsWZXJ1Hix9RafDMIbd6SsO.jpg",
+        "link": "/card/movies/800-266/Dogmen.html",
+        "year": "2023",
+        "rating": "7.9",
+        "type": "movie"
+    },
+    {
+        "name": "Ворон",
+        "image": "https://image.tmdb.org/t/p/w500//msAYTWaQXWGoeChpp5EUGzpMpVb.jpg",
+        "link": "/card/movies/800-124/Voron.html",
+        "year": "2024",
+        "rating": "5.8",
+        "type": "movie"
+    },
+    {
+        "name": "Ворон",
+        "image": "https://image.tmdb.org/t/p/w500//a5ZZ2XfFkcpik8M56lDznqrsyTp.jpg",
+        "link": "/card/movies/800-213/Voron1994.html",
+        "year": "1994",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Хроника",
+        "image": "https://image.tmdb.org/t/p/w500//8gik6OwbWuhUAKctvGRHUgYZJOm.jpg",
+        "link": "/card/movies/800-125/Hronika.html",
+        "year": "2012",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "За пивом!",
+        "image": "https://image.tmdb.org/t/p/w500//reEdwRv8FPxc7lBzeQHUNmhJCxC.jpg",
+        "link": "/card/movies/800-267/Za-pivom.html",
+        "year": "2022",
+        "rating": "7.6",
+        "type": "movie"
+    },
+    {
+        "name": "Грань времени",
+        "image": "https://image.tmdb.org/t/p/original/wgm4gdJwb7iSYX0uBsRAZmHQmPm.jpg",
+        "link": "/card/movies/800-126/Gran-vremeni.html",
+        "year": "2020",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Не говори никому",
+        "image": "https://image.tmdb.org/t/p/original/r0xn6drfJXKWetJj58hYEySaQ3N.jpg",
+        "link": "/card/movies/800-127/Ne-govori-nikomu.html",
+        "year": "2024",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Мой пингвин",
+        "image": "https://image.tmdb.org/t/p/w500//n5yjFZLh6sx04B6YKynae1myD2X.jpg",
+        "link": "/card/movies/800-129/Moj-pingvin.html",
+        "year": "2024",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Фантастические твари: Тайны Дамблдора",
+        "image": "https://image.tmdb.org/t/p/w500//8LIpVm3uvoGrHYrtmIzxlRt31zn.jpg",
+        "link": "/card/movies/800-525/Fantasticheskie-tvari-Tajny-Dambldora.html",
+        "year": "2022",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Фантастические твари: Преступления Грин-де-Вальда",
+        "image": "https://image.tmdb.org/t/p/w500//st03eTWNNcVTX5je7mRxjbgEDAq.jpg",
+        "link": "/card/movies/800-526/Fantasticheskie-tvari-Prestupleniya-Grin-de-Valda.html",
+        "year": "2018",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Фантастические твари и где они обитают",
+        "image": "https://image.tmdb.org/t/p/w500//hqpnhHmr9L63d9Hh2Js2xLBeLer.jpg",
+        "link": "/card/movies/800-527/Fantasticheskie-tvari-i-gde-oni-obitayut.html",
+        "year": "2016",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Гарри Поттер 20 лет спустя: возвращение в Хогвартс",
+        "image": "https://image.tmdb.org/t/p/w500//pMlCpcBKTB7h4nhazWl26wgngvf.jpg",
+        "link": "/card/movies/800-214/Garri-Potter-20-let-spustya-vozvrashenie-v-Hogvarts.html",
+        "year": "2022",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Гарри Поттер и Дары Смерти: Часть II",
+        "image": "https://image.tmdb.org/t/p/w500//cSxvq15AOeJ2jNdVRXJvAoZU8T6.jpg",
+        "link": "/card/movies/800-215/Garri-Potter-i-Dary-Smerti-Chast-II.html",
+        "year": "2011",
+        "rating": "8.1",
+        "type": "movie"
+    },
+    {
+        "name": "Гарри Поттер и Дары Смерти: Часть I",
+        "image": "https://image.tmdb.org/t/p/w500//nUJc0DOO0lh8pjLkmMtPObA2NKf.jpg",
+        "link": "/card/movies/800-216/Garri-Potter-i-Dary-Smerti-Chast-I.html",
+        "year": "2010",
+        "rating": "7.7",
+        "type": "movie"
+    },
+    {
+        "name": "Гарри Поттер и Принц-полукровка",
+        "image": "https://image.tmdb.org/t/p/w500//zhMOIXezutmTCeP1AvPZHakGCYs.jpg",
+        "link": "/card/movies/800-217/Garri-Potter-i-Princ-polukrovka.html",
+        "year": "2009",
+        "rating": "7.7",
+        "type": "movie"
+    },
+    {
+        "name": "Гарри Поттер и Орден Феникса",
+        "image": "https://image.tmdb.org/t/p/w500//lBuFOlXNY3YYIkXInGqcd7aJoAY.jpg",
+        "link": "/card/movies/800-218/Garri-Potter-i-Orden-Feniksa.html",
+        "year": "2007",
+        "rating": "7.7",
+        "type": "movie"
+    },
+    {
+        "name": "Гарри Поттер и Кубок огня",
+        "image": "https://image.tmdb.org/t/p/w500//wWlSRexsjrdTWBYY84s671dYde5.jpg",
+        "link": "/card/movies/800-219/Garri-Potter-i-Kubok-ognya.html",
+        "year": "2005",
+        "rating": "7.8",
+        "type": "movie"
+    },
+    {
+        "name": "Гарри Поттер и узник Азкабана",
+        "image": "https://image.tmdb.org/t/p/w500//dd3dM7g6x8TIBBKr22oHM8wZxv8.jpg",
+        "link": "/card/movies/800-220/Garri-Potter-i-uznik-Azkabana.html",
+        "year": "2004",
+        "rating": "8.0",
+        "type": "movie"
+    },
+    {
+        "name": "Гарри Поттер и Тайная комната",
+        "image": "https://image.tmdb.org/t/p/w500//33Wj3LSyoAqtqkeh7YXcVMvTQzc.jpg",
+        "link": "/card/movies/800-92/Garri-Potter-i-Tajnaya-komnata.html",
+        "year": "2002",
+        "rating": "7.7",
+        "type": "movie"
+    },
+    {
+        "name": "Гарри Поттер и философский камень",
+        "image": "https://image.tmdb.org/t/p/w500//Z2CbhtMtbVaBEvhqBKMNB0p0ko.jpg",
+        "link": "/card/movies/800-130/Garri-Potter-i-filosofskij-kamen.html",
+        "year": "2001",
+        "rating": "7.9",
+        "type": "movie"
+    },
+    {
+        "name": "Хоббит: Битва пяти воинств",
+        "image": "https://image.tmdb.org/t/p/w500//19fnHQ9g3Sy87rHKtw3wqhkBGOh.jpg",
+        "link": "/card/movies/800-221/Hobbit-Bitva-pyati-voinstv.html",
+        "year": "2014",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Хоббит: Пустошь Смауга",
+        "image": "https://image.tmdb.org/t/p/w500//ccbf6gnYwB2tMaU9EAgxCi88NEe.jpg",
+        "link": "/card/movies/800-222/Hobbit-Pustosh-Smauga.html",
+        "year": "2013",
+        "rating": "7.6",
+        "type": "movie"
+    },
+    {
+        "name": "Хоббит: Нежданное путешествие",
+        "image": "https://image.tmdb.org/t/p/w500//zTnup9V8UJEG4jWULQQpyKB6Tq0.jpg",
+        "link": "/card/movies/800-223/Hobbit-Nezhdannoe-puteshestvie.html",
+        "year": "2012",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Властелин колец: Возвращение короля",
+        "image": "https://image.tmdb.org/t/p/w500//x6NqCWwU1SrQnvfdmVPAuATyUgD.jpg",
+        "link": "/card/movies/800-43/Vlastelin-kolec-Vozvrashenie-korolya.html",
+        "year": "2003",
+        "rating": "8.5",
+        "type": "movie"
+    },
+    {
+        "name": "Властелин колец: Две крепости",
+        "image": "https://image.tmdb.org/t/p/w500//fl7QZlAoZ4MLcxvgOaBjeUxlpQt.jpg",
+        "link": "/card/movies/800-224/Vlastelin-kolec-Dve-kreposti.html",
+        "year": "2002",
+        "rating": "8.4",
+        "type": "movie"
+    },
+    {
+        "name": "Властелин колец: Братство кольца",
+        "image": "https://image.tmdb.org/t/p/w500//dfoCSXJIamlzlpDCRxXVY5R9GSX.jpg",
+        "link": "/card/movies/800-225/Vlastelin-kolec-Bratstvo-kolca.html",
+        "year": "2001",
+        "rating": "8.4",
+        "type": "movie"
+    },
+    {
+        "name": "Опустошение",
+        "image": "https://image.tmdb.org/t/p/w500//tgSmrSZHMtI0PFBiDIrjfRV3qAm.jpg",
+        "link": "/card/movies/800-251/Opustoshenie.html",
+        "year": "2025",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Перси Джексон и Море чудовищ",
+        "image": "https://image.tmdb.org/t/p/w500//1cJWgzakpefE5TnEvVHtUfSJ8Zd.jpg",
+        "link": "/card/movies/800-226/Persi-Dzhekson-i-More-chudovish.html",
+        "year": "2013",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "Перси Джексон и похититель молний",
+        "image": "https://image.tmdb.org/t/p/w500//xQazS5kqxp9Wpsll3KYs5z4Prqh.jpg",
+        "link": "/card/movies/800-128/Persi-Dzhekson-i-pohititel-molnij.html",
+        "year": "2010",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Хищник: Планета смерти",
+        "image": "https://image.tmdb.org/t/p/w500//pu5Aj7nyx9ISKMcmWvUjZv68GLs.jpg",
+        "link": "/card/movies/800-789/Hishnik-Planeta-smerti.html",
+        "year": "2025",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Хищник: Миссия «Осирис»",
+        "image": "https://image.tmdb.org/t/p/w500//9zqrNnwP7Zbfpb6RmGq9760IVPi.jpg",
+        "link": "/card/movies/800-502/Hishnik-Missiya-Osiris.html",
+        "year": "2025",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Чужой: Ромул",
+        "image": "https://image.tmdb.org/t/p/w500//A2CU4WbCZlkYbz9gEFIpchlIGpq.jpg",
+        "link": "/card/movies/800-131/Chuzhoj-Romul.html",
+        "year": "2024",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Чужой: Завет",
+        "image": "https://image.tmdb.org/t/p/w500//5ff1DVsSL7CP5zIjr8ayHaaHScP.jpg",
+        "link": "/card/movies/800-227/Chuzhoj-Zavet.html",
+        "year": "2017",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Прометей",
+        "image": "https://image.tmdb.org/t/p/w500//kE9dT4e44v1hiVM0GBjWEFczCFc.jpg",
+        "link": "/card/movies/800-121/Prometej.html",
+        "year": "2012",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Чужие против Хищника: Реквием",
+        "image": "https://image.tmdb.org/t/p/w500//A7vfsc9IcLgi63KaBFeOvio0yRY.jpg",
+        "link": "/card/movies/800-228/Chuzhie-protiv-Hishnika-Rekviem.html",
+        "year": "2007",
+        "rating": "5.2",
+        "type": "movie"
+    },
+    {
+        "name": "Чужой против Хищника",
+        "image": "https://image.tmdb.org/t/p/w500//uIhgEqmO1Zd9uNJkJzoyvPcgHfA.jpg",
+        "link": "/card/movies/800-229/Chuzhoj-protiv-Hishnika.html",
+        "year": "2004",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "Чужой: Воскрешение",
+        "image": "https://image.tmdb.org/t/p/w500//pkiOQmiRtm0JbvBPtbz4PjrZQM3.jpg",
+        "link": "/card/movies/800-230/Chuzhoj-Voskreshenie.html",
+        "year": "1997",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Чужой 3",
+        "image": "https://image.tmdb.org/t/p/w500//x49NIbvqwWZ2apQXAa3009FyEzi.jpg",
+        "link": "/card/movies/800-231/Chuzhoj-3.html",
+        "year": "1992",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Чужие",
+        "image": "https://image.tmdb.org/t/p/w500//sSCmIDZ2EO1oLa8QMq6dL8kNFKq.jpg",
+        "link": "/card/movies/800-232/Chuzhie.html",
+        "year": "1986",
+        "rating": "8.0",
+        "type": "movie"
+    },
+    {
+        "name": "Чужой",
+        "image": "https://image.tmdb.org/t/p/w500//6EXQpftMDnbEFu75fmRGGF6CuOT.jpg",
+        "link": "/card/movies/800-233/Chuzhoj1979.html",
+        "year": "1979",
+        "rating": "8.2",
+        "type": "movie"
+    },
+    {
+        "name": "Игры возмездия",
+        "image": "https://image.tmdb.org/t/p/w500//x0v0MIrnl4HrtmgmOFAQubOCMEr.jpg",
+        "link": "/card/movies/800-252/Igry-vozmezdiya.html",
+        "year": "2025",
+        "rating": "5.0",
+        "type": "movie"
+    },
+    {
+        "name": "Умри, моя любовь",
+        "image": "https://image.tmdb.org/t/p/w500//61qjG6UQwBynB1e4pFNs9DKi1HN.jpg",
+        "link": "/card/movies/800-806/Umri-moya-lyubov.html",
+        "year": "2025",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "128 ударов сердца в минуту",
+        "image": "https://image.tmdb.org/t/p/w500//jdKfkrUTl2JknNAeTOnz8We15bX.jpg",
+        "link": "/card/movies/800-132/128-udarov-serdca-v-minutu.html",
+        "year": "2015",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Убежище",
+        "image": "https://image.tmdb.org/t/p/w500//yHwVIhzBYWzUpwOmOTT3ijWj1kS.jpg",
+        "link": "/card/movies/800-935/Ubezhishe.html",
+        "year": "2026",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Дэдпул и Росомаха",
+        "image": "https://image.tmdb.org/t/p/w500//8uOIWsrHvBTeZP4LSf25NomvLb6.jpg",
+        "link": "/card/movies/800-133/Dedpul-i-Rosomaha.html",
+        "year": "2024",
+        "rating": "7.6",
+        "type": "movie"
+    },
+    {
+        "name": "Дэдпул 2",
+        "image": "https://image.tmdb.org/t/p/w500//6ieUmjpY7bMMZqIdFxHKUEwfwSB.jpg",
+        "link": "/card/movies/800-234/Dedpul-2.html",
+        "year": "2018",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Дэдпул",
+        "image": "https://image.tmdb.org/t/p/w500//r5PYZGOiIQuGpaZas9TTplNZ5Ox.jpg",
+        "link": "/card/movies/800-235/Dedpul.html",
+        "year": "2016",
+        "rating": "7.6",
+        "type": "movie"
+    },
+    {
+        "name": "М3ГАН 2.0",
+        "image": "https://image.tmdb.org/t/p/w500//oL96zIrXoraXrYU1afcB3Tf5lgI.jpg",
+        "link": "/card/movies/800-426/M3GAN-2.0.html",
+        "year": "2025",
+        "rating": "7.7",
+        "type": "movie"
+    },
+    {
+        "name": "М3ГАН",
+        "image": "https://image.tmdb.org/t/p/w500//cIgp2ZLstyKzak6e8zVlJGdBSZZ.jpg",
+        "link": "/card/movies/800-427/M3GAN.html",
+        "year": "2022",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Бойфренд из будущего",
+        "image": "https://image.tmdb.org/t/p/w500//xWk8ukJ6dhRvlrboG3qgNWNtLJ1.jpg",
+        "link": "/card/movies/800-134/Bojfrend-iz-budushego.html",
+        "year": "2013",
+        "rating": "7.9",
+        "type": "movie"
+    },
+    {
+        "name": "После. Навсегда",
+        "image": "https://image.tmdb.org/t/p/w500//p5NuTOVdJsje6qOjsLStoaXsoGy.jpg",
+        "link": "/card/movies/800-143/Posle-Navsegda.html",
+        "year": "2023",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "После. Долго и счастливо",
+        "image": "https://image.tmdb.org/t/p/w500//7SAIQcQfPgimB7BHef9DANUQZkY.jpg",
+        "link": "/card/movies/800-142/Posle-Dolgo-i-schastlivo.html",
+        "year": "2022",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "После. Глава 3",
+        "image": "https://image.tmdb.org/t/p/w500//eRmylmc17IIxKKQrGcQt1723APP.jpg",
+        "link": "/card/movies/800-141/Posle-Glava-3.html",
+        "year": "2021",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "После. Глава 2",
+        "image": "https://image.tmdb.org/t/p/w500//kWkFxHdXhKBM3NmncrX8JYhVXEe.jpg",
+        "link": "/card/movies/800-140/Posle-Glava-2.html",
+        "year": "2020",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "После",
+        "image": "https://image.tmdb.org/t/p/w500//7Prt3Le9H0EeRYVltAXFJqwDIig.jpg",
+        "link": "/card/movies/800-135/Posle.html",
+        "year": "2019",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Ребел-Ридж",
+        "image": "https://image.tmdb.org/t/p/w500//8rnSpfoXiizlIGFEIRed7h8inrP.jpg",
+        "link": "/card/movies/800-136/Rebel-Ridzh.html",
+        "year": "2024",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Ледяной драйв: Возмездие",
+        "image": "https://image.tmdb.org/t/p/w500//jVcQchW7EXT8MXk1C4XaUpqHhRC.jpg",
+        "link": "/card/movies/800-428/Ledyanoj-drajv-Vozmezdie.html",
+        "year": "2025",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Ледяной драйв",
+        "image": "https://image.tmdb.org/t/p/original/8Jk5hNRS0gARfgi17u3U4ZEXx0y.jpg",
+        "link": "/card/movies/800-429/Ledyanoj-drajv.html",
+        "year": "2021",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Ты водишь!",
+        "image": "https://image.tmdb.org/t/p/w500//4GTpZgK5ijNGzJSB6tXjz8Xz7t2.jpg",
+        "link": "/card/movies/800-137/Ty-vodish!.html",
+        "year": "2018",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Место под соснами",
+        "image": "https://image.tmdb.org/t/p/w500//8y4tBbEUVdD3uGjqos21EAOAxc5.jpg",
+        "link": "/card/movies/800-138/Mesto-pod-sosnami.html",
+        "year": "2013",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Чаща",
+        "image": "https://image.tmdb.org/t/p/w500//ihzZSZZ2eFmbxscbnqy3e5YOvtp.jpg",
+        "link": "/card/movies/800-139/Chasha.html",
+        "year": "2024",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Миссия: Красный",
+        "image": "https://image.tmdb.org/t/p/w500//6T36kuDbXCGRistIewSwKyTmijt.jpg",
+        "link": "/card/movies/800-26/Missiya-Krasnyj.html",
+        "year": "2024",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Братья Гримм",
+        "image": "https://image.tmdb.org/t/p/w500//aADABzbuqnVWjXIu2jO5M1IkEIR.jpg",
+        "link": "/card/movies/800-27/Bratya-Grimm.html",
+        "year": "2005",
+        "rating": "5.8",
+        "type": "movie"
+    },
+    {
+        "name": "Клуб убийств по четвергам",
+        "image": "https://image.tmdb.org/t/p/original/jbnazCHr8S2l2glyvjPTpa4NbEw.jpg",
+        "link": "/card/movies/800-506/Klub-ubijstv-po-chetvergam.html",
+        "year": "2025",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Посвященный",
+        "image": "https://image.tmdb.org/t/p/w500//aXXEcHZsZ2lXUxPLaadnXeZVz5c.jpg",
+        "link": "/card/movies/800-29/Posvyashennyj.html",
+        "year": "2014",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Рейс навылет",
+        "image": "https://image.tmdb.org/t/p/w500//1Os0R2vgXPIBAl6MyMoBhJcmbHw.jpg",
+        "link": "/card/movies/800-244/Rejs-navylet.html",
+        "year": "2025",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "И гаснет свет",
+        "image": "https://image.tmdb.org/t/p/w500//f5njPYl9eQdwf0xUwJuQ7no6ET.jpg",
+        "link": "/card/movies/800-30/I-gasnet-svet.html",
+        "year": "2016",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Комната желаний",
+        "image": "https://image.tmdb.org/t/p/w500//de2V6MaJzGRclg1pQaSG2v3i0yW.jpg",
+        "link": "/card/movies/800-39/Komnata-zhelanij.html",
+        "year": "2019",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Школа мистера Пингвина",
+        "image": "https://image.tmdb.org/t/p/w500//xiavsOGJJD0NGliB5BZtrJdbQLT.jpg",
+        "link": "/card/movies/800-245/Shkola-mistera-Pingvina.html",
+        "year": "2025",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Дорогой Санта",
+        "image": "https://image.tmdb.org/t/p/w500//v4LzYnQ1VGb0Q191Eb0NDSxdEKy.jpg",
+        "link": "/card/movies/800-51/Dorogoj-Santa.html",
+        "year": "2024",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Вивариум",
+        "image": "https://image.tmdb.org/t/p/w500//6z5otnH68jltjyC6748irDsC7B3.jpg",
+        "link": "/card/movies/800-37/Vivarium.html",
+        "year": "2019",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Смерть Единорога",
+        "image": "https://image.tmdb.org/t/p/w500//lVINt3dHhoMBLscMog0oYzrjCzR.jpg",
+        "link": "/card/movies/800-246/Smert-Edinoroga.html",
+        "year": "2025",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Марсианин",
+        "image": "https://image.tmdb.org/t/p/w500//6U19srkH4wI6taluviXbVaIpsau.jpg",
+        "link": "/card/movies/800-47/Marsianin.html",
+        "year": "2015",
+        "rating": "7.7",
+        "type": "movie"
+    },
+    {
+        "name": "Похищенная",
+        "image": "https://image.tmdb.org/t/p/w500//fZlNXEHZsBp7unqw009MeBbMv87.jpg",
+        "link": "/card/movies/800-686/Pohishennaya.html",
+        "year": "2025",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Наполеон",
+        "image": "https://image.tmdb.org/t/p/w500//z7E0ZtNnRheOZThX2QtSu3RmtXP.jpg",
+        "link": "/card/movies/800-89/Napoleon.html",
+        "year": "2023",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Школьный автобус",
+        "image": "https://image.tmdb.org/t/p/w500//rT33WiN5ZNiWxvtqnM7qri9xD9G.jpg",
+        "link": "/card/movies/800-685/Shkolnyj-avtobus.html",
+        "year": "2025",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Другой человек",
+        "image": "https://image.tmdb.org/t/p/w500//dX5CQBzWX6ePHj8WvHWideMYw5D.jpg",
+        "link": "/card/movies/800-64/Drugoj-chelovek.html",
+        "year": "2024",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Микки 17",
+        "image": "https://image.tmdb.org/t/p/w500//884NNRoCyADkpk7pzxpCaSZCzor.jpg",
+        "link": "/card/movies/800-247/Mikki-17.html",
+        "year": "2025",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Формула 1",
+        "image": "https://image.tmdb.org/t/p/original/xAQwKbIK6gfGy1YGLsLoCYaS2fx.jpg",
+        "link": "/card/movies/800-370/Formula-1.html",
+        "year": "2025",
+        "rating": "7.6",
+        "type": "movie"
+    },
+    {
+        "name": "Призрачный патруль 2: Восстание проклятых",
+        "image": "https://image.tmdb.org/t/p/w500//d6dheJFYJnfdvPBo4R2jjXX1Tfu.jpg",
+        "link": "/card/movies/800-371/Prizrachnyj-patrul-2.html",
+        "year": "2022",
+        "rating": "5.8",
+        "type": "movie"
+    },
+    {
+        "name": "Призрачный патруль",
+        "image": "https://image.tmdb.org/t/p/w500//aPqHFuWMiY9yWfUexoIP56cJdVq.jpg",
+        "link": "/card/movies/800-372/Prizrachnyj-patrul.html",
+        "year": "2013",
+        "rating": "5.8",
+        "type": "movie"
+    },
+    {
+        "name": "Стив",
+        "image": "https://image.tmdb.org/t/p/w500//t9XZ40AJivb9SGuyhBtq5rHJLuk.jpg",
+        "link": "/card/movies/800-684/Stiv.html",
+        "year": "2025",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Трон: Арес",
+        "image": "https://image.tmdb.org/t/p/w500//3YMaZ7A8wKs0gngDdexs0pLkAnR.jpg",
+        "link": "/card/movies/800-738/Tron-Ares.html",
+        "year": "2025",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Трон: Наследие",
+        "image": "https://image.tmdb.org/t/p/w500//1d8y5H0UTTZLxqkfrfaouWQ2bF8.jpg",
+        "link": "/card/movies/800-708/Tron-Nasledie.html",
+        "year": "2010",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Трон",
+        "image": "https://image.tmdb.org/t/p/w500//aREUVaR73YcxqgCdsU8hzdqvniL.jpg",
+        "link": "/card/movies/800-707/Tron.html",
+        "year": "1982",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Топ Ган: Мэверик",
+        "image": "https://image.tmdb.org/t/p/w500//niNo4qTtIule2vvMFW05amvMtOB.jpg",
+        "link": "/card/movies/800-10/Top-Gan-Meverik.html",
+        "year": "2022",
+        "rating": "8.2",
+        "type": "movie"
+    },
+    {
+        "name": "Лучший стрелок",
+        "image": "https://image.tmdb.org/t/p/w500//8khU38Bv9ovTAP9M7lHqFA5ezAU.jpg",
+        "link": "/card/movies/800-144/Luchshij-strelok.html",
+        "year": "1986",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Собачья жизнь 2",
+        "image": "https://image.tmdb.org/t/p/w500//nTIYb1c3JcqFRo9V1RIzflsJTmj.jpg",
+        "link": "/card/movies/800-151/Sobachya-zhizn-2.html",
+        "year": "2019",
+        "rating": "8.1",
+        "type": "movie"
+    },
+    {
+        "name": "Собачья жизнь",
+        "image": "https://image.tmdb.org/t/p/w500//iTSNCcbjehovQf26YcW2uTRKBhH.jpg",
+        "link": "/card/movies/800-152/Sobachya-zhizn.html",
+        "year": "2017",
+        "rating": "7.6",
+        "type": "movie"
+    },
+    {
+        "name": "Миссия невыполнима: Финальная расплата",
+        "image": "https://image.tmdb.org/t/p/w500//n80KsSgHmJg5xrEWlbaWDgMoiU9.jpg",
+        "link": "/card/movies/800-496/Missiya-nevypolnima-Finalnaya-rasplata.html",
+        "year": "2025",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Миссия невыполнима: Смертельная расплата. Часть первая",
+        "image": "https://image.tmdb.org/t/p/w500//qncL23TGeAqmqmbBxJl4R6nYToJ.jpg",
+        "link": "/card/movies/800-12/Missiya-nevypolnima-Smertelnaya....html",
+        "year": "2023",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Миссия невыполнима: Последствия",
+        "image": "https://image.tmdb.org/t/p/w500//2hDzCRhXWm5ry2nFs9HQBIon1DJ.jpg",
+        "link": "/card/movies/800-145/Missiya-nevypolnima-Posledstviya.html",
+        "year": "2018",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Миссия невыполнима: Племя изгоев",
+        "image": "https://image.tmdb.org/t/p/w500//fTZcCAdMtMQllBRabszq6tZwhxS.jpg",
+        "link": "/card/movies/800-146/Missiya-nevypolnima-Plemya-izgoev.html",
+        "year": "2015",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Миссия невыполнима: Протокол Фантом",
+        "image": "https://image.tmdb.org/t/p/w500//neKiBzXzI6yuN8Fn8beoLcYASsE.jpg",
+        "link": "/card/movies/800-147/Missiya-nevypolnima-Protokol-Fantom.html",
+        "year": "2011",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Миссия невыполнима 3",
+        "image": "https://image.tmdb.org/t/p/w500//1QgOjoYLproxIWRZxhZx9pXsmuY.jpg",
+        "link": "/card/movies/800-148/Missiya-nevypolnima-3.html",
+        "year": "2006",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Миссия невыполнима 2",
+        "image": "https://image.tmdb.org/t/p/w500//er6j9Gh6cX2na9B0wXMcPAD2tbl.jpg",
+        "link": "/card/movies/800-149/Missiya-nevypolnima-2.html",
+        "year": "2000",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Миссия невыполнима",
+        "image": "https://image.tmdb.org/t/p/w500//1qnh1n1tVRq7JY8MYbvaZgfRfq2.jpg",
+        "link": "/card/movies/800-150/Missiya-nevypolnima.html",
+        "year": "1996",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Достать ножи: Воскрешение покойника",
+        "image": "https://image.tmdb.org/t/p/w500//sPHInA04JUQsv3wXW23fHPdvVC0.jpg",
+        "link": "/card/movies/800-807/Dostat-nozhi-Voskreshenie-pokojnika.html",
+        "year": "2025",
+        "rating": "7.6",
+        "type": "movie"
+    },
+    {
+        "name": "Достать ножи: Стеклянная луковица",
+        "image": "https://image.tmdb.org/t/p/w500//14PudL6hCEhqwPDbxoBt2RHK5cC.jpg",
+        "link": "/card/movies/800-155/Dostat-nozhi-Steklyannaya-lukovica.html",
+        "year": "2022",
+        "rating": "7.1",
+        "type": "movie"
+    },
+    {
+        "name": "Достать ножи",
+        "image": "https://image.tmdb.org/t/p/w500//mGfb75tcFWxuT8esS1isHrNFE90.jpg",
+        "link": "/card/movies/800-17/Dostat-nozhi.html",
+        "year": "2019",
+        "rating": "7.8",
+        "type": "movie"
+    },
+    {
+        "name": "Грязная игра",
+        "image": "https://image.tmdb.org/t/p/w500//2qYYoTNas3WCgxXsTF2xYtJ04yr.jpg",
+        "link": "/card/movies/800-683/Gryaznaya-igra.html",
+        "year": "2025",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Бегущий по лезвию 2049",
+        "image": "https://image.tmdb.org/t/p/w500//kAq1RFHqtZrBvKve7GOGdgUU399.jpg",
+        "link": "/card/movies/800-16/Begushij-po-lezviyu-2049.html",
+        "year": "2017",
+        "rating": "7.6",
+        "type": "movie"
+    },
+    {
+        "name": "Бегущий по лезвию",
+        "image": "https://image.tmdb.org/t/p/w500//dFzA82XdkobzdOjrYLMIfApzCVC.jpg",
+        "link": "/card/movies/800-156/Begushij-po-lezviyu.html",
+        "year": "1982",
+        "rating": "7.9",
+        "type": "movie"
+    },
+    {
+        "name": "Джон Уик 4",
+        "image": "https://image.tmdb.org/t/p/w500//o29otcx30U3EkqNVGC2feJVz5yr.jpg",
+        "link": "/card/movies/800-22/Dzhon-Uik-4.html",
+        "year": "2023",
+        "rating": "7.7",
+        "type": "movie"
+    },
+    {
+        "name": "Джон Уик 3",
+        "image": "https://image.tmdb.org/t/p/w500//2RDx4bMYF5TbTdTBoOwDLDgIej.jpg",
+        "link": "/card/movies/800-157/Dzhon-Uik-3.html",
+        "year": "2019",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Джон Уик 2",
+        "image": "https://image.tmdb.org/t/p/w500//60dPOD22s6TS2SfQiiOGOePBg8N.jpg",
+        "link": "/card/movies/800-158/Dzhon-Uik-2.html",
+        "year": "2017",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Джон Уик",
+        "image": "https://image.tmdb.org/t/p/w500//2hfeF2566IKZ30c1BAay0N2lxBr.jpg",
+        "link": "/card/movies/800-159/Dzhon-Uik.html",
+        "year": "2014",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Сверху вниз",
+        "image": "https://image.tmdb.org/t/p/w500//d4Kbt9I5RxV5WtunAhQtLzlqkGt.jpg",
+        "link": "/card/movies/800-687/Sverhu-vniz.html",
+        "year": "2025",
+        "rating": "5.7",
+        "type": "movie"
+    },
+    {
+        "name": "Новые мутанты",
+        "image": "https://image.tmdb.org/t/p/w500//2lyCa61EoF44vcQPXQfJzNvKT2D.jpg",
+        "link": "/card/movies/800-160/Novye-mutanty.html",
+        "year": "2020",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Люди Икс: Тёмный Феникс",
+        "image": "https://image.tmdb.org/t/p/w500//927lqua6AHPW4mUflU26yV3APKZ.jpg",
+        "link": "/card/movies/800-161/Lyudi-Iks-Tyomnyj-Feniks.html",
+        "year": "2019",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "Люди Икс: Апокалипсис",
+        "image": "https://image.tmdb.org/t/p/w500//aJ0WyuZpyRjTpz1DT1jcwgReXnP.jpg",
+        "link": "/card/movies/800-162/Lyudi-Iks-Apokalipsis.html",
+        "year": "2016",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Люди Икс: Дни минувшего будущего",
+        "image": "https://image.tmdb.org/t/p/w500//9IdeGyzRZH66RgNq9zSZDwPPllg.jpg",
+        "link": "/card/movies/800-28/Lyudi-Iks-Dni-minuvshego-budushego.html",
+        "year": "2014",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Росомаха: Бессмертный",
+        "image": "https://image.tmdb.org/t/p/w500//ol7Qyzx31q6HG9zGOvqiPIUIk3f.jpg",
+        "link": "/card/movies/800-163/Rosomaha-Bessmertnyj.html",
+        "year": "2013",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Люди Икс: Первый класс",
+        "image": "https://image.tmdb.org/t/p/w500//6vkQtWNHqq3uzcS0PH2mER7Gzjd.jpg",
+        "link": "/card/movies/800-164/Lyudi-Iks-Pervyj-klass.html",
+        "year": "2011",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Люди Икс: Начало. Росомаха",
+        "image": "https://image.tmdb.org/t/p/w500//nuOayxoKOCT6jog60i4A0iEfVk0.jpg",
+        "link": "/card/movies/800-165/Lyudi-Iks-Nachalo-Rosomaha.html",
+        "year": "2009",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Люди Икс: Последняя битва",
+        "image": "https://image.tmdb.org/t/p/w500//jD5bK5jxDprc1StAhHXMAgaEBMY.jpg",
+        "link": "/card/movies/800-166/Lyudi-Iks-Poslednyaya-bitva.html",
+        "year": "2006",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Люди Икс 2",
+        "image": "https://image.tmdb.org/t/p/w500//qkQ3KZ0wF7pyPWMzL5TxnEKKDiJ.jpg",
+        "link": "/card/movies/800-167/Lyudi-Iks-2.html",
+        "year": "2003",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Люди Икс",
+        "image": "https://image.tmdb.org/t/p/w500//wBqh8PMSOoUmSCyilXR8IRnjhwN.jpg",
+        "link": "/card/movies/800-168/Lyudi-Iks.html",
+        "year": "2000",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Дом у дороги",
+        "image": "https://image.tmdb.org/t/p/w500//z8AWDW9BaZ1oQohej87TdACGszm.jpg",
+        "link": "/card/movies/800-31/Dom-u-dorogi.html",
+        "year": "2024",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Придорожная закусочная",
+        "image": "https://image.tmdb.org/t/p/w500//2vYF1J7QeM1On7thBAL2RnVibHk.jpg",
+        "link": "/card/movies/800-169/Pridorozhnaya-zakusochnaya.html",
+        "year": "1989",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Лига теней",
+        "image": "https://image.tmdb.org/t/p/w500//s15EJR0q1MCCokTHiZqBqSvDyOF.jpg",
+        "link": "/card/movies/800-383/Liga-tenej.html",
+        "year": "2025",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "King’s Man: Начало",
+        "image": "https://image.tmdb.org/t/p/w500//9NyzS42sc9mvNLyPJtYqTqpkEoY.jpg",
+        "link": "/card/movies/800-170/King’s-Man-Nachalo.html",
+        "year": "2021",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Kingsman: Золотое кольцо",
+        "image": "https://image.tmdb.org/t/p/w500//vVQXYV7x6gpk9oVFbzsBxkIxdqT.jpg",
+        "link": "/card/movies/800-171/Kingsman-Zolotoe-kolco.html",
+        "year": "2017",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Kingsman: Секретная служба",
+        "image": "https://image.tmdb.org/t/p/w500//1br1GunwmrGaD9H3eyRPjLx1HY4.jpg",
+        "link": "/card/movies/800-32/Kingsman-Sekretnaya-sluzhba.html",
+        "year": "2015",
+        "rating": "7.6",
+        "type": "movie"
+    },
+    {
+        "name": "Побег из Шоушенка",
+        "image": "https://image.tmdb.org/t/p/w500//yvmKPlTIi0xdcFQIFcQKQJcI63W.jpg",
+        "link": "/card/movies/800-33/Pobeg-iz-Shoushenka.html",
+        "year": "1994",
+        "rating": "8.7",
+        "type": "movie"
+    },
+    {
+        "name": "Как Приручить Дракона",
+        "image": "https://image.tmdb.org/t/p/w500//tLs6YQ6AAFNNRwuJ1USI4KrLJCB.jpg",
+        "link": "/card/movies/800-385/Kak-Priruchit-Drakona2025.html",
+        "year": "2025",
+        "rating": "7.9",
+        "type": "movie"
+    },
+    {
+        "name": "Счастливого нового дня смерти",
+        "image": "https://image.tmdb.org/t/p/w500//ZstlucYRCRfkZ74O2LUfbbNbyb.jpg",
+        "link": "/card/movies/800-172/Schastlivogo-novogo-dnya-smerti.html",
+        "year": "2019",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Счастливого дня смерти",
+        "image": "https://image.tmdb.org/t/p/w500//gxOqCjZ3YGxZpkKchQbHX3DeQ3V.jpg",
+        "link": "/card/movies/800-34/Schastlivogo-dnya-smerti.html",
+        "year": "2017",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Геошторм",
+        "image": "https://image.tmdb.org/t/p/w500//8kMSc2UVFCXScIvhkSuSiROySbS.jpg",
+        "link": "/card/movies/800-36/Geoshtorm.html",
+        "year": "2017",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Новичок",
+        "image": "https://image.tmdb.org/t/p/w500//kfTQ2AxrKKr1RTW5aQPYHwEHpoj.jpg",
+        "link": "/card/movies/800-384/Novichok.html",
+        "year": "2025",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Тёмный рыцарь: Возрождение легенды",
+        "image": "https://image.tmdb.org/t/p/w500//2NaeRiOuxkpWv8s0uBzSlp7SuCn.jpg",
+        "link": "/card/movies/800-173/Tyomnyj-rycar-Vozrozhdenie-legendy.html",
+        "year": "2012",
+        "rating": "7.8",
+        "type": "movie"
+    },
+    {
+        "name": "Тёмный рыцарь",
+        "image": "https://image.tmdb.org/t/p/w500//dxWaYQtgpLbycqUpHzkqqYkT5I3.jpg",
+        "link": "/card/movies/800-38/Tyomnyj-rycar.html",
+        "year": "2008",
+        "rating": "8.5",
+        "type": "movie"
+    },
+    {
+        "name": "Бэтмен: Начало",
+        "image": "https://image.tmdb.org/t/p/w500//fIfmG3EaIy3eqebyq7hXjl1ymQW.jpg",
+        "link": "/card/movies/800-174/Betmen-Nachalo.html",
+        "year": "2005",
+        "rating": "7.7",
+        "type": "movie"
+    },
+    {
+        "name": "Реальные упыри",
+        "image": "https://image.tmdb.org/t/p/w500//tmUHOe07a84zgwMeWCpwnAqUwU4.jpg",
+        "link": "/card/movies/800-40/Realnye-upyri.html",
+        "year": "2014",
+        "rating": "7.6",
+        "type": "movie"
+    },
+    {
+        "name": "Крёстный отец 3",
+        "image": "https://image.tmdb.org/t/p/w500//b0kAYDl4NApOfzNWdlYzmXwujYU.jpg",
+        "link": "/card/movies/800-175/Kryostnyj-otec-3.html",
+        "year": "1990",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Крёстный отец 2",
+        "image": "https://image.tmdb.org/t/p/w500//tOLQ3iRDfbwhVaw3QjDzIOS7zcu.jpg",
+        "link": "/card/movies/800-176/Kryostnyj-otec-2.html",
+        "year": "1974",
+        "rating": "8.6",
+        "type": "movie"
+    },
+    {
+        "name": "Крёстный отец",
+        "image": "https://image.tmdb.org/t/p/w500//hoowzozsn0XQGtgH8nyivAMZfPN.jpg",
+        "link": "/card/movies/800-41/Kryostnyj-otec.html",
+        "year": "1972",
+        "rating": "8.7",
+        "type": "movie"
+    },
+    {
+        "name": "Джобс: Империя соблазна",
+        "image": "https://image.tmdb.org/t/p/w500//vPuWVOBvMsnpdIT8Qb2suLhIFSi.jpg",
+        "link": "/card/movies/800-42/Dzhobs-Imperiya-soblazna.html",
+        "year": "2013",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Военнопленный",
+        "image": "https://image.tmdb.org/t/p/w500//qwxU3i186IwqIMJdI7gXl6eknkK.jpg",
+        "link": "/card/movies/800-627/Voennoplennyj.html",
+        "year": "2025",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Скотт Пилигрим против всех",
+        "image": "https://image.tmdb.org/t/p/w500//bLJEFAh6tILVS1PS5mCRlA9HVsR.jpg",
+        "link": "/card/movies/800-44/Skott-Piligrim-protiv-vseh.html",
+        "year": "2010",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Спасти рядового Райана",
+        "image": "https://image.tmdb.org/t/p/w500//vhIwsqsMmdv6uwup4V6HJSMcQxI.jpg",
+        "link": "/card/movies/800-45/Spasti-ryadovogo-Rajana.html",
+        "year": "1998",
+        "rating": "8.2",
+        "type": "movie"
+    },
+    {
+        "name": "Пассажиры",
+        "image": "https://image.tmdb.org/t/p/w500//RY7YPqLRkgK5KiIq3kFQhCUJnB.jpg",
+        "link": "/card/movies/800-46/Passazhiry.html",
+        "year": "2016",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Список Шиндлера",
+        "image": "https://image.tmdb.org/t/p/w500//4K8fGGcJP2EoGDucILnaJcOJhZl.jpg",
+        "link": "/card/movies/800-48/Spisok-Shindlera.html",
+        "year": "1993",
+        "rating": "8.6",
+        "type": "movie"
+    },
+    {
+        "name": "Мир в огне",
+        "image": "https://image.tmdb.org/t/p/w500//xBWKgEDlXGrFAvjVzCUcPmw8kHk.jpg",
+        "link": "/card/movies/800-626/Mir-v-ogne.html",
+        "year": "2025",
+        "rating": "4.6",
+        "type": "movie"
+    },
+    {
+        "name": "5-я волна",
+        "image": "https://image.tmdb.org/t/p/w500//5ngef6vRYcn55NixtJAfK2JTDxY.jpg",
+        "link": "/card/movies/800-49/5-aya-volna.html",
+        "year": "2016",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "Бойцовский клуб",
+        "image": "https://image.tmdb.org/t/p/w500//66RvLrRJTm4J8l3uHXWF09AICol.jpg",
+        "link": "/card/movies/800-50/Bojcovskij-klub.html",
+        "year": "1999",
+        "rating": "8.4",
+        "type": "movie"
+    },
+    {
+        "name": "Ущелье",
+        "image": "https://image.tmdb.org/t/p/w500//yiUINsMKnemBFcUHqpv94yJolWH.jpg",
+        "link": "/card/movies/800-02/Ushele.html",
+        "year": "2025",
+        "rating": "7.7",
+        "type": "movie"
+    },
+    {
+        "name": "Назад в будущее 3",
+        "image": "https://image.tmdb.org/t/p/w500//xLRedXsCU3jDALWiQYNv1ZUbH5T.jpg",
+        "link": "/card/movies/800-177/Nazad-v-budushee-3.html",
+        "year": "1990",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Назад в будущее 2",
+        "image": "https://image.tmdb.org/t/p/w500//ieHWlIrxpTpdmvqjgxxq0lXsgYc.jpg",
+        "link": "/card/movies/800-178/Nazad-v-budushee-2.html",
+        "year": "1989",
+        "rating": "7.8",
+        "type": "movie"
+    },
+    {
+        "name": "Назад в будущее",
+        "image": "https://image.tmdb.org/t/p/w500//9a07nfvCoAAyUMfY0yQqsOjlb2C.jpg",
+        "link": "/card/movies/800-52/Nazad-v-budushee.html",
+        "year": "1985",
+        "rating": "8.3",
+        "type": "movie"
+    },
+    {
+        "name": "Щелкунчики",
+        "image": "https://image.tmdb.org/t/p/w500//iAoS1l0nRLKl4d97mbKF4pUFZhn.jpg",
+        "link": "/card/movies/800-53/Shelkunchiki.html",
+        "year": "2024",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "Гладиатор 2",
+        "image": "https://image.tmdb.org/t/p/w500//6N7F1Ga9m0CTHziA2Fs7BQczaKZ.jpg",
+        "link": "/card/movies/800-179/Gladiator-2.html",
+        "year": "2024",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Гладиатор",
+        "image": "https://image.tmdb.org/t/p/w500//1wjNqlfsuHNTXTpCt2ZOV2iPxaf.jpg",
+        "link": "/card/movies/800-54/Gladiator.html",
+        "year": "2000",
+        "rating": "8.2",
+        "type": "movie"
+    },
+    {
+        "name": "Почему он?",
+        "image": "https://image.tmdb.org/t/p/w500//q0wK2bXSLulAre276C6M4ZS8Kfo.jpg",
+        "link": "/card/movies/800-55/Pochemu-on.html",
+        "year": "2016",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Аватар: Путь воды",
+        "image": "https://image.tmdb.org/t/p/w500//4Em1KBxw9pWhgQqGREJLdTvseJO.jpg",
+        "link": "/card/movies/800-832/Avatar-Plamya-i-pepel.html",
+        "year": "2025",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Аватар: Путь воды",
+        "image": "https://image.tmdb.org/t/p/w500//yFNn7uWudLLWDJqfj3fwh5CcUdR.jpg",
+        "link": "/card/movies/800-180/Avatar-Put-vody.html",
+        "year": "2022",
+        "rating": "7.6",
+        "type": "movie"
+    },
+    {
+        "name": "Аватар",
+        "image": "https://image.tmdb.org/t/p/original/znsmyBwJXVcJw8IeJfiYYqIySjY.jpg",
+        "link": "/card/movies/800-56/Avatar.html",
+        "year": "2009",
+        "rating": "7.6",
+        "type": "movie"
+    },
+    {
+        "name": "21 мост",
+        "image": "https://image.tmdb.org/t/p/w500//lWDDukaPvDzIRYxgUuGFIH5YfyM.jpg",
+        "link": "/card/movies/800-01/21-Most.html",
+        "year": "2019",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Заклятие 4: Последние обряды",
+        "image": "https://image.tmdb.org/t/p/w500//iQQj4WakMzwtLBFuB7fE8wfHLuv.jpg",
+        "link": "/card/movies/800-645/Zaklyatie-4-Poslednie-obryady.html",
+        "year": "2025",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Проклятие монахини 2",
+        "image": "https://image.tmdb.org/t/p/w500//rhB3QB2dOG11LyeFXV2WtVBJFPz.jpg",
+        "link": "/card/movies/800-644/Proklyatie-monahini-2.html",
+        "year": "2023",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Заклятие 3: По воле дьявола",
+        "image": "https://image.tmdb.org/t/p/w500//XKVcCa1rh9Lk3EM1MuiGrb036x.jpg",
+        "link": "/card/movies/800-643/Zaklyatie-3-Po-vole-dyavola.html",
+        "year": "2021",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Проклятие Аннабель 3",
+        "image": "https://image.tmdb.org/t/p/w500//jLqJCkyepldyxQhp28Kr6zsKcF3.jpg",
+        "link": "/card/movies/800-642/Proklyatie-Annabel-3.html",
+        "year": "2019",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Проклятие плачущей",
+        "image": "https://image.tmdb.org/t/p/w500//4PAoKDQAKMO94HxjWsonsEPk45Y.jpg",
+        "link": "/card/movies/800-641/Proklyatie-plachushej.html",
+        "year": "2019",
+        "rating": "5.7",
+        "type": "movie"
+    },
+    {
+        "name": "Проклятие монахини",
+        "image": "https://image.tmdb.org/t/p/w500//rheiph1J5YIAKhXaShVRYZGII8y.jpg",
+        "link": "/card/movies/800-640/Proklyatie-monahini.html",
+        "year": "2018",
+        "rating": "5.9",
+        "type": "movie"
+    },
+    {
+        "name": "Проклятие Аннабель: Зарождение зла",
+        "image": "https://image.tmdb.org/t/p/w500//5Omlys7hQXOKFDdueBq63roIhVE.jpg",
+        "link": "/card/movies/800-639/Proklyatie-Annabel-Zarozhdenie-zla.html",
+        "year": "2017",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Заклятие 2",
+        "image": "https://image.tmdb.org/t/p/w500//11CKlGZOnlK1b6afFf1cOcTPmnJ.jpg",
+        "link": "/card/movies/800-638/Zaklyatie-2.html",
+        "year": "2016",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Проклятие Аннабель",
+        "image": "https://image.tmdb.org/t/p/w500//i12HsW8jXnCoy5IieQEpFLush7O.jpg",
+        "link": "/card/movies/800-637/Proklyatie-Annabel.html",
+        "year": "2014",
+        "rating": "5.8",
+        "type": "movie"
+    },
+    {
+        "name": "Заклятие",
+        "image": "https://image.tmdb.org/t/p/w500//hAUwLUNfSpeP9bMfznXKm4q4Z3Q.jpg",
+        "link": "/card/movies/800-636/Zaklyatie.html",
+        "year": "2013",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Тачка №19",
+        "image": "https://image.tmdb.org/t/p/w500//ebWQa3t9JUF5oZrvKexnba5PShJ.jpg",
+        "link": "/card/movies/800-395/Tachka-19.html",
+        "year": "2013",
+        "rating": "5.4",
+        "type": "movie"
+    },
+    {
+        "name": "Форсаж 10",
+        "image": "https://image.tmdb.org/t/p/w500//MSc1kcaHXvvyGgoyjDa60jxdqq.jpg",
+        "link": "/card/movies/800-396/Forsazh-10.html",
+        "year": "2023",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Форсаж 9",
+        "image": "https://image.tmdb.org/t/p/w500//3Abag0sIPHTLFIP2asXcC7E0QxP.jpg",
+        "link": "/card/movies/800-397/Forsazh-9.html",
+        "year": "2021",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Форсаж: Хоббс и Шоу",
+        "image": "https://image.tmdb.org/t/p/w500//uKchEnEOTCvh1iZ7AyOs7p9aoVq.jpg",
+        "link": "/card/movies/800-398/Forsazh-Hobbs-i-Shou.html",
+        "year": "2019",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Форсаж 8",
+        "image": "https://image.tmdb.org/t/p/w500//mMG9uMqEosiIMjliiPHsyycPcIA.jpg",
+        "link": "/card/movies/800-399/Forsazh-8.html",
+        "year": "2017",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Форсаж 7",
+        "image": "https://image.tmdb.org/t/p/w500//i5A0OCxcinzkcxvesvefFu9vX3K.jpg",
+        "link": "/card/movies/800-400/Forsazh-7.html",
+        "year": "2015",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Форсаж 6",
+        "image": "https://image.tmdb.org/t/p/w500//qsWinjrA5wZbFtcU87EIgpCo0Xm.jpg",
+        "link": "/card/movies/800-401/Forsazh-6.html",
+        "year": "2013",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Форсаж 5",
+        "image": "https://image.tmdb.org/t/p/original/NiK8Nqq4c2mNOxj8LgtRPtc1OQ.jpg",
+        "link": "/card/movies/800-402/Forsazh-5.html",
+        "year": "2011",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Форсаж 4",
+        "image": "https://image.tmdb.org/t/p/w500//A0HOGMFp4mphOCqwt5YNWbuSMJe.jpg",
+        "link": "/card/movies/800-403/Forsazh-4.html",
+        "year": "2009",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Тройной форсаж: Токийский Дрифт",
+        "image": "https://image.tmdb.org/t/p/w500//qkCOHIXI2vSXsuA0psYghM9Og2U.jpg",
+        "link": "/card/movies/800-404/Forsazh-3.html",
+        "year": "2006",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Двойной форсаж",
+        "image": "https://image.tmdb.org/t/p/w500//esDPKQNv4GkKwyNVpTpjk2Y5ZhI.jpg",
+        "link": "/card/movies/800-405/Forsazh-2.html",
+        "year": "2003",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Форсаж ",
+        "image": "https://image.tmdb.org/t/p/w500//eGdN1s6G7COuTu2rJmZQl0eU7kg.jpg",
+        "link": "/card/movies/800-406/Forsazh.html",
+        "year": "2001",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Суперфорсаж!",
+        "image": "https://image.tmdb.org/t/p/w500//k8QC40RzpRwhLYKPP2ANiAfQLRt.jpg",
+        "link": "/card/movies/800-408/Superforsazh.html",
+        "year": "2015",
+        "rating": "5.1",
+        "type": "movie"
+    },
+    {
+        "name": "Драйв",
+        "image": "https://image.tmdb.org/t/p/w500//4T9D8MWhZ2CdE0hK5LfOjwYA9XZ.jpg",
+        "link": "/card/movies/800-407/Drajv.html",
+        "year": "2011",
+        "rating": "7.6",
+        "type": "movie"
+    },
+    {
+        "name": "Малыш на драйве",
+        "image": "https://image.tmdb.org/t/p/w500//18ZLWLRx9jPq1rEEzZGbxGyS76a.jpg",
+        "link": "/card/movies/800-409/Malysh-na-drajve.html",
+        "year": "2017",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Время",
+        "image": "https://image.tmdb.org/t/p/w500//ip4GMRyHjDkfSt3PTp6rrTYSClK.jpg",
+        "link": "/card/movies/800-410/Vremya2011.html",
+        "year": "2011",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Хан Соло: Звёздные войны. Истории",
+        "image": "https://image.tmdb.org/t/p/w500//syDObMIKfE6MI5w9DAlofSr0QQl.jpg",
+        "link": "/card/movies/800-658/Han-Solo-Zvyozdnye-vojny-Istorii.html",
+        "year": "2018",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Изгой-один: Звёздные войны. Истории",
+        "image": "https://image.tmdb.org/t/p/w500//agKGn83Y380RKlakyVEIpTuMoA1.jpg",
+        "link": "/card/movies/800-657/Izgoj-odin-Zvyozdnye-vojny-Istorii.html",
+        "year": "2016",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Звёздные войны: Эпизод 9 - Скайуокер. Восход",
+        "image": "https://image.tmdb.org/t/p/w500//mCD1ugUVWwa1pOmOACQY8sV7eu9.jpg",
+        "link": "/card/movies/800-656/Zvyozdnye-vojny-Epizod-9-Skajuoker-Voshod.html",
+        "year": "2019",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Звёздные войны: Эпизод 8 - Последние джедаи",
+        "image": "https://image.tmdb.org/t/p/w500//1vwfcOhwZGLfQXVRLfC3jOnU9jq.jpg",
+        "link": "/card/movies/800-655/Zvyozdnye-vojny-Epizod-8-Poslednie-dzhedai.html",
+        "year": "2017",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Звёздные войны: Эпизод 7 - Пробуждение силы",
+        "image": "https://image.tmdb.org/t/p/w500//5ltRJxurOTIaMQwcOwSau7l3GME.jpg",
+        "link": "/card/movies/800-654/Zvyozdnye-vojny-Epizod-7-Probuzhdenie-sily.html",
+        "year": "2015",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Звёздные войны: Эпизод 3 - Месть Ситхов",
+        "image": "https://image.tmdb.org/t/p/w500//lzwn2MMlUybAoV5G2tbjJo6dGeg.jpg",
+        "link": "/card/movies/800-653/Zvyozdnye-vojny-Epizod-3-Mest-Sithov.html",
+        "year": "2005",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Звёздные войны: Эпизод 2 - Атака клонов",
+        "image": "https://image.tmdb.org/t/p/w500//jGiIdLMD5Y16snttJwUcQSDBXUv.jpg",
+        "link": "/card/movies/800-652/Zvyozdnye-vojny-Epizod-2-Ataka-klonov.html",
+        "year": "2002",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Звёздные войны: Эпизод 1 - Скрытая угроза",
+        "image": "https://image.tmdb.org/t/p/w500//l1LyrhQwDGur18rxRXKQJQhvx7Y.jpg",
+        "link": "/card/movies/800-651/Zvyozdnye-vojny-Epizod-1-Skrytaya-ugroza.html",
+        "year": "1999",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Звёздные войны: Эпизод 6 - Возвращение Джедая",
+        "image": "https://image.tmdb.org/t/p/w500//91bG08Mpa4T7YWFMjsiNi2Fh6jc.jpg",
+        "link": "/card/movies/800-650/Zvyozdnye-vojny-Epizod-6-Vozvrashenie-Dzhedaya.html",
+        "year": "1983",
+        "rating": "7.9",
+        "type": "movie"
+    },
+    {
+        "name": "Звёздные войны: Эпизод 5 - Империя наносит ответный удар",
+        "image": "https://image.tmdb.org/t/p/w500//nLxzQWcIJAqfOKemHYks1aQKAe8.jpg",
+        "link": "/card/movies/800-649/Zvyozdnye-vojny-Epizod-5-Imperiya-nanosit-otvetnyj-udar.html",
+        "year": "1980",
+        "rating": "8.4",
+        "type": "movie"
+    },
+    {
+        "name": "Звёздные войны: Эпизод 4 - Новая надежда",
+        "image": "https://image.tmdb.org/t/p/w500//wPlD3Z5x0O92rsB44XKHKQijROM.jpg",
+        "link": "/card/movies/800-648/Zvyozdnye-vojny-Epizod-4-Novaya-nadezhda.html",
+        "year": "1977",
+        "rating": "8.2",
+        "type": "movie"
+    },
+    {
+        "name": "Шаг вперед 6: Год танцев",
+        "image": "https://image.tmdb.org/t/p/w500//6E5U8UZbIkAUplyOLW92K7cGXji.jpg",
+        "link": "/card/movies/800-415/Shag-vpered-6-God-tancev.html",
+        "year": "2019",
+        "rating": "6.1",
+        "type": "movie"
+    },
+    {
+        "name": "Шаг вперёд: Всё или ничего",
+        "image": "https://image.tmdb.org/t/p/w500//14AllogtQ1je9SjsZDKTLOYDCaZ.jpg",
+        "link": "/card/movies/800-416/Shag-vperyod-Vsyo-ili-nichego.html",
+        "year": "2014",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Шаг вперёд 4",
+        "image": "https://image.tmdb.org/t/p/w500//7mxIQJTf3QvzgZFo4imFC3M5p7o.jpg",
+        "link": "/card/movies/800-417/Shag-vperyod-4.html",
+        "year": "2012",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Шаг вперёд 3D",
+        "image": "https://image.tmdb.org/t/p/w500//ev5PLXy4bBEVb4YuJKVd4h10ydv.jpg",
+        "link": "/card/movies/800-418/Shag-vperyod-3D.html",
+        "year": "2010",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Шаг вперёд 2: Улицы",
+        "image": "https://image.tmdb.org/t/p/w500//lpisd1vshoO4Dff9AaVjIXen7JL.jpg",
+        "link": "/card/movies/800-419/Shag-vperyod-2-Ulicy.html",
+        "year": "2008",
+        "rating": "6.7",
+        "type": "movie"
+    },
+    {
+        "name": "Шаг вперёд",
+        "image": "https://image.tmdb.org/t/p/w500//bcIsEvWYgnrM8VJi165EOCcE5vI.jpg",
+        "link": "/card/movies/800-420/Shag-vperyod.html",
+        "year": "2006",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Супер Майк: Последний танец",
+        "image": "https://image.tmdb.org/t/p/w500//xCQRFcrOtssTeMjBxsKyKy5aDB9.jpg",
+        "link": "/card/movies/800-421/Super-Majk-Poslednij-tanec.html",
+        "year": "2023",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Супер Майк XXL",
+        "image": "https://image.tmdb.org/t/p/w500//Uxo9IUE3iosyC31oeQv7MVbT5c.jpg",
+        "link": "/card/movies/800-422/Super-Majk-XXL.html",
+        "year": "2015",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Супер Майк",
+        "image": "https://image.tmdb.org/t/p/w500//mcS4Ce7G9SmVy0qFjKm0zp5FlCq.jpg",
+        "link": "/card/movies/800-423/Super-Majk.html",
+        "year": "2012",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Стартрек: Бесконечность",
+        "image": "https://image.tmdb.org/t/p/w500//mkcP3g7XwmXT3fznyBfvGDcPgjA.jpg",
+        "link": "/card/movies/800-673/Startrek-Beskonechnost.html",
+        "year": "2016",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Стартрек: Возмездие",
+        "image": "https://image.tmdb.org/t/p/w500//afDcDs9nZhL871BID8X0BhyePrQ.jpg",
+        "link": "/card/movies/800-672/Startrek-Vozmezdie.html",
+        "year": "2013",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Звёздный путь",
+        "image": "https://image.tmdb.org/t/p/w500//9j0bQ4zDzrXerLP0TkUMKNT6AFy.jpg",
+        "link": "/card/movies/800-671/Zvyozdnyj-put.html",
+        "year": "2009",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Звёздный путь: Возмездие",
+        "image": "https://image.tmdb.org/t/p/w500//47I0uG2Acdv0oh16FzHeNONtDFd.jpg",
+        "link": "/card/movies/800-670/Zvyozdnyj-put-Vozmezdie.html",
+        "year": "2002",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Звёздный путь 9: Восстание",
+        "image": "https://image.tmdb.org/t/p/w500//pnlsGWuUk08PLQGVJaaTlXEyd5q.jpg",
+        "link": "/card/movies/800-669/Zvyozdnyj-put-9-Vosstanie.html",
+        "year": "1998",
+        "rating": "6.4",
+        "type": "movie"
+    },
+    {
+        "name": "Звёздный путь: Первый контакт",
+        "image": "https://image.tmdb.org/t/p/w500//w52RBsd4dS3NAkt0lE8xIjiecoQ.jpg",
+        "link": "/card/movies/800-668/Zvyozdnyj-put-Pervyj-kontakt.html",
+        "year": "1996",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Звёздный путь 7: Поколения",
+        "image": "https://image.tmdb.org/t/p/w500//kZiy2JlUPpkzinNUptwIkPDRRl6.jpg",
+        "link": "/card/movies/800-667/Zvyozdnyj-put-7-Pokoleniya.html",
+        "year": "1994",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Звёздный путь 6: Неоткрытая страна",
+        "image": "https://image.tmdb.org/t/p/w500//xmHaeSkXvHIJikHs7Gvlf304I5y.jpg",
+        "link": "/card/movies/800-666/Zvyozdnyj-put-6-Neotkrytaya-strana.html",
+        "year": "1991",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Звёздный путь 5: Последний рубеж",
+        "image": "https://image.tmdb.org/t/p/w500//aSSbdOgcph2Lqu19wgKPdhTFUKz.jpg",
+        "link": "/card/movies/800-665/Zvyozdnyj-put-5-Poslednij-rubezh.html",
+        "year": "1989",
+        "rating": "5.7",
+        "type": "movie"
+    },
+    {
+        "name": "Звёздный путь 4: Дорога Домой",
+        "image": "https://image.tmdb.org/t/p/w500//59LMSj51NKCB7uYi64CuPHi1306.jpg",
+        "link": "/card/movies/800-664/Zvyozdnyj-put-4-Doroga-Domoj.html",
+        "year": "1986",
+        "rating": "7.2",
+        "type": "movie"
+    },
+    {
+        "name": "Звёздный путь 3: В поисках Спока",
+        "image": "https://image.tmdb.org/t/p/w500//tYLxjJqQOkDREOF2dqxvsSS4P79.jpg",
+        "link": "/card/movies/800-663/Zvyozdnyj-put-3-V-poiskah-Spoka.html",
+        "year": "1984",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Звёздный путь 2: Гнев Хана",
+        "image": "https://image.tmdb.org/t/p/w500//jKKrJUyCevxC25eRGGj0vqbkuNe.jpg",
+        "link": "/card/movies/800-662/Zvyozdnyj-put-2-Gnev-Hana.html",
+        "year": "1982",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Звёздный путь: Фильм",
+        "image": "https://image.tmdb.org/t/p/w500//8AZqD3pQcnCPDtefJMNnJuZNVB8.jpg",
+        "link": "/card/movies/800-661/Zvyozdnyj-put-Film-1979.html",
+        "year": "1979",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Сумерки. Сага: Рассвет — Часть 2",
+        "image": "https://image.tmdb.org/t/p/w500//fgVXAUj9w6OrVlhQ0YPiZhO46j5.jpg",
+        "link": "/card/movies/800-713/Sumerki-Saga-Rassvet-Chast-2.html",
+        "year": "2012",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Сумерки. Сага: Рассвет — Часть 1",
+        "image": "https://image.tmdb.org/t/p/w500//hnJ5U57LWu6xHp8w0z3o0ZdgFTf.jpg",
+        "link": "/card/movies/800-712/Sumerki-Saga-Rassvet-Chast-1.html",
+        "year": "2011",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Сумерки. Сага: Затмение",
+        "image": "https://image.tmdb.org/t/p/w500//dK4Gi1UdMiHzHc7r7CZQG4IQ9Sr.jpg",
+        "link": "/card/movies/800-711/Sumerki-Saga-Zatmenie.html",
+        "year": "2010",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Сумерки. Сага: Новолуние",
+        "image": "https://image.tmdb.org/t/p/w500//skucxWub4EZh1spfrgVFOlHwYCU.jpg",
+        "link": "/card/movies/800-710/Sumerki-Saga-Novolunie.html",
+        "year": "2009",
+        "rating": "6.0",
+        "type": "movie"
+    },
+    {
+        "name": "Сумерки",
+        "image": "https://image.tmdb.org/t/p/w500//pWI6GBi4eMQttMtKSWbxIFO2HqC.jpg",
+        "link": "/card/movies/800-709/Sumerki.html",
+        "year": "2008",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Мальчишник: Часть III",
+        "image": "https://image.tmdb.org/t/p/w500//tKKCvtupZ9QNF9CjnIQ4kLA2Frf.jpg",
+        "link": "/card/movies/800-716/Malchishnik-v-Vegase-3.html",
+        "year": "2013",
+        "rating": "6.2",
+        "type": "movie"
+    },
+    {
+        "name": "Мальчишник 2: Из Вегаса в Бангкок",
+        "image": "https://image.tmdb.org/t/p/w500//zDJYcvMxqIFVXpbs4US4YF5eskU.jpg",
+        "link": "/card/movies/800-715/Malchishnik-v-Vegase-2.html",
+        "year": "2011",
+        "rating": "6.5",
+        "type": "movie"
+    },
+    {
+        "name": "Мальчишник в Вегасе",
+        "image": "https://image.tmdb.org/t/p/w500//rRKFBbfh8P8TswvSA6UGhEUVzfN.jpg",
+        "link": "/card/movies/800-714/Malchishnik-v-Vegase.html",
+        "year": "2009",
+        "rating": "7.3",
+        "type": "movie"
+    },
+    {
+        "name": "Три метра над уровнем неба: Я тебя хочу",
+        "image": "https://image.tmdb.org/t/p/w500//zvsCvPtXjs7Vh1wfcmmRTAn7Y0F.jpg",
+        "link": "/card/movies/800-734/Tri-metra-nad-urovnem-neba-Ya-tebya-hochu.html",
+        "year": "2012",
+        "rating": "7.5",
+        "type": "movie"
+    },
+    {
+        "name": "Три метра над уровнем неба",
+        "image": "https://image.tmdb.org/t/p/w500//hs8U2paOu0siXWy4MngMJKMbZSw.jpg",
+        "link": "/card/movies/800-733/Tri-metra-nad-urovnem-neba.html",
+        "year": "2010",
+        "rating": "7.7",
+        "type": "movie"
+    },
+
+
+    // Мультфильмы
+    {
+        "name": "Чудеса на виражах",
+        "image": "https://image.tmdb.org/t/p/w500//5YrzivFh1mKtUlje1ZHZvFxJRgL.jpg",
+        "link": "/card/cartoons/500-230/Chudesa-na-virazhah.html",
+        "year": "1990",
+        "rating": "7.4",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Ким Пять-с-плюсом",
+        "image": "https://image.tmdb.org/t/p/w500//mZklBKwqv1vsgkPJaFZU2tqc59.jpg",
+        "link": "/card/cartoons/500-229/Kim-Pyat-s-plyusom.html",
+        "year": "2002",
+        "rating": "7.6",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Кураж – трусливый пёс",
+        "image": "https://image.tmdb.org/t/p/w500//dzD8EWDvtg7rBCINu0RCH5EUejh.jpg",
+        "link": "/card/cartoons/500-228/Kurazh-truslivyj-pyos.html",
+        "year": "1999",
+        "rating": "8.2",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Самурай Джек",
+        "image": "https://image.tmdb.org/t/p/original/aBig8NqD8IQrZ1OV258MqHvsAsF.jpg",
+        "link": "/card/cartoons/500-215/Samuraj-Dzhek.html",
+        "year": "2001",
+        "rating": "8.4",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Робоцып",
+        "image": "https://image.tmdb.org/t/p/w500//6LoFwMzLvB0Bzal6dQZuld04JHO.jpg",
+        "link": "/card/cartoons/500-216/Robocyp.html",
+        "year": "2005",
+        "rating": "7.6",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Галактический футбол",
+        "image": "https://image.tmdb.org/t/p/original/voAgLySs7lXCfXEVSxWV40TmYef.jpg",
+        "link": "/card/cartoons/500-217/Galakticheskij-futbol.html",
+        "year": "2006",
+        "rating": "7.7",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Приключения Джеки Чана",
+        "image": "https://image.tmdb.org/t/p/w500//5ZZUtz6cNmRkNVVniVv1feFH90g.jpg",
+        "link": "/card/cartoons/500-218/Priklyucheniya-Dzheki-Chana.html",
+        "year": "2000",
+        "rating": "8.2",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Тотали Спайс!",
+        "image": "https://image.tmdb.org/t/p/w500//zvEit6c2zC2PosXROb85jZwb0gx.jpg",
+        "link": "/card/cartoons/500-219/Totali-Spajs.html",
+        "year": "2002",
+        "rating": "7.3",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Что с Энди?",
+        "image": "https://image.tmdb.org/t/p/w500//zdHT0xD9GVYeBcnPftB3XzKAhdh.jpg",
+        "link": "/card/cartoons/500-220/Chto-s-Endi.html",
+        "year": "2001",
+        "rating": "7.0",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Мультреалити",
+        "image": "https://image.tmdb.org/t/p/original/r905cmZBmAXCpsFVexvRCGfXSkh.jpg",
+        "link": "/card/cartoons/500-221/Multrealiti.html",
+        "year": "2004",
+        "rating": "8.2",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Тутанхамончик",
+        "image": "https://image.tmdb.org/t/p/w500//64mxPXRRQEMnPNJB9VdbbVLATdc.jpg",
+        "link": "/card/cartoons/500-222/Tutanhamonchik.html",
+        "year": "2003",
+        "rating": "6.8",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Любовь. Смерть. Роботы",
+        "image": "https://image.tmdb.org/t/p/w500//iHpKDOHKpN0mjk73BhClMFubw0N.jpg",
+        "link": "/card/cartoons/500-223/Lyubov-Smert-Roboty.html",
+        "year": "2019",
+        "rating": "8.2",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Американский дракон: Джейк Лонг",
+        "image": "https://image.tmdb.org/t/p/w500//ntsNm1IiARWtUgNY9SI7VRCLOVD.jpg",
+        "link": "/card/cartoons/500-224/Amerikanskij-drakon-Dzhejk-Long.html",
+        "year": "2005",
+        "rating": "7.7",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Союз зверей",
+        "image": "https://image.tmdb.org/t/p/w500//cg9KYCRLvRaKRjkuZF41Oef3Rbq.jpg",
+        "link": "/card/cartoons/500-03/Soyuz-zverej.html",
+        "year": "2010",
+        "rating": "5.6",
+        "type": "cartoon"
+    },
+    {
+        "name": "Рапунцель: Новая история",
+        "image": "https://image.tmdb.org/t/p/w500//s12Z2uGrvjj5sA7LsBStTtfTYjC.jpg",
+        "link": "/card/cartoons/500-79/Rapuncel-Novaya-istoriya.html",
+        "year": "2017",
+        "rating": "7.3",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Рапунцель: Дорога к мечте",
+        "image": "https://image.tmdb.org/t/p/w500//zj82L9maBSW6CAVZltBoFBSuTk1.jpg",
+        "link": "/card/cartoons/500-80/Rapuncel-Doroga-k-mechte.html",
+        "year": "2017",
+        "rating": "6.8",
+        "type": "cartoon"
+    },
+    {
+        "name": "Рапунцель: Запутанная история",
+        "image": "https://image.tmdb.org/t/p/w500//i6hhWWRMglTJR2Oi5xsN0JV6tNq.jpg",
+        "link": "/card/cartoons/500-04/Rapuncel-Zaputannaya-istoriya.html",
+        "year": "2010",
+        "rating": "7.6",
+        "type": "cartoon"
+    },
+    {
+        "name": "Том и Джерри в Нью-Йорке",
+        "image": "https://image.tmdb.org/t/p/w500//5nvIUVjFpRAiMziG5zP2KR1uLHV.jpg",
+        "link": "/card/cartoons/500-81/Tom-i-Dzherri-v-Nyu-Jorke.html",
+        "year": "2021",
+        "rating": "7.0",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Том и Джерри: Сказки",
+        "image": "https://image.tmdb.org/t/p/original/hMx3Ybd4Zov0Uy7GwqrjfHVcnA2.jpg",
+        "link": "/card/cartoons/500-82/Tom-i-Dzherri-Skazki.html",
+        "year": "2006",
+        "rating": "7.8",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Том и Джерри в детстве",
+        "image": "https://image.tmdb.org/t/p/w500//pApniCXhegDnhxQda7RcpG8gFP0.jpg",
+        "link": "/card/cartoons/500-83/Tom-i-Dzherri-v-detstve.html",
+        "year": "1990",
+        "rating": "6.3",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Том и Джерри: Комедийное шоу",
+        "image": "https://image.tmdb.org/t/p/w500//4usKsUnNy3DYkrEGC8EXe3bQ8PV.jpg",
+        "link": "/card/cartoons/500-84/Tom-i-Dzherri-Komedijnoe-shou.html",
+        "year": "1980",
+        "rating": "7.5",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Том и Джерри: Бравые ковбои!",
+        "image": "https://image.tmdb.org/t/p/w500//rdSW1PtCAsEmqjWZ5SijWbROLDX.jpg",
+        "link": "/card/cartoons/500-85/Tom-i-Dzherri-Bravye-kovboi.html",
+        "year": "2022",
+        "rating": "6.9",
+        "type": "cartoon"
+    },
+    {
+        "name": "Том и Джерри: Страна снеговиков",
+        "image": "https://image.tmdb.org/t/p/w500//c8VZDpxfrcAtdQ9bxb4qsLSkFN4.jpg",
+        "link": "/card/cartoons/500-86/Tom-i-Dzherri-Strana-snegovikov.html",
+        "year": "2022",
+        "rating": "6.7",
+        "type": "cartoon"
+    },
+    {
+        "name": "Том и Джерри: Вилли Вонка и шоколадная фабрика",
+        "image": "https://image.tmdb.org/t/p/w500//vh5iYhj80l1inSdep61sF8g1S8m.jpg",
+        "link": "/card/cartoons/500-87/Tom-i-Dzherri-Villi-Vonka-i-shokoladnaya-fabrika.html",
+        "year": "2017",
+        "rating": "6.7",
+        "type": "cartoon"
+    },
+    {
+        "name": "Том и джерри: возвращение в страну Оз",
+        "image": "https://image.tmdb.org/t/p/w500//oXC2YDZkPdhxAaLOGOcepv1BXFB.jpg",
+        "link": "/card/cartoons/500-88/Tom-i-dzherri-vozvrashenie-v-stranu-Oz.html",
+        "year": "2016",
+        "rating": "5.8",
+        "type": "cartoon"
+    },
+    {
+        "name": "Том и Джерри: Шпион Квест",
+        "image": "https://image.tmdb.org/t/p/w500//vnksJqA66fWRZoLuqfkdzUWqw75.jpg",
+        "link": "/card/cartoons/500-89/Tom-i-Dzherri-Shpion-Kvest.html",
+        "year": "2015",
+        "rating": "6.0",
+        "type": "cartoon"
+    },
+    {
+        "name": "Том и Джерри: Потерянный дракон",
+        "image": "https://image.tmdb.org/t/p/w500//uGHtwQuPFfrsM2DMgwcnA3WGGVc.jpg",
+        "link": "/card/cartoons/500-90/Tom-i-Dzherri-Poteryannyj-drakon.html",
+        "year": "2014",
+        "rating": "6.0",
+        "type": "cartoon"
+    },
+    {
+        "name": "Том и Джерри: Гигантское приключение",
+        "image": "https://image.tmdb.org/t/p/w500//v5IZVUFBU6TymmUHdakVmoWmOeE.jpg",
+        "link": "/card/cartoons/500-91/Tom-i-Dzherri-Gigantskoe-priklyuchenie.html",
+        "year": "2013",
+        "rating": "5.8",
+        "type": "cartoon"
+    },
+    {
+        "name": "Том и Джерри: Робин Гуд и мышь-весельчак",
+        "image": "https://image.tmdb.org/t/p/w500//2lDUlkOne47joTE4yNmIG71qZ0m.jpg",
+        "link": "/card/cartoons/500-05/Tom-i-Dzherri-Robin-Gud-i-mysh-veselchak.html",
+        "year": "2012",
+        "rating": "6.5",
+        "type": "cartoon"
+    },
+    {
+        "name": "Том и Джерри и Волшебник из страны Оз",
+        "image": "https://image.tmdb.org/t/p/w500//fN1LLxZx5cmcrq6c0lsC27UYmw0.jpg",
+        "link": "/card/cartoons/500-92/Tom-i-Dzherri-i-Volshebnik-iz-strany-Oz.html",
+        "year": "2011",
+        "rating": "6.3",
+        "type": "cartoon"
+    },
+    {
+        "name": "Том и Джерри: Шерлок Холмс",
+        "image": "https://image.tmdb.org/t/p/w500//771TGoHCnMX6afZdD7KcPO53ED7.jpg",
+        "link": "/card/cartoons/500-93/Tom-i-Dzherri-Sherlok-Holms.html",
+        "year": "2010",
+        "rating": "6.4",
+        "type": "cartoon"
+    },
+    {
+        "name": "Том и Джерри: История о Щелкунчике",
+        "image": "https://image.tmdb.org/t/p/w500//akjBwODBGSIYpaIxhTtGfsi3I5y.jpg",
+        "link": "/card/cartoons/500-94/Tom-i-Dzherri-Istoriya-o-Shelkunchike.html",
+        "year": "2007",
+        "rating": "6.8",
+        "type": "cartoon"
+    },
+    {
+        "name": "Том и Джерри: Трепещи, усатый!",
+        "image": "https://image.tmdb.org/t/p/w500//l4j8r4SHLJXjMccxX8yGH3QudRO.jpg",
+        "link": "/card/cartoons/500-05/Tom-i-Dzherri-Robin-Gud-i-mysh-veselchak.html",
+        "year": "2006",
+        "rating": "6.9",
+        "type": "cartoon"
+    },
+    {
+        "name": "Том и Джерри: Быстрый и бешеный",
+        "image": "https://image.tmdb.org/t/p/w500//q25nIkJzPG9amPibssLwDteMid1.jpg",
+        "link": "/card/cartoons/500-96/Tom-i-Dzherri-Bystryj-i-beshenyj.html",
+        "year": "2005",
+        "rating": "7.0",
+        "type": "cartoon"
+    },
+    {
+        "name": "Том и Джерри: Волшебное кольцо",
+        "image": "https://image.tmdb.org/t/p/w500//vP9l1bTvRWfaTnooaCl5ta20Ysx.jpg",
+        "link": "/card/cartoons/500-97/Tom-i-Dzherri-Volshebnoe-kolco.html",
+        "year": "2002",
+        "rating": "6.4",
+        "type": "cartoon"
+    },
+    {
+        "name": "Том и Джерри: Мотор!",
+        "image": "https://image.tmdb.org/t/p/w500//kJ6yQPWxdnDjPNWaR4nRD3GgpOT.jpg",
+        "link": "/card/cartoons/500-98/Tom-i-Dzherri-Motor.html",
+        "year": "1992",
+        "rating": "6.3",
+        "type": "cartoon"
+    },
+    {
+        "name": "Рио 2",
+        "image": "https://image.tmdb.org/t/p/w500//o3dmiL6W0EqRnbRpm7h6Pen31PF.jpg",
+        "link": "/card/cartoons/500-99/Rio-2.html",
+        "year": "2014",
+        "rating": "6.5",
+        "type": "cartoon"
+    },
+    {
+        "name": "Рио",
+        "image": "https://image.tmdb.org/t/p/w500//oQZEFIeucAsuNFxkt7cUww8bh6s.jpg",
+        "link": "/card/cartoons/500-06/Rio.html",
+        "year": "2011",
+        "rating": "6.7",
+        "type": "cartoon"
+    },
+    {
+        "name": "Тайна красной планеты",
+        "image": "https://image.tmdb.org/t/p/w500//mD4BnU0MTon8bhuJPCrc82IXLtp.jpg",
+        "link": "/card/cartoons/500-07/Tajna-krasnoj-planety.html",
+        "year": "2011",
+        "rating": "6.0",
+        "type": "cartoon"
+    },
+    {
+        "name": "Рататуй",
+        "image": "https://image.tmdb.org/t/p/w500//6u4JvZBiw1Uv6BgTlWNsFSSHlMn.jpg",
+        "link": "/card/cartoons/500-08/Ratatuj.html",
+        "year": "2007",
+        "rating": "7.8",
+        "type": "cartoon"
+    },
+    {
+        "name": "Храбрая сердцем",
+        "image": "https://image.tmdb.org/t/p/w500//5A52Y3scfxXTwBKVdgEVmoa8i0q.jpg",
+        "link": "/card/cartoons/500-09/Hrabraya-serdcem.html",
+        "year": "2012",
+        "rating": "7.0",
+        "type": "cartoon"
+    },
+    {
+        "name": "В гости к Робинсонам",
+        "image": "https://image.tmdb.org/t/p/w500//gx7TFtVxPZPHeuYuXdPgPGnboRU.jpg",
+        "link": "/card/cartoons/500-10/V-gosti-k-Robinsonam.html",
+        "year": "2007",
+        "rating": "6.9",
+        "type": "cartoon"
+    },
+    {
+        "name": "Дорога на Эльдорадо",
+        "image": "https://image.tmdb.org/t/p/w500//kbXR4E6xhi6MFcyEvz1VKQaRhc9.jpg",
+        "link": "/card/cartoons/500-11/Doroga-na-Eldorado.html",
+        "year": "2000",
+        "rating": "7.2",
+        "type": "cartoon"
+    },
+    {
+        "name": "Франкенвини",
+        "image": "https://image.tmdb.org/t/p/w500//pzqDbpshw50ulrSM5Sdc2AY70tq.jpg",
+        "link": "/card/cartoons/500-13/Frankenvini.html",
+        "year": "2012",
+        "rating": "7.0",
+        "type": "cartoon"
+    },
+    {
+        "name": "Правила Мегамозга!",
+        "image": "https://image.tmdb.org/t/p/w500//kXdT6ait0Kw4ylzFgEA0z8kWaMM.jpg",
+        "link": "/card/cartoons/500-100/Pravila-Megamozga.html",
+        "year": "2024",
+        "rating": "5.5",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Мегамозг против Синдиката Рока",
+        "image": "https://image.tmdb.org/t/p/w500//rtQYsfEhWE9hGX94dZyPFoMdg2V.jpg",
+        "link": "/card/cartoons/500-101/Megamozg-protiv-Sindikata-Roka.html",
+        "year": "2024",
+        "rating": "5.1",
+        "type": "cartoon"
+    },
+    {
+        "name": "Мегамозг",
+        "image": "https://image.tmdb.org/t/p/w500//wmbjH9s0mu5gv1WX3v8n9IwbbHq.jpg",
+        "link": "/card/cartoons/500-14/Megamozg.html",
+        "year": "2010",
+        "rating": "7.0",
+        "type": "cartoon"
+    },
+    {
+        "name": "ВАЛЛ·И",
+        "image": "https://image.tmdb.org/t/p/w500//i4qDsHTfrTD2EkPa7tT53cJYZkL.jpg",
+        "link": "/card/cartoons/500-15/VALL·I.html",
+        "year": "2008",
+        "rating": "8.1",
+        "type": "cartoon"
+    },
+    {
+        "name": "Фантазия",
+        "image": "https://image.tmdb.org/t/p/w500//gCevkcGOmqowkB6jJaYUVZdHCVN.jpg",
+        "link": "/card/cartoons/500-16/Fantaziya.html",
+        "year": "1940",
+        "rating": "7.4",
+        "type": "cartoon"
+    },
+    {
+        "name": "Аладдин и Король Разбойников",
+        "image": "https://image.tmdb.org/t/p/w500//wYyCFCIXNgABzkq975JT4LASG6M.jpg",
+        "link": "/card/cartoons/500-102/Aladdin-i-Korol-Razbojnikov.html",
+        "year": "1996",
+        "rating": "6.3",
+        "type": "cartoon"
+    },
+    {
+        "name": "Аладдин",
+        "image": "https://image.tmdb.org/t/p/w500//faTIP0dG6tSWfGYHjEyYw3JeBT2.jpg",
+        "link": "/card/cartoons/500-103/Aladdin1994.html",
+        "year": "1994",
+        "rating": "6.9",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Возвращение Джафара",
+        "image": "https://image.tmdb.org/t/p/w500//yW8wI3SnjmuqsFHVFQepKL1e9T.jpg",
+        "link": "/card/cartoons/500-104/Vozvrashenie-Dzhafara.html",
+        "year": "1994",
+        "rating": "6.2",
+        "type": "cartoon"
+    },
+    {
+        "name": "Аладдин",
+        "image": "https://image.tmdb.org/t/p/w500//92GjkHUHMn9HIZqihuradZNZNLb.jpg",
+        "link": "/card/cartoons/500-17/Aladdin.html",
+        "year": "1992",
+        "rating": "7.7",
+        "type": "cartoon"
+    },
+    {
+        "name": "Семейка Крудс: Семейное древо",
+        "image": "https://image.tmdb.org/t/p/original/aUgEi0VryenHDoQ0wJH0fycBwzU.jpg",
+        "link": "/card/cartoons/500-105/Semejka-Kruds-Semejnoe-drevo.html",
+        "year": "2021",
+        "rating": "7.2",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Семейка Крудс: Новоселье",
+        "image": "https://image.tmdb.org/t/p/w500//gT8cDQklL3xoVuXPLGRdjDI3tRA.jpg",
+        "link": "/card/cartoons/500-106/Semejka-Kruds-Novosele.html",
+        "year": "2020",
+        "rating": "7.5",
+        "type": "cartoon"
+    },
+    {
+        "name": "Семейка Крудс",
+        "image": "https://image.tmdb.org/t/p/w500//bYF0aegBQBHfc1Lva7mChj4cPLM.jpg",
+        "link": "/card/cartoons/500-18/Semejka-Kruds.html",
+        "year": "2013",
+        "rating": "6.9",
+        "type": "cartoon"
+    },
+    {
+        "name": "Красавица и Чудовище: Чудесное Рождество",
+        "image": "https://image.tmdb.org/t/p/w500//afJhfRcAVpOpBa177tHlV5TJxzn.jpg",
+        "link": "/card/cartoons/500-107/Krasavica-i-Chudovishe-Chudesnoe-Rozhdestvo.html",
+        "year": "1997",
+        "rating": "6.2",
+        "type": "cartoon"
+    },
+    {
+        "name": "Красавица и чудовище",
+        "image": "https://image.tmdb.org/t/p/w500//A9AtXMWX0V4IZ2ygBi9Cr85tQD1.jpg",
+        "link": "/card/cartoons/500-19/Krasavica-i-chudovishe.html",
+        "year": "1991",
+        "rating": "7.7",
+        "type": "cartoon"
+    },
+    {
+        "name": "Зверогонщики",
+        "image": "https://image.tmdb.org/t/p/w500//5ix430YAsjDNlVdUlR5UHSmXZeY.jpg",
+        "link": "/card/cartoons/500-108/Zverogonshiki.html",
+        "year": "2023",
+        "rating": "6.7",
+        "type": "cartoon"
+    },
+    {
+        "name": "Самолёты: Огонь и вода",
+        "image": "https://image.tmdb.org/t/p/w500//fdB4qAY1xwBSnivCvCsVqR2Vg7e.jpg",
+        "link": "/card/cartoons/500-109/Samolyoty-Ogon-i-voda.html",
+        "year": "2014",
+        "rating": "6.2",
+        "type": "cartoon"
+    },
+    {
+        "name": "Самолёты",
+        "image": "https://image.tmdb.org/t/p/w500//1OjNMu0THjx5iXXH43a6nAF7wqm.jpg",
+        "link": "/card/cartoons/500-20/Samolety.html",
+        "year": "2013",
+        "rating": "5.9",
+        "type": "cartoon"
+    },
+    {
+        "name": "Тачки на дороге",
+        "image": "https://image.tmdb.org/t/p/w500//gH6IQvbPekyyPN8rMXlaiR99Rxp.jpg",
+        "link": "/card/cartoons/500-110/Tachki-na-doroge.html",
+        "year": "2022",
+        "rating": "7.5",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Тачки 3",
+        "image": "https://image.tmdb.org/t/p/w500//yOaxBNkId5a1fZVGWayFJohxG7S.jpg",
+        "link": "/card/cartoons/500-111/Tachki-3.html",
+        "year": "2017",
+        "rating": "6.9",
+        "type": "cartoon"
+    },
+    {
+        "name": "Тачки 2",
+        "image": "https://image.tmdb.org/t/p/w500//n6wISTzNLYFTosY8Sh9Qj39Nq7f.jpg",
+        "link": "/card/cartoons/500-112/Tachki-2.html",
+        "year": "2011",
+        "rating": "6.1",
+        "type": "cartoon"
+    },
+    {
+        "name": "Тачки",
+        "image": "https://image.tmdb.org/t/p/w500//wnnv9vLO4jBhXF1Vw2Ss8uhjJPC.jpg",
+        "link": "/card/cartoons/500-12/Tachki.html",
+        "year": "2006",
+        "rating": "7.0",
+        "type": "cartoon"
+    },
+    {
+        "name": "Эпик",
+        "image": "https://image.tmdb.org/t/p/w500//vO3UVVzfpRN5PgxyyzCnFBfbRS2.jpg",
+        "link": "/card/cartoons/500-21/Epik.html",
+        "year": "2013",
+        "rating": "6.5",
+        "type": "cartoon"
+    },
+    {
+        "name": "Секретная служба Санта-Клауса",
+        "image": "https://image.tmdb.org/t/p/w500//bHMGBqaYrdXgzVRfxn9ukN2PpN8.jpg",
+        "link": "/card/cartoons/500-23/Sekretnaya-sluzhba-Santa-Klausa.html",
+        "year": "2011",
+        "rating": "6.8",
+        "type": "cartoon"
+    },
+    {
+        "name": "Турбо",
+        "image": "https://image.tmdb.org/t/p/w500//inTKQni4YW8syrfgnXHwzmNeSo4.jpg",
+        "link": "/card/cartoons/500-27/Turbo.html",
+        "year": "2013",
+        "rating": "6.2",
+        "type": "cartoon"
+    },
+    {
+        "name": "В поисках Дори",
+        "image": "https://image.tmdb.org/t/p/w500//xBUhR52S1RQHYEY40Yo04ner32I.jpg",
+        "link": "/card/cartoons/500-115/V-poiskah-Dori.html",
+        "year": "2016",
+        "rating": "7.0",
+        "type": "cartoon"
+    },
+    {
+        "name": "В поисках Немо",
+        "image": "https://image.tmdb.org/t/p/w500//wwUYKw29xtFLk5PIZV9iDAs6zlW.jpg",
+        "link": "/card/cartoons/500-24/V-poiskah-Nemo.html",
+        "year": "2003",
+        "rating": "7.8",
+        "type": "cartoon"
+    },
+    {
+        "name": "Лоракс",
+        "image": "https://image.tmdb.org/t/p/w500//pCq2zMcfyC0METerLKJahBmlR0v.jpg",
+        "link": "/card/cartoons/500-32/Loraks.html",
+        "year": "2012",
+        "rating": "6.5",
+        "type": "cartoon"
+    },
+    {
+        "name": "Индюки: Назад в будущее",
+        "image": "https://image.tmdb.org/t/p/w500//h1iOcJ6qEgFBQ76jACsALLboHQb.jpg",
+        "link": "/card/cartoons/500-25/Indyuki-Nazad-v-budushee.html",
+        "year": "2013",
+        "rating": "5.9",
+        "type": "cartoon"
+    },
+    {
+        "name": "Ральф против Интернета",
+        "image": "https://image.tmdb.org/t/p/w500//tVmomifGhoJfijkOnSGDDZwRSH5.jpg",
+        "link": "/card/cartoons/500-116/Ralf-protiv-Interneta.html",
+        "year": "2018",
+        "rating": "7.2",
+        "type": "cartoon"
+    },
+    {
+        "name": "Ральф",
+        "image": "https://image.tmdb.org/t/p/w500//uqWBFXy0lhoz32qy9PsfAjgKMge.jpg",
+        "link": "/card/cartoons/500-26/Ralf.html",
+        "year": "2012",
+        "rating": "7.3",
+        "type": "cartoon"
+    },
+    {
+        "name": "Трансформеры: Начало",
+        "image": "https://image.tmdb.org/t/p/w500//47mnEdahUv5I28CKuBx5drLRcuK.jpg",
+        "link": "/card/cartoons/500-28/Transformery-Nachalo.html",
+        "year": "2024",
+        "rating": "8.1",
+        "type": "cartoon"
+    },
+    {
+        "name": "Трансформеры: Земная Искра",
+        "image": "https://image.tmdb.org/t/p/w500//jLwU37QusZDkkOuFNb1TA6NQZNT.jpg",
+        "link": "/card/cartoons/500-117/Transformery-Zemnaya-Iskra.html",
+        "year": "2022",
+        "rating": "7.0",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Трансформеры: Ботботы",
+        "image": "https://image.tmdb.org/t/p/w500//hKtDA3GG3puz5DGnieFCNRGPpjK.jpg",
+        "link": "/card/cartoons/500-118/Transformery-Botboty.html",
+        "year": "2022",
+        "rating": "5.1",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Трансформеры. Война за Кибертрон. Королевство",
+        "image": "https://image.tmdb.org/t/p/w500//r2IouRpN9IXMyY8RX0YnJhkCirE.jpg",
+        "link": "/card/cartoons/500-119/Transformery-Vojna-za-Kibertron-Korolevstvo.html",
+        "year": "2021",
+        "rating": "7.7",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Трансформеры: Войны гештальтов",
+        "image": "https://image.tmdb.org/t/p/w500//reYa1VrOuNfKcMIJGQQ66kvIuBM.jpg",
+        "link": "/card/cartoons/500-120/Transformery-Vojny-geshtaltov.html",
+        "year": "2016",
+        "rating": "7.8",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Трансформеры. Роботы под прикрытием",
+        "image": "https://image.tmdb.org/t/p/w500//pbRpKAGbXnASnNFHCGFC4CwVPla.jpg",
+        "link": "/card/cartoons/500-121/Transformery-Roboty-pod-prikrytiem.html",
+        "year": "2015",
+        "rating": "7.1",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Трансформеры: Боты-спасатели",
+        "image": "https://image.tmdb.org/t/p/w500//wtugHPxksnORftAs7EOGK3Oy0I5.jpg",
+        "link": "/card/cartoons/500-122/Transformery-Boty-spasateli.html",
+        "year": "2012",
+        "rating": "7.4",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Трансформеры: Прайм",
+        "image": "https://image.tmdb.org/t/p/original/nEzYyon3gBhhWdmQds9k23lHKEd.jpg",
+        "link": "/card/cartoons/500-123/Transformery-Prajm.html",
+        "year": "2010",
+        "rating": "8.0",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Трансформеры",
+        "image": "https://image.tmdb.org/t/p/w500//uEKVNu69urMrXSuAdeK54HOtvo4.jpg",
+        "link": "/card/cartoons/500-124/Transformery2007.html",
+        "year": "2007",
+        "rating": "8.0",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Трансформеры: Зверороботы",
+        "image": "https://image.tmdb.org/t/p/w500//pNvziasPFwBlWDpmM346OnUB6E6.jpg",
+        "link": "/card/cartoons/500-125/Transformery-Zveroroboty.html",
+        "year": "1999",
+        "rating": "8.0",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Трансформеры: Битвы Зверей",
+        "image": "https://image.tmdb.org/t/p/original/148PzBHH19K6QANTSUoJt3Dghi.jpg",
+        "link": "/card/cartoons/500-126/Transformery-Bitvy-Zverej.html",
+        "year": "1996",
+        "rating": "8.1",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Трансформеры: Воины Великой Силы",
+        "image": "https://image.tmdb.org/t/p/original/ztyqe6amne1ZmddsM9IrU0f7OcW.jpg",
+        "link": "/card/cartoons/500-127/Transformery-Voiny-Velikoj-Sily.html",
+        "year": "1988",
+        "rating": "8.2",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Трансформеры",
+        "image": "https://image.tmdb.org/t/p/w500//5OptmOBeHvIwqah6VETRNOtTmWz.jpg",
+        "link": "/card/cartoons/500-128/Transformery1986.html",
+        "year": "1986",
+        "rating": "7.1",
+        "type": "cartoon"
+    },
+    {
+        "name": "Трансформеры",
+        "image": "https://image.tmdb.org/t/p/w500//h4DvodvcLWh7xdpj872Bq0V2DKS.jpg",
+        "link": "/card/cartoons/500-129/Transformery1984.html",
+        "year": "1984",
+        "rating": "7.8",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Кошмар перед Рождеством",
+        "image": "https://image.tmdb.org/t/p/w500//xvqFn90FxKTJflG4n0spZY7vySu.jpg",
+        "link": "/card/cartoons/500-29/Koshmar-pered-Rozhdestvom.html",
+        "year": "1993",
+        "rating": "7.8",
+        "type": "cartoon"
+    },
+    {
+        "name": "Утиные истории",
+        "image": "https://image.tmdb.org/t/p/original/2THLokQ6Ce914l4b3rYvvbEPJpz.jpg",
+        "link": "/card/cartoons/500-130/Utinye-istorii2017.html",
+        "year": "2017",
+        "rating": "7.8",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Утиные истории: Заветная лампа",
+        "image": "https://image.tmdb.org/t/p/w500//2yY39ALrHQb8ZTRwUW9yiL3x7ft.jpg",
+        "link": "/card/cartoons/500-30/Utinye-istorii-Zavetnaya-lampa.html",
+        "year": "1990",
+        "rating": "6.7",
+        "type": "cartoon"
+    },
+    {
+        "name": "Утиные истории",
+        "image": "https://image.tmdb.org/t/p/original/l39HDf6WYzV8VLY5EnCRC81DWOy.jpg",
+        "link": "/card/cartoons/500-131/Utinye-istorii1987.html",
+        "year": "1987",
+        "rating": "7.6",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "История игрушек 4",
+        "image": "https://image.tmdb.org/t/p/w500//flLgw8DJKbjSblWnZvTvvYL2pRr.jpg",
+        "link": "/card/cartoons/500-132/Istoriya-igrushek-4.html",
+        "year": "2019",
+        "rating": "7.5",
+        "type": "cartoon"
+    },
+    {
+        "name": "История игрушек 3",
+        "image": "https://image.tmdb.org/t/p/w500//2IWIk34c9fMv7xJQ5ur4Z3O1Hh9.jpg",
+        "link": "/card/cartoons/500-31/Istoriya-igrushek-3.html",
+        "year": "2010",
+        "rating": "7.8",
+        "type": "cartoon"
+    },
+    {
+        "name": "История игрушек 2",
+        "image": "https://image.tmdb.org/t/p/w500//descLErszABnAy79SDTzupmPD7e.jpg",
+        "link": "/card/cartoons/500-133/Istoriya-igrushek-2.html",
+        "year": "1999",
+        "rating": "7.6",
+        "type": "cartoon"
+    },
+    {
+        "name": "История игрушек",
+        "image": "https://image.tmdb.org/t/p/w500//gRLk7XpdRyNa697taDKtFx3l6qV.jpg",
+        "link": "/card/cartoons/500-134/Istoriya-igrushek1995.html",
+        "year": "1995",
+        "rating": "8.0",
+        "type": "cartoon"
+    },
+    {
+        "name": "Университет монстров",
+        "image": "https://image.tmdb.org/t/p/w500//3LkX2ZFLbgj07lhdQYzOUHaMoZd.jpg",
+        "link": "/card/cartoons/500-113/Universitet-monstrov.html",
+        "year": "2013",
+        "rating": "7.0",
+        "type": "cartoon"
+    },
+    {
+        "name": "Корпорация Монстров",
+        "image": "https://image.tmdb.org/t/p/w500//zXIusESsQ7ZXP9MFwbvcTTZ3XWF.jpg",
+        "link": "/card/cartoons/500-22/Korporaciya-Monstrov.html",
+        "year": "2001",
+        "rating": "7.8",
+        "type": "cartoon"
+    },
+    {
+        "name": "Футурама: В дикую зелёную даль",
+        "image": "https://image.tmdb.org/t/p/w500//oL6SymcxQE6TN9KrrbdyhlulnEG.jpg",
+        "link": "/card/cartoons/500-114/Futurama-V-dikuyu-zelyonuyu-dal.html",
+        "year": "2009",
+        "rating": "7.0",
+        "type": "cartoon"
+    },
+    {
+        "name": "Футурама: Игра Бендера",
+        "image": "https://image.tmdb.org/t/p/w500//bx8OVOBn5WP9TJJuOpRzyMCdzzb.jpg",
+        "link": "/card/cartoons/500-135/Futurama-Igra-Bendera.html",
+        "year": "2008",
+        "rating": "6.9",
+        "type": "cartoon"
+    },
+    {
+        "name": "Футурама: Зверь с миллиардом спин",
+        "image": "https://image.tmdb.org/t/p/w500//ldZZ8wdVOFCN1c11O8IzT3XzV9A.jpg",
+        "link": "/card/cartoons/500-136/Futurama-Zver-s-milliardom-spin.html",
+        "year": "2008",
+        "rating": "6.9",
+        "type": "cartoon"
+    },
+    {
+        "name": "Футурама: Большой куш Бендера",
+        "image": "https://image.tmdb.org/t/p/original/3pJdmpC5KvOnOYYWSnLrgbTP5jE.jpg",
+        "link": "/card/cartoons/500-137/Futurama-Bolshoj-kush-Bendera.html",
+        "year": "2007",
+        "rating": "7.4",
+        "type": "cartoon"
+    },
+    {
+        "name": "Футурама",
+        "image": "https://image.tmdb.org/t/p/w500//407xqcHFS2O3NsqBo2XpprCjKSc.jpg",
+        "link": "/card/cartoons/500-78/Futurama.html",
+        "year": "1999",
+        "rating": "8.4",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Астерикс и Обеликс: поединок вождей",
+        "image": "https://image.tmdb.org/t/p/w500//9iD1rFwjj8E8JdXEg1pJj9SQz4r.jpg",
+        "link": "/card/cartoons/500-147/Asteriks-i-Obeliks-poedinok-vozhdej.html",
+        "year": "2025",
+        "rating": "8.1",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Астерикс и тайное зелье",
+        "image": "https://image.tmdb.org/t/p/w200//tjhaD88iWGGEFmUX38KZ4GsCXRJ.jpg",
+        "link": "/card/cartoons/500-33/Asteriks-i-tajnoe-zele.html",
+        "year": "2018",
+        "rating": "6.9",
+        "type": "cartoon"
+    },
+    {
+        "name": "Астерикс: Земля Богов",
+        "image": "https://image.tmdb.org/t/p/w500//e61MmASenVYze4AQinHPIeVBPOK.jpg",
+        "link": "/card/cartoons/500-138/Asteriks-Zemlya-Bogov.html",
+        "year": "2014",
+        "rating": "6.8",
+        "type": "cartoon"
+    },
+    {
+        "name": "Астерикс и викинги",
+        "image": "https://image.tmdb.org/t/p/original/dW9h1Ez6PRx8PnZUVT27MnG8Wu5.jpg",
+        "link": "/card/cartoons/500-139/Asteriks-i-vikingi.html",
+        "year": "2006",
+        "rating": "6.1",
+        "type": "cartoon"
+    },
+    {
+        "name": "Астерикс завоёвывает Америку",
+        "image": "https://image.tmdb.org/t/p/w500//wQDCj9P67suPY55LA6zxgSH8QFl.jpg",
+        "link": "/card/cartoons/500-140/Asteriks-zavoyovyvaet-Ameriku.html",
+        "year": "1994",
+        "rating": "6.2",
+        "type": "cartoon"
+    },
+    {
+        "name": "Большой бой Астерикса",
+        "image": "https://image.tmdb.org/t/p/w500//uu0Ixw36nxrzsx03Tdfak2qN1VU.jpg",
+        "link": "/card/cartoons/500-141/Bolshoj-boj-Asteriksa.html",
+        "year": "1989",
+        "rating": "6.3",
+        "type": "cartoon"
+    },
+    {
+        "name": "Астерикс в Британии",
+        "image": "https://image.tmdb.org/t/p/w500//1MWTDqNWLzjs9HUtC8aKanNLZLH.jpg",
+        "link": "/card/cartoons/500-142/Asteriks-v-Britanii.html",
+        "year": "1986",
+        "rating": "6.8",
+        "type": "cartoon"
+    },
+    {
+        "name": "Астерикс против Цезаря",
+        "image": "https://image.tmdb.org/t/p/w500//8kY2WmF9PgkzfmtcPyW1AmQJswu.jpg",
+        "link": "/card/cartoons/500-143/Asteriks-protiv-Cezarya.html",
+        "year": "1985",
+        "rating": "6.5",
+        "type": "cartoon"
+    },
+    {
+        "name": "12 подвигов Астерикса",
+        "image": "https://image.tmdb.org/t/p/w500//b7ebaaTwig78TkuKSTxjodCQ6iA.jpg",
+        "link": "/card/cartoons/500-144/12-podvigov-Asteriksa.html",
+        "year": "1976",
+        "rating": "7.3",
+        "type": "cartoon"
+    },
+    {
+        "name": "Астерикс и Клеопатра",
+        "image": "https://image.tmdb.org/t/p/w500//sO87S5lVVJ4i7oYof1irO5OXl8B.jpg",
+        "link": "/see/cartoons/500-145/Asteriks-i-Kleopatra.html",
+        "year": "1968",
+        "rating": "6.9",
+        "type": "cartoon"
+    },
+    {
+        "name": "Астерикс из Галлии",
+        "image": "https://image.tmdb.org/t/p/w500//vBwwWn6irVjGROIjWJMCzPIerwg.jpg",
+        "link": "/card/cartoons/500-146/Asteriks-iz-Gallii.html",
+        "year": "1967",
+        "rating": "6.4",
+        "type": "cartoon"
+    },
+    {
+        "name": "Пушистое превращение",
+        "image": "https://image.tmdb.org/t/p/w500//uR70IF8Xiw3fnM2j5KBmDKyyP2o.jpg",
+        "link": "/card/cartoons/500-34/Pushistoe-prevrashenie.html",
+        "year": "2024",
+        "rating": "5.1",
+        "type": "cartoon"
+    },
+    {
+        "name": "Шаг за шагом",
+        "image": "https://image.tmdb.org/t/p/original/fmOPcP8WRvm8cok4Hz3REwD7rlJ.jpg",
+        "link": "/card/cartoons/500-35/Shag-za-shagom.html",
+        "year": "2024",
+        "rating": "7.5",
+        "type": "cartoon"
+    },
+    {
+        "name": "Вперёд",
+        "image": "https://image.tmdb.org/t/p/w500//6Pvojxr83EZNisODJbXmLfmOya8.jpg",
+        "link": "/card/cartoons/500-36/Vperyod.html",
+        "year": "2020",
+        "rating": "7.7",
+        "type": "cartoon"
+    },
+    {
+        "name": "Мадагаскар 3",
+        "image": "https://image.tmdb.org/t/p/w500//aOKn2A1Ve0rKd6u8nTS1kXYSR65.jpg",
+        "link": "/card/cartoons/500-148/Madagaskar-3.html",
+        "year": "2012",
+        "rating": "6.6",
+        "type": "cartoon"
+    },
+    {
+        "name": "Мадагаскар 2",
+        "image": "https://image.tmdb.org/t/p/w500//rfwloSBRAZCrWwsJcXd1iveI59n.jpg",
+        "link": "/card/cartoons/500-149/Madagaskar-2.html",
+        "year": "2008",
+        "rating": "6.5",
+        "type": "cartoon"
+    },
+    {
+        "name": "Мадагаскар",
+        "image": "https://image.tmdb.org/t/p/w500//vwPFZT7tS8b9zDSN0PdvOzeGlfW.jpg",
+        "link": "/card/cartoons/500-02/Madagaskar.html",
+        "year": "2005",
+        "rating": "6.9",
+        "type": "cartoon"
+    },
+    {
+        "name": "Пингвины Мадагаскара",
+        "image": "https://image.tmdb.org/t/p/w500//uovMwhOMMF31sO9TxGvqjIGvdm8.jpg",
+        "link": "/card/cartoons/500-37/Pingviny-Madagaskara.html",
+        "year": "2014",
+        "rating": "6.5",
+        "type": "cartoon"
+    },
+    {
+        "name": "Пингвины Мадагаскара",
+        "image": "https://image.tmdb.org/t/p/w500//yj25y94rEWsTxmcp5WdHDfuoriU.jpg",
+        "link": "/card/cartoons/500-150/Pingviny-Madagaskara2008.html",
+        "year": "2008",
+        "rating": "7.4",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Хранитель Луны",
+        "image": "https://image.tmdb.org/t/p/w500//yCEBDLJrRDiB5yCEarmRI75xkYM.jpg",
+        "link": "/card/cartoons/500-38/Hranitel-Luny.html",
+        "year": "2015",
+        "rating": "7.3",
+        "type": "cartoon"
+    },
+    {
+        "name": "Пришельцы в доме",
+        "image": "https://image.tmdb.org/t/p/w500//baugoi8UiAMReW62C3Mx5fk7PSP.jpg",
+        "link": "/card/cartoons/500-39/Prishelcy-v-dome.html",
+        "year": "2018",
+        "rating": "6.4",
+        "type": "cartoon"
+    },
+    {
+        "name": "Король Лев 3: Акуна Матата",
+        "image": "https://image.tmdb.org/t/p/w500//wIIVzCF9TPeXG79FBdr6z1Fxbbl.jpg",
+        "link": "/card/cartoons/500-152/Korol-Lev-3-Akuna-Matata.html",
+        "year": "2004",
+        "rating": "6.6",
+        "type": "cartoon"
+    },
+    {
+        "name": "Король Лев 2: Гордость Симбы",
+        "image": "https://image.tmdb.org/t/p/w500//1Q0juLckjyydMglTpsokxL3lafF.jpg",
+        "link": "/card/cartoons/500-153/Korol-Lev-2-Gordost-Simby.html",
+        "year": "1998",
+        "rating": "6.9",
+        "type": "cartoon"
+    },
+    {
+        "name": "Король Лев",
+        "image": "https://image.tmdb.org/t/p/w500//j8tdiuhbF9p5mnAeA1YOUvz82xY.jpg",
+        "link": "/card/cartoons/500-40/Korol-Lev.html",
+        "year": "1994",
+        "rating": "8.3",
+        "type": "cartoon"
+    },
+    {
+        "name": "Тимон и Пумба",
+        "image": "https://image.tmdb.org/t/p/w500//uOFvLi1bWiiU3G1HSmUXdDIZKpS.jpg",
+        "link": "/card/cartoons/500-154/Timon-i-Pumba.html",
+        "year": "1995",
+        "rating": "7.2",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Кокоша – маленький дракон",
+        "image": "https://image.tmdb.org/t/p/w500//whaEzMfeeegBeD6URtATboFmNwf.jpg",
+        "link": "/card/cartoons/500-41/Kokosha–malenkij-drakon.html",
+        "year": "2014",
+        "rating": "5.2",
+        "type": "cartoon"
+    },
+    {
+        "name": "Риверданс: Волшебное приключение",
+        "image": "https://image.tmdb.org/t/p/w500//i6TRDlVuuEXMyLSlIkDd8YhBN0r.jpg",
+        "link": "/card/cartoons/500-42/Riverdans-Volshebnoe-priklyuchenie.html",
+        "year": "2021",
+        "rating": "6.0",
+        "type": "cartoon"
+    },
+    {
+        "name": "Тайная жизнь домашних животных 2",
+        "image": "https://image.tmdb.org/t/p/w500//8k4heBxuvX8ec2B7vAuhe2L9DaW.jpg",
+        "link": "/card/cartoons/500-155/Tajnaya-zhizn-domashnih-zhivotnyh-2.html",
+        "year": "2019",
+        "rating": "7.0",
+        "type": "cartoon"
+    },
+    {
+        "name": "Тайная жизнь домашних животных",
+        "image": "https://image.tmdb.org/t/p/w500//qmfuTRM3vQkXty85zqY7xfdQQjQ.jpg",
+        "link": "/card/cartoons/500-43/Tajnaya-zhizn-domashnih-zhivotnyh.html",
+        "year": "2016",
+        "rating": "6.3",
+        "type": "cartoon"
+    },
+    {
+        "name": "Южный Парк: Конец ожирения",
+        "image": "https://image.tmdb.org/t/p/w500//uvmz9QExwxBCrhKkFah0slqMmmi.jpg",
+        "link": "/card/cartoons/500-156/Yuzhnyj-Park-Konec-ozhireniya.html",
+        "year": "2024",
+        "rating": "7.5",
+        "type": "cartoon"
+    },
+    {
+        "name": "Южный Парк: Не предназначено для просмотра детьми",
+        "image": "https://image.tmdb.org/t/p/w500//kN5H9EhUqDWBAsbnbt2XNhS7BFe.jpg",
+        "link": "/card/cartoons/500-157/Yuzhnyj-Park-Ne-prednaznacheno-dlya-prosmotra-detmi.html",
+        "year": "2023",
+        "rating": "7.5",
+        "type": "cartoon"
+    },
+    {
+        "name": "Южный Парк: Присоединение к Пандервселенной",
+        "image": "https://image.tmdb.org/t/p/w500//18IsRVfs5MkkTcqTGlUAnka6sCh.jpg",
+        "link": "/card/cartoons/500-158/Yuzhnyj-Park-Prisoedinenie-k-Pandervselennoj.html",
+        "year": "2023",
+        "rating": "7.7",
+        "type": "cartoon"
+    },
+    {
+        "name": "Южный Парк: Потоковые Войны Часть 2",
+        "image": "https://image.tmdb.org/t/p/w500//cqWXH5rYHTD32I5RY6pHR828BrO.jpg",
+        "link": "/card/cartoons/500-159/Yuzhnyj-Park-Potokovye-Vojny-Chast-2.html",
+        "year": "2022",
+        "rating": "7.1",
+        "type": "cartoon"
+    },
+    {
+        "name": "Южный Парк: Потоковые Войны",
+        "image": "https://image.tmdb.org/t/p/w500//dfgZJlKYg5xm6dBl05bOKhfunXb.jpg",
+        "link": "/card/cartoons/500-160/Yuzhnyj-Park-Potokovye-Vojny.html",
+        "year": "2022",
+        "rating": "7.2",
+        "type": "cartoon"
+    },
+    {
+        "name": "Южный Парк: пост-ковидный: возвращение ковида",
+        "image": "https://image.tmdb.org/t/p/w500//vkONqd4gcYXqboYYqlaFFEYzRE3.jpg",
+        "link": "/card/cartoons/500-161/Yuzhnyj-Park-post-kovidnyj-vozvrashenie-kovida.html",
+        "year": "2021",
+        "rating": "7.4",
+        "type": "cartoon"
+    },
+    {
+        "name": "Южный Парк: пост-ковидный",
+        "image": "https://image.tmdb.org/t/p/w500//slwTmP4737sJV1hYMYezMoYCjYa.jpg",
+        "link": "/card/cartoons/500-162/Yuzhnyj-Park-post-kovidnyj.html",
+        "year": "2021",
+        "rating": "7.2",
+        "type": "cartoon"
+    },
+    {
+        "name": "Южный Парк: Воображляндия",
+        "image": "https://image.tmdb.org/t/p/w500//eENI0WN2AAuQWfPmQupzMD6G4gV.jpg",
+        "link": "/card/cartoons/500-163/Yuzhnyj-Park-Voobrazhlyandiya.html",
+        "year": "2008",
+        "rating": "7.9",
+        "type": "cartoon"
+    },
+    {
+        "name": "Южный Парк: Большой, длинный и необрезанный",
+        "image": "https://image.tmdb.org/t/p/original/tS0PedvA2mFO9VCHYwQpaU1K36U.jpg",
+        "link": "/card/cartoons/500-164/Yuzhnyj-Park-Bolshoj-dlinnyj-i-neobrezannyj.html",
+        "year": "1999",
+        "rating": "7.3",
+        "type": "cartoon"
+    },
+    {
+        "name": "Южный Парк",
+        "image": "https://image.tmdb.org/t/p/w500//nfttp2lquST92j4ItAYdmtdoj5t.jpg",
+        "link": "/card/cartoons/500-76/Yuzhnyj-Park.html",
+        "year": "1997",
+        "rating": "8.4",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Элементарно",
+        "image": "https://image.tmdb.org/t/p/w500//88xo5uF03kEgFWXRQJerXRdONBE.jpg",
+        "link": "/card/cartoons/500-44/Elementarno.html",
+        "year": "2023",
+        "rating": "7.6",
+        "type": "cartoon"
+    },
+    {
+        "name": "Холодное сердце 2",
+        "image": "https://image.tmdb.org/t/p/w500//4NIQcsmtyBOoJKI3c1Rg5sFFaUj.jpg",
+        "link": "/card/cartoons/500-165/Holodnoe-serdce-2.html",
+        "year": "2019",
+        "rating": "7.3",
+        "type": "cartoon"
+    },
+    {
+        "name": "Холодное сердце",
+        "image": "https://image.tmdb.org/t/p/w500//5LYjyQT4IP7oM5ibawHXyDzT2Pp.jpg",
+        "link": "/card/cartoons/500-45/Holodnoe-serdce.html",
+        "year": "2013",
+        "rating": "7.2",
+        "type": "cartoon"
+    },
+    {
+        "name": "Тайна Коко",
+        "image": "https://image.tmdb.org/t/p/w500//jvYsGaUqN8ymH696kRfVJjJ3GIl.jpg",
+        "link": "/card/cartoons/500-46/Tajna-Koko.html",
+        "year": "2017",
+        "rating": "8.2",
+        "type": "cartoon"
+    },
+    {
+        "name": "Шрэк Навсегда",
+        "image": "https://image.tmdb.org/t/p/w500//6n740zxR80xTNCHK3Uo3Mzj5CED.jpg",
+        "link": "/card/cartoons/500-166/Shrek-Navsegda.html",
+        "year": "2010",
+        "rating": "6.4",
+        "type": "cartoon"
+    },
+    {
+        "name": "Шрэк 3",
+        "image": "https://image.tmdb.org/t/p/w500//o2uojIx8bgL7Bxs4PGXbKStMz2o.jpg",
+        "link": "/card/cartoons/500-167/Shrek-3.html",
+        "year": "2007",
+        "rating": "6.3",
+        "type": "cartoon"
+    },
+    {
+        "name": "Шрэк 2",
+        "image": "https://image.tmdb.org/t/p/w500//vALSn7rJEuX742gWKcmCVLquw5J.jpg",
+        "link": "/card/cartoons/500-168/Shrek-2.html",
+        "year": "2004",
+        "rating": "7.3",
+        "type": "cartoon"
+    },
+    {
+        "name": "Шрэк",
+        "image": "https://image.tmdb.org/t/p/w500//5OPCH713UIEeWuvRZpVkkzrZ3Hd.jpg",
+        "link": "/card/cartoons/500-47/Shrek.html",
+        "year": "2001",
+        "rating": "7.7",
+        "type": "cartoon"
+    },
+    {
+        "name": "Симпсоны в кино",
+        "image": "https://image.tmdb.org/t/p/w500//51mnJmefPpRYNgQ9j1G13Rcar6J.jpg",
+        "link": "/card/cartoons/500-169/Simpsony-v-kino.html",
+        "year": "2007",
+        "rating": "7.0",
+        "type": "cartoon"
+    },
+    {
+        "name": "Симпсоны",
+        "image": "https://image.tmdb.org/t/p/w500//171yRAHGCziNjtO53sEil1PH64v.jpg",
+        "link": "/card/cartoons/500-75/Simpsony.html",
+        "year": "1989",
+        "rating": "8.0",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Райя и последний дракон",
+        "image": "https://image.tmdb.org/t/p/w500//c8srjTN6PXUxeqmVI0T2ffK3iwC.jpg",
+        "link": "/card/cartoons/500-48/Rajya-i-poslednij-drakon.html",
+        "year": "2021",
+        "rating": "7.8",
+        "type": "cartoon"
+    },
+    {
+        "name": "Крутые бобры",
+        "image": "https://image.tmdb.org/t/p/w500//9KYUA9tZrVNVXk2LTaYNMqGpHUj.jpg",
+        "link": "/card/cartoons/500-49/Krutye-bobry.html",
+        "year": "1997",
+        "rating": "6.9",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Головоломка 2",
+        "image": "https://image.tmdb.org/t/p/w500//5fXrqBIvatwSuph7nTuSETBQYxm.jpg",
+        "link": "/card/cartoons/500-170/Golovolomka-2.html",
+        "year": "2024",
+        "rating": "7.6",
+        "type": "cartoon"
+    },
+    {
+        "name": "Головоломка",
+        "image": "https://image.tmdb.org/t/p/w500//8wukxopBFO2Vrf50jlLpbrfj4OB.jpg",
+        "link": "/card/cartoons/500-50/Golovolomka.html",
+        "year": "2015",
+        "rating": "7.9",
+        "type": "cartoon"
+    },
+    {
+        "name": "Монстры на каникулах: Трансформания",
+        "image": "https://image.tmdb.org/t/p/w500//AlNkzripIDbRfP0ipKFDYXJa1e0.jpg",
+        "link": "/card/cartoons/500-171/Monstry-na-kanikulah-Transformaniya.html",
+        "year": "2022",
+        "rating": "7.1",
+        "type": "cartoon"
+    },
+    {
+        "name": "Монстры на каникулах 3: Море зовёт",
+        "image": "https://image.tmdb.org/t/p/w500//p4on3LYdFXgMefXLpUlIyNoEb4P.jpg",
+        "link": "/card/cartoons/500-172/Monstry-na-kanikulah-3-More-zovyot.html",
+        "year": "2018",
+        "rating": "6.9",
+        "type": "cartoon"
+    },
+    {
+        "name": "Монстры на каникулах 2",
+        "image": "https://image.tmdb.org/t/p/w500//75lGCEnBRD26y2fZq45k4tgwWTQ.jpg",
+        "link": "/card/cartoons/500-173/Monstry-na-kanikulah-2.html",
+        "year": "2015",
+        "rating": "6.8",
+        "type": "cartoon"
+    },
+    {
+        "name": "Монстры на каникулах",
+        "image": "https://image.tmdb.org/t/p/w500//dLrppCn6TF99oObWrnU87Y7CMyX.jpg",
+        "link": "/card/cartoons/500-51/Monstry-na-kanikulah.html",
+        "year": "2012",
+        "rating": "7.0",
+        "type": "cartoon"
+    },
+    {
+        "name": "Зверопой 2",
+        "image": "https://image.tmdb.org/t/p/w500//cYWc9bCi2gprrXnIMa4MqXUTpNu.jpg",
+        "link": "/card/cartoons/500-174/Zveropoj-2.html",
+        "year": "2021",
+        "rating": "7.8",
+        "type": "cartoon"
+    },
+    {
+        "name": "Зверопой",
+        "image": "https://image.tmdb.org/t/p/w500//vlXBtiqwNrcheDh4TB5kHTRnlUY.jpg",
+        "link": "/card/cartoons/500-175/Zveropoj.html",
+        "year": "2016",
+        "rating": "7.1",
+        "type": "cartoon"
+    },
+    {
+        "name": "Зверополис 2",
+        "image": "https://image.tmdb.org/t/p/w500//j29hoRvpGshWDaOBVIogkRpi6JS.jpg",
+        "link": "/card/cartoons/500-231/Zveropolis-2.html",
+        "year": "2025",
+        "rating": "7.7",
+        "type": "cartoon"
+    },
+    {
+        "name": "Зверополис+",
+        "image": "https://image.tmdb.org/t/p/w500//inzPPPr2BsE92m4rHhQn3sf2yPk.jpg",
+        "link": "/card/cartoons/500-176/Zveropolis-2022.html",
+        "year": "2022",
+        "rating": "7.2",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Зверополис",
+        "image": "https://image.tmdb.org/t/p/w500//qNZT8HwPWFv8Dc5rEE0O3FFODha.jpg",
+        "link": "/card/cartoons/500-52/Zveropolis.html",
+        "year": "2016",
+        "rating": "7.7",
+        "type": "cartoon"
+    },
+    {
+        "name": "Как приручить бизона",
+        "image": "https://image.tmdb.org/t/p/w500//r9BeqSkZdGuvFGQ7BoIPSbMAihh.jpg",
+        "link": "/card/cartoons/500-177/Kak-priruchit-bizona.html",
+        "year": "2024",
+        "rating": "6.8",
+        "type": "cartoon"
+    },
+    {
+        "name": "Паранорман, или Как приручить зомби",
+        "image": "https://image.tmdb.org/t/p/w500//yDbJ3Ui5jrCjDqI3bJfccjJU3fm.jpg",
+        "link": "/card/cartoons/500-53/Paranorman,-ili-Kak-priruchit-zombi.html#",
+        "year": "2012",
+        "rating": "7.0",
+        "type": "cartoon"
+    },
+    {
+        "name": "Дикий робот",
+        "image": "https://image.tmdb.org/t/p/w500//sDTumQBxhIyYbZ9acsTtoLfb5ZG.jpg",
+        "link": "/card/cartoons/500-54/Dikij-robot.html",
+        "year": "2024",
+        "rating": "8.3",
+        "type": "cartoon"
+    },
+    {
+        "name": "Как приручить дракона 3",
+        "image": "https://image.tmdb.org/t/p/w500//AdIhqttutOdkKUttw8ofld870Dx.jpg",
+        "link": "/card/cartoons/500-178/Kak-priruchit-drakona-3.html",
+        "year": "2019",
+        "rating": "7.7",
+        "type": "cartoon"
+    },
+    {
+        "name": "Как приручить дракона 2",
+        "image": "https://image.tmdb.org/t/p/w500//1o0MBGNfvL0doZR7kWJdqVBXs7r.jpg",
+        "link": "/card/cartoons/500-179/Kak-priruchit-drakona-2.html",
+        "year": "2014",
+        "rating": "7.7",
+        "type": "cartoon"
+    },
+    {
+        "name": "Как приручить дракона",
+        "image": "https://image.tmdb.org/t/p/w500//cMUmeDM2QRlSOAK9onB8PhXtdZJ.jpg",
+        "link": "/card/cartoons/500-55/Kak-priruchit-drakona.html",
+        "year": "2010",
+        "rating": "7.8",
+        "type": "cartoon"
+    },
+    {
+        "name": "Суперсемейка 2",
+        "image": "https://image.tmdb.org/t/p/w500//vwer36JvbZxeZ6ZRBvzrsUm6tYt.jpg",
+        "link": "/card/cartoons/500-180/Supersemejka-2.html",
+        "year": "2018",
+        "rating": "7.5",
+        "type": "cartoon"
+    },
+    {
+        "name": "Суперсемейка",
+        "image": "https://image.tmdb.org/t/p/w500//nVJGGWCs8CQ41G4fzJoTttfCgpQ.jpg",
+        "link": "/card/cartoons/500-56/Supersemejka.html",
+        "year": "2004",
+        "rating": "7.7",
+        "type": "cartoon"
+    },
+    {
+        "name": "Кот в сапогах 2: Последнее желание",
+        "image": "https://image.tmdb.org/t/p/w500//z2gOE3Z4mNLAcw0dQ1BlGoWLrH7.jpg",
+        "link": "/card/cartoons/500-57/Kot-v-sapogah-2-Poslednee-zhelanie.html",
+        "year": "2022",
+        "rating": "8.2",
+        "type": "cartoon"
+    },
+    {
+        "name": "Кот в сапогах",
+        "image": "https://image.tmdb.org/t/p/w500//4iuuvaCYNswlhG5f73JqX976a9d.jpg",
+        "link": "/card/cartoons/500-01/Kot-v-sapogah.html",
+        "year": "2011",
+        "rating": "6.6",
+        "type": "cartoon"
+    },
+    {
+        "name": "Удача",
+        "image": "https://image.tmdb.org/t/p/w500//1tNajPL9FmFbM0msgFF1DMVdpcs.jpg",
+        "link": "/card/cartoons/500-58/Udacha.html",
+        "year": "2022",
+        "rating": "7.8",
+        "type": "cartoon"
+    },
+    {
+        "name": "Моана 2",
+        "image": "https://image.tmdb.org/t/p/w500//wrg0C7sw1T1ogXvS8P4kiawY9xv.jpg",
+        "link": "/card/cartoons/500-181/Moana-2.html",
+        "year": "2024",
+        "rating": "7.1",
+        "type": "cartoon"
+    },
+    {
+        "name": "Моана",
+        "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/jo20xWDab4qDXgq8eiPyQ2dCASC.jpg",
+        "link": "/card/cartoons/500-59/Moana.html",
+        "year": "2016",
+        "rating": "7.6",
+        "type": "cartoon"
+    },
+    {
+        "name": "Человек-паук: Паутина вселенных",
+        "image": "https://image.tmdb.org/t/p/w500//hsGAxOqbH0UNpIJPMsVRA6dFf85.jpg",
+        "link": "/card/cartoons/500-60/Chelovek-pauk-Pautina-vselennyh.html",
+        "year": "2023",
+        "rating": "8.3",
+        "type": "cartoon"
+    },
+    {
+        "name": "Человек-паук: Через вселенные",
+        "image": "https://image.tmdb.org/t/p/w500//wmEKJr81CABBU68Qy2wYPwQHn0L.jpg",
+        "link": "/card/cartoons/500-182/Chelovek-pauk-Cherez-vselennye.html",
+        "year": "2018",
+        "rating": "8.4",
+        "type": "cartoon"
+    },
+    {
+        "name": "Ваш дружелюбный сосед Человек-Паук",
+        "image": "https://image.tmdb.org/t/p/w500//4uFWdcZilCMS8cwanp1b2baqFbU.jpg",
+        "link": "/card/cartoons/500-183/Vash-druzhelyubnyj-sosed-Chelovek-Pauk.html",
+        "year": "2025",
+        "rating": "7.8",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Паучок и его удивительные друзья",
+        "image": "https://image.tmdb.org/t/p/w500//etO5jDS5WgR4Y1lTyXhQcilJ6u2.jpg",
+        "link": "/card/cartoons/500-184/Pauchok-i-ego-udivitelnye-druzya.html",
+        "year": "2021",
+        "rating": "7.3",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Человек-паук",
+        "image": "https://image.tmdb.org/t/p/w500//dKdcyyHUR5WTMnrbPdYN5y9xPVp.jpg",
+        "link": "/card/cartoons/500-185/Chelovek-pauk-2017.html",
+        "year": "2017",
+        "rating": "7.5",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Великий Человек-паук",
+        "image": "https://image.tmdb.org/t/p/w500//usY6rAxW0fGJJDGypFg8UthUqvs.jpg",
+        "link": "/card/cartoons/500-186/Velikij-Chelovek-pauk.html",
+        "year": "2012",
+        "rating": "7.7",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Грандиозный Человек-паук",
+        "image": "https://image.tmdb.org/t/p/w500//dCNxOhXT7c4lqYuRpdM3m8s9XDp.jpg",
+        "link": "/card/cartoons/500-187/Grandioznyj-Chelovek-pauk.html",
+        "year": "2008",
+        "rating": "8.6",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Человек-паук",
+        "image": "https://image.tmdb.org/t/p/w500//v3UfqXCAxAcI7oUO4zwtk1T9G3n.jpg",
+        "link": "/card/cartoons/500-188/Chelovek-pauk-2003.html",
+        "year": "2003",
+        "rating": "7.2",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Непобедимый Спайдермен",
+        "image": "https://image.tmdb.org/t/p/w500//vLzRWbu8MHuO2bcEblWEyHr0O7N.jpg",
+        "link": "/card/cartoons/500-189/Nepobedimyj-Spajdermen.html",
+        "year": "1999",
+        "rating": "7.5",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Человек-паук",
+        "image": "https://image.tmdb.org/t/p/w500//xEJaSQaNqWUd0JQjKRhMFcc4TuA.jpg",
+        "link": "/card/cartoons/500-190/Chelovek-pauk-1994.html",
+        "year": "1994",
+        "rating": "8.3",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Человек-Паук и его удивительные друзья",
+        "image": "https://image.tmdb.org/t/p/w500//4b8HFH1arZ4b05RHwxPc2JfueYv.jpg",
+        "link": "/card/cartoons/500-191/Chelovek-Pauk-i-ego-udivitelnye-druzya.html",
+        "year": "1981",
+        "rating": "7.4",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Человек-паук",
+        "image": "https://image.tmdb.org/t/p/original/nJomMoPbzmud9Ar0G0wQTWagFaS.jpg",
+        "link": "/card/cartoons/500-192/Chelovek-pauk-1981.html",
+        "year": "1981",
+        "rating": "7.2",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Настоящий Человек-паук",
+        "image": "https://image.tmdb.org/t/p/w500//tyvMExqaLlHObRGCuwiNZ24Ns2x.jpg",
+        "link": "/card/cartoons/500-193/Nastoyashij-Chelovek-pauk.html",
+        "year": "1967",
+        "rating": "7.7",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Миньоны: Грювитация",
+        "image": "https://image.tmdb.org/t/p/w500//mz14SJeXJ3sLMxM2fS7APWklFfX.jpg",
+        "link": "/card/cartoons/500-194/Minony-Gryuvitaciya.html",
+        "year": "2022",
+        "rating": "7.3",
+        "type": "cartoon"
+    },
+    {
+        "name": "Миньоны",
+        "image": "https://image.tmdb.org/t/p/w500//4JubqgkLoGziLg77xCJATs8c0Ay.jpg",
+        "link": "/card/cartoons/500-61/Minony.html",
+        "year": "2015",
+        "rating": "6.4",
+        "type": "cartoon"
+    },
+    {
+        "name": "Гадкий я 4",
+        "image": "https://image.tmdb.org/t/p/w500//ppSdlmiEmfjsdx9jNHfJ2DQ2IVp.jpg",
+        "link": "/card/cartoons/500-195/Gadkij-ya-4.html",
+        "year": "2024",
+        "rating": "7.1",
+        "type": "cartoon"
+    },
+    {
+        "name": "Гадкий я 3",
+        "image": "https://image.tmdb.org/t/p/w500//wlSfRcfo2mkHwegiXCoeiQnQ874.jpg",
+        "link": "/card/cartoons/500-196/Gadkij-ya-3.html",
+        "year": "2017",
+        "rating": "6.5",
+        "type": "cartoon"
+    },
+    {
+        "name": "Гадкий я 2",
+        "image": "https://image.tmdb.org/t/p/w500//onACDW8RBbHhhuLCasaeK0sLKT0.jpg",
+        "link": "/card/cartoons/500-197/Gadkij-ya-2.html",
+        "year": "2013",
+        "rating": "6.9",
+        "type": "cartoon"
+    },
+    {
+        "name": "Гадкий я",
+        "image": "https://image.tmdb.org/t/p/w500//n1PD367AaU6J2abLmiZrxeuqyb0.jpg",
+        "link": "/card/cartoons/500-198/Gadkij-ya.html",
+        "year": "2010",
+        "rating": "7.2",
+        "type": "cartoon"
+    },
+    {
+        "name": "Суперпитомцы",
+        "image": "https://image.tmdb.org/t/p/w500//75jSDcQtHrcVoSflDolT7PC5v82.jpg",
+        "link": "/card/cartoons/500-62/Superpitomcy.html",
+        "year": "2022",
+        "rating": "7.2",
+        "type": "cartoon"
+    },
+    {
+        "name": "Хранители снов",
+        "image": "https://image.tmdb.org/t/p/w500//338JxTywTCKqel7RsGgMIqmYooJ.jpg",
+        "link": "/card/cartoons/500-63/Hraniteli-snov.html",
+        "year": "2012",
+        "rating": "7.4",
+        "type": "cartoon"
+    },
+    {
+        "name": "Angry Birds: Летнее безумие",
+        "image": "https://image.tmdb.org/t/p/w500//6ko4jfA5BrcRADDaAfMagZ4ZGpG.jpg",
+        "link": "/card/cartoons/500-199/Angry-Birds-Letnee-bezumie.html",
+        "year": "2022",
+        "rating": "7.2",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Angry Birds в кино 2",
+        "image": "https://image.tmdb.org/t/p/w500//6lKxPyArJPJxveyKjp6ihQKH3Ge.jpg",
+        "link": "/card/cartoons/500-64/Angry-Birds-v-kino-2.html",
+        "year": "2019",
+        "rating": "7.1",
+        "type": "cartoon"
+    },
+    {
+        "name": "Angry Birds в кино",
+        "image": "https://image.tmdb.org/t/p/w500//rRBnDVllqsYG3F0A8Qc75wMiw5I.jpg",
+        "link": "/card/cartoons/500-200/Angry-Birds-v-kino.html",
+        "year": "2016",
+        "rating": "6.2",
+        "type": "cartoon"
+    },
+    {
+        "name": "Angry Birds. Сердитые птички",
+        "image": "https://image.tmdb.org/t/p/w500//eIte8WWTWszppxtv2MQIqZSOWM1.jpg",
+        "link": "/card/cartoons/500-201/Angry-Birds-Serditye-ptichki.html",
+        "year": "2013",
+        "rating": "6.1",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Кунг-фу Панда 4",
+        "image": "https://image.tmdb.org/t/p/w500//7RK9GHFArnQusZERwYwIaMZwRll.jpg",
+        "link": "/card/cartoons/500-65/Kung-fu-Panda-4.html",
+        "year": "2024",
+        "rating": "7.1",
+        "type": "cartoon"
+    },
+    {
+        "name": "Кунг-фу Панда 3",
+        "image": "https://image.tmdb.org/t/p/w500//2YSydZMbCSMMdtCEEYVfJsDrQyc.jpg",
+        "link": "/card/cartoons/500-202/Kung-fu-Panda-3.html",
+        "year": "2016",
+        "rating": "6.9",
+        "type": "cartoon"
+    },
+    {
+        "name": "Кунг-фу Панда 2",
+        "image": "https://image.tmdb.org/t/p/w500//7DOB9aaa6PpCclaLRlMBTR34Ti.jpg",
+        "link": "/card/cartoons/500-203/Kung-fu-Panda-2.html",
+        "year": "2011",
+        "rating": "7.0",
+        "type": "cartoon"
+    },
+    {
+        "name": "Кунг-фу Панда: Захватывающие легенды",
+        "image": "https://image.tmdb.org/t/p/w500//rkq5Jt7boR5v65bDbELHz3DW7sv.jpg",
+        "link": "/card/cartoons/500-204/Kung-fu-Panda-Zahvatyvayushie-legendy.html",
+        "year": "2011",
+        "rating": "7.4",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Кунг-фу Панда",
+        "image": "https://image.tmdb.org/t/p/w500//3EQ7y1wVCPsCnlB3PGee618SdIc.jpg",
+        "link": "/card/cartoons/500-205/Kung-fu-Panda.html",
+        "year": "2008",
+        "rating": "7.0",
+        "type": "cartoon"
+    },
+    {
+        "name": "Душа",
+        "image": "https://image.tmdb.org/t/p/w500//jZkksyMZdTYw7fIVKyA95nFEPnt.jpg",
+        "link": "/card/cartoons/500-66/Dusha.html",
+        "year": "2020",
+        "rating": "8.1",
+        "type": "cartoon"
+    },
+    {
+        "name": "Эверест",
+        "image": "https://image.tmdb.org/t/p/w500//2tHCLXq7BbH2i9YjLNDMvohxpj3.jpg",
+        "link": "/card/cartoons/500-67/Everest.html",
+        "year": "2019",
+        "rating": "7.5",
+        "type": "cartoon"
+    },
+    {
+        "name": "Дневник слабака: Рождественская лихорадка",
+        "image": "https://image.tmdb.org/t/p/w500//tcVlrSIeafV8uWJMt4Aqwp1NCx2.jpg",
+        "link": "/card/cartoons/500-206/Dnevnik-slabaka-Rozhdestvenskaya-lihoradka.html",
+        "year": "2023",
+        "rating": "6.6",
+        "type": "cartoon"
+    },
+    {
+        "name": "Дневник слабака: Правила Родрика",
+        "image": "https://image.tmdb.org/t/p/w500//uzhA8ZkrVlNVeysfmvITMYR2MlM.jpg",
+        "link": "/card/cartoons/500-207/Dnevnik-slabaka-Pravila-Rodrika.html",
+        "year": "2022",
+        "rating": "6.8",
+        "type": "cartoon"
+    },
+    {
+        "name": "Дневник слабака",
+        "image": "https://image.tmdb.org/t/p/w500//OR5miI8pm2Shmeoha0zHk97ceK.jpg",
+        "link": "/card/cartoons/500-68/Dnevnik-slabaka.html",
+        "year": "2021",
+        "rating": "6.2",
+        "type": "cartoon"
+    },
+    {
+        "name": "Время приключений: Фионна и Кейк",
+        "image": "https://image.tmdb.org/t/p/w500//eDqwpPj3H6iSwyqWVEA7c2CZzS9.jpg",
+        "link": "/card/cartoons/500-208/Vremya-priklyuchenij-Fionna-i-Kejk.html",
+        "year": "2023",
+        "rating": "8.8",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Время приключений: Далёкие земли",
+        "image": "https://image.tmdb.org/t/p/original/k3E4RXC0CcWznXjlTBz01SQ2r6z.jpg",
+        "link": "/card/cartoons/500-209/Vremya-priklyuchenij-Dalyokie-zemli.html",
+        "year": "2020",
+        "rating": "8.1",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Время приключений",
+        "image": "https://image.tmdb.org/t/p/w500//kMXB29thNci4oHVbH2bP18XSIav.jpg",
+        "link": "/card/cartoons/500-74/Vremya-priklyuchenij.html",
+        "year": "2010",
+        "rating": "8.5",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Не бей копытом",
+        "image": "https://image.tmdb.org/t/p/w500//3YteNf7HJvJT9IRxpiISoyvRoRR.jpg",
+        "link": "/card/cartoons/500-69/Ne-bej-kopytom.html",
+        "year": "2004",
+        "rating": "6.1",
+        "type": "cartoon"
+    },
+    {
+        "name": "Большое путешествие",
+        "image": "https://image.tmdb.org/t/p/w500//82cjRTHAsrNBRWfMJ8VzrvXcYfX.jpg",
+        "link": "/card/cartoons/500-70/Bolshoe-puteshestvie.html",
+        "year": "2006",
+        "rating": "5.5",
+        "type": "cartoon"
+    },
+    {
+        "name": "Лерой и Стич",
+        "image": "https://image.tmdb.org/t/p/w500//mVXTQVYBSdhGuNWzpbF9ULt62jH.jpg",
+        "link": "/card/cartoons/500-71/Leroj-i-Stich.html",
+        "year": "2006",
+        "rating": "6.6",
+        "type": "cartoon"
+    },
+    {
+        "name": "Лило и Стич 2: Большая Проблема Стича",
+        "image": "https://image.tmdb.org/t/p/w500//iXI3yci0L32ItDicRH3AUyuKsGp.jpg",
+        "link": "/card/cartoons/500-210/Lilo-i-Stich-2-Bolshaya-Problema-Sticha.html",
+        "year": "2005",
+        "rating": "6.7",
+        "type": "cartoon"
+    },
+    {
+        "name": "Новые Приключения Стича",
+        "image": "https://image.tmdb.org/t/p/w500//7DloQFBMZzH1r355T52GP4iye5Y.jpg",
+        "link": "/card/cartoons/500-211/Novye-Priklyucheniya-Sticha.html",
+        "year": "2003",
+        "rating": "6.4",
+        "type": "cartoon"
+    },
+    {
+        "name": "Лило и Стич",
+        "image": "https://image.tmdb.org/t/p/w500//srUqap7vwsQDycwikiw3MxpuvUx.jpg",
+        "link": "/card/cartoons/500-212/Lilo-i-Stich.html",
+        "year": "2003",
+        "rating": "7.4",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Лило и Стич",
+        "image": "https://image.tmdb.org/t/p/w500//6YhJyjmkGiP34uVa56ZkfSs8UXm.jpg",
+        "link": "/card/cartoons/500-213/Lilo-i-Stich-2002.html",
+        "year": "2002",
+        "rating": "7.5",
+        "type": "cartoon"
+    },
+    {
+        "name": "Базз Лайтер",
+        "image": "https://image.tmdb.org/t/p/w500//DQU4vUTMoAlUGJIC5hNfHPVELz.jpg",
+        "link": "/card/cartoons/500-72/Bazz-Lajter.html",
+        "year": "2022",
+        "rating": "6.9",
+        "type": "cartoon"
+    },
+    {
+        "name": "Приключения Базза Лайтера из Звёздной Команды",
+        "image": "https://image.tmdb.org/t/p/w500//4uFvEU2NMx4p4U2vEvsuC0kLcUF.jpg",
+        "link": "/card/cartoons/500-214/Priklyucheniya-Bazza-Lajtera-iz-Zvyozdnoj-Komandy.html",
+        "year": "2000",
+        "rating": "6.5",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Чип и Дейл",
+        "image": "https://image.tmdb.org/t/p/w500//3JPFgEWoiV6RAzD5o5why4xISDw.jpg",
+        "link": "/card/cartoons/500-227/Chip-i-Dejl.html",
+        "year": "2021",
+        "rating": "6.4",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Чип и Дейл: Дерево неприятностей",
+        "image": "https://image.tmdb.org/t/p/w500//eaO8Zgcfr4cPSRRwVMQT6rtct7u.jpg",
+        "link": "/card/cartoons/500-226/Chip-i-Dejl-Derevo-nepriyatnostej.html",
+        "year": "2005",
+        "rating": "7.6",
+        "type": "cartoon"
+    },
+    {
+        "name": "Чип и Дейл спешат на помощь",
+        "image": "https://image.tmdb.org/t/p/w500//cVa6j0tiZ4y68Rm5RnDIvxEXzSR.jpg",
+        "link": "/card/cartoons/500-225/Chip-i-Dejl-speshat-na-pomosh.html",
+        "year": "1989",
+        "rating": "7.6",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Рик и Морти",
+        "image": "https://image.tmdb.org/t/p/w500//wdzk1wPGOnO8dCnaQozSpe1oH9l.jpg",
+        "link": "/card/cartoons/500-73/Rik-i-Morti.html",
+        "year": "2013",
+        "rating": "8.7",
+        "isTV": true,
+        "type": "cartoon"
+    },
+    {
+        "name": "Гриффины: Там, там, на тёмной стороне",
+        "image": "https://image.tmdb.org/t/p/w500//fWr85GtJlzY4ZwdB2eCu3pdzWHz.jpg",
+        "link": "/card/cartoons/500-151/Griffiny-Tam-tam-na-temnoj-storone.html",
+        "year": "2009",
+        "rating": "7.2",
+        "type": "cartoon"
+    },
+    {
+        "name": "Гриффины",
+        "image": "https://image.tmdb.org/t/p/w500//seS4Uv5EvezwCS4aVfiBcvB4q4y.jpg",
+        "link": "/card/cartoons/500-77/Griffiny.html",
+        "year": "1999",
+        "rating": "7.4",
+        "isTV": true,
+        "type": "cartoon"
+    },
+
+
+    // конец
+
+    // Сериалы
+    {
+        "name": "Икусагами: Последний самурай",
+        "image": "https://image.tmdb.org/t/p/w500//i4kneKaznGjRktvUILJybB7uHlU.jpg",
+        "link": "/card/series/900-130/Ikusagami-Poslednij-samuraj.html",
+        "year": "2025",
+        "rating": "7.9",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Оно: Добро пожаловать в Дерри",
+        "image": "https://image.tmdb.org/t/p/w500//omSIgPmFZx557xYo1PvQVUebaGe.jpg",
+        "link": "/card/series/900-129/Ono-Dobro-pozhalovat-v-Derri.html",
+        "year": "2025",
+        "rating": "7.9",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Мир Дикого Запада",
+        "image": "https://image.tmdb.org/t/p/w500//j6fldQaouy30RJRfKbp4GRCQfle.jpg",
+        "link": "/card/series/900-128/Mir-Dikogo-Zapada.html",
+        "year": "2016",
+        "rating": "8.0",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Секретные материалы",
+        "image": "https://image.tmdb.org/t/p/w500//nMKS5l1lEmZQVZxCnbKs44mOfxc.jpg",
+        "link": "/card/series/900-127/Sekretnye-materialy.html",
+        "year": "1993",
+        "rating": "8.4",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Викинги",
+        "image": "https://image.tmdb.org/t/p/w500//1de3R902B5EEMmohBQsExd5V87Y.jpg",
+        "link": "/card/series/900-126/Vikingi.html",
+        "year": "2013",
+        "rating": "8.1",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Оставленные",
+        "image": "https://image.tmdb.org/t/p/w500//lHElXdWScZqEeUBvvyaD2fRGOzm.jpg",
+        "link": "/card/series/900-125/Ostavlennye.html",
+        "year": "2014",
+        "rating": "7.6",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Безумцы",
+        "image": "https://image.tmdb.org/t/p/w500//caYFrMMhiUaRFT8ATiydsBURasN.jpg",
+        "link": "/card/series/900-124/Bezumcy.html",
+        "year": "2007",
+        "rating": "8.1",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Клиника",
+        "image": "https://image.tmdb.org/t/p/w500//6kn6qST5VfdqZT97Uahn67ayaFm.jpg",
+        "link": "/card/series/900-123/Klinika.html",
+        "year": "2001",
+        "rating": "8.0",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Йеллоустоун",
+        "image": "https://image.tmdb.org/t/p/w500//muLDL6UrK6Rh47OwgbNZbNcwUc.jpg",
+        "link": "/card/series/900-122/Jelloustoun.html",
+        "year": "2018",
+        "rating": "8.3",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Как я встретил вашу маму",
+        "image": "https://image.tmdb.org/t/p/w500//bcd5s6VHINRMEnnt4zXtd3m1GCO.jpg",
+        "link": "/card/series/900-121/Kak-ya-vstretil-vashu-mamu.html",
+        "year": "2005",
+        "rating": "8.1",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Твин Пикс",
+        "image": "https://image.tmdb.org/t/p/w500//tx5JCh2lv1QISBbVYe22cpUm5ss.jpg",
+        "link": "/card/series/900-120/Tvin-Piks.html",
+        "year": "1990",
+        "rating": "8.3",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Прослушка",
+        "image": "https://image.tmdb.org/t/p/w500//aoy6XphJtLvCfVmLFqBLaR56BAW.jpg",
+        "link": "/card/series/900-119/Proslushka.html",
+        "year": "2002",
+        "rating": "8.6",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Доктор Хаус",
+        "image": "https://image.tmdb.org/t/p/original/vyIB8z2NouGmi8kg5d07han259K.jpg",
+        "link": "/card/series/900-118/Doktor-Haus.html",
+        "year": "2004",
+        "rating": "8.6",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Сопрано",
+        "image": "https://image.tmdb.org/t/p/w500//ilcNSuJriOY2TyaNmaeGAFv8zSo.jpg",
+        "link": "/card/series/900-114/Soprano.html",
+        "year": "1999",
+        "rating": "8.6",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Монстр",
+        "image": "https://image.tmdb.org/t/p/w500//pDugsRV2BFi8H8NAG62LNZFlztE.jpg",
+        "link": "/card/series/900-113/Monstr-Istoriya-Eda-Gina.html",
+        "year": "2025",
+        "rating": "7.5",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Миротворец",
+        "image": "https://image.tmdb.org/t/p/w500//ugd5WLjBd8mBaucMONEyEN3GPZA.jpg",
+        "link": "/card/series/900-112/Mirotvorec.html",
+        "year": "2022",
+        "rating": "8.2",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Бункер для богачей",
+        "image": "https://image.tmdb.org/t/p/w500//cc60XSIrEdaDyyTQNUXsgowQXmO.jpg",
+        "link": "/card/series/900-111/Bunker-dlya-bogachej.html",
+        "year": "2025",
+        "rating": "6.4",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Однажды в сказке",
+        "image": "https://image.tmdb.org/t/p/w500//hePYKJfIIWjnn8vItaoAmVtsFtp.jpg",
+        "link": "/card/series/900-110/Odnazhdy-v-skazke.html",
+        "year": "2011",
+        "rating": "7.4",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "007: Дорога к миллиону",
+        "image": "https://image.tmdb.org/t/p/w500//1BLcU0pKEIqObovHwcuOVEUoYS3.jpg",
+        "link": "/card/series/900-109/007-Doroga-k-millionu.html",
+        "year": "2023",
+        "rating": "7.2",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Годы",
+        "image": "https://image.tmdb.org/t/p/w500//7cZRJfSvgSh1PJATnInCYIz2025.jpg",
+        "link": "/card/series/900-108/Gody.html",
+        "year": "2019",
+        "rating": "7.6",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Сосны",
+        "image": "https://image.tmdb.org/t/p/original/9QFFSWcAZ4NZ4Qb6I8aJ72LKUOY.jpg",
+        "link": "/card/series/900-107/Sosny.html",
+        "year": "2015",
+        "rating": "6.9",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Уэнздей",
+        "image": "https://image.tmdb.org/t/p/w500//rb2MBiP9gAGwtxObuMP9Qro12W3.jpg",
+        "link": "/card/series/900-106/Uenzdej.html",
+        "year": "2022",
+        "rating": "8.4",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Гангстерленд",
+        "image": "https://image.tmdb.org/t/p/w500//qSRH45LOLb0BWWiVBHUXGytYFqL.jpg",
+        "link": "/card/series/900-91/Gangsterlend.html",
+        "year": "2025",
+        "rating": "8.5",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Алиса в Пограничье",
+        "image": "https://image.tmdb.org/t/p/w500//AhSSceW4LshEU2MKVL3iDHLXZtX.jpg",
+        "link": "/card/series/900-92/Alisa-v-Pograniche.html",
+        "year": "2020",
+        "rating": "8.2",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Джинни и Джорджия",
+        "image": "https://image.tmdb.org/t/p/w500//1yGNxmIfzr9UqKGxGoPF4P1AKbH.jpg",
+        "link": "/card/series/900-93/Dzhinni-i-Dzhordzhiya.html",
+        "year": "2021",
+        "rating": "8.1",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Герои",
+        "image": "https://image.tmdb.org/t/p/w500//A2VAMFKW5Q4Qgp82XIVIjUhcj9n.jpg",
+        "link": "/card/series/900-94/Geroi.html",
+        "year": "2006",
+        "rating": "7.5",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Видеть",
+        "image": "https://image.tmdb.org/t/p/w500//xI8GsMKify2ke4FvcmsoOaOdPIJ.jpg",
+        "link": "/card/series/900-95/Videt.html",
+        "year": "2019",
+        "rating": "8.1",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Отдел нераскрытых дел",
+        "image": "https://image.tmdb.org/t/p/w500//jyqEWkBA3bm9YdDwhsM3DbDylfD.jpg",
+        "link": "/card/series/900-96/Otdel-neraskrytyh-del.html",
+        "year": "2025",
+        "rating": "7.9",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Остаться в живых",
+        "image": "https://image.tmdb.org/t/p/w500//jR6yfKTUv7HqvyROtoRMuKzlFCb.jpg",
+        "link": "/card/series/900-97/Ostatsya-v-zhivyh.html",
+        "year": "2004",
+        "rating": "7.9",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Два с половиной человека",
+        "image": "https://image.tmdb.org/t/p/w500//rfo3OHRPRIDODWWr54sY1bTZLd3.jpg",
+        "link": "/card/series/900-98/Dva-s-polovinoj-cheloveka.html",
+        "year": "2003",
+        "rating": "7.5",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Сотня",
+        "image": "https://image.tmdb.org/t/p/w500//tEm3ALRXsoXT9IaCp1dcNFyjtBO.jpg",
+        "link": "/card/series/900-99/Sotnya.html",
+        "year": "2014",
+        "rating": "7.9",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Стрела",
+        "image": "https://image.tmdb.org/t/p/w500//8xevzZgfa6ed0vVrZ8kwf71py4w.jpg",
+        "link": "/card/series/900-100/Strela.html",
+        "year": "2012",
+        "rating": "6.8",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Тайны Смолвиля",
+        "image": "https://image.tmdb.org/t/p/w500//aRhhgcz1hMHZWp15E8g8oerb8vD.jpg",
+        "link": "/card/series/900-101/Tajny-Smolvilya.html",
+        "year": "2001",
+        "rating": "8.2",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Зачарованные",
+        "image": "https://image.tmdb.org/t/p/w500//l66qYuj0h7r6aPfcznkRzVHiFLU.jpg",
+        "link": "/card/series/900-102/Zacharovannye.html",
+        "year": "1998",
+        "rating": "8.2",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Детство Шелдона",
+        "image": "https://image.tmdb.org/t/p/w500//9bZR5H7LrEo4i9gYoKvUhvcfr1y.jpg",
+        "link": "/card/series/900-103/Detstvo-Sheldona.html",
+        "year": "2017",
+        "rating": "8.0",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Теория большого взрыва",
+        "image": "https://image.tmdb.org/t/p/w500//wgCVpWDwc93wHlck8jEQT08tps0.jpg",
+        "link": "/card/series/900-104/Teoriya-bolshogo-vzryva.html",
+        "year": "2007",
+        "rating": "7.9",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Сваты",
+        "image": "https://image.tmdb.org/t/p/w500//7DtVbNXIwMCplhysJFJCANp6pwx.jpg",
+        "link": "/card/series/900-105/Svaty.html",
+        "year": "2008",
+        "rating": "6.2",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "911: Служба спасения",
+        "image": "https://image.tmdb.org/t/p/w500//9dNWZPjFWdKo5Avr5JEEzLShLMZ.jpg",
+        "link": "/card/series/900-01/911-sluzhba-spaseniya.html",
+        "year": "2018",
+        "rating": "8.2",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Сверхъестественное",
+        "image": "https://image.tmdb.org/t/p/w500//hvO99pEfSBxF55clgs8r4mpRzr.jpg",
+        "link": "/card/series/900-03/Sverhestestvennoe.html",
+        "year": "2005",
+        "rating": "8.3",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Корона",
+        "image": "https://image.tmdb.org/t/p/w500//iS2m3TYiThK43IC3Ygm4snyA4UM.jpg",
+        "link": "/card/series/900-04/Korona.html",
+        "year": "2016",
+        "rating": "8.2",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Острые козырьки",
+        "image": "https://image.tmdb.org/t/p/w500//pVJzfWgb3sHN29hLaiI5jmBN9vx.jpg",
+        "link": "/card/series/900-05/Ostrye-kozyrki.html",
+        "year": "2013",
+        "rating": "8.5",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Гримм",
+        "image": "https://image.tmdb.org/t/p/w500//lTmjyJwiMTLsCdzKjkkj2L9VyCd.jpg",
+        "link": "/card/series/900-06/Grimm.html",
+        "year": "2011",
+        "rating": "8.3",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Дом Дракона",
+        "image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/emAFaKrAn1mhJ3ZQbM2503a1X2s.jpg",
+        "link": "/card/series/900-37/Dom-Drakona.html",
+        "year": "2022",
+        "rating": "8.4",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Презумпция невиновности",
+        "image": "https://image.tmdb.org/t/p/w500//l432WSWtwRw40R3IJuwakO0w6sq.jpg",
+        "link": "/card/series/900-38/Prezumpciya-nevinovnosti.html",
+        "year": "2024",
+        "rating": "8.1",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Обречённые на славу",
+        "image": "https://image.tmdb.org/t/p/w500//4NHRDQa5WgX2guZDihQLLtifYs.jpg",
+        "link": "/card/series/900-39/Obrechennye-na-slavu.html",
+        "year": "2024",
+        "rating": "7.5",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Пацаны",
+        "image": "https://image.tmdb.org/t/p/w500//3NqlBDpWI83TgQ9nmeFwTVxEmtZ.jpg",
+        "link": "/card/series/900-40/Pacany.html",
+        "year": "2019",
+        "rating": "8.5",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Очень странные дела",
+        "image": "https://image.tmdb.org/t/p/w500//uKBjtMZ7yDlJovmqIOBe0ZVGdVM.jpg",
+        "link": "/card/series/900-41/Ochen-strannye-dela.html",
+        "year": "2016",
+        "rating": "8.6",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Шугар",
+        "image": "https://image.tmdb.org/t/p/w500//z8rJ8FWiMpWt9ecbsVcxoE3UQxo.jpg",
+        "link": "/card/series/900-42/Shugar.html",
+        "year": "2024",
+        "rating": "7.3",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Охота за убийцей",
+        "image": "https://image.tmdb.org/t/p/w500//lcoxNrC8Z00MiUynsqxNtwQDjvA.jpg",
+        "link": "/card/series/900-43/Ohota-za-ubijcej.html",
+        "year": "2024",
+        "rating": "6.9",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Созвездие",
+        "image": "https://image.tmdb.org/t/p/w500//pon5QHLxrsgmyZKVSUdpXmHg08C.jpg",
+        "link": "/card/series/900-45/Sozvezdie.html",
+        "year": "2024",
+        "rating": "7.2",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Бригада",
+        "image": "https://image.tmdb.org/t/p/w500//nZBVnI2gWZ4OFnpxU49j3kYavYz.jpg",
+        "link": "/card/series/900-02/Brigada.html",
+        "year": "2002",
+        "rating": "7.8",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Задача трёх тел",
+        "image": "https://image.tmdb.org/t/p/w500//d4e2b1UiJNgU9V0kBvOxnbVPslE.jpg",
+        "link": "/card/series/900-46/Zadacha-tryoh-tel.html",
+        "year": "2024",
+        "rating": "7.5",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Хало",
+        "image": "https://image.tmdb.org/t/p/w500//5SBcW0WyqxZyE7AolxfX1ift532.jpg",
+        "link": "/card/series/900-47/Halo.html",
+        "year": "2022",
+        "rating": "8.3",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Властелины воздуха",
+        "image": "https://image.tmdb.org/t/p/w500//mAJJPhPJ0EbyemFho6Wtwibi7FZ.jpg",
+        "link": "/card/series/900-48/Vlasteliny-vozduha.html",
+        "year": "2024",
+        "rating": "7.8",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Лунный рыцарь",
+        "image": "https://image.tmdb.org/t/p/w500//pygGowaXF87Mfomit3oekliBvt7.jpg",
+        "link": "/card/series/900-49/Lunnyj-rycar.html",
+        "year": "2022",
+        "rating": "7.7",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Извне",
+        "image": "https://image.tmdb.org/t/p/w500//rGFRCzgScvIC9LCfqkdb9T7NIs0.jpg",
+        "link": "/card/series/900-50/Izvne.html",
+        "year": "2022",
+        "rating": "8.2",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Чернобыль",
+        "image": "https://image.tmdb.org/t/p/w500//qhzSVp06AGGcziMoibInZ5PY0Eg.jpg",
+        "link": "/card/series/900-51/Chernobyl.html",
+        "year": "2019",
+        "rating": "8.7",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Ричер",
+        "image": "https://image.tmdb.org/t/p/w500//zLqlW0rXmHwOZRhmOjeod14sGiT.jpg",
+        "link": "/card/series/900-52/Dzhek-Richer.html",
+        "year": "2022",
+        "rating": "8.1",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Фарго",
+        "image": "https://image.tmdb.org/t/p/w500//r8HpRhKl5q0kiNehdjVOmTC7K7p.jpg",
+        "link": "/card/series/900-53/Fargo.html",
+        "year": "2014",
+        "rating": "8.3",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Третий лишний",
+        "image": "https://image.tmdb.org/t/p/w500//cahNXUK7bp9RTPItIVyOF2z5m0L.jpg",
+        "link": "/card/series/900-54/Tretij-lishnij.html",
+        "year": "2024",
+        "rating": "7.9",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "«Монарх»: Наследие монстров",
+        "image": "https://image.tmdb.org/t/p/w500//kam0gTmqC0h68uLiRxamj38nkPX.jpg",
+        "link": "/card/series/900-55/Monarh-Nasledie-monstrov.html",
+        "year": "2023",
+        "rating": "7.8",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Пингвин",
+        "image": "https://image.tmdb.org/t/p/w500//25dj85s5VtirRWF6rmO8TpZXHJV.jpg",
+        "link": "/card/series/900-56/Pingvin.html",
+        "year": "2024",
+        "rating": "8.5",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Ведьмак",
+        "image": "https://image.tmdb.org/t/p/w500//rY2c2LhN07CRKlAbRaDZxN2XjvK.jpg",
+        "link": "/card/series/900-57/Vedmak.html",
+        "year": "2019",
+        "rating": "8.0",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Локи",
+        "image": "https://image.tmdb.org/t/p/w500//fNTS8BOMmhYYM4FqLPLuJ6KRQEF.jpg",
+        "link": "/card/series/900-58/Loki.html",
+        "year": "2019",
+        "rating": "8.2",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Тысяча и одна ночь",
+        "image": "https://image.tmdb.org/t/p/w500//vR9Dh1zc0yQSAln3bqqCPRndhEB.jpg",
+        "link": "/card/series/900-59/Tysyacha-i-odna-noch.html",
+        "year": "2024",
+        "rating": "4.0",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Зимний король",
+        "image": "https://image.tmdb.org/t/p/w500//fYx5q9hPAmbDrWzsYUDhxZJnigC.jpg",
+        "link": "/card/series/900-61/Zimnij-korol.html",
+        "year": "2023",
+        "rating": "6.8",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Поколение «Ви»",
+        "image": "https://image.tmdb.org/t/p/w500//2AVCQymHu0gj8Jwci2VxEuodZq4.jpg",
+        "link": "/card/series/900-62/Pokolenie-Vi.html",
+        "year": "2023",
+        "rating": "7.9",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Доисторическая планета",
+        "image": "https://image.tmdb.org/t/p/w500//5mj82iMTp8UmnyXFaZbwRGuc81a.jpg",
+        "link": "/card/series/900-63/Doistoricheskaya-planeta.html",
+        "year": "2022",
+        "rating": "8.3",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Одни из нас",
+        "image": "https://image.tmdb.org/t/p/w500//69loIrm9JPpPRE3Akw4yRoitSYn.jpg",
+        "link": "/card/series/900-64/Odni-iz-nas.html",
+        "year": "2023",
+        "rating": "8.6",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Захваченный рейс",
+        "image": "https://image.tmdb.org/t/p/w500//v4oAWDy33lmKI7lsktThsYhp3zU.jpg",
+        "link": "/card/series/900-65/Zahvachennyj-rejs.html",
+        "year": "2023",
+        "rating": "7.8",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Скрежет металла",
+        "image": "https://image.tmdb.org/t/p/w500//82HaUMIagdh5PLflUOVrHn5GsI9.jpg",
+        "link": "/card/series/900-66/Skrezhet-metalla.html",
+        "year": "2023",
+        "rating": "7.9",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Бумажный дом",
+        "image": "https://image.tmdb.org/t/p/w500//x9YQ28gwAkAXCSw7n1cAsPbJaTF.jpg",
+        "link": "/card/series/900-67/Bumazhnyj-dom.html",
+        "year": "2017",
+        "rating": "8.2",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Любовь и смерть ",
+        "image": "https://image.tmdb.org/t/p/w500//tMm4sHiTkx8kaI71BcG2ELXRKfR.jpg",
+        "link": "/card/series/900-68/Lyubov-i-smert.html",
+        "year": "2023",
+        "rating": "7.9",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Цитадель",
+        "image": "https://image.tmdb.org/t/p/w500//hwlI6qEtzFT47FAUMP3xac8qcnz.jpg",
+        "link": "/card/series/900-69/Citadel.html",
+        "year": "2023",
+        "rating": "6.9",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Экстраполяции",
+        "image": "https://image.tmdb.org/t/p/w500//wzyKhC005b7wuCwfCgcKIIc7DWY.jpg",
+        "link": "/card/series/900-70/Ekstrapolyacii.html",
+        "year": "2023",
+        "rating": "6.0",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Фоллаут",
+        "image": "https://image.tmdb.org/t/p/w500//tOrIGVF521WhBsIDwuGQ999ZbjV.jpg",
+        "link": "/card/series/900-71/Fallout.html",
+        "year": "2024",
+        "rating": "8.3",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Связь",
+        "image": "https://image.tmdb.org/t/p/w500//u79ZbVgP5F8kugRHOrrAF78PFe1.jpg",
+        "link": "/card/series/900-72/Svyaz.html",
+        "year": "2023",
+        "rating": "6.3",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Настоящий детектив",
+        "image": "https://image.tmdb.org/t/p/w500//1p60ehq2diow72QQC8pyppfexky.jpg",
+        "link": "/card/series/900-73/Nastoyashij-detektiv.html",
+        "year": "2014",
+        "rating": "8.3",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Всевидящее око",
+        "image": "https://image.tmdb.org/t/p/w500//5axQCuuavbNOAICMa3tduIXQL5T.jpg",
+        "link": "/card/series/900-74/Vsevidyashee-oko.html",
+        "year": "2023",
+        "rating": "6.7",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Сёгун",
+        "image": "https://image.tmdb.org/t/p/w500//cOKLRblbdBtcuf4TkAzsyJpZr23.jpg",
+        "link": "/card/series/900-75/Syogun.html",
+        "year": "2024",
+        "rating": "8.5",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Карнивал Роу",
+        "image": "https://image.tmdb.org/t/p/w500//gdaKPawLiRqT44AqDJCnxBAsy2j.jpg",
+        "link": "/card/series/900-76/Karnival-Rou.html",
+        "year": "2019",
+        "rating": "7.7",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Сквозь снег",
+        "image": "https://image.tmdb.org/t/p/w500//mNUE6FC57NcC9iC8QUCtlMEF5n8.jpg",
+        "link": "/card/series/900-77/Skvoz-sneg.html",
+        "year": "2020",
+        "rating": "7.4",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Ты",
+        "image": "https://image.tmdb.org/t/p/w500//aSEYa7z10DC6o3NedSZEyJ6SBXv.jpg",
+        "link": "/card/series/900-78/Ty.html",
+        "year": "2018",
+        "rating": "8.0",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Мэйфейрские ведьмы",
+        "image": "https://image.tmdb.org/t/p/w500//wTwlZ3W3euIZIWKnPqKjWARJA5v.jpg",
+        "link": "/card/series/900-79/Mejfejrskie-vedmy.html",
+        "year": "2023",
+        "rating": "7.4",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Наклз",
+        "image": "https://image.tmdb.org/t/p/w500//zqT1Te9dnI3I8oDnDaLffFPaZ3c.jpg",
+        "link": "/card/series/900-80/Naklz.html",
+        "year": "2024",
+        "rating": "7.4",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "1923",
+        "image": "https://image.tmdb.org/t/p/w500//zgZRJZvZn5cpsWAB0zMUdad3iZd.jpg",
+        "link": "/card/series/900-81/1923.html",
+        "year": "2022",
+        "rating": "8.1",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Властелин колец: Кольца власти",
+        "image": "https://image.tmdb.org/t/p/w500//pp5yf6xRMtySYgtVf5YTDYh7fof.jpg",
+        "link": "/card/series/900-82/Vlastelin-kolec-Kolca-vlasti.html",
+        "year": "2022",
+        "rating": "7.3",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Химия смерти",
+        "image": "https://image.tmdb.org/t/p/w500//lUTPksMc9PhQCcWtWCmnQQrPC0B.jpg",
+        "link": "/card/series/900-83/Himiya-smerti.html",
+        "year": "2023",
+        "rating": "6.6",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Викинги: Вальхалла",
+        "image": "https://image.tmdb.org/t/p/w500//zOB0Mo1rNUcfpVunce8gJjcvvSV.jpg",
+        "link": "/card/series/900-84/Vikingi-Valhalla.html",
+        "year": "2022",
+        "rating": "7.7",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Джентльмены",
+        "image": "https://image.tmdb.org/t/p/w500//zRdUl8TxpXD3LTFqH9wiya14ZYS.jpg",
+        "link": "/card/series/900-07/Dzhentlmeny.html",
+        "year": "2024",
+        "rating": "7.9",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Бриджертоны",
+        "image": "https://image.tmdb.org/t/p/w500//jMDY8c3HpkM5LmYr1Xiz7a0r0qk.jpg",
+        "link": "/card/series/900-08/Bridzhertony.html",
+        "year": "2020",
+        "rating": "8.1",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Лучше звоните Солу",
+        "image": "https://image.tmdb.org/t/p/w500//rTjlrjxCnxiNNVo0PjqUSySoieH.jpg",
+        "link": "/card/series/900-09/Luchshe-zvonite-Solu.html",
+        "year": "2015",
+        "rating": "8.7",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Сто лет одиночества",
+        "image": "https://image.tmdb.org/t/p/w500//vYtbH9Q5DaCDqzkB483dmYjfkA3.jpg",
+        "link": "/card/series/900-10/Sto-let-odinochestva.html",
+        "year": "2024",
+        "rating": "8.0",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Люцифер",
+        "image": "https://image.tmdb.org/t/p/w500//A7IP83pBzpLCbU7hlchJXsfcF8j.jpg",
+        "link": "/card/series/900-11/Lyucifer.html",
+        "year": "2016",
+        "rating": "8.5",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Декстер: Воскрешение",
+        "image": "https://image.tmdb.org/t/p/w500//yFQFozGDLl7RFzupKuilh66OFuW.jpg",
+        "link": "/card/series/900-117/Dekster-Voskreshenie.html",
+        "year": "2025",
+        "rating": "8.5",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Декстер: Новая кровь",
+        "image": "https://image.tmdb.org/t/p/w500//6Dlx8ck7zRKIxnFNJ1G1tXZ6p9D.jpg",
+        "link": "/card/series/900-12/Dekster-Novaya-krov.html",
+        "year": "2021",
+        "rating": "8.0",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Декстер",
+        "image": "https://image.tmdb.org/t/p/w500//h59kGpnh7czSkVkND55Cp91UL32.jpg",
+        "link": "/card/series/900-116/Dekster.html",
+        "year": "2006",
+        "rating": "8.2",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Дневники вампира",
+        "image": "https://image.tmdb.org/t/p/w500//y8hcR1R8QmGs8uLHQhIFHgCFWDd.jpg",
+        "link": "/card/series/900-13/Dnevniki-vampira.html",
+        "year": "2009",
+        "rating": "8.3",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Шерлок",
+        "image": "https://image.tmdb.org/t/p/w500//kuaBGwju6CParqos7afHNvNEIdD.jpg",
+        "link": "/card/series/900-14/Sherlok.html",
+        "year": "2010",
+        "rating": "8.5",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Тьма",
+        "image": "https://image.tmdb.org/t/p/w500//ikhUNN25WVfMN2uvoJLLKYXp8jE.jpg",
+        "link": "/card/series/900-15/Tma.html",
+        "year": "2017",
+        "rating": "8.4",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Игра в кальмара",
+        "image": "https://image.tmdb.org/t/p/w500//3vMCgpRa5cdutE56AXqeEkGHtxI.jpg",
+        "link": "/card/series/900-16/Igra-v-kalmara.html",
+        "year": "2021",
+        "rating": "7.9",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Тед Лассо",
+        "image": "https://image.tmdb.org/t/p/w500//htV1GTyatTXJB589hjiqUQPegjd.jpg",
+        "link": "/card/series/900-17/Ted-Lasso.html",
+        "year": "2020",
+        "rating": "8.4",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Друзья",
+        "image": "https://image.tmdb.org/t/p/w500//zBOs8S3UOHyWLzOl9gF8lknBxlL.jpg",
+        "link": "/card/series/900-18/Druzya.html",
+        "year": "1994",
+        "rating": "8.4",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Хороший доктор",
+        "image": "https://image.tmdb.org/t/p/w500//c3WPgJl5OjAMJotI7qPeL1zgcCX.jpg",
+        "link": "/card/series/900-19/Horoshij-doktor.html",
+        "year": "2017",
+        "rating": "8.5",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Волчонок",
+        "image": "https://image.tmdb.org/t/p/w500//bq0TmDgpYWrTuJVo8JpeMU3LLb8.jpg",
+        "link": "/card/series/900-20/Volchonok.html",
+        "year": "2011",
+        "rating": "8.5",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Мистер Робот",
+        "image": "https://image.tmdb.org/t/p/w500//v0O3GfmruiKwBCFUKc1cEM1PVLF.jpg",
+        "link": "/card/series/900-22/Mister-Robot.html",
+        "year": "2015",
+        "rating": "8.2",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Мандалорец",
+        "image": "https://image.tmdb.org/t/p/w500//3JcJfU9wm6sA2R6LQtnsBJsHMmY.jpg",
+        "link": "/card/series/900-23/Mandalorec.html",
+        "year": "2019",
+        "rating": "8.4",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Земля без людей",
+        "image": "https://image.tmdb.org/t/p/w500//fRPUaAmxFtfhYPalD7Ru8Cu2MTr.jpg",
+        "link": "/card/series/900-24/Zemlya-bez-lyudej.html",
+        "year": "2024",
+        "rating": "7.2",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Американская история ужасов",
+        "image": "https://image.tmdb.org/t/p/w500//gj2dFFgEHdhxqSBpD2oPyo4YmPD.jpg",
+        "link": "/card/series/900-25/Amerikanskaya-istoriya-uzhasov.html",
+        "year": "2011",
+        "rating": "8.1",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "День Шакала",
+        "image": "https://image.tmdb.org/t/p/w500//uFdIebgylj64d9ze6y1C5jsHUZZ.jpg",
+        "link": "/card/series/900-26/Den-Shakala.html",
+        "year": "2024",
+        "rating": "8.3",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Кросс",
+        "image": "https://image.tmdb.org/t/p/w500//vjC4LAf7K6aXCWcp3CdinYsG0aG.jpg",
+        "link": "/card/series/900-27/Kross.html",
+        "year": "2024",
+        "rating": "7.2",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Полицейский с Рублёвки",
+        "image": "https://image.tmdb.org/t/p/w500//3la60SBas5hWMP2C5mzb6WXL89S.jpg",
+        "link": "/card/series/900-115/Policejskij-s-Rublyovki.html",
+        "year": "2016",
+        "rating": "7.8",
+        "tmdb_id": 65953,
+        "isTV": true
+    },
+    {
+        "name": "Ганнибал",
+        "image": "https://image.tmdb.org/t/p/w500//cy5xnqFR88IG5RrHXxHlpqhLjEG.jpg",
+        "link": "/card/series/900-28/Gannibal.html",
+        "year": "2013",
+        "rating": "8.2",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Сексуальное просвещение",
+        "image": "https://image.tmdb.org/t/p/w500//ig9FyX4AMOhJXKQkDmau0xX0DWy.jpg",
+        "link": "/card/series/900-30/Seksualnoe-prosveshenie.html",
+        "year": "2019",
+        "rating": "8.2",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Ловкий Плут",
+        "image": "https://image.tmdb.org/t/p/w500//3xhycTWtx8TsQDllkQ4g7s2mGBR.jpg",
+        "link": "/card/series/900-31/Lovki-Plut.html",
+        "year": "2023",
+        "rating": "8.0",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Дорогуша",
+        "image": "https://image.tmdb.org/t/p/w500//33DCNqCAtqL408AOYrzJ09NhiN7.jpg",
+        "link": "/card/series/900-32/Dorogusha.html",
+        "year": "2024",
+        "rating": "7.6",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Игра престолов",
+        "image": "https://image.tmdb.org/t/p/w500//tbBQW8jpDH7RpAymMGnBluIsdmH.jpg",
+        "link": "/card/series/900-33/Igra-prestolov.html",
+        "year": "2011",
+        "rating": "8.5",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Древние",
+        "image": "https://image.tmdb.org/t/p/w500//dsVB3Mqv5sHGGsu1SGuF3fahw0Z.jpg",
+        "link": "/card/series/900-34/Drevnie.html",
+        "year": "2013",
+        "rating": "8.6",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Отбросы",
+        "image": "https://image.tmdb.org/t/p/w500//jpSJDe6TTnLL5Es9uZ8Viz6MMYV.jpg",
+        "link": "/card/series/900-35/Otbrosy.html",
+        "year": "2009",
+        "rating": "7.6",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Флэш",
+        "image": "https://image.tmdb.org/t/p/w500//q14oRmj0ITMBzqHUdiGwXUIvg7t.jpg",
+        "link": "/card/series/900-36/Flesh.html",
+        "year": "2014",
+        "rating": "7.8",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Магазин светильников",
+        "image": "https://image.tmdb.org/t/p/w500//edzQHpnGiwYYf1wRRv91iJETtWX.jpg",
+        "link": "/card/series/900-29/Magazin-svetilnikov.html",
+        "year": "2024",
+        "rating": "8.6",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Черное зеркало",
+        "image": "https://image.tmdb.org/t/p/w500//rAfh65N51dtzew6r0vKCqnaiSyf.jpg",
+        "link": "/card/series/900-85/Chernoe-zerkalo.html",
+        "year": "2011",
+        "rating": "8.3",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Во все тяжкие",
+        "image": "https://image.tmdb.org/t/p/w500//3NA1FOlnjE909OyVT534B7fw5h5.jpg",
+        "link": "/card/series/900-86/Vo-vse-tyazhkie.html",
+        "year": "2008",
+        "rating": "8.9",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Ходячие мертвецы: Выжившие",
+        "image": "https://image.tmdb.org/t/p/w500//rhN08H5Yg7xAFfBzeDzVV9GAwDj.jpg",
+        "link": "/card/series/900-44/Hodyachie-mertvecy-Vyzhivshie.html",
+        "year": "2024",
+        "rating": "8.0",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Ходячие мертвецы: Дэрил Диксон",
+        "image": "https://image.tmdb.org/t/p/w500//kRTaNKcs3RQJCB626y1mGOTHVYU.jpg",
+        "link": "/card/series/900-60/Hodyachie-mertvecy-Deril-Dikson.html",
+        "year": "2023",
+        "rating": "8.1",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Ходячие мертвецы: Мертвый город",
+        "image": "https://image.tmdb.org/t/p/w500//mx5CPdGPLTsebUGcKA54Gs2i81U.jpg",
+        "link": "/card/series/900-87/Hodyachie-mertvecy-Mertvyj-gorod.html",
+        "year": "2023",
+        "rating": "8.0",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Истории ходячих мертвецов",
+        "image": "https://image.tmdb.org/t/p/original/rlC90W3krCHQ727fXKYBYLqSmeP.jpg",
+        "link": "/card/series/900-88/Istorii-hodyachih-mertvecov.html",
+        "year": "2022",
+        "rating": "7.2",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Ходячие мертвецы: Мир за пределами",
+        "image": "https://image.tmdb.org/t/p/original/4DuXNzJrdommCOFBM3re20mM8bd.jpg",
+        "link": "/card/series/900-89/Hodyachie-mertvecy-Mir-za-predelami.html",
+        "year": "2020",
+        "rating": "7.4",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Бойтесь ходячих мертвецов",
+        "image": "https://image.tmdb.org/t/p/w500//3BWbdYHwSxd3rkHkLip8gFxaPZv.jpg",
+        "link": "/card/series/900-90/Bojtes-hodyachih-mertvecov.html",
+        "year": "2015",
+        "rating": "7.7",
+        "isTV": true,
+        "type": "series"
+    },
+    {
+        "name": "Ходячие мертвецы",
+        "image": "https://image.tmdb.org/t/p/w500//3metsxLVhlJU0mNj5gVfKIih0EF.jpg",
+        "link": "/card/series/900-21/Hodyachie-mertvecy.html",
+        "year": "2010",
+        "rating": "8.1",
+        "isTV": true,
+        "type": "series"
+    },
+
+    // Конец
+
+
+    // Аниме
+    {
+        "name": "Гачиакута",
+        "image": "https://image.tmdb.org/t/p/w500//qU5hJXaY6IjDqBrlDaAhlbPvXVU.jpg",
+        "link": "/card/anime/100-86/Gachiakuta.html",
+        "year": "2025",
+        "rating": "8.9",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Ветролом",
+        "image": "https://image.tmdb.org/t/p/w500//nvvvXGdVaSeYeWSFBkpa1HKIfay.jpg",
+        "link": "/card/anime/100-85/Vetrolom.html",
+        "year": "2024",
+        "rating": "8.1",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Тёмный демон",
+        "image": "https://image.tmdb.org/t/p/w500//elzm2YILMHwh8WKfphhmnewwoiJ.jpg",
+        "link": "/card/anime/100-84/Tyomnyj-demon.html",
+        "year": "2025",
+        "rating": "8.3",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Повелитель Тайн",
+        "image": "https://image.tmdb.org/t/p/w500//kBRyCCZWipMO5Gu9Y02nE3iMgr0.jpg",
+        "link": "/card/anime/100-83/Povelitel-Tajn.html",
+        "year": "2025",
+        "rating": "8.9",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Меч чужака",
+        "image": "https://image.tmdb.org/t/p/w500//f3llQzjODixVakVWsK4YpXFjRUE.jpg",
+        "link": "/card/anime/100-87/Mech-chuzhaka.html",
+        "year": "2007",
+        "rating": "7.6",
+        "tmdb_id": 13980,
+        "type": "anime"
+    },
+    {
+        "name": "Охотник x Охотник",
+        "image": "https://image.tmdb.org/t/p/w500//hAoNFUYu3tOrEDgwx7OcSVMLseP.jpg",
+        "link": "/card/anime/100-82/Ohotnik-x-Ohotnik.html",
+        "year": "2011",
+        "rating": "8.7",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Город, в котором меня нет",
+        "image": "https://image.tmdb.org/t/p/w500//zJOoyPtDy5FSMdbKXUXAMaPz1Ud.jpg",
+        "link": "/card/anime/100-81/Gorod-v-kotorom-menya-net.html",
+        "year": "2016",
+        "rating": "8.5",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Подземелье вкусностей",
+        "image": "https://image.tmdb.org/t/p/w500//lqvcusvxvLIeJf94Pv3pxyoCEfH.jpg",
+        "link": "/card/anime/100-80/Podzemele-vkusnostej.html",
+        "year": "2024",
+        "rating": "8.5",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Берсерк",
+        "image": "https://image.tmdb.org/t/p/w500//rPqWt642UhC8UObCtnpRz4iM2DQ.jpg",
+        "link": "/card/anime/100-73/Berserk.html",
+        "year": "2016",
+        "rating": "7.5",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Монстр",
+        "image": "https://image.tmdb.org/t/p/w500//sfmpjO9KwgIDcFybwLcN061ZwOb.jpg",
+        "link": "/card/anime/100-74/Monstr.html",
+        "year": "2004",
+        "rating": "8.5",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Сага о Винланде",
+        "image": "https://image.tmdb.org/t/p/original/rNVcMGzDZal17mgdPLIu4dcrdi0.jpg",
+        "link": "/card/anime/100-75/Saga-o-Vinlande.html",
+        "year": "2019",
+        "rating": "8.5",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Паразит: Учение о жизни",
+        "image": "https://image.tmdb.org/t/p/w500//tKArAWlgpuEl7q8CRmBfSVLnFan.jpg",
+        "link": "/card/anime/100-76/Parazit-Uchenie-o-zhizni.html",
+        "year": "2014",
+        "rating": "8.3",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Повелитель",
+        "image": "https://image.tmdb.org/t/p/w500//4VIY97dUAvsNekhRpCTv6d82S8G.jpg",
+        "link": "/card/anime/100-77/Povelitel.html",
+        "year": "2015",
+        "rating": "8.5",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Кайдзю № 8",
+        "image": "https://image.tmdb.org/t/p/w500//8b9u8Sg00QgnpIu0g5EenPswL6t.jpg",
+        "link": "/card/anime/100-78/Kajdzyu-8.html",
+        "year": "2024",
+        "rating": "8.6",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Моб Психо 100",
+        "image": "https://image.tmdb.org/t/p/w500//4HJKaviTLn1incPtSZKAJZ6NJrv.jpg",
+        "link": "/card/anime/100-79/Mob-Psiho-100.html",
+        "year": "2016",
+        "rating": "8.5",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Башня Бога",
+        "image": "https://image.tmdb.org/t/p/w500//m4FQUNPbxonuv4kcFm1YgyRgl2C.jpg",
+        "link": "/card/anime/100-01/Bashnya-Boga.html",
+        "year": "2020",
+        "rating": "8.3",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Поднятие уровня в одиночку",
+        "image": "https://image.tmdb.org/t/p/w500//orLdJQCcC1Lq13xt62P2xJycyAL.jpg",
+        "link": "/card/anime/100-02/Podnyatie-urovnya-v-odinochku.html",
+        "year": "2024",
+        "rating": "8.5",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Наруто: Ураганные хроники",
+        "image": "https://image.tmdb.org/t/p/w500//dIRmrc4XwLJWc3eTCe7KaOYJdKX.jpg",
+        "link": "/card/anime/100-03/Naruto-Uragannye-hroniki.html",
+        "year": "2007",
+        "rating": "8.5",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Блич",
+        "image": "https://image.tmdb.org/t/p/w500//nqOO3OmDpTsSgVLUZn2T1Dr2mcV.jpg",
+        "link": "/card/anime/100-04/Blich.html",
+        "year": "2004",
+        "rating": "8.4",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Ванпанчмен",
+        "image": "https://image.tmdb.org/t/p/w500//nhq66gOdiAp5mnNbVsxAonliffa.jpg",
+        "link": "/card/anime/100-05/Vanpanchmen.html",
+        "year": "2015",
+        "rating": "8.5",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Восхождение в тени!",
+        "image": "https://image.tmdb.org/t/p/w500//eRwEUoIPJ6hNUalD848Ud4F77gZ.jpg",
+        "link": "/card/anime/100-06/Voshozhdenie-v-teni.html",
+        "year": "2022",
+        "rating": "8.1",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Магическая битва",
+        "image": "https://image.tmdb.org/t/p/w500//rcHnYQHyFRpl9uOltPQILx8Cnla.jpg",
+        "link": "/card/anime/100-07/Magicheskaya-bitva.html",
+        "year": "2020",
+        "rating": "8.6",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Баскетбол Куроко",
+        "image": "https://image.tmdb.org/t/p/w500//ftT1qtT6yWO5rfs237a466N8QRr.jpg",
+        "link": "/card/anime/100-08/Basketbol-Kuroko.html",
+        "year": "2012",
+        "rating": "8.5",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Дорохедоро",
+        "image": "https://image.tmdb.org/t/p/w500//lzngNiuEmUYj7oKB5ZWrJggUXFL.jpg",
+        "link": "/card/anime/100-09/Dorohedoro.html",
+        "year": "2020",
+        "rating": "8.3",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Человек-бензопила",
+        "image": "https://image.tmdb.org/t/p/w500//92Ds0hOHObvZBekqneimrGpxyXh.jpg",
+        "link": "/card/anime/100-10/Chelovek-benzopila.html",
+        "year": "2022",
+        "rating": "8.6",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Дороро",
+        "image": "https://image.tmdb.org/t/p/w500//oudk6QIrLLtMlmVBBQoheNzcqeI.jpg",
+        "link": "/card/anime/100-11/Dororo.html",
+        "year": "2019",
+        "rating": "8.6",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Чёрный клевер",
+        "image": "https://image.tmdb.org/t/p/w500//vcsAzsoSJEHgJZ29EkxXWSEVbDN.jpg",
+        "link": "/card/anime/100-12/Chyornyj-klever.html",
+        "year": "2017",
+        "rating": "8.5",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Магия и мускулы",
+        "image": "https://image.tmdb.org/t/p/w500//vp3oSq3XUSDeSjv4fvSVlT4mleC.jpg",
+        "link": "/card/anime/100-13/Magiya-i-muskuly.html",
+        "year": "2023",
+        "rating": "8.3",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Школа-тюрьма",
+        "image": "https://image.tmdb.org/t/p/w500//50eY9B9JtWcG0KuY5SS1X7E9wQb.jpg",
+        "link": "/card/anime/100-14/Shkola-tyurma.html",
+        "year": "2015",
+        "rating": "8.1",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Шарлотта",
+        "image": "https://image.tmdb.org/t/p/w500//rMOGHPGfuywDViL9Oc0tA29oxtA.jpg",
+        "link": "/card/anime/100-15/Sharlotta.html",
+        "year": "2015",
+        "rating": "8.3",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Семья шпиона",
+        "image": "https://image.tmdb.org/t/p/w500//xMqGSPjjnc4awD4R8JrRTW0IGOt.jpg",
+        "link": "/card/anime/100-16/Semya-shpiona.html",
+        "year": "2022",
+        "rating": "8.6",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Борьба в прямом эфире",
+        "image": "https://image.tmdb.org/t/p/w500//fJw0XoP3t1VNhKLqanyxVOMxjwX.jpg",
+        "link": "/card/anime/100-17/Borba-v-pryamom-efire.html",
+        "year": "2024",
+        "rating": "8.3",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Врата Штейна 0",
+        "image": "https://image.tmdb.org/t/p/w500//qpd4qivQAVnJ7Zz6QFCE9km5Jiu.jpg",
+        "link": "/card/anime/100-18/Vrata-Shtejna-0.html",
+        "year": "2018",
+        "rating": "8.0",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Ох, уж этот экстрасенс Сайки Кусуо!",
+        "image": "https://image.tmdb.org/t/p/w500//hqOIldYJTq8eI1APi4tx4rZuiHe.jpg",
+        "link": "/card/anime/100-19/Oh,-uzh-etot-ekstrasens-Sajki-Kusuo.html",
+        "year": "2016",
+        "rating": "8.3",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Ван-Пис",
+        "image": "https://image.tmdb.org/t/p/w500//osRT8GsND3PfhvevsS5DK9px0LI.jpg",
+        "link": "/card/anime/100-20/Van-Pis.html",
+        "year": "1999",
+        "rating": "8.7",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Добро пожаловать в N.H.K.",
+        "image": "https://image.tmdb.org/t/p/w500//5iXnyp9zQb3tNTSOXn0rAJOlxu0.jpg",
+        "link": "/card/anime/100-21/Dobro-pozhalovat-v-N.H.K..html",
+        "year": "2006",
+        "rating": "8.5",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Атака титанов",
+        "image": "https://image.tmdb.org/t/p/w500//p5nYJj1N5pVMUixtyIJtfkw1FEr.jpg",
+        "link": "/card/anime/100-22/Ataka-titanov.html",
+        "year": "2013",
+        "rating": "8.7",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Драконий жемчуг супер",
+        "image": "https://image.tmdb.org/t/p/w500//9gzkpjs6N7Xxo1CnnJqhFtmYCez.jpg",
+        "link": "/card/anime/100-23/Drakonij-zhemchug-super.html",
+        "year": "2015",
+        "rating": "8.2",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Волейбол!!",
+        "image": "https://image.tmdb.org/t/p/w500//5lrJDEQjwCJPLdlfhBmJ8mfpnpX.jpg",
+        "link": "/card/anime/100-24/Volejbol.html",
+        "year": "2014",
+        "rating": "8.6",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Мартовский лев",
+        "image": "https://image.tmdb.org/t/p/w500//ufgAYwzv6N2JrOWwyAkoGKMlMbo.jpg",
+        "link": "/card/anime/100-25/Martovskij-lev.html",
+        "year": "2016",
+        "rating": "7.9",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Истребитель демонов",
+        "image": "https://image.tmdb.org/t/p/w500//zg3GrU3jAoTGxmlGGhkfNYMOHlb.jpg",
+        "link": "/card/anime/100-26/Istrebitel-demonov.html",
+        "year": "2019",
+        "rating": "8.7",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Баки",
+        "image": "https://image.tmdb.org/t/p/w500//6n3DLulcCLbHbkQiC9KBHUbZfGr.jpg",
+        "link": "/card/anime/100-27/Baki.html",
+        "year": "2001",
+        "rating": "8.1",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Нана",
+        "image": "https://image.tmdb.org/t/p/w500//5XyTQaZcWgn1iqSuxsh5FRzuJjB.jpg",
+        "link": "/card/anime/100-28/Nana.html",
+        "year": "2006",
+        "rating": "8.4",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Моя геройская академия",
+        "image": "https://image.tmdb.org/t/p/w500//aqOnGXW5eCQpfyx74Lu3GTt0AXU.jpg",
+        "link": "/card/anime/100-29/Moya-gerojskaya-akademiya.html",
+        "year": "2016",
+        "rating": "8.6",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Страстное Сердце: Дикий Бомбардир",
+        "image": "https://image.tmdb.org/t/p/w500//b0yW5cQX97QfhXeJU9kbQ4UYj9V.jpg",
+        "link": "/card/anime/100-30/Strastnoe-Serdce-Dikij-Bombardir.html",
+        "year": "2002",
+        "rating": "7.9",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Дарованный",
+        "image": "https://image.tmdb.org/t/p/w500//gIZtv9fPZMsITHu2PSGiFnEQqHq.jpg",
+        "link": "/card/anime/100-31/Darovannyj.html",
+        "year": "2019",
+        "rating": "8.6",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Летнее время",
+        "image": "https://image.tmdb.org/t/p/w500//gyf39hodpr1qJzUXGFuGNlxysdi.jpg",
+        "link": "/card/anime/100-32/Letnee-vremya.html",
+        "year": "2022",
+        "rating": "8.2",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Стальной Алхимик: Братство",
+        "image": "https://image.tmdb.org/t/p/w500//n2M0BslYmciTcxHc0SpwSljujUG.jpg",
+        "link": "/card/anime/100-33/Stalnoj-Alhimik-Bratstvo.html",
+        "year": "2009",
+        "rating": "8.7",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Юри на льду",
+        "image": "https://image.tmdb.org/t/p/w500//uwHOl8SLvGcbumIlpHgFAqVCEb2.jpg",
+        "link": "/card/anime/100-34/Yuri-na-ldu.html",
+        "year": "2016",
+        "rating": "8.6",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Семь смертных грехов",
+        "image": "https://image.tmdb.org/t/p/w500//rRZdyqqRAn1h45oNpA69NehQLcI.jpg",
+        "link": "/card/anime/100-35/Sem-smertnyh-grehov.html",
+        "year": "2014",
+        "rating": "8.4",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Пес и Пускающая в ход ножницы",
+        "image": "https://image.tmdb.org/t/p/w500//aOa03hyMhuQlDLmPOovMsAphYH0.jpg",
+        "link": "/card/anime/100-36/Pes-i-Puskayushaya-v-hod-nozhnicy.html",
+        "year": "2013",
+        "rating": "6.4",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Призрак в доспехах: Синдром одиночки",
+        "image": "https://image.tmdb.org/t/p/w500//wG7iZsxxFd6PPdYHndpDIMTPdaC.jpg",
+        "link": "/card/anime/100-37/Prizrak-v-dospehah-Sindrom-odinochki.html",
+        "year": "2002",
+        "rating": "8.2",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Токийский Гуль",
+        "image": "https://image.tmdb.org/t/p/w500//cB9pdS49LbAryFtJpPQYwfFXbJd.jpg",
+        "link": "/card/anime/100-38/Tokijskij-Gul.html",
+        "year": "2014",
+        "rating": "8.3",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Мастера меча онлайн",
+        "image": "https://image.tmdb.org/t/p/w500//htNohqrYEwuz4fCa9ATVF90s58S.jpg",
+        "link": "/card/anime/100-39/Mastera-mecha-onlajn.html",
+        "year": "2012",
+        "rating": "8.2",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Убийца Акаме!",
+        "image": "https://image.tmdb.org/t/p/w500//3Jtt3UgwtjJHRFDWZBFwaOji9F.jpg",
+        "link": "/card/anime/100-40/Ubijca-Akame!.html",
+        "year": "2014",
+        "rating": "8.3",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Синие Мибуро",
+        "image": "https://image.tmdb.org/t/p/w500//rADnozoUIkrJKBD1CMBPnOBWoqh.jpg",
+        "link": "/card/anime/100-41/Sinie-Miburo.html",
+        "year": "2024",
+        "rating": "8.4",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Тетрадь смерти",
+        "image": "https://image.tmdb.org/t/p/w500//jtyBJAqZUUKL1WjyiUTngiviRqI.jpg",
+        "link": "/card/anime/100-42/Tetrad-smerti.html",
+        "year": "2006",
+        "rating": "8.6",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Унесённые призраками",
+        "image": "https://image.tmdb.org/t/p/w500//xV3zYcOA6xFjYwizIMDDkl2MGT7.jpg",
+        "link": "/card/anime/100-43/Unesyonnye-prizrakami.html",
+        "year": "2001",
+        "rating": "8.5",
+        "type": "anime"
+    },
+    {
+        "name": "ПЛУТОН",
+        "image": "https://image.tmdb.org/t/p/w500//uO5kzuKlkISDBzW8QXchk65haRp.jpg",
+        "link": "/card/anime/100-44/PLUTON.html",
+        "year": "2023",
+        "rating": "7.9",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Ходячий замок",
+        "image": "https://image.tmdb.org/t/p/w500//oQvAlVSjYsJZPg9raiQRYE0aVrv.jpg",
+        "link": "/card/anime/100-45/Hodyachij-zamok.html",
+        "year": "2004",
+        "rating": "8.4",
+        "type": "anime"
+    },
+    {
+        "name": "Перерождение: Монстр",
+        "image": "https://image.tmdb.org/t/p/w500//cxV7wPMW3Xeuu27rV9MJrZm4I7y.jpg",
+        "link": "/card/anime/100-46/Pererozhdenie-Monstr.html",
+        "year": "2024",
+        "rating": "8.2",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Звёзды Айкацу!",
+        "image": "https://image.tmdb.org/t/p/w500//fiWqW5wYF702dpQWwSeRwKOyXqZ.jpg",
+        "link": "/card/anime/100-47/Zvyozdy-Ajkacu!.html",
+        "year": "2016",
+        "rating": "6.8",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Хоримия",
+        "image": "https://image.tmdb.org/t/p/w500//2ZOfEetRHnqCBzvubdYU3ytwcq.jpg",
+        "link": "/card/anime/100-48/Horimiya.html",
+        "year": "2021",
+        "rating": "8.6",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Обещанный Неверленд",
+        "image": "https://image.tmdb.org/t/p/w500//eY2WprrRHCCD2J00PjNJ1Itodlr.jpg",
+        "link": "/card/anime/100-49/Obeshannyj-Neverlend.html",
+        "year": "2019",
+        "rating": "8.4",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Твоё имя",
+        "image": "https://image.tmdb.org/t/p/w500//iH2WDCYLIUjc7oPWRT7Kxgxza6k.jpg",
+        "link": "/card/anime/100-50/Tvoe-imya.html",
+        "year": "2016",
+        "rating": "8.5",
+        "type": "anime"
+    },
+    {
+        "name": "О моём перерождении в слизь",
+        "image": "https://image.tmdb.org/t/p/w500//dyvUkf3bFFd0tC2yJCJ6rUgeZRO.jpg",
+        "link": "/card/anime/100-51/O-moyom-pererozhdenii-v-sliz.html",
+        "year": "2018",
+        "rating": "8.5",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Могила светлячков",
+        "image": "https://image.tmdb.org/t/p/w500//nJYXr0RAznczy5tCZtYcjoYMjEg.jpg",
+        "link": "/card/anime/100-52/Mogila-svetlyachkov.html",
+        "year": "1988",
+        "rating": "8.5",
+        "type": "anime"
+    },
+    {
+        "name": "Мононокэ",
+        "image": "https://image.tmdb.org/t/p/w500//g2Hm6h1tQU0w0A1wH7gwB4tH7e7.jpg",
+        "link": "/card/anime/100-53/Mononoke.html",
+        "year": "2007",
+        "rating": "7.9",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Форма голоса",
+        "image": "https://image.tmdb.org/t/p/w500//c0Gv8xTSEmIcQPxbhINKvkbJO8s.jpg",
+        "link": "/card/anime/100-54/Forma-golosa.html",
+        "year": "2016",
+        "rating": "8.4",
+        "type": "anime"
+    },
+    {
+        "name": "Реинкарнация безработного",
+        "image": "https://image.tmdb.org/t/p/w500//bC2DRV5S6BDtW0DmAqN3g3xtLoP.jpg",
+        "link": "/card/anime/100-55/Reinkarnaciya-bezrabotnogo.html",
+        "year": "2021",
+        "rating": "8.5",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Банановая рыба",
+        "image": "https://image.tmdb.org/t/p/w500//3GiB5Ybbhzt0ePRR2zgld9R56DB.jpg",
+        "link": "/card/anime/100-56/Bananovaya-ryba.html",
+        "year": "2018",
+        "rating": "8.6",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Принцесса Мононоке",
+        "image": "https://image.tmdb.org/t/p/w500//dZE9oUyp14UEoPk5QV7emBu0Ix3.jpg",
+        "link": "/card/anime/100-57/Princessa-Mononoke.html",
+        "year": "1997",
+        "rating": "8.3",
+        "type": "anime"
+    },
+    {
+        "name": "Рок-Шоу!!",
+        "image": "https://image.tmdb.org/t/p/w500//cDhy72poqVcnevY3BOGlE76bdca.jpg",
+        "link": "/card/anime/100-58/Rok-Shou!!.html",
+        "year": "2020",
+        "rating": "6.0",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Мой сосед Тоторо",
+        "image": "https://image.tmdb.org/t/p/w500//ynClhtTAYG8N7FfU7EYK0T131rj.jpg",
+        "link": "/card/anime/100-59/Moj-sosed-Totoro.html",
+        "year": "1988",
+        "rating": "8.1",
+        "type": "anime"
+    },
+    {
+        "name": "Хост-клуб Оранской школы",
+        "image": "https://image.tmdb.org/t/p/w500//rd6QqoO7mOqrfOWiSEa6XL9Jqlv.jpg",
+        "link": "/card/anime/100-60/Host-klub-Oranskoj-shkoly.html",
+        "year": "2006",
+        "rating": "8.2",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Аватар: Легенда об Аанге",
+        "image": "https://image.tmdb.org/t/p/w500//pbTLpt8c7YUT4Vr6DE2ai3HY6U7.jpg",
+        "link": "/card/anime/100-61/Avatar-Legenda-ob-Aange.html",
+        "year": "2005",
+        "rating": "8.7",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Адский рай",
+        "image": "https://image.tmdb.org/t/p/w500//75OaIA4S8ZKFVNmKnTCgAcNqwlC.jpg",
+        "link": "/card/anime/100-62/Adskij-raj.html",
+        "year": "2023",
+        "rating": "8.2",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Дитя погоды",
+        "image": "https://image.tmdb.org/t/p/w500//unkWKrTb4SdHAEb78AD4BJvXbwh.jpg",
+        "link": "/card/anime/100-63/Ditya pogody.html",
+        "year": "2019",
+        "rating": "8.0",
+        "type": "anime"
+    },
+    {
+        "name": "Доктор Стоун",
+        "image": "https://image.tmdb.org/t/p/w500//uJQCHiHAo7hoDyRPZ792ctjSZ71.jpg",
+        "link": "/card/anime/100-64/Doktor-Stoun.html",
+        "year": "2019",
+        "rating": "8.5",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Паприка",
+        "image": "https://image.tmdb.org/t/p/w500//75lTLdVBlpWocSO8nWJqddyedCH.jpg",
+        "link": "/card/anime/100-65/Paprika.html",
+        "year": "2006",
+        "rating": "7.8",
+        "type": "anime"
+    },
+    {
+        "name": "Бродяга Кэнсин",
+        "image": "https://image.tmdb.org/t/p/w500//eNs5hTCeZtZCy6rTTsH4sMOrKGZ.jpg",
+        "link": "/card/anime/100-66/Brodyaga-Kensin.html",
+        "year": "2023",
+        "rating": "8.4",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Король шаманов",
+        "image": "https://image.tmdb.org/t/p/w500//conBjZLX8KBc18vdQjSNegZytln.jpg",
+        "link": "/card/anime/100-67/Korol-shamanov.html",
+        "year": "2001",
+        "rating": "8.5",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "5 сантиметров в секунду",
+        "image": "https://image.tmdb.org/t/p/w500//ef5Kpp8knIaWCsuKHKE41cQpuPl.jpg",
+        "link": "/card/anime/100-68/5-santimetrov-v-sekundu.html",
+        "year": "2007",
+        "rating": "7.3",
+        "type": "anime"
+    },
+    {
+        "name": "Путешествие Кино",
+        "image": "https://image.tmdb.org/t/p/w500//HMCWRefv371GcIo1HsU0rkC7xx.jpg",
+        "link": "/card/anime/100-69/Puteshestvie-Kino.html",
+        "year": "2003",
+        "rating": "7.7",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Синий Экзорцист",
+        "image": "https://image.tmdb.org/t/p/w500//g2RmOH0cDET7pptUrLnzVM6w8DJ.jpg",
+        "link": "/card/anime/100-70/Sinij-Ekzorcist.html",
+        "year": "2011",
+        "rating": "7.9",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Судьба: Начало",
+        "image": "https://image.tmdb.org/t/p/w500//lkV0BOHMvdxHrfTWQfaFiKfKpRV.jpg",
+        "link": "/card/anime/100-71/Sudba-Nachalo.html",
+        "year": "2011",
+        "rating": "8.0",
+        "isTV": true,
+        "type": "anime"
+    },
+    {
+        "name": "Хвост Феи",
+        "image": "https://image.tmdb.org/t/p/w500//q5GiuJHgJJwwk14ufs0ToxFkKt6.jpg",
+        "link": "/card/anime/100-72/Hvost-Fei.html",
+        "year": "2009",
+        "rating": "7.9",
+        "isTV": true,
+        "type": "anime"
+    },
+    // Конец
+
+];
+
+// Сортируем данные один раз, сразу после их определения
+data.sort((a, b) => parseInt(b.year) - parseInt(a.year));
+
+let typingTimer;
+const typingInterval = 400;
+
+// Функция для нормализации текста
+function normalizeText(text) {
+    return text
+        .toLowerCase()
+        .replace(/ё/g, 'е')
+        .replace(/й/g, 'и')
+        .replace(/z/g, 'з')
+        .replace(/э/g, 'е')
+        .replace(/3/g, 'е')
+        .replace(/s/g, 'c')
+        .replace(/ш/g, 'щ')
+        .replace(/ъ/g, 'ь') // Можно добавить и другие замены
+        .replace(/a/g, 'а')
+        .replace(/e/g, 'е')
+        .replace(/o/g, 'о')
+        .replace(/p/g, 'р')
+        .replace(/c/g, 'с')
+        .replace(/y/g, 'у')
+        .replace(/x/g, 'х')
+        .replace(/k/g, 'к')
+        .replace(/h/g, 'н')
+        .replace(/m/g, 'м')
+        .replace(/t/g, 'т')
+        .replace(/b/g, 'в')
+        .replace(/n/g, 'н')
+        // Цифры
+        .replace(/0/g, 'о')
+        .replace(/3/g, 'з')
+        .replace(/4/g, 'ч')
+        .replace(/6/g, 'б')
+        .replace(/8/g, 'в')
+        // Убираем лишние символы (опционально)
+        .replace(/[^а-яa-z0-9\s]/g, '');
+}
+
+function positionCardRating() {
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        const image = card.querySelector('.card-img-top');
+        const rating = card.querySelector('.card-rating') || card.querySelector('.card-rating-trand');
+
+        if (image && rating) {
+            const imageRect = {
+                width: image.offsetWidth,
+                height: image.offsetHeight,
+                top: image.offsetTop,
+                left: image.offsetLeft
+            };
+
+            const cardRect = {
+                width: card.offsetWidth,
+                height: card.offsetHeight,
+                top: card.offsetTop,
+                left: card.offsetLeft
+            };
+
+            const bottom = cardRect.height - imageRect.height - imageRect.top + 8;
+            const right = cardRect.width - imageRect.width - imageRect.left + 8;
+
+            rating.style.position = 'absolute';
+            rating.style.bottom = bottom + 'px';
+            rating.style.right = right + 'px';
+        }
+    });
+}
+
+$('#search').keyup(function () {
+    clearTimeout(typingTimer);
+
+    const searchField = normalizeText($('#search').val().trim().replace(/\s+/g, ''));
+
+    const updateContainer = document.getElementById('update');
+    if (searchField === "") {
+        updateContainer.innerHTML = "";
+        return;
+    }
+
+    if (updateContainer) {
+        updateContainer.innerHTML = `
+            <div class="loading-bar-container">
+                <div class="loading-bar"></div>
+            </div>
+        `;
+    }
+
+    typingTimer = setTimeout(function () {
+        let output = '';
+        let resultCount = 0;
+
+        $.each(data, function (key, val) {
+            const nameWithoutSpaces = normalizeText(val.name.replace(/\s+/g, ''));
+
+            if (nameWithoutSpaces.includes(searchField)) {
+                resultCount++;
+
+                if (resultCount > 12) return false;
+
+                output += `
+                    <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
+                        <div class="card full-card cards-from-search">
+                            <a href="${val.link}">
+                                <img src="${val.image}" class="card-img-top all-flim-img" alt="${val.name}">
+                                <div class="card-rating"><span class="span-rating">${val.rating}</span></div>
+                                ${val.isTV ? '<div class="card-TV" bis_skin_checked="1">TV</div>' : ''}
+                                <div class="card-body">
+                                    <span class="card-tex">${val.name}</span><span class="year">${val.year}</span></span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    `;
+            }
+        });
+
+        if (updateContainer) {
+            if (resultCount === 0) {
+                updateContainer.innerHTML = '<p class="no-results">По вашему запросу ничего не найдено.</p>';
+                return;
+            }
+
+            updateContainer.innerHTML = output;
+
+            setTimeout(() => {
+                const newCards = updateContainer.querySelectorAll('.cards-from-search');
+                const images = updateContainer.querySelectorAll('img');
+
+                let imagesLoaded = 0;
+                images.forEach(img => {
+                    if (img.complete) {
+                        imagesLoaded++;
+                    } else {
+                        img.onload = () => {
+                            imagesLoaded++;
+                            if (imagesLoaded === images.length) {
+                                finalize();
+                            }
+                        };
+                        img.onerror = () => {
+                            imagesLoaded++;
+                            if (imagesLoaded === images.length) {
+                                finalize();
+                            }
+                        };
+                    }
+                });
+
+                if (imagesLoaded === images.length) {
+                    finalize();
+                }
+
+                function finalize() {
+                    newCards.forEach(card => card.offsetHeight); // Reflow
+                    newCards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.classList.add('visible');
+                        }, index * 50);
+                    });
+                    positionCardRating();
+                }
+            }, 100);
+        }
+    }, typingInterval);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    positionCardRating();
+});
+
+window.addEventListener('resize', () => {
+    setTimeout(positionCardRating, 100);
+});
+
+window.addEventListener('orientationchange', () => {
+    setTimeout(positionCardRating, 500);
+});
+
+
+
