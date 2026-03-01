@@ -1,6 +1,70 @@
 var data = [
     // Фильмы
     {
+        "name": "Арахисовый Сокол",
+        "image": "https://image.tmdb.org/t/p/w500//tMB9auXwFlgQ0BQTUk1pF2ZXBVE.jpg",
+        "link": "/card/movies/800-943/Arahisovyj-Sokol.html",
+        "year": "2019",
+        "rating": "7.4",
+        "type": "movie"
+    },
+    {
+        "name": "Экипаж",
+        "image": "https://image.tmdb.org/t/p/w500//qFvgOwHoxXVW5XTvVpxx55JxBxp.jpg",
+        "link": "/card/movies/800-942/Ekipazh.html",
+        "year": "2012",
+        "rating": "6.9",
+        "type": "movie"
+    },
+    {
+        "name": "Джой",
+        "image": "https://image.tmdb.org/t/p/w500//5oCuWnS1rTlPahiUrNRw19HCb2s.jpg",
+        "link": "/card/movies/800-941/Dzhoj.html",
+        "year": "2015",
+        "rating": "6.6",
+        "type": "movie"
+    },
+    {
+        "name": "Падение Луны",
+        "image": "https://image.tmdb.org/t/p/w500//1ISchVuArjUHuP51pTwHPnsYfxF.jpg",
+        "link": "/card/movies/800-940/Padenie-Luny.html",
+        "year": "2022",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Ничего хорошего в отеле «Эль рояль»",
+        "image": "https://image.tmdb.org/t/p/w500//bGK0zxn63zxUNXE5y8c571xTAb7.jpg",
+        "link": "/card/movies/800-939/Nichego-horoshego-v-otele-El-royal.html",
+        "year": "2018",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
+        "name": "Тройная граница",
+        "image": "https://image.tmdb.org/t/p/w500//vNVgXfR60u09o6eCDLMVCogKOel.jpg",
+        "link": "/card/movies/800-937/Trojnaya-granica.html",
+        "year": "2019",
+        "rating": "6.3",
+        "type": "movie"
+    },
+    {
+        "name": "Фотограф из Маутхаузена",
+        "image": "https://image.tmdb.org/t/p/w500//1GzwDodNHSQM7Wu8VIbvTmYXJQB.jpg",
+        "link": "/card/movies/800-938/Fotograf-iz-Mauthauzena.html",
+        "year": "2018",
+        "rating": "7.0",
+        "type": "movie"
+    },
+    {
+        "name": "Мы",
+        "image": "https://image.tmdb.org/t/p/w500//n1SuhGckPF3KDeZF1xx8QZ0CG2L.jpg",
+        "link": "/card/movies/800-936/My.html",
+        "year": "2019",
+        "rating": "6.8",
+        "type": "movie"
+    },
+    {
         "name": "Освобождение",
         "image": "https://image.tmdb.org/t/p/w500//uMov95Z6VybXLctmjmvf08C1Sew.jpg",
         "link": "/card/movies/800-934/Osvobozhdenie.html",
