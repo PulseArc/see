@@ -1,5 +1,75 @@
 //  массив
-window.movies = [ 
+window.movies = [
+    {
+        "name": "Мавританец",
+        "image": "https://image.tmdb.org/t/p/w500//vpm7SLssF7v1XH004huu3RM55wE.jpg",
+        "link": "/card/movies/800-953/Mavritanec.html",
+        "year": "2021",
+        "rating": "7.4", "tmdb_id":644583
+    },
+    {
+        "name": "Красивый, плохой, злой",
+        "image": "https://image.tmdb.org/t/p/w500//onPKnoK4HDKYOyW9QjOLpXWmCP2.jpg",
+        "link": "/card/movies/800-952/Krasivyj-plohoj-zloj.html",
+        "year": "2019",
+        "rating": "7.0", "tmdb_id":457799
+    },
+    {
+        "name": "Золото",
+        "image": "https://image.tmdb.org/t/p/original/e5Te8LS3rMug0oXteT3nkol7cmr.jpg",
+        "link": "/card/movies/800-951/Zoloto.html",
+        "year": "2016",
+        "rating": "6.6", "tmdb_id":334524
+    },
+    {
+        "name": "Точка кипения",
+        "image": "https://image.tmdb.org/t/p/w500//j5duOQGZy4tInyaH8XaMWHeRW3D.jpg",
+        "link": "/card/movies/800-950/Tochka-kipeniya.html",
+        "year": "2021",
+        "rating": "7.2", "tmdb_id":807196
+    },
+    {
+        "name": "Красные комнаты",
+        "image": "https://image.tmdb.org/t/p/w500//31RycIPmgFONHlWLtChqjRVgTN0.jpg",
+        "link": "/card/movies/800-949/Krasnye-komnaty.html",
+        "year": "2023",
+        "rating": "7.1", "tmdb_id":912480
+    },
+    {
+        "name": "Великий уравнитель",
+        "image": "https://image.tmdb.org/t/p/w500//hc1tXFITduL2nm5CqORSmlwAOlI.jpg",
+        "link": "/card/movies/800-948/Velikij-uravnitel.html",
+        "year": "2014",
+        "rating": "7.3", "tmdb_id":156022
+    },
+    {
+        "name": "Хорошие мальчики",
+        "image": "https://image.tmdb.org/t/p/w500//6VJAnengSr0glNn61WzpWGxzBOk.jpg",
+        "link": "/card/movies/800-947/Horoshie-malchiki.html",
+        "year": "2019",
+        "rating": "6.8", "tmdb_id":521777
+    },
+    {
+        "name": "Блеф",
+        "image": "https://image.tmdb.org/t/p/w500//5HoCFB91IZQkvSBAX95luxjFzUd.jpg",
+        "link": "/card/movies/800-946/Blef.html",
+        "year": "2026",
+        "rating": "6.2", "tmdb_id":799882
+    },
+    {
+        "name": "Военная машина",
+        "image": "https://image.tmdb.org/t/p/w500//eB863opfwAn0kV6SSWkfVUEzs2n.jpg",
+        "link": "/card/movies/800-945/Voennaya-mashina.html",
+        "year": "2026",
+        "rating": "6.9", "tmdb_id":1265609
+    }, 
+    {
+        "name": "Свист",
+        "image": "https://image.tmdb.org/t/p/w500//4xAYiKP2yRwr2AegWeBepC5xLcL.jpg",
+        "link": "/card/movies/800-944/Svist.html",
+        "year": "2025",
+        "rating": "5.8", "tmdb_id":1193501
+    }, 
     {
         "name": "Арахисовый Сокол",
         "image": "https://image.tmdb.org/t/p/w500//tMB9auXwFlgQ0BQTUk1pF2ZXBVE.jpg",
