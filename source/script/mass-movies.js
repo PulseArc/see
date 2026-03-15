@@ -1,6 +1,69 @@
 //  массив
 window.movies = [
     {
+        "name": "Снежное братство",
+        "image": "https://image.tmdb.org/t/p/w500//vITqdPXc7VhO8nXqJRiZ4trciyR.jpg",
+        "link": "/card/movies/800-963/Snezhnoe-bratstvo.html",
+        "year": "2023",
+        "rating": "8.0", "tmdb_id":906126
+    },
+    {
+        "name": "Женщина в окне",
+        "image": "https://image.tmdb.org/t/p/w500//uvDW7ljuXSZb3tISieETXh45mVq.jpg",
+        "link": "/card/movies/800-962/Zhenshina-v-okne.html",
+        "year": "2021",
+        "rating": "6.0", "tmdb_id":520663
+    },
+    {
+        "name": "Полночь с дьяволом",
+        "image": "https://image.tmdb.org/t/p/w500//5z3aP7SmwbQiBV8I5qAD1bgZXW0.jpg",
+        "link": "/card/movies/800-961/Polnoch-s-dyavolom.html",
+        "year": "2024",
+        "rating": "7.1", "tmdb_id":938614
+    },
+    {
+        "name": "Безмолвное братство",
+        "image": "https://image.tmdb.org/t/p/w500//sYoO5NhZabTNULyN2SG6rSwsslj.jpg",
+        "link": "/card/movies/800-960/Bezmolvnoe-bratstvo.html",
+        "year": "2024",
+        "rating": "6.6", "tmdb_id":1082195
+    },
+    {
+        "name": "Тачка на миллион",
+        "image": "https://image.tmdb.org/t/p/w500//m8yAxk3cJtuJRyqd58EKzUB2dsW.jpg",
+        "link": "/card/movies/800-959/Tachka-na-million.html",
+        "year": "2019",
+        "rating": "6.2", "tmdb_id":520016
+    },
+    {
+        "name": "Белый парень Рик",
+        "image": "https://image.tmdb.org/t/p/w500//gYpNyXOHsJ8wj3j7iDohvxi01Tr.jpg",
+        "link": "/card/movies/800-958/Belyj-paren-Rik.html",
+        "year": "2018",
+        "rating": "6.4", "tmdb_id":438808
+    },
+    {
+        "name": "Поймай толстуху, если сможешь",
+        "image": "https://image.tmdb.org/t/p/w500//BFw4o28TPW25ZVwa7meK8uHVWV.jpg",
+        "link": "/card/movies/800-957/Pojmaj-tolstuhu-esli-smozhesh.html",
+        "year": "2013",
+        "rating": "5.9", "tmdb_id":109431
+    },
+    {
+        "name": "Вопль",
+        "image": "https://image.tmdb.org/t/p/w500//zD7vb9QPaplimw8faM3wOpTGraG.jpg",
+        "link": "/card/movies/800-956/Vopl.html",
+        "year": "2016",
+        "rating": "7.4", "tmdb_id":293670
+    },
+    {
+        "name": "Афера по-американски",
+        "image": "https://image.tmdb.org/t/p/w500//oDzwpKyzYzi6SxmjnVOi3NoU644.jpg",
+        "link": "/card/movies/800-955/Afera-po-amerikanski.html",
+        "year": "2013",
+        "rating": "6.9", "tmdb_id":168672
+    },
+    {
         "name": "Мавританец",
         "image": "https://image.tmdb.org/t/p/w500//vpm7SLssF7v1XH004huu3RM55wE.jpg",
         "link": "/card/movies/800-953/Mavritanec.html",
@@ -2608,6 +2671,13 @@ window.movies = [
         "link": "/card/movies/800-364/Sosedi-Na-trope-vojny.html",
         "year": "2014",
         "rating": "6.2", "tmdb_id": 195589
+    },
+    {
+        "name": "Ограбление в Лос-Анджелесе",
+        "image": "https://image.tmdb.org/t/p/w500//wcwv1a4Qf3vaGRsbEzqarMRveL6.jpg",
+        "link": "/card/movies/800-954/Ograblenie-v-Los-Andzhelese.html",
+        "year": "2026",
+        "rating": "7.1", "tmdb_id": 1171145
     },
     {
         "name": "Моя девушка – монстр",
